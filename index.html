@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20260615-cro1">
 <link rel="icon" type="image/png" href="logo.png">
 
 <script defer src="js/sketch.js"></script>
@@ -33,6 +33,15 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/","image":"https://samuelochoa.com/sam-hero.png","jobTitle":"AI Researcher & Consultant","description":"Independent AI researcher and consultant. Writes about applied AI, agent systems, MCP, and Claude Code.","knowsAbout":["Artificial Intelligence","AI Agents","Model Context Protocol","Claude","Claude Code","Autonomous AI","AI Consulting"],"sameAs":["https://www.linkedin.com/in/samuelochoa"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Samuel Ochoa","url":"https://samuelochoa.com/","description":"AI researcher and consultant. Articles on autonomous AI, agent systems, MCP, and Claude Code.","potentialAction":{"@type":"SearchAction","target":"https://samuelochoa.com/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18240559803"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18240559803');
+</script>
 </head>
 <body>
 
@@ -245,12 +254,42 @@
 <!-- Hero (full-bleed gradient) -->
 <section class="hero">
   <div class="container">
-    <div class="photo-placeholder" aria-label="Samuel Ochoa"><img src="sam-hero.png" alt="Samuel Ochoa"></div>
+    <div class="photo-placeholder" aria-label="Samuel Ochoa"><img src="sam-hero-512.jpg" alt="Samuel Ochoa" width="512" height="512"></div>
     <h1>Samuel Ochoa</h1>
-    <p class="tagline">I help business owners build AI systems their team <em>actually owns and runs</em>, instead of renting another tool or depending on an agency.</p>
+    <p class="tagline">I help real estate teams and business owners turn messy follow-up, intake, CRM, and ops work into AI systems their team <em>actually owns and runs</em>.</p>
     <div class="cta-row">
-      <a href="contact.html" class="btn btn-primary">Book a 15-minute call</a>
-      <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener" class="btn btn-light">LinkedIn</a>
+      <a href="contact.html" class="btn btn-primary">Start with one workflow</a>
+      <a href="#testimonials" class="btn btn-light">Watch client proof</a>
+    </div>
+    <p class="hero-microcopy">Came from an email? Reply with the workflow that eats the most time. I will tell you if AI is actually a fit.</p>
+  </div>
+</section>
+
+<!-- Industry proof -->
+<section class="proof-band">
+  <div class="container">
+    <div class="proof-band-grid">
+      <div class="proof-band-head">
+        <span class="eyebrow">Built in the wild</span>
+        <h2 class="section-title">Automation across messy <em>real businesses</em>.</h2>
+      </div>
+      <div class="proof-band-body">
+        <p>I have worked in and built automations that actually run across nonprofits, legal, marketing, sales, insurance, real estate, and e-commerce. Different industries, same core problem: leads, clients, documents, follow-up, and handoffs fall through the cracks unless the system does the work.</p>
+        <div class="industry-tags" aria-label="Industries where Samuel has built automation systems">
+          <span>Nonprofits</span>
+          <span>Legal</span>
+          <span>Marketing</span>
+          <span>Sales</span>
+          <span>Insurance</span>
+          <span>Real estate</span>
+          <span>E-commerce</span>
+        </div>
+        <div class="automation-proof-list">
+          <p><strong>Lead response:</strong> faster follow-up, cleaner routing, fewer missed conversations.</p>
+          <p><strong>Ops handoffs:</strong> intake, task creation, CRM updates, reminders, and internal status loops.</p>
+          <p><strong>Client workflows:</strong> quote, bind, renewal, document, reporting, and campaign systems that teams can keep running.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -261,7 +300,7 @@
     <div class="section-header">
       <span class="eyebrow">Work with me</span>
       <h2 class="section-title">AI you <em>own</em>, not an agency you rent.</h2>
-      <p class="lead">Most teams already use AI. The problem is they don't trust it, the tools don't talk to each other, and nobody actually runs it. I fix that by building real systems <strong>with</strong> your team, then handing them over so you own them.</p>
+      <p class="lead">Most teams already use AI. The problem is they don't trust it, the tools don't talk to each other, and nobody actually runs it. I fix that by building one useful system with your team first, then handing it over so you own it.</p>
     </div>
     <div class="cards">
       <a href="contact.html" class="card"><div class="icon">🔧</div><h3>AI Systems Workshop</h3><p>A focused working session where we build one real system live, usually lead follow-up, and you leave with it running plus a plain SOP your team owns.</p></a>
@@ -269,25 +308,37 @@
       <a href="contact.html" class="card"><div class="icon">🧭</div><h3>Advisory</h3><p>Ongoing help deciding what to build next, what to ignore, and how to keep AI working as your business grows.</p></a>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <a href="contact.html" class="btn btn-primary">Book a 15-minute call</a>
+      <a href="contact.html" class="btn btn-primary">Start with one workflow</a>
     </div>
   </div>
 </section>
 
 <!-- Testimonials -->
-<section class="block">
+<section class="block" id="testimonials">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">What clients say</span>
       <h2 class="section-title">Real results, in their <em>own words</em>.</h2>
     </div>
-    <div class="cards">
-      <div class="card">
-        <p>"Working with Sam fundamentally changed how I approach AI in my business. He didn't just hand me tools, he built systems I actually understood and could implement immediately. The time savings alone have been significant. Tasks that used to take hours are now handled in minutes, and the infrastructure he helped me put in place has compounded across multiple businesses I operate. What stands out most is how Sam makes complexity accessible. AI can feel overwhelming fast, but Sam has a rare ability to translate sophisticated concepts into practical, executable frameworks without watering anything down. If you're a business owner serious about building with AI, Sam is the person you want in your corner."</p>
-        <p style="margin-top:18px;"><strong>Zack Petrocca</strong><br>COO, Stevens Real Estate Team · Founder, Origin Consulting Co. &amp; Curio Studio</p>
+    <div class="testimonial-feature">
+      <div class="testimonial-person">
+        <img src="zach-petrocca.jpeg" alt="Zack Petrocca" class="testimonial-avatar">
+        <div>
+          <p class="testimonial-name">Zack Petrocca</p>
+          <p class="testimonial-role">COO, Stevens Real Estate Team · Founder, Origin Consulting Co. &amp; Curio Studio</p>
+        </div>
       </div>
-      <div class="card">
-        <p style="opacity:.55;">More client stories coming soon.</p>
+      <p class="testimonial-quote">"Working with Sam fundamentally changed how I approach AI in my business. He didn't just hand me tools, he built systems I actually understood and could implement immediately. The time savings alone have been significant. Tasks that used to take hours are now handled in minutes, and the infrastructure he helped me put in place has compounded across multiple businesses I operate. What stands out most is how Sam makes complexity accessible. AI can feel overwhelming fast, but Sam has a rare ability to translate sophisticated concepts into practical, executable frameworks without watering anything down. If you're a business owner serious about building with AI, Sam is the person you want in your corner."</p>
+      <div class="testimonial-video-card" aria-label="Zack Petrocca testimonial video">
+        <div class="testimonial-video">
+          <iframe
+            src="https://www.youtube.com/embed/zQZFR67Blcg"
+            title="Zack Petrocca testimonial video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <p class="testimonial-video-caption">Watch Zack's short testimonial.</p>
       </div>
     </div>
   </div>
@@ -349,12 +400,12 @@
     <div class="section-header">
       <span class="eyebrow">Contact</span>
       <h2 class="section-title">Let's talk.</h2>
-      <p class="lead">Tell me what you are trying to do with AI. If it is a fit, we will grab 15 minutes. No slides, no pitch.</p>
+      <p class="lead">Tell me the workflow you want fixed. If it is a fit, we will grab 15 minutes. No slides, no pitch.</p>
     </div>
     <div class="contact-card" style="max-width:820px; margin-left:auto; margin-right:auto;">
       <h3>Let's talk.</h3>
-      <p>Tell me what you are working on. No slides, no pitch.</p>
-      <a href="contact.html" class="btn btn-primary">Book a 15-minute call</a>
+      <p>Send the workflow, what breaks today, and what a win would look like.</p>
+      <a href="contact.html" class="btn btn-primary">Start with one workflow</a>
       <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener" class="btn btn-light" style="margin-left:12px;">Connect on LinkedIn</a>
     </div>
   </div>

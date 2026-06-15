@@ -652,6 +652,13 @@ nav.topbar.nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) r
     color: var(--white);
     transform: translateY(-2px);
 }
+.hero-microcopy {
+    max-width: 620px;
+    margin: 18px auto 0;
+    color: rgba(255,255,255,0.78);
+    font-size: 14px;
+    line-height: 1.55;
+}
 
 /* ============================================================
    SECTIONS + BLOCKS
@@ -696,6 +703,69 @@ h2.section-title em {
     margin: 0 auto 20px;
 }
 .lead + .lead { margin-top: 16px; }
+
+/* ============================================================
+   PROOF BAND
+   ============================================================ */
+.proof-band {
+    padding: 72px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+    border-bottom: 1px solid var(--gray-100);
+}
+.proof-band-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 56px;
+    align-items: start;
+}
+.proof-band-head .section-title {
+    text-align: left;
+    margin-bottom: 0;
+}
+.proof-band-body {
+    padding-top: 8px;
+}
+.proof-band-body > p {
+    margin: 0 0 24px;
+    color: var(--gray-700);
+    font-size: 17px;
+    line-height: 1.75;
+}
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 30px;
+}
+.industry-tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid rgba(74, 0, 224, 0.16);
+    background: rgba(255,255,255,0.78);
+    color: var(--gray-900);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+    box-shadow: 0 5px 18px rgba(23, 23, 23, 0.04);
+}
+.automation-proof-list {
+    display: grid;
+    gap: 14px;
+    border-top: 1px solid rgba(23, 23, 23, 0.1);
+    padding-top: 22px;
+}
+.automation-proof-list p {
+    margin: 0;
+    color: var(--gray-600);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.automation-proof-list strong {
+    color: var(--gray-900);
+}
 
 /* ============================================================
    CARDS GRID
@@ -748,6 +818,97 @@ h2.section-title em {
     color: var(--gray-600);
     line-height: 1.65;
     margin: 0;
+}
+
+/* ============================================================
+   TESTIMONIAL FEATURE
+   ============================================================ */
+.testimonial-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 360px);
+    grid-template-areas:
+        "person video"
+        "quote video";
+    column-gap: 34px;
+    row-gap: 24px;
+    align-items: center;
+    margin-top: 48px;
+    padding: 34px;
+    border-radius: 20px;
+    border: 1px solid rgba(74, 0, 224, 0.12);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,248,255,0.92)),
+        var(--white);
+    box-shadow: 0 20px 70px rgba(74, 0, 224, 0.08);
+    text-align: left;
+}
+.testimonial-person {
+    grid-area: person;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+.testimonial-avatar {
+    width: 104px;
+    height: 104px;
+    flex: 0 0 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 24%;
+    border: 4px solid var(--white);
+    box-shadow: 0 12px 32px rgba(23, 23, 23, 0.16);
+    background: var(--gray-100);
+}
+.testimonial-name {
+    margin: 0 0 6px;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: var(--gray-900);
+}
+.testimonial-role {
+    margin: 0;
+    max-width: 560px;
+    color: var(--gray-600);
+    font-size: 14px;
+    line-height: 1.45;
+}
+.testimonial-quote {
+    grid-area: quote;
+    margin: 0;
+    color: var(--gray-700);
+    font-size: 18px;
+    line-height: 1.72;
+}
+.testimonial-video-card {
+    grid-area: video;
+    justify-self: center;
+    width: 100%;
+    max-width: 330px;
+}
+.testimonial-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--black);
+    box-shadow: 0 18px 45px rgba(23, 23, 23, 0.18);
+}
+.testimonial-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.testimonial-video-caption {
+    margin: 12px 0 0;
+    color: var(--gray-500);
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: center;
 }
 
 /* ============================================================
@@ -1406,6 +1567,28 @@ footer p { margin: 0; letter-spacing: 0.02em; }
     .framework-content h1.title { font-size: 36px; }
     .framework-content h2 { font-size: 24px; }
     h2.section-title { font-size: 36px !important; }
+    .proof-band {
+        padding: 56px 0;
+    }
+    .proof-band-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .proof-band-body {
+        padding-top: 0;
+    }
+    .testimonial-feature {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "person"
+            "video"
+            "quote";
+        padding: 30px;
+        row-gap: 28px;
+    }
+    .testimonial-video-card {
+        max-width: 300px;
+    }
 }
 
 /* ============================================================
@@ -1445,6 +1628,51 @@ footer p { margin: 0; letter-spacing: 0.02em; }
 }
 
 @media (max-width: 640px) {
+    .testimonial-feature {
+        padding: 24px 18px;
+        gap: 26px;
+    }
+    .testimonial-person {
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .testimonial-avatar {
+        width: 82px;
+        height: 82px;
+        flex-basis: 82px;
+        border-width: 3px;
+    }
+    .testimonial-name {
+        font-size: 18px;
+    }
+    .testimonial-role {
+        font-size: 13px;
+    }
+    .testimonial-quote {
+        font-size: 16px;
+        line-height: 1.68;
+    }
+    .testimonial-video-card {
+        max-width: 270px;
+    }
+    .hero-microcopy {
+        font-size: 13px;
+        padding: 0 8px;
+    }
+    .proof-band {
+        padding: 46px 0;
+    }
+    .proof-band-body > p {
+        font-size: 16px;
+    }
+    .industry-tags {
+        gap: 8px;
+    }
+    .industry-tags span {
+        font-size: 12px;
+        min-height: 32px;
+        padding: 7px 10px;
+    }
     .hero .photo-placeholder { width: 112px; height: 112px; font-size: 42px; }
     .hero h1 { font-size: 40px; }
     .hero .tagline { font-size: 16px; }
@@ -1592,4 +1820,3 @@ footer p { margin: 0; letter-spacing: 0.02em; }
 @media (max-width: 640px) {
   .doc-shots { grid-template-columns: 1fr; }
 }
-
