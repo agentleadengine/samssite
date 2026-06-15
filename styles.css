@@ -1453,6 +1453,42 @@ h2.section-title em {
     overflow: hidden;
     border: 1px solid rgba(74,0,224,0.12);
 }
+.ads-form-intro {
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid rgba(74,0,224,0.10);
+    background: linear-gradient(180deg, #ffffff 0%, #fbfaf8 100%);
+}
+.ads-form-kicker {
+    margin: 0 0 8px;
+    color: var(--primary-purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.ads-form-intro h3 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.18;
+    letter-spacing: 0;
+}
+.ads-form-promises {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+.ads-form-promises span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    border-radius: 999px;
+    background: rgba(22,163,74,0.10);
+    color: #166534;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
 
 @media (max-width: 900px) {
     .ads-hero-grid,
