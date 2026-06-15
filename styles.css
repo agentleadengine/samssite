@@ -842,6 +842,16 @@ h2.section-title em {
     box-shadow: 0 20px 70px rgba(74, 0, 224, 0.08);
     text-align: left;
 }
+.testimonial-feature + .testimonial-feature {
+    margin-top: 26px;
+}
+.testimonial-feature-secondary {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.38fr);
+    grid-template-areas:
+        "person proof"
+        "quote proof";
+    align-items: stretch;
+}
 .testimonial-person {
     grid-area: person;
     display: flex;
@@ -873,6 +883,11 @@ h2.section-title em {
     color: var(--gray-600);
     font-size: 14px;
     line-height: 1.45;
+}
+.testimonial-role a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 .testimonial-quote {
     grid-area: quote;
@@ -909,6 +924,33 @@ h2.section-title em {
     font-size: 13px;
     line-height: 1.45;
     text-align: center;
+}
+.testimonial-proof-panel {
+    grid-area: proof;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    min-height: 100%;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(74, 0, 224, 0.12);
+    background: rgba(255, 255, 255, 0.72);
+}
+.testimonial-proof-panel p {
+    margin: 0;
+    color: var(--gray-700);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.testimonial-proof-kicker {
+    color: var(--primary-purple) !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 /* ============================================================
@@ -1990,4 +2032,23 @@ footer p { margin: 0; letter-spacing: 0.02em; }
 
 @media (max-width: 640px) {
   .doc-shots { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+    .testimonial-feature-secondary {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "person"
+            "quote"
+            "proof";
+    }
+    .testimonial-proof-panel {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonial-proof-panel {
+        padding: 20px;
+    }
 }
