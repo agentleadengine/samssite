@@ -2,7 +2,7 @@
 
 Account: `164-807-5584`
 Google user: `sam@samuelochoa.com`
-Landing page: `https://samuelochoa.com/google-ads.html`
+Landing page: `https://samuelochoa.com/offer.html`
 Thank-you page: `https://samuelochoa.com/completed/`
 
 ## Current Hard Blocker
@@ -97,7 +97,7 @@ Do not accept Google's recommendation to upgrade these to broad match for launch
 ## Ad
 
 Final URL:
-`https://samuelochoa.com/google-ads.html`
+`https://samuelochoa.com/offer.html`
 
 Display path:
 Leave blank.
@@ -185,7 +185,7 @@ tutorial
 
 Before clicking publish, confirm:
 
-- Landing page URL is `https://samuelochoa.com/google-ads.html`.
+- Landing page URL is `https://samuelochoa.com/offer.html`.
 - Search Partners and Display Network are off.
 - Location is United States, presence-only.
 - Language is English.
