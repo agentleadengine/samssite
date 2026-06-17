@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The free lead engine | Samuel Ochoa</title>
+<meta name="description" content="How I wired LeadScrape, Reoon, Claude, and Instantly into one autonomous outbound pipeline that scrapes leads for nothing, qualifies them with AI, and runs itself.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The free lead engine | Samuel Ochoa">
+<meta property="og:description" content="How I wired LeadScrape, Reoon, Claude, and Instantly into one autonomous outbound pipeline that scrapes leads for nothing, qualifies them with AI, and runs itself.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/png" href="../logo.png">
+<script defer src="../js/sketch.js"></script>
+<script defer src="../js/translate.js"></script>
+<link rel="canonical" href="https://samuelochoa.com/case-studies/free-lead-engine.html">
+<meta property="og:url" content="https://samuelochoa.com/case-studies/free-lead-engine.html">
+<meta property="og:image" content="https://samuelochoa.com/sam-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The free lead engine | Samuel Ochoa">
+<meta name="twitter:description" content="How I wired LeadScrape, Reoon, Claude, and Instantly into one autonomous outbound pipeline that scrapes leads for nothing, qualifies them with AI, and runs itself.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-hero.png">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The free lead engine | Samuel Ochoa","description":"How I wired LeadScrape, Reoon, Claude, and Instantly into one autonomous outbound pipeline that scrapes leads for nothing, qualifies them with AI, and runs itself.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/case-studies/free-lead-engine.html","image":"https://samuelochoa.com/sam-hero.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://samuelochoa.com/case-studies/"},{"@type":"ListItem","position":3,"name":"The free lead engine","item":"https://samuelochoa.com/case-studies/free-lead-engine.html"}]}</script>
+</head>
+<body><nav class="topbar"><div class="topbar-inner">
+<a href="../index.html" class="logo"><img class="brand-logo" src="../logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="../index.html" class="nav-link">Home</a>
+<div class="nav-group">
+<a href="../framework/index.html" class="nav-link nav-has-submenu">Framework</a>
+<div class="nav-submenu">
+<a href="../framework/index.html">Overview</a>
+<a href="../framework/what-is-autonomous-ai.html">What is Autonomous AI</a>
+<a href="../framework/the-autonomy-spectrum.html">Autonomy Spectrum</a>
+<a href="../framework/claude/index.html">Claude (model)</a>
+<a href="../framework/claude-code/index.html">Claude Code (harness)</a>
+<a href="../framework/mcp/index.html">MCP</a>
+<a href="../framework/plugins/index.html">Plugins</a>
+<a href="../framework/patterns/index.html">Agent Patterns</a>
+<a href="../framework/autonomous/index.html">Going Autonomous</a>
+<a href="../framework/build/index.html">Build Guides</a>
+<a href="../framework/tools/index.html">Tools</a>
+<a href="../framework/glossary.html">Glossary</a>
+</div></div>
+<div class="nav-group nav-group-wide">
+<a href="../expertise/index.html" class="nav-link nav-has-submenu">Expertise</a>
+<div class="nav-submenu nav-mega">
+<div class="nav-mega-cats">
+<a href="../expertise/seo/index.html" class="nav-cat is-active" data-cat="cat0"><span>SEO</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/agents/index.html" class="nav-cat" data-cat="cat1"><span>AI Agents</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/rag/index.html" class="nav-cat" data-cat="cat2"><span>RAG</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/direct-response/index.html" class="nav-cat" data-cat="cat3"><span>Direct Response</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/paid-ads/index.html" class="nav-cat" data-cat="cat4"><span>Paid Advertising</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/cold-email/index.html" class="nav-cat" data-cat="cat5"><span>Cold Email</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/growth-marketing/index.html" class="nav-cat" data-cat="cat6"><span>Growth Marketing</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/email-marketing/index.html" class="nav-cat" data-cat="cat7"><span>Email Marketing</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/cro/index.html" class="nav-cat" data-cat="cat8"><span>CRO</span><span class="nav-cat-arrow">›</span></a>
+<a href="../expertise/business-management/index.html" class="nav-cat" data-cat="cat9"><span>Business Management</span><span class="nav-cat-arrow">›</span></a>
+</div>
+<div class="nav-mega-content">
+<div class="nav-cat-panel is-active" data-cat="cat0">
+<a href="../expertise/seo/index.html" class="nav-cat-panel-head">SEO. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/seo/foundations/index.html">Foundations</a>
+<a href="../expertise/seo/keywords/index.html">Keyword Research</a>
+<a href="../expertise/seo/on-page/index.html">On-Page</a>
+<a href="../expertise/seo/technical/index.html">Technical SEO</a>
+<a href="../expertise/seo/links/index.html">Link Building</a>
+<a href="../expertise/seo/content/index.html">Content SEO</a>
+<a href="../expertise/seo/local/index.html">Local SEO</a>
+<a href="../expertise/seo/international/index.html">International</a>
+<a href="../expertise/seo/ecommerce/index.html">Ecommerce SEO</a>
+<a href="../expertise/seo/advanced/index.html">Advanced</a>
+<a href="../expertise/seo/analytics/index.html">Analytics</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat1">
+<a href="../expertise/agents/index.html" class="nav-cat-panel-head">AI Agents. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/agents/foundations/index.html">Foundations</a>
+<a href="../expertise/agents/frameworks/index.html">Frameworks</a>
+<a href="../expertise/agents/patterns/index.html">Patterns</a>
+<a href="../expertise/agents/tools/index.html">Tool Use</a>
+<a href="../expertise/agents/memory/index.html">Memory</a>
+<a href="../expertise/agents/loops/index.html">Agent Loops</a>
+<a href="../expertise/agents/multi/index.html">Multi-Agent</a>
+<a href="../expertise/agents/eval/index.html">Evaluation</a>
+<a href="../expertise/agents/prod/index.html">Production</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat2">
+<a href="../expertise/rag/index.html" class="nav-cat-panel-head">RAG. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/rag/foundations/index.html">Foundations</a>
+<a href="../expertise/rag/embeddings/index.html">Embeddings</a>
+<a href="../expertise/rag/vectors/index.html">Vector Stores</a>
+<a href="../expertise/rag/chunking/index.html">Chunking</a>
+<a href="../expertise/rag/retrieval/index.html">Retrieval</a>
+<a href="../expertise/rag/docs/index.html">Documents</a>
+<a href="../expertise/rag/eval/index.html">Evaluation</a>
+<a href="../expertise/rag/advanced/index.html">Advanced</a>
+<a href="../expertise/rag/prod/index.html">Production</a>
+<a href="../expertise/rag/cases/index.html">Case Studies</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat3">
+<a href="../expertise/direct-response/index.html" class="nav-cat-panel-head">Direct Response. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/direct-response/foundations/index.html">Foundations</a>
+<a href="../expertise/direct-response/market/index.html">The Market</a>
+<a href="../expertise/direct-response/offer/index.html">The Offer</a>
+<a href="../expertise/direct-response/copy/index.html">Copywriting</a>
+<a href="../expertise/direct-response/letters/index.html">Sales Letters</a>
+<a href="../expertise/direct-response/leads/index.html">Lead Generation</a>
+<a href="../expertise/direct-response/followup/index.html">Follow-Up</a>
+<a href="../expertise/direct-response/testing/index.html">Testing</a>
+<a href="../expertise/direct-response/scaling/index.html">Scaling</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat4">
+<a href="../expertise/paid-ads/index.html" class="nav-cat-panel-head">Paid Advertising. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/paid-ads/foundations/index.html">Foundations</a>
+<a href="../expertise/paid-ads/creative/index.html">Creative</a>
+<a href="../expertise/paid-ads/meta/index.html">Meta Ads</a>
+<a href="../expertise/paid-ads/google/index.html">Google Ads</a>
+<a href="../expertise/paid-ads/youtube/index.html">YouTube Ads</a>
+<a href="../expertise/paid-ads/tiktok/index.html">TikTok Ads</a>
+<a href="../expertise/paid-ads/linkedin/index.html">LinkedIn Ads</a>
+<a href="../expertise/paid-ads/measurement/index.html">Measurement</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat5">
+<a href="../expertise/cold-email/index.html" class="nav-cat-panel-head">Cold Email. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/cold-email/foundations/index.html">Foundations</a>
+<a href="../expertise/cold-email/infra/index.html">Infrastructure</a>
+<a href="../expertise/cold-email/deliverability/index.html">Deliverability</a>
+<a href="../expertise/cold-email/lists/index.html">List Building</a>
+<a href="../expertise/cold-email/copy/index.html">Copywriting</a>
+<a href="../expertise/cold-email/sequences/index.html">Sequences</a>
+<a href="../expertise/cold-email/plays/index.html">Plays</a>
+<a href="../expertise/cold-email/testing/index.html">Testing</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat6">
+<a href="../expertise/growth-marketing/index.html" class="nav-cat-panel-head">Growth Marketing. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/growth-marketing/foundations/index.html">Foundations</a>
+<a href="../expertise/growth-marketing/acq/index.html">Acquisition</a>
+<a href="../expertise/growth-marketing/activation/index.html">Activation</a>
+<a href="../expertise/growth-marketing/retention/index.html">Retention</a>
+<a href="../expertise/growth-marketing/revenue/index.html">Revenue</a>
+<a href="../expertise/growth-marketing/experiments/index.html">Experiments</a>
+<a href="../expertise/growth-marketing/analytics/index.html">Analytics</a>
+<a href="../expertise/growth-marketing/process/index.html">Process</a>
+<a href="../expertise/growth-marketing/plays/index.html">Plays</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat7">
+<a href="../expertise/email-marketing/index.html" class="nav-cat-panel-head">Email Marketing. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/email-marketing/foundations/index.html">Foundations</a>
+<a href="../expertise/email-marketing/list/index.html">List Growth</a>
+<a href="../expertise/email-marketing/deliverability/index.html">Deliverability</a>
+<a href="../expertise/email-marketing/broadcasts/index.html">Broadcasts</a>
+<a href="../expertise/email-marketing/automations/index.html">Automations</a>
+<a href="../expertise/email-marketing/commerce/index.html">Commerce</a>
+<a href="../expertise/email-marketing/saas/index.html">SaaS</a>
+<a href="../expertise/email-marketing/testing/index.html">Testing</a>
+<a href="../expertise/email-marketing/tools/index.html">Tools</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat8">
+<a href="../expertise/cro/index.html" class="nav-cat-panel-head">CRO. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/cro/foundations/index.html">Foundations</a>
+<a href="../expertise/cro/research/index.html">Research</a>
+<a href="../expertise/cro/frameworks/index.html">Frameworks</a>
+<a href="../expertise/cro/pages/index.html">Landing Pages</a>
+<a href="../expertise/cro/conversion/index.html">Conversion Copy</a>
+<a href="../expertise/cro/testing/index.html">Testing</a>
+<a href="../expertise/cro/analytics/index.html">Analytics</a>
+<a href="../expertise/cro/tools/index.html">Tools</a>
+</div>
+</div>
+<div class="nav-cat-panel" data-cat="cat9">
+<a href="../expertise/business-management/index.html" class="nav-cat-panel-head">Business Management. Section overview →</a>
+<div class="nav-cat-panel-list">
+<a href="../expertise/business-management/strategy/index.html">Strategy</a>
+<a href="../expertise/business-management/operating-systems/index.html">Operating Systems</a>
+<a href="../expertise/business-management/leadership/index.html">Leadership</a>
+<a href="../expertise/business-management/people/index.html">People</a>
+<a href="../expertise/business-management/execution/index.html">Execution</a>
+<a href="../expertise/business-management/sales/index.html">Sales</a>
+<a href="../expertise/business-management/finance/index.html">Finance</a>
+<a href="../expertise/business-management/risk/index.html">Risk</a>
+</div>
+</div>
+</div>
+</div></div>
+<div class="nav-group">
+<a href="../playbooks/index.html" class="nav-link nav-has-submenu">Playbooks</a>
+<div class="nav-submenu">
+<a href="../playbooks/index.html">All Playbooks</a>
+<a href="../playbooks/insurance/index.html">Insurance</a>
+<a href="../playbooks/real-estate/index.html">Real Estate</a>
+<a href="../playbooks/mortgage/index.html">Mortgage</a>
+<a href="../playbooks/financial-advisor/index.html">Financial Advisor</a>
+<a href="../playbooks/personal-trainer/index.html">Personal Trainer</a>
+<a href="../playbooks/coach/index.html">Coach</a>
+<a href="../playbooks/dentist/index.html">Dentist</a>
+<a href="../playbooks/chiropractor/index.html">Chiropractor</a>
+<a href="../playbooks/cpa/index.html">CPA</a>
+<a href="../playbooks/restaurant/index.html">Restaurant</a>
+<a href="../playbooks/agency/index.html">Agency</a>
+<a href="../playbooks/ecommerce/index.html">Ecommerce</a>
+<a href="../playbooks/saas/index.html">SaaS</a>
+<a href="../playbooks/podcaster/index.html">Podcaster</a>
+<a href="../playbooks/author/index.html">Author</a>
+</div></div>
+<a href="../ai-consulting.html" class="nav-link">AI Consulting</a>
+<a href="../crm.html" class="nav-link">ALE</a>
+<a href="../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../writing.html" class="nav-link">Writing</a>
+<a href="../about.html" class="nav-link">About</a>
+<a href="../contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav><div class="container"><div class="page">
+<p class="eyebrow" style="color:var(--primary-purple); font-weight:700; letter-spacing:0.15em; text-transform:uppercase; font-size:13px; margin-bottom:10px;"><a href="index.html" style="color:inherit;">Case studies</a> / The free lead engine</p>
+<h1 class="title">The free lead engine</h1>
+<p class="lede">I wired four cheap tools into one pipeline that scrapes leads for nothing, throws most of them away on purpose, and emails the rest. Then I handed the whole thing to a bot so I would stop touching it. Here is how it fits together.</p>
+
+<h2>The problem with outbound</h2>
+<p>Cold outbound is mostly janitorial work. You find the people, you check that their emails are real, you decide who is actually worth contacting, you write the first line, and then you babysit the sender so it does not torch your domain. None of those steps are hard. They are just slow, and the usual fix is to pay a different tool for each one and a person to run the seams between them.</p>
+<p>I wanted to see how much of that I could move into software end to end. Scrape, verify, qualify, send, and manage. The constraint I gave myself was simple. The acquisition cost per lead should round to zero, and the judgment work should be done by a model, not by me.</p>
+
+<h2>The shape of it</h2>
+<p>Five stages, one direction. Each stage hands a smaller, cleaner list to the next. The first four build and send the list. The fifth one runs the whole thing on a schedule so it keeps going without me.</p>
+
+<div class="sketch" data-viewbox="0 0 960 230" id="dg-pipeline">
+  <svg></svg>
+  <div class="sketch-caption">~ the whole pipeline, one row ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-pipeline');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  var stages = [
+    { x: 20,  title: 'LeadScrape', sub: 'scrape, $0',     dim: 'leadscrape.com' },
+    { x: 210, title: 'Reoon',      sub: 'verify',          dim: 'email check' },
+    { x: 400, title: 'Claude',     sub: 'qualify + write',  dim: 'ICP rubric' },
+    { x: 590, title: 'Instantly',  sub: 'send',             dim: 'warm inboxes' },
+    { x: 780, title: 'The bot',    sub: 'run + iterate',    dim: 'daily cron' }
+  ];
+  stages.forEach(function(s) {
+    sketch.box(svg, rc, { x: s.x, y: 60, w: 150, h: 104, title: s.title, sub: s.sub,
+      dim: s.dim, titleY: 46, subY: 74, titleSize: 19, subSize: 12 });
+  });
+  for (var i = 0; i < stages.length - 1; i++) {
+    sketch.arrow(svg, rc, { x1: stages[i].x + 150, x2: stages[i+1].x, y: 112, bidirectional: false });
+  }
+});
+</script>
+
+<h2>Step 1. Scrape for free</h2>
+<p>The front of the pipeline is <a href="https://leadscrape.com" target="_blank" rel="noopener nofollow">LeadScrape</a>. You point it at a niche and a geography, say independent insurance agencies in a handful of states, and it pulls a list of businesses with names, websites, role titles, and contact emails. The acquisition cost per record is effectively nothing.</p>
+<p>What comes out is raw and messy. Plenty of role addresses, plenty of dead inboxes, plenty of companies that are nothing like who I want to reach. That is fine. The whole point of the next three stages is to be ruthless about throwing this list away.</p>
+
+<h2>Step 2. Verify before you trust</h2>
+<p>Every raw email goes through <a href="https://reoon.com" target="_blank" rel="noopener nofollow">Reoon</a> before anything else happens to it. Reoon checks whether the address actually accepts mail and flags the ones that do not, the catch-all domains, and the disposable junk. Anything that is not cleanly deliverable gets dropped here.</p>
+<div class="callout note"><strong>Why this step is not optional.</strong> Sending to addresses that bounce is the fastest way to wreck a sending domain. Verifying first protects the reputation of the inboxes that do the sending, which is the one asset in this whole system that is genuinely hard to replace.</div>
+
+<h2>Step 3. Let Claude do the sorting</h2>
+<p>This is the step that makes the pipeline worth building. A verified list is still just a pile of contacts. It does not know who fits and who does not, and it has no idea what to say to any of them. That judgment is the expensive part of outbound, and it is the part I wanted a model to own.</p>
+<p>Each verified row goes to <a href="../framework/claude/index.html">Claude</a> with a short rubric that describes the ideal customer. Claude reads what is known about the lead, the company, the role, a snippet from their website, and does two things at once. It scores how well the lead fits the rubric, and for the ones that pass, it writes a specific opening line based on what it just read. The leads that do not fit are dropped with a reason.</p>
+
+<div class="sketch" data-viewbox="0 0 920 320" id="dg-qualify">
+  <svg></svg>
+  <div class="sketch-caption">~ the qualification step, where most of the list gets thrown away ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-qualify');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.box(svg, rc, { x: 24, y: 110, w: 200, h: 110, title: 'Lead row', sub: 'name . site . role',
+    titleY: 52, subY: 80, titleSize: 24, subSize: 14 });
+  sketch.box(svg, rc, { x: 350, y: 88, w: 220, h: 152, title: 'Claude', sub: 'reads vs ICP rubric',
+    titleY: 70, subY: 100, titleSize: 30, subSize: 15 });
+  sketch.box(svg, rc, { x: 700, y: 36, w: 196, h: 100, title: 'Qualify', sub: 'score + first line',
+    titleY: 46, subY: 72, titleSize: 24, subSize: 14,
+    fillColor: '#ecfdf5', strokeColor: '#059669', textColor: '#047857', subColor: '#047857' });
+  sketch.box(svg, rc, { x: 700, y: 196, w: 196, h: 100, title: 'Skip', sub: 'off-ICP, no send',
+    titleY: 46, subY: 72, titleSize: 24, subSize: 14,
+    fillColor: '#fef2f2', strokeColor: '#dc2626', textColor: '#b91c1c', subColor: '#b91c1c' });
+  sketch.arrow(svg, rc, { x1: 224, x2: 350, y: 165, bidirectional: false });
+  sketch.arrow(svg, rc, { x1: 570, y1: 150, x2: 700, y2: 92,  bidirectional: false, color: '#059669' });
+  sketch.arrow(svg, rc, { x1: 570, y1: 182, x2: 700, y2: 240, bidirectional: false, color: '#dc2626' });
+  sketch.note(svg, 285, 130, 'scores 1-5', { size: 14 });
+});
+</script>
+
+<p>This is where the list collapses, and that is the goal. A verified address only tells you a message will arrive. The rubric tells you whether it should. By the time Claude is done, a list of thousands is a list of hundreds, and every survivor already has a first line written for it.</p>
+
+<h2>What the list looks like at each stage</h2>
+<p>Here is the attrition across one representative run. The shape matters more than the exact numbers. Most of what you scrape is supposed to disappear, and the biggest single cut is the qualification step, not the verifier.</p>
+
+<div class="sketch" data-viewbox="0 0 920 300" id="dg-funnel">
+  <svg></svg>
+  <div class="sketch-caption">~ 10k scraped becomes 2.4k worth emailing ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-funnel');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.bars(svg, rc, {
+    x: 24, y: 40, w: 880, barH: 42, gap: 26, labelW: 230, max: 11800,
+    items: [
+      { label: 'Scraped',            value: 10000, note: '10,000 raw' },
+      { label: 'Deliverable',        value: 6800,  note: '6,800 pass Reoon' },
+      { label: 'Fits the ICP',       value: 3100,  note: '3,100 pass Claude' },
+      { label: 'One per domain, sent', value: 2400, note: '2,400 emailed' }
+    ]
+  });
+});
+</script>
+
+<h2>Step 4. Send through Instantly</h2>
+<p>The survivors, now verified, qualified, and each carrying their own opening line, get uploaded into <a href="../expertise/cold-email/index.html">Instantly</a>. The sending is spread across a pool of warmed inboxes so no single mailbox carries too much volume, and each lead enters a short sequence rather than a one-shot blast. Because the personalization was written upstream by Claude, every first email is specific to the person receiving it without anyone sitting there typing.</p>
+
+<h2>Step 5. A second bot runs it</h2>
+<p>The pipeline so far builds and sends a list. The last piece is what keeps it alive. A second agent runs on a schedule and does the operator job that a person would otherwise do by hand. It reads the campaign stats, decides what needs to change, makes the change, and routes anything that looks like a real reply to me.</p>
+
+<div class="sketch" data-viewbox="0 0 920 240" id="dg-loop">
+  <svg></svg>
+  <div class="sketch-caption">~ the bot that babysits the campaigns, every morning ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-loop');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.numberedSteps(svg, rc, {
+    x: 40, y: 86, w: 840, radius: 30, direction: 'h',
+    items: [
+      { title: 'Read stats',   sub: 'opens, replies, bounces' },
+      { title: 'Decide',       sub: 'pause / rotate / iterate' },
+      { title: 'Act',          sub: 'edit the campaigns' },
+      { title: 'Route replies', sub: 'hand off the hot ones' }
+    ]
+  });
+  sketch.note(svg, 460, 210, 'repeats daily, copy gets rewritten weekly', { size: 16 });
+});
+</script>
+
+<p>Day to day it is reading numbers and making small corrections. Pause an inbox that is bouncing, rotate sending volume, push a lead into a follow-up step. Once a week it does the bigger job of rewriting the copy based on what actually got replies. The leverage is that the boring, daily, easy-to-skip work gets done every single day, because nobody has to remember to do it.</p>
+
+<h2>Why bother building it this way</h2>
+<p>The usual outbound stack pays for the same five jobs with four subscriptions and a person. This one moves the judgment into a model and the operations into a scheduled agent, and the only real recurring cost is the per-check verification and the model calls.</p>
+
+<div class="sketch" data-viewbox="0 0 920 300" id="dg-compare">
+  <svg></svg>
+  <div class="sketch-caption">~ same output, a fraction of the stack ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-compare');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.compare(svg, rc, {
+    x: 24, y: 30, w: 872, h: 240,
+    left: {
+      title: 'The usual stack',
+      items: [
+        'A data seat, ZoomInfo or Apollo',
+        'Paid list exports per pull',
+        'A separate email verifier',
+        'A VA to sort and personalize',
+        'Hundreds a month, at the floor'
+      ]
+    },
+    right: {
+      title: 'This pipeline',
+      items: [
+        'LeadScrape, free tier',
+        'Reoon, pay per check',
+        'Claude does the sorting',
+        'Instantly plus one agent',
+        'Runs while you sleep'
+      ]
+    }
+  });
+});
+</script>
+
+<p>The real takeaway is not the specific tools. It is that the two expensive parts of outbound, the judgment about who is worth contacting and the discipline to run the campaigns every day, are both things software can now do well. Once you accept that, the rest is plumbing.</p>
+
+<div class="callout insight"><strong>Honest notes.</strong> The numbers above are from a representative run, not a client testimonial, and I built this for my own outbound. Deliverability still depends on real inbox warmup and clean list hygiene, no pipeline fixes a bad domain. And AI qualification is a filter, not a guarantee. It makes the list much better, it does not promise a reply.</div>
+
+<div class="contact-card">
+  <h3>Want one like it?</h3>
+  <p>If you are drowning in the manual parts of outbound, this is the kind of system I build and hand over. Tell me your niche and what a good lead looks like, and I will tell you honestly whether a pipeline like this fits.</p>
+  <a href="../contact.html" class="btn btn-primary">Tell me about your outbound</a>
+</div>
+
+<h2>Related reading</h2>
+<div class="cards">
+  <a href="../expertise/cold-email/index.html" class="card">
+    <h3>Cold email, end to end</h3>
+    <p>Infrastructure, deliverability, lists, copy, and sequences.</p>
+  </a>
+  <a href="../framework/patterns/multi-agent.html" class="card">
+    <h3>Multi-agent orchestration</h3>
+    <p>When splitting work across agents actually pays off.</p>
+  </a>
+  <a href="../framework/autonomous/scheduling.html" class="card">
+    <h3>Scheduling autonomous agents</h3>
+    <p>How a bot ends up running something every morning.</p>
+  </a>
+  <a href="../ai-consulting.html" class="card">
+    <h3>Work with me</h3>
+    <p>Advisory and build engagements on systems like this one.</p>
+  </a>
+</div>
+</div></div><footer><div class="container"><p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="../case-studies/index.html">Case Studies</a> &middot; <a href="../framework/index.html">Framework</a></p></div></footer><script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Expertise mega: swap right-panel content on category hover --------
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script></body></html>
