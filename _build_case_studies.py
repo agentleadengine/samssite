@@ -540,6 +540,214 @@ voice_study = head(
 (ROOT / "case-studies" / "voice-intake.html").write_text(voice_study)
 
 # ===========================================================================
+#  CASE STUDY: the clicks nobody has to make (AgencyZoom + Claude in Chrome)
+# ===========================================================================
+AZ_LD = '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The clicks nobody has to make | Samuel Ochoa","description":"An insurance agency runs AgencyZoom. We automated the whole new-business workflow by letting Claude operate AgencyZoom through the Chrome browser integration.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/case-studies/agencyzoom-automation.html","image":"https://samuelochoa.com/sam-hero.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://samuelochoa.com/case-studies/"},{"@type":"ListItem","position":3,"name":"The clicks nobody has to make","item":"https://samuelochoa.com/case-studies/agencyzoom-automation.html"}]}</script>'''
+
+AZ_BODY = r'''<div class="container"><div class="page">
+<p class="eyebrow" style="color:var(--primary-purple); font-weight:700; letter-spacing:0.15em; text-transform:uppercase; font-size:13px; margin-bottom:10px;"><a href="index.html" style="color:inherit;">Case studies</a> / The clicks nobody has to make</p>
+<h1 class="title">The clicks nobody has to make</h1>
+<p class="lede">A property and casualty agency runs on AgencyZoom. The native automations handle the drips and the triggers, but the day is still full of clicking. Reading the inbound, creating the deal, sending the right template, moving the stage, setting the next task. We put Claude in the browser through the Chrome integration and let it do the clicking, so the producers could stay on the phone instead of in the CRM.</p>
+
+<h2>The problem with a good CRM</h2>
+<p>AgencyZoom does a lot for a P&amp;C agency. Pipelines, native automations, reporting, the whole service side. But if you watch a producer's actual day, a surprising amount of it is still manual clicking inside the tool. A lead comes in, someone reads it, creates the deal, picks a template, sends it, drags the card to the next stage, and sets a follow-up task. None of it is hard. All of it is time, and it is time spent in the CRM instead of in front of a client.</p>
+<p>Native automations cover the parts with a clean trigger. They do not cover the look-at-it-and-decide clicking in between, and that is where the day quietly goes.</p>
+
+<h2>The shape of it</h2>
+<p>Instead of bolting on another tool, we let Claude operate AgencyZoom the same way a person does, through the browser. The Chrome integration lets Claude see the page that is on screen and act on it. Click, type, and read the result back. AgencyZoom itself does not change at all. It just has a fast, consistent operator working inside it.</p>
+
+<div class="sketch" data-viewbox="0 0 940 280" id="dg-az-loop">
+  <svg></svg>
+  <div class="sketch-caption">~ claude operates agencyzoom through the browser ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-az-loop');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.box(svg, rc, { x: 40,  y: 90, w: 240, h: 120, title: 'Claude', sub: 'reads + decides',
+    titleY: 60, subY: 92, titleSize: 30, subSize: 16 });
+  sketch.box(svg, rc, { x: 350, y: 90, w: 240, h: 120, title: 'Chrome', sub: 'the browser tab',
+    titleY: 60, subY: 92, titleSize: 30, subSize: 16,
+    fillColor: '#fff7ed', strokeColor: '#d97706', textColor: '#b45309', subColor: '#b45309' });
+  sketch.box(svg, rc, { x: 660, y: 90, w: 240, h: 120, title: 'AgencyZoom', sub: 'CRM + automations',
+    titleY: 60, subY: 92, titleSize: 28, subSize: 16 });
+  sketch.arrow(svg, rc, { x1: 280, x2: 350, y: 150, label: 'sees + acts' });
+  sketch.arrow(svg, rc, { x1: 590, x2: 660, y: 150, label: 'the live page' });
+  sketch.note(svg, 470, 248, 'no new system, just the screens a producer already uses', { size: 15 });
+});
+</script>
+
+<h2>What it actually does</h2>
+<p>The core of it is the new-business workflow, the same sequence a trained CSR runs for every lead. Claude does each step on the live screen.</p>
+
+<div class="sketch" data-viewbox="0 0 920 220" id="dg-az-steps">
+  <svg></svg>
+  <div class="sketch-caption">~ the new-business workflow, every lead, every time ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-az-steps');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.numberedSteps(svg, rc, {
+    x: 40, y: 86, w: 840, radius: 30, direction: 'h',
+    items: [
+      { title: 'Lead lands',   sub: 'form, call, import' },
+      { title: 'Create deal',  sub: 'fields filled in AZ' },
+      { title: 'Send template', sub: 'intro + intake' },
+      { title: 'Move stage',   sub: 'on to quoting' },
+      { title: 'Set tasks',    sub: 'follow-ups queued' }
+    ]
+  });
+});
+</script>
+
+<p>Because it is reading the actual page, it handles the parts a rigid automation chokes on. A name in the wrong field, a template that depends on the line of business, a stage that should only move once a condition is met. It looks at what is there, does the sensible thing, and leaves a clean record behind.</p>
+
+<h2>What AgencyZoom could not reach on its own</h2>
+<p>Here is the split. AgencyZoom's own automations were already doing the easy, trigger-based work. What was left was the clicking that needed a human to look and decide. That is the column Claude took over.</p>
+
+<div class="sketch" data-viewbox="0 0 920 300" id="dg-az-compare">
+  <svg></svg>
+  <div class="sketch-caption">~ agencyzoom automates a lot. this was the part it could not reach ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-az-compare');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.compare(svg, rc, {
+    x: 24, y: 30, w: 872, h: 240,
+    left: {
+      title: 'What still needed a human',
+      items: [
+        'Reading the inbound and typing it in',
+        'Clicking through each pipeline stage',
+        'Choosing and sending the template',
+        'Chasing every quote follow-up',
+        'Updating tasks after each touch'
+      ]
+    },
+    right: {
+      title: 'What Claude does in Chrome',
+      items: [
+        'Reads the lead, fills the deal',
+        'Moves the stage when it should',
+        'Sends the matching template',
+        'Runs the follow-up cadence',
+        'Closes and sets the next task'
+      ]
+    }
+  });
+});
+</script>
+
+<h2>What a day looks like</h2>
+<p>Across a representative day, this is the volume of admin the agent quietly handled. Every one of these was a click, or a few, that a producer would otherwise have made.</p>
+
+<div class="sketch" data-viewbox="0 0 920 270" id="dg-az-bars">
+  <svg></svg>
+  <div class="sketch-caption">~ a day of admin, all done by the agent ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-az-bars');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.bars(svg, rc, {
+    x: 16, y: 36, w: 880, barH: 44, gap: 28, labelW: 230, max: 240,
+    items: [
+      { label: 'Deals created',  value: 60,  note: '60' },
+      { label: 'Templates sent', value: 118, note: '118' },
+      { label: 'Stages moved',   value: 140, note: '140' },
+      { label: 'Tasks updated',  value: 205, note: '205' }
+    ]
+  });
+});
+</script>
+
+<p>The producers did not get a new dashboard to learn. They got their afternoons back.</p>
+
+<h2>The guardrails</h2>
+<p>A browser automation working inside an agency's CRM has to be trustworthy, so the setup is deliberately boring about it.</p>
+<div class="callout note"><strong>How it stays safe.</strong> Claude works in the same account a person does, so every action it takes shows up in AgencyZoom's own history, attributable and reversible. It pauses and asks before anything it cannot undo. And it never touches the part that needs a license. It runs the workflow. The producer still owns the quote, the advice, and the bind.</div>
+
+<h2>Nothing got ripped out</h2>
+<p>The reason this was a short build and not a long migration is that nothing got replaced. The agency kept AgencyZoom, kept their pipeline, kept their templates. Claude just sits on top of all of it.</p>
+
+<div class="sketch" data-viewbox="0 0 720 270" id="dg-az-stack">
+  <svg></svg>
+  <div class="sketch-caption">~ nothing replaced. claude sits on top of what they already run ~</div>
+</div>
+<script>
+document.addEventListener('sketch:ready', function() {
+  var wrap = document.getElementById('dg-az-stack');
+  if (!wrap || wrap.dataset.drawn) return;
+  wrap.dataset.drawn = '1';
+  var svg = wrap.querySelector('svg');
+  var rc = sketch.rc(svg);
+  sketch.stack(svg, rc, {
+    x: 130, y: 18, w: 460, layerH: 66,
+    layers: [
+      { label: 'Claude', sub: 'decides what needs doing' },
+      { label: 'Chrome integration', sub: 'sees the page, clicks, types',
+        color: '#fff7ed', stroke: '#d97706', textColor: '#b45309' },
+      { label: 'AgencyZoom, unchanged', sub: 'the agency keeps working as before' }
+    ]
+  });
+});
+</script>
+
+<p>That is the part agencies actually care about. They did not buy a new system or retrain a team. They kept the tool they know and put a tireless operator inside it.</p>
+
+<div class="callout insight"><strong>Honest notes.</strong> The numbers here are from a representative engagement, not a named client, and this is a pattern I build rather than a product on a shelf. Browser automation needs upkeep. When the tool's screens change, the operator needs a tune-up, which is the trade you make for not rebuilding anything. And to be clear about scope, Claude runs the workflow. It does not underwrite, quote, or give anyone insurance advice. A licensed human still does that.</div>
+
+<div class="contact-card">
+  <h3>Buried in AgencyZoom busywork?</h3>
+  <p>If your producers spend more time in the CRM than on the phone, this is the kind of build I do. Tell me your workflow and what eats the day, and I will tell you honestly what is worth automating and what is not.</p>
+  <a href="../contact.html" class="btn btn-primary">Tell me about your workflow</a>
+</div>
+
+<h2>Related reading</h2>
+<div class="cards">
+  <a href="../framework/tools/browser-automation.html" class="card">
+    <h3>Browser automation</h3>
+    <p>How an agent drives a real browser to operate the tools you already use.</p>
+  </a>
+  <a href="voice-intake.html" class="card">
+    <h3>Calls that file themselves</h3>
+    <p>The voice version. Dialer recordings transcribed, qualified, and filed.</p>
+  </a>
+  <a href="free-lead-engine.html" class="card">
+    <h3>The free lead engine</h3>
+    <p>The outbound version. Scrape, verify, qualify, and send, end to end.</p>
+  </a>
+  <a href="../ai-consulting.html" class="card">
+    <h3>Work with me</h3>
+    <p>Advisory and build engagements on systems like this one.</p>
+  </a>
+</div>
+'''
+
+az_study = head(
+    "The clicks nobody has to make | Samuel Ochoa",
+    "An insurance agency runs AgencyZoom. We automated the whole new-business workflow by letting Claude operate AgencyZoom through the Chrome browser integration.",
+    "https://samuelochoa.com/case-studies/agencyzoom-automation.html",
+    ld=AZ_LD,
+) + nav + AZ_BODY + FOOT + navscript + "</body></html>"
+(ROOT / "case-studies" / "agencyzoom-automation.html").write_text(az_study)
+
+# ===========================================================================
 #  INDEX: case studies landing
 # ===========================================================================
 IDX_LD = '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Case studies | Samuel Ochoa","description":"Systems I have built and run. Real architectures, honest write-ups, hand-drawn diagrams.","url":"https://samuelochoa.com/case-studies/"}</script>'''
@@ -560,6 +768,10 @@ IDX_BODY = r'''<section class="hero hero-compact" style="padding:60px 0 36px;">
   <a href="voice-intake.html" class="card">
     <h3>Calls that file themselves</h3>
     <p>GHL to Whisper to GHL. Dialer call recordings get transcribed locally, qualified from the transcript, and written back into the CRM so the right automation fires. Nobody has to listen to the calls.</p>
+  </a>
+  <a href="agencyzoom-automation.html" class="card">
+    <h3>The clicks nobody has to make</h3>
+    <p>An insurance agency on AgencyZoom. Native automations covered the triggers, but the day was still full of clicking. We put Claude in the browser through the Chrome integration and let it run the whole workflow.</p>
   </a>
 </div>
 <div class="callout note" style="margin-top:40px;"><strong>More on the way.</strong> I write these up as I build them. If there is a system you want walked through in this much detail, <a href="../contact.html">say so</a> and it might be the next one.</div>
