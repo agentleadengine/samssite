@@ -133,37 +133,12 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;}
 footer a{color:var(--ink2);}
 
-/* Sam chat */
-.sam-chat{position:fixed;right:18px;bottom:18px;z-index:9998;width:min(342px,calc(100vw - 28px));font-family:'Inter',system-ui,sans-serif;}
-.sam-chat-panel{background:#fff;border:1px solid #d8cffa;border-radius:18px;box-shadow:0 18px 55px rgba(20,16,30,.18);overflow:hidden;}
-.sam-chat-head{display:flex;align-items:center;gap:11px;padding:14px 15px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbf9fe);}
-.sam-chat-head img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 6px 16px rgba(20,16,30,.15);}
-.sam-chat-name{margin:0;font-size:14px;font-weight:800;color:var(--ink);}
-.sam-chat-status{display:flex;align-items:center;gap:6px;margin:2px 0 0;font-size:12px;font-weight:600;color:var(--ink2);}
-.sam-chat-status::before{content:"";width:7px;height:7px;border-radius:999px;background:#19b36b;box-shadow:0 0 0 3px rgba(25,179,107,.14);}
-.sam-chat-close{margin-left:auto;width:30px;height:30px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;}
-.sam-chat-body{padding:15px;}
-.sam-chat-body p{margin:0;color:var(--ink);font-size:14.5px;line-height:1.48;}
-.sam-chat-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px;}
-.sam-chat-actions a,.sam-chat-actions button{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:12px;font-size:13px;font-weight:800;border:1.5px solid var(--line);cursor:pointer;font-family:inherit;text-align:center;}
-.sam-chat-actions a:first-child{background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(90,31,224,.24);}
-.sam-chat-actions a:nth-child(2),.sam-chat-actions button{background:#fff;color:var(--purple);}
-.sam-chat-actions button{grid-column:1/-1;}
-.sam-chat-launcher{display:none;align-items:center;gap:9px;margin-left:auto;padding:12px 15px;border:0;border-radius:999px;background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;font-size:14px;font-weight:800;box-shadow:0 12px 32px rgba(90,31,224,.28);cursor:pointer;font-family:inherit;}
-.sam-chat[data-collapsed="true"]{width:auto;}
-.sam-chat[data-collapsed="true"] .sam-chat-panel{display:none;}
-.sam-chat[data-collapsed="true"] .sam-chat-launcher{display:flex;}
-
 @media(max-width:900px){
   .hgrid,.fgrid,.tgrid,.proof-lead,.proof-duo,.quick-proof{grid-template-columns:1fr;}
   .sec{padding:44px 0;}
   .hdr .btn{display:none;}
   .hdr-phone{font-size:12px;padding:9px 11px;}
   .hero-proof-strip{align-items:flex-start;}
-  .sam-chat{right:10px;bottom:10px;width:min(340px,calc(100vw - 20px));}
-  .sam-chat-body{padding:13px;}
-  .sam-chat-actions{grid-template-columns:1fr;}
-  .sam-chat-actions button{grid-column:auto;}
 }
 </style>
 </head>
@@ -350,45 +325,8 @@ footer a{color:var(--ink2);}
   </div>
 </footer>
 
-<aside class="sam-chat" data-collapsed="false" aria-label="Chat with Sam">
-  <div class="sam-chat-panel">
-    <div class="sam-chat-head">
-      <img src="sam-real.jpg" alt="Samuel Ochoa">
-      <div>
-        <p class="sam-chat-name">Sam Ochoa</p>
-        <p class="sam-chat-status">I handle these personally</p>
-      </div>
-      <button class="sam-chat-close" type="button" aria-label="Hide chat prompt">&times;</button>
-    </div>
-    <div class="sam-chat-body">
-      <p>Hey, it's Sam. Tell me what you want to automate or improve. Call me now, text me, or send the details and I'll follow up.</p>
-      <div class="sam-chat-actions">
-        <a href="tel:+15167801385">Call Sam</a>
-        <a href="sms:+15167801385?body=Hey%20Sam%2C%20I%20want%20to%20automate%20or%20improve%20">Text Sam</a>
-        <button type="button" data-sam-open-form>Send details</button>
-      </div>
-    </div>
-  </div>
-  <button class="sam-chat-launcher" type="button" aria-label="Open chat prompt">Chat with Sam</button>
-</aside>
-
-<script>
-  (function(){
-    var chat = document.querySelector('.sam-chat');
-    if (!chat) return;
-    var close = chat.querySelector('.sam-chat-close');
-    var launcher = chat.querySelector('.sam-chat-launcher');
-    var details = chat.querySelector('[data-sam-open-form]');
-    function setCollapsed(value){ chat.setAttribute('data-collapsed', value ? 'true' : 'false'); }
-    close && close.addEventListener('click', function(){ setCollapsed(true); });
-    launcher && launcher.addEventListener('click', function(){ setCollapsed(false); });
-    details && details.addEventListener('click', function(){
-      var intake = document.getElementById('intake');
-      if (intake) intake.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setCollapsed(true);
-    });
-  })();
-</script>
+<!-- LeadConnector Chat Widget -->
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a222a7d6b2fdf39dfc593c6" data-source="WEB_USER"></script>
 
 </body>
 </html>
