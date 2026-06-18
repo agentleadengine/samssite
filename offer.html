@@ -61,6 +61,12 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .hsub{font-size:18px;line-height:1.5;color:var(--ink2);margin:18px 0 24px;max-width:30em;}
 .ctarow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
 .hguar{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13.5px;font-weight:600;color:var(--purple);background:var(--softer);border:1px solid var(--line);padding:8px 14px;border-radius:999px;}
+.hero-proof-strip{display:flex;align-items:center;gap:13px;margin-top:18px;padding:12px 14px;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:16px;max-width:560px;box-shadow:0 8px 24px rgba(20,16,30,.05);}
+.face-row{display:flex;flex-shrink:0;}
+.face-row img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-8px;box-shadow:0 4px 10px rgba(20,16,30,.12);}
+.face-row img:first-child{margin-left:0;}
+.hero-proof-strip p{margin:0;color:var(--ink2);font-size:13.5px;line-height:1.35;}
+.hero-proof-strip strong{color:var(--ink);}
 .video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 22px 60px rgba(20,16,30,.16),0 0 0 1px var(--line);}
 .video iframe{width:100%;height:100%;border:0;}
 
@@ -70,7 +76,7 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .trust b{color:var(--purple);}
 
 /* form */
-.fgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:start;}
+.fgrid{display:grid;grid-template-columns:.78fr 1.22fr;gap:32px;align-items:start;}
 .fmini p{margin:10px 0;color:var(--ink2);font-size:15px;}
 .fmini strong{color:var(--ink);}
 .fcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 16px 50px rgba(20,16,30,.08);}
@@ -79,8 +85,16 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .fcard-intro h3{font-size:18px;font-weight:800;}
 .fpromises{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px;}
 .fpromises span{font-size:12px;font-weight:600;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:6px 11px;border-radius:999px;}
+.privacy-note{margin:12px 0 14px;color:var(--ink2);font-size:12.5px;line-height:1.45;}
+.form-proof-note{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;}
+.form-proof-note p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.55;}
+.form-proof-note strong{display:block;color:var(--ink);margin-bottom:6px;}
+.ghl-frame{width:100%;height:760px;min-height:760px;border:none;border-radius:10px;display:block;background:#fff;}
 
 /* testimonials */
+.proof-lead{display:grid;grid-template-columns:1fr .72fr;gap:22px;align-items:start;}
+.proof-stack{display:grid;gap:22px;margin-top:22px;}
+.proof-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;}
 .tgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 10px 34px rgba(20,16,30,.06);}
 .tcard.feat{background:var(--softer);border-left:4px solid var(--purple);}
@@ -92,6 +106,12 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .quote{font-size:16.5px;line-height:1.5;margin:0;}
 .tvideo{aspect-ratio:9/16;max-height:420px;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(20,16,30,.16);}
 .tvideo iframe{width:100%;height:100%;border:0;}
+.tvideo-wide{aspect-ratio:16/9;margin:16px 0;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(20,16,30,.12);}
+.tvideo-wide iframe{width:100%;height:100%;border:0;}
+.quick-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
+.quick-proof div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:left;box-shadow:0 8px 26px rgba(20,16,30,.05);}
+.quick-proof strong{display:block;color:var(--ink);font-size:14px;margin-bottom:4px;}
+.quick-proof span{display:block;color:var(--ink2);font-size:13px;line-height:1.4;}
 
 /* guarantee */
 .guar{background:linear-gradient(160deg,#faf7ff,#f1e9fe);border:1px solid #ddd0f7;border-radius:24px;padding:44px 40px;text-align:center;box-shadow:0 16px 50px rgba(90,31,224,.08);}
@@ -105,9 +125,10 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 footer a{color:var(--ink2);}
 
 @media(max-width:900px){
-  .hgrid,.fgrid,.tgrid{grid-template-columns:1fr;}
+  .hgrid,.fgrid,.tgrid,.proof-lead,.proof-duo,.quick-proof{grid-template-columns:1fr;}
   .sec{padding:44px 0;}
   .hdr .btn{display:none;}
+  .hero-proof-strip{align-items:flex-start;}
 }
 </style>
 </head>
@@ -132,6 +153,14 @@ footer a{color:var(--ink2);}
         <a href="#proof" class="btn btn-ghost">See client proof</a>
       </div>
       <div class="hguar">&#10003; Leave with a working system, or you don't pay</div>
+      <div class="hero-proof-strip" aria-label="Client proof">
+        <div class="face-row">
+          <img src="zach-petrocca.jpeg" alt="Zack Petrocca">
+          <img src="ashel.jpg" alt="Ashel Troncoso">
+          <img src="william-kanas.webp" alt="William S. Kanas, Esq.">
+        </div>
+        <p><strong>Video proof from real operators</strong> in real estate and insurance, plus long-running legal ops proof.</p>
+      </div>
     </div>
     <div>
       <div class="video">
@@ -149,6 +178,61 @@ footer a{color:var(--ink2);}
   </div>
 </div>
 
+<!-- PROOF -->
+<section class="sec alt" id="proof">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Real clients, real results</span>
+      <h2 class="h2">Proof before the pitch.</h2>
+      <p class="lead">Before you fill anything out, hear from people who already trusted me with their workflows.</p>
+    </div>
+    <div class="proof-lead">
+      <div class="tcard feat">
+        <div class="tperson">
+          <img src="zach-petrocca.jpeg" alt="Zack Petrocca">
+          <div><p class="tname">Zack Petrocca</p><p class="trole">COO, Stevens Real Estate Team &middot; Founder, Origin Consulting &amp; Curio Studio</p></div>
+        </div>
+        <p class="quote">"Sam didn't just hand me tools, he built systems I actually understood and could run. Tasks that took hours now take minutes, and it compounded across every business I operate. If you're serious about building with AI, Sam is the person you want in your corner."</p>
+      </div>
+      <div class="tvideo">
+        <iframe src="https://www.youtube.com/embed/zQZFR67Blcg" title="Zack Petrocca testimonial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="proof-stack">
+      <div class="tcard">
+        <div class="tperson">
+          <img src="ashel.jpg" alt="Ashel Troncoso">
+          <div><p class="tname">Ashel Troncoso</p><p class="trole">Owner, ATI Insurance Group &middot; <a href="https://www.atsigroup.com" target="_blank" rel="noopener">atsigroup.com</a></p></div>
+        </div>
+        <div class="tvideo-wide"><iframe src="https://www.youtube.com/embed/Unix2k2OLq0" title="Ashel Troncoso testimonial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="quote">"I was as skeptical as could be. I didn't trust AI and didn't think it would work, but Sam convinced me to give it a try and I'm so glad I did. He's built workflows that save me time every day, from reminders and organization to e-sign prep and PDFs. He's patient, he genuinely loves teaching it, and if you want someone who will actually teach you AI, he's your guy."</p>
+      </div>
+      <div class="proof-duo">
+        <div class="tcard">
+          <div class="tperson">
+            <img src="william-kanas.webp" alt="William S. Kanas, Esq.">
+            <div><p class="tname">William S. Kanas, Esq.</p><p class="trole">Sanford L. Pirotin, P.C. &middot; <a href="https://pirotinlaw.com" target="_blank" rel="noopener">pirotinlaw.com</a></p></div>
+          </div>
+          <p class="quote">"Sam modernized our IT department a decade ago, and the work still keeps our office running at peak efficiency. He has now embraced AI, and once again our office is the beneficiary of his expertise."</p>
+        </div>
+        <div class="tcard">
+          <div class="tperson">
+            <img src="sam-real.jpg" alt="Samuel Ochoa">
+            <div><p class="tname">What this means for you</p><p class="trole">One workflow, built around your actual tools</p></div>
+          </div>
+          <p class="quote">The common thread is not a tool. It is a messy workflow turned into a system the owner or team can understand, run, and improve.</p>
+        </div>
+      </div>
+      <div class="quick-proof" aria-label="Proof summary">
+        <div><strong>Real estate</strong><span>Follow-up, admin, and multi-business AI leverage.</span></div>
+        <div><strong>Insurance</strong><span>Reminders, organization, e-sign prep, PDFs, and daily workflow support.</span></div>
+        <div><strong>Legal</strong><span>Durable office systems that kept running for years.</span></div>
+      </div>
+    </div>
+    <div style="margin-top:28px;text-align:center;"><a href="#intake" class="btn btn-primary">Get my 15-minute review &rarr;</a></div>
+  </div>
+</section>
+
 <!-- FORM -->
 <section class="sec" id="intake">
   <div class="wrap fgrid">
@@ -161,6 +245,10 @@ footer a{color:var(--ink2);}
         <p><strong>Best first project:</strong> one workflow with visible time or revenue leakage.</p>
         <p><strong>Next step:</strong> a practical automation map, not a pitch deck.</p>
       </div>
+      <div class="form-proof-note">
+        <strong>What happens after you submit?</strong>
+        <p>I review the workflow first. If it looks useful, we talk through the bottleneck. If it is not a fit for AI, I will say that plainly.</p>
+      </div>
     </div>
     <div class="fcard">
       <div class="fcard-intro">
@@ -169,12 +257,13 @@ footer a{color:var(--ink2);}
         <div class="fpromises" aria-label="What to expect">
           <span>No platform pitch</span>
           <span>One workflow is enough</span>
-          <span>Reply by email</span>
+          <span>No spam or newsletter</span>
         </div>
+        <p class="privacy-note">Phone is only there so I can confirm a real request and follow up if email misses you.</p>
       </div>
       <iframe
         src="https://api.leadconnectorhq.com/widget/form/2ELmj79IdE53WgzpMPAS"
-        style="width:100%;min-height:940px;border:none;border-radius:8px"
+        class="ghl-frame"
         id="inline-2ELmj79IdE53WgzpMPAS"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
@@ -184,43 +273,12 @@ footer a{color:var(--ink2);}
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="Google Ads - AI Workflow Intake"
-        data-height="940"
+        data-height="760"
         data-layout-iframe-id="inline-2ELmj79IdE53WgzpMPAS"
         data-form-id="2ELmj79IdE53WgzpMPAS"
         title="Google Ads - AI Workflow Intake">
       </iframe>
       <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="sec alt" id="proof">
-  <div class="wrap">
-    <div class="center">
-      <span class="kicker">Real clients, real results</span>
-      <h2 class="h2">Proof, in their <em>own words</em>.</h2>
-    </div>
-    <div class="tgrid">
-      <div class="tcard feat">
-        <div class="tperson">
-          <img src="zach-petrocca.jpeg" alt="Zack Petrocca">
-          <div><p class="tname">Zack Petrocca</p><p class="trole">COO, Stevens Real Estate Team &middot; Founder, Origin Consulting &amp; Curio Studio</p></div>
-        </div>
-        <p class="quote">"Sam didn't just hand me tools, he built systems I actually understood and could run. Tasks that took hours now take minutes, and it compounded across every business I operate. If you're serious about building with AI, Sam is the person you want in your corner."</p>
-      </div>
-      <div class="tvideo">
-        <iframe src="https://www.youtube.com/embed/zQZFR67Blcg" title="Zack Petrocca testimonial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div style="margin-top:22px;">
-      <div class="tcard">
-        <div class="tperson">
-          <img src="william-kanas.webp" alt="William S. Kanas, Esq.">
-          <div><p class="tname">William S. Kanas, Esq.</p><p class="trole">Sanford L. Pirotin, P.C. &middot; <a href="https://pirotinlaw.com" target="_blank" rel="noopener">pirotinlaw.com</a></p></div>
-        </div>
-        <p class="quote">"Sam modernized our IT department a decade ago, and the work still keeps our office running at peak efficiency. He has now embraced AI, and once again our office is the beneficiary of his expertise."</p>
-      </div>
     </div>
   </div>
 </section>
