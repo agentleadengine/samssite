@@ -247,6 +247,27 @@ footer a{color:var(--ink2);}
         data-form-id="2ELmj79IdE53WgzpMPAS"
         title="Google Ads - AI Results Intake">
       </iframe>
+      <script>
+      /* Pass Google Ads click id (and UTMs) from the parent URL into the GHL
+         form so booked-call offline conversions can be attributed. The form
+         maps these to hidden fields by Query Key. */
+      (function () {
+        try {
+          var KEYS = ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+          var qp = new URLSearchParams(window.location.search);
+          var pairs = [];
+          KEYS.forEach(function (k) { var v = qp.get(k); if (v) pairs.push(k + '=' + encodeURIComponent(v)); });
+          if (!qp.get('gclid')) {
+            var m = document.cookie.match(/(?:^|;\s*)_gcl_aw=GCL\.\d+\.([^;]+)/);
+            if (m && m[1]) pairs.push('gclid=' + encodeURIComponent(m[1]));
+          }
+          if (pairs.length) {
+            var f = document.getElementById('inline-2ELmj79IdE53WgzpMPAS');
+            if (f) { f.src = f.src + (f.src.indexOf('?') > -1 ? '&' : '?') + pairs.join('&'); }
+          }
+        } catch (e) { /* never block the form */ }
+      })();
+      </script>
       <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </div>
