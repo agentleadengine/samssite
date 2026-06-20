@@ -3,163 +3,25 @@
 
 Replaces whatever <nav class="topbar">...</nav> block currently exists and the
 nav-init <script> block that was previously injected.
+
+Nav layout (consulting-first, one consistent menu on every page):
+    Home   Work with me   Case Studies   Resources v   About   Contact
+where Resources folds the whole knowledge base into one dropdown.
 """
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/ble/Desktop/sams site")
+ROOT = Path("/Users/ale/Desktop/samssite")
 
 # -----------------------------------------------------------------------------
-# Nav structure. Each entry is (label, href, submenu).
-#   submenu for simple dropdowns = list of (label, href) pairs.
-#   submenu for the mega menu = list of (section_label, section_href, [(label, href), ...]).
+# Resources dropdown: the knowledge base, folded into a single simple menu.
+# Each entry is (label, href) pointing at that section's landing page.
 # -----------------------------------------------------------------------------
-
-FRAMEWORK = [
-    ("Overview", "framework/index.html"),
-    ("What is Autonomous AI", "framework/what-is-autonomous-ai.html"),
-    ("Autonomy Spectrum", "framework/the-autonomy-spectrum.html"),
-    ("Claude (model)", "framework/claude/index.html"),
-    ("Claude Code (harness)", "framework/claude-code/index.html"),
-    ("MCP", "framework/mcp/index.html"),
-    ("Plugins", "framework/plugins/index.html"),
-    ("Agent Patterns", "framework/patterns/index.html"),
-    ("Going Autonomous", "framework/autonomous/index.html"),
-    ("Build Guides", "framework/build/index.html"),
-    ("Tools", "framework/tools/index.html"),
-    ("Glossary", "framework/glossary.html"),
-]
-
-PLAYBOOKS = [
-    ("All Playbooks", "playbooks/index.html"),
-    ("Insurance", "playbooks/insurance/index.html"),
-    ("Real Estate", "playbooks/real-estate/index.html"),
-    ("Mortgage", "playbooks/mortgage/index.html"),
-    ("Financial Advisor", "playbooks/financial-advisor/index.html"),
-    ("Personal Trainer", "playbooks/personal-trainer/index.html"),
-    ("Coach", "playbooks/coach/index.html"),
-    ("Dentist", "playbooks/dentist/index.html"),
-    ("Chiropractor", "playbooks/chiropractor/index.html"),
-    ("CPA", "playbooks/cpa/index.html"),
-    ("Restaurant", "playbooks/restaurant/index.html"),
-    ("Agency", "playbooks/agency/index.html"),
-    ("Ecommerce", "playbooks/ecommerce/index.html"),
-    ("SaaS", "playbooks/saas/index.html"),
-    ("Podcaster", "playbooks/podcaster/index.html"),
-    ("Author", "playbooks/author/index.html"),
-]
-
-# Expertise mega menu - each column is a category with its subpages.
-EXPERTISE = [
-    ("SEO", "expertise/seo/index.html", [
-        ("Foundations", "expertise/seo/foundations/index.html"),
-        ("Keyword Research", "expertise/seo/keywords/index.html"),
-        ("On-Page", "expertise/seo/on-page/index.html"),
-        ("Technical SEO", "expertise/seo/technical/index.html"),
-        ("Link Building", "expertise/seo/links/index.html"),
-        ("Content SEO", "expertise/seo/content/index.html"),
-        ("Local SEO", "expertise/seo/local/index.html"),
-        ("International", "expertise/seo/international/index.html"),
-        ("Ecommerce SEO", "expertise/seo/ecommerce/index.html"),
-        ("Advanced", "expertise/seo/advanced/index.html"),
-        ("Analytics", "expertise/seo/analytics/index.html"),
-    ]),
-    ("AI Agents", "expertise/agents/index.html", [
-        ("Foundations", "expertise/agents/foundations/index.html"),
-        ("Frameworks", "expertise/agents/frameworks/index.html"),
-        ("Patterns", "expertise/agents/patterns/index.html"),
-        ("Tool Use", "expertise/agents/tools/index.html"),
-        ("Memory", "expertise/agents/memory/index.html"),
-        ("Agent Loops", "expertise/agents/loops/index.html"),
-        ("Multi-Agent", "expertise/agents/multi/index.html"),
-        ("Evaluation", "expertise/agents/eval/index.html"),
-        ("Production", "expertise/agents/prod/index.html"),
-    ]),
-    ("RAG", "expertise/rag/index.html", [
-        ("Foundations", "expertise/rag/foundations/index.html"),
-        ("Embeddings", "expertise/rag/embeddings/index.html"),
-        ("Vector Stores", "expertise/rag/vectors/index.html"),
-        ("Chunking", "expertise/rag/chunking/index.html"),
-        ("Retrieval", "expertise/rag/retrieval/index.html"),
-        ("Documents", "expertise/rag/docs/index.html"),
-        ("Evaluation", "expertise/rag/eval/index.html"),
-        ("Advanced", "expertise/rag/advanced/index.html"),
-        ("Production", "expertise/rag/prod/index.html"),
-        ("Case Studies", "expertise/rag/cases/index.html"),
-    ]),
-    ("Direct Response", "expertise/direct-response/index.html", [
-        ("Foundations", "expertise/direct-response/foundations/index.html"),
-        ("The Market", "expertise/direct-response/market/index.html"),
-        ("The Offer", "expertise/direct-response/offer/index.html"),
-        ("Copywriting", "expertise/direct-response/copy/index.html"),
-        ("Sales Letters", "expertise/direct-response/letters/index.html"),
-        ("Lead Generation", "expertise/direct-response/leads/index.html"),
-        ("Follow-Up", "expertise/direct-response/followup/index.html"),
-        ("Testing", "expertise/direct-response/testing/index.html"),
-        ("Scaling", "expertise/direct-response/scaling/index.html"),
-    ]),
-    ("Paid Advertising", "expertise/paid-ads/index.html", [
-        ("Foundations", "expertise/paid-ads/foundations/index.html"),
-        ("Creative", "expertise/paid-ads/creative/index.html"),
-        ("Meta Ads", "expertise/paid-ads/meta/index.html"),
-        ("Google Ads", "expertise/paid-ads/google/index.html"),
-        ("YouTube Ads", "expertise/paid-ads/youtube/index.html"),
-        ("TikTok Ads", "expertise/paid-ads/tiktok/index.html"),
-        ("LinkedIn Ads", "expertise/paid-ads/linkedin/index.html"),
-        ("Measurement", "expertise/paid-ads/measurement/index.html"),
-    ]),
-    ("Cold Email", "expertise/cold-email/index.html", [
-        ("Foundations", "expertise/cold-email/foundations/index.html"),
-        ("Infrastructure", "expertise/cold-email/infra/index.html"),
-        ("Deliverability", "expertise/cold-email/deliverability/index.html"),
-        ("List Building", "expertise/cold-email/lists/index.html"),
-        ("Copywriting", "expertise/cold-email/copy/index.html"),
-        ("Sequences", "expertise/cold-email/sequences/index.html"),
-        ("Plays", "expertise/cold-email/plays/index.html"),
-        ("Testing", "expertise/cold-email/testing/index.html"),
-    ]),
-    ("Growth Marketing", "expertise/growth-marketing/index.html", [
-        ("Foundations", "expertise/growth-marketing/foundations/index.html"),
-        ("Acquisition", "expertise/growth-marketing/acq/index.html"),
-        ("Activation", "expertise/growth-marketing/activation/index.html"),
-        ("Retention", "expertise/growth-marketing/retention/index.html"),
-        ("Revenue", "expertise/growth-marketing/revenue/index.html"),
-        ("Experiments", "expertise/growth-marketing/experiments/index.html"),
-        ("Analytics", "expertise/growth-marketing/analytics/index.html"),
-        ("Process", "expertise/growth-marketing/process/index.html"),
-        ("Plays", "expertise/growth-marketing/plays/index.html"),
-    ]),
-    ("Email Marketing", "expertise/email-marketing/index.html", [
-        ("Foundations", "expertise/email-marketing/foundations/index.html"),
-        ("List Growth", "expertise/email-marketing/list/index.html"),
-        ("Deliverability", "expertise/email-marketing/deliverability/index.html"),
-        ("Broadcasts", "expertise/email-marketing/broadcasts/index.html"),
-        ("Automations", "expertise/email-marketing/automations/index.html"),
-        ("Commerce", "expertise/email-marketing/commerce/index.html"),
-        ("SaaS", "expertise/email-marketing/saas/index.html"),
-        ("Testing", "expertise/email-marketing/testing/index.html"),
-        ("Tools", "expertise/email-marketing/tools/index.html"),
-    ]),
-    ("CRO", "expertise/cro/index.html", [
-        ("Foundations", "expertise/cro/foundations/index.html"),
-        ("Research", "expertise/cro/research/index.html"),
-        ("Frameworks", "expertise/cro/frameworks/index.html"),
-        ("Landing Pages", "expertise/cro/pages/index.html"),
-        ("Conversion Copy", "expertise/cro/conversion/index.html"),
-        ("Testing", "expertise/cro/testing/index.html"),
-        ("Analytics", "expertise/cro/analytics/index.html"),
-        ("Tools", "expertise/cro/tools/index.html"),
-    ]),
-    ("Business Management", "expertise/business-management/index.html", [
-        ("Strategy", "expertise/business-management/strategy/index.html"),
-        ("Operating Systems", "expertise/business-management/operating-systems/index.html"),
-        ("Leadership", "expertise/business-management/leadership/index.html"),
-        ("People", "expertise/business-management/people/index.html"),
-        ("Execution", "expertise/business-management/execution/index.html"),
-        ("Sales", "expertise/business-management/sales/index.html"),
-        ("Finance", "expertise/business-management/finance/index.html"),
-        ("Risk", "expertise/business-management/risk/index.html"),
-    ]),
+RESOURCES = [
+    ("Framework", "framework/index.html"),
+    ("Expertise", "expertise/index.html"),
+    ("Playbooks", "playbooks/index.html"),
+    ("Writing", "writing.html"),
 ]
 
 
@@ -176,55 +38,18 @@ def build_nav(R: str) -> str:
         '<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>',
         '<div class="nav-links">',
         f'<a href="{R}index.html" class="nav-link">Home</a>',
-        # Framework dropdown
+        f'<a href="{R}ai-consulting.html" class="nav-link">Work with me</a>',
+        f'<a href="{R}case-studies/index.html" class="nav-link">Case Studies</a>',
+        # Resources dropdown - knowledge base folded into one menu
         '<div class="nav-group">',
-        f'<a href="{R}framework/index.html" class="nav-link nav-has-submenu">Framework</a>',
+        f'<a href="{R}framework/index.html" class="nav-link nav-has-submenu">Resources</a>',
         '<div class="nav-submenu">',
     ]
-    for label, href in FRAMEWORK:
-        lines.append(f'<a href="{R}{href}">{label}</a>')
-    lines.append('</div></div>')
-
-    # Expertise mega dropdown - 2-col: category list (left) + active cat's subpages (right).
-    # Children hidden until user hovers a category (menu-inside-menu).
-    lines.append('<div class="nav-group nav-group-wide">')
-    lines.append(f'<a href="{R}expertise/index.html" class="nav-link nav-has-submenu">Expertise</a>')
-    lines.append('<div class="nav-submenu nav-mega">')
-    lines.append('<div class="nav-mega-cats">')
-    for i, (section_label, section_href, _subpages) in enumerate(EXPERTISE):
-        cat_id = f"cat{i}"
-        active = ' is-active' if i == 0 else ''
-        lines.append(
-            f'<a href="{R}{section_href}" class="nav-cat{active}" data-cat="{cat_id}">'
-            f'<span>{section_label}</span>'
-            f'<span class="nav-cat-arrow">›</span>'
-            f'</a>'
-        )
-    lines.append('</div>')  # nav-mega-cats
-    lines.append('<div class="nav-mega-content">')
-    for i, (section_label, section_href, subpages) in enumerate(EXPERTISE):
-        cat_id = f"cat{i}"
-        active = ' is-active' if i == 0 else ''
-        lines.append(f'<div class="nav-cat-panel{active}" data-cat="{cat_id}">')
-        lines.append(f'<a href="{R}{section_href}" class="nav-cat-panel-head">{section_label}. Section overview →</a>')
-        lines.append('<div class="nav-cat-panel-list">')
-        for sub_label, sub_href in subpages:
-            lines.append(f'<a href="{R}{sub_href}">{sub_label}</a>')
-        lines.append('</div>')
-        lines.append('</div>')
-    lines.append('</div>')  # nav-mega-content
-    lines.append('</div></div>')
-
-    # Playbooks dropdown
-    lines.append('<div class="nav-group">')
-    lines.append(f'<a href="{R}playbooks/index.html" class="nav-link nav-has-submenu">Playbooks</a>')
-    lines.append('<div class="nav-submenu">')
-    for label, href in PLAYBOOKS:
+    for label, href in RESOURCES:
         lines.append(f'<a href="{R}{href}">{label}</a>')
     lines.append('</div></div>')
 
     # Simple links
-    lines.append(f'<a href="{R}writing.html" class="nav-link">Writing</a>')
     lines.append(f'<a href="{R}about.html" class="nav-link">About</a>')
     lines.append(f'<a href="{R}contact.html" class="nav-link">Contact</a>')
 
@@ -300,7 +125,9 @@ NAV_SCRIPT = """<script>
     }
   });
 
-  // --- Expertise mega: swap right-panel content on category hover --------
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
   const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
   const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
   let catTimer = null;
