@@ -100,14 +100,14 @@
 
 <p>You probably need AI consulting if any of this is true:</p>
 
-<ul>
-  <li>You have an AI feature in production, and it's <em>working but unpredictable</em>. Some queries are great, some embarrass you. You've tried prompt fixes. They bought you a week.</li>
-  <li>You're about to spend six figures on an agent platform and want a second opinion from someone who doesn't get a referral fee.</li>
-  <li>Your team has shipped software for years but has never shipped an <strong>LLM system</strong>. You know the road is different but don't know where the potholes are.</li>
-  <li>You're a non-technical founder who wants to understand what you're paying for before you pay for it.</li>
-  <li>You have a workflow that eats 40 hours a week across your team, and you suspect AI could eat the workflow instead.</li>
-  <li>You want to build an <strong>AI agent</strong>, know the word "MCP," and want to skip three months of learning which architecture doesn't fall over.</li>
-</ul>
+<div class="cards" style="margin:32px 0;">
+  <div class="card"><div class="icon">🎢</div><h3>Working, but unpredictable</h3><p>You have an AI feature in production. Some queries are great, some embarrass you. You've tried prompt fixes. They bought you a week.</p></div>
+  <div class="card"><div class="icon">💸</div><h3>About to spend six figures</h3><p>You're evaluating an agent platform and want a second opinion from someone who doesn't get a referral fee.</p></div>
+  <div class="card"><div class="icon">🕳️</div><h3>First LLM system</h3><p>Your team has shipped software for years but never an <strong>LLM system</strong>. The road is different, and you don't know where the potholes are.</p></div>
+  <div class="card"><div class="icon">🧭</div><h3>Non-technical founder</h3><p>You want to understand what you're paying for before you pay for it.</p></div>
+  <div class="card"><div class="icon">⏳</div><h3>A 40-hour workflow</h3><p>Something eats 40 hours a week across your team, and you suspect AI could eat the workflow instead.</p></div>
+  <div class="card"><div class="icon">🔌</div><h3>You know the word "MCP"</h3><p>You want to build an <strong>AI agent</strong> and skip three months of learning which architecture doesn't fall over.</p></div>
+</div>
 
 <h2>What I work on</h2>
 <p>I have worked in and built automations across nonprofits, legal, marketing, sales, insurance, real estate, and e-commerce. The work changes by industry, but the useful systems usually sit around follow-up, intake, handoffs, reporting, documents, and revenue operations.</p>
@@ -149,13 +149,13 @@
 
 <p>I am <strong>one person</strong>. That's the pitch.</p>
 
-<ul>
-  <li><strong>No pyramid.</strong> The person you meet on the call is the person who thinks about your problem, writes the code, and replies to your late-night "wait, what about this edge case" Slack message.</li>
-  <li><strong>No retainer for retainer's sake.</strong> If the right answer is "don't build this," I will tell you and hand you back the money for the rest of the engagement.</li>
-  <li><strong>No vendor allegiance.</strong> I like Claude. I use GPT and Gemini. I recommend open source when it's right. I have no partnership checks to chase.</li>
-  <li><strong>Shipped beats theorized.</strong> Every opinion I have is one I formed by <em>doing it in production</em> - agents that run on a schedule, MCP servers that connect to real systems, retrieval pipelines serving real users.</li>
-  <li><strong>Free by default.</strong> My <a href="framework/index.html">framework</a> and <a href="expertise/index.html">expertise library</a> are public and free because the fundamentals should not be paywalled. Consulting is what happens when a team needs <em>your specific problem</em> solved, not a general read.</li>
-</ul>
+<div class="cards" style="margin:32px 0;">
+  <div class="card"><div class="icon">🧑</div><h3>No pyramid</h3><p>The person you meet on the call is the person who thinks about your problem, writes the code, and replies to your late-night "wait, what about this edge case" Slack message.</p></div>
+  <div class="card"><div class="icon">🚪</div><h3>No retainer for retainer's sake</h3><p>If the right answer is "don't build this," I will tell you and hand you back the money for the rest of the engagement.</p></div>
+  <div class="card"><div class="icon">⚖️</div><h3>No vendor allegiance</h3><p>I like Claude. I use GPT and Gemini. I recommend open source when it's right. I have no partnership checks to chase.</p></div>
+  <div class="card"><div class="icon">🚢</div><h3>Shipped beats theorized</h3><p>Every opinion I have is one I formed by <em>doing it in production</em>: agents on a schedule, MCP servers on real systems, retrieval pipelines serving real users.</p></div>
+  <div class="card"><div class="icon">🔓</div><h3>Free by default</h3><p>My <a href="framework/index.html">framework</a> and <a href="expertise/index.html">expertise library</a> are public and free. Consulting is what happens when a team needs <em>your specific problem</em> solved, not a general read.</p></div>
+</div>
 
 <h2>How engagements work</h2>
 
@@ -231,29 +231,16 @@
 
 <h2>Frequently asked questions</h2>
 
-<h3>What is AI consulting?</h3>
-<p>AI consulting is advisory and implementation work that helps a team figure out where AI fits in their business, what to build, how to build it, and how to keep it running. Good AI consulting produces working systems, not slide decks.</p>
-
-<h3>How much does AI consulting cost?</h3>
-<p>Flat pricing, no hourly billing, ever. Most clients start with one working system built in 14 days for $1,000 flat (my founding-client rate; it rises to $2,500 after the first five). Larger engagements of three to four systems run $6,000 to $10,000, and I only quote those after a first build, from inside your setup. Ongoing help is flat monthly, starting at $297.</p>
-
-<h3>Do you build agents or just advise?</h3>
-<p>Both. Advisory work is short and outputs direction. Build engagements produce working agents, MCP servers, Claude Code harnesses, or retrieval pipelines running in your environment.</p>
-
-<h3>What tech stack do you work with?</h3>
-<p>Claude and the Anthropic API, <a href="framework/claude-code/index.html">Claude Code</a>, <a href="framework/mcp/index.html">MCP servers</a>, agent frameworks (<a href="expertise/agents/frameworks/langgraph.html">LangGraph</a>, <a href="expertise/agents/frameworks/claude-agent-sdk.html">Claude Agent SDK</a>, <a href="expertise/agents/frameworks/crewai.html">CrewAI</a>), vector stores, evaluation tooling, and whatever glue the specific problem needs.</p>
-
-<h3>Who is this for?</h3>
-<p>Founders, operators, and engineering leaders at seed-to-series-B companies shipping AI features, plus established businesses exploring where generative AI fits without burning a year of budget learning in public.</p>
-
-<h3>Will you sign an NDA?</h3>
-<p>Yes, happy to. Most engagements start with one.</p>
-
-<h3>Do you work on-site?</h3>
-<p>Remote by default. On-site for a kickoff or a stuck-point intensive, case-by-case.</p>
-
-<h3>How do I know if AI is even the right answer?</h3>
-<p>That's literally question one of the intro call. If the honest answer is "automation with no AI would be faster and cheaper," I will tell you that. It's saved clients more than AI ever has.</p>
+<div class="cards" style="margin:32px 0;">
+  <div class="card"><h3>What is AI consulting?</h3><p>AI consulting is advisory and implementation work that helps a team figure out where AI fits in their business, what to build, how to build it, and how to keep it running. Good AI consulting produces working systems, not slide decks.</p></div>
+  <div class="card"><h3>How much does AI consulting cost?</h3><p>Flat pricing, no hourly billing, ever. Most clients start with one working system built in 14 days for $1,000 flat (my founding-client rate; it rises to $2,500 after the first five). Larger engagements of three to four systems run $6,000 to $10,000, and I only quote those after a first build, from inside your setup. Ongoing help is flat monthly, starting at $297.</p></div>
+  <div class="card"><h3>Do you build agents or just advise?</h3><p>Both. Advisory work is short and outputs direction. Build engagements produce working agents, MCP servers, Claude Code harnesses, or retrieval pipelines running in your environment.</p></div>
+  <div class="card"><h3>What tech stack do you work with?</h3><p>Claude and the Anthropic API, <a href="framework/claude-code/index.html">Claude Code</a>, <a href="framework/mcp/index.html">MCP servers</a>, agent frameworks (<a href="expertise/agents/frameworks/langgraph.html">LangGraph</a>, <a href="expertise/agents/frameworks/claude-agent-sdk.html">Claude Agent SDK</a>, <a href="expertise/agents/frameworks/crewai.html">CrewAI</a>), vector stores, evaluation tooling, and whatever glue the specific problem needs.</p></div>
+  <div class="card"><h3>Who is this for?</h3><p>Founders, operators, and engineering leaders at seed-to-series-B companies shipping AI features, plus established businesses exploring where generative AI fits without burning a year of budget learning in public.</p></div>
+  <div class="card"><h3>Will you sign an NDA?</h3><p>Yes, happy to. Most engagements start with one.</p></div>
+  <div class="card"><h3>Do you work on-site?</h3><p>Remote by default. On-site for a kickoff or a stuck-point intensive, case-by-case.</p></div>
+  <div class="card"><h3>How do I know if AI is even the right answer?</h3><p>That's literally question one of the intro call. If the honest answer is "automation with no AI would be faster and cheaper," I will tell you that. It's saved clients more than AI ever has.</p></div>
+</div>
 
 <h2>Want to talk?</h2>
 
