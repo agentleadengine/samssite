@@ -101,7 +101,17 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .call-card strong{display:block;font-size:15px;color:var(--ink);margin-bottom:6px;}
 .call-card p{margin:0 0 12px;color:var(--ink2);font-size:14.5px;line-height:1.45;}
 .call-card .btn{width:100%;justify-content:center;}
-.ghl-frame{width:100%;height:760px;min-height:760px;border:none;border-radius:10px;display:block;background:#fff;}
+.lead-form{display:block;}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.lf-label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin:14px 0 6px;}
+.lf-label span{color:var(--purple);}
+.lf-label em{font-weight:500;font-style:normal;color:var(--muted);}
+.lf-input{width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;transition:border-color .15s ease,box-shadow .15s ease;}
+.lf-input::placeholder{color:var(--muted);}
+.lf-input:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px rgba(90,31,224,.12);}
+.lf-area{resize:vertical;min-height:84px;line-height:1.5;}
+.lf-submit{width:100%;justify-content:center;margin-top:18px;border:none;}
+.lf-foot{margin:10px 0 0;text-align:center;color:var(--ink2);font-size:12.5px;}
 
 /* testimonials */
 .proof-lead{display:grid;grid-template-columns:1fr .72fr;gap:22px;align-items:start;}
@@ -229,45 +239,58 @@ footer a{color:var(--ink2);}
         </div>
         <p class="privacy-note">I only ask for your number so I can reach you if email gets lost. That's the only reason.</p>
       </div>
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/2ELmj79IdE53WgzpMPAS"
-        class="ghl-frame"
-        id="inline-2ELmj79IdE53WgzpMPAS"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Google Ads - AI Results Intake"
-        data-height="760"
-        data-layout-iframe-id="inline-2ELmj79IdE53WgzpMPAS"
-        data-form-id="2ELmj79IdE53WgzpMPAS"
-        title="Google Ads - AI Results Intake">
-      </iframe>
+      <form name="offer-intake" method="POST" action="/thanks"
+            data-netlify="true" netlify-honeypot="bot-field" class="lead-form">
+        <input type="hidden" name="form-name" value="offer-intake">
+        <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+
+        <label class="lf-label" for="lf-name">Your name <span>*</span></label>
+        <input class="lf-input" id="lf-name" name="name" type="text" required
+               autocomplete="name" placeholder="First and last name">
+
+        <label class="lf-label" for="lf-email">Email <span>*</span></label>
+        <input class="lf-input" id="lf-email" name="email" type="email" required
+               autocomplete="email" placeholder="you@company.com">
+
+        <label class="lf-label" for="lf-phone">Phone <em>(optional)</em></label>
+        <input class="lf-input" id="lf-phone" name="phone" type="tel"
+               autocomplete="tel" placeholder="(555) 000-0000">
+
+        <label class="lf-label" for="lf-problem">What's eating the most time right now? <span>*</span></label>
+        <textarea class="lf-input lf-area" id="lf-problem" name="problem" rows="3" required
+                  placeholder="Ex: follow-up, lead routing, onboarding, reporting, manual admin..."></textarea>
+
+        <!-- Ad attribution, filled by script below -->
+        <input type="hidden" name="gclid" id="lf-gclid">
+        <input type="hidden" name="utm_source" id="lf-utm_source">
+        <input type="hidden" name="utm_medium" id="lf-utm_medium">
+        <input type="hidden" name="utm_campaign" id="lf-utm_campaign">
+        <input type="hidden" name="utm_term" id="lf-utm_term">
+        <input type="hidden" name="page" id="lf-page">
+
+        <button type="submit" class="btn btn-primary lf-submit">Send it &rarr;</button>
+        <p class="lf-foot">I read every one myself. You'll hear back the same day.</p>
+      </form>
       <script>
-      /* Pass Google Ads click id (and UTMs) from the parent URL into the GHL
-         form so booked-call offline conversions can be attributed. The form
-         maps these to hidden fields by Query Key. */
+      /* Carry the Google Ads click id and UTMs into the submission so a booked
+         call can be attributed back to the keyword that paid for it. */
       (function () {
         try {
-          var KEYS = ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
           var qp = new URLSearchParams(window.location.search);
-          var pairs = [];
-          KEYS.forEach(function (k) { var v = qp.get(k); if (v) pairs.push(k + '=' + encodeURIComponent(v)); });
-          if (!qp.get('gclid')) {
+          var set = function (id, val) { var el = document.getElementById(id); if (el && val) el.value = val; };
+          ['utm_source','utm_medium','utm_campaign','utm_term'].forEach(function (k) {
+            set('lf-' + k, qp.get(k));
+          });
+          var gclid = qp.get('gclid') || qp.get('gbraid') || qp.get('wbraid');
+          if (!gclid) {
             var m = document.cookie.match(/(?:^|;\s*)_gcl_aw=GCL\.\d+\.([^;]+)/);
-            if (m && m[1]) pairs.push('gclid=' + encodeURIComponent(m[1]));
+            if (m && m[1]) gclid = m[1];
           }
-          if (pairs.length) {
-            var f = document.getElementById('inline-2ELmj79IdE53WgzpMPAS');
-            if (f) { f.src = f.src + (f.src.indexOf('?') > -1 ? '&' : '?') + pairs.join('&'); }
-          }
+          set('lf-gclid', gclid);
+          set('lf-page', window.location.pathname + window.location.search);
         } catch (e) { /* never block the form */ }
       })();
       </script>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </div>
 </section>
@@ -372,9 +395,6 @@ footer a{color:var(--ink2);}
     &copy; 2026 Samuel Ochoa &middot; <a href="tel:+15167801385">Call: (516) 780-1385</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </footer>
-
-<!-- LeadConnector Chat Widget -->
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a33750c2f67b2905ced8831" data-source="WEB_USER"></script>
 
 </body>
 </html>

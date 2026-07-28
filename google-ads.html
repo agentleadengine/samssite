@@ -130,24 +130,51 @@
             <span>Reply by email</span>
           </div>
         </div>
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/2ELmj79IdE53WgzpMPAS"
-          style="width:100%;min-height:940px;border:none;border-radius:8px"
-          id="inline-2ELmj79IdE53WgzpMPAS"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Google Ads - AI Workflow Intake"
-          data-height="940"
-          data-layout-iframe-id="inline-2ELmj79IdE53WgzpMPAS"
-          data-form-id="2ELmj79IdE53WgzpMPAS"
-          title="Google Ads - AI Workflow Intake">
-        </iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <form name="ads-intake" method="POST" action="/thanks"
+              data-netlify="true" netlify-honeypot="bot-field" class="lead-form">
+          <input type="hidden" name="form-name" value="ads-intake">
+          <p style="position:absolute;left:-9999px;"><label>Leave this empty: <input name="bot-field"></label></p>
+
+          <label class="lf-label" for="ga-name">Your name <span>*</span></label>
+          <input class="lf-input" id="ga-name" name="name" type="text" required
+                 autocomplete="name" placeholder="First and last name">
+
+          <label class="lf-label" for="ga-email">Email <span>*</span></label>
+          <input class="lf-input" id="ga-email" name="email" type="email" required
+                 autocomplete="email" placeholder="you@company.com">
+
+          <label class="lf-label" for="ga-phone">Phone <em>(optional)</em></label>
+          <input class="lf-input" id="ga-phone" name="phone" type="tel"
+                 autocomplete="tel" placeholder="(555) 000-0000">
+
+          <label class="lf-label" for="ga-problem">What's the one bottleneck? <span>*</span></label>
+          <textarea class="lf-input lf-area" id="ga-problem" name="problem" rows="3" required
+                    placeholder="Ex: follow-up, lead routing, onboarding, reporting, manual admin..."></textarea>
+
+          <input type="hidden" name="gclid" id="ga-gclid">
+          <input type="hidden" name="page" value="/google-ads">
+
+          <button type="submit" class="btn btn-primary lf-submit">Send it &rarr;</button>
+          <p class="lf-foot">I read every one myself. You'll hear back the same day.</p>
+        </form>
+        <style>
+          .lead-form{display:block;}
+          .lf-label{display:block;font-size:13.5px;font-weight:700;margin:14px 0 6px;}
+          .lf-label em{font-weight:500;font-style:normal;opacity:.65;}
+          .lf-input{width:100%;font:inherit;font-size:15px;background:#fff;border:1.5px solid #ebe6f6;border-radius:11px;padding:12px 14px;}
+          .lf-input:focus{outline:none;border-color:#5a1fe0;box-shadow:0 0 0 3px rgba(90,31,224,.12);}
+          .lf-area{resize:vertical;min-height:84px;line-height:1.5;}
+          .lf-submit{width:100%;justify-content:center;margin-top:18px;border:none;}
+          .lf-foot{margin:10px 0 0;text-align:center;font-size:12.5px;opacity:.7;}
+        </style>
+        <script>
+        (function(){try{
+          var qp=new URLSearchParams(window.location.search);
+          var g=qp.get('gclid')||qp.get('gbraid')||qp.get('wbraid');
+          if(!g){var m=document.cookie.match(/(?:^|;\s*)_gcl_aw=GCL\.\d+\.([^;]+)/);if(m&&m[1])g=m[1];}
+          var el=document.getElementById('ga-gclid');if(el&&g)el.value=g;
+        }catch(e){}})();
+        </script>
       </div>
     </div>
   </section>
