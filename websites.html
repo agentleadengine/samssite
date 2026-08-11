@@ -160,6 +160,19 @@ section{padding:64px 0;position:relative;z-index:2}
 .submit{margin-top:22px;width:100%;justify-content:center}
 .lf-fine{font-size:12.5px;color:var(--ink-faint);margin-top:12px;text-align:center}
 
+/* sms + builder + mini form */
+.btn-sms{background:var(--green);color:#fff;box-shadow:0 3px 0 var(--green-deep)}
+.btn-sms:hover{background:var(--green-deep);box-shadow:0 1px 0 var(--green-deep);transform:translateY(2px)}
+.builder{display:flex;align-items:center;gap:14px;margin-top:20px;animation:rise .6s .3s ease both}
+.builder img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex:none}
+.builder p{font-size:14px;color:var(--ink-faint);line-height:1.5}
+.builder strong{color:var(--ink)}
+.mini{padding:0 0 56px}
+.mini-form{background:#fffdf8;border:1.5px solid var(--ink);border-radius:12px;padding:20px 22px 22px;box-shadow:6px 8px 0 rgba(26,46,53,.1)}
+.mini-title{display:block;font-family:var(--serif);color:var(--ink);font-size:19px;font-weight:900;margin-bottom:14px}
+.mini-row{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:10px;align-items:stretch}
+@media (max-width:860px){.mini-row{grid-template-columns:1fr}}
+
 /* footer */
 footer{border-top:1.5px solid var(--line);padding:34px 0 110px;font-size:13.5px;color:var(--ink-faint);position:relative;z-index:2}
 footer a{color:var(--ink-soft)}
@@ -167,7 +180,8 @@ footer .legal{margin-top:8px;max-width:640px}
 
 /* sticky call */
 .sticky-call{position:fixed;bottom:0;left:0;right:0;display:none;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1.5px solid var(--ink);box-shadow:0 -8px 30px rgba(26,46,53,.15)}
-.sticky-call a{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:800;font-size:17px;padding:15px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--green-deep)}
+.sticky-call a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:800;font-size:17px;padding:15px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--green-deep)}
+.sticky-call a.txt{background:var(--ink);box-shadow:0 3px 0 #000}
 
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes drop{from{opacity:0;transform:rotate(1.4deg) translateY(-18px)}to{opacity:1;transform:rotate(1.4deg) translateY(0)}}
@@ -180,7 +194,7 @@ footer .legal{margin-top:8px;max-width:640px}
   .start-grid{grid-template-columns:1fr;gap:32px}
 }
 @media (max-width:760px){
-  .sticky-call{display:block}
+  .sticky-call{display:flex;gap:10px}
   section{padding:52px 0}
   .hero{padding:48px 0 56px}
   .strip .wrap{justify-content:center;text-align:center}
@@ -194,7 +208,7 @@ footer .legal{margin-top:8px;max-width:640px}
 
 <div class="strip">
   <div class="wrap">
-    <span>Websites for small businesses &middot; Long Island, NY</span>
+    <span>Websites for small businesses &middot; Anywhere in the US &middot; <a href="paginas-web.html">Español</a></span>
     <span class="strip-r">Se habla español &middot; <a href="paginas-web.html">Versión en español →</a></span>
   </div>
 </div>
@@ -202,21 +216,25 @@ footer .legal{margin-top:8px;max-width:640px}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">Free preview &middot; 48-hour delivery &middot; No contracts</p>
+      <p class="kicker">Free preview &middot; $249 to launch &middot; $99/mo all-in</p>
       <h1>See your new website <span class="mark">before you pay</span> a dollar.</h1>
       <p class="sub">I build your homepage free and show it to you on a call. Like it? It's live in 48 hours. Don't like it? You owe nothing and we part as friends.</p>
       <div class="cta-row">
         <a class="btn btn-main" href="tel:+15167801385" id="hero-call">📞 Call (516) 780-1385</a>
+        <a class="btn btn-sms" href="sms:+15167801385?&amp;body=Hi%20Sam%2C%20I%20want%20the%20free%20website%20preview%20for%20my%20business." id="hero-text">💬 Text me instead</a>
         <a class="btn btn-ghost" href="#start">Get my free preview</a>
       </div>
-      <p class="hero-note"><strong>You talk to the builder.</strong> No agencies, no ticket queues, no overseas hand-offs.</p>
+      <div class="builder">
+        <img src="/sam-real.jpg" alt="Samuel Ochoa" width="58" height="58" loading="lazy">
+        <p><strong>I'm Sam Ochoa. You talk to the builder, not an agency.</strong><br>I pick up 8am to 8pm ET. If I miss you, I call back the same day.</p>
+      </div>
     </div>
-    <aside class="ticket" aria-label="Pricing">
+    <aside class="ticket" aria-label="Pricing" id="price">
       <div class="t-row"><span>Homepage preview</span><span class="free">Free</span></div>
       <div class="t-row"><span>Full site, live in 48 hours</span><span class="amt">$249</span></div>
       <div class="t-row"><span>Hosting, edits &amp; support</span><span class="amt">$99<span style="font-size:14px">/mo</span></span></div>
       <div class="t-total"><span class="lbl">Due before you see it</span><span class="amt">$0</span></div>
-      <p class="t-fine">Month to month, cancel anytime. At 12 months the site and domain are yours outright.</p>
+      <p class="t-fine">Month to month, cancel anytime. Your domain is in your name from day one; at 12 months the whole site is yours outright.</p>
     </aside>
   </div>
 </header>
@@ -233,6 +251,22 @@ footer .legal{margin-top:8px;max-width:640px}
   </div>
 </section>
 
+<section class="mini">
+  <div class="wrap">
+    <form name="website-lead" method="POST" action="/thanks-web" data-netlify="true" netlify-honeypot="bot-field" class="mini-form">
+      <input type="hidden" name="form-name" value="website-lead">
+      <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+      <strong class="mini-title">Want the preview? Leave your info and I'll call you back today.</strong>
+      <div class="mini-row">
+        <input class="lf-input" name="name" type="text" required autocomplete="name" placeholder="Your name">
+        <input class="lf-input" name="phone" type="tel" required autocomplete="tel" placeholder="Phone">
+        <input class="lf-input" name="business" type="text" placeholder="Your business (optional)">
+        <button class="btn btn-main" type="submit">Get my preview</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="deep">
   <div class="wrap">
     <div class="sec-head"><h2>What you get</h2><div class="rule"></div></div>
@@ -241,7 +275,7 @@ footer .legal{margin-top:8px;max-width:640px}
       <li>Looks right on phones, tablets, and computers</li>
       <li>Contact form that sends every lead to your email</li>
       <li>Click-to-call button for mobile visitors</li>
-      <li>Your own domain, set up for you</li>
+      <li>Your own domain, registered in your name from day one</li>
       <li>Hosting, security, and backups (the $99/mo)</li>
       <li>Unlimited small edits, done within 2 business days</li>
       <li>Google Business Profile setup so you show up on Maps</li>
@@ -252,7 +286,7 @@ footer .legal{margin-top:8px;max-width:640px}
   </div>
 </section>
 
-<section>
+<section id="proof">
   <div class="wrap">
     <div class="sec-head"><h2>Work you can check right now</h2><div class="rule"></div></div>
     <div class="proof-cards">
@@ -282,12 +316,13 @@ footer .legal{margin-top:8px;max-width:640px}
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap">
     <div class="sec-head"><h2>Questions people actually ask</h2><div class="rule"></div></div>
     <div class="faq">
       <details><summary>Why so cheap? Agencies quoted me thousands.</summary><p>I work alone and I build fast with modern tools, so my costs are low. You get the same kind of site, without paying for an agency's office and account managers.</p></details>
       <details><summary>What does the $99/mo actually cover?</summary><p>Hosting, security, backups, and unlimited small edits: new photos, price changes, hours, a new page section. You email or text me, it's done within 2 business days.</p></details>
+      <details><summary>What does year one actually cost, all-in?</summary><p>$1,437: the $249 build plus 12 months at $99. For comparison, agencies quote $3,000 to $5,000 up front plus maintenance, and DIY builders run $20 to $40 a month plus your own nights and weekends doing it yourself. I'd rather you do that math here than on the back of an envelope later.</p></details>
       <details><summary>Do I own my website?</summary><p>Yes. The domain is registered in your name from day one. After 12 months everything is yours outright, and you can move it anywhere or stay on for a reduced monthly rate.</p></details>
       <details><summary>What do you need from me?</summary><p>A 15-minute phone call and any photos you have. If you don't have photos or text, I'll handle it. Most owners spend under an hour total on this.</p></details>
       <details><summary>Can we do this in Spanish?</summary><p>Sí. I'm bilingual, and your site can be in English, Spanish, or both. <a href="paginas-web.html">Página en español aquí</a>.</p></details>
@@ -301,7 +336,7 @@ footer .legal{margin-top:8px;max-width:640px}
       <h2>Get your free preview</h2>
       <p>Fastest way: call. You'll talk to me, not a sales team. Or send the form and I'll call you back today.</p>
       <a class="tel" href="tel:+15167801385">(516) 780-1385</a>
-      <p class="hours">Samuel Ochoa &middot; Long Island, NY &middot; English y español</p>
+      <p class="hours">Or <a href="sms:+15167801385?&amp;body=Hi%20Sam%2C%20I%20want%20the%20free%20website%20preview%20for%20my%20business.">text me</a> &middot; I pick up 8am to 8pm ET &middot; English y español</p>
     </div>
     <form name="website-lead" method="POST" action="/thanks-web" data-netlify="true" netlify-honeypot="bot-field" class="lead-form">
       <input type="hidden" name="form-name" value="website-lead">
@@ -313,7 +348,7 @@ footer .legal{margin-top:8px;max-width:640px}
       <label class="lf-label" for="lf-biz">What's your business? <span>*</span></label>
       <input class="lf-input" id="lf-biz" name="business" type="text" required placeholder="Ex: landscaping, restaurant, salon, contractor...">
       <button class="btn btn-main submit" type="submit">Get my free preview →</button>
-      <p class="lf-fine">I'll call you back the same day. No spam, no mailing lists. Service provided by Agent Lead Engine LLC.</p>
+      <p class="lf-fine">I call back the same day, between 8am and 8pm ET. No spam, no mailing lists.</p>
     </form>
   </div>
 </section>
@@ -321,10 +356,18 @@ footer .legal{margin-top:8px;max-width:640px}
 <footer>
   <div class="wrap">
     <p>&copy; 2026 Agent Lead Engine LLC &middot; Long Island, NY &middot; Serving all 50 states &middot; <a href="paginas-web.html">Servicio en español</a></p>
-    <p class="legal">This website service is operated by Samuel Ochoa through Agent Lead Engine LLC, a New York limited liability company (formerly known as Leadshield Marketing LLC). All agreements and payments are with Agent Lead Engine LLC.</p>
+    <p class="legal">This website service is operated by Samuel Ochoa through Agent Lead Engine LLC, a New York limited liability company. All agreements and payments are with Agent Lead Engine LLC.</p>
   </div>
 </footer>
 
-<div class="sticky-call"><a href="tel:+15167801385" id="sticky-call">📞 Call now: (516) 780-1385</a></div>
+<div class="sticky-call">
+  <a href="tel:+15167801385" id="sticky-call">📞 Call Sam</a>
+  <a class="txt" href="sms:+15167801385?&amp;body=Hi%20Sam%2C%20I%20want%20the%20free%20website%20preview%20for%20my%20business." id="sticky-text">💬 Text Sam</a>
+</div>
+
+<script>
+(function(){var s=document.querySelector('.sticky-call'),f=document.getElementById('start');
+if(s&&f&&'IntersectionObserver'in window){new IntersectionObserver(function(e){s.style.display=e[0].isIntersecting?'none':''},{threshold:.15}).observe(f)}})();
+</script>
 
 </body></html>

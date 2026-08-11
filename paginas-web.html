@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vea Su Página Web Gratis, Luego $249 | Samuel Ochoa</title>
+<title>Vea su página web gratis y después paga $249 | Samuel Ochoa</title>
 <meta name="description" content="Diseño la página web de su negocio y se la muestro gratis antes de cobrar. $249 para lanzarla más $99/mes todo incluido. Lista en 48 horas. Atención en español.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="website">
@@ -139,11 +139,23 @@ section{padding:64px 0;position:relative;z-index:2}
 .hp{position:absolute;left:-9999px}
 .submit{margin-top:22px;width:100%;justify-content:center}
 .lf-fine{font-size:12.5px;color:var(--ink-faint);margin-top:12px;text-align:center}
+.btn-sms{background:var(--green);color:#fff;box-shadow:0 3px 0 var(--green-deep)}
+.btn-sms:hover{background:var(--green-deep);box-shadow:0 1px 0 var(--green-deep);transform:translateY(2px)}
+.builder{display:flex;align-items:center;gap:14px;margin-top:20px;animation:rise .6s .3s ease both}
+.builder img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex:none}
+.builder p{font-size:14px;color:var(--ink-faint);line-height:1.5}
+.builder strong{color:var(--ink)}
+.mini{padding:0 0 56px}
+.mini-form{background:#fffdf8;border:1.5px solid var(--ink);border-radius:12px;padding:20px 22px 22px;box-shadow:6px 8px 0 rgba(26,46,53,.1)}
+.mini-title{display:block;font-family:var(--serif);color:var(--ink);font-size:19px;font-weight:900;margin-bottom:14px}
+.mini-row{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:10px;align-items:stretch}
+@media (max-width:860px){.mini-row{grid-template-columns:1fr}}
 footer{border-top:1.5px solid var(--line);padding:34px 0 110px;font-size:13.5px;color:var(--ink-faint);position:relative;z-index:2}
 footer a{color:var(--ink-soft)}
 footer .legal{margin-top:8px;max-width:640px}
 .sticky-call{position:fixed;bottom:0;left:0;right:0;display:none;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1.5px solid var(--ink);box-shadow:0 -8px 30px rgba(26,46,53,.15)}
-.sticky-call a{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:800;font-size:17px;padding:15px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--green-deep)}
+.sticky-call a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:800;font-size:17px;padding:15px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--green-deep)}
+.sticky-call a.txt{background:var(--ink);box-shadow:0 3px 0 #000}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes drop{from{opacity:0;transform:rotate(1.4deg) translateY(-18px)}to{opacity:1;transform:rotate(1.4deg) translateY(0)}}
 @media (max-width:900px){
@@ -154,7 +166,7 @@ footer .legal{margin-top:8px;max-width:640px}
   .start-grid{grid-template-columns:1fr;gap:32px}
 }
 @media (max-width:760px){
-  .sticky-call{display:block}
+  .sticky-call{display:flex;gap:10px}
   section{padding:52px 0}
   .hero{padding:48px 0 56px}
   .strip .wrap{justify-content:center;text-align:center}
@@ -168,7 +180,7 @@ footer .legal{margin-top:8px;max-width:640px}
 
 <div class="strip">
   <div class="wrap">
-    <span>Páginas web para negocios &middot; Long Island, NY</span>
+    <span>Páginas web para negocios &middot; En español &middot; Todo EE. UU.</span>
     <span class="strip-r">Atención en español &middot; <a href="websites.html">English version →</a></span>
   </div>
 </div>
@@ -176,21 +188,25 @@ footer .legal{margin-top:8px;max-width:640px}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">Vista previa gratis &middot; Lista en 48 horas &middot; Sin contratos</p>
+      <p class="kicker">$249 + $99/mes &middot; Vista previa gratis &middot; Lista en 48 horas</p>
       <h1>Vea la página de su negocio <span class="mark">antes de pagar</span> un solo dólar.</h1>
       <p class="sub">Diseño su página gratis y se la muestro en una llamada. ¿Le gusta? Está en línea en 48 horas. ¿No le gusta? No me debe nada y quedamos bien.</p>
       <div class="cta-row">
         <a class="btn btn-main" href="tel:+15167801385" id="hero-call">📞 Llame al (516) 780-1385</a>
+        <a class="btn btn-sms" href="sms:+15167801385?&amp;body=Hola%20Samuel%2C%20quiero%20mi%20vista%20previa%20gratis%20para%20mi%20negocio." id="hero-text">💬 Mejor mándeme un texto</a>
         <a class="btn btn-ghost" href="#start">Quiero mi vista previa</a>
       </div>
-      <p class="hero-note"><strong>Hable directo con quien construye su página.</strong> Sin agencias, sin intermediarios, en español.</p>
+      <div class="builder">
+        <img src="/sam-real.jpg" alt="Samuel Ochoa" width="58" height="58" loading="lazy">
+        <p><strong>Soy Samuel Ochoa. Usted habla directo conmigo, no con una agencia.</strong><br>Contesto de 8am a 8pm, hora del Este. Si no contesto, le regreso la llamada hoy mismo.</p>
+      </div>
     </div>
-    <aside class="ticket" aria-label="Precios">
+    <aside class="ticket" aria-label="Precios" id="price">
       <div class="t-row"><span>Vista previa de su página</span><span class="free">Gratis</span></div>
       <div class="t-row"><span>Sitio completo, en 48 horas</span><span class="amt">$249</span></div>
       <div class="t-row"><span>Hosting, cambios y soporte</span><span class="amt">$99<span style="font-size:14px">/mes</span></span></div>
-      <div class="t-total"><span class="lbl">Paga antes de verla</span><span class="amt">$0</span></div>
-      <p class="t-fine">Mes a mes, cancele cuando quiera. A los 12 meses la página y el dominio son suyos por completo.</p>
+      <div class="t-total"><span class="lbl">Usted paga hoy</span><span class="amt">$0</span></div>
+      <p class="t-fine">Mes a mes, cancele cuando quiera. Su dominio queda a su nombre desde el primer día; a los 12 meses la página completa es suya.</p>
     </aside>
   </div>
 </header>
@@ -204,6 +220,22 @@ footer .legal{margin-top:8px;max-width:640px}
       <div class="step"><div class="num">3</div><h3>Usted decide</h3><p>¿Le gusta? Son $249 y termino el sitio completo. ¿No le gusta? No paga nada.</p></div>
       <div class="step"><div class="num">4</div><h3>En línea en 48 horas</h3><p>Su página queda en su propio dominio. Después, los $99/mes cubren todo lo de abajo.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="mini">
+  <div class="wrap">
+    <form name="website-lead-es" method="POST" action="/gracias" data-netlify="true" netlify-honeypot="bot-field" class="mini-form">
+      <input type="hidden" name="form-name" value="website-lead-es">
+      <p class="hp"><label>Deje esto vacío: <input name="bot-field"></label></p>
+      <strong class="mini-title">¿Quiere su vista previa? Déjeme sus datos y le llamo hoy mismo.</strong>
+      <div class="mini-row">
+        <input class="lf-input" name="name" type="text" required autocomplete="name" placeholder="Su nombre">
+        <input class="lf-input" name="phone" type="tel" required autocomplete="tel" placeholder="Teléfono">
+        <input class="lf-input" name="business" type="text" placeholder="Su negocio (opcional)">
+        <button class="btn btn-main" type="submit">Quiero mi vista previa</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -226,7 +258,7 @@ footer .legal{margin-top:8px;max-width:640px}
   </div>
 </section>
 
-<section>
+<section id="proof">
   <div class="wrap">
     <div class="sec-head"><h2>Trabajos que puede revisar ahora mismo</h2><div class="rule"></div></div>
     <div class="proof-cards">
@@ -256,12 +288,13 @@ footer .legal{margin-top:8px;max-width:640px}
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap">
     <div class="sec-head"><h2>Preguntas que la gente de verdad hace</h2><div class="rule"></div></div>
     <div class="faq">
       <details><summary>¿Por qué tan barato? Las agencias me cobraban miles.</summary><p>Trabajo solo y construyo rápido con herramientas modernas, así que mis costos son bajos. Usted recibe el mismo tipo de página, sin pagar la oficina ni los gerentes de cuenta de una agencia.</p></details>
       <details><summary>¿Qué cubren exactamente los $99 al mes?</summary><p>Hosting, seguridad, respaldos y cambios pequeños ilimitados: fotos nuevas, precios, horarios, una sección nueva. Me manda un texto o un correo y queda listo en 2 días hábiles.</p></details>
+      <details><summary>¿Cuánto cuesta el primer año en total?</summary><p>$1,437 todo incluido: los $249 del sitio más 12 meses de $99. Para comparar: una agencia cobra de $3,000 a $5,000 solo por empezar, y los constructores tipo Wix cuestan $20 a $40 al mes y usted hace todo el trabajo. Prefiero que haga la cuenta aquí y no adivinando después.</p></details>
       <details><summary>¿La página es mía?</summary><p>Sí. El dominio queda registrado a su nombre desde el primer día. A los 12 meses todo es suyo por completo, y puede llevarse la página a donde quiera o quedarse con una tarifa reducida.</p></details>
       <details><summary>¿Qué necesita de mí?</summary><p>Una llamada de 15 minutos y las fotos que tenga. Si no tiene fotos o textos, yo me encargo. La mayoría de los dueños invierten menos de una hora en total.</p></details>
       <details><summary>¿Habla español de verdad, o es un traductor?</summary><p>Hablo español de verdad. La llamada, los mensajes y el soporte son conmigo, en español, sin intermediarios.</p></details>
@@ -275,7 +308,7 @@ footer .legal{margin-top:8px;max-width:640px}
       <h2>Pida su vista previa gratis</h2>
       <p>Lo más rápido: llámeme. Hable conmigo, no con un equipo de ventas. O mande el formulario y le devuelvo la llamada hoy mismo.</p>
       <a class="tel" href="tel:+15167801385">(516) 780-1385</a>
-      <p class="hours">Samuel Ochoa &middot; Long Island, NY &middot; Español e inglés</p>
+      <p class="hours">O <a href="sms:+15167801385?&amp;body=Hola%20Samuel%2C%20quiero%20mi%20vista%20previa%20gratis%20para%20mi%20negocio.">mándeme un texto</a> &middot; Contesto de 8am a 8pm, hora del Este</p>
     </div>
     <form name="website-lead-es" method="POST" action="/gracias" data-netlify="true" netlify-honeypot="bot-field" class="lead-form">
       <input type="hidden" name="form-name" value="website-lead-es">
@@ -287,7 +320,7 @@ footer .legal{margin-top:8px;max-width:640px}
       <label class="lf-label" for="lf-biz">¿Cuál es su negocio? <span>*</span></label>
       <input class="lf-input" id="lf-biz" name="business" type="text" required placeholder="Ej: restaurante, construcción, salón, limpieza...">
       <button class="btn btn-main submit" type="submit">Quiero mi vista previa gratis →</button>
-      <p class="lf-fine">Le llamo hoy mismo. Sin spam y sin listas de correo. Servicio provisto por Agent Lead Engine LLC.</p>
+      <p class="lf-fine">Le contesto hoy mismo, de 8am a 8pm hora del Este. Sin spam y sin listas de correo.</p>
     </form>
   </div>
 </section>
@@ -295,10 +328,18 @@ footer .legal{margin-top:8px;max-width:640px}
 <footer>
   <div class="wrap">
     <p>&copy; 2026 Agent Lead Engine LLC &middot; Long Island, NY &middot; Servicio en todo Estados Unidos &middot; <a href="websites.html">English</a></p>
-    <p class="legal">Este servicio es operado por Samuel Ochoa a través de Agent Lead Engine LLC, una compañía de responsabilidad limitada de Nueva York (anteriormente conocida como Leadshield Marketing LLC). Todos los acuerdos y pagos son con Agent Lead Engine LLC.</p>
+    <p class="legal">Este servicio es operado por Samuel Ochoa a través de Agent Lead Engine LLC, una compañía de responsabilidad limitada de Nueva York. Todos los acuerdos y pagos son con Agent Lead Engine LLC.</p>
   </div>
 </footer>
 
-<div class="sticky-call"><a href="tel:+15167801385" id="sticky-call">📞 Llame ahora: (516) 780-1385</a></div>
+<div class="sticky-call">
+  <a href="tel:+15167801385" id="sticky-call">📞 Llamar</a>
+  <a class="txt" href="sms:+15167801385?&amp;body=Hola%20Samuel%2C%20quiero%20mi%20vista%20previa%20gratis%20para%20mi%20negocio." id="sticky-text">💬 Texto</a>
+</div>
+
+<script>
+(function(){var s=document.querySelector('.sticky-call'),f=document.getElementById('start');
+if(s&&f&&'IntersectionObserver'in window){new IntersectionObserver(function(e){s.style.display=e[0].isIntersecting?'none':''},{threshold:.15}).observe(f)}})();
+</script>
 
 </body></html>
