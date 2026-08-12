@@ -1,22 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Services | Oak &amp; Grain Flooring</title>
-<meta name="description" content="Installation, sanding and refinishing, stain matching, board repair, stairs, and screen and recoat — the six things Oak &amp; Grain Flooring does, and when you need each one.">
+<meta name="description" content="Installation, sanding and refinishing, stain matching, board repair, stairs, and screen and recoat. What's included and when you need it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Besley:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to main content</a>
-<div class="ribbon"><span>Demo Site</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">DEMO SITE</div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 4.2 2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2Z"/>
+  </symbol>
+  <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </symbol>
+</svg>
 
 <header class="site-head">
-  <div class="head-in wrap">
+  <div class="head-in">
     <a class="brand" href="index.html">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
@@ -25,19 +37,17 @@
       </span>
     </a>
 
-    <nav class="nav" id="site-nav" aria-label="Primary">
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li class="has-sub">
-          <div class="has-sub-row">
-            <a href="services.html" class="nav-link is-active" aria-current="page">Services</a>
-            <button class="nav-sub-toggle" id="services-toggle" aria-expanded="false" aria-controls="services-sub" aria-label="Show list of services">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <ul class="nav-sub" id="services-sub">
-            <li><a href="services.html#installation">New hardwood installation</a></li>
-            <li><a href="services.html#refinishing">Sanding and refinishing</a></li>
+        <li class="has-submenu">
+          <a href="services.html" class="nav-link is-current" aria-current="page">Services</a>
+          <button type="button" class="submenu-toggle" id="services-toggle" aria-expanded="false" aria-controls="services-submenu" aria-label="Show services menu">
+            <svg class="chev" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+          <ul class="submenu" id="services-submenu">
+            <li><a href="services.html#install">New hardwood installation</a></li>
+            <li><a href="services.html#refinish">Sanding and refinishing</a></li>
             <li><a href="services.html#stain">Stain samples on your floor</a></li>
             <li><a href="services.html#repair">Board repair and replacement</a></li>
             <li><a href="services.html#stairs">Stairs, treads and risers</a></li>
@@ -51,14 +61,13 @@
     </nav>
 
     <div class="head-actions">
-      <div class="head-tel">
-        <a class="h-num" href="tel:+15165550128">(516) 555-0128</a>
-        <a class="btn btn-oak" href="tel:+15165550128">Call for an estimate</a>
-      </div>
-      <button class="hamburger" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="ln ln1" aria-hidden="true"></span>
-        <span class="ln ln2" aria-hidden="true"></span>
-        <span class="ln ln3" aria-hidden="true"></span>
+      <a class="head-tel" href="tel:+15165550128">(516) 555-0128</a>
+      <a class="btn btn-black head-cta" href="tel:+15165550128">
+        <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+        Call for an estimate
+      </a>
+      <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="ln ln1"></span><span class="ln ln2"></span><span class="ln ln3"></span>
       </button>
     </div>
   </div>
@@ -66,131 +75,139 @@
 
 <main id="main">
 
-  <section class="sec wrap" style="padding-bottom:0">
-    <div class="sec-head">
-      <h2>Wood floors, start to finish.</h2>
-      <p class="lede">Install, sand, stain, seal, and repair. No carpet, no tile, no laminate — if it's a wood floor in a Long Island house, it's the work. Six services, what each one includes, and when it's the one you need.</p>
+  <section class="page-head on-dark">
+    <div class="wrap">
+      <h1>Wood floors, start to finish.</h1>
+      <p class="lede">Install, sand, stain, finish, and repair. No carpet, no tile, no laminate. If it's a wood floor in a Long Island house, it's ours to work on.</p>
     </div>
+  </section>
 
-    <div class="plank-list">
-      <div class="plank" id="installation">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#c9954f,#a9743c)"></div>
-        <div>
-          <h3>New hardwood installation</h3>
-          <p class="desc">Material sits in the house first so it can settle to your humidity. We check the subfloor with a straightedge and a moisture meter, flatten the high and low spots, then rack the boards for grain and length before one gets nailed down.</p>
-          <p class="when">When you need it: <b>new construction, an addition, or replacing something that was never wood to begin with.</b></p>
-          <div class="meta"><span>Solid &amp; engineered</span><span>Nail-down</span><span>Glue assist</span></div>
+  <section>
+    <div class="wrap">
+      <div class="plank-list">
+
+        <div class="plank-row" id="install">
+          <div class="grain grain-1" aria-hidden="true"></div>
+          <div class="content">
+            <h3>New hardwood installation</h3>
+            <p class="desc">Material sits in the house first so it can settle to your humidity. We check the subfloor with a straightedge and a moisture meter, flatten the high and low spots, then rack the boards for grain and length before one gets nailed down.</p>
+            <p class="when"><b>When you need it:</b> new construction, an addition, or swapping carpet or tile for real wood.</p>
+            <p class="tags">Solid &amp; engineered &middot; Nail-down &middot; Glue assist</p>
+          </div>
         </div>
-      </div>
 
-      <div class="plank" id="refinishing">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#8f5f31,#4b2d1a)"></div>
-        <div>
-          <h3>Sanding and refinishing</h3>
-          <p class="desc">Three passes with the big machine, an edger into the perimeter, then a buffer to blend the two so there's no halo along the walls. Old finish, pet stains, and cupping get dealt with before any color goes down.</p>
-          <p class="when">When you need it: <b>the wood is sound but the finish is shot — deep scratches, gray or black stains, or a color you're ready to change.</b></p>
-          <div class="meta"><span>Bare wood</span><span>Edges blended</span><span>Two coats minimum</span></div>
+        <div class="plank-row" id="refinish">
+          <div class="grain grain-2" aria-hidden="true"></div>
+          <div class="content">
+            <h3>Sanding and refinishing</h3>
+            <p class="desc">Three passes with the big machine, an edger into the perimeter, then a buffer to blend the two so there's no halo along the walls. Old finish, pet stains, and cupping get dealt with before any color goes down.</p>
+            <p class="when"><b>When you need it:</b> the finish is worn through, the wood is gray or blackened, or scratches and old stains won't come out with a recoat.</p>
+            <p class="tags">Bare wood &middot; Edges blended &middot; Two coats minimum</p>
+          </div>
         </div>
-      </div>
 
-      <div class="plank" id="stain">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#e3c294,#c08a48)"></div>
-        <div>
-          <h3>Stain samples on your floor</h3>
-          <p class="desc">Color reads differently on red oak than on white oak, and differently again under your lights. We put three or four samples right on your floor and you pick in the room where it has to live.</p>
-          <p class="when">When you need it: <b>any time you're refinishing or installing and haven't settled on a color yet.</b></p>
-          <div class="meta"><span>Natural</span><span>Warm</span><span>Neutral</span><span>Dark</span></div>
+        <div class="plank-row" id="stain">
+          <div class="grain grain-3" aria-hidden="true"></div>
+          <div class="content">
+            <h3>Stain samples on your floor</h3>
+            <p class="desc">Color reads differently on red oak than it does on white oak, and differently again under your lights. We put three or four samples right on your floor and you pick in the room where it has to live.</p>
+            <p class="when"><b>When you need it:</b> any refinish or new install where the color isn't chosen yet, or a store chip has never once matched the room.</p>
+            <p class="tags">Natural &middot; Warm &middot; Neutral &middot; Dark</p>
+          </div>
         </div>
-      </div>
 
-      <div class="plank" id="repair">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#b0803f,#7b4d2c)"></div>
-        <div>
-          <h3>Board repair and replacement</h3>
-          <p class="desc">Water damage under a dishwasher, a cracked board by the slider, a gap left behind after a wall came out. We weave new boards into the existing floor so the repair disappears once it's sanded and finished.</p>
-          <p class="when">When you need it: <b>a stain, a crack, or a gap you'd rather not stare at every day.</b></p>
-          <div class="meta"><span>Weave in</span><span>Patch</span><span>Water damage</span></div>
+        <div class="plank-row" id="repair">
+          <div class="grain grain-4" aria-hidden="true"></div>
+          <div class="content">
+            <h3>Board repair and replacement</h3>
+            <p class="desc">Water damage under a dishwasher, a cracked board by the slider, a gap left behind after a wall came out. We weave new boards into the existing floor by species, width, and grain direction so the repair disappears once it's sanded and finished.</p>
+            <p class="when"><b>When you need it:</b> a leak, a crack, or a patch left behind by other work in the house.</p>
+            <p class="tags">Weave in &middot; Patch &middot; Water damage</p>
+          </div>
         </div>
-      </div>
 
-      <div class="plank" id="stairs">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#4b2d1a,#2f2318)"></div>
-        <div>
-          <h3>Stairs, treads and risers</h3>
-          <p class="desc">Carpet comes off, staples come out, and treads get capped or replaced to match the floor. Risers painted or stained, nosing profiled, and the run finished so the stairs and the hallway read as one floor.</p>
-          <p class="when">When you need it: <b>carpet coming off the stairs, or a staircase that stopped matching a newly finished hallway.</b></p>
-          <div class="meta"><span>Tread caps</span><span>Risers</span><span>Nosing</span></div>
+        <div class="plank-row" id="stairs">
+          <div class="grain grain-5" aria-hidden="true"></div>
+          <div class="content">
+            <h3>Stairs, treads, and risers</h3>
+            <p class="desc">Carpet comes off, staples come out, and treads get capped or replaced to match the floor. Risers painted or stained, nosing profiled, and the run finished so the stairs and the hallway read as one floor.</p>
+            <p class="when"><b>When you need it:</b> carpeted stairs that no longer match a new or refinished floor, or treads worn through at the nose.</p>
+            <p class="tags">Tread caps &middot; Risers &middot; Nosing</p>
+          </div>
         </div>
-      </div>
 
-      <div class="plank" id="recoat">
-        <div class="plank-swatch" style="background:linear-gradient(100deg,#d9b98a,#a9743c)"></div>
-        <div>
-          <h3>Screen and recoat</h3>
-          <p class="desc">If the finish is worn but the wood under it is still clean, you don't need a full sanding. We abrade the old coat, clean it down, and lay a fresh coat of poly. One day of work, and a fraction of a refinish.</p>
-          <p class="when">When you need it: <b>a fingernail test shows clean wood under a finish that's just gone dull.</b></p>
-          <div class="meta"><span>One day</span><span>Low dust</span><span>Lower cost</span></div>
+        <div class="plank-row" id="recoat">
+          <div class="grain grain-6" aria-hidden="true"></div>
+          <div class="content">
+            <h3>Screen and recoat</h3>
+            <p class="desc">If the finish is worn but the wood underneath it is still clean, a full sanding isn't necessary. We abrade the old coat, clean it down, and lay a fresh coat of poly over what's already there.</p>
+            <p class="when"><b>When you need it:</b> the finish looks dull or scuffed but the wood itself isn't gray, cupped, or stained through, usually every few years between full refinishes.</p>
+            <p class="tags">One day &middot; Low dust &middot; Lower cost</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="fan-wrap">
+    <div class="wrap">
+      <div class="fan-head">
+        <h2>Every species takes stain its own way.</h2>
+        <p>Red oak pulls warm, almost pink. White oak stays cooler and can take gray without turning muddy. Maple fights stain and usually looks best clear. We'll tell you what your wood will actually do before you commit to a color.</p>
+      </div>
+      <div class="fan">
+        <div class="fan-item">
+          <div class="face wood-redoak" aria-hidden="true"></div>
+          <b>Red oak</b><span>Warm, open grain</span>
+        </div>
+        <div class="fan-item">
+          <div class="face wood-whiteoak" aria-hidden="true"></div>
+          <b>White oak</b><span>Cooler, tighter grain</span>
+        </div>
+        <div class="fan-item">
+          <div class="face wood-walnut" aria-hidden="true"></div>
+          <b>Walnut</b><span>Deep brown, softer</span>
+        </div>
+        <div class="fan-item">
+          <div class="face wood-hickory" aria-hidden="true"></div>
+          <b>Hickory</b><span>High contrast, hard</span>
+        </div>
+        <div class="fan-item">
+          <div class="face wood-maple" aria-hidden="true"></div>
+          <b>Maple</b><span>Pale, best clear</span>
+        </div>
+        <div class="fan-item">
+          <div class="face wood-ash" aria-hidden="true"></div>
+          <b>Ash</b><span>Light, strong grain</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec wrap">
-    <div class="sec-head">
-      <h2>Every species takes stain its own way.</h2>
-      <p class="lede">Red oak pulls warm and a little pink. White oak stays cooler and can take gray without going muddy. Maple fights stain and usually looks best clear. We'll tell you what your wood will actually do before you commit to a color.</p>
-    </div>
-    <div class="species-grid">
-      <div class="sp-swatch wide">
-        <div class="sp-face" style="background:linear-gradient(100deg,#c08a48,#a9743c)"></div>
-        <b>Red oak</b><span>Warm, open grain</span>
-      </div>
-      <div class="sp-swatch wide">
-        <div class="sp-face" style="background:linear-gradient(100deg,#c6a271,#a8854f)"></div>
-        <b>White oak</b><span>Cooler, tighter grain</span>
-      </div>
-      <div class="sp-swatch">
-        <div class="sp-face" style="background:linear-gradient(100deg,#6b4326,#3d2415)"></div>
-        <b>Walnut</b><span>Deep brown, softer</span>
-      </div>
-      <div class="sp-swatch">
-        <div class="sp-face" style="background:linear-gradient(100deg,#d5a763,#8d5c2e)"></div>
-        <b>Hickory</b><span>High contrast, hard</span>
-      </div>
-      <div class="sp-swatch">
-        <div class="sp-face" style="background:linear-gradient(100deg,#e5d1ae,#c8ad84)"></div>
-        <b>Maple</b><span>Pale, best clear</span>
-      </div>
-      <div class="sp-swatch">
-        <div class="sp-face" style="background:linear-gradient(100deg,#dcc39c,#b59468)"></div>
-        <b>Ash</b><span>Light, strong grain</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec wrap">
-    <div class="close-cta">
-      <h2>Not sure which service is the right call?</h2>
-      <p>Tell us what you're looking at — call, text a photo, or send the details — and we'll point you at the right one before you commit to anything.</p>
+  <section class="close-cta">
+    <div class="wrap close-cta-in">
+      <h2>Not sure which one you need?</h2>
+      <p>Tell us what the floor looks like now and we'll tell you honestly whether it's a recoat, a refinish, or something else.</p>
       <div class="cta-row">
-        <a class="btn btn-paper" href="tel:+15165550128">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <a class="btn btn-oak" href="tel:+15165550128">
+          <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
           Call (516) 555-0128
         </a>
-        <a class="btn btn-line" href="contact.html">Send the details</a>
+        <a class="text-cta" href="contact.html">Send a few details instead <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <span class="brand-name">Oak &amp; Grain Flooring</span>
-        <span class="brand-sub">Hardwood install &amp; refinishing · Long Island, NY</span>
-        <a class="foot-tel" href="tel:+15165550128">(516) 555-0128</a>
+        <span class="brand-name">Oak &amp; Grain Flooring</span><br>
+        <span class="brand-sub">Hardwood install &amp; refinishing &middot; Long Island, NY</span>
+        <p><a class="foot-tel" href="tel:+15165550128">(516) 555-0128</a></p>
       </div>
       <nav class="foot-nav" aria-label="Footer">
         <a href="index.html">Home</a>
@@ -201,57 +218,62 @@
       </nav>
     </div>
     <p class="foot-legal">
-      <a href="https://samuelochoa.com/websites">Demo website built by Samuel Ochoa — samuelochoa.com/websites</a><br>
-      Oak &amp; Grain Flooring is a fictional business shown for demonstration. The phone number shown is a reserved number used for demonstration only.
+      <strong><a href="https://samuelochoa.com/websites">Demo website built by Samuel Ochoa &mdash; samuelochoa.com/websites</a></strong>
+      Fictional business shown for demonstration. The phone number shown is a reserved number used for demonstration only.
     </p>
   </div>
 </footer>
 
 <div class="callbar">
   <div class="lab">Free written estimates<b>Oak &amp; Grain Flooring</b></div>
-  <a href="tel:+15165550128">Call now</a>
+  <a href="tel:+15165550128"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>Call now</a>
 </div>
 
 <script>
 (function(){
-  var menuBtn = document.getElementById('menu-toggle');
+  var navToggle = document.getElementById('nav-toggle');
   var nav = document.getElementById('site-nav');
-  var subBtn = document.getElementById('services-toggle');
-  var sub = document.getElementById('services-sub');
+  var subToggle = document.getElementById('services-toggle');
+  var submenu = document.getElementById('services-submenu');
+  var subParent = subToggle ? subToggle.closest('.has-submenu') : null;
 
-  function closeSub(){
-    if(!subBtn) return;
-    subBtn.setAttribute('aria-expanded','false');
-    sub.classList.remove('is-open');
-  }
-  function closeMenu(){
-    menuBtn.setAttribute('aria-expanded','false');
+  function closeNav(){
+    if(!nav) return;
     nav.classList.remove('is-open');
-    closeSub();
+    if(navToggle) navToggle.setAttribute('aria-expanded','false');
   }
-  menuBtn.addEventListener('click', function(){
-    var open = nav.classList.toggle('is-open');
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if(!open) closeSub();
-  });
-  if(subBtn){
-    subBtn.addEventListener('click', function(){
-      var open = sub.classList.toggle('is-open');
-      subBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  function closeSub(){
+    if(!submenu) return;
+    if(subParent) subParent.classList.remove('is-open');
+    if(subToggle) subToggle.setAttribute('aria-expanded','false');
+  }
+  if(navToggle && nav){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(!open) closeSub();
     });
   }
-  nav.addEventListener('click', function(e){
-    if(e.target.closest('a')){ closeMenu(); }
+  if(subToggle && submenu && subParent){
+    subToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = subParent.classList.toggle('is-open');
+      subToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(nav && nav.classList.contains('is-open') && !nav.contains(e.target) && e.target !== navToggle){
+      closeNav();
+    }
+    if(subParent && subParent.classList.contains('is-open') && !subParent.contains(e.target)){
+      closeSub();
+    }
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
-      closeMenu();
-      menuBtn.focus();
-    }
-  });
-  document.addEventListener('click', function(e){
-    if(!nav.contains(e.target) && !menuBtn.contains(e.target)){
-      closeMenu();
+      closeSub();
+      closeNav();
     }
   });
 })();

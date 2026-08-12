@@ -1,0 +1,517 @@
+/* ============================================================
+   Same-Day Springs — shared stylesheet
+   World: a dispatch-ticket world built from two fields that trade
+   off band to band — a drenched hazard-yellow surface (the hero,
+   the close, the mobile call strip) and a near-black "night"
+   surface (the header wall, the proof scene, the how-it-works
+   board), with warm ticket-paper carrying every read-heavy band.
+   A horizontal coil-spring zigzag is the one recurring device —
+   it is the logo mark, the service icon, and the hero's own
+   motion. A diagonal hazard stripe marks every hard seam, the way
+   tape marks a job site.
+   Fonts: Big Shoulders Display (built from industrial signage
+   lettering) for display, Public Sans (built for federal civic
+   notices) for body — a warning placard and a service notice,
+   the two objects this business actually hands you.
+   ============================================================ */
+
+:root{
+  /* ---- night: the ops-black surface ---- */
+  --night:#151109;
+  --night-2:#211a10;      /* a lifted panel ON night — scene walls, cards */
+  --night-3:#0c0904;      /* deepest — brackets, joints, shadow fill */
+
+  /* ---- hazard: the one committed accent, drenched in the hero ---- */
+  --hazard:#f6c400;
+  --hazard-2:#ffdd66;     /* soft tint, large-scale wash only, never small text */
+  --hazard-dk:#6b4400;    /* small text/labels on paper — 7.4:1+ */
+
+  /* ---- paper: the dispatch-ticket surface, carries the reading ---- */
+  --paper:#f5efe0;
+  --paper-2:#eae1c9;
+  --paper-3:#fffdf6;
+
+  /* ---- text ---- */
+  --ink:#1c160c;          /* primary text on paper/hazard — 15:1 / 11:1 */
+  --ink-2:#5b4f3a;         /* secondary text on paper — 6.9:1 */
+  --cream:#f3ecda;        /* primary text on night — 16:1 */
+  --cream-2:#c9bba0;       /* secondary text on night — 9.9:1 */
+
+  /* ---- rules / borders ---- */
+  --rule:#e3d9be;
+  --rule-strong:#9a8b68;
+  --rule-on-night:rgba(243,236,218,.14);
+  --rule-strong-on-night:#4a4030;
+
+  --shadow-1:0 10px 26px -14px rgba(12,9,4,.5);
+  --shadow-2:0 22px 46px -18px rgba(12,9,4,.55);
+  --shadow-flat:0 2px 10px rgba(12,9,4,.28);
+
+  --display:"Big Shoulders Display",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --measure:70ch;
+  --ribbon-w:128px;
+}
+
+/* ---------------- reset ---------------- */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:78px; /* clears mobile call bar */
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4{
+  font-family:var(--display);
+  font-weight:800;
+  line-height:.98;
+  margin:0;
+  letter-spacing:-.01em;
+  text-wrap:balance;
+}
+p{margin:0}
+p,li{max-width:var(--measure)}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+:focus-visible{outline:3px solid var(--night);outline-offset:2px;border-radius:2px}
+.topbar :focus-visible,.hero :focus-visible,.close-cta :focus-visible,
+.steps-band :focus-visible,.callbar :focus-visible,footer :focus-visible,
+.callcard :focus-visible{outline-color:var(--hazard)}
+
+/* ---------------- shell ---------------- */
+.pad{max-width:1180px;margin-inline:auto;padding-inline:20px}
+.band{padding:50px 0}
+.band + .band{border-top:1px solid var(--rule)}
+.content{width:100%;min-width:0}
+
+/* ---------------- demo ribbon ---------------- */
+.demo-ribbon{
+  position:fixed;top:0;right:0;z-index:320;
+  background:var(--night);color:var(--cream);
+  font-family:var(--body);font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 12px;border-bottom-left-radius:5px;
+  box-shadow:var(--shadow-flat);
+}
+
+/* ---------------- top bar / header — fused with the hazard hero ---------------- */
+.topbar{
+  position:sticky;top:0;z-index:120;
+  background:var(--hazard);color:var(--ink);
+  box-shadow:var(--shadow-flat);
+}
+.bar-top{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px var(--ribbon-w) 14px 20px;
+  position:relative;
+}
+
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin-right:auto}
+.brand svg.icon{width:32px;height:22px;color:var(--night);flex:none}
+.brand .word{display:flex;flex-direction:column;line-height:1}
+.brand .word b{font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;color:var(--night)}
+.brand .word span{
+  font-family:var(--body);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-2);margin-top:3px;font-weight:700;
+}
+
+.bar-actions{display:flex;align-items:center;gap:10px}
+
+.hamburger{
+  display:flex;align-items:center;justify-content:center;background:transparent;
+  border:1.5px solid rgba(28,22,12,.35);border-radius:6px;width:40px;height:40px;
+  cursor:pointer;flex:none;color:var(--night);
+}
+.hamburger svg.icon{width:20px;height:20px}
+.hamburger[aria-expanded="true"] .i-menu{display:none}
+.hamburger[aria-expanded="false"] .i-close{display:none}
+
+.tel-pill{
+  display:none;align-items:center;gap:9px;text-decoration:none;color:var(--hazard);
+  background:var(--night);padding:10px 16px;border-radius:6px;font-weight:700;font-size:15.5px;
+  white-space:nowrap;
+}
+.tel-pill svg.icon{width:17px;height:17px}
+.tel-pill:hover{background:var(--night-2)}
+
+/* nav — collapses on mobile, inline row on desktop */
+nav.nav{
+  order:10;flex-basis:100%;
+  max-height:0;overflow:hidden;transition:max-height .3s ease;
+}
+nav.nav.is-open{max-height:760px;margin-top:6px;padding-top:14px;border-top:1px solid rgba(28,22,12,.2)}
+
+.nav-callblock{display:flex;flex-direction:column;gap:10px;padding:2px 2px 16px}
+.nav-callblock .btn{font-size:16px}
+.nav-sms{
+  display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  color:var(--ink);font-weight:700;font-size:14.5px;padding:8px;
+}
+.nav-sms svg.icon{width:16px;height:16px;color:var(--night)}
+
+.nav ul{display:flex;flex-direction:column;gap:2px}
+.nav > ul > li{position:relative}
+.nav a,.sub-toggle{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;
+  text-decoration:none;color:var(--ink-2);padding:11px 12px;border-radius:6px;
+  font-family:var(--body);font-size:15px;font-weight:700;background:transparent;border:0;
+  cursor:pointer;text-align:left;
+}
+.nav a:hover,.sub-toggle:hover{color:var(--ink)}
+.nav a.current,.sub-toggle.current{background:rgba(21,17,9,.1);color:var(--ink)}
+.sub-toggle svg.icon{width:16px;height:16px;transition:transform .2s ease;flex:none}
+.sub-toggle[aria-expanded="true"] svg.icon{transform:rotate(180deg)}
+
+.sub-nav{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.sub-nav.is-open{max-height:340px}
+.sub-nav li{padding-left:10px}
+.sub-nav a{font-size:14px;font-weight:600;padding:9px 12px;color:var(--ink-2)}
+.sub-nav a.current{background:rgba(21,17,9,.1);color:var(--ink)}
+
+/* ---------------- buttons ---------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  font-family:var(--body);font-weight:700;font-size:16.5px;padding:15px 22px;border-radius:7px;
+  border:2px solid transparent;cursor:pointer;line-height:1;
+}
+.btn svg.icon{width:18px;height:18px;flex:none}
+.btn-fill{background:var(--night);color:var(--hazard);border-color:var(--night)}
+.btn-fill:hover{background:var(--night-2);border-color:var(--night-2)}
+.btn-out{background:transparent;color:var(--ink);border-color:rgba(28,22,12,.4)}
+.btn-out:hover{border-color:var(--ink)}
+
+/* ---------------- section heads (heading stands alone, no kicker) ---------------- */
+.head{margin-bottom:26px}
+.head h2{font-size:clamp(2rem,5vw,2.85rem);letter-spacing:-.015em}
+.head p{color:var(--ink-2);margin:14px 0 0;max-width:56ch;font-size:16.5px}
+.head.on-night p{color:var(--cream-2)}
+
+/* ---------------- checklist rows ---------------- */
+.check-row{display:flex;gap:14px;align-items:flex-start}
+.check-row .mark{
+  flex:none;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--night);color:var(--hazard);margin-top:1px;
+}
+.check-row .mark svg{width:14px;height:14px;stroke-width:2.6}
+.check-row.on-night .mark{background:var(--hazard);color:var(--night)}
+
+/* ---------------- hero — drenched hazard, fused to the header ---------------- */
+.hero{background:var(--hazard);position:relative;padding:36px 0 44px}
+.hero-in{position:relative;display:grid;gap:32px}
+.hero-copy{max-width:640px}
+.hero h1{font-size:clamp(2.7rem,7.8vw,4.7rem);letter-spacing:-.015em;color:var(--night)}
+.hero h1 mark{
+  background:var(--night);color:var(--hazard);padding:.02em .14em;border-radius:.1em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.hero .sub{font-size:17.5px;color:#3a2f18;max-width:54ch;margin:18px 0 0}
+.hero-cta{display:flex;flex-direction:column;gap:10px;margin:26px 0 0}
+.hero-note{
+  display:flex;align-items:center;gap:9px;font-size:13.5px;color:#3a2f18;
+  margin:20px 0 0;font-weight:700;
+}
+.hero-note svg.icon{width:16px;height:16px;color:var(--night);flex:none}
+
+.scene-frame{
+  border-radius:10px;overflow:hidden;background:var(--night);box-shadow:var(--shadow-2);
+}
+.scene-frame svg{width:100%;height:auto;display:block}
+.scene-cap{
+  display:flex;justify-content:space-between;gap:10px;margin-top:10px;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3a2f18;
+}
+.scene-cap b{color:var(--night);font-weight:800}
+
+/* the coil's release — hero's one authored moment */
+.snap-swing{
+  transform-origin:392px 95px;
+  animation:spring-release 1s cubic-bezier(.22,1,.36,1) .2s both;
+}
+@keyframes spring-release{
+  0%{transform:rotate(-16deg) translate(-2px,-3px)}
+  55%{transform:rotate(6deg) translate(1px,1px)}
+  100%{transform:rotate(0) translate(0,0)}
+}
+
+/* seam — diagonal hazard stripe between hero and next band */
+.seam{
+  height:14px;
+  background-image:repeating-linear-gradient(45deg,var(--night) 0 14px,var(--hazard) 14px 28px);
+}
+
+/* ---------------- services teaser (index) — rows, not cards ---------------- */
+.teaser-list{border-top:1px solid var(--rule)}
+.teaser-row{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
+  padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;
+}
+.teaser-row .ic{
+  width:46px;height:46px;border-radius:9px;background:var(--night);color:var(--hazard);
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.teaser-row .ic svg{width:23px;height:23px}
+.teaser-row h3{font-size:19.5px;font-weight:700;letter-spacing:-.01em;font-family:var(--body)}
+.teaser-row p{font-size:15px;color:var(--ink-2);margin-top:5px;max-width:52ch}
+.teaser-row .go{width:20px;height:20px;color:var(--hazard-dk);flex:none;transition:transform .2s ease}
+.teaser-row:hover .go{transform:translateX(4px)}
+.teaser-row:first-child{padding-top:0}
+
+/* ---------------- proof vignette (index) ---------------- */
+.proof{display:grid;gap:26px;align-items:center}
+.proof-art{border-radius:12px;overflow:hidden;background:var(--night)}
+.proof-art svg{width:100%;height:auto}
+
+/* ---------------- steps band (night — the dispatch board) ---------------- */
+.steps-band{background:var(--night);color:var(--cream)}
+.steps{display:grid;gap:1px;background:var(--rule-on-night);border:1px solid var(--rule-on-night);border-radius:12px;overflow:hidden}
+.step{background:var(--night);padding:26px 20px}
+.step .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--hazard);display:block;margin-bottom:11px;font-weight:700}
+.step h3{font-family:var(--display);font-size:22px;margin-bottom:9px;color:var(--cream);font-weight:800}
+.step p{margin:0;font-size:15px;color:var(--cream-2)}
+
+/* ---------------- why-us (paper band, checklist) ---------------- */
+.why-list{display:grid;gap:22px}
+.why-list .check-row p{color:var(--ink-2);font-size:15.5px;margin-top:4px}
+.why-list .check-row h3{font-family:var(--body);font-size:17.5px;font-weight:700;color:var(--ink)}
+
+/* ---------------- duo cards (area + hours) ---------------- */
+.duo{display:grid;gap:22px}
+.card{background:var(--paper-2);border:1px solid var(--rule-strong);border-radius:12px;padding:24px 22px}
+.card h3{font-family:var(--body);font-size:19px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.card h3 svg.icon{width:20px;height:20px;color:var(--hazard-dk)}
+.rowline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--rule-strong);font-size:15px}
+.rowline:last-of-type{border-bottom:0}
+.rowline b{font-weight:500}
+.rowline span{font-weight:700;font-size:14.5px;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0}
+.chips li{font-size:12px;letter-spacing:.04em;font-weight:600;border:1px solid var(--rule-strong);background:var(--paper-3);border-radius:5px;padding:6px 10px;color:var(--ink-2)}
+.fine{font-size:14.5px;color:var(--ink-2);margin:16px 0 0}
+
+/* ---------------- closing CTA band — bookends the hero, every page ---------------- */
+.close-cta{background:var(--hazard);color:var(--night);text-align:left}
+.close-cta h2{color:var(--night);font-size:clamp(1.9rem,5vw,2.7rem)}
+.close-cta p{color:#3a2f18;margin-top:12px;max-width:50ch;font-size:16.5px}
+.close-cta .hero-cta{margin-top:22px}
+.close-cta .btn-out{color:var(--night);border-color:rgba(21,17,9,.4)}
+.close-cta .btn-out:hover{border-color:var(--night)}
+
+/* ---------------- call bar (mobile) ---------------- */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:130;
+  border-top:3px solid var(--night);display:grid;grid-template-columns:1.6fr 1fr;
+}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;font-weight:700;padding:13px 8px}
+.cb-call{background:var(--hazard);color:var(--night);font-size:16px}
+.cb-call .s{display:block;font-size:10.5px;letter-spacing:.05em;font-weight:600;opacity:.8}
+.cb-text{background:var(--night);color:var(--cream);font-size:14.5px}
+.callbar svg.icon{width:18px;height:18px;flex:none}
+
+/* ---------------- work gallery ---------------- */
+.gallery{display:grid;gap:22px}
+.vignette{background:var(--paper-2);border:1px solid var(--rule-strong);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-1)}
+.vignette .art{background:var(--night);aspect-ratio:4/3}
+.vignette .art svg{width:100%;height:100%}
+.vignette .cap{padding:16px 18px 20px}
+.vignette .tag{
+  font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--hazard-dk);
+  display:inline-block;background:var(--paper-3);border:1px solid var(--rule-strong);border-radius:3px;padding:2px 7px;
+}
+.vignette h3{font-family:var(--body);font-size:18px;font-weight:700;margin-top:10px}
+.vignette p{font-size:14.5px;color:var(--ink-2);margin-top:6px}
+.vignette .lk{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
+.vignette .lk svg{width:15px;height:15px;color:var(--hazard-dk)}
+.vignette .lk:hover{color:var(--hazard-dk)}
+.vignette.feat{grid-column:1 / -1}
+.vignette.feat .art{aspect-ratio:16/8}
+.vignette.feat{
+  opacity:0;transform:translateY(14px);
+  animation:rise-in .75s cubic-bezier(.22,1,.36,1) .1s forwards;
+}
+
+/* ---------------- services page sections ---------------- */
+.svc-intro p{max-width:60ch}
+.svc-intro .head h2{
+  opacity:0;transform:translateY(12px);
+  animation:rise-in .6s cubic-bezier(.22,1,.36,1) .05s forwards;
+}
+.svc{padding:44px 0;border-top:1px solid var(--rule)}
+.svc:first-of-type{border-top:0}
+.svc-grid{display:grid;gap:26px}
+.svc-head{display:flex;align-items:center;gap:14px}
+.svc-head .ic{width:52px;height:52px;border-radius:11px;background:var(--night);color:var(--hazard);display:flex;align-items:center;justify-content:center;flex:none}
+.svc-head .ic svg{width:26px;height:26px}
+.svc-head h2{font-size:clamp(1.55rem,3.8vw,2.1rem)}
+.svc-body p{color:var(--ink-2);margin-top:14px;max-width:64ch}
+.svc-side{background:var(--paper-2);border:1px solid var(--rule-strong);border-radius:10px;padding:18px 18px}
+.svc-side .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--hazard-dk)}
+.svc-side p{margin-top:8px;font-size:14.5px;color:var(--ink-2)}
+.svc-side p+p{margin-top:12px}
+
+/* ---------------- about page ---------------- */
+.story p{font-size:17.5px;color:var(--ink-2);max-width:66ch}
+.story p+p{margin-top:18px}
+.story-wrap{display:grid;gap:34px}
+.tag-flag{
+  width:64px;height:11px;margin:0 0 26px;
+  background-image:repeating-linear-gradient(45deg,var(--night) 0 8px,var(--hazard) 8px 16px);
+  transform:scaleX(0);transform-origin:left center;
+  animation:flag-snap .55s cubic-bezier(.22,1,.36,1) .1s forwards;
+}
+@keyframes flag-snap{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.story-head h2{
+  opacity:0;transform:translateY(12px);
+  animation:rise-in .65s cubic-bezier(.22,1,.36,1) .28s forwards;
+}
+@keyframes rise-in{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}
+
+/* ---------------- contact page ---------------- */
+.cbox{display:grid;gap:24px}
+.callcard{background:var(--night);color:var(--cream);padding:28px 24px;border-radius:14px;position:relative;overflow:hidden}
+.callcard::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;
+  background-image:repeating-linear-gradient(45deg,var(--night) 0 8px,var(--hazard) 8px 16px);}
+.callcard{
+  opacity:0;transform:translateY(-10px) scale(.97);
+  animation:punch-in .6s cubic-bezier(.22,1,.36,1) .1s forwards;
+}
+@keyframes punch-in{0%{opacity:0;transform:translateY(-10px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.callcard .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-2);margin:12px 0 10px;font-weight:700}
+.callcard a.num{
+  display:block;text-decoration:none;font-family:var(--display);font-size:clamp(2rem,8.6vw,3.3rem);font-weight:800;
+  letter-spacing:-.01em;line-height:1.05;color:var(--cream);
+}
+.callcard p{margin:14px 0 0;font-size:15px;color:var(--cream-2);max-width:44ch}
+.callcard .altline{display:flex;align-items:center;gap:9px;margin-top:18px;padding-top:18px;border-top:1px dashed var(--rule-on-night)}
+.callcard .altline a{color:var(--cream);text-decoration:none;font-weight:700;font-size:15px}
+.callcard .altline svg{width:18px;height:18px;color:var(--hazard);flex:none}
+.callcard .hours-mini{margin-top:18px;padding-top:18px;border-top:1px dashed var(--rule-on-night)}
+.callcard .hours-mini .hr{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:13.5px;color:var(--cream-2)}
+.callcard .hours-mini .hr b{color:var(--cream);font-weight:600}
+.callcard .hours-mini .hr span{font-variant-numeric:tabular-nums;font-weight:600}
+
+form{background:var(--paper-2);border:1px solid var(--rule-strong);padding:24px 22px;border-radius:12px}
+.f{margin-bottom:16px}
+label{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-bottom:7px;font-weight:700}
+input,select,textarea{
+  width:100%;background:var(--paper-3);border:1.5px solid var(--rule-strong);border-radius:6px;color:var(--ink);
+  font-family:inherit;font-size:16px;padding:12px 13px;
+}
+input::placeholder,textarea::placeholder{color:#8a7d5e}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--night);outline-offset:1px}
+textarea{min-height:104px;resize:vertical}
+.send{width:100%;border:0;background:var(--night);color:var(--hazard);font-family:inherit;font-weight:700;font-size:17px;padding:15px;border-radius:7px;cursor:pointer}
+.send:hover{background:var(--night-2)}
+.sample{font-size:11.5px;color:var(--ink-2);text-align:center;margin:11px 0 0;letter-spacing:.03em;font-weight:600}
+
+.faq{border-top:1px solid var(--rule)}
+.faq-item{padding:22px 0;border-bottom:1px solid var(--rule)}
+.faq-item h3{font-family:var(--body);font-size:18px;font-weight:700}
+.faq-item p{color:var(--ink-2);margin-top:8px;max-width:60ch}
+
+/* ---------------- footer ---------------- */
+footer{background:var(--night-3);color:var(--cream-2);padding:34px 0 28px}
+.foot-top{display:flex;flex-direction:column;gap:18px;margin-bottom:20px}
+.foot-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream)}
+.foot-brand:hover{color:var(--hazard)}
+.foot-brand svg.icon{width:28px;height:19px;color:var(--hazard)}
+.foot-brand b{font-family:var(--display);font-weight:800;font-size:18px}
+.foot-links{display:flex;flex-wrap:wrap;gap:16px 20px}
+.foot-links a{font-size:13px;letter-spacing:.03em;font-weight:600;color:var(--cream-2);text-decoration:none}
+.foot-links a:hover{color:var(--cream)}
+.disc{border-top:1px solid var(--rule-on-night);padding-top:16px;font-size:12.5px;line-height:1.75;color:#8f8878}
+.disc a{color:var(--hazard);font-weight:600}
+.disc strong{color:var(--cream);font-weight:700}
+.disc strong a{color:var(--cream);text-decoration:underline}
+
+/* ---------------- icons ---------------- */
+svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------------- reduced motion ---------------- */
+@media (prefers-reduced-motion:reduce){
+  .snap-swing{animation:none;transform:none}
+  .vignette.feat,.story-head h2,.callcard,.svc-intro .head h2{animation:none;opacity:1;transform:none}
+  .tag-flag{animation:none;transform:scaleX(1)}
+  *{scroll-behavior:auto !important}
+}
+
+/* ================= small tablet ================= */
+@media (min-width:600px){
+  .hero-cta{flex-direction:row}
+  .duo{grid-template-columns:1fr 1fr}
+  .cbox{grid-template-columns:1fr 1fr;align-items:start}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .nav-callblock{flex-direction:row}
+  .nav-callblock .btn{flex:1}
+}
+
+@media (min-width:760px){
+  .gallery{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1.5fr 1fr}
+  .proof{grid-template-columns:1fr 1fr}
+  .hero-in{grid-template-columns:1.05fr .95fr;align-items:center;gap:38px}
+}
+
+/* ================= desktop nav ================= */
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .callbar{display:none}
+
+  .bar-top{padding:12px var(--ribbon-w) 12px 24px;flex-wrap:nowrap}
+  .hamburger{display:none}
+  .nav-callblock{display:none}
+  .tel-pill{display:inline-flex}
+
+  nav.nav{
+    order:0;flex-basis:auto;max-height:none !important;overflow:visible;
+    margin-top:0 !important;padding-top:0 !important;border-top:0 !important;
+  }
+  .nav ul{flex-direction:row;gap:2px;align-items:center}
+  .nav a,.sub-toggle{font-size:14px;padding:10px 13px;font-weight:600}
+  li.has-sub{position:relative}
+  .sub-nav{
+    position:absolute;left:0;top:calc(100% + 10px);width:250px;z-index:140;
+    background:var(--night-2);border:1px solid var(--rule-strong-on-night);border-radius:10px;
+    padding:8px;box-shadow:var(--shadow-2);
+    max-height:none;overflow:visible;flex-direction:column;
+    opacity:0;visibility:hidden;transform:translateY(4px);pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease,visibility .18s;
+  }
+  .sub-nav.is-open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+  .sub-nav a{color:var(--cream-2);font-weight:600}
+  .sub-nav a:hover{color:var(--cream);background:rgba(243,236,218,.06)}
+  .sub-nav a.current{background:rgba(243,236,218,.1);color:var(--cream)}
+
+  .pad{padding-inline:48px}
+  .band{padding:74px 0}
+  .hero{padding:60px 0 70px}
+  .hero-cta{margin-top:30px}
+
+  .teaser-row{padding:26px 0}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .duo{grid-template-columns:1fr 1fr;gap:30px}
+  .why-list{grid-template-columns:1fr 1fr;column-gap:40px}
+  .cbox{grid-template-columns:.85fr 1.15fr;gap:32px}
+  .callcard{padding:36px 32px}
+  form{padding:30px}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .vignette.feat{grid-column:span 2}
+  .svc-grid{grid-template-columns:1.6fr 1fr}
+  .foot-top{flex-direction:row;align-items:center;justify-content:space-between}
+}
+
+@media (min-width:1200px){
+  .hero h1{font-size:clamp(3.3rem,5.2vw,4.9rem)}
+}

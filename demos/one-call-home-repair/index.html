@@ -1,0 +1,417 @@
+<!--
+  DIRECTION CONTRACT — One Call Home Repair
+  THESIS: One call puts the whole list on the board — not five separate calls to five separate guys, one call, one visit, every line item cleared.
+  OWN-WORLD: a repair shop's dispatch board at full scale — a cobalt steel panel of job rows that move from called in, to on it, to cleared, safety orange the color of a job actively being worked, reused on every page as rows, tags and status words instead of a logo that just sits there.
+  STORY: the board fills from one phone call -> the rows are the real services, each one a job that gets called in -> the process reads like the board's own status words (called in, dispatched, cleared) -> the work log is a wall of cleared entries -> close on the line that's still open, waiting for the call.
+  FIRST VIEWPORT: a full cobalt field, an oversized dispatch board mid-update with one row flipping live from "on it" to "cleared", the promise headline and both CTAs sitting right beside it so the one-call efficiency is on screen before any copy has to explain it.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Call Home Repair | Long Island, NY | Demo Site</title>
+<meta name="description" content="One Call Home Repair: small repairs, furniture assembly, TV and shelf mounting, door and window fixes, and full punch-list projects. One call clears the whole list in one visit. Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-board" viewBox="0 0 24 24"><rect x="2.6" y="3.2" width="18.8" height="17.6" rx="2.2"/><path d="M6.2 8.4h8.4M6.2 12.2h11.6M6.2 16h7.4"/><circle cx="18.3" cy="6.6" r="1.3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3.2l1.6 4-2.1 1.7a13.6 13.6 0 0 0 6.6 6.6l1.7-2.1 4 1.6v3.2c0 1-.8 1.7-1.8 1.6C10.3 19 5 13.7 3.9 5.3c-.1-1 .6-1.8 1.6-1.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9.5L5 19v-3.5H4v-10Z"/><path d="M7.5 9.5h9M7.5 12.5h5.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4.5 4.5L19 8"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h10v9H3z"/><path d="M13 11h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 1-5.1 5.1L4 17l3 3 5.6-5.6a4 4 0 0 1 5.1-5.1l-2.4 2.4-2-2 2.4-2.4Z"/></symbol>
+<symbol id="i-assembly" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="9.5" height="15" rx="1.2"/><circle cx="18" cy="8.6" r="2.7"/><path d="M18 6.1v5M15.5 8.6h5"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.4"/><path d="M9 20h6M12 16v4"/><path d="M7 8.4h4M7 11.2h6"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="4.5" y="3" width="9.5" height="18" rx="1"/><circle cx="11.6" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M17 6.5v11M20 6.5v11"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="17" rx="1.6"/><rect x="8.5" y="2.5" width="7" height="3.2" rx="1"/><path d="M8.2 10.5h7.6M8.2 14h7.6M8.2 17.5h5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.4A7 7 0 0 0 5 9.6C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-board"></use></svg>
+      <span class="brand-word"><b>One Call</b><span>Home Repair</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#repairs">Small Repairs</a></li>
+            <li><a href="services.html#assembly">Furniture Assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; Shelf Mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; Window Fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-List Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+16315550107">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span class="num">(631) 555-0107</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#repairs">Small Repairs</a></li>
+          <li><a href="services.html#assembly">Furniture Assembly</a></li>
+          <li><a href="services.html#mounting">TV &amp; Shelf Mounting</a></li>
+          <li><a href="services.html#doors-windows">Door &amp; Window Fixes</a></li>
+          <li><a href="services.html#punch-list">Punch-List Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+16315550107">Call (631) 555-0107</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1>One call clears <em>the whole list.</em></h1>
+        <p class="sub">Small repairs, furniture assembly, mounting, sticking doors, the punch list you keep meaning to get to. Read it to us once and it goes on the board. Most lists clear in a single visit.</p>
+        <div class="cta">
+          <div class="btn-row">
+            <a class="btn btn-primary" href="tel:+16315550107">
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              Call (631) 555-0107
+            </a>
+          </div>
+          <a class="textlink on-dark" href="sms:+16315550107">
+            <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+            Text us the list
+          </a>
+        </div>
+        <p class="hero-note">One trip, one guy, the whole list, priced on the call before anyone drives out.</p>
+      </div>
+
+      <div class="board hero-board" aria-label="Sample dispatch board, a Tuesday visit">
+        <div class="board-bar">
+          <span class="board-name"><svg class="icon" aria-hidden="true"><use href="#i-board"></use></svg>Today&rsquo;s board</span>
+          <span class="board-meta">One call &middot; Tue</span>
+        </div>
+        <ul class="board-rows">
+          <li class="row is-cleared">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="job">Kitchen drawer slide, replaced</span>
+            <span class="status">Cleared</span>
+          </li>
+          <li class="row is-cleared">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="job">Hallway light switch, swapped</span>
+            <span class="status">Cleared</span>
+          </li>
+          <li class="row is-flip">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="job">Bedroom TV, wall mount</span>
+            <span class="status-wrap">
+              <span class="status status-a">On it</span>
+              <span class="status status-b">Cleared</span>
+            </span>
+          </li>
+          <li class="row">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="job">Storm door closer, adjusted</span>
+            <span class="status">Queued</span>
+          </li>
+          <li class="row">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="job">Hallway baseboard, re-nailed</span>
+            <span class="status">Queued</span>
+          </li>
+        </ul>
+        <p class="board-foot">One call this morning. Five jobs, one visit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What one call actually does</h2>
+        <p>Read us what&rsquo;s wrong with the house, however many things, big or small. Every item goes on the board as its own line before we hang up, not a separate appointment for each one.</p>
+      </div>
+
+      <div class="callflow">
+        <div class="callflow-bubble">
+          <span class="bubble-lbl"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>You call, we write it down</span>
+          <div class="bubble-grid">
+            <div class="chip-mini"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span>Small repair</span></div>
+            <div class="chip-mini"><svg class="icon" aria-hidden="true"><use href="#i-assembly"></use></svg><span>Assembly</span></div>
+            <div class="chip-mini"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg><span>TV or shelf</span></div>
+            <div class="chip-mini"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg><span>Door or window</span></div>
+          </div>
+        </div>
+
+        <div class="callflow-arrow" aria-hidden="true">
+          <span class="dashline"></span>
+          <svg class="icon"><use href="#i-arrow"></use></svg>
+        </div>
+
+        <div class="board compact" aria-label="Sample board rows filled from one call">
+          <div class="board-bar">
+            <span class="board-name" style="font-size:.95rem">On the board</span>
+          </div>
+          <ul class="board-rows">
+            <li class="row is-cleared"><span class="dot" aria-hidden="true"></span><span class="job">Faucet, cartridge swapped</span><span class="status">Cleared</span></li>
+            <li class="row is-cleared"><span class="dot" aria-hidden="true"></span><span class="job">Hallway bench, assembled</span><span class="status">Cleared</span></li>
+            <li class="row is-active"><span class="dot" aria-hidden="true"></span><span class="job">Living room shelf, mounted</span><span class="status">On it</span></li>
+            <li class="row"><span class="dot" aria-hidden="true"></span><span class="job">Bedroom window, balance</span><span class="status">Queued</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proof-copy">
+        <div class="check-row">
+          <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <p>Everything called in gets written down before we hang up, so nothing gets lost between the call and the truck pulling up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Five things that end up on the list</h2>
+        <p>The full list, with what&rsquo;s included and when you&rsquo;d actually call it in, lives on the services page.</p>
+      </div>
+      <div class="teaser-list">
+        <a class="teaser-row" href="services.html#repairs">
+          <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+          <span>
+            <h3>Small Repairs</h3>
+            <p>Loose hinges, running toilets, a switch that quit. Easy to fix, easy to keep putting off.</p>
+          </span>
+          <span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+        </a>
+        <a class="teaser-row" href="services.html#assembly">
+          <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-assembly"></use></svg></span>
+          <span>
+            <h3>Furniture Assembly</h3>
+            <p>Flat-pack furniture built straight and torqued right, so it doesn&rsquo;t work loose in six months.</p>
+          </span>
+          <span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+        </a>
+        <a class="teaser-row" href="services.html#mounting">
+          <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg></span>
+          <span>
+            <h3>TV &amp; Shelf Mounting</h3>
+            <p>TVs on studs, not hope. Shelves rated for what&rsquo;s going on them. Cable tucked, not zip-tied.</p>
+          </span>
+          <span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+        </a>
+        <a class="teaser-row" href="services.html#doors-windows">
+          <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+          <span>
+            <h3>Door &amp; Window Fixes</h3>
+            <p>Doors that stick, windows that won&rsquo;t stay up, screens popped out of the track.</p>
+          </span>
+          <span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+        </a>
+        <a class="teaser-row" href="services.html#punch-list">
+          <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg></span>
+          <span>
+            <h3>Punch-List Projects</h3>
+            <p>The move-in list, the move-out list, the list on the fridge for a year. One visit, one call.</p>
+          </span>
+          <span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head on-ink">
+        <h2>How the list gets cleared</h2>
+        <p>Same three words, every visit, in this order.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <h3>Read us the list</h3>
+          <span class="tag">Called In</span>
+          <p>Call and go through it, big or small. Photos by text help if it&rsquo;s easier to show than explain. Everything gets written down before we hang up.</p>
+        </div>
+        <div class="process-step">
+          <h3>Pick a window</h3>
+          <span class="tag">Dispatched</span>
+          <p>Morning or afternoon, and we text when we&rsquo;re on the way. If we&rsquo;re running behind, you hear it from us, not from silence.</p>
+        </div>
+        <div class="process-step">
+          <h3>Walk it before we go</h3>
+          <span class="tag">Cleared</span>
+          <p>We work the list in order, clean up after, and walk it with you. Anything needing a special part gets scheduled honestly, not buried in an invoice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why people call once and stop calling around</h2>
+      </div>
+      <div class="checklist">
+        <div class="check-row">
+          <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <span><h3>One call, one visit</h3><p>Read us the list and we work it in order, not a separate appointment for every little thing on it.</p></span>
+        </div>
+        <div class="check-row">
+          <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <span><h3>You hear it before the truck rolls</h3><p>Price and rough timing get worked out on the call, not guessed at on your doorstep.</p></span>
+        </div>
+        <div class="check-row">
+          <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <span><h3>We say no when it&rsquo;s not ours</h3><p>Anything past small repair, like work behind the panel or on the gas line, gets handed to a licensed trade instead of taken on anyway.</p></span>
+        </div>
+        <div class="check-row">
+          <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <span><h3>The board doesn&rsquo;t forget</h3><p>Everything called in is written down, so nothing falls off the list between the call and the visit.</p></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Got a list piling up?</h2>
+      <p>Call it in, or leave it on the contact page. Either way, it goes on the board.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+16315550107">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0107
+        </a>
+        <a class="btn btn-outline" href="contact.html">Leave your list instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="footer-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-board"></use></svg>
+        <b>One Call Home Repair</b>
+      </a>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:+16315550107">(631) 555-0107</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="footer-meta">
+      One Call Home Repair &middot; Serving Long Island, NY &middot; <a href="tel:+16315550107">(631) 555-0107</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+16315550107">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    (631) 555-0107
+  </a>
+</div>
+
+<script>
+(function(){
+  function qa(sel,ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); }
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeAllSubs(){
+    qa('.nav-sub-toggle').forEach(function(btn){ btn.setAttribute('aria-expanded','false'); });
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.hidden = true; }
+    closeAllSubs();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.hidden = open;
+      if(open){ closeAllSubs(); }
+    });
+  }
+  qa('.nav-sub-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      closeAllSubs();
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    qa('.has-sub').forEach(function(li){
+      if(!li.contains(e.target)){
+        var btn = li.querySelector('.nav-sub-toggle');
+        if(btn) btn.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

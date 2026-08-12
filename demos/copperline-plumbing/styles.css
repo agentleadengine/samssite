@@ -15,6 +15,7 @@
   --copper-light:#e2a06a;   /* light copper — text/links on dark teal, hover states */
   --copper-deep:#7c4023;    /* deep burnished copper — links/labels on paper, 4.5:1+ */
   --copper-wash:#f1d3b6;    /* pale copper wash — callout panels, never body text on it alone */
+  --copper-ink:#150c05;     /* near-black, text/icons sitting directly on --copper: 4.9:1+ */
 
   --paper:#f5eee1;          /* warm parchment — main light surface */
   --paper-dim:#ebdec6;      /* deeper parchment band, section rhythm */
@@ -114,11 +115,11 @@ a,button{outline-offset:3px}
   height:var(--callbar-h);
   background:var(--copper);
   display:flex;align-items:center;justify-content:center;gap:10px;
-  text-decoration:none;color:var(--ink);
+  text-decoration:none;color:var(--copper-ink);
   font-weight:700;font-size:18px;
   box-shadow:0 -8px 22px -10px rgba(9,36,34,.5);
 }
-.callbar svg{width:19px;height:19px;stroke:var(--ink);flex:none}
+.callbar svg{width:19px;height:19px;stroke:var(--copper-ink);flex:none}
 .callbar:hover{background:var(--copper-light)}
 
 /* ==========================================================================
@@ -211,8 +212,8 @@ header{
   transition:background .15s var(--ease-out),transform .15s var(--ease-out);
 }
 .btn svg{width:16px;height:16px;flex:none}
-.btn-copper{background:var(--copper);color:var(--ink);box-shadow:var(--shadow-sm)}
-.btn-copper svg{stroke:var(--ink)}
+.btn-copper{background:var(--copper);color:var(--copper-ink);box-shadow:var(--shadow-sm)}
+.btn-copper svg{stroke:var(--copper-ink)}
 .btn-copper:hover{background:var(--copper-light);transform:translateY(-1px)}
 .btn-outline{background:transparent;border:var(--ring) solid currentColor;color:inherit}
 
@@ -323,11 +324,11 @@ header{
   padding:22px 24px;max-width:520px;box-shadow:var(--shadow-md);
   transition:background .15s var(--ease-out);
 }
-.cta-phone .lbl{display:block;font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-deep)}
+.cta-phone .lbl{display:block;font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-ink)}
 .cta-phone .num{
   display:block;margin-top:6px;
   font-family:'Besley',Georgia,serif;font-weight:800;
-  font-size:clamp(1.9rem,7vw,3rem);color:var(--ink);line-height:1;
+  font-size:clamp(1.9rem,7vw,3rem);color:var(--copper-ink);line-height:1;
 }
 .cta-phone:hover{background:var(--copper-light)}
 .cta-band .foot-link{margin-top:18px}
@@ -484,7 +485,7 @@ input::placeholder,textarea::placeholder{color:var(--paper-muted)}
 input:focus,textarea:focus{border-color:var(--copper-deep)}
 textarea{min-height:116px;resize:vertical}
 .form-submit{
-  width:100%;margin-top:18px;background:var(--copper);color:var(--ink);
+  width:100%;margin-top:18px;background:var(--copper);color:var(--copper-ink);
   border-radius:var(--radius-md);font-weight:700;font-size:18px;padding:15px;
   box-shadow:var(--shadow-sm);
 }

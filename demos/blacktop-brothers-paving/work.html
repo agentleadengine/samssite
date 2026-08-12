@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Work — Blacktop Brothers Paving | Demo Site</title>
+<meta name="description" content="Five sample projects illustrating the kind of paving work Blacktop Brothers does: driveway repaves, sealcoating, crack filling, aprons and extensions, and parking pads. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Overpass:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 32 24"><path d="M5 21 12 3M27 21 20 3"/><path d="M15.6 15.2 16.7 11.4M17.5 8.3 18.1 5.4"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3h3l1.5 4-2 2c.9 2.6 2.9 4.6 5.5 5.5l2-2 4 1.5v3c0 .8-.7 1.4-1.5 1.3C11.9 17.7 6.3 12.1 5.7 4.5 5.6 3.7 6.2 3 7 3Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 3.5V16H4V5Z"/><path d="M8 9h8M8 12h6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M7.5 12.6l3 3 6.2-6.7"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-roller" viewBox="0 0 24 24"><circle cx="7" cy="16" r="4.2"/><rect x="9.2" y="7" width="9.5" height="7.2" rx="1.4"/><path d="M13.8 14.2v2.8M18.7 9.2h2.3M21 9.2v3.6"/></symbol>
+<symbol id="i-seal" viewBox="0 0 24 24"><path d="M4 18.5h16"/><rect x="7" y="14" width="10" height="4" rx="1"/><path d="M12 14V5"/><path d="M9.4 7 12 5l2.6 2"/></symbol>
+<symbol id="i-crack" viewBox="0 0 24 24"><path d="M3 20 8 13 6 10 11 4"/><path d="M16 5c1.6 2 2.6 3.4 2.6 4.8a2.6 2.6 0 1 1-5.2 0C13.4 8.4 14.4 7 16 5Z"/><path d="M14.5 13.7c1.7.5 2.9.4 4.3-.9"/></symbol>
+<symbol id="i-apron" viewBox="0 0 24 24"><path d="M9 3h6v5.2l6 2.8v10H3V11l6-2.8V3Z"/><path d="M9 8.6h6"/></symbol>
+<symbol id="i-pad" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="1.5" stroke-dasharray="3 3"/><path d="M8 12h8"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="topbar">
+  <div class="bar-top">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+      <span class="word"><b>Blacktop Brothers</b><span>Paving</span></span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-callblock">
+        <a class="btn btn-fill" href="tel:+16315550162">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0162
+        </a>
+        <a class="nav-sms" href="sms:+16315550162">
+          <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+          Text us instead
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#driveway">Driveway paving</a></li>
+            <li><a href="services.html#sealcoating">Sealcoating</a></li>
+            <li><a href="services.html#crackfill">Crack filling</a></li>
+            <li><a href="services.html#aprons">Aprons &amp; extensions</a></li>
+            <li><a href="services.html#parking-pads">Parking pads</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="current" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-meta">
+        <div class="blk"><b>Hours</b>Mon&ndash;Fri&nbsp;7a&ndash;5p<br>Sat&nbsp;8a&ndash;12p &middot; Sun Closed</div>
+        <div class="blk"><b>Service area</b>Long Island, NY</div>
+      </div>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="tel-pill" href="tel:+16315550162">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span>(631) 555-0162</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad">
+      <div class="head">
+        <h2>Five driveways, drawn the way we'd point them out in person</h2>
+        <p>No stock photography and no real customers' homes here &mdash; these are sample projects illustrating the kind of work each call turns into.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="gallery">
+
+        <article class="vignette feat">
+          <div class="art">
+            <svg viewBox="0 0 900 450" role="img" aria-label="Top-down illustration of a driveway split between an old cracked concrete-grey section and a freshly paved black section with a yellow stripe, running up to a garage.">
+              <rect width="900" height="450" fill="#d8d4c9"/>
+              <rect x="330" y="0" width="240" height="70" fill="#b7b3aa"/>
+              <rect x="350" y="14" width="200" height="42" rx="3" fill="#9c968a"/>
+              <g fill="rgba(11,12,14,.12)">
+                <circle cx="120" cy="140" r="2.4"/><circle cx="220" cy="100" r="2"/><circle cx="80" cy="260" r="2.2"/>
+                <circle cx="200" cy="340" r="2"/><circle cx="60" cy="380" r="2.4"/><circle cx="260" cy="220" r="2"/>
+              </g>
+              <g stroke="rgba(11,12,14,.5)" stroke-width="4.5" stroke-linecap="round" fill="none">
+                <path d="M60 90 L140 190 L100 280 L170 400"/>
+                <path d="M240 70 L200 160 L250 240"/>
+              </g>
+              <path d="M150 300c-6-20 8-38 32-40 22-2 36 14 32 34-4 22-28 30-46 24-12-4-14-10-18-18Z" fill="rgba(11,12,14,.36)"/>
+              <rect x="450" y="70" width="330" height="380" fill="#232428"/>
+              <g fill="rgba(245,242,232,.05)">
+                <circle cx="520" cy="140" r="2.2"/><circle cx="620" cy="110" r="2"/><circle cx="700" cy="220" r="2.4"/>
+                <circle cx="560" cy="320" r="2"/><circle cx="680" cy="390" r="2.2"/>
+              </g>
+              <rect x="600" y="90" width="16" height="340" rx="8" fill="#ffc933"/>
+              <g transform="translate(438,0) rotate(1.5 438 260)">
+                <rect x="-15" y="60" width="30" height="390" fill="#ffc933"/>
+                <rect x="-3" y="60" width="6" height="390" fill="#a87400"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Full driveway repave</h3>
+            <p>Old cracked slab torn out, base rebuilt, and repaved flat black with one clean stripe up to the garage.</p>
+            <a class="lk" href="services.html#driveway">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a wide squeegee spreading dark sealcoat across a driveway surface, leaving overlapping streak marks." preserveAspectRatio="xMidYMid slice">
+              <rect width="640" height="480" fill="#b7b3aa"/>
+              <rect y="0" width="640" height="480" fill="#3a3b3e" opacity=".55"/>
+              <g stroke="#232428" stroke-width="26" stroke-linecap="round" opacity=".8">
+                <path d="M60 130h300"/><path d="M60 210h360"/><path d="M60 290h300"/>
+              </g>
+              <g transform="translate(360,150) rotate(-8)">
+                <rect x="0" y="0" width="150" height="26" rx="6" fill="#0b0c0e"/>
+                <path d="M75 0V-80" stroke="#0b0c0e" stroke-width="8" stroke-linecap="round"/>
+                <path d="M50 -80h50" stroke="#0b0c0e" stroke-width="8" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Sealcoat pass</h3>
+            <p>Cracks filled first, surface degreased, then squeegeed flat in overlapping passes.</p>
+            <a class="lk" href="services.html#sealcoating">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a routed crack in asphalt being filled from a pour pot with hot rubberized filler.">
+              <rect width="640" height="480" fill="#232428"/>
+              <g fill="rgba(245,242,232,.05)"><circle cx="120" cy="90" r="2.2"/><circle cx="500" cy="130" r="2"/><circle cx="560" cy="360" r="2.4"/></g>
+              <path d="M90 420 170 300 140 230 220 120 190 60" stroke="#0b0c0e" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M90 420 170 300 140 230 220 120 190 60" stroke="#ffc933" stroke-width="4" stroke-linecap="round" fill="none" stroke-dasharray="0 220 60 400"/>
+              <g transform="translate(330,90)">
+                <path d="M0 0 60 0 50 90 10 90Z" fill="#0b0c0e"/>
+                <rect x="-14" y="-34" width="16" height="46" rx="4" fill="#0b0c0e" transform="rotate(-18)"/>
+                <path d="M20 90 C 8 130 0 160 4 190" stroke="#ffc933" stroke-width="9" stroke-linecap="round" fill="none"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Crack fill, routed and poured</h3>
+            <p>Cleaned out, routed square, and filled flush with hot rubberized filler before it spreads.</p>
+            <a class="lk" href="services.html#crackfill">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a new asphalt apron tying a driveway into the street, with a seam line where the new section meets the old.">
+              <rect width="640" height="480" fill="#232428"/>
+              <rect x="0" y="300" width="640" height="180" fill="#0b0c0e"/>
+              <rect x="0" y="300" width="640" height="10" fill="#5b564c"/>
+              <g fill="rgba(245,242,232,.05)"><circle cx="500" cy="380" r="2.4"/><circle cx="560" cy="420" r="2"/></g>
+              <path d="M220 300 200 60 440 60 420 300Z" fill="#232428" stroke="#55524c" stroke-width="2" stroke-dasharray="6 6"/>
+              <rect x="292" y="90" width="16" height="200" rx="8" fill="#ffc933"/>
+              <g fill="rgba(245,242,232,.05)"><circle cx="250" cy="150" r="2.2"/><circle cx="380" cy="200" r="2"/></g>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Apron tie-in at the street</h3>
+            <p>New apron graded to match the driveway's pitch so the seam disappears once it's rolled.</p>
+            <a class="lk" href="services.html#aprons">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Top-down illustration of a standalone parking pad beside a house corner, freshly paved with a defined edge and a wheel stop.">
+              <rect width="640" height="480" fill="#d8d4c9"/>
+              <rect x="0" y="0" width="180" height="200" fill="#b7b3aa"/>
+              <rect x="0" y="0" width="180" height="200" fill="none" stroke="#9c968a" stroke-width="3"/>
+              <rect x="230" y="120" width="330" height="280" rx="4" fill="#232428"/>
+              <rect x="230" y="120" width="330" height="280" rx="4" fill="none" stroke="#0b0c0e" stroke-width="6"/>
+              <rect x="360" y="220" width="70" height="18" rx="5" fill="#5b564c"/>
+              <g fill="rgba(245,242,232,.05)"><circle cx="290" cy="180" r="2.2"/><circle cx="480" cy="340" r="2"/><circle cx="400" cy="380" r="2.4"/></g>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Parking pad off to the side</h3>
+            <p>Base built for the load, graded away from the house, edges cut instead of trailing into the lawn.</p>
+            <a class="lk" href="services.html#parking-pads">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Yours could be next</h2>
+      <p>Call and we'll come look at what you've got before anything gets quoted.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550162">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0162
+        </a>
+        <a class="btn btn-out" href="about.html">How we work</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+          <b>Blacktop Brothers Paving</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+16315550162">(631) 555-0162</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Blacktop Brothers Paving &middot; Serving Long Island, NY &middot; <a href="tel:+16315550162">(631) 555-0162</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+16315550162">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call now<span class="s">(631) 555-0162</span></span>
+  </a>
+  <a class="cb-text" href="sms:+16315550162">
+    <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+    <span>Text</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var bar = document.querySelector('.topbar');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(bar && !bar.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

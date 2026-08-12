@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos de muestra | Pintura Nueva Vida</title>
+<meta name="description" content="Seis escenas ilustradas que muestran el alcance del trabajo de Pintura Nueva Vida: interior, exterior, gabinetes, molduras, resane de grietas y terrazas. Proyectos de muestra, no fotos reales.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Bitter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="cinta-demo">Sitio de demostración</div>
+
+<header class="encabezado">
+  <div class="encabezado-fila envoltura">
+    <a class="marca" href="index.html">
+      <svg class="marca-simbolo" viewBox="0 0 34 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <rect x="9.5" y="2" width="9" height="24" rx="3" fill="#1F6E4C" transform="rotate(-13 14 14)"/>
+        <rect x="12.5" y="2" width="9" height="24" rx="3" fill="#A83B1B"/>
+        <rect x="15.5" y="2" width="9" height="24" rx="3" fill="#21407D" transform="rotate(13 20 14)"/>
+      </svg>
+      <span class="marca-texto">
+        <span class="marca-nombre">Pintura Nueva Vida</span>
+        <span class="marca-lugar">Long Island, NY</span>
+      </span>
+    </a>
+
+    <nav class="nav-principal" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li>
+          <details class="submenu-servicios">
+            <summary class="nav-link">Servicios
+              <svg class="icono-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <ul class="submenu-lista">
+              <li><a href="services.html#interior">Pintura interior</a></li>
+              <li><a href="services.html#exterior">Pintura exterior</a></li>
+              <li><a href="services.html#gabinetes">Gabinetes de cocina</a></li>
+              <li><a href="services.html#molduras">Molduras, puertas y marcos</a></li>
+              <li><a href="services.html#resane">Resane de drywall y grietas</a></li>
+              <li><a href="services.html#terrazas">Terrazas y cercas de madera</a></li>
+              <li><a href="services.html" class="ver-todo">Ver todos los servicios</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="work.html" class="nav-link activa" aria-current="page">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="encabezado-cta">
+      <a class="encabezado-tel" href="tel:+15165550127">(516) 555-0127</a>
+      <a class="boton boton--sm" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar
+      </a>
+    </div>
+
+    <button id="boton-menu" class="boton-menu" type="button" aria-expanded="false" aria-controls="panel-movil">
+      <svg class="icono icono-abrir" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      <svg class="icono icono-cerrar" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      <span class="visually-hidden">Abrir menú</span>
+    </button>
+
+    <div id="panel-movil" class="panel-movil">
+      <nav aria-label="Móvil">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="submenu-servicios-movil">
+              <summary>Servicios
+                <svg class="icono-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <ul>
+                <li><a href="services.html#interior">Pintura interior</a></li>
+                <li><a href="services.html#exterior">Pintura exterior</a></li>
+                <li><a href="services.html#gabinetes">Gabinetes de cocina</a></li>
+                <li><a href="services.html#molduras">Molduras, puertas y marcos</a></li>
+                <li><a href="services.html#resane">Resane de drywall y grietas</a></li>
+                <li><a href="services.html#terrazas">Terrazas y cercas de madera</a></li>
+                <li><a href="services.html" class="ver-todo">Ver todos los servicios</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="work.html" aria-current="page">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="boton boton--ancho panel-movil-llamar" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar al (516) 555-0127
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="franja-color es-verde" style="padding:44px 0 50px">
+    <div class="envoltura">
+      <h1 class="anim-hero-item" style="animation-delay:.05s;font-size:clamp(2.1rem,5.6vw,3.2rem);max-width:18ch">Seis maneras de ver cómo trabajamos.</h1>
+      <p class="anim-hero-item" style="animation-delay:.17s;margin-top:14px;max-width:56ch">No usamos fotos de archivo ni nombres de clientes reales. Cada pieza de aquí es una escena ilustrada para mostrar el alcance del trabajo — por eso cada una dice, sin rodeos, "proyecto de muestra".</p>
+    </div>
+  </section>
+
+  <div class="corte-cinta" aria-hidden="true"></div>
+
+  <section class="envoltura seccion">
+    <div class="galeria">
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Ilustración de una sala y comedor de planta abierta con la pared del fondo pintada de verde musgo, un sofá y una mesa redonda." xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="340" fill="#EEE6D2"/>
+            <rect x="0" y="0" width="480" height="240" fill="#1F6E4C"/>
+            <rect x="0" y="240" width="480" height="10" fill="#D3C6A6"/>
+            <rect x="0" y="250" width="480" height="90" fill="#F0EAD9"/>
+            <line x1="0" y1="272" x2="480" y2="272" stroke="#D9C7A0" stroke-width="1" opacity=".6"/>
+            <line x1="0" y1="296" x2="480" y2="296" stroke="#D9C7A0" stroke-width="1" opacity=".6"/>
+            <line x1="0" y1="320" x2="480" y2="320" stroke="#D9C7A0" stroke-width="1" opacity=".6"/>
+            <rect x="336" y="40" width="92" height="112" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <line x1="382" y1="40" x2="382" y2="152" stroke="#D3C6A6" stroke-width="2"/>
+            <line x1="336" y1="96" x2="428" y2="96" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="34" y="176" width="146" height="40" rx="16" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="26" y="206" width="162" height="46" rx="14" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="20" y="196" width="26" height="56" rx="10" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="168" y="196" width="26" height="56" rx="10" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <ellipse cx="358" cy="253" rx="66" ry="15" fill="#F0EAD9" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="352" y="262" width="4" height="30" fill="#D3C6A6"/>
+            <rect x="392" y="262" width="4" height="30" fill="#D3C6A6"/>
+            <rect x="300" y="205" width="20" height="34" rx="6" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="396" y="205" width="20" height="34" rx="6" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Sala y comedor de planta abierta</h2>
+          <p>Blanco cálido en molduras y verde musgo en la pared del fondo, con el mismo tono corrido entre la sala y el comedor para que el ojo no se detenga en la esquina.</p>
+          <p class="pieza-servicio"><a href="services.html#interior">Ver el servicio: Pintura interior</a></p>
+        </div>
+      </article>
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Ilustración de la fachada de una casa de dos pisos en terracota, con molduras blancas alrededor de las ventanas y la puerta." xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="340" fill="#EEE6D2"/>
+            <rect x="0" y="300" width="480" height="40" fill="#D3C6A6"/>
+            <path d="M90 90 L240 26 L390 90 Z" fill="#7D7460"/>
+            <rect x="84" y="86" width="312" height="10" fill="#FBF8F1"/>
+            <rect x="90" y="90" width="300" height="212" fill="#A83B1B"/>
+            <rect x="126" y="108" width="58" height="66" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="132" y="114" width="46" height="54" fill="none" stroke="#1F6E4C" stroke-width="2"/>
+            <line x1="155" y1="114" x2="155" y2="168" stroke="#1F6E4C" stroke-width="1.5"/>
+            <line x1="132" y1="141" x2="178" y2="141" stroke="#1F6E4C" stroke-width="1.5"/>
+            <rect x="296" y="108" width="58" height="66" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="302" y="114" width="46" height="54" fill="none" stroke="#1F6E4C" stroke-width="2"/>
+            <line x1="325" y1="114" x2="325" y2="168" stroke="#1F6E4C" stroke-width="1.5"/>
+            <line x1="302" y1="141" x2="348" y2="141" stroke="#1F6E4C" stroke-width="1.5"/>
+            <rect x="108" y="216" width="46" height="58" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="326" y="216" width="46" height="58" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="210" y="204" width="60" height="98" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <circle cx="258" cy="256" r="3" fill="#7D7460"/>
+            <rect x="196" y="300" width="88" height="14" fill="#D3C6A6"/>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Fachada de dos pisos con molduras</h2>
+          <p>Cuerpo en terracota, molduras de ventana pintadas en verde de contraste, con la madera de los aleros sellada antes de abrir el color.</p>
+          <p class="pieza-servicio"><a href="services.html#exterior">Ver el servicio: Pintura exterior</a></p>
+        </div>
+      </article>
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Ilustración de una cocina con gabinetes azules arriba y abajo, cada puerta con panel embutido y agarradera." xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="340" fill="#EEE6D2"/>
+            <rect x="30" y="40" width="100" height="110" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="42" y="54" width="76" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="80" cy="140" r="3" fill="#F6F1E5"/>
+            <rect x="145" y="40" width="100" height="110" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="157" y="54" width="76" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="195" cy="140" r="3" fill="#F6F1E5"/>
+            <rect x="260" y="40" width="100" height="110" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="272" y="54" width="76" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="310" cy="140" r="3" fill="#F6F1E5"/>
+            <rect x="375" y="40" width="75" height="110" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="384" y="54" width="57" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="412" cy="140" r="3" fill="#F6F1E5"/>
+            <rect x="0" y="156" width="480" height="14" fill="#FBF8F1"/>
+            <line x1="20" y1="163" x2="460" y2="163" stroke="#D3C6A6" stroke-width="1" stroke-dasharray="2 6"/>
+            <rect x="0" y="170" width="480" height="24" fill="#D3C6A6"/>
+            <rect x="30" y="204" width="130" height="106" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="42" y="216" width="106" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="95" cy="256" r="3" fill="#F6F1E5"/>
+            <rect x="175" y="204" width="130" height="50" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="187" y="214" width="106" height="30" rx="3" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <rect x="175" y="260" width="130" height="50" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="187" y="270" width="106" height="30" rx="3" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <rect x="320" y="204" width="130" height="106" rx="6" fill="#21407D" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="332" y="216" width="106" height="82" rx="4" fill="none" stroke="#CBD7EF" stroke-width="2"/>
+            <circle cx="385" cy="256" r="3" fill="#F6F1E5"/>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Cocina completa</h2>
+          <p>Puertas y cajones desmontados, lijados y marcados uno por uno para que cada pieza volviera a su lugar exacto, con esmalte de gabinete en vez de pintura de pared.</p>
+          <p class="pieza-servicio"><a href="services.html#gabinetes">Ver el servicio: Gabinetes de cocina</a></p>
+        </div>
+      </article>
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Ilustración de un pasillo con paredes verdes y dos puertas con marcos blancos, una más cerca y una más lejos, sugiriendo profundidad." xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="340" fill="#1F6E4C"/>
+            <path d="M0 340 L480 340 L330 250 L150 250 Z" fill="#F0EAD9"/>
+            <rect x="32" y="82" width="136" height="236" rx="6" fill="none" stroke="#FBF8F1" stroke-width="7"/>
+            <rect x="40" y="90" width="120" height="220" rx="4" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="2"/>
+            <rect x="54" y="108" width="92" height="88" rx="3" fill="none" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="54" y="206" width="92" height="88" rx="3" fill="none" stroke="#D3C6A6" stroke-width="1.5"/>
+            <circle cx="140" cy="204" r="4" fill="#7D7460"/>
+            <rect x="285" y="125" width="80" height="140" rx="4" fill="none" stroke="#FBF8F1" stroke-width="4"/>
+            <rect x="290" y="130" width="70" height="130" rx="3" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+            <rect x="298" y="140" width="54" height="52" rx="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+            <rect x="298" y="200" width="54" height="52" rx="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+            <circle cx="352" cy="198" r="2.6" fill="#7D7460"/>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Pasillo con puertas y marcos</h2>
+          <p>Líneas de sellador derechas en cada marco, y una sola mano de blanco de moldura corrida por todo el pasillo para que combine puerta con puerta.</p>
+          <p class="pieza-servicio"><a href="services.html#molduras">Ver el servicio: Molduras, puertas y marcos</a></p>
+        </div>
+      </article>
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Diagrama de una esquina de techo: a la izquierda una grieta marcada en color terracota, a la derecha la misma esquina ya resanada, separadas por una línea de corte de cinta." xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="340" fill="#FBF8F1"/>
+            <rect x="0" y="0" width="480" height="92" fill="#F0EAD9"/>
+            <rect x="0" y="92" width="480" height="248" fill="#EEE6D2"/>
+            <line x1="0" y1="92" x2="480" y2="92" stroke="#D3C6A6" stroke-width="1.5"/>
+            <path d="M50 92 L66 118 L54 146 L70 176 L58 208" fill="none" stroke="#A83B1B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M66 118 L84 128" fill="none" stroke="#A83B1B" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+            <path d="M70 176 L88 184" fill="none" stroke="#A83B1B" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+            <rect x="300" y="60" width="110" height="140" rx="10" fill="#F3EFE2" stroke="#D3C6A6" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <rect x="312" y="72" width="86" height="116" rx="8" fill="none" stroke="#D3C6A6" stroke-width="1.3" opacity=".55"/>
+            <rect x="322" y="82" width="66" height="96" rx="6" fill="none" stroke="#D3C6A6" stroke-width="1.3" opacity=".35"/>
+            <g transform="translate(240 22) rotate(-6)"><rect x="-28" y="-8" width="70" height="16" rx="3" fill="#D9C7A0"/></g>
+            <g transform="translate(240 318) rotate(5)"><rect x="-28" y="-8" width="70" height="16" rx="3" fill="#D9C7A0"/></g>
+            <line x1="240" y1="10" x2="240" y2="330" stroke="#221D16" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Esquina de techo con grieta de asentamiento</h2>
+          <p>Grieta cortada, encintada y emparejada en tres capas de compuesto, selladas con bloqueador antes de igualar el techo alrededor.</p>
+          <p class="pieza-servicio"><a href="services.html#resane">Ver el servicio: Resane de drywall y grietas</a></p>
+        </div>
+      </article>
+
+      <article class="pieza">
+        <div class="pieza-escena">
+          <svg class="escena-svg" viewBox="0 0 480 340" role="img" aria-label="Ilustración de una terraza de madera con tablas en tono cálido y una cerca azul con balaustres al fondo, con una lata de tinte apoyada a un lado." xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="pnv-cerca" width="30" height="70" patternUnits="userSpaceOnUse" x="10" y="62">
+                <rect x="0" y="0" width="10" height="70" fill="#21407D"/>
+              </pattern>
+              <pattern id="pnv-tablas" width="480" height="34" patternUnits="userSpaceOnUse" x="0" y="140">
+                <rect x="0" y="0" width="480" height="30" fill="#E4C89A"/>
+              </pattern>
+            </defs>
+            <rect width="480" height="340" fill="#EEE6D2"/>
+            <rect x="10" y="62" width="460" height="70" fill="url(#pnv-cerca)"/>
+            <rect x="0" y="56" width="480" height="10" fill="#21407D"/>
+            <rect x="0" y="130" width="480" height="10" fill="#21407D"/>
+            <rect x="0" y="140" width="480" height="200" fill="#B9A377"/>
+            <rect x="0" y="140" width="480" height="200" fill="url(#pnv-tablas)"/>
+            <rect x="0" y="174" width="480" height="30" fill="#D9BD8C" opacity=".4"/>
+            <rect x="0" y="242" width="480" height="30" fill="#D9BD8C" opacity=".3"/>
+            <rect x="0" y="310" width="480" height="30" fill="#D9BD8C" opacity=".25"/>
+            <g transform="translate(400 258)">
+              <path d="M-10 -10 L10 -10 L6 0 L-6 0 Z" fill="#8A8168"/>
+              <rect x="-26" y="0" width="52" height="42" rx="4" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.5"/>
+              <rect x="-26" y="0" width="52" height="10" rx="4" fill="#D3C6A6"/>
+              <rect x="-16" y="16" width="32" height="18" rx="2" fill="#21407D"/>
+            </g>
+          </svg>
+        </div>
+        <div class="pieza-info">
+          <p class="pieza-etq">Proyecto de muestra</p>
+          <h2>Terraza de madera y cerca baja</h2>
+          <p>Lavado, secado completo y tinte aplicado con brocha tabla por tabla, no con rociador, para que el color entre parejo en la veta.</p>
+          <p class="pieza-servicio"><a href="services.html#terrazas">Ver el servicio: Terrazas y cercas de madera</a></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="envoltura cta-cierre-simple">
+    <h2>¿Su casa se parece a alguno de estos?</h2>
+    <p>Cuéntenos cuál, y hablamos de fecha y precio en la misma llamada.</p>
+    <div class="acciones">
+      <a class="boton" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar al (516) 555-0127
+      </a>
+      <a class="boton boton--linea" href="contact.html">Pedir presupuesto por escrito</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie-arriba">
+      <div>
+        <div class="pie-marca">
+          <svg class="marca-simbolo" viewBox="0 0 34 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect x="9.5" y="2" width="9" height="24" rx="3" fill="#1F6E4C" transform="rotate(-13 14 14)"/>
+            <rect x="12.5" y="2" width="9" height="24" rx="3" fill="#A83B1B"/>
+            <rect x="15.5" y="2" width="9" height="24" rx="3" fill="#21407D" transform="rotate(13 20 14)"/>
+          </svg>
+          <span class="marca-texto">
+            <span class="marca-nombre">Pintura Nueva Vida</span>
+            <span class="marca-lugar">Pintura interior y exterior · Long Island, NY</span>
+          </span>
+        </div>
+        <a class="pie-tel" href="tel:+15165550127">(516) 555-0127</a>
+      </div>
+      <nav class="pie-enlaces" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="services.html">Servicios</a>
+        <a href="work.html">Trabajos</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+    </div>
+    <p class="pie-legal">
+      <strong><a href="https://samuelochoa.com/paginas-web">Sitio de demostración creado por Samuel Ochoa — samuelochoa.com/paginas-web</a></strong><br>
+      Negocio ficticio mostrado como demostración. El teléfono que aparece es un número reservado que solo se usa para demostraciones.
+    </p>
+  </div>
+</footer>
+
+<div class="barra-llamada">
+  <div class="txt">Presupuesto sin costo<b>Pintura Nueva Vida</b></div>
+  <a class="ir" href="tel:+15165550127">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Llamar
+  </a>
+</div>
+
+<script>
+(function(){
+  var boton = document.getElementById('boton-menu');
+  var panel = document.getElementById('panel-movil');
+  if(!boton || !panel) return;
+  function cerrar(){ boton.setAttribute('aria-expanded','false'); panel.classList.remove('abierto'); }
+  function abrir(){ boton.setAttribute('aria-expanded','true'); panel.classList.add('abierto'); }
+  boton.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(boton.getAttribute('aria-expanded') === 'true'){ cerrar(); } else { abrir(); }
+  });
+  document.addEventListener('click', function(e){
+    if(boton.getAttribute('aria-expanded') === 'true' && !panel.contains(e.target) && e.target !== boton){ cerrar(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && boton.getAttribute('aria-expanded') === 'true'){ cerrar(); boton.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>

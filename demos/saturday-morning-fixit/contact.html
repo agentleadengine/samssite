@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Saturday Morning Fix-It | Demo Site</title>
+<meta name="description" content="Call or text Saturday Morning Fix-It to book a morning, or leave your list on the sample form. Long Island, NY, (631) 555-0105. Demo site.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M7.8 12.4l3 3 5.8-6.2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.7-2.1 1.6a11.4 11.4 0 0 0 5.6 5.6l1.6-2.1 3.7 1.3V17.5c0 1.1-.9 2-2 1.9C10.9 19 5 13.1 4.6 6.1 4.5 5 5.4 4 7 4Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1h-9l-4.2 3.3a.5.5 0 0 1-.8-.4V16H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/><circle cx="8.5" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/><circle cx="12" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/><circle cx="15.5" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo site</div>
+
+<header class="rail" id="site-rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <span class="word"><b>Saturday Morning Fix-It</b><span>Long Island, NY</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+16315550105">
+      <span style="display:flex;align-items:center;gap:10px"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>(631) 555-0105</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#small-repairs">Small repairs</a></li>
+            <li><a href="services.html#assembly">Furniture assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; shelf mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; window fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-list projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="current" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk">
+        <b>Hours</b>
+        Mon&ndash;Fri 7am&ndash;6pm<br>Sat 7am&ndash;2pm &middot; Sun closed
+      </div>
+      <div class="blk">
+        <b>Serving</b>
+        Long Island, NY
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+<main>
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad">
+      <div class="head">
+        <h1>Call it in, or leave the list here</h1>
+        <p>The phone gets a same-day answer. The form goes to the same place, just slower.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="cbox">
+        <div class="callcard">
+          <p class="k">Call or text</p>
+          <a class="num" href="tel:+16315550105">(631) 555-0105</a>
+          <p>Read us the list or describe what&rsquo;s going on. We&rsquo;ll tell you honestly whether it fits a morning and get you on the calendar.</p>
+          <div class="altline">
+            <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+            <a href="sms:+16315550105">Text the list instead</a>
+          </div>
+          <div class="hours-mini">
+            <div class="hr"><b>Monday &ndash; Friday</b><span>7:00a &ndash; 6:00p</span></div>
+            <div class="hr"><b>Saturday</b><span>7:00a &ndash; 2:00p</span></div>
+            <div class="hr"><b>Sunday</b><span>Closed</span></div>
+          </div>
+        </div>
+
+        <form>
+          <div class="f">
+            <label for="smf-name">Name</label>
+            <input id="smf-name" name="name" type="text" placeholder="First and last">
+          </div>
+          <div class="f">
+            <label for="smf-phone">Phone</label>
+            <input id="smf-phone" name="phone" type="tel" placeholder="Best number to reach you">
+          </div>
+          <div class="f">
+            <label for="smf-type">Type of work</label>
+            <select id="smf-type" name="type">
+              <option>Small repairs</option>
+              <option>Furniture assembly</option>
+              <option>TV &amp; shelf mounting</option>
+              <option>Door &amp; window fixes</option>
+              <option>Punch-list projects</option>
+              <option>A mix of things</option>
+            </select>
+          </div>
+          <div class="f">
+            <label for="smf-list">Your list</label>
+            <textarea id="smf-list" name="list" placeholder="Example: mount a 55-inch TV, rehang the bedroom door, assemble two nightstands..."></textarea>
+          </div>
+          <button class="send" type="button">Send the list</button>
+          <p class="sample">Sample form</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2>A few questions before you call</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Do you only work Saturdays?</h3>
+          <p>Saturday&rsquo;s the name because that&rsquo;s the feeling &ndash; the list that actually gets shorter. Morning bookings run Monday through Saturday; call and we&rsquo;ll find one that fits.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What should I have ready before you show up?</h3>
+          <p>Just the list &ndash; written down, texted over, or run through with us at the door. If it&rsquo;s more than fits in one morning, we&rsquo;ll say so before we start and help you pick what matters most today.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if something on the list turns out to be bigger than expected?</h3>
+          <p>We stop and tell you before it becomes part of the morning. Some things &ndash; electrical panels, gas lines, structural work &ndash; we&rsquo;ll point you to someone licensed for instead of guessing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pad">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <b>Saturday Morning Fix-It</b>
+      </a>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="tel:+16315550105">(631) 555-0105</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disc">
+      Saturday Morning Fix-It &middot; Serving Long Island, NY &middot; <a href="tel:+16315550105">(631) 555-0105</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+16315550105">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Saturday Morning Fix-It<span class="s">(631) 555-0105</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(focusBtn){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+    if(focusBtn && hamburger){ hamburger.focus(); }
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(true); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeMenu(false); }
+  });
+})();
+</script>
+
+</body>
+</html>

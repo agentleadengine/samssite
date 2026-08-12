@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+  THESIS: A cracked gate, a bent trailer frame, or a loose bracket doesn't
+  need a trip to a shop and a new part. Spark & Steel drives the rig to
+  the job and welds it back solid on the spot, for less than replacing it.
+  OWN-WORLD: Gunmetal steel and primed plate grey, cut once by the
+  white-hot cyan point of a live arc and the orange sparks it throws.
+  Panels read like riveted steel plate, icon tokens like a chamfered cut
+  edge, never a plain card. One line weight throughout, and the arc-glow
+  is the only thing on the page allowed to look hot.
+  STORY: The hero opens mid-repair: the rig is already parked, the leads
+  are already run, and the torch is already down on a broken hinge, arc
+  lit, sparks in the air, proving "we come to it" before a word of copy
+  loads.
+  FIRST VIEWPORT: Wordmark and phone in the header, the promise as
+  headline, a riveted job-ticket of quick facts, the repair-in-progress
+  scene, and both calls to action (call, see the services) all sit above
+  the fold from 375px to 1200px.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spark &amp; Steel Mobile Welding | On-Site Welding &amp; Fabrication, Long Island NY</title>
+<meta name="description" content="Spark &amp; Steel Mobile Welding brings on-site welding and fabrication to Long Island, NY: gates, railings, trailers, brackets, and custom steel work, fixed where it sits. Call (631) 555-0166.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Asap:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="ribbon">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="index.html" aria-label="Spark and Steel Mobile Welding, home">
+      <svg class="logo-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+        <path d="M14 3 L23 12 L14 21 L5 12 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M14 9 L14 6.2 M18.2 12 L21 12 M9.8 12 L7 12 M14 15 L14 17.8 M16.7 9.3 L18.6 7.4 M16.7 14.7 L18.6 16.6 M11.3 9.3 L9.4 7.4 M11.3 14.7 L9.4 16.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+      </svg>
+      <span class="logo-word"><b>Spark &amp; Steel</b><i>Mobile Welding</i></span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul style="display:flex;align-items:center;gap:.35rem;list-style:none;margin:0;padding:0">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li style="position:relative">
+          <button class="nav-services-btn" id="navServicesBtnDesktop" type="button" aria-expanded="false" aria-controls="navServicesPanelDesktop" aria-haspopup="true">
+            Services
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1.1rem;height:1.1rem"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul id="navServicesPanelDesktop" hidden style="list-style:none;margin:0">
+            <li><a href="services.html">All services</a></li>
+            <li><a href="services.html#mobile-welding">Mobile Welding</a></li>
+            <li><a href="services.html#gate-railing">Gate &amp; Railing Repair</a></li>
+            <li><a href="services.html#custom-fab">Custom Fabrication</a></li>
+            <li><a href="services.html#trailer-repair">Trailer Repair</a></li>
+            <li><a href="services.html#structural-brackets">Structural Brackets</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-tel" href="tel:+16315550166">(631) 555-0166</a>
+      <button class="hamburger" id="navHamburger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobileNav" hidden aria-label="Mobile">
+    <ul class="mnav-list">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li>
+        <button class="mnav-toggle" id="navServicesBtnMobile" type="button" aria-expanded="false" aria-controls="navServicesPanelMobile">
+          Services
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <ul id="navServicesPanelMobile" hidden>
+          <li><a href="services.html">All services</a></li>
+          <li><a href="services.html#mobile-welding">Mobile Welding</a></li>
+          <li><a href="services.html#gate-railing">Gate &amp; Railing Repair</a></li>
+          <li><a href="services.html#custom-fab">Custom Fabrication</a></li>
+          <li><a href="services.html#trailer-repair">Trailer Repair</a></li>
+          <li><a href="services.html#structural-brackets">Structural Brackets</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mnav-foot">
+      <a class="btn" href="tel:+16315550166">Call (631) 555-0166</a>
+      <a class="btn btn--ghost-dark" href="sms:+16315550166">Text (631) 555-0166</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero section--ink">
+    <div class="wrap hero-in">
+      <div class="hero-sub-wrap">
+        <h1 class="anim-hero-a">Bent, cracked, or broken,<br>we weld it <span>where it sits.</span></h1>
+        <p class="lead hero-sub anim-hero-b">Spark &amp; Steel is a truck built to run like a shop, not a shop you have to drive to. Gates, trailers, railings, brackets: if it's steel and it's stuck where it broke, we bring the fix to it instead of telling you to replace it.</p>
+
+        <div class="ticket riveted anim-hero-c">
+          <span class="ticket-item"><span class="ticket-k">Response</span><span class="ticket-v">Same-week, most jobs</span></span>
+          <span class="ticket-item"><span class="ticket-k">Coverage</span><span class="ticket-v">Long Island, NY</span></span>
+          <span class="ticket-item"><span class="ticket-k">Rig</span><span class="ticket-v">Truck-mounted</span></span>
+          <span class="ticket-item"><span class="ticket-k">Pricing</span><span class="ticket-v">Set before we cut</span></span>
+        </div>
+
+        <div class="btn-row hero-cta anim-hero-c">
+          <a class="btn" href="tel:+16315550166">Call (631) 555-0166</a>
+          <a class="link" href="services.html" style="color:var(--plate-050)">See the services
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1rem;height:1rem"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scene anim-hero-d">
+        <div class="hero-scene-panel">
+          <svg viewBox="0 0 460 300" role="img" aria-label="Line illustration of a mobile welding truck parked at a gate, the torch already down on the hinge, arc lit and sparks in the air">
+            <line x1="20" y1="258" x2="440" y2="258" stroke="#3A4750" stroke-width="3" stroke-linecap="round"></line>
+            <g>
+              <rect x="28" y="168" width="66" height="56" fill="none" stroke="#F5F7F8" stroke-width="7"></rect>
+              <rect x="40" y="180" width="28" height="22" fill="none" stroke="#F5F7F8" stroke-width="4"></rect>
+              <rect x="94" y="196" width="106" height="28" fill="none" stroke="#F5F7F8" stroke-width="7"></rect>
+              <rect x="108" y="176" width="18" height="44" rx="6" fill="none" stroke="#F5F7F8" stroke-width="5"></rect>
+              <rect x="113" y="167" width="8" height="10" fill="none" stroke="#F5F7F8" stroke-width="4"></rect>
+              <rect x="132" y="182" width="16" height="38" rx="6" fill="none" stroke="#F5F7F8" stroke-width="5"></rect>
+              <rect x="136" y="174" width="8" height="9" fill="none" stroke="#F5F7F8" stroke-width="4"></rect>
+              <circle cx="58" cy="238" r="20" fill="none" stroke="#F5F7F8" stroke-width="6"></circle>
+              <circle cx="58" cy="238" r="8" fill="none" stroke="#F5F7F8" stroke-width="4"></circle>
+              <circle cx="172" cy="238" r="20" fill="none" stroke="#F5F7F8" stroke-width="6"></circle>
+              <circle cx="172" cy="238" r="8" fill="none" stroke="#F5F7F8" stroke-width="4"></circle>
+            </g>
+            <g>
+              <line x1="300" y1="90" x2="300" y2="258" stroke="#F5F7F8" stroke-width="8" stroke-linecap="round"></line>
+              <line x1="420" y1="90" x2="420" y2="258" stroke="#F5F7F8" stroke-width="8" stroke-linecap="round"></line>
+              <line x1="300" y1="140" x2="420" y2="140" stroke="#F5F7F8" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="300" y1="190" x2="420" y2="190" stroke="#F5F7F8" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="332" y1="140" x2="332" y2="190" stroke="#F5F7F8" stroke-width="3.5" stroke-linecap="round"></line>
+              <line x1="362" y1="140" x2="362" y2="190" stroke="#F5F7F8" stroke-width="3.5" stroke-linecap="round"></line>
+              <line x1="392" y1="140" x2="392" y2="190" stroke="#F5F7F8" stroke-width="3.5" stroke-linecap="round"></line>
+            </g>
+            <path d="M126,178 C160,205 210,215 250,190 C270,178 275,165 283,157" fill="none" stroke="#26E0F2" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M283,157 L296,151" stroke="#F5F7F8" stroke-width="5" stroke-linecap="round"></path>
+            <path d="M279,163 L284,157" stroke="#F5F7F8" stroke-width="5" stroke-linecap="round"></path>
+            <g class="anim-hero-spark">
+              <circle cx="300" cy="150" r="30" fill="#26E0F2" opacity=".16"></circle>
+              <circle cx="300" cy="150" r="17" fill="#26E0F2" opacity=".32"></circle>
+              <circle cx="300" cy="150" r="7" fill="#6FF3FF"></circle>
+              <path d="M291,150 L283,150 M309,150 L317,150 M300,141 L300,133 M300,159 L300,167 M294,144 L288,138 M306,156 L312,162 M306,144 L312,138 M294,156 L288,162" stroke="#6FF3FF" stroke-width="2.5" stroke-linecap="round"></path>
+              <g fill="#FF7A21">
+                <circle cx="312" cy="163" r="2.6"></circle>
+                <circle cx="320" cy="153" r="2"></circle>
+                <circle cx="308" cy="173" r="2.2"></circle>
+                <circle cx="288" cy="165" r="1.8"></circle>
+                <circle cx="316" cy="140" r="1.6"></circle>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--plate" id="proof">
+    <div class="wrap">
+      <div class="proof-grid">
+        <div>
+          <h2>What actually happens<br>when you call</h2>
+          <p class="lead">No dispatcher, no queue. You describe what's broken, Deb gives you a ballpark on the phone, and the truck rolls with everything it needs to fix it right there.</p>
+        </div>
+        <div>
+          <div class="weld-scene">
+            <svg viewBox="0 0 380 220" role="img" aria-label="Line illustration of two steel bars joined at a corner, a fresh weld bead laid down, torch still close, arc glowing">
+              <rect x="150" y="20" width="24" height="110" fill="#232E37" stroke="#F5F7F8" stroke-width="2.5"></rect>
+              <rect x="55" y="118" width="200" height="24" fill="#232E37" stroke="#F5F7F8" stroke-width="2.5"></rect>
+              <path d="M146,118 Q156,108 166,116 Q176,124 180,112" fill="none" stroke="#6FF3FF" stroke-width="4" stroke-linecap="round"></path>
+              <path d="M244,66 L182,116" stroke="#F5F7F8" stroke-width="5" stroke-linecap="round"></path>
+              <path d="M238,74 L246,64" stroke="#F5F7F8" stroke-width="5" stroke-linecap="round"></path>
+              <circle cx="168" cy="116" r="24" fill="#26E0F2" opacity=".14"></circle>
+              <circle cx="168" cy="116" r="14" fill="#26E0F2" opacity=".3"></circle>
+              <circle cx="168" cy="116" r="6" fill="#6FF3FF"></circle>
+              <path d="M160,116 L154,116 M176,116 L182,116 M168,108 L168,102 M168,124 L168,130 M163,111 L159,107 M173,121 L177,125 M173,111 L177,107 M163,121 L159,125" stroke="#6FF3FF" stroke-width="2" stroke-linecap="round"></path>
+              <g fill="#FF7A21">
+                <circle cx="180" cy="128" r="2.2"></circle>
+                <circle cx="186" cy="118" r="1.8"></circle>
+                <circle cx="176" cy="136" r="1.6"></circle>
+                <circle cx="156" cy="130" r="1.6"></circle>
+              </g>
+            </svg>
+          </div>
+          <div class="kit-list riveted">
+            <h3>What rolls up with the truck</h3>
+            <div class="kit-row">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+              A generator and full leads, so no shop outlet is ever needed
+            </div>
+            <div class="kit-row">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+              Cutting, grinding, and welding gear built for real structural steel
+            </div>
+            <div class="kit-row">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+              Enough stock steel on board to fabricate small pieces on-site
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--arc">
+    <div class="wrap">
+      <h2>The old way,<br>or the truck</h2>
+      <p class="lead">Most steel that gets replaced didn't need to be. It just needed someone willing to bring the weld to it instead of asking you to bring the part to them.</p>
+
+      <div class="vs">
+        <div class="vs-row">
+          <p class="vs-old">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            Unbolt it, load it, and drive it to a shop.
+          </p>
+          <p class="vs-new">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><polyline points="8 12.5 10.8 15.5 16 9"></polyline></svg>
+            Point at what's broken. The truck comes to you.
+          </p>
+        </div>
+        <div class="vs-row">
+          <p class="vs-old">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            Wait behind whatever else is already in the bay.
+          </p>
+          <p class="vs-new">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><polyline points="8 12.5 10.8 15.5 16 9"></polyline></svg>
+            One visit, and most jobs are finished the same day.
+          </p>
+        </div>
+        <div class="vs-row">
+          <p class="vs-old">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            Pay shop price for a brand-new part.
+          </p>
+          <p class="vs-new">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><polyline points="8 12.5 10.8 15.5 16 9"></polyline></svg>
+            Pay to fix the part you've already got.
+          </p>
+        </div>
+        <div class="vs-row">
+          <p class="vs-old">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            The gate stays open until the part comes back.
+          </p>
+          <p class="vs-new">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none"></circle><polyline points="8 12.5 10.8 15.5 16 9"></polyline></svg>
+            Welded and rehung before the truck pulls away.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--plate">
+    <div class="wrap">
+      <h2>Three calls we get a lot</h2>
+      <p class="lead">These come up most, but the truck's built for anything steel that's stuck where it broke.</p>
+
+      <div class="job-list">
+        <article class="job-row job-row--teaser">
+          <div class="job-icon">
+            <svg viewBox="0 0 32 32" class="icon" aria-hidden="true">
+              <line x1="8" y1="6" x2="8" y2="26"></line>
+              <line x1="24" y1="6" x2="24" y2="26"></line>
+              <line x1="8" y1="12" x2="24" y2="12"></line>
+              <line x1="8" y1="20" x2="24" y2="20"></line>
+              <circle cx="8" cy="12" r="2.3" fill="none"></circle>
+            </svg>
+          </div>
+          <div class="job-body">
+            <h3><a href="services.html#gate-railing" style="color:inherit">Gate &amp; Railing Repair</a></h3>
+            <p>A hinge that's pulled loose, a rail that's bent, a post that's come off its weld. Usually a repair, not a whole new gate.</p>
+          </div>
+        </article>
+        <article class="job-row job-row--teaser">
+          <div class="job-icon">
+            <svg viewBox="0 0 32 32" class="icon" aria-hidden="true">
+              <rect x="8" y="10" width="18" height="10" fill="none"></rect>
+              <path d="M8 14 L3 14 L3 11" fill="none" stroke-linejoin="round"></path>
+              <circle cx="3" cy="11" r="1.6" fill="currentColor" stroke="none"></circle>
+              <circle cx="19" cy="25" r="4.2" fill="none"></circle>
+              <circle cx="19" cy="25" r="1.3" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </div>
+          <div class="job-body">
+            <h3><a href="services.html#trailer-repair" style="color:inherit">Trailer Repair</a></h3>
+            <p>Cracked frame welds, a bent hitch, a tongue that's seen one too many potholes. Most of it welds back solid in one visit.</p>
+          </div>
+        </article>
+        <article class="job-row job-row--teaser">
+          <div class="job-icon">
+            <svg viewBox="0 0 32 32" class="icon" aria-hidden="true">
+              <path d="M7 7 L7 25 L25 25" fill="none" stroke-linejoin="round"></path>
+              <line x1="7" y1="13" x2="11" y2="13"></line>
+              <line x1="7" y1="19" x2="11" y2="19"></line>
+              <line x1="13" y1="25" x2="13" y2="21"></line>
+              <line x1="19" y1="25" x2="19" y2="21"></line>
+            </svg>
+          </div>
+          <div class="job-body">
+            <h3><a href="services.html#custom-fab" style="color:inherit">Custom Fabrication</a></h3>
+            <p>Nothing's broken, you just need a piece of steel that doesn't exist yet. Tell us what it needs to do and we'll build it to fit.</p>
+          </div>
+        </article>
+      </div>
+
+      <p style="margin-top:1.75rem">
+        <a class="link" href="services.html">See all five services
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1rem;height:1rem"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--plate2">
+    <div class="wrap">
+      <h2>Why people call back</h2>
+      <ul class="why-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+          <p><strong>You watch the whole repair.</strong> No drop-off, no black-box shop. The torch comes out where you can see it, and it's welded and done before the truck leaves.</p>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+          <p><strong>Priced before the torch starts.</strong> You'll hear a real number on-site before anything gets cut or welded, not an invoice after the fact.</p>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9.5 17.5 19 7"></polyline></svg>
+          <p><strong>Steel gets welded, not swapped.</strong> If a weld will hold, that's the fix. New parts only come up when a weld actually can't do the job, and you'll hear that straight.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--ink cta-close">
+    <div class="wrap">
+      <h2>Tell us what broke</h2>
+      <p class="lead">A phone call is usually enough to know if this is a one-visit fix. Call during work hours and you'll typically get Deb, not a call center.</p>
+      <a class="big-tel" href="tel:+16315550166">(631) 555-0166</a>
+      <div class="cta-close-actions">
+        <a class="btn" href="tel:+16315550166">Call now</a>
+        <a class="link" href="contact.html">or send a request instead
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1rem;height:1rem"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Spark &amp; Steel</b>
+        <p>Mobile welding and fabrication on Long Island, NY.</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:+16315550166">(631) 555-0166</a></li>
+      </ul>
+    </div>
+    <div class="foot-legal">
+      <p>Demo website built by Samuel Ochoa &mdash; samuelochoa.com/websites</p>
+      <p class="legal-fine">Spark &amp; Steel Mobile Welding is a fictional business created to demonstrate website design. Nothing on this page is a real offer, the phone number is not in service, and nothing here is engineering or safety advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+16315550166">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"></path></svg>
+    (631) 555-0166
+  </a>
+  <a href="tel:+16315550166">Call</a>
+</div>
+
+<script>
+(function(){
+  function wire(toggleId, panelId, opts){
+    var btn = document.getElementById(toggleId);
+    var panel = document.getElementById(panelId);
+    if(!btn || !panel) return;
+    function close(){ btn.setAttribute('aria-expanded','false'); panel.hidden = true; }
+    function open(){ btn.setAttribute('aria-expanded','true'); panel.hidden = false; }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      if(isOpen){ close(); } else { open(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){
+        close(); btn.focus();
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(btn.getAttribute('aria-expanded') === 'true' && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)){
+        close();
+      }
+    });
+    if(opts && opts.closeOnLinkClick){
+      var links = panel.querySelectorAll('a');
+      for(var i=0;i<links.length;i++){ links[i].addEventListener('click', close); }
+    }
+  }
+  wire('navHamburger','mobileNav',{closeOnLinkClick:true});
+  wire('navServicesBtnDesktop','navServicesPanelDesktop',{closeOnLinkClick:true});
+  wire('navServicesBtnMobile','navServicesPanelMobile',{closeOnLinkClick:true});
+})();
+</script>
+
+</body>
+</html>

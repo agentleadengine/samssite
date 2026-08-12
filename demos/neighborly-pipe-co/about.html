@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — The Neighborly Pipe Co. | Demo Site</title>
+<meta name="description" content="The Neighborly Pipe Co. is a flat-rate plumbing shop on Long Island, NY, built around one rule: the price you hear on the phone is the price on the ticket. Demo site — (631) 555-0102.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true">
+<defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3.5h3l1 3.2-2.1 1.6c.8 2.3 2.5 4 4.8 4.8l1.6-2.1 3.2 1V15c0 1.1-.9 2-2 2C11.6 17 5 10.4 5 5.5c0-1.1.9-2 2-2Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1H10l-4.3 3.4a.5.5 0 0 1-.8-.4V16H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/><circle cx="8.3" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/><circle cx="12" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/><circle cx="15.7" cy="10.7" r=".9" style="fill:currentColor;stroke:none"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4.5 4.5L19 7"/></symbol>
+</defs>
+</svg>
+
+<div class="ribbon">Demo site</div>
+
+<header class="topbar" id="site-header">
+  <div class="wrap topbar-row">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="var(--brass-400)" stroke-width="2.2"/>
+        <path d="M14 25V17a5 5 0 0 1 5-5h7" fill="none" stroke="var(--oncobalt-100)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="26" cy="12" r="2" style="fill:var(--brass-500);stroke:none"/>
+        <circle cx="14" cy="28" r="1.6" style="fill:var(--brass-500);stroke:none"/>
+      </svg>
+      <span>
+        <span class="brand-name">The Neighborly <em>Pipe Co.</em></span>
+        <span class="brand-tag">Flat-rate plumbing &middot; Long Island, NY</span>
+      </span>
+    </a>
+
+    <button class="hburg" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+
+    <div class="nav-panel-wrap">
+      <div class="nav-panel" id="site-nav">
+        <div class="panel-in">
+          <a class="panel-tel" href="tel:+16315550102">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            (631) 555-0102
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <details class="svc-drop">
+              <summary>Services <svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="svc-panel">
+                <a href="services.html#drain-cleaning">Drain cleaning</a>
+                <a href="services.html#water-heater">Water heater repair &amp; install</a>
+                <a href="services.html#leak-detection">Leak detection &amp; repair</a>
+                <a href="services.html#fixture-install">Fixture install</a>
+                <a href="services.html#sewer-line">Sewer line service</a>
+                <a class="svc-all" href="services.html">All services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </details>
+            <a href="work.html">Work</a>
+            <a href="about.html" aria-current="page">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== page intro ===== -->
+  <section class="about-hero on-cobalt">
+    <div class="wrap">
+      <h1>A shop built around one promise.</h1>
+      <p class="lede">Not a franchise, not a dispatch center &mdash; a small plumbing shop that decided the price should never be a surprise, and built everything else around holding to that.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap about-in">
+      <div class="story">
+        <h2>How it started</h2>
+        <p>Danny Reyes started The Neighborly Pipe Co. on the idea that a plumbing bill shouldn't be a surprise. Say the price out loud on the phone, write it on the ticket, and stick to it once the truck's in the driveway. Everything else about how the shop runs grew out of that one rule.</p>
+        <p>Call and you're usually talking to whoever ends up doing the work. We ask what's going on, quote the flat rate on that same call, and set a time that works for your house &mdash; not a four-hour window you have to guard all day. What's quoted on the phone is what's on the ticket when the job's done.</p>
+        <p>The shop covers Long Island, NY, one street and one ticket at a time. If a job turns out to be bigger than a phone call can size up, we say so before opening a wall, not after.</p>
+      </div>
+
+      <div class="ticket" aria-label="How a call becomes a job">
+        <h2 style="font-size:1.375rem">How a call becomes a job</h2>
+        <ol style="margin-top:16px;display:grid;gap:14px;padding:0;list-style:none">
+          <li style="display:flex;gap:12px"><svg class="icon" aria-hidden="true" style="color:var(--cobalt-600);margin-top:.2em;flex:none"><use href="#i-check"/></svg><span>Call or text and describe what's going on.</span></li>
+          <li style="display:flex;gap:12px"><svg class="icon" aria-hidden="true" style="color:var(--cobalt-600);margin-top:.2em;flex:none"><use href="#i-check"/></svg><span>Get a flat price before anything's scheduled.</span></li>
+          <li style="display:flex;gap:12px"><svg class="icon" aria-hidden="true" style="color:var(--cobalt-600);margin-top:.2em;flex:none"><use href="#i-check"/></svg><span>We show up, do the work, and the ticket matches the quote.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="meta-grid">
+        <div class="meta-block">
+          <h2>Hours</h2>
+          <table>
+            <tr><td>Monday&ndash;Friday</td><td>7:00&nbsp;am&ndash;6:00&nbsp;pm</td></tr>
+            <tr><td>Saturday</td><td>8:00&nbsp;am&ndash;2:00&nbsp;pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+        <div class="meta-block">
+          <h2>Service area</h2>
+          <p style="margin-top:2px">Long Island, NY. If you're near an edge of that area, call and ask &mdash; it's a quicker answer than guessing from a map.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== close cta ===== -->
+  <section class="close-cta">
+    <div class="wrap close-in">
+      <div>
+        <h2>Talk to the shop, not a call center</h2>
+        <p class="lede">Describe what's going on and we'll tell you straight what it takes to fix it, and what it costs, before anything's scheduled.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+16315550102">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            Call (631) 555-0102
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Reach us another way</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">The Neighborly <em>Pipe Co.</em></div>
+    <p class="foot-tag">Drain cleaning, water heaters, leak detection, fixtures, and sewer line service. Serving Long Island, NY.</p>
+    <p class="foot-tel"><a href="tel:+16315550102">(631) 555-0102</a> &nbsp;&middot;&nbsp; Mon&ndash;Fri 7am&ndash;6pm, Sat 8am&ndash;2pm</p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="foot-disclose">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+16315550102">
+  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+  Call (631) 555-0102
+</a>
+
+<script>
+(function(){
+  var topbar = document.querySelector('.topbar');
+  var btn = document.querySelector('.hburg');
+  if(!topbar || !btn) return;
+  function closeMenu(focusBtn){
+    topbar.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    if(focusBtn) btn.focus();
+  }
+  function openMenu(){
+    topbar.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  btn.addEventListener('click', function(){
+    topbar.classList.contains('is-open') ? closeMenu(false) : openMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(topbar.classList.contains('is-open')) closeMenu(true);
+      document.querySelectorAll('details[open]').forEach(function(d){ d.removeAttribute('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(topbar.classList.contains('is-open') && !topbar.contains(e.target)){
+      closeMenu(false);
+    }
+  });
+  topbar.querySelectorAll('.nav > a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+  document.querySelectorAll('.svc-drop').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open){
+        document.querySelectorAll('.svc-drop').forEach(function(o){ if(o!==d) o.removeAttribute('open'); });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Same-Day Springs | Demo Site</title>
+<meta name="description" content="How Same-Day Springs works: the person who answers the phone is the person who shows up, emergencies get same-day priority, everything else gets scheduled honestly. Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 32 24"><path d="M2 12H6L11 5 16 19 21 5 26 19 30 12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.8-1.9 1.8c.9 2.4 2.7 4.2 5.1 5.1l1.8-1.9L20 14v3c0 .9-.8 1.6-1.6 1.5C11.6 17.6 6.4 12.4 5.5 5.6 5.4 4.8 6.1 4 7 4Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L5 19.5V16H4V5Z"/><path d="M8 9h8M8 12.3h5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 6.5"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h14M14 6l6 6-6 6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-6 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v4.8l3.6 2.1"/></symbol>
+<symbol id="i-coil" viewBox="0 0 24 24"><path d="M12 2V5L7 7.5 17 10 7 12.5 17 15 7 17.5 12 19V22"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3H20M4 14.6H20"/></symbol>
+<symbol id="i-opener" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="6" rx="1"/><path d="M11 7H21"/><rect x="16" y="5.5" width="4" height="3" rx=".6"/><path d="M18 8.5V13.5"/></symbol>
+<symbol id="i-tune" viewBox="0 0 24 24"><path d="M14.7 3.3a4.1 4.1 0 0 0-5.6 5l-5.3 5.3a2 2 0 0 0 0 2.8l.8.8a2 2 0 0 0 2.8 0l5.3-5.3a4.1 4.1 0 0 0 5-5.6l-3 3-2-2Z"/></symbol>
+<symbol id="i-track" viewBox="0 0 24 24"><path d="M8 3v8L14.5 15.3V21"/><circle cx="17.3" cy="17.6" r="2.7"/><path d="M8 11 3.8 13.6"/></symbol>
+<symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 15.8V9.6a1 1 0 0 1 1-1H14L18.5 13v2.8"/><path d="M2.5 15.8h1.6M18.5 15.8H21a.5.5 0 0 0 .5-.5v-2.7L18 8.6"/><circle cx="7.3" cy="17.3" r="2"/><circle cx="16.9" cy="17.3" r="2"/><path d="M9.3 17.3h5.4"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="topbar">
+  <div class="bar-top">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+      <span class="word"><b>Same-Day</b><span>Springs</span></span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-callblock">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="nav-sms" href="sms:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+          Text us instead
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#new-door">New door installation</a></li>
+            <li><a href="services.html#spring-cable">Spring &amp; cable repair</a></li>
+            <li><a href="services.html#opener">Opener install &amp; repair</a></li>
+            <li><a href="services.html#tune-up">Annual tune-up</a></li>
+            <li><a href="services.html#off-track">Emergency off-track service</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html" class="current" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="tel-pill" href="tel:+16315550112">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span>(631) 555-0112</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="band">
+    <div class="pad story-wrap">
+      <div class="story-head">
+        <div class="tag-flag" aria-hidden="true"></div>
+        <h2 style="font-size:clamp(2.2rem,6vw,3.2rem)">The voice on the phone is the one who shows up.</h2>
+      </div>
+      <div class="story">
+        <p>Pete Salerno ran service calls before he ever touched a garage door: trucks, generators, the kind of work where you're stuck until someone shows up. What stuck with him was how much a bad day gets worse when nobody tells you what's actually wrong, or when. A broken spring isn't complicated. Most of the wait is just the wait.</p>
+        <p>Same-Day Springs runs on one idea: the person you talk to on the phone is the person who shows up, and they already have a rough idea what's wrong before the truck leaves. You're not explaining the problem twice, once to a scheduler and again to whoever actually walks up your driveway.</p>
+        <p>The job itself stays simple. Pull the broken parts, put the right ones back matched to your door, and test it in front of you before anyone leaves. No stand-in spring that's close enough, and no coming back next week for the part that wasn't on the truck.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2 style="font-size:clamp(1.8rem,4.6vw,2.4rem)">Same-day for the emergencies, scheduled for the rest</h2>
+      </div>
+      <div class="story">
+        <p>A snapped spring or a door stuck off its track jumps the line. A new door install or a tune-up gets booked a day or two out, on purpose, so the person doing it isn't rushing between two different kinds of job. If a call ahead of yours runs long, you hear about it before your window passes, not after it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2>Area &amp; hours</h2>
+      </div>
+      <div class="duo">
+        <div class="card">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Hours</h3>
+          <div class="rowline"><b>Monday &ndash; Friday</b><span>7:00a &ndash; 8:00p</span></div>
+          <div class="rowline"><b>Saturday</b><span>8:00a &ndash; 6:00p</span></div>
+          <div class="rowline"><b>Sunday</b><span>9:00a &ndash; 3:00p</span></div>
+          <div class="rowline"><b>Phone answered until</b><span>8:00p</span></div>
+          <p class="fine">Spring and off-track calls get priority scheduling any day we're open. Installs and tune-ups get booked around them.</p>
+        </div>
+        <div class="card">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>Service area</h3>
+          <p class="fine" style="margin:0 0 14px">Long Island, NY. Outside the usual radius still gets a call back. We'll tell you honestly if it's a longer drive than makes sense.</p>
+          <ul class="chips">
+            <li>Long Island, NY</li><li>Nassau County</li><li>Suffolk County</li><li>North Shore</li><li>South Shore</li>
+          </ul>
+          <p class="fine">Emergency calls get priority regardless of area. Everything else books in the order it comes in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>However the door's acting up, tell us</h2>
+      <p>Call and we'll figure out what it needs, or leave the details on the contact page.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="btn btn-out" href="contact.html">Go to contact</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+          <b>Same-Day Springs</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+16315550112">(631) 555-0112</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Same-Day Springs &middot; Serving Long Island, NY &middot; <a href="tel:+16315550112">(631) 555-0112</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call now<span class="s">(631) 555-0112</span></span>
+  </a>
+  <a class="cb-text" href="sms:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+    <span>Text</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var bar = document.querySelector('.topbar');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(bar && !bar.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

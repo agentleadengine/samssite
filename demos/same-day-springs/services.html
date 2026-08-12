@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Same-Day Springs | Demo Site</title>
+<meta name="description" content="Everything Same-Day Springs does to a garage door: new door installation, spring and cable repair, opener install and repair, annual tune-up, and emergency off-track service. Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 32 24"><path d="M2 12H6L11 5 16 19 21 5 26 19 30 12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.8-1.9 1.8c.9 2.4 2.7 4.2 5.1 5.1l1.8-1.9L20 14v3c0 .9-.8 1.6-1.6 1.5C11.6 17.6 6.4 12.4 5.5 5.6 5.4 4.8 6.1 4 7 4Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L5 19.5V16H4V5Z"/><path d="M8 9h8M8 12.3h5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 6.5"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h14M14 6l6 6-6 6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-6 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v4.8l3.6 2.1"/></symbol>
+<symbol id="i-coil" viewBox="0 0 24 24"><path d="M12 2V5L7 7.5 17 10 7 12.5 17 15 7 17.5 12 19V22"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3H20M4 14.6H20"/></symbol>
+<symbol id="i-opener" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="6" rx="1"/><path d="M11 7H21"/><rect x="16" y="5.5" width="4" height="3" rx=".6"/><path d="M18 8.5V13.5"/></symbol>
+<symbol id="i-tune" viewBox="0 0 24 24"><path d="M14.7 3.3a4.1 4.1 0 0 0-5.6 5l-5.3 5.3a2 2 0 0 0 0 2.8l.8.8a2 2 0 0 0 2.8 0l5.3-5.3a4.1 4.1 0 0 0 5-5.6l-3 3-2-2Z"/></symbol>
+<symbol id="i-track" viewBox="0 0 24 24"><path d="M8 3v8L14.5 15.3V21"/><circle cx="17.3" cy="17.6" r="2.7"/><path d="M8 11 3.8 13.6"/></symbol>
+<symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 15.8V9.6a1 1 0 0 1 1-1H14L18.5 13v2.8"/><path d="M2.5 15.8h1.6M18.5 15.8H21a.5.5 0 0 0 .5-.5v-2.7L18 8.6"/><circle cx="7.3" cy="17.3" r="2"/><circle cx="16.9" cy="17.3" r="2"/><path d="M9.3 17.3h5.4"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="topbar">
+  <div class="bar-top">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+      <span class="word"><b>Same-Day</b><span>Springs</span></span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-callblock">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="nav-sms" href="sms:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+          Text us instead
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle current" type="button" aria-expanded="false" aria-controls="services-sub" aria-current="page">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#new-door">New door installation</a></li>
+            <li><a href="services.html#spring-cable">Spring &amp; cable repair</a></li>
+            <li><a href="services.html#opener">Opener install &amp; repair</a></li>
+            <li><a href="services.html#tune-up">Annual tune-up</a></li>
+            <li><a href="services.html#off-track">Emergency off-track service</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="tel-pill" href="tel:+16315550112">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span>(631) 555-0112</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad svc-intro">
+      <div class="head">
+        <h2>Springs, cables, openers, and the door around them</h2>
+        <p>Most calls start with a spring or a cable. Here's what's actually involved when we fix it, plus the other jobs we handle when it's not an emergency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="new-door">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+            <h2>New door installation</h2>
+          </div>
+          <div class="svc-body">
+            <p>When the old door's past patching, rotted, storm-damaged, or you're just done fighting it, we pull it and hang a new insulated steel door balanced to your opening. Springs, cables and track get sized to the new door's actual weight, not left over from the one that came off.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Worth a look when</p>
+          <p>Panels are cracked or delaminating, the door's noticeably heavier or lighter to lift by hand than it used to be, or storm damage bent something that won't tap back straight.</p>
+          <p class="lbl">Good to know</p>
+          <p>This one's scheduled, not same-day. We'll walk the opening first and give you a real number before anything's ordered.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="spring-cable">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-coil"></use></svg></span>
+            <h2>Spring &amp; cable repair</h2>
+          </div>
+          <div class="svc-body">
+            <p>A torsion spring that's let go, or a cable that's frayed off the drum, is the single most common reason a door stops moving. We match the spring to your door's exact weight and wind it to the right tension, not a close-enough stand-in, and replace both springs as a pair when the original set is worn so they age together.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Signs it's this</p>
+          <p>A loud bang from the garage, the door suddenly feels twice as heavy to lift by hand, a visible gap in the coil above the door, or a cable hanging loose off its drum.</p>
+          <p class="lbl">Good to know</p>
+          <p>This is the one we treat as an emergency. Most calls get a same-day window.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="opener">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-opener"></use></svg></span>
+            <h2>Opener install &amp; repair</h2>
+          </div>
+          <div class="svc-body">
+            <p>Grinding, a remote that's stopped answering, or an opener that's just worn out. We install belt and chain-drive openers, reset the force and travel limits so the door stops instead of straining, and program remotes and keypads to the new unit.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Signs it's this</p>
+          <p>The opener runs but the door doesn't move, the door reverses partway on its own, the remote works some days and not others, or the motor's noticeably louder than it used to be.</p>
+          <p class="lbl">Good to know</p>
+          <p>A repair's often same-day. A full install usually gets scheduled a day or two out so we bring the right unit.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="tune-up">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-tune"></use></svg></span>
+            <h2>Annual tune-up</h2>
+          </div>
+          <div class="svc-body">
+            <p>Rollers, hinges and track get lubricated, hardware gets torqued back down, and the spring's tension gets checked before it's the reason for a call in February. Twenty minutes, once a year, catches most of what turns into an emergency later.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good timing for this</p>
+          <p>The door's gotten louder over the year, you can't remember the last time anyone looked at it, or it's right before winter, when cold makes worn parts fail faster.</p>
+          <p class="lbl">Good to know</p>
+          <p>Scheduled, not urgent. We'll never talk you into one on an emergency call just because we're already there.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="off-track">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-track"></use></svg></span>
+            <h2>Emergency off-track service</h2>
+          </div>
+          <div class="svc-body">
+            <p>A door that's jumped its track usually means a roller's broken or the track's been knocked out of line, not that the whole door needs replacing. We reset the door on its track, straighten or swap the bent section, and check that it's not fighting itself on the way back down.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Don't force it if</p>
+          <p>The door's sitting crooked in the opening, you can see daylight between a roller and the track, it stopped partway and won't go up or down, or something got backed into it.</p>
+          <p class="lbl">Good to know</p>
+          <p>Leave it where it stopped. Most off-track calls get the same-day window.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Not sure which one you need?</h2>
+      <p>Call anyway. Tell us what the door's doing and we'll tell you what it is, no charge for the diagnosis over the phone.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="btn btn-out" href="work.html">See sample repairs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+          <b>Same-Day Springs</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+16315550112">(631) 555-0112</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Same-Day Springs &middot; Serving Long Island, NY &middot; <a href="tel:+16315550112">(631) 555-0112</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call now<span class="s">(631) 555-0112</span></span>
+  </a>
+  <a class="cb-text" href="sms:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+    <span>Text</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var bar = document.querySelector('.topbar');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(bar && !bar.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

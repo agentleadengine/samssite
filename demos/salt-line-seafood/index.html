@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+THESIS: Nothing hits the fryer until you call. The shack runs on made-to-order, never made-to-wait.
+OWN-WORLD: A dockside crate-stencil display face over drenched ocean-teal surfaces; sun-bleached paper for the quiet sections; buoy red is the one hot color, spent on the call to action; rope-gold is trim only, never running text.
+STORY: A folding table at the end of a pier became a walk-up window that still runs the same way, short board, hot oil, your order timed to when you pull in.
+FIRST VIEWPORT: Drenched-teal hero, an oversized stenciled headline, an authored SVG scene of a stamped catch crate packed on ice, call and text CTAs stacked below.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salt Line Seafood Shack | Long Island, NY</title>
+<meta name="description" content="Salt Line Seafood Shack: fried baskets, lobster rolls and steamers, made to order at the walk-up window. Call (516) 555-0174. Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="chrome">
+  <div class="ribbon">Demo Site</div>
+  <header class="site-head">
+    <div class="head-in">
+      <a class="brand" href="index.html" aria-label="Salt Line Seafood Shack, home">
+        <svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="Salt Line Seafood Shack mark">
+          <circle cx="24" cy="24" r="22" fill="#0B6670"/>
+          <circle cx="24" cy="24" r="22" fill="none" stroke="#063A42" stroke-width="3"/>
+          <path d="M4 27c5-6 11-6 16 0s11 6 16 0s7-4 7-4" fill="none" stroke="#F7F1E1" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M4 34c5-6 11-6 16 0s11 6 16 0s7-4 7-4" fill="none" stroke="#D9A431" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M24 6c5 0 9 3.7 9 8c0 5-9 10-9 10s-9-5-9-10c0-4.3 4-8 9-8z" fill="#E14A2B"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Salt Line</span>
+          <span class="brand-sub">Seafood Shack</span>
+        </span>
+      </a>
+
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link is-current" aria-current="page">Home</a></li>
+          <li class="nav-services">
+            <details class="submenu">
+              <summary class="nav-link submenu-trigger">Services
+                <svg class="ic ic-sm chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="5,8 12,15 19,8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="submenu-list">
+                <li><a href="services.html#fried-baskets">Fried Baskets</a></li>
+                <li><a href="services.html#lobster-rolls">Lobster Rolls</a></li>
+                <li><a href="services.html#steamers-mussels">Steamers &amp; Mussels</a></li>
+                <li><a href="services.html#boil-bag">The Boil Bag</a></li>
+                <li><a href="services.html#off-the-grill">Off the Grill</a></li>
+                <li><a href="services.html#sides-kids">Sides &amp; Kids' Plates</a></li>
+                <li class="submenu-all"><a href="services.html">See the full board</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="head-actions">
+        <a class="head-tel" href="tel:+15165550174">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2.25"/><line x1="11" y1="18" x2="13" y2="18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+          (516) 555-0174
+        </a>
+        <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <svg class="ic ic-burger" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+          <svg class="ic ic-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1 class="display reveal" style="--rd:.02s">Nothing hits the fryer<span class="ln2">until you call</span></h1>
+        <p class="lede reveal" style="--rd:.14s">A short board and a hot fryer. Walk up to the window, or call ahead. Either way, it goes in the oil after you order, not before.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary reveal" style="--rd:.24s" href="tel:+15165550174">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2.25"/><line x1="11" y1="18" x2="13" y2="18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+            Call (516) 555-0174
+          </a>
+          <a class="btn btn-ghost reveal" style="--rd:.32s" href="#board">See what's cooking</a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" style="--rd:.2s">
+        <svg viewBox="0 0 480 440" role="img" aria-label="Illustration of a stenciled wooden crate marked Salt Line, packed with ice, a clam and a fish, roped shut on the dock.">
+          <circle cx="392" cy="78" r="70" fill="#F0C563" opacity=".16"/>
+          <path d="M50 54 q16 -16 32 0 q16 -16 32 0" fill="none" stroke="#F7F1E1" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+          <path d="M360 34 q12 -12 24 0 q12 -12 24 0" fill="none" stroke="#F7F1E1" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+
+          <rect x="0" y="392" width="480" height="48" fill="#052C33"/>
+          <g stroke="#0B6670" stroke-width="3" opacity=".55">
+            <line x1="70" y1="392" x2="70" y2="440"/>
+            <line x1="160" y1="392" x2="160" y2="440"/>
+            <line x1="250" y1="392" x2="250" y2="440"/>
+            <line x1="340" y1="392" x2="340" y2="440"/>
+            <line x1="430" y1="392" x2="430" y2="440"/>
+          </g>
+
+          <path d="M356 392 Q316 300 366 232" fill="none" stroke="#B3801F" stroke-width="12" stroke-linecap="round"/>
+          <path d="M356 392 Q316 300 366 232" fill="none" stroke="#F0C563" stroke-width="3" stroke-dasharray="1 13" stroke-linecap="round"/>
+
+          <rect x="80" y="160" width="320" height="232" fill="#D9A431"/>
+          <rect x="80" y="160" width="320" height="16" fill="#F0C563"/>
+          <g stroke="#B3801F" stroke-width="4">
+            <line x1="150" y1="160" x2="150" y2="392"/>
+            <line x1="220" y1="160" x2="220" y2="392"/>
+            <line x1="290" y1="160" x2="290" y2="392"/>
+            <line x1="360" y1="160" x2="360" y2="392"/>
+          </g>
+          <g fill="#052C33">
+            <rect x="80" y="160" width="12" height="50"/>
+            <rect x="80" y="160" width="50" height="12"/>
+            <rect x="388" y="160" width="12" height="50"/>
+            <rect x="338" y="160" width="50" height="12"/>
+            <rect x="80" y="344" width="12" height="48"/>
+            <rect x="80" y="380" width="50" height="12"/>
+            <rect x="388" y="344" width="12" height="48"/>
+            <rect x="338" y="380" width="50" height="12"/>
+          </g>
+
+          <text x="240" y="278" text-anchor="middle" transform="rotate(-6 240 278)" font-family="'Big Shoulders Stencil Display',sans-serif" font-size="52" fill="#052C33" opacity=".85" letter-spacing="1">SALT LINE</text>
+          <text x="240" y="320" text-anchor="middle" transform="rotate(-6 240 320)" font-family="'Big Shoulders Stencil Display',sans-serif" font-size="18" fill="#052C33" opacity=".72" letter-spacing="7">CATCH OF THE DAY</text>
+
+          <g fill="#F7F1E1">
+            <polygon points="100,160 145,120 190,150 165,168"/>
+            <polygon points="145,120 195,96 235,132 190,150"/>
+            <polygon points="235,132 285,108 330,138 292,158"/>
+            <polygon points="330,138 372,116 400,150 360,164"/>
+          </g>
+          <g fill="#EAF4F3">
+            <polygon points="190,150 235,132 250,160 205,164"/>
+            <polygon points="292,158 330,138 360,164 320,172"/>
+          </g>
+
+          <path d="M225 130 A26 26 0 0 1 277 130 Z" fill="#E14A2B"/>
+          <g stroke="#B93A21" stroke-width="2" fill="none">
+            <line x1="238" y1="130" x2="251" y2="110"/>
+            <line x1="251" y1="130" x2="251" y2="108"/>
+            <line x1="264" y1="130" x2="251" y2="110"/>
+          </g>
+
+          <g fill="#128694">
+            <ellipse cx="322" cy="122" rx="24" ry="13"/>
+            <polygon points="344,122 361,111 361,133"/>
+            <circle cx="309" cy="119" r="3" fill="#052C33"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" id="how-it-works">
+    <div class="wrap">
+      <div class="proof-head">
+        <h2 class="display">From the crate to your hands</h2>
+        <p>Here's the short version of how an order moves once you call it in.</p>
+      </div>
+
+      <div class="proof-scene">
+        <svg viewBox="0 0 1200 260" role="img" aria-label="Illustration showing an order ticket, a basket dropping into hot oil, and a bag being handed out the window, connected by a dotted line.">
+          <path d="M60 190 C 260 150, 480 150, 600 178 C 720 206, 940 206, 1140 178" fill="none" stroke="#D9A431" stroke-width="4" stroke-dasharray="2 15" stroke-linecap="round"/>
+
+          <g>
+            <rect x="56" y="52" width="168" height="118" fill="#F7F1E1" stroke="#0B6670" stroke-width="3"/>
+            <g stroke="#0B6670" stroke-width="3" stroke-linecap="round">
+              <line x1="78" y1="80" x2="198" y2="80"/>
+              <line x1="78" y1="102" x2="176" y2="102"/>
+              <line x1="78" y1="124" x2="192" y2="124"/>
+              <line x1="78" y1="146" x2="150" y2="146"/>
+            </g>
+            <circle cx="140" cy="220" r="30" fill="#E14A2B"/>
+            <rect x="126" y="204" width="28" height="14" rx="3" fill="#F7F1E1"/>
+            <line x1="126" y1="210" x2="154" y2="210" stroke="#B93A21" stroke-width="2.25" stroke-linecap="round"/>
+          </g>
+
+          <g>
+            <path d="M500 210 L560 210 L548 130 L512 130 Z" fill="none" stroke="#B3801F" stroke-width="5" stroke-linejoin="round"/>
+            <g stroke="#B3801F" stroke-width="4">
+              <line x1="514" y1="140" x2="503" y2="205"/>
+              <line x1="530" y1="140" x2="530" y2="205"/>
+              <line x1="546" y1="140" x2="557" y2="205"/>
+            </g>
+            <path d="M498 118 q6 -22 15 -4 q6 -22 15 0 q6 -20 14 2" fill="none" stroke="#128694" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="527" cy="216" rx="40" ry="10" fill="#052C33" opacity=".18"/>
+          </g>
+
+          <g>
+            <path d="M980 96 L1096 96 L1086 210 L990 210 Z" fill="#F7F1E1" stroke="#0B6670" stroke-width="3"/>
+            <path d="M980 96 L1096 96 L1092 118 L984 118 Z" fill="#0B6670"/>
+            <circle cx="1010" cy="150" r="4" fill="#E14A2B"/>
+            <circle cx="1038" cy="164" r="4" fill="#E14A2B"/>
+            <circle cx="1058" cy="140" r="4" fill="#D9A431"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="proof-beats">
+        <div class="beat">
+          <h3 class="display">Called in</h3>
+          <p>Tell us what you want and when you're pulling up.</p>
+        </div>
+        <div class="beat">
+          <h3 class="display">Dropped hot</h3>
+          <p>Nothing fries until your ticket prints.</p>
+        </div>
+        <div class="beat">
+          <h3 class="display">Bagged at the window</h3>
+          <p>Wrapped and handed over, still crackling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser" id="board">
+    <div class="wrap">
+      <div class="teaser-head">
+        <h2 class="display">What's on the board</h2>
+        <p>Six things, done well, every day we're open.</p>
+      </div>
+
+      <ul class="teaser-list">
+        <li>
+          <div class="teaser-item">
+            <svg class="teaser-mark" viewBox="0 0 80 80" aria-hidden="true">
+              <path d="M18 40h44l-6 30H24z" fill="#E14A2B"/>
+              <path d="M18 40h44l-3 10H21z" fill="#B93A21"/>
+              <g fill="#D9A431">
+                <rect x="28" y="14" width="7" height="30" rx="3"/>
+                <rect x="38" y="8" width="7" height="36" rx="3"/>
+                <rect x="48" y="16" width="7" height="28" rx="3"/>
+              </g>
+            </svg>
+            <div>
+              <div class="teaser-name display">Fried Baskets</div>
+              <p class="teaser-line">Clams, shrimp, haddock or scallops, dropped when your ticket prints.</p>
+              <div class="teaser-meta">
+                <span class="teaser-price">Starting at $16</span>
+                <a class="btn-line-light" href="services.html#fried-baskets">See it on the board
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><polyline points="12,6 18,12 12,18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="teaser-item">
+            <svg class="teaser-mark" viewBox="0 0 80 80" aria-hidden="true">
+              <rect x="10" y="42" width="60" height="24" rx="12" fill="#D9A431"/>
+              <ellipse cx="40" cy="38" rx="26" ry="14" fill="#E14A2B"/>
+              <ellipse cx="40" cy="38" rx="26" ry="14" fill="none" stroke="#B93A21" stroke-width="2"/>
+            </svg>
+            <div>
+              <div class="teaser-name display">Lobster Rolls</div>
+              <p class="teaser-line">Griddled split-top roll, packed full. Cold or warm, your call.</p>
+              <div class="teaser-meta">
+                <span class="teaser-price">Starting at $26</span>
+                <a class="btn-line-light" href="services.html#lobster-rolls">See it on the board
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><polyline points="12,6 18,12 12,18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="teaser-item">
+            <svg class="teaser-mark" viewBox="0 0 80 80" aria-hidden="true">
+              <path d="M18 16h44l-4 50H22z" fill="#F7F1E1" stroke="#0B6670" stroke-width="3"/>
+              <g fill="#E14A2B"><circle cx="34" cy="38" r="7"/><circle cx="50" cy="46" r="7"/></g>
+              <rect x="38" y="26" width="12" height="7" rx="3" fill="#D9A431"/>
+            </svg>
+            <div>
+              <div class="teaser-name display">The Boil Bag</div>
+              <p class="teaser-line">Shrimp, corn, potatoes and sausage, sealed hot in garlic butter.</p>
+              <div class="teaser-meta">
+                <span class="teaser-price">Starting at $34</span>
+                <a class="btn-line-light" href="services.html#boil-bag">See it on the board
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><polyline points="12,6 18,12 12,18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="teaser-more">
+        <a class="btn-line-light" href="services.html">See all six on the board
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><polyline points="12,6 18,12 12,18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="wrap">
+      <h2 class="display">Three things that don't change</h2>
+      <div class="p-grid">
+        <div class="p-item">
+          <h3 class="display">Cut here, every morning</h3>
+          <p>Whole fish comes in and gets broken down in the back. What doesn't sell today doesn't go on tomorrow's board.</p>
+        </div>
+        <div class="p-item">
+          <h3 class="display">Fried after you order</h3>
+          <p>Nothing waits under a heat lamp. Baskets hit the oil once your ticket prints, so it's still crackling in the bag.</p>
+        </div>
+        <div class="p-item">
+          <h3 class="display">Call ahead, skip the line</h3>
+          <p>Summer weekends get busy at the window. Phone it in, park, and we'll hand it out to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-in">
+      <div>
+        <h2 class="display">Ready when you call</h2>
+        <p>Someone's at the phone all through the shift.</p>
+      </div>
+      <div class="cta-row">
+        <a class="cta-tel" href="tel:+15165550174">(516) 555-0174</a>
+        <a class="btn-line-light" href="contact.html">or send your order
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/><polyline points="12,6 18,12 12,18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="foot-name display">Salt Line Seafood Shack</div>
+      <p>Fried baskets, lobster rolls and steamers, cooked to order at the walk-up window.</p>
+    </div>
+    <div class="foot-col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+15165550174">(516) 555-0174</a></li>
+        <li>Long Island, NY</li>
+        <li>Walk-up window &amp; call-ahead pickup</li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-disclosure">
+    <p>Demo website built by Samuel Ochoa - <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+    <p>Fictional business shown for demonstration.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="callbar-txt">Order line<b>(516) 555-0174</b></div>
+  <a class="callbar-btn" href="tel:+15165550174">Call now</a>
+</div>
+
+<script>
+(function(){
+  var burger = document.querySelector('.hamburger');
+  var nav = document.getElementById('primary-nav');
+  if(!burger || !nav) return;
+
+  function closeMenu(){
+    burger.setAttribute('aria-expanded','false');
+    nav.classList.remove('is-open');
+  }
+  function openMenu(){
+    burger.setAttribute('aria-expanded','true');
+    nav.classList.add('is-open');
+  }
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMenu(); } else { openMenu(); }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(burger.getAttribute('aria-expanded') === 'true'){
+        closeMenu();
+        burger.focus();
+      }
+      document.querySelectorAll('details.submenu[open]').forEach(function(d){ d.removeAttribute('open'); });
+    }
+  });
+
+  nav.querySelectorAll('.nav-list > li > a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('details.submenu[open]').forEach(function(d){
+      if(!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
