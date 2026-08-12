@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Mariscos El Puerto</title>
+<meta name="description" content="Cómo funciona Mariscos El Puerto: compra del marisco cada mañana, cocina que empieza con su llamada, y servicio en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Mariscos El Puerto, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--mar-900)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--marea)" stroke-width="1.4" opacity=".55"/>
+        <path d="M8 26c3-4.4 7-4.4 10 0s7 4.4 10 0" fill="none" stroke="var(--espuma)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M8 19.5c3-4.2 7-4.2 10 0s7 4.2 10 0" fill="none" stroke="var(--marea)" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+        <circle cx="23" cy="12.5" r="3.6" fill="var(--coral)"/>
+      </svg>
+      <span class="brand">Mariscos El Puerto<small>Marisquería</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550175">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z" fill="#fff"/></svg>
+      (516) 555-0175
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#cocteles">Cócteles de mariscos</a></li>
+          <li><a href="services.html#caldos">Caldos y sopas</a></li>
+          <li><a href="services.html#pescado">Pescado entero</a></li>
+          <li><a href="services.html#tostadas">Tostadas y ceviches</a></li>
+          <li><a href="services.html#parrilla">A la parrilla</a></li>
+          <li><a href="services.html#familia">Para la familia</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Escenas</a></li>
+      <li><a href="about.html" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550175">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+      Llamar (516) 555-0175
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-light">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <h1>Se cocina cuando usted llama</h1>
+        <p class="lead measure">Sin cadenas y sin marisco congelado meses antes. Así es como funciona El Puerto, día a día.</p>
+      </div>
+      <svg class="intro-accent reveal reveal-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de una olla de caldo con un cucharón y vapor subiendo">
+        <ellipse cx="80" cy="132" rx="48" ry="9" fill="var(--mar-950)" opacity=".12"/>
+        <path d="M42 88c0-14 17-22 38-22s38 8 38 22l-7 44c-2 13-16 20-31 20s-29-7-31-20Z" fill="var(--mar-800)" stroke="var(--mar-950)" stroke-width="2.2"/>
+        <ellipse cx="80" cy="88" rx="38" ry="12" fill="var(--mar-700)" stroke="var(--mar-950)" stroke-width="2"/>
+        <ellipse cx="80" cy="88" rx="27" ry="7" fill="var(--coral)" opacity=".92"/>
+        <path d="M42 96c-13 0-13 20 0 20" stroke="var(--mar-950)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M118 96c13 0 13 20 0 20" stroke="var(--mar-950)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <line x1="104" y1="60" x2="118" y2="42" stroke="var(--tinta-suave)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="120" cy="40" r="7" fill="none" stroke="var(--tinta-suave)" stroke-width="2.6"/>
+        <g stroke="var(--tinta-suave)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".6">
+          <path d="M68 66c-5-10 6-13 1-23"/>
+          <path d="M86 66c-5-11 6-14 1-24"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-light-2 section-tight">
+    <div class="wrap about-grid">
+      <div class="story">
+        <p class="measure-wide">El Puerto lo lleva la familia Reyes con una idea sencilla: el marisco se compra la misma mañana que se cocina, no antes. Si el camarón grande no llegó ese día, se lo decimos de frente al teléfono en vez de servirle otra cosa sin avisar.</p>
+        <p class="measure-wide">La plancha y la parrilla se encienden cuando entra su orden, no antes. Por eso el tiempo que le damos al llamar es el tiempo real: lo que toma preparar su plato desde cero. Los caldos, las salsas y el jugo para los cócteles se hacen aquí mismo cada mañana, antes de abrir.</p>
+        <p class="measure-wide">Atendemos en el local en Long Island, NY, para comer ahí o para llevar. Para bautizos, cumpleaños y reuniones armamos charolas grandes; solo pedimos un día de anticipación para saber cuánto rinde cada tamaño según los invitados.</p>
+      </div>
+      <div class="hours-box">
+        <h3>Horario de cocina</h3>
+        <ul class="hours-list">
+          <li><span class="d">Lunes</span><span class="leader"></span><span class="h closed">Cerrado</span></li>
+          <li><span class="d">Martes a jueves</span><span class="leader"></span><span class="h">11 a.m. – 9 p.m.</span></li>
+          <li><span class="d">Viernes</span><span class="leader"></span><span class="h">11 a.m. – 10 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="leader"></span><span class="h">10 a.m. – 10 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="leader"></span><span class="h">10 a.m. – 8 p.m.</span></li>
+        </ul>
+        <p style="margin-top:14px;font-size:.88rem;color:var(--tinta-suave)">La cocina toma la última orden 30 minutos antes de cerrar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="wave-rule on-dark" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 C 20 1 30 13 50 7 C 70 1 80 13 100 7 C 120 1 130 13 150 7 C 170 1 180 13 200 7 C 220 1 230 13 250 7 C 270 1 280 13 300 7 C 320 1 330 13 350 7 C 370 1 380 13 400 7"/></svg>
+    <div class="wrap">
+      <h2>¿Preguntas antes de pedir?</h2>
+      <p class="measure" style="color:rgba(251,246,236,.82)">Llámenos o revise las preguntas frecuentes en la página de contacto.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550175">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+          Llamar (516) 555-0175
+        </a>
+        <a class="btn-line" href="contact.html">
+          Ir a contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Mariscos El Puerto</div>
+        <p>Cócteles, caldos, ceviches y pescado entero, preparados cuando usted llama.</p>
+        <p><a href="tel:+15165550175">(516) 555-0175</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Escenas</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550175">Llamar (516) 555-0175</a></li>
+          <li><a href="sms:+15165550175">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550175">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+  Llamar (516) 555-0175
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

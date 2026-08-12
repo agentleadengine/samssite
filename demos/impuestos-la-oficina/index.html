@@ -1,0 +1,278 @@
+<!doctype html>
+<!--
+THESIS: Sus papeles llegan sueltos; salen ordenados, explicados y enviados — no es un software, es una oficina real donde alguien se sienta con usted.
+OWN-WORLD: El expediente de oficina — carpetas con pestaña sobre un escritorio azul institucional, papel color manila, un sello de tinta verde que marca cada paso ya terminado.
+STORY: Cada página avanza el expediente un paso: portada = la promesa y el escritorio abierto; servicios = las seis pestañas del expediente; trabajos = expedientes de muestra ya cerrados y sellados; nosotros = quién se sienta al otro lado del escritorio; contacto = el sello final, listo para llamar.
+FIRST VIEWPORT: Una carpeta color manila entreabierta sobre un escritorio azul de ancho completo, con formularios esquemáticos adentro, una pestaña verde que dice "SU EXPEDIENTE", la promesa central y el teléfono para llamar, visibles sin bajar la página.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impuestos La Oficina — Long Island, NY</title>
+<meta name="description" content="Impuestos La Oficina — preparación de impuestos personales y de negocio en Long Island, NY. Atención en español, de persona a persona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link sr-only" href="#main">Saltar al contenido principal</a>
+<div class="ribbon">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="rail" id="site-header">
+  <div class="rail-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="12" width="32" height="22" rx="3" fill="#ece3cd"/>
+        <rect x="4" y="7" width="15" height="8" rx="2.5" fill="#146b3f"/>
+        <rect x="9" y="17" width="22" height="12" rx="2" fill="#fbf9f4"/>
+        <path d="M13 23l3 3 6-6" fill="none" stroke="#146b3f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">Impuestos La Oficina</span>
+        <span class="brand-tag">Long Island, NY</span>
+      </span>
+    </a>
+    <button class="hburg" id="menu-btn" type="button" aria-expanded="false" aria-controls="rail-panel" aria-label="Abrir menú">
+      <svg class="icon i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="rail-panel-wrap">
+    <div class="rail-panel" id="rail-panel">
+      <div class="rail-panel-in">
+        <a class="rail-tel" href="tel:+15165550183">
+          <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+          (516) 555-0183
+        </a>
+        <nav class="rail-nav" aria-label="Principal">
+          <a href="index.html" aria-current="page">Inicio</a>
+          <details class="svc-drop">
+            <summary>Servicios <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="svc-panel">
+              <a href="services.html#personal">Declaración personal</a>
+              <a href="services.html#cuenta-propia">Trabajo por cuenta propia</a>
+              <a href="services.html#negocio">Negocios pequeños</a>
+              <a href="services.html#renta">Ingresos por renta</a>
+              <a href="services.html#anteriores">Años anteriores y correcciones</a>
+              <a href="services.html#itin">ITIN y pagos trimestrales</a>
+              <a class="svc-all" href="services.html">Ver todos los servicios <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </details>
+          <a href="work.html">Trabajos</a>
+          <a href="about.html">Nosotros</a>
+          <a href="contact.html">Contacto</a>
+        </nav>
+        <div class="rail-hours">
+          <h4 class="rail-h4">Horario de temporada</h4>
+          <table>
+            <tr><td>Lun a vie</td><td>9:00&nbsp;–&nbsp;7:00</td></tr>
+            <tr><td>Sábado</td><td>9:00&nbsp;–&nbsp;3:00</td></tr>
+            <tr><td>Domingo</td><td>Con cita</td></tr>
+          </table>
+        </div>
+        <div class="rail-area"><b>Long Island, NY</b><br>Nassau y Suffolk. En persona o por teléfono.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-scene" aria-hidden="true">
+      <svg class="hero-fan" viewBox="0 0 300 260" role="img" aria-label="">
+        <g transform="rotate(-8 150 130)"><rect x="58" y="42" width="150" height="188" rx="6" fill="#ece3cd"/></g>
+        <g transform="rotate(4 150 130)"><rect x="70" y="30" width="150" height="188" rx="6" fill="#f5f0e3" stroke="#ddd0ac" stroke-width="1.5"/></g>
+        <g transform="rotate(-2 150 130)">
+          <rect x="82" y="20" width="150" height="188" rx="6" fill="#fbf9f4" stroke="#ddd0ac" stroke-width="1.5"/>
+          <rect x="102" y="48" width="90" height="9" rx="4.5" fill="#123a68"/>
+          <rect x="102" y="70" width="112" height="5" rx="2.5" fill="#ddd0ac"/>
+          <rect x="102" y="82" width="96" height="5" rx="2.5" fill="#ddd0ac"/>
+          <rect x="102" y="94" width="112" height="5" rx="2.5" fill="#ddd0ac"/>
+          <rect x="102" y="118" width="52" height="20" rx="4" fill="#e4f3ea"/>
+          <rect x="160" y="118" width="52" height="20" rx="4" fill="#ece3cd"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap hero-in">
+      <div class="carpeta-card">
+        <h1>Usted trae los papeles. Aquí los ponemos en orden.</h1>
+        <p class="lede">Una oficina de impuestos en Long Island donde alguien se sienta con usted, pregunta lo que hace falta y le explica cada línea antes de enviar nada.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+15165550183">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+            Llamar al (516) 555-0183
+          </a>
+          <a class="btn btn-ghost" href="contact.html">
+            Pedir una cita
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="facts">
+          <span><b>Español</b></span>
+          <span>Long Island, NY</span>
+          <span>Persona a persona</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap proof-in">
+      <div class="proof-text">
+        <h2>Así se ordena una declaración con usted delante</h2>
+        <p>No tiene que llegar con todo organizado. Traiga lo que tenga — recibos sueltos, una carpeta a medio hacer, una bolsa — y lo revisamos con usted, casilla por casilla, hasta que todo cuadre y usted entienda de dónde salió cada número.</p>
+        <p class="measure">Nada se envía sin que usted lo vea primero.</p>
+      </div>
+      <div class="proof-scene">
+        <ul>
+          <li class="casilla done"><span class="box"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt">Documentos recibidos y revisados</span></li>
+          <li class="casilla done"><span class="box"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt">Cada línea explicada con usted</span></li>
+          <li class="casilla done"><span class="box"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt">Declaración completa, antes de enviar nada</span></li>
+          <li class="casilla done"><span class="box"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt">Enviada electrónicamente</span></li>
+        </ul>
+        <span class="sello" aria-hidden="true">
+          <svg class="sello-ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/><path class="tick" d="M21 33l7 7 15-16"/></svg>
+          <span class="sello-txt">Listo</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Qué preparamos</h2>
+      <p class="measure">Seis tipos de declaración, un mismo trato: le explicamos lo que hace falta antes de empezar.</p>
+      <ul class="teaser-list">
+        <li>
+          <a href="services.html#personal">
+            <span class="t-tag">Personal</span>
+            <span class="t-name">Declaración personal</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#cuenta-propia">
+            <span class="t-tag">1099</span>
+            <span class="t-name">Trabajo por cuenta propia</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#negocio">
+            <span class="t-tag">Negocio</span>
+            <span class="t-name">Negocios pequeños</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="teaser-foot"><a class="link" href="services.html">Ver los 6 servicios <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </section>
+
+  <section class="why on-azul">
+    <div class="wrap">
+      <h2>Cómo trabajamos con usted</h2>
+      <ul class="why-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.8 14.8L20 20"/><path d="M8 10h4M10 8v4"/></svg>
+          <div>
+            <h3>Le explicamos cada línea</h3>
+            <p>Antes de enviar nada, usted ve la declaración completa y entiende de dónde salió cada número.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h12v8H9l-3 3v-3H3z"/><path d="M21 10v6h-3v3l-3-3h-3"/></svg>
+          <div>
+            <h3>Atención en español, de persona a persona</h3>
+            <p>Nada de menús automáticos ni traducciones a medias. Habla con alguien que lo entiende desde el primer minuto.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9L6 4h12l3 5"/><path d="M3 9v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9"/><path d="M3 9h5l1.5 2.5h5L16 9h5"/></svg>
+          <div>
+            <h3>Sus papeles, en sus términos</h3>
+            <p>Tráigalos como los tenga — ordenados, en una bolsa o en una caja. Los organizamos con usted.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="close-cta">
+    <div class="wrap close-in">
+      <div>
+        <h2>Aparte su cita</h2>
+        <p class="measure">Lo más rápido es llamar, sobre todo entre enero y abril.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+15165550183">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+            Llamar al (516) 555-0183
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Escribir un mensaje</a>
+        </div>
+      </div>
+      <div class="meta-block">
+        <h3>Horario</h3>
+        <table>
+          <tr><td>Lunes a viernes</td><td>9:00 am – 7:00 pm</td></tr>
+          <tr><td>Sábado</td><td>9:00 am – 3:00 pm</td></tr>
+          <tr><td>Domingo</td><td>Con cita</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Impuestos La Oficina</div>
+    <p class="foot-tag">Preparación de impuestos personales y de negocio en Long Island, NY.</p>
+    <nav class="foot-links" aria-label="Enlaces del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="services.html">Servicios</a>
+      <a href="work.html">Trabajos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <p class="foot-tel">Llame o escriba: <a href="tel:+15165550183">(516) 555-0183</a></p>
+    <div class="foot-disclose">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<a class="callbar" href="tel:+15165550183">
+  <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+  Llamar al (516) 555-0183
+</a>
+
+<script>
+(function(){
+  var rail = document.getElementById('site-header');
+  var btn = document.getElementById('menu-btn');
+  if(!rail||!btn) return;
+  function closeMenu(){ rail.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); }
+  function openMenu(){ rail.classList.add('is-open'); btn.setAttribute('aria-expanded','true'); }
+  btn.addEventListener('click', function(){
+    if(rail.classList.contains('is-open')){ closeMenu(); } else { openMenu(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && rail.classList.contains('is-open')){ closeMenu(); btn.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail.classList.contains('is-open') && !rail.contains(e.target)){ closeMenu(); }
+  });
+  rail.querySelectorAll('.rail-nav > a').forEach(function(a){
+    a.addEventListener('click', function(){ if(window.matchMedia('(max-width:959px)').matches){ closeMenu(); } });
+  });
+})();
+</script>
+</body>
+</html>

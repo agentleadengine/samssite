@@ -14,12 +14,13 @@
 
   --brass:#c8952f;          /* primary gold — the accent field */
   --brass-light:#e9c568;    /* light gold — text/emphasis on dark */
-  --brass-deep:#7a5a1c;     /* deep bronze — text/links on paper */
-  --brass-dim:#8a6b26;      /* mid bronze — secondary marks on paper */
+  --brass-deep:#7a5a1c;     /* deep bronze — links/labels on paper */
+  --brass-ink:#3a2c0d;      /* darkest bronze — body-weight text on brass, 5:1+ */
 
   --paper:#f1ebda;          /* warm bone paper — main light surface */
   --paper-dim:#e4d9c1;      /* deeper paper band, for section rhythm */
   --paper-line:#cabb98;     /* hairline on paper */
+  --paper-muted:#6b6355;    /* muted text on paper/white — placeholders, captions */
 
   --ink-text:#100f10;       /* body text on paper/brass (near-black) */
   --ink-soft:#4c463a;       /* secondary text on paper, warm-tinted */
@@ -29,7 +30,6 @@
   --focus: var(--ink-text);
 
   --radius-sm:3px;
-  --radius-md:6px;
 
   --rule:4px;               /* the poster's signature heavy rule */
 
@@ -70,6 +70,7 @@ h1,h2,h3{
   text-transform:uppercase;
   line-height:.92;
   letter-spacing:-.01em;
+  text-wrap:balance;
 }
 .display{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;text-transform:uppercase;font-weight:800}
 
@@ -130,7 +131,7 @@ header{
 }
 .head-a-in{
   max-width:1180px;margin:0 auto;padding:14px 20px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
 }
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .badge{width:34px;height:34px;flex:none;border-radius:var(--radius-sm)}
@@ -140,7 +141,7 @@ header{
 .badge .bit{fill:var(--brass-light)}
 .brand-name{
   font-family:'Big Shoulders Display',sans-serif;font-weight:800;
-  text-transform:uppercase;font-size:19px;line-height:1;color:var(--ink-text);
+  text-transform:uppercase;font-size:17px;line-height:1;color:var(--ink-text);
   white-space:nowrap;
 }
 .head-right{display:flex;align-items:center;gap:12px;flex:none}
@@ -152,9 +153,12 @@ header{
 .head-tel svg{width:14px;height:14px;fill:var(--ink-text);flex:none}
 .head-note{
   display:none;font-size:11px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--brass-deep);
+  text-transform:uppercase;color:var(--brass-ink);
 }
-.head-phone-note{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+/* Phone number lives in the hero CTA + the persistent mobile call bar below
+   900px — the header stays brand + hamburger only so it never has to fit
+   badge + wordmark + full number + menu button on one 375px row. */
+.head-phone-note{display:none;flex-direction:column;align-items:flex-end;gap:2px}
 
 .hamburger{
   display:flex;align-items:center;justify-content:center;
@@ -253,8 +257,8 @@ header{
 .rule-top{border-top:var(--rule) solid var(--ink)}
 .rule-bottom{border-bottom:var(--rule) solid var(--ink)}
 
-.sec-head h2{font-size:clamp(2.1rem,6vw,3.6rem)}
-.bg-ink .sec-head h2,.bg-iron .sec-head h2{color:var(--iron-text)}
+.sec-head h1,.sec-head h2{font-size:clamp(2.1rem,6vw,3.6rem)}
+.bg-ink .sec-head h1,.bg-iron .sec-head h1,.bg-ink .sec-head h2,.bg-iron .sec-head h2{color:var(--iron-text)}
 .sec-head p{margin-top:16px;max-width:var(--measure);font-size:17px}
 .bg-ink .sec-head p,.bg-iron .sec-head p{color:var(--iron-text-2)}
 .bg-paper .sec-head p,.bg-paper-dim .sec-head p{color:var(--ink-soft)}
@@ -269,7 +273,7 @@ header{
 .hero h1 .brass{color:var(--brass)}
 .hero .sub{margin-top:20px;font-size:18px;color:var(--iron-text-2);max-width:46ch}
 .hero-cta-row{margin-top:26px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.hero-cta-row .btn{width:100%;justify-content:center;font-size:clamp(22px,7vw,30px);padding:16px}
+.hero-cta-row .btn{width:100%;justify-content:center;font-size:clamp(19px,6.2vw,30px);padding:16px 12px}
 .hero-art{margin-top:8px}
 .hero-art svg{width:100%;max-width:300px;margin:0 auto}
 
@@ -342,7 +346,7 @@ header{
   border:var(--rule) solid var(--ink);
 }
 .hours-block .display{font-size:clamp(1.5rem,5.5vw,2.35rem);color:var(--ink-text)}
-.hours-block p{margin-top:10px;font-size:15px;color:#3a2c0d;max-width:60ch}
+.hours-block p{margin-top:10px;font-size:15px;color:var(--brass-ink);max-width:60ch}
 
 /* ==========================================================================
    Closing CTA band
@@ -355,7 +359,7 @@ header{
   background:var(--brass);border:var(--rule) solid var(--brass-deep);
   padding:20px 22px;max-width:520px;
 }
-.cta-phone .lbl{display:block;font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#4a3910}
+.cta-phone .lbl{display:block;font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-ink)}
 .cta-phone .num{
   display:block;margin-top:6px;
   font-family:'Big Shoulders Display',sans-serif;font-weight:800;
@@ -435,7 +439,7 @@ footer{background:var(--ink);color:var(--iron-text-2);padding:36px 0 30px;--focu
     to{transform:rotate(0) translateY(0);opacity:1}
   }
 
-  .page-contact .cta-phone{animation:stampBig .55s var(--ease-out) both;animation-delay:.1s}
+  .page-contact .contact-actions .cta-phone{animation:stampBig .55s var(--ease-out) both;animation-delay:.1s}
   @keyframes stampBig{
     from{transform:scale(.94);opacity:0}
     to{transform:scale(1);opacity:1}
@@ -462,10 +466,10 @@ footer{background:var(--ink);color:var(--iron-text-2);padding:36px 0 30px;--focu
 
 .bg-ink .svc-list-lbl,.bg-iron .svc-list-lbl,.bg-ink .svc-when-lbl,.bg-iron .svc-when-lbl{color:var(--brass-light)}
 .bg-paper .svc-list-lbl,.bg-paper-dim .svc-list-lbl,.bg-paper .svc-when-lbl,.bg-paper-dim .svc-when-lbl{color:var(--brass-deep)}
-.bg-brass .svc-list-lbl,.bg-brass .svc-when-lbl{color:#4a3910}
+.bg-brass .svc-list-lbl,.bg-brass .svc-when-lbl{color:var(--brass-ink)}
 .bg-ink .svc-copy,.bg-iron .svc-copy{color:var(--iron-text-2)}
 .bg-paper .svc-copy,.bg-paper-dim .svc-copy{color:var(--ink-soft)}
-.bg-brass .svc-copy{color:#3a2c0d}
+.bg-brass .svc-copy{color:var(--brass-ink)}
 
 /* ==========================================================================
    Work gallery
@@ -493,7 +497,7 @@ footer{background:var(--ink);color:var(--iron-text-2);padding:36px 0 30px;--focu
    ========================================================================== */
 .about-hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
 .about-art{width:100%;max-width:220px;margin:0 auto}
-.story{display:grid;gap:18px;max-width:var(--measure);font-size:17px}
+.story{display:grid;gap:18px;max-width:var(--measure);font-size:17px;color:var(--ink-soft)}
 .story p+p{margin-top:0}
 .name-line{
   margin-top:22px;font-weight:700;font-size:14px;color:var(--brass-deep);
@@ -508,6 +512,7 @@ footer{background:var(--ink);color:var(--iron-text-2);padding:36px 0 30px;--focu
    ========================================================================== */
 .contact-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:start}
 .contact-actions{display:grid;gap:16px}
+.contact-actions .cta-phone{margin-top:0}
 .sms-block{
   display:block;text-decoration:none;background:var(--iron);color:var(--iron-text);
   border:var(--rule) solid var(--ink);padding:16px 18px;
@@ -526,7 +531,7 @@ input,textarea{
   background:var(--paper);border:2px solid var(--paper-line);border-radius:var(--radius-sm);
   padding:12px 13px;
 }
-input::placeholder,textarea::placeholder{color:#8a8272}
+input::placeholder,textarea::placeholder{color:var(--paper-muted)}
 input:focus,textarea:focus{border-color:var(--ink)}
 textarea{min-height:112px;resize:vertical}
 .form-submit{
@@ -537,7 +542,7 @@ textarea{min-height:112px;resize:vertical}
 .form-submit:hover{background:var(--brass-light)}
 .form-sample-tag{
   margin-top:12px;text-align:center;font-weight:700;font-size:11px;
-  letter-spacing:.14em;text-transform:uppercase;color:#8a8272;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--paper-muted);
 }
 
 .faq{margin-top:8px;border-top:var(--rule) solid var(--ink)}
@@ -558,8 +563,6 @@ textarea{min-height:112px;resize:vertical}
 }
 .faq-item[open] summary::after{transform:translateY(-50%) rotate(90deg);opacity:0}
 .faq-item p{padding:0 30px 20px 0;font-size:15.5px;color:var(--ink-soft);max-width:60ch}
-
-.contact-close{margin-top:38px}
 
 /* ==========================================================================
    Responsive
@@ -589,7 +592,7 @@ textarea{min-height:112px;resize:vertical}
   .brand-name{font-size:23px}
   .head-tel{font-size:22px}
   .head-note{display:block}
-  .head-phone-note{gap:3px}
+  .head-phone-note{display:flex;gap:3px}
 
   .head-b-in{padding:0 40px}
   #site-nav{max-height:none;overflow:visible;opacity:1;position:static}

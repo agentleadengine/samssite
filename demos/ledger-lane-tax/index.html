@@ -1,0 +1,358 @@
+<!doctype html>
+<!--
+THESIS: Bring the folder in loose; leave with every line explained, checked, and filed — trust comes from watching someone else's careful hand do the ruling and the checking right in front of you.
+OWN-WORLD: The physical grammar of an open ledger book is the interface itself — hairline row rules, columnar bands, a hand-drawn orange pencil tick and doubled circle as the one recurring "reviewed" mark, slim book-edge tabs for page-to-page navigation. Not an illustrated folder-on-a-desk scene — the page you're reading IS the ledger page.
+STORY: The same ledger stays open across all five pages, reached tab by tab; the orange pencil mark appears exactly once per page, always on the single line that matters most there.
+FIRST VIEWPORT: A forest-green field beneath an open, hairline-ruled ledger page, one line item circled twice in orange pencil, headline set in Frank Ruhl Libre, the phone number sitting where the total would sit.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledger Lane Tax Prep — Long Island, NY</title>
+<meta name="description" content="Ledger Lane Tax Prep — individual and small business tax preparation on Long Island, NY. Sit down with a preparer. Call (516) 555-0182.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-ribbon" role="note">Demo site <span>— fictional business shown for demonstration</span></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Ledger Lane Tax Prep — home">
+      <svg class="brand-mark" width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="3" y="5" width="30" height="26" rx="3" fill="#f7f1e3"/>
+        <rect x="3" y="5" width="30" height="26" rx="3" fill="none" stroke="#0f2e21" stroke-width="1.6"/>
+        <line x1="18" y1="7.5" x2="18" y2="28.5" stroke="#cdbf98" stroke-width="1.3"/>
+        <line x1="7" y1="13" x2="15" y2="13" stroke="#4a4636" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="7" y1="18" x2="14" y2="18" stroke="#4a4636" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="21" y1="13" x2="29" y2="13" stroke="#4a4636" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M20.5 22.5l2 2.4 4.5-5.4" stroke="#c8530f" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-word">Ledger Lane<small>Tax Prep · Long Island, NY</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul class="tab-row">
+        <li><a class="tab is-active" href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button type="button" class="tab tab-sub-trigger" aria-expanded="false" aria-controls="services-submenu">
+            Services
+            <svg class="chev" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul id="services-submenu" class="submenu" hidden>
+            <li><a href="services.html#individual">Individual returns</a></li>
+            <li><a href="services.html#self-employed">Self-employed &amp; 1099</a></li>
+            <li><a href="services.html#small-business">Small business returns</a></li>
+            <li><a href="services.html#rental">Rental &amp; investment income</a></li>
+            <li><a href="services.html#prior-year">Prior-year &amp; amended returns</a></li>
+            <li><a href="services.html#quarterly">Quarterly estimates &amp; bookkeeping</a></li>
+          </ul>
+        </li>
+        <li><a class="tab" href="work.html">Work</a></li>
+        <li><a class="tab" href="about.html">About</a></li>
+        <li><a class="tab" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="header-phone" href="tel:+15165550182">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+      (516) 555-0182
+    </a>
+    <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="hamburger-box"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
+    <ul class="mobile-list">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li>
+        <details class="mobile-services">
+          <summary>Services <svg class="chev" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+          <ul class="mobile-sub">
+            <li><a href="services.html#individual">Individual returns</a></li>
+            <li><a href="services.html#self-employed">Self-employed &amp; 1099</a></li>
+            <li><a href="services.html#small-business">Small business returns</a></li>
+            <li><a href="services.html#rental">Rental &amp; investment income</a></li>
+            <li><a href="services.html#prior-year">Prior-year &amp; amended returns</a></li>
+            <li><a href="services.html#quarterly">Quarterly estimates &amp; bookkeeping</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-meta">
+      <a href="tel:+15165550182">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+        (516) 555-0182
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>Bring in the folder. Leave with the number explained.</h1>
+        <p class="lede">A small tax office on Long Island for people who&rsquo;d rather hand the paperwork to somebody who does this every day. Sit down with a preparer, ask your questions, and walk out knowing exactly where you stand.</p>
+        <div class="ctas">
+          <a class="btn btn-primary btn-ring" href="tel:+15165550182">Call (516) 555-0182</a>
+          <a class="btn btn-ghost" href="services.html">See what we prepare</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scene" aria-hidden="false">
+      <svg viewBox="0 0 1200 380" role="img" aria-label="An open ledger page with six ruled rows of entries; one row's amount is circled twice in orange pencil beside a checkmark." preserveAspectRatio="xMidYMax slice">
+        <rect width="1200" height="380" fill="#0f2e21"/>
+        <rect x="40" y="22" width="1120" height="336" rx="6" fill="#f7f1e3" stroke="#cdbf98"/>
+        <!-- column header hints -->
+        <rect x="100" y="46" width="120" height="7" rx="3.5" fill="#cdbf98"/>
+        <rect x="1000" y="46" width="60" height="7" rx="3.5" fill="#cdbf98"/>
+        <line x1="900" y1="66" x2="900" y2="336" stroke="#cdbf98" stroke-width="1"/>
+        <!-- rule rows -->
+        <g stroke="#cdbf98" stroke-width="1">
+          <line x1="76" y1="90" x2="1124" y2="90"/>
+          <line x1="76" y1="140" x2="1124" y2="140"/>
+          <line x1="76" y1="190" x2="1124" y2="190"/>
+          <line x1="76" y1="240" x2="1124" y2="240"/>
+          <line x1="76" y1="290" x2="1124" y2="290"/>
+          <line x1="76" y1="336" x2="1124" y2="336"/>
+        </g>
+        <!-- description bars -->
+        <g fill="#4a4636" opacity=".55">
+          <rect x="100" y="74" width="340" height="10" rx="4"/>
+          <rect x="100" y="124" width="260" height="10" rx="4"/>
+          <rect x="100" y="174" width="400" height="10" rx="4"/>
+          <rect x="100" y="224" width="300" height="10" rx="4"/>
+          <rect x="100" y="274" width="220" height="10" rx="4"/>
+          <rect x="100" y="316" width="360" height="10" rx="4"/>
+        </g>
+        <!-- amount bars, right aligned -->
+        <g fill="#1c1912">
+          <rect x="1044" y="74" width="84" height="10" rx="4"/>
+          <rect x="1062" y="124" width="66" height="10" rx="4"/>
+          <rect x="1030" y="174" width="98" height="10" rx="4"/>
+          <rect x="1024" y="316" width="104" height="10" rx="4"/>
+        </g>
+        <!-- highlighted row (the one that matters) -->
+        <rect x="1028" y="224" width="100" height="10" rx="4" fill="#a8440c"/>
+        <ellipse cx="1078" cy="229" rx="82" ry="24" fill="none" stroke="#c8530f" stroke-width="2.5" class="anim-ring" transform="rotate(-3 1078 229)"/>
+        <ellipse cx="1078" cy="229" rx="90" ry="29" fill="none" stroke="#c8530f" stroke-width="2" opacity=".7" transform="rotate(2 1078 229)"/>
+        <polyline points="76,238 88,251 106,220" fill="none" stroke="#a8440c" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="anim-tick"/>
+        <!-- pencil resting bottom right -->
+        <g transform="translate(1000,320) rotate(-32)">
+          <rect x="-72" y="-6" width="118" height="12" rx="6" fill="#2a5f45"/>
+          <rect x="-72" y="-6" width="16" height="12" rx="5" fill="#f2dcb8"/>
+          <rect x="46" y="-6" width="16" height="12" fill="#c8530f"/>
+          <path d="M62,-6 L80,0 L62,6 Z" fill="#1c1912"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section aria-labelledby="proof-h">
+    <div class="wrap">
+      <div class="head-block">
+        <h2 id="proof-h">From a loose folder to a filed return</h2>
+        <p>Most of an appointment is exactly this: sorting what you carried in into exactly what the return needs, then checking it together before anything goes out.</p>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-panel">
+          <h3>What you bring</h3>
+          <svg viewBox="0 0 320 200" role="img" aria-label="A loose, overlapping pile of receipts and papers at odd angles.">
+            <rect x="30" y="36" width="72" height="92" rx="4" fill="#efe4c9" stroke="#cdbf98" transform="rotate(-9 66 82)"/>
+            <rect x="118" y="16" width="82" height="60" rx="4" fill="#f7f1e3" stroke="#cdbf98" transform="rotate(6 159 46)"/>
+            <rect x="150" y="88" width="62" height="82" rx="4" fill="#efe4c9" stroke="#cdbf98" transform="rotate(-5 181 129)"/>
+            <rect x="208" y="30" width="52" height="72" rx="4" fill="#f7f1e3" stroke="#cdbf98" transform="rotate(12 234 66)"/>
+            <rect x="56" y="128" width="56" height="46" rx="4" fill="#f7f1e3" stroke="#cdbf98" transform="rotate(-15 84 151)"/>
+            <g stroke="#cdbf98" stroke-width="2" stroke-linecap="round" opacity=".8">
+              <line x1="44" y1="60" x2="82" y2="60" transform="rotate(-9 66 82)"/>
+              <line x1="44" y1="72" x2="76" y2="72" transform="rotate(-9 66 82)"/>
+              <line x1="132" y1="38" x2="184" y2="38" transform="rotate(6 159 46)"/>
+              <line x1="132" y1="50" x2="170" y2="50" transform="rotate(6 159 46)"/>
+              <line x1="164" y1="108" x2="198" y2="108" transform="rotate(-5 181 129)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="proof-arrow">
+          <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h28M20 2l10 10-10 10" stroke="#a8440c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="proof-panel">
+          <h3>What you leave with</h3>
+          <svg viewBox="0 0 320 200" role="img" aria-label="A single tidy ledger strip with ruled rows and one total circled in orange pencil.">
+            <rect x="8" y="8" width="304" height="184" rx="5" fill="#f7f1e3" stroke="#cdbf98"/>
+            <g stroke="#cdbf98" stroke-width="1">
+              <line x1="26" y1="60" x2="296" y2="60"/>
+              <line x1="26" y1="102" x2="296" y2="102"/>
+              <line x1="26" y1="144" x2="296" y2="144"/>
+            </g>
+            <g fill="#4a4636" opacity=".55">
+              <rect x="26" y="40" width="130" height="9" rx="4"/>
+              <rect x="26" y="82" width="100" height="9" rx="4"/>
+              <rect x="26" y="124" width="150" height="9" rx="4"/>
+            </g>
+            <rect x="238" y="124" width="58" height="9" rx="4" fill="#a8440c"/>
+            <ellipse cx="267" cy="128" rx="50" ry="16" fill="none" stroke="#c8530f" stroke-width="2" transform="rotate(-3 267 128)"/>
+            <polyline points="26,166 36,177 52,152" fill="none" stroke="#a8440c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-paper2" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="head-block">
+        <h2 id="svc-h">What we prepare</h2>
+        <p>Six kinds of returns come through the door most often. Call with yours and we&rsquo;ll tell you what to bring and how long it usually takes.</p>
+      </div>
+      <div class="teaser-list">
+        <div class="teaser-row">
+          <h3>Individual returns</h3>
+          <p>Federal and New York State returns for W-2 households, retirees, and families with dependents, e-filed with a printed copy for your records.</p>
+          <a class="go" href="services.html#individual">See what&rsquo;s included <svg width="15" height="11" viewBox="0 0 15 11" aria-hidden="true"><path d="M1 5.5h12M8 1l5 4.5-5 4.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="teaser-row">
+          <h3>Self-employed &amp; 1099</h3>
+          <p>Schedule C returns for contractors, drivers, stylists, and side businesses, with mileage and home-office paperwork sorted at the desk.</p>
+          <a class="go" href="services.html#self-employed">See what&rsquo;s included <svg width="15" height="11" viewBox="0 0 15 11" aria-hidden="true"><path d="M1 5.5h12M8 1l5 4.5-5 4.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="teaser-row">
+          <h3>Small business returns</h3>
+          <p>Partnership, S-corp, and single-member LLC filings for shops with a handful of employees. Bring your books in whatever shape they&rsquo;re in.</p>
+          <a class="go" href="services.html#small-business">See what&rsquo;s included <svg width="15" height="11" viewBox="0 0 15 11" aria-hidden="true"><path d="M1 5.5h12M8 1l5 4.5-5 4.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <p style="margin-top:22px"><a href="services.html" style="font-weight:700;color:var(--forest-900);text-decoration-thickness:1.5px;text-underline-offset:3px">See all six services &rarr;</a></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="head-block">
+        <h2 id="why-h">How the office works</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#a8440c" aria-hidden="true"><path d="M4 6h20a2 2 0 012 2v10a2 2 0 01-2 2H12l-5 5v-5H4a2 2 0 01-2-2V8a2 2 0 012-2z" stroke-width="2" stroke-linejoin="round"/><line x1="8" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="16" x2="16" y2="16" stroke-width="2" stroke-linecap="round"/></svg>
+          <div>
+            <h3>You sit with a preparer</h3>
+            <p>Every return gets a real conversation before it gets filed, not just a drop-off and a wait.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#a8440c" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke-width="2"/><ellipse cx="14" cy="14" rx="4.2" ry="10" stroke-width="2"/><line x1="4" y1="14" x2="24" y2="14" stroke-width="2"/></svg>
+          <div>
+            <h3>English and Spanish</h3>
+            <p>Appointments across Nassau and Suffolk counties, in whichever language is easier for you.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#a8440c" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke-width="2"/><path d="M14 8v6l4.5 2.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <h3>Evening &amp; Saturday hours</h3>
+            <p>Weekday evenings and Saturdays through the season, for people who can&rsquo;t get away during the workday.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#a8440c" aria-hidden="true"><path d="M8 4h9l5 5v15a1 1 0 01-1 1H8a1 1 0 01-1-1V5a1 1 0 011-1z" stroke-width="2" stroke-linejoin="round"/><path d="M17 4v5h5" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 16l2.5 2.5 5-5.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <h3>You see it before it&rsquo;s sent</h3>
+            <p>The return is reviewed with you, line by line, before anything is transmitted.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close-cta">
+    <div class="wrap">
+      <h2>Ready to bring in the folder?</h2>
+      <p>Calling is fastest, especially between January and April. Evening and Saturday appointments are usually available.</p>
+      <div class="ctas">
+        <a class="btn btn-primary btn-ring" href="tel:+15165550182">Call (516) 555-0182</a>
+        <a class="btn btn-ghost" href="contact.html">Hours &amp; service area</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Ledger Lane Tax Prep<span>Long Island, NY — Nassau &amp; Suffolk counties</span></p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-hours">
+        <h4>Season hours</h4>
+        <dl>
+          <dt>Mon&ndash;Fri</dt><dd>9&ndash;7</dd>
+          <dt>Saturday</dt><dd>9&ndash;3</dd>
+          <dt>Sunday</dt><dd>By appt.</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15165550182">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+  Call (516) 555-0182
+</a>
+
+<script>
+(function(){
+  var hbtn=document.querySelector('.hamburger');
+  var mnav=document.getElementById('mobile-nav');
+  if(hbtn&&mnav){
+    hbtn.addEventListener('click',function(){
+      var open=hbtn.getAttribute('aria-expanded')==='true';
+      hbtn.setAttribute('aria-expanded',String(!open));
+      mnav.hidden=open;
+    });
+  }
+  var sbtn=document.querySelector('.tab-sub-trigger');
+  var sub=document.getElementById('services-submenu');
+  if(sbtn&&sub){
+    sbtn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=sbtn.getAttribute('aria-expanded')==='true';
+      sbtn.setAttribute('aria-expanded',String(!open));
+      sub.hidden=open;
+    });
+    document.addEventListener('click',function(e){
+      if(!sub.hidden && !sub.contains(e.target) && e.target!==sbtn){
+        sub.hidden=true; sbtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){
+        if(!sub.hidden){sub.hidden=true;sbtn.setAttribute('aria-expanded','false');sbtn.focus();}
+        if(mnav && !mnav.hidden){mnav.hidden=true;hbtn.setAttribute('aria-expanded','false');}
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Sessions | Ironworks Personal Training</title>
+<meta name="description" content="A look at the floor at Ironworks Personal Training: sample sessions covering assessment days, small groups, garage gym setups, technique work, remote check-ins, and return-to-lifting programs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Big+Shoulders+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="ribbon">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="index.html" aria-label="Ironworks Personal Training, home">
+      <svg class="logo-mark icon-fill" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+        <rect x="4" y="4" width="20" height="4"></rect>
+        <rect x="12" y="4" width="4" height="20"></rect>
+        <rect x="4" y="20" width="20" height="4"></rect>
+      </svg>
+      <span class="logo-word"><b>Ironworks</b><i>Personal Training</i></span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul style="display:flex;align-items:center;gap:.35rem;list-style:none;margin:0;padding:0">
+        <li><a href="index.html">Home</a></li>
+        <li style="position:relative">
+          <button class="nav-services-btn" id="navServicesBtnDesktop" type="button" aria-expanded="false" aria-controls="navServicesPanelDesktop" aria-haspopup="true">
+            Services
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1.1rem;height:1.1rem"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul id="navServicesPanelDesktop" hidden style="list-style:none;margin:0">
+            <li><a href="services.html">All programs</a></li>
+            <li><a href="services.html#one-on-one">One-on-one strength</a></li>
+            <li><a href="services.html#small-group">Small group</a></li>
+            <li><a href="services.html#return-to-lifting">Back under the bar</a></li>
+            <li><a href="services.html#technique">Technique session</a></li>
+            <li><a href="services.html#in-home">In-home &amp; garage</a></li>
+            <li><a href="services.html#remote">Remote programming</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-tel" href="tel:+15165550134">(516) 555-0134</a>
+      <button class="hamburger" id="navHamburger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobileNav" hidden aria-label="Mobile">
+    <ul class="mnav-list">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="mnav-toggle" id="navServicesBtnMobile" type="button" aria-expanded="false" aria-controls="navServicesPanelMobile">
+          Services
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <ul id="navServicesPanelMobile" hidden>
+          <li><a href="services.html">All programs</a></li>
+          <li><a href="services.html#one-on-one">One-on-one strength</a></li>
+          <li><a href="services.html#small-group">Small group</a></li>
+          <li><a href="services.html#return-to-lifting">Back under the bar</a></li>
+          <li><a href="services.html#technique">Technique session</a></li>
+          <li><a href="services.html#in-home">In-home &amp; garage</a></li>
+          <li><a href="services.html#remote">Remote programming</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mnav-foot">
+      <a class="btn" href="tel:+15165550134">Call (516) 555-0134</a>
+      <a class="btn btn--ghost-dark" href="sms:+15165550134">Text (516) 555-0134</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="section section--ink" style="padding-bottom:0">
+    <div class="wrap">
+      <h1>A look at<br>the floor</h1>
+      <p class="lead">Every gym says they get results. Here's the shape of the actual sessions, drawn out plain. These are sample sessions built to show how the work runs, not a specific client's story.</p>
+    </div>
+  </section>
+
+  <section class="section section--ink">
+    <div class="wrap">
+      <h2>The sessions</h2>
+      <div class="gallery">
+
+        <article class="vign vign--wide anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of a squat rack holding a barbell next to a clipboard with a checkmark">
+              <line x1="50" y1="175" x2="50" y2="40" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></line>
+              <line x1="120" y1="175" x2="120" y2="40" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></line>
+              <line x1="50" y1="175" x2="120" y2="175" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></line>
+              <line x1="35" y1="85" x2="135" y2="85" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></line>
+              <circle cx="35" cy="85" r="15" fill="none" stroke="#F4F1EA" stroke-width="5"></circle>
+              <circle cx="135" cy="85" r="15" fill="none" stroke="#F4F1EA" stroke-width="5"></circle>
+              <line x1="58" y1="70" x2="58" y2="50" stroke="#E0231F" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="112" y1="70" x2="112" y2="50" stroke="#E0231F" stroke-width="6" stroke-linecap="round"></line>
+              <rect x="185" y="55" width="80" height="110" fill="none" stroke="#F4F1EA" stroke-width="6"></rect>
+              <rect x="210" y="46" width="30" height="16" fill="none" stroke="#F4F1EA" stroke-width="5"></rect>
+              <line x1="200" y1="90" x2="250" y2="90" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="200" y1="108" x2="250" y2="108" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="200" y1="126" x2="236" y2="126" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <polyline points="202 145 212 155 234 132" fill="none" stroke="#E0231F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Assessment day</h3>
+            <p>The first visit. We move through squat, hinge, press, pull, and carry to find where you're starting from today.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+        <article class="vign anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of three simplified figures training around a barbell">
+              <line x1="40" y1="155" x2="260" y2="155" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round"></line>
+              <circle cx="40" cy="155" r="16" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <circle cx="260" cy="155" r="16" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <circle cx="80" cy="95" r="11" fill="none" stroke="#F4F1EA" stroke-width="6"></circle>
+              <path d="M60 150 C60 120 68 108 80 108 C92 108 100 120 100 150" fill="none" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round"></path>
+              <circle cx="150" cy="85" r="11" fill="none" stroke="#E0231F" stroke-width="6"></circle>
+              <path d="M130 150 C130 118 138 98 150 98 C162 98 170 118 170 150" fill="none" stroke="#E0231F" stroke-width="6" stroke-linecap="round"></path>
+              <circle cx="220" cy="95" r="11" fill="none" stroke="#F4F1EA" stroke-width="6"></circle>
+              <path d="M200 150 C200 120 208 108 220 108 C232 108 240 120 240 150" fill="none" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Small group, same bar</h3>
+            <p>Two to four people, one written plan, different loads. Everyone logs their own numbers.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+        <article class="vign anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of a garage frame with a small barbell rack inside">
+              <path d="M20 185 V95 L150 20 L280 95 V185" fill="none" stroke="#F4F1EA" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></path>
+              <line x1="20" y1="150" x2="280" y2="150" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="20" y1="168" x2="280" y2="168" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="110" y1="140" x2="110" y2="90" stroke="#E0231F" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="190" y1="140" x2="190" y2="90" stroke="#E0231F" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="95" y1="105" x2="205" y2="105" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round"></line>
+              <circle cx="95" cy="105" r="12" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <circle cx="205" cy="105" r="12" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Garage gym setup</h3>
+            <p>Programming built around the rack you already own and the hour you actually have free.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+        <article class="vign anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of a figure pressing a bar overhead, framed by two camera-angle marks">
+              <path d="M20 60 L20 85 M20 60 L45 60" fill="none" stroke="#E0231F" stroke-width="5" stroke-linecap="round"></path>
+              <path d="M280 60 L280 85 M280 60 L255 60" fill="none" stroke="#E0231F" stroke-width="5" stroke-linecap="round"></path>
+              <line x1="110" y1="42" x2="190" y2="42" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round"></line>
+              <circle cx="110" cy="42" r="8" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <circle cx="190" cy="42" r="8" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <circle cx="150" cy="55" r="14" fill="none" stroke="#F4F1EA" stroke-width="7"></circle>
+              <path d="M150 69 L150 120" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></path>
+              <path d="M150 75 L120 45 M150 75 L180 45" fill="none" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></path>
+              <path d="M150 120 L135 175 M150 120 L165 175" fill="none" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Technique, one lift</h3>
+            <p>One lift, filmed from two angles, with cues you can actually feel the next time you load the bar.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+        <article class="vign anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of a phone, a chat bubble, and a written training plan">
+              <rect x="40" y="35" width="70" height="130" fill="none" stroke="#F4F1EA" stroke-width="6"></rect>
+              <line x1="55" y1="65" x2="95" y2="65" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="55" y1="82" x2="95" y2="82" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="55" y1="99" x2="80" y2="99" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <rect x="128" y="30" width="80" height="48" fill="none" stroke="#E0231F" stroke-width="5"></rect>
+              <circle cx="148" cy="54" r="3.5" fill="#E0231F"></circle>
+              <circle cx="168" cy="54" r="3.5" fill="#E0231F"></circle>
+              <circle cx="188" cy="54" r="3.5" fill="#E0231F"></circle>
+              <rect x="150" y="100" width="90" height="90" fill="none" stroke="#F4F1EA" stroke-width="6"></rect>
+              <line x1="165" y1="122" x2="225" y2="122" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="165" y1="140" x2="225" y2="140" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+              <line x1="165" y1="158" x2="205" y2="158" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Remote check-in</h3>
+            <p>A month of programming in writing, with a weekly call or text to look at your log together.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+        <article class="vign anim-gallery">
+          <div class="vign-scene">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Line illustration of a lightly loaded barbell with an upward arrow and a checkmark badge">
+              <line x1="90" y1="140" x2="210" y2="140" stroke="#F4F1EA" stroke-width="7" stroke-linecap="round"></line>
+              <circle cx="90" cy="140" r="14" fill="none" stroke="#F4F1EA" stroke-width="5"></circle>
+              <circle cx="210" cy="140" r="14" fill="none" stroke="#F4F1EA" stroke-width="5"></circle>
+              <path d="M150 122 L150 50 M130 74 L150 46 L170 74" fill="none" stroke="#E0231F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="215" cy="55" r="19" fill="none" stroke="#F4F1EA" stroke-width="4"></circle>
+              <polyline points="206 55 213 62 226 47" fill="none" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+          <div class="vign-body">
+            <h3>Back under the bar</h3>
+            <p>Cleared by a doctor or physical therapist, then built back up on a bar that starts lighter than you remember.</p>
+            <p class="vign-tag">Sample session, not a real client.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--signal cta-close">
+    <div class="wrap">
+      <h2>See where you'd fit</h2>
+      <p class="lead">A phone call is the fastest way to find out which session type matches what you need.</p>
+      <a class="big-tel" style="color:#fff" href="tel:+15165550134">(516) 555-0134</a>
+      <div class="cta-close-actions">
+        <a class="btn btn--on-signal" href="tel:+15165550134">Call now</a>
+        <a class="link" href="contact.html" style="color:#fff">or send a request instead
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1rem;height:1rem"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Ironworks</b>
+        <p>Private strength coaching on Long Island, NY.</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:+15165550134">(516) 555-0134</a></li>
+      </ul>
+    </div>
+    <div class="foot-legal">
+      <p>Demo website built by Samuel Ochoa &mdash; samuelochoa.com/websites</p>
+      <p class="legal-fine">Ironworks Personal Training is a fictional business created to demonstrate website design. Nothing on this page is a real offer, the phone number is not in service, and nothing here is medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+15165550134">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"></path></svg>
+    (516) 555-0134
+  </a>
+  <a href="tel:+15165550134">Call</a>
+</div>
+
+<script>
+(function(){
+  function wire(toggleId, panelId, opts){
+    var btn = document.getElementById(toggleId);
+    var panel = document.getElementById(panelId);
+    if(!btn || !panel) return;
+    function close(){ btn.setAttribute('aria-expanded','false'); panel.hidden = true; }
+    function open(){ btn.setAttribute('aria-expanded','true'); panel.hidden = false; }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      if(isOpen){ close(); } else { open(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){
+        close(); btn.focus();
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(btn.getAttribute('aria-expanded') === 'true' && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)){
+        close();
+      }
+    });
+    if(opts && opts.closeOnLinkClick){
+      var links = panel.querySelectorAll('a');
+      for(var i=0;i<links.length;i++){ links[i].addEventListener('click', close); }
+    }
+  }
+  wire('navHamburger','mobileNav',{closeOnLinkClick:true});
+  wire('navServicesBtnDesktop','navServicesPanelDesktop',{closeOnLinkClick:true});
+  wire('navServicesBtnMobile','navServicesPanelMobile',{closeOnLinkClick:true});
+})();
+</script>
+
+</body>
+</html>
