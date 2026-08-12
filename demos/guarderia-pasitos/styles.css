@@ -324,7 +324,7 @@ section{padding:64px 0}
 }
 .stop-mark svg{width:19px;height:19px}
 .stop:nth-child(3n+2) .stop-mark{background:var(--coral-700)}
-.stop:nth-child(3n) .stop-mark{background:var(--sol-600)}
+.stop:nth-child(3n) .stop-mark{background:var(--sol-600);color:var(--ink)}
 .stop-age{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--cielo-700);background:var(--cielo-100);padding:4px 11px;border-radius:var(--r-pill);margin-bottom:9px}
 .stop-body p{color:var(--ink-soft);font-size:.98rem}
 .stop-grid{display:grid;gap:10px;margin-top:12px}
@@ -345,7 +345,8 @@ section{padding:64px 0}
 /* teaser variant used on index (compact, 3 stops, staggered) */
 .route--preview{display:grid;gap:18px;grid-template-columns:1fr}
 .route--preview::before{display:none}
-.route--preview .stop{padding-left:0;margin-bottom:0;background:#fff;border-radius:var(--r-md);padding:22px 22px 24px;box-shadow:var(--shadow-sm)}
+.route--preview .stop{display:block;padding-left:0;margin-bottom:0;background:#fff;border-radius:var(--r-md);padding:22px 22px 24px;box-shadow:var(--shadow-sm);transition:box-shadow .15s var(--ease-out-exp)}
+.route--preview .stop:hover,.route--preview .stop:focus-visible{box-shadow:var(--shadow)}
 .route--preview .stop-mark{position:static;margin-bottom:14px}
 @media(min-width:760px){
   .route--preview{grid-template-columns:repeat(3,1fr)}
@@ -498,28 +499,36 @@ footer nav ul li{margin-bottom:7px}
 
 /* ---------- motion ---------- */
 @keyframes float-cloud{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes draw-path{to{stroke-dashoffset:0}}
+@keyframes fade-path{from{opacity:0}to{opacity:1}}
 @keyframes step-in{from{opacity:0;transform:translateY(10px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes ring-pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
 @keyframes rise-steam{0%{opacity:0;transform:translateY(0) scaleY(.7)}30%{opacity:.7}100%{opacity:0;transform:translateY(-14px) scaleY(1.1)}}
 @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
 
-.js-path{stroke-dasharray:600;stroke-dashoffset:600;animation:draw-path 1.8s var(--ease-out-exp) .2s forwards}
-.js-step{opacity:0;animation:step-in .6s var(--ease-out-exp) forwards}
-.js-step:nth-of-type(1){animation-delay:.5s}
-.js-step:nth-of-type(2){animation-delay:.75s}
-.js-step:nth-of-type(3){animation-delay:1s}
-.js-step:nth-of-type(4){animation-delay:1.25s}
-.js-step:nth-of-type(5){animation-delay:1.5s}
 .js-cloud{animation:float-cloud 7s ease-in-out infinite}
 .js-cloud:nth-of-type(2){animation-delay:1.4s}
 .js-steam{animation:rise-steam 2.8s ease-in-out infinite}
 .js-steam:nth-of-type(2){animation-delay:.9s}
 .js-sway{animation:sway 4.5s ease-in-out infinite;transform-origin:50% 100%}
 
+/* hero entrance: the ONE authored moment on index. Content is visible by
+   default; the hide-then-reveal only exists inside no-preference so a
+   stalled/unsupported animation never leaves it stuck invisible. The path
+   keeps its own "2 16" dotted stroke throughout (fades in, never redrawn
+   as a solid line) so the dashed-footpath world holds after motion ends. */
+@media(prefers-reduced-motion:no-preference){
+  .js-path{opacity:0;animation:fade-path .9s var(--ease-out-exp) .3s forwards}
+  .js-step{opacity:0;animation:step-in .6s var(--ease-out-exp) forwards}
+  .js-step:nth-of-type(1){animation-delay:.5s}
+  .js-step:nth-of-type(2){animation-delay:.75s}
+  .js-step:nth-of-type(3){animation-delay:1s}
+  .js-step:nth-of-type(4){animation-delay:1.25s}
+  .js-step:nth-of-type(5){animation-delay:1.5s}
+  .js-step:nth-of-type(6){animation-delay:1.75s}
+  .js-step:nth-of-type(7){animation-delay:2s}
+}
+
 @media(prefers-reduced-motion:reduce){
-  .js-path{stroke-dashoffset:0;animation:none}
-  .js-step{opacity:1;transform:none;animation:none}
   .js-cloud,.js-steam,.js-sway,.tel-card .ring::after{animation:none}
   .btn:hover{transform:none}
 }

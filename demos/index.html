@@ -1,39 +1,93 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>Demo Sites — Samuel Ochoa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Demo Gallery — Samuel Ochoa</title>
+<meta name="description" content="Fictional demo websites across dozens of trades. See what your business site could look like, then get yours for $249.">
 <meta name="robots" content="noindex,follow">
-<style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1a2e35}
-h1{font-size:28px}p{color:#556}ul{list-style:none;padding:0}li{padding:10px 0;border-bottom:1px solid #e5e2da;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-a{color:#c43e15;font-weight:700;text-decoration:none}a:hover{text-decoration:underline}span{color:#889;font-size:13.5px}</style></head><body>
-<h1>Demo websites</h1><p>Fictional demo businesses built by Samuel Ochoa to show what your site could look like. More being added today. <a href="/websites">Get yours: $249</a></p>
-<ul><li><a href="/demos/antojitos-la-plaza/">Antojitos La Plaza</a> <span>antojitos / food truck · ES</span></li>
-<li><a href="/demos/barberia-el-clasico/">Barbería El Clásico</a> <span>barbería · ES</span></li>
-<li><a href="/demos/blue-ladder-repair/">Blue Ladder Home Repair</a> <span>handyman / home repair · EN</span></li>
-<li><a href="/demos/bright-smile-dental/">Bright Smile Family Dental</a> <span>family dental office · EN</span></li>
-<li><a href="/demos/brightside-cleaning/">Brightside Cleaning Co.</a> <span>house cleaning · EN</span></li>
-<li><a href="/demos/cafe-el-molino/">Café El Molino</a> <span>cafetería · ES</span></li>
-<li><a href="/demos/canaletas-lluvia-limpia/">Canaletas Lluvia Limpia</a> <span>limpieza de canaletas · ES</span></li>
-<li><a href="/demos/cedar-stone-landscaping/">Cedar & Stone Landscaping</a> <span>landscaping · EN</span></li>
-<li><a href="/demos/cerrajeria-el-candado/">Cerrajería El Candado</a> <span>cerrajería 24 horas · ES</span></li>
-<li><a href="/demos/clases-adelante/">Clases Adelante</a> <span>clases particulares / tutoría · ES</span></li>
-<li><a href="/demos/clearflow-gutters/">ClearFlow Gutter Cleaning</a> <span>gutter cleaning · EN</span></li>
-<li><a href="/demos/clearwater-pool/">Clearwater Pool Service</a> <span>pool service · EN</span></li>
-<li><a href="/demos/construccion-buenavista/">Construcción Buenavista</a> <span>construcción / remodelación · ES</span></li>
-<li><a href="/demos/copper-coil-electric/">Copper Coil Electric</a> <span>electrician · EN</span></li>
-<li><a href="/demos/crescendo-music/">Crescendo Music Lessons</a> <span>music lessons · EN</span></li>
-<li><a href="/demos/crystal-view-windows/">Crystal View Window Cleaning</a> <span>window cleaning · EN</span></li>
-<li><a href="/demos/dental-sonrisa-sana/">Dental Sonrisa Sana</a> <span>consultorio dental · ES</span></li>
-<li><a href="/demos/detallado-autobrillo/">Detallado AutoBrillo</a> <span>detallado automotriz · ES</span></li>
-<li><a href="/demos/driftwood-coffee/">Driftwood Coffee Roasters</a> <span>coffee shop · EN</span></li>
-<li><a href="/demos/electrica-la-chispa/">Eléctrica La Chispa</a> <span>electricista · ES</span></li>
-<li><a href="/demos/electrodomesticos-el-tecnico/">El Técnico Electrodomésticos</a> <span>reparación de electrodomésticos · ES</span></li>
-<li><a href="/demos/ember-bun-food-truck/">Ember & Bun Food Truck</a> <span>burger food truck · EN</span></li>
-<li><a href="/demos/escombros-el-camion/">Escombros El Camión</a> <span>recolección de escombros · ES</span></li>
-<li><a href="/demos/escuela-el-volante/">Escuela de Manejo El Volante</a> <span>escuela de manejo · ES</span></li>
-<li><a href="/demos/estetica-canina-patitas/">Estética Canina Patitas</a> <span>estética canina · ES</span></li>
-<li><a href="/demos/fade-district-barbershop/">Fade District Barbershop</a> <span>barbershop · EN</span></li>
-<li><a href="/demos/fix-point-appliance/">Fix Point Appliance Repair</a> <span>appliance repair · EN</span></li>
-<li><a href="/demos/golden-crust-bakery/">Golden Crust Bakery</a> <span>bakery · EN</span></li>
-<li><a href="/demos/green-light-driving/">Green Light Driving School</a> <span>driving school · EN</span></li>
-<li><a href="/demos/guarderia-pasitos/">Guardería Pasitos Felices</a> <span>guardería infantil · ES</span></li></ul>
-<p style="margin-top:28px;font-size:13px;color:#889">Every site here is a clearly-labeled fictional demonstration.</p>
-</body></html>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf6ef;--deep:#f3ecdf;--ink:#1a2e35;--soft:#41555c;--faint:#6d7f85;--line:rgba(26,46,53,.14);
+--accent:#e8562a;--accent-deep:#c43e15;--green:#1d7a53;--sun:#f5c842;--serif:'Fraunces',Georgia,serif;--sans:'Karla',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--paper);color:var(--soft);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+header{padding:54px 0 30px;border-bottom:1.5px solid var(--line)}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(34px,5vw,54px);color:var(--ink);line-height:1.05;letter-spacing:-.015em;max-width:16ch}
+h1 .mark{position:relative;white-space:nowrap}
+h1 .mark::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:32%;background:var(--sun);z-index:-1;transform:skew(-8deg)}
+.lede{margin-top:14px;font-size:17px;max-width:56ch}
+.lede a{color:var(--accent-deep);font-weight:800}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:20px 0;position:sticky;top:0;background:var(--paper);z-index:20;border-bottom:1.5px solid var(--line)}
+.chip{font-family:var(--sans);font-weight:700;font-size:13.5px;border:1.5px solid var(--line);background:#fffdf8;color:var(--soft);padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .15s ease}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip.lang.on{background:var(--green);border-color:var(--green)}
+.search{margin-left:auto;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font:inherit;font-size:14px;background:#fffdf8;color:var(--ink);min-width:180px}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{font-size:13px;color:var(--faint);padding:14px 0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;padding:18px 0 70px}
+.card{background:#fffdf8;border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-5px) rotate(-.3deg);box-shadow:8px 10px 0 rgba(26,46,53,.14)}
+.shot{aspect-ratio:16/10;overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--deep)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cbody{padding:14px 16px 16px}
+.cname{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--ink);line-height:1.15}
+.cmeta{display:flex;gap:8px;align-items:center;margin-top:7px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;color:var(--faint)}
+.lang-b{font-size:11px;font-weight:800;letter-spacing:.08em;padding:2px 8px;border-radius:4px;background:var(--deep);color:var(--soft)}
+.lang-b.es{background:#e8f3ec;color:var(--green)}
+.pages{font-size:11.5px;color:var(--faint);margin-left:auto}
+.cta-band{background:var(--ink);color:var(--paper);padding:46px 0;text-align:center}
+.cta-band h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.5vw,34px);color:#fffdf8}
+.cta-band p{margin:8px auto 18px;max-width:52ch;color:rgba(250,246,239,.75)}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:17px;padding:15px 28px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--accent-deep)}
+.btn:hover{background:var(--accent-deep)}
+footer{padding:26px 0 40px;font-size:13px;color:var(--faint);text-align:center}
+.empty{padding:60px 0;text-align:center;color:var(--faint);display:none}
+@media (prefers-reduced-motion:reduce){.card,.chip{transition:none}}
+</style></head><body>
+<header><div class="wrap">
+<h1>Pick a trade. <span class="mark">See the site.</span></h1>
+<p class="lede">32 complete demo websites — every one a fictional business, built to show what yours could look like. Five pages each: home, services, work, about, contact. <a href="/websites">Get yours: $249, see it free first</a> · <a href="/paginas-web">En español</a></p>
+</div></header>
+<div class="bar"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:100%">
+<button class="chip on" data-g="All">All trades</button>
+<span id="chips"></span>
+<button class="chip lang" data-l="EN">English</button>
+<button class="chip lang" data-l="ES">Español</button>
+<input class="search" id="q" type="search" placeholder="Search: plumber, taquería…" aria-label="Search demos">
+</div></div>
+<main class="wrap">
+<p class="count" id="count"></p>
+<div class="grid" id="grid"></div>
+<p class="empty" id="empty">Nothing matches — clear a filter or two.</p>
+</main>
+<div class="cta-band"><div class="wrap">
+<h2>Your business could be next on this wall.</h2>
+<p>Every demo here was designed and built the same way your real site would be: $249 to launch, $99/mo all-in, and you see your homepage free before paying anything.</p>
+<a class="btn" href="/websites">Get my free preview</a>
+</div></div>
+<footer><div class="wrap">Every site in this gallery is a clearly labeled fictional demonstration business. Built by Samuel Ochoa · Agent Lead Engine LLC</div></footer>
+<script id="d" type="application/json">[{"slug": "antojitos-la-plaza", "name": "Antojitos La Plaza", "vertical": "antojitos / food truck", "lang": "ES", "group": "Food & Drink"}, {"slug": "barberia-el-clasico", "name": "Barbería El Clásico", "vertical": "barbería", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "blue-ladder-repair", "name": "Blue Ladder Home Repair", "vertical": "handyman / home repair", "lang": "EN", "group": "Home Services"}, {"slug": "bright-smile-dental", "name": "Bright Smile Family Dental", "vertical": "family dental office", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "brightside-cleaning", "name": "Brightside Cleaning Co.", "vertical": "house cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "cafe-el-molino", "name": "Café El Molino", "vertical": "cafetería", "lang": "ES", "group": "Food & Drink"}, {"slug": "canaletas-lluvia-limpia", "name": "Canaletas Lluvia Limpia", "vertical": "limpieza de canaletas", "lang": "ES", "group": "Home Services"}, {"slug": "cedar-stone-landscaping", "name": "Cedar & Stone Landscaping", "vertical": "landscaping", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "cerrajeria-el-candado", "name": "Cerrajería El Candado", "vertical": "cerrajería 24 horas", "lang": "ES", "group": "Home Services"}, {"slug": "clases-adelante", "name": "Clases Adelante", "vertical": "clases particulares / tutoría", "lang": "ES", "group": "Kids & Education"}, {"slug": "clearflow-gutters", "name": "ClearFlow Gutter Cleaning", "vertical": "gutter cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "clearwater-pool", "name": "Clearwater Pool Service", "vertical": "pool service", "lang": "EN", "group": "Home Services"}, {"slug": "construccion-buenavista", "name": "Construcción Buenavista", "vertical": "construcción / remodelación", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "copper-coil-electric", "name": "Copper Coil Electric", "vertical": "electrician", "lang": "EN", "group": "Home Services"}, {"slug": "crescendo-music", "name": "Crescendo Music Lessons", "vertical": "music lessons", "lang": "EN", "group": "Kids & Education"}, {"slug": "crystal-view-windows", "name": "Crystal View Window Cleaning", "vertical": "window cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "dental-sonrisa-sana", "name": "Dental Sonrisa Sana", "vertical": "consultorio dental", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "detallado-autobrillo", "name": "Detallado AutoBrillo", "vertical": "detallado automotriz", "lang": "ES", "group": "Auto & Transport"}, {"slug": "driftwood-coffee", "name": "Driftwood Coffee Roasters", "vertical": "coffee shop", "lang": "EN", "group": "Food & Drink"}, {"slug": "electrica-la-chispa", "name": "Eléctrica La Chispa", "vertical": "electricista", "lang": "ES", "group": "Home Services"}, {"slug": "electrodomesticos-el-tecnico", "name": "El Técnico Electrodomésticos", "vertical": "reparación de electrodomésticos", "lang": "ES", "group": "Home Services"}, {"slug": "ember-bun-food-truck", "name": "Ember & Bun Food Truck", "vertical": "burger food truck", "lang": "EN", "group": "Food & Drink"}, {"slug": "escombros-el-camion", "name": "Escombros El Camión", "vertical": "recolección de escombros", "lang": "ES", "group": "Home Services"}, {"slug": "escuela-el-volante", "name": "Escuela de Manejo El Volante", "vertical": "escuela de manejo", "lang": "ES", "group": "Auto & Transport"}, {"slug": "estetica-canina-patitas", "name": "Estética Canina Patitas", "vertical": "estética canina", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "fade-district-barbershop", "name": "Fade District Barbershop", "vertical": "barbershop", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "fix-point-appliance", "name": "Fix Point Appliance Repair", "vertical": "appliance repair", "lang": "EN", "group": "Home Services"}, {"slug": "golden-crust-bakery", "name": "Golden Crust Bakery", "vertical": "bakery", "lang": "EN", "group": "Food & Drink"}, {"slug": "guarderia-pasitos", "name": "Guardería Pasitos Felices", "vertical": "guardería infantil", "lang": "ES", "group": "Kids & Education"}, {"slug": "harbor-point-realty", "name": "Harbor Point Realty", "vertical": "real estate agent", "lang": "EN", "group": "Professional & Creative"}, {"slug": "haul-away-junk", "name": "Haul Away Junk Removal", "vertical": "junk removal", "lang": "EN", "group": "Home Services"}, {"slug": "ironclad-locksmith", "name": "Ironclad Locksmith", "vertical": "24hr locksmith", "lang": "EN", "group": "Home Services"}]</script>
+<script>
+var D=JSON.parse(document.getElementById('d').textContent),G='All',L=null,Q='';
+var groups=[];D.forEach(function(c){if(groups.indexOf(c.group)<0)groups.push(c.group)});groups.sort();
+var chips=document.getElementById('chips');
+groups.forEach(function(g){var b=document.createElement('button');b.className='chip';b.dataset.g=g;b.textContent=g;chips.appendChild(b)});
+function draw(){var grid=document.getElementById('grid');grid.innerHTML='';var n=0;
+D.forEach(function(c){if(G!=='All'&&c.group!==G)return;if(L&&c.lang!==L)return;
+if(Q&&(c.name+' '+c.vertical).toLowerCase().indexOf(Q)<0)return;n++;
+var a=document.createElement('a');a.className='card';a.href='/demos/'+c.slug+'/';
+a.innerHTML='<div class="shot"><img loading="lazy" src="/demos/_thumbs/'+c.slug+'.jpg" alt="Homepage of '+c.name.replace(/"/g,'&quot;')+' demo site"></div>'+
+'<div class="cbody"><div class="cname">'+c.name+'</div><div class="cmeta"><span class="tag">'+c.vertical+'</span>'+
+'<span class="lang-b'+(c.lang==='ES'?' es':'')+'">'+c.lang+'</span><span class="pages">5-page site</span></div></div>';
+grid.appendChild(a)});
+document.getElementById('count').textContent=n+' of '+D.length+' demos';
+document.getElementById('empty').style.display=n?'none':'block'}
+document.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;
+if(b.dataset.g){document.querySelectorAll('.chip[data-g]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');G=b.dataset.g}
+if(b.dataset.l){var was=b.classList.contains('on');document.querySelectorAll('.chip.lang').forEach(function(x){x.classList.remove('on')});L=was?null:b.dataset.l;if(!was)b.classList.add('on')}
+draw()});
+document.getElementById('q').addEventListener('input',function(e){Q=e.target.value.toLowerCase().trim();draw()});
+draw();
+</script></body></html>
