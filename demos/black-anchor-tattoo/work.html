@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample Work | Black Anchor Tattoo</title>
+<meta name="description" content="Drawn sample pieces showing the range at Black Anchor Tattoo: custom design, American traditional, black and grey, fine line, cover-ups and touch-ups. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .workhero{ padding:44px 0 40px; }
+  .workhero h1{ font-size:clamp(2.5rem,10vw,4.6rem); }
+  .workhero p.lede{ font-size:1.08rem; max-width:36em; margin-top:18px; color:var(--muted); }
+  .workgrid{ display:grid; grid-template-columns:1fr; gap:30px; margin-top:var(--space-6); }
+  .workcard{
+    background:var(--paper); color:var(--paper-ink); border:3px solid var(--ink);
+    padding:26px 24px 22px; transform:rotate(var(--rot,0deg));
+    transition:transform .22s cubic-bezier(.16,1,.3,1), box-shadow .22s ease-out;
+  }
+  .workcard:hover, .workcard:focus-within{ transform:rotate(0deg) translateY(-4px); box-shadow:0 16px 30px -18px rgba(0,0,0,.6); }
+  .workart{ color:var(--ink); margin-bottom:18px; }
+  .workart svg{ width:100%; height:auto; max-height:160px; }
+  .workcard h3{ font-size:clamp(1.4rem,4vw,1.7rem); }
+  .workcard p.desc{ margin-top:10px; max-width:44ch; }
+  .samplecap{
+    margin-top:16px; font-family:var(--font-display); font-weight:700; font-size:11px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--red-dk);
+  }
+  @media (min-width:680px){
+    .workgrid{ grid-template-columns:repeat(2,1fr); }
+    .workcard:nth-child(1){ grid-column:span 2; }
+    .workcard:nth-child(1) .workart svg{ max-height:130px; }
+  }
+  @media (min-width:1080px){
+    .workhero{ padding:70px 0 56px; }
+    .workgrid{ grid-template-columns:repeat(3,1fr); }
+    .workcard:nth-child(1){ grid-column:span 2; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="mark" href="index.html">
+      <svg viewBox="0 0 64 80" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="32" cy="11" r="7"/><line x1="32" y1="19" x2="32" y2="70"/><line x1="15" y1="28" x2="49" y2="28"/>
+        <path d="M9 45c0 13 10 24 23 24s23-11 23-24"/>
+      </svg>
+      <span><b>Black Anchor</b><i>Tattoo &middot; Long Island</i></span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="desknav">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub" data-open="false">
+          <a href="services.html">Services</a>
+          <button class="subtoggle" type="button" aria-expanded="false" aria-controls="services-sub" aria-label="Show services menu">
+            <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l5 5 5-5"/></svg>
+          </button>
+          <ul class="submenu" id="services-sub">
+            <li><a href="services.html#custom-design">Custom design</a></li>
+            <li><a href="services.html#traditional">American traditional</a></li>
+            <li><a href="services.html#black-grey">Black &amp; grey</a></li>
+            <li><a href="services.html#lettering">Fine line &amp; lettering</a></li>
+            <li><a href="services.html#cover-ups">Cover-ups &amp; rework</a></li>
+            <li><a href="services.html#touch-ups">Touch-ups</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="hphone" href="tel:15165550166">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1z"/></svg>
+      <span>(516) 555-0166</span>
+    </a>
+
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="wrap">
+    <ul>
+      <li><a class="mnav-link" href="index.html">Home</a></li>
+      <li class="mnav-item has-sub-m" data-open="false">
+        <div class="mnav-row">
+          <a class="mnav-link" href="services.html">Services</a>
+          <button class="msub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m" aria-label="Show services list">
+            <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l5 5 5-5"/></svg>
+          </button>
+        </div>
+        <ul class="msublist" id="services-sub-m">
+          <li><a href="services.html#custom-design">Custom design</a></li>
+          <li><a href="services.html#traditional">American traditional</a></li>
+          <li><a href="services.html#black-grey">Black &amp; grey</a></li>
+          <li><a href="services.html#lettering">Fine line &amp; lettering</a></li>
+          <li><a href="services.html#cover-ups">Cover-ups &amp; rework</a></li>
+          <li><a href="services.html#touch-ups">Touch-ups</a></li>
+        </ul>
+      </li>
+      <li><a class="mnav-link" href="work.html" aria-current="page">Work</a></li>
+      <li><a class="mnav-link" href="about.html">About</a></li>
+      <li><a class="mnav-link" href="contact.html">Contact</a></li>
+    </ul>
+    <a class="mphone" href="tel:15165550166">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1z"/></svg>
+      <span>(516) 555-0166</span>
+    </a>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="workhero surface-ink">
+    <div class="wrap">
+      <h1 class="stamp-in">Sample work.</h1>
+      <p class="lede settle-in settle-in-2">These are drawn samples built to show range, not photographs of real clients or real healed tattoos. Every piece on the shop's actual books starts the same way: with your idea, not someone else's.</p>
+    </div>
+  </section>
+
+  <section class="surface-ink tight" aria-label="Sample project gallery">
+    <div class="wrap">
+      <div class="workgrid">
+
+        <article class="workcard" style="--rot:-1.4deg">
+          <div class="workart">
+            <svg viewBox="0 0 160 90" aria-hidden="true">
+              <circle cx="22" cy="42" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+              <circle cx="61" cy="42" r="16" fill="currentColor" fill-opacity=".35" stroke="currentColor" stroke-width="3"/>
+              <circle cx="100" cy="42" r="16" fill="currentColor" fill-opacity=".7" stroke="currentColor" stroke-width="3"/>
+              <circle cx="139" cy="42" r="16" fill="currentColor" stroke="currentColor" stroke-width="3"/>
+              <line x1="6" y1="76" x2="154" y2="76" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+            </svg>
+          </div>
+          <h3>Custom design</h3>
+          <p class="desc">A small moon-phase line, drawn to the client's own spacing. Quiet and personal: the kind of piece that only means something to the person wearing it.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+        <article class="workcard" style="--rot:1.1deg">
+          <div class="workart">
+            <svg viewBox="0 0 140 170" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="70" cy="26" r="14"/>
+                <line x1="70" y1="40" x2="70" y2="118"/>
+                <line x1="42" y1="58" x2="98" y2="58"/>
+                <path d="M22 90c0 24 21 42 48 42s48-18 48-42"/>
+                <path d="M12 78l9 16 15-9"/>
+                <path d="M128 78l-9 16-15-9"/>
+              </g>
+              <g fill="var(--gold)" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+                <polygon points="8,140 132,140 132,158 8,158"/>
+                <polygon points="8,140 8,158 22,149"/>
+                <polygon points="132,140 132,158 118,149"/>
+              </g>
+            </svg>
+          </div>
+          <h3>American traditional</h3>
+          <p class="desc">Bold outline, solid black, a banner ready for lettering. Built to hold its shape and its color for decades, not just for the first year.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+        <article class="workcard" style="--rot:-0.8deg">
+          <div class="workart">
+            <svg viewBox="0 0 160 160" aria-hidden="true">
+              <circle cx="80" cy="80" r="70" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".9"/>
+              <circle cx="80" cy="80" r="52" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+              <circle cx="80" cy="80" r="34" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".5"/>
+              <circle cx="80" cy="80" r="16" fill="currentColor" opacity=".85"/>
+              <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="80" y1="10" x2="80" y2="26" opacity=".8"/>
+                <line x1="80" y1="134" x2="80" y2="150" opacity=".8"/>
+                <line x1="10" y1="80" x2="26" y2="80" opacity=".8"/>
+                <line x1="134" y1="80" x2="150" y2="80" opacity=".8"/>
+                <line x1="30.5" y1="30.5" x2="41.6" y2="41.6" opacity=".6"/>
+                <line x1="118.4" y1="118.4" x2="129.5" y2="129.5" opacity=".6"/>
+                <line x1="30.5" y1="129.5" x2="41.6" y2="118.4" opacity=".6"/>
+                <line x1="118.4" y1="41.6" x2="129.5" y2="30.5" opacity=".6"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Black &amp; grey</h3>
+          <p class="desc">An ornamental medallion built entirely from tonal shading, no color anywhere. Mapped out full-size before the first line went in.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+        <article class="workcard" style="--rot:1.6deg">
+          <div class="workart">
+            <svg viewBox="0 0 120 130" aria-hidden="true">
+              <path d="M60,19 L68,44 L94,44 L73,59 L81,84 L60,69 L39,84 L47,59 L26,44 L52,44 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="108" r="2.2" fill="currentColor"/>
+              <circle cx="60" cy="108" r="2.2" fill="currentColor"/>
+              <circle cx="78" cy="108" r="2.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Fine line &amp; lettering</h3>
+          <p class="desc">A single continuous line, no shading, no fill. The whole piece is the thinness of the stroke, so placement gets checked twice before it goes on skin.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+        <article class="workcard" style="--rot:-1.2deg">
+          <div class="workart">
+            <svg viewBox="0 0 150 150" aria-hidden="true">
+              <g fill="currentColor" opacity=".14">
+                <ellipse cx="55" cy="60" rx="30" ry="22" transform="rotate(-12 55 60)"/>
+                <ellipse cx="95" cy="85" rx="26" ry="34" transform="rotate(18 95 85)"/>
+                <ellipse cx="70" cy="100" rx="34" ry="18" transform="rotate(-6 70 100)"/>
+              </g>
+              <polygon points="75,10 85,55 130,75 85,95 75,140 65,95 20,75 65,55" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Cover-ups &amp; rework</h3>
+          <p class="desc">Old, faded lines absorbed into a bigger, bolder shape built to sit on top of them. The ghost underneath is exactly what a real cover-up has to plan around.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+        <article class="workcard" style="--rot:0.9deg">
+          <div class="workart">
+            <svg viewBox="0 0 160 90" aria-hidden="true">
+              <path d="M8,55 Q20,40 32,55 Q44,70 56,55 Q64,42 72,55" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="1.5 8" opacity=".4"/>
+              <line x1="80" y1="18" x2="80" y2="90" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+              <path d="M88,55 Q100,40 112,55 Q124,70 136,55 Q144,42 152,55" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Touch-ups</h3>
+          <p class="desc">Left: a line a couple of years out, gone soft and patchy. Right: the same line, refreshed back to solid and crisp in one short sitting.</p>
+          <p class="samplecap">Sample project</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-red" aria-labelledby="workclose-h">
+    <div class="wrap">
+      <h2 id="workclose-h">See something<br>close to what you want?</h2>
+      <p class="measure" style="margin-top:16px">Call the shop, describe it, and we will tell you which kind of appointment gets you there.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;align-items:center">
+        <a class="btn btn-call" href="tel:15165550166">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1z"/></svg>
+          <span>Call (516) 555-0166<small>Tue&ndash;Sun &middot; ask for the book</small></span>
+        </a>
+        <a class="btn btn-outline" href="services.html">See all six services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <a class="mark" href="index.html">
+        <svg viewBox="0 0 64 80" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" aria-hidden="true">
+          <circle cx="32" cy="11" r="7"/><line x1="32" y1="19" x2="32" y2="70"/><line x1="15" y1="28" x2="49" y2="28"/>
+          <path d="M9 45c0 13 10 24 23 24s23-11 23-24"/>
+        </svg>
+        <span><b>Black Anchor</b><i>Tattoo &middot; Long Island</i></span>
+      </a>
+      <ul class="flinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:15165550166">(516) 555-0166</a></li>
+      </ul>
+    </div>
+    <p class="disclosure">
+      Black Anchor Tattoo &middot; Serving Long Island, NY &middot; <a href="tel:15165550166">(516) 555-0166</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:15165550166">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1z"/></svg>
+    Call (516) 555-0166
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger = document.querySelector('.hamburger');
+  var menu = document.getElementById('mobile-menu');
+  function closeMobileMenu(focusBack){
+    burger.setAttribute('aria-expanded','false');
+    menu.setAttribute('data-open','false');
+    if(focusBack) burger.focus();
+  }
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('data-open', String(!open));
+  });
+
+  document.querySelectorAll('.has-sub').forEach(function(item){
+    var toggle = item.querySelector('.subtoggle');
+    if(!toggle) return;
+    toggle.addEventListener('click', function(){
+      var open = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  });
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('.has-sub[data-open="true"]').forEach(function(item){
+      if(!item.contains(e.target)){
+        item.setAttribute('data-open','false');
+        var t = item.querySelector('.subtoggle');
+        if(t) t.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  document.querySelectorAll('.has-sub-m').forEach(function(item){
+    var toggle = item.querySelector('.msub-toggle');
+    if(!toggle) return;
+    toggle.addEventListener('click', function(){
+      var open = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(menu.getAttribute('data-open') === 'true'){ closeMobileMenu(true); }
+      document.querySelectorAll('.has-sub[data-open="true"]').forEach(function(item){
+        item.setAttribute('data-open','false');
+        var t = item.querySelector('.subtoggle');
+        if(t){ t.setAttribute('aria-expanded','false'); t.focus(); }
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,428 +1,320 @@
-<!--
-THESIS: A nervous beginner becomes a calm, license-ready driver through patient one-on-one instruction with a real second brake as backup.
-OWN-WORLD: the road's own signage system, not the business's logo. Warning-sign yellow owns the page at full field scale, asphalt carries structure and dark passages, and the traffic light's other two lenses (stop-red, go-green) show up only as small, literal punctuation, never as a wash of color. Type borrows a stamped-plate condensed face for headlines and a plain civic sans for reading.
-STORY: the page paces like a lesson plan. Reassurance first, then a concrete scene proving the method (quiet lot to residential street to parkway, in that order), a preview of the six-part curriculum as signed waypoints, the dual-control safety case made plainly with its own diagram, one clear place to call.
-FIRST VIEWPORT: an asymmetric split, not a centered badge-logo. A stamped headline lockup sits on the left over the yellow field; on the right, an authored windshield-view scene, mirror, hands at ten-and-two, a real road with real roadside signage receding toward a small green traffic light. The scene demonstrates the trade instead of illustrating it from a distance.
--->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Green Light Driving School | Long Island, NY Driving Lessons</title>
-<meta name="description" content="Patient, one-on-one driving lessons on Long Island. Dual-control cars, the 5-hour pre-licensing class, and road test prep for beginners and nervous drivers. Call (516) 555-0184.">
+<title>Green Light Driving School | Long Island, NY</title>
+<meta name="description" content="Green Light Driving School: patient, dual-control driving lessons and the 5-hour pre-licensing class on Long Island. Call to schedule.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<!--
+  THESIS: Nerves are just an unfamiliar road, and Green Light makes the road familiar first, one calm, dual-control lesson at a time.
+  OWN-WORLD: the language of the road itself. Dusk asphalt is the ground. A dashed amber centerline is the one line that runs through every page. Guide-sign green and warning-sign amber are used as real sign-color roles, not decoration.
+  STORY: index opens the road ahead (dusk hero) -> services reads like the lesson plan -> work shows six real moments behind the wheel as route diagrams -> about is the person riding shotgun -> contact is the DMV form, simplified to one phone call.
+  FIRST VIEWPORT: a full-bleed dusk road scene behind the headline, dashed centerline receding to a horizon lit amber, not a centered logo mark on white.
+-->
 </head>
 <body>
-<div class="demo-ribbon">Demo site</div>
+<div class="ribbon">DEMO SITE</div>
 
 <header class="site-header">
-  <div class="wrap header-bar">
-    <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 36 46" aria-hidden="true" focusable="false">
-        <rect x="3" y="1" width="30" height="40" rx="10" fill="#1B1D22"/>
-        <circle cx="18" cy="11.5" r="5.4" fill="#C81E2C" opacity=".3"/>
-        <circle cx="18" cy="21" r="5.4" fill="#FFC42B" opacity=".34"/>
-        <circle cx="18" cy="30.6" r="5.9" fill="#2FA562"/>
-        <circle cx="18" cy="30.6" r="9.2" fill="#2FA562" opacity=".16"/>
+  <div class="wrap hdr">
+    <a class="brand" href="index.html" aria-label="Green Light Driving School home page">
+      <svg width="34" height="34" viewBox="0 0 34 34" role="img" aria-label="Green Light Driving School mark">
+        <rect x="1" y="1" width="32" height="32" rx="9" fill="#12151b"/>
+        <circle cx="17" cy="10.6" r="3" fill="none" stroke="#3a4150" stroke-width="1.6"/>
+        <circle cx="17" cy="17" r="3" fill="none" stroke="#3a4150" stroke-width="1.6"/>
+        <circle cx="17" cy="23.8" r="6.6" fill="#34c77a" opacity=".22"/>
+        <circle cx="17" cy="23.8" r="3.6" fill="#34c77a"/>
       </svg>
       <span class="brand-name">Green Light<span class="brand-sub">Driving School</span></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="hamburger" type="button" aria-expanded="false" aria-controls="nav-panel">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+
+    <nav aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel">
+        <span class="hamb"></span>
         <span class="sr-only">Menu</span>
       </button>
-      <div class="nav-panel" id="nav-panel">
+
+      <div class="nav-panel" id="navPanel">
+        <div>
         <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
-          <li class="nav-item has-submenu">
-            <div class="nav-row">
-              <a class="nav-link" href="services.html">Services</a>
-              <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-services">
-                <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l7 8 7-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="sr-only">Show services list</span>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li class="has-sub" id="svcHasSub">
+            <div class="sub-row">
+              <a href="services.html">Services</a>
+              <button class="sub-toggle" id="svcToggle" aria-expanded="false" aria-controls="svcPanel" aria-label="Show services list">
+                <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
             </div>
-            <ul class="submenu" id="submenu-services">
-              <li><a class="submenu-link" href="services.html">All services</a></li>
-              <li><a class="submenu-link" href="services.html#beginner-lessons">Beginner lessons</a></li>
-              <li><a class="submenu-link" href="services.html#five-hour-class">5-hour pre-licensing class</a></li>
-              <li><a class="submenu-link" href="services.html#road-test-prep">Road test prep &amp; car use</a></li>
-              <li><a class="submenu-link" href="services.html#nervous-drivers">Nervous &amp; returning drivers</a></li>
-              <li><a class="submenu-link" href="services.html#permit-help">Permit &amp; paperwork help</a></li>
-              <li><a class="submenu-link" href="services.html#packages">Lesson packages</a></li>
-            </ul>
+            <div class="sub-panel" id="svcPanel">
+              <ul>
+                <li><a href="services.html#beginner-lessons">Beginner lessons</a></li>
+                <li><a href="services.html#five-hour-class">5-hour pre-licensing class</a></li>
+                <li><a href="services.html#road-test-prep">Road test prep &amp; car use</a></li>
+                <li><a href="services.html#nervous-drivers">Nervous &amp; returning drivers</a></li>
+                <li><a href="services.html#permit-help">Permit &amp; paperwork help</a></li>
+                <li><a href="services.html#lesson-packages">Lesson packages</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a class="phone-pill-mobile" href="tel:+15165550184">
-          <svg class="icn" style="width:16px;height:16px;color:#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-          Call (516) 555-0184
+        <a class="nav-call" href="tel:15165550184">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+          (516) 555-0184
         </a>
+        </div>
       </div>
     </nav>
-    <a class="phone-pill" href="tel:+15165550184">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-      (516) 555-0184
-    </a>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy anim-rise">
-        <h1>Learn to drive without the nerves</h1>
-        <p class="lede">Patient instructors, dual-control cars, and lessons paced to you. We teach total beginners and nervous drivers across Nassau and Suffolk.</p>
-        <div class="btn-row row-sm">
-          <a class="btn btn-call" href="tel:+15165550184">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+    <div class="hero-scene" aria-hidden="true">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0c0e13"/>
+            <stop offset="52%" stop-color="#12151b"/>
+            <stop offset="78%" stop-color="#231d1a"/>
+            <stop offset="100%" stop-color="#3a2b1a"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="100%" r="75%">
+            <stop offset="0%" stop-color="#f2a91c" stop-opacity=".55"/>
+            <stop offset="45%" stop-color="#f2a91c" stop-opacity=".14"/>
+            <stop offset="100%" stop-color="#f2a91c" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="head1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#eafff2" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#eafff2" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#sky)"/>
+        <g class="glow"><rect x="0" y="520" width="1600" height="380" fill="url(#glow)"/></g>
+        <polygon points="560,900 1040,900 860,560 740,560" fill="#1b2028"/>
+        <polygon points="560,900 1040,900 860,560 740,560" fill="none" stroke="#2a303b" stroke-width="2"/>
+        <g class="dashes" fill="#f2a91c" stroke-dasharray="340" stroke-dashoffset="0">
+          <rect x="793" y="560" width="14" height="14" rx="2"/>
+          <rect x="787" y="596" width="26" height="18" rx="2"/>
+          <rect x="778" y="642" width="44" height="22" rx="2"/>
+          <rect x="766" y="702" width="68" height="28" rx="3"/>
+          <rect x="748" y="782" width="104" height="34" rx="3"/>
+          <rect x="724" y="866" width="152" height="40" rx="3"/>
+        </g>
+        <ellipse class="glow" cx="760" cy="760" rx="120" ry="46" fill="url(#head1)"/>
+        <ellipse class="glow" cx="900" cy="770" rx="120" ry="46" fill="url(#head1)"/>
+      </svg>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>Learn to drive at a pace that feels okay.</h1>
+        <p class="lede">Patient instructors, dual-control cars, and lessons that move at your speed, whether this is your first time behind the wheel or your first time back in a while. All over Long Island.</p>
+        <div class="cta-row left">
+          <a class="btn btn-primary" href="tel:15165550184">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
             Call (516) 555-0184
           </a>
-          <a class="btn btn-outline-dark" href="contact.html">Ask about openings</a>
+          <a class="btn btn-outline-light" href="services.html">See lessons &amp; classes</a>
         </div>
-        <p class="hero-note">
-          <svg viewBox="0 0 24 24" aria-hidden="true" style="display:inline-block"><path d="M4 4h16v12H8l-4 4V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          Lessons scheduled by phone. Pickup at home, school, or work.
-        </p>
+        <p class="hero-note">Lessons scheduled by phone &middot; Pickup at home, school, or work</p>
       </div>
-      <div class="hero-scene anim-rise d1">
-        <div class="windshield" role="img" aria-label="Illustration of the view through a car windshield: hands at ten and two on the wheel, a rearview mirror, and a quiet road ahead lined with a warning sign, a regulatory sign, and a small green traffic light.">
-          <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <ellipse cx="300" cy="192" rx="260" ry="90" fill="#FFC42B" opacity="0.12"/>
-            <polygon points="10,500 590,500 322,196 278,196" fill="#2B2E36"/>
-            <line x1="10" y1="500" x2="278" y2="196" stroke="#454B57" stroke-width="3"/>
-            <line x1="590" y1="500" x2="322" y2="196" stroke="#454B57" stroke-width="3"/>
-            <polygon points="288,458 312,458 314,494 286,494" fill="#FFC42B" opacity="0.9"/>
-            <polygon points="292,394 308,394 309.5,419 290.5,419" fill="#FFC42B" opacity="0.9"/>
-            <polygon points="295,344 305,344 306,361 294,361" fill="#FFC42B" opacity="0.85"/>
-            <polygon points="296.5,304 303.5,304 304.5,316 295.5,316" fill="#FFC42B" opacity="0.8"/>
-            <polygon points="298,270 302,270 302.6,278 297.4,278" fill="#FFC42B" opacity="0.75"/>
-            <line x1="95" y1="250" x2="95" y2="332" stroke="#1B1D22" stroke-width="4"/>
-            <rect x="-24" y="-24" width="48" height="48" rx="5" fill="#FFC42B" stroke="#1B1D22" stroke-width="3" transform="translate(95,235) rotate(45)"/>
-            <path d="M83,236 q12,-18 24,0" fill="none" stroke="#1B1D22" stroke-width="3.4" stroke-linecap="round"/>
-            <line x1="500" y1="246" x2="500" y2="336" stroke="#1B1D22" stroke-width="4"/>
-            <rect x="478" y="205" width="44" height="56" rx="6" fill="#FBF7EC" stroke="#1B1D22" stroke-width="3"/>
-            <line x1="486" y1="222" x2="514" y2="222" stroke="#1B1D22" stroke-width="3" stroke-linecap="round"/>
-            <line x1="486" y1="234" x2="514" y2="234" stroke="#1B1D22" stroke-width="3" stroke-linecap="round"/>
-            <line x1="486" y1="246" x2="506" y2="246" stroke="#1B1D22" stroke-width="3" stroke-linecap="round"/>
-            <line x1="365" y1="206" x2="365" y2="163" stroke="#1B1D22" stroke-width="3"/>
-            <rect x="358" y="131" width="14" height="33" rx="5" fill="#1B1D22"/>
-            <circle cx="365" cy="139" r="3" fill="#C81E2C" opacity="0.35"/>
-            <circle cx="365" cy="148" r="3" fill="#FFC42B" opacity="0.4"/>
-            <circle cx="365" cy="157" r="7" fill="#2FA562" opacity="0.28"/>
-            <circle cx="365" cy="157" r="3.4" fill="#2FA562"/>
-            <line x1="300" y1="0" x2="300" y2="15" stroke="#1B1D22" stroke-width="4"/>
-            <rect x="255" y="13" width="90" height="26" rx="12" fill="#2B2E36" stroke="#1B1D22" stroke-width="3"/>
-            <polygon points="278,35 322,35 306,19 294,19" fill="#454B57"/>
-            <rect x="298" y="27" width="4" height="8" fill="#FFC42B" opacity="0.85"/>
-            <circle cx="300" cy="560" r="150" fill="none" stroke="#3A3F4A" stroke-width="28"/>
-            <circle cx="300" cy="410" r="17" fill="#1B1D22"/>
-            <rect x="269" y="418" width="62" height="10" rx="5" fill="#3A3F4A"/>
-            <g transform="translate(194,454) rotate(-40)">
-              <rect x="-24" y="-17" width="48" height="34" rx="16" fill="#FBF7EC" stroke="#1B1D22" stroke-width="3"/>
-              <circle cx="-13" cy="-14" r="8" fill="#FBF7EC" stroke="#1B1D22" stroke-width="3"/>
-            </g>
-            <g transform="translate(406,454) rotate(40) scale(-1,1)">
-              <rect x="-24" y="-17" width="48" height="34" rx="16" fill="#FBF7EC" stroke="#1B1D22" stroke-width="3"/>
-              <circle cx="-13" cy="-14" r="8" fill="#FBF7EC" stroke="#1B1D22" stroke-width="3"/>
-            </g>
-          </svg>
+    </div>
+  </section>
+
+  <div class="road-strip" role="presentation" aria-hidden="true"></div>
+
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <div class="proof-scene">
+        <svg viewBox="0 0 520 400" role="img" aria-label="Illustration of a dual-control car interior at dusk, showing the instructor's second brake pedal and a calm, empty street ahead">
+          <defs>
+            <linearGradient id="wind" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1b2028"/>
+              <stop offset="100%" stop-color="#12151b"/>
+            </linearGradient>
+          </defs>
+          <rect width="520" height="400" rx="16" fill="#0e1116"/>
+          <path d="M40 210 Q260 130 480 210 L480 250 L40 250 Z" fill="url(#wind)"/>
+          <rect x="40" y="210" width="440" height="4" fill="#2a303b"/>
+          <polygon points="150,250 370,250 320,180 200,180" fill="#171b21"/>
+          <g stroke="#f2a91c" stroke-width="4" stroke-linecap="round">
+            <line x1="255" y1="182" x2="252" y2="216"/>
+            <line x1="270" y1="184" x2="272" y2="222"/>
+          </g>
+          <circle cx="150" cy="330" r="46" fill="none" stroke="#34c77a" stroke-width="7"/>
+          <circle cx="150" cy="330" r="5" fill="#34c77a"/>
+          <line x1="150" y1="330" x2="150" y2="292" stroke="#34c77a" stroke-width="6" stroke-linecap="round"/>
+          <line x1="150" y1="330" x2="121" y2="349" stroke="#34c77a" stroke-width="6" stroke-linecap="round"/>
+          <line x1="150" y1="330" x2="179" y2="349" stroke="#34c77a" stroke-width="6" stroke-linecap="round"/>
+          <g fill="#2a303b">
+            <rect x="118" y="366" width="26" height="28" rx="5"/>
+            <rect x="156" y="366" width="26" height="28" rx="5"/>
+          </g>
+          <g fill="#f2a91c">
+            <rect x="122" y="358" width="18" height="14" rx="4"/>
+            <rect x="160" y="352" width="18" height="20" rx="4"/>
+          </g>
+          <rect x="300" y="150" width="150" height="10" rx="5" fill="#1b2028"/>
+          <text x="300" y="145" fill="#9ba3b2" font-family="Public Sans, sans-serif" font-size="13" font-weight="600">Instructor&#8217;s second brake, right there</text>
+        </svg>
+      </div>
+      <div class="proof-copy">
+        <h2>What a first lesson actually looks like</h2>
+        <div class="prose">
+          <p>We start in a quiet lot: steering, braking, mirrors, the feel of the car before anyone asks you to think about traffic. No clipboard, no grading, just getting your hands used to it.</p>
+          <p>Every car has a second brake on the instructor&rsquo;s side, so there&rsquo;s always a real backstop, not just a reassuring voice. Once the lot feels boring, we move to residential streets. You decide when boring happens. We don&rsquo;t rush it.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="stripe" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
-      <rect width="1200" height="34" fill="#1B1D22"/>
-      <rect y="14" width="1200" height="6" fill="#FFC42B" opacity="0.9"/>
-    </svg>
-  </div>
-
-  <section class="section section-paper">
+  <section class="teaser">
     <div class="wrap">
       <div class="head">
-        <h2>How a first lesson actually goes</h2>
-        <p>Every student starts in the same quiet place, no matter how nervous the first phone call sounds.</p>
+        <h2>Start with what you need</h2>
+        <p>Three places most students start. The full list is on the services page.</p>
       </div>
-      <div class="route">
-        <div class="route-line-wrap">
-          <article class="route-stop">
-            <div class="route-dot" aria-hidden="true"></div>
-            <div class="route-stop-body">
-              <div class="route-stop-text">
-                <div class="route-stop-head">
-                  <h3>Stop 1: The quiet lot</h3>
-                  <span class="route-stop-tag">Steering, braking, mirrors</span>
-                </div>
-                <p>We start somewhere with nobody else around. Cones mark a box, and the first goal is small: steer straight, brake smooth, know where your mirrors actually show you.</p>
-              </div>
-              <div class="route-scene">
-                <svg viewBox="0 0 240 180" role="img" aria-label="Illustration of a car parked calmly in a marked lot space between two cones.">
-                  <rect width="240" height="180" fill="#F3ECD9"/>
-                  <rect x="20" y="28" width="200" height="132" rx="10" fill="#DCD3B4"/>
-                  <line x1="70" y1="38" x2="70" y2="150" stroke="#FBF7EC" stroke-width="4"/>
-                  <line x1="120" y1="38" x2="120" y2="150" stroke="#FBF7EC" stroke-width="4"/>
-                  <line x1="170" y1="38" x2="170" y2="150" stroke="#FBF7EC" stroke-width="4"/>
-                  <rect x="80" y="70" width="30" height="52" rx="10" fill="#1B1D22"/>
-                  <rect x="86" y="80" width="18" height="15" rx="4" fill="#FFC42B" opacity="0.9"/>
-                  <rect x="75" y="78" width="6" height="14" rx="3" fill="#2B2E36"/>
-                  <rect x="109" y="78" width="6" height="14" rx="3" fill="#2B2E36"/>
-                  <rect x="75" y="108" width="6" height="14" rx="3" fill="#2B2E36"/>
-                  <rect x="109" y="108" width="6" height="14" rx="3" fill="#2B2E36"/>
-                  <g transform="translate(48,142)"><polygon points="0,-20 8,0 -8,0" fill="#E8A800"/><rect x="-10" y="0" width="20" height="4" rx="1" fill="#1B1D22"/></g>
-                  <g transform="translate(194,52)"><polygon points="0,-20 8,0 -8,0" fill="#E8A800"/><rect x="-10" y="0" width="20" height="4" rx="1" fill="#1B1D22"/></g>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="route-stop">
-            <div class="route-dot" aria-hidden="true"></div>
-            <div class="route-stop-body">
-              <div class="route-stop-text">
-                <div class="route-stop-head">
-                  <h3>Stop 2: Residential streets</h3>
-                  <span class="route-stop-tag">Stop signs, turns, judgment</span>
-                </div>
-                <p>Once the basics feel automatic, we move to the streets students actually drive on: stop signs, parked cars, the timing of a left turn with traffic coming.</p>
-              </div>
-              <div class="route-scene">
-                <svg viewBox="0 0 240 180" role="img" aria-label="Illustration of a car driving calmly down a residential street past a stop sign.">
-                  <rect width="240" height="180" fill="#F3ECD9"/>
-                  <rect x="0" y="70" width="240" height="60" fill="#2B2E36"/>
-                  <line x1="0" y1="100" x2="240" y2="100" stroke="#FFC42B" stroke-width="4" stroke-dasharray="14 10"/>
-                  <g transform="translate(38,20)">
-                    <polygon points="0,26 26,0 52,26" fill="#DCD3B4"/>
-                    <rect x="6" y="26" width="40" height="30" fill="#EFE6C8"/>
-                    <rect x="22" y="40" width="12" height="16" fill="#1B1D22"/>
-                  </g>
-                  <g transform="translate(200,146) scale(0.85)">
-                    <polygon points="-8,-19 8,-19 19,-8 19,8 8,19 -8,19 -19,8 -19,-8" fill="#C81E2C" stroke="#FBF7EC" stroke-width="2"/>
-                  </g>
-                  <line x1="200" y1="130" x2="200" y2="120" stroke="#1B1D22" stroke-width="3"/>
-                  <rect x="100" y="88" width="52" height="22" rx="8" fill="#1B1D22"/>
-                  <rect x="112" y="79" width="24" height="14" rx="6" fill="#1B1D22"/>
-                  <circle cx="114" cy="112" r="7" fill="#2B2E36" stroke="#FFC42B" stroke-width="2"/>
-                  <circle cx="144" cy="112" r="7" fill="#2B2E36" stroke="#FFC42B" stroke-width="2"/>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="route-stop">
-            <div class="route-dot" aria-hidden="true"></div>
-            <div class="route-stop-body">
-              <div class="route-stop-text">
-                <div class="route-stop-head">
-                  <h3>Stop 3: The parkway, when you're ready</h3>
-                  <span class="route-stop-tag">Merging, real speed</span>
-                </div>
-                <p>Highways and parkways come last, and only when the student says so. Merging is a specific skill, and we drill it in short stretches instead of throwing anyone into rush hour.</p>
-              </div>
-              <div class="route-scene">
-                <svg viewBox="0 0 240 180" role="img" aria-label="Illustration of a car merging calmly onto a multi-lane parkway.">
-                  <rect width="240" height="180" fill="#F3ECD9"/>
-                  <rect x="0" y="40" width="240" height="110" fill="#2B2E36"/>
-                  <line x1="0" y1="75" x2="240" y2="75" stroke="#FBF7EC" stroke-width="3" stroke-dasharray="12 10"/>
-                  <line x1="0" y1="115" x2="240" y2="115" stroke="#FBF7EC" stroke-width="3" stroke-dasharray="12 10"/>
-                  <path d="M20,158 L48,132 L20,106" fill="none" stroke="#FFC42B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                  <g transform="translate(150,96) rotate(-6)">
-                    <rect x="-26" y="-11" width="52" height="22" rx="8" fill="#1B1D22"/>
-                    <rect x="-14" y="-20" width="24" height="14" rx="6" fill="#1B1D22"/>
-                    <circle cx="-12" cy="12" r="7" fill="#2B2E36" stroke="#FFC42B" stroke-width="2"/>
-                    <circle cx="18" cy="12" r="7" fill="#2B2E36" stroke="#FFC42B" stroke-width="2"/>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-paper-dim">
-    <div class="wrap">
-      <div class="head">
-        <h2>Where to start</h2>
-        <p>A quick preview of what's covered. All six are on the services page.</p>
-      </div>
-      <div class="teaser-row">
-        <a class="teaser-card" href="services.html#beginner-lessons">
-          <div class="teaser-tagshape">
-            <svg viewBox="0 0 46 46" aria-hidden="true"><rect x="8" y="8" width="30" height="30" rx="5" fill="#FFC42B" stroke="#1B1D22" stroke-width="2.5" transform="rotate(45 23 23)"/></svg>
-          </div>
-          <h3>Beginner lessons</h3>
-          <p>Never touched a wheel before. We start in the lot and build from there, 90 minutes at a time.</p>
-          <span class="teaser-more">See details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="teaser-grid">
+        <a class="plate" href="services.html#beginner-lessons">
+          <div><span class="tag">Never driven</span><h3>Beginner lessons</h3></div>
+          <span class="go-link">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="teaser-card lead" href="services.html#five-hour-class">
-          <div class="teaser-tagshape">
-            <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M23 5 L39 11 V22 C39 32 32 39 23 42 C14 39 7 32 7 22 V11 Z" fill="#FFC42B" stroke="#1B1D22" stroke-width="2.2"/><path d="M15 23 l6 6 12 -14" fill="none" stroke="#1B1D22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>5-hour pre-licensing class</h3>
-          <p>The classroom course New York requires before your road test. Certificate handed to you the same day.</p>
-          <span class="teaser-more">See details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <a class="plate" href="services.html#five-hour-class">
+          <div><span class="tag">State required</span><h3>5-hour pre-licensing class</h3></div>
+          <span class="go-link">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="teaser-card" href="services.html#road-test-prep">
-          <div class="teaser-tagshape">
-            <svg viewBox="0 0 46 46" aria-hidden="true"><rect x="6" y="10" width="34" height="26" rx="4" fill="#FBF7EC" stroke="#1B1D22" stroke-width="2.5"/><line x1="13" y1="19" x2="33" y2="19" stroke="#1B1D22" stroke-width="2.2" stroke-linecap="round"/><line x1="13" y1="27" x2="27" y2="27" stroke="#1B1D22" stroke-width="2.2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Road test prep &amp; car use</h3>
-          <p>Parallel parking, three-point turns, and the car itself, dual controls included, for test day.</p>
-          <span class="teaser-more">See details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <a class="plate" href="services.html#road-test-prep">
+          <div><span class="tag">Test coming up</span><h3>Road test prep &amp; car use</h3></div>
+          <span class="go-link">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section section-dark why">
+  <section class="why">
     <div class="wrap">
       <div class="head">
         <h2>Calm cars, clear instructions</h2>
-        <p>Driving gets easier when nobody is raising their voice in the passenger seat.</p>
+        <p>Driving gets easier once nobody is raising their voice in the passenger seat.</p>
       </div>
-      <div class="why-grid">
-        <div class="why-lead">
-          <h3>Every car has a second brake</h3>
-          <svg class="pedal-diagram" viewBox="0 0 320 200" role="img" aria-label="Diagram of a dual-control car floor showing the student's brake and gas pedals on the left, wired to a matching instructor's brake pedal on the right.">
-            <rect x="16" y="150" width="288" height="14" rx="7" fill="#171922"/>
-            <rect x="55" y="70" width="26" height="80" rx="8" fill="#3A3F4A"/>
-            <rect x="95" y="88" width="22" height="62" rx="8" fill="#3A3F4A" opacity="0.65"/>
-            <line x1="81" y1="72" x2="203" y2="72" stroke="#FFC42B" stroke-width="4" stroke-dasharray="2 11" stroke-linecap="round"/>
-            <rect x="192" y="70" width="26" height="80" rx="8" fill="#17703C"/>
-          </svg>
-          <p>Your side has the usual pedals. The instructor's side has a matching brake, wired to the same system, so there is always a backstop while you're still learning where the line is.</p>
-        </div>
-        <div class="why-support">
-          <div class="why-item">
-            <svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-4 3.2-6.5 7-6.5s7 2.5 7 6.5"/></svg>
-            <div>
-              <h4>Same instructor</h4>
-              <p>You keep the same person through your lessons. No re-explaining what you worked on last week.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            <div>
-              <h4>Door-to-door pickup</h4>
-              <p>Home, school, or work, anywhere in our Nassau or Suffolk service area, dropped back after.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ul class="why-grid">
+        <li class="why-item">
+          <div class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-4l2-6h12l2 6v4"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M9 10h6M12 6v10"/></svg></div>
+          <h3>Dual-control cars</h3>
+          <p>Every car has a second brake on the instructor side, so there&rsquo;s always a backstop while you learn.</p>
+        </li>
+        <li class="why-item">
+          <div class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0113.6-5.7M20 12a8 8 0 01-13.6 5.7"/><path d="M17 3v4h-4M7 21v-4h4"/></svg></div>
+          <h3>Same instructor</h3>
+          <p>You keep the same instructor through your lessons, so nobody&rsquo;s re-explaining what you worked on last week.</p>
+        </li>
+        <li class="why-item">
+          <div class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <h3>Door-to-door pickup</h3>
+          <p>We pick you up from home, school, or work anywhere in our service area and drop you back after.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section class="section section-paper">
+  <section class="closing">
     <div class="wrap">
-      <div class="closing">
-        <h2>Book your first lesson</h2>
-        <p class="center">Call and we'll find a time that works around school or your shift.</p>
-        <div class="btn-row row-sm center">
-          <a class="btn btn-call" href="tel:+15165550184">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-            Call (516) 555-0184
-          </a>
-          <a class="btn btn-outline-light" href="contact.html">Text or ask a question</a>
-        </div>
+      <h2>Ready when you are.</h2>
+      <p>Call and we&rsquo;ll find a lesson time that works around school or your shift.</p>
+      <div class="cta-row">
+        <a class="btn btn-on-go" href="tel:15165550184">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+          Call (516) 555-0184
+        </a>
+        <a class="btn btn-outline-light" href="contact.html">Book online instead</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">
-          <svg class="footer-brand-mark" viewBox="0 0 36 46" aria-hidden="true">
-            <rect x="3" y="1" width="30" height="40" rx="10" fill="#1B1D22"/>
-            <circle cx="18" cy="11.5" r="5.4" fill="#C81E2C" opacity=".3"/>
-            <circle cx="18" cy="21" r="5.4" fill="#FFC42B" opacity=".34"/>
-            <circle cx="18" cy="30.6" r="5.9" fill="#2FA562"/>
-          </svg>
-          <span class="footer-brand-name">Green Light</span>
-        </div>
-        <p>Long Island, NY. Nassau &amp; Suffolk counties, with pickup included. Lessons in English and Spanish.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Green Light Driving School</strong>
+        <p>Long Island, NY &middot; <a href="tel:15165550184">(516) 555-0184</a></p>
+        <p>Mon&ndash;Fri 8am&ndash;8pm &middot; Sat 8am&ndash;5pm &middot; Sun 9am&ndash;2pm</p>
       </div>
-      <div>
-        <p class="footer-h">Site</p>
-        <ul class="footer-nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-h">Reach us</p>
-        <p style="margin-bottom:10px"><a href="tel:+15165550184" style="color:#fff;font-weight:700">(516) 555-0184</a></p>
-        <table class="footer-hours">
-          <tr><td>Mon&ndash;Fri</td><td>8am&ndash;8pm</td></tr>
-          <tr><td>Saturday</td><td>8am&ndash;5pm</td></tr>
-          <tr><td>Sunday</td><td>9am&ndash;2pm</td></tr>
-        </table>
-      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <p>Demo website built by Samuel Ochoa. <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
-      <p class="disclaimer">Fictional business shown for demonstration.</p>
-    </div>
+    <p class="demo-note">Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a><br>Fictional business shown for demonstration.</p>
   </div>
 </footer>
 
-<a class="callbar" href="tel:+15165550184">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+<a class="callbar" href="tel:15165550184">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
   Call (516) 555-0184
 </a>
 
 <script>
 (function(){
-  var header = document.querySelector('.site-header');
-  var burger = document.querySelector('.hamburger');
+  var navToggle = document.getElementById('navToggle');
+  var navPanel = document.getElementById('navPanel');
+  var svcHasSub = document.getElementById('svcHasSub');
+  var svcToggle = document.getElementById('svcToggle');
+  var svcPanel = document.getElementById('svcPanel');
+
   function closeNav(){
-    header.classList.remove('nav-open');
-    if (burger) burger.setAttribute('aria-expanded','false');
+    navToggle.setAttribute('aria-expanded','false');
+    navPanel.classList.remove('is-open');
   }
   function openNav(){
-    header.classList.add('nav-open');
-    if (burger) burger.setAttribute('aria-expanded','true');
+    navToggle.setAttribute('aria-expanded','true');
+    navPanel.classList.add('is-open');
   }
-  if (burger) {
-    burger.addEventListener('click', function(){
-      header.classList.contains('nav-open') ? closeNav() : openNav();
-    });
-  }
-  var toggles = document.querySelectorAll('.submenu-toggle');
-  toggles.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.nav-item');
-      var open = item.classList.contains('submenu-open');
-      toggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.closest('.nav-item').classList.remove('submenu-open'); });
-      if (!open) { item.classList.add('submenu-open'); btn.setAttribute('aria-expanded','true'); }
-    });
+  navToggle.addEventListener('click', function(){
+    var open = navToggle.getAttribute('aria-expanded') === 'true';
+    if(open){ closeNav(); } else { openNav(); }
   });
+
+  function closeSvc(){
+    svcToggle.setAttribute('aria-expanded','false');
+    svcHasSub.classList.remove('is-open');
+  }
+  function openSvc(){
+    svcToggle.setAttribute('aria-expanded','true');
+    svcHasSub.classList.add('is-open');
+  }
+  svcToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = svcToggle.getAttribute('aria-expanded') === 'true';
+    if(open){ closeSvc(); } else { openSvc(); }
+  });
+
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') {
-      closeNav();
-      toggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.closest('.nav-item').classList.remove('submenu-open'); });
+    if(e.key === 'Escape'){
+      if(svcToggle.getAttribute('aria-expanded') === 'true'){ closeSvc(); svcToggle.focus(); }
+      else if(navToggle.getAttribute('aria-expanded') === 'true'){ closeNav(); navToggle.focus(); }
     }
   });
+
   document.addEventListener('click', function(e){
-    if (!header.contains(e.target)) closeNav();
+    if(!svcHasSub.contains(e.target)){ closeSvc(); }
+    if(!navPanel.contains(e.target) && !navToggle.contains(e.target) && window.innerWidth < 900){ closeNav(); }
   });
-  var plainLinks = document.querySelectorAll('.nav-panel a:not(.submenu-link)');
-  plainLinks.forEach(function(a){ a.addEventListener('click', closeNav); });
-  var subLinks = document.querySelectorAll('.submenu-link');
-  subLinks.forEach(function(a){ a.addEventListener('click', closeNav); });
+
+  navPanel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.innerWidth < 900){ closeNav(); closeSvc(); }
+    });
+  });
 })();
 </script>
 </body>

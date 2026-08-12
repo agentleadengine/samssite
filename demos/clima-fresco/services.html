@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios | Clima Fresco Aire Acondicionado</title>
+<meta name="description" content="Reparación, instalación, mantenimiento, minisplit sin ductos, ductos y calefacción. Qué incluye cada servicio de Clima Fresco y cuándo lo necesita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.svc-intro{padding:52px 0 60px}
+.svc-intro h1{max-width:16ch}
+.svc-intro p{font-size:18px;max-width:50ch;margin-top:16px}
+.vent-strip{display:flex;gap:5px;margin-bottom:22px}
+.vent-strip span{height:26px;width:5px;border-radius:3px;background:rgba(13,43,69,.22)}
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></symbol>
+  <symbol id="ic-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/></symbol>
+</svg>
+
+<div class="ribbon" role="note" aria-label="Sitio de demostración"><span>SITIO DE</span><span>DEMOSTRACIÓN</span></div>
+
+<header>
+  <div class="wrap hdr-row">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#eefbf7" stroke="#8ce6d2" stroke-width="1.5"/>
+        <rect x="11" y="15" width="26" height="11" rx="4" fill="#0d2b45"/>
+        <rect x="14.5" y="18.5" width="19" height="2" rx="1" fill="#8ce6d2"/>
+        <rect x="14.5" y="22" width="19" height="2" rx="1" fill="#2ec4a6"/>
+        <path d="M16 30c3 0 3 4.5 6 4.5" stroke="#2ec4a6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M24 30c3 0 3 4.5 6 4.5" stroke="#2ec4a6" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".7"/>
+      </svg>
+      <span class="brand-text"><span class="brand-name">Clima Fresco</span><span class="brand-sub">Aire acondicionado</span></span>
+    </a>
+    <nav class="mainnav" aria-label="Principal">
+      <ul style="display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0">
+        <li><a class="navlink" href="index.html">Inicio</a></li>
+        <li class="has-sub">
+          <a class="navlink has-sub" href="services.html" aria-current="page">Servicios<svg viewBox="0 0 24 24"><use href="#ic-chevron"/></svg></a>
+          <ul class="submenu">
+            <li><a href="services.html#reparacion">Reparación de aire</a></li>
+            <li><a href="services.html#instalacion">Instalación de equipos</a></li>
+            <li><a href="services.html#mantenimiento">Mantenimiento preventivo</a></li>
+            <li><a href="services.html#minisplit">Minisplit sin ductos</a></li>
+            <li><a href="services.html#ductos">Ductos y ventilación</a></li>
+            <li><a href="services.html#calefaccion">Calefacción</a></li>
+          </ul>
+        </li>
+        <li><a class="navlink" href="work.html">Trabajo</a></li>
+        <li><a class="navlink" href="about.html">Nosotros</a></li>
+        <li><a class="navlink" href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-right">
+      <a class="phone-pill" href="tel:+15165550117" aria-label="Llamar al (516) 555-0117">
+        <svg class="ic" viewBox="0 0 24 24"><use href="#ic-phone"/></svg>
+        <span class="num">(516) 555-0117</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Abrir menú">
+        <svg class="ic ic-open" viewBox="0 0 24 24"><use href="#ic-menu"/></svg>
+        <svg class="ic ic-close" viewBox="0 0 24 24"><use href="#ic-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" data-open="false">
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Menú">
+    <ul class="mnav">
+      <li><a class="navlink" href="index.html">Inicio</a></li>
+      <li>
+        <button class="accordion-toggle" type="button" aria-expanded="true" aria-controls="accServ">Servicios<svg viewBox="0 0 24 24"><use href="#ic-chevron"/></svg></button>
+        <div class="accordion-panel" id="accServ" data-open="true">
+          <a href="services.html#reparacion">Reparación de aire</a>
+          <a href="services.html#instalacion">Instalación de equipos</a>
+          <a href="services.html#mantenimiento">Mantenimiento preventivo</a>
+          <a href="services.html#minisplit">Minisplit sin ductos</a>
+          <a href="services.html#ductos">Ductos y ventilación</a>
+          <a href="services.html#calefaccion">Calefacción</a>
+        </div>
+      </li>
+      <li><a class="navlink" href="work.html">Trabajo</a></li>
+      <li><a class="navlink" href="about.html">Nosotros</a></li>
+      <li><a class="navlink" href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="drawer-tel" href="tel:+15165550117"><svg class="ic" viewBox="0 0 24 24" style="width:18px;height:18px"><use href="#ic-phone"/></svg>Llamar (516) 555-0117</a>
+  </div>
+</div>
+
+<main>
+
+<section class="svc-intro sec--foam">
+  <div class="wrap">
+    <div class="vent-strip anim-in" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <h1 class="anim-in d1">Servicio completo de aire acondicionado y calefacción.</h1>
+    <p class="anim-in d2">Equipos centrales, minisplits y de ventana. Le explicamos qué incluye cada trabajo, y cuándo suele hacer falta, antes de empezar.</p>
+  </div>
+</section>
+
+<section class="svc sec--paper" id="reparacion">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><line x1="12" y1="6.3" x2="12" y2="7.6"/><line x1="16.4" y1="8.4" x2="15.5" y2="9.3"/><line x1="17.7" y1="12" x2="16.4" y2="12"/><line x1="12" y1="12" x2="9" y2="10.2"/></svg></span>
+        <h2>Reparación de aire</h2>
+        <p class="svc-lede">Si el equipo no enfría, gotea, hace ruido o se apaga solo, lo revisamos completo antes de tocar una sola pieza.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Diagnóstico de capacitor, compresor y ventilador</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión de la carga de refrigerante</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Prueba de termostato y conexiones</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Precio cerrado antes de reparar</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Cuando nota menos aire frío, un ruido nuevo, agua donde no debería haber, o la cuenta de luz subió sin razón.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc svc--rev sec--paper" id="instalacion">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="7" rx="2"/><path d="M12 3v6M8.5 6.5 12 9l3.5-2.5"/></svg></span>
+        <h2>Instalación de equipos</h2>
+        <p class="svc-lede">Calculamos la carga térmica del espacio antes de recomendar el tonelaje. No adivinamos con una tabla genérica.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Cálculo de carga por habitación</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Retiro del equipo viejo</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Instalación y prueba de presión</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Explicación de cómo usarlo bien</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Cuando el equipo actual ya no vale la pena repararlo, o está ampliando la casa y necesita cubrir un espacio nuevo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc sec--paper" id="mantenimiento">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+        <h2>Mantenimiento preventivo</h2>
+        <p class="svc-lede">Limpieza de serpentines, cambio de filtro y revisión de presiones: una visita corta que evita la llamada de emergencia.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Limpieza de serpentín interior y exterior</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Cambio o limpieza de filtro</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión de la línea de drenaje</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Medición de presiones de refrigerante</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Antes de que empiece el calor fuerte, o una vez al año si el equipo funciona todo el verano.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc svc--rev sec--paper" id="minisplit">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="6" rx="2.5"/><path d="M6 13c2 0 2 3 4 3M13 13c2 0 2 3 4 3"/></svg></span>
+        <h2>Minisplit sin ductos</h2>
+        <p class="svc-lede">Para ampliaciones, sótanos, áticos y garajes convertidos donde el ducto principal no llega.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Evaluación de la pared y la ubicación de la unidad</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Línea de refrigerante oculta o en canaleta</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Unidad interior y exterior de marca común</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Prueba de encendido y de fuga</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Cuando un solo cuarto se queda caliente porque nunca tuvo ducto, o construyó un espacio nuevo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc sec--paper" id="ductos">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M8 8v5M16 8v5M6 13h4M14 13h4"/></svg></span>
+        <h2>Ductos y ventilación</h2>
+        <p class="svc-lede">Sellado de fugas, balanceo de rejillas y revisión del retorno. Cuando un cuarto queda caliente, casi siempre es el ducto, no el equipo.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión de fugas en todo el trayecto</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Sellado y aislamiento donde falte</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Balanceo de rejillas entre cuartos</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión del retorno de aire</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Cuando un cuarto enfría distinto al resto de la casa, o siente el aire débil en las rejillas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc svc--rev sec--paper" id="calefaccion" style="border-bottom:0">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div>
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c1.6 2.4-.9 4-1 6.8a2.8 2.8 0 0 0 5.6.3c.1-1.6-.6-2.5-.8-4 1.7 2 2.5 4.3 2.4 6.6a6.2 6.2 0 1 1-12.4-.3c.1-3.8 2.9-6.5 6.2-9.4Z"/></svg></span>
+        <h2>Calefacción</h2>
+        <p class="svc-lede">Revisión, limpieza y reparación de calefacción antes de que baje la temperatura.</p>
+      </div>
+      <div class="svc-panel">
+        <h4>Qué incluye</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión de encendido y quemador</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Prueba de termostato</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Cambio de filtro</li>
+          <li><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg>Revisión de ruidos raros al arrancar</li>
+        </ul>
+        <p class="svc-when"><b>¿Cuándo lo necesita?</b><br>Antes de que llegue el frío, o si nota un olor raro o un ruido nuevo al encender.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec close-cta sec--navy" aria-label="Contacto">
+  <div class="grille" aria-hidden="true"></div>
+  <div class="glow" style="width:420px;height:420px;bottom:-160px;left:calc(50% - 210px)" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2>¿No sabe cuál de los seis necesita?</h2>
+    <p>Descríbanos lo que nota y le decimos qué servicio le corresponde.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="tel:+15165550117"><svg class="ic" viewBox="0 0 24 24" style="stroke:none"><use href="#ic-phone"/></svg>Llamar (516) 555-0117</a>
+      <a class="btn--text" href="contact.html" style="color:var(--mint-glow)">Ir al formulario de contacto<svg viewBox="0 0 24 24"><use href="#ic-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="23" fill="#123a5c" stroke="#2ec4a6" stroke-width="1.5"/>
+          <rect x="11" y="15" width="26" height="11" rx="4" fill="#eefbf7"/>
+          <rect x="14.5" y="18.5" width="19" height="2" rx="1" fill="#0d2b45"/>
+          <rect x="14.5" y="22" width="19" height="2" rx="1" fill="#2ec4a6"/>
+          <path d="M16 30c3 0 3 4.5 6 4.5" stroke="#2ec4a6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M24 30c3 0 3 4.5 6 4.5" stroke="#2ec4a6" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <span class="brand-text"><span class="brand-name">Clima Fresco</span><span class="brand-sub">Aire acondicionado</span></span>
+      </a>
+      <p>Aire acondicionado y calefacción para casas y locales pequeños en Long Island, NY.</p>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="services.html#reparacion">Reparación de aire</a></li>
+        <li><a href="services.html#instalacion">Instalación</a></li>
+        <li><a href="services.html#mantenimiento">Mantenimiento</a></li>
+        <li><a href="services.html#minisplit">Minisplit</a></li>
+        <li><a href="services.html#ductos">Ductos y ventilación</a></li>
+        <li><a href="services.html#calefaccion">Calefacción</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="work.html">Trabajo</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+15165550117">(516) 555-0117</a></li>
+        <li>Long Island, NY</li>
+        <li>Lun&ndash;vie, 7:30 a.&nbsp;m.&ndash;6:00 p.&nbsp;m.</li>
+        <li>Sábado, 8:00 a.&nbsp;m.&ndash;2:00 p.&nbsp;m.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="disclose">
+      <span>Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa &mdash; samuelochoa.com/paginas-web</a>.</span>
+      <span>Negocio ficticio mostrado como demostración.</span>
+    </p>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15165550117"><svg class="ic" viewBox="0 0 24 24" style="stroke:none"><use href="#ic-phone"/></svg>Llamar (516) 555-0117</a>
+
+<script>
+(function(){
+  var hb=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobileDrawer');
+  function closeDrawer(){drawer.setAttribute('data-open','false');hb.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  function openDrawer(){drawer.setAttribute('data-open','true');hb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  hb.addEventListener('click',function(){(hb.getAttribute('aria-expanded')==='true')?closeDrawer():openDrawer();});
+  drawer.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',closeDrawer);});
+  drawer.querySelectorAll('.navlink').forEach(function(el){el.addEventListener('click',closeDrawer);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+  document.querySelectorAll('.accordion-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      var panel=document.getElementById(btn.getAttribute('aria-controls'));
+      btn.setAttribute('aria-expanded',String(!open));
+      panel.setAttribute('data-open',String(!open));
+    });
+  });
+})();
+</script>
+</body>
+</html>

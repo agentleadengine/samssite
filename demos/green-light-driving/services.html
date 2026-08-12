@@ -1,362 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services | Green Light Driving School</title>
-<meta name="description" content="Beginner lessons, the 5-hour pre-licensing class, road test prep, nervous-driver coaching, permit help, and lesson packages. Green Light Driving School, Long Island, NY.">
+<title>Lessons &amp; Classes | Green Light Driving School</title>
+<meta name="description" content="Beginner lessons, the 5-hour pre-licensing class, road test prep, and lessons for nervous or returning drivers. Long Island, NY.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="demo-ribbon">Demo site</div>
+<div class="ribbon">DEMO SITE</div>
 
 <header class="site-header">
-  <div class="wrap header-bar">
-    <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 36 46" aria-hidden="true" focusable="false">
-        <rect x="3" y="1" width="30" height="40" rx="10" fill="#1B1D22"/>
-        <circle cx="18" cy="11.5" r="5.4" fill="#C81E2C" opacity=".3"/>
-        <circle cx="18" cy="21" r="5.4" fill="#FFC42B" opacity=".34"/>
-        <circle cx="18" cy="30.6" r="5.9" fill="#2FA562"/>
-        <circle cx="18" cy="30.6" r="9.2" fill="#2FA562" opacity=".16"/>
+  <div class="wrap hdr">
+    <a class="brand" href="index.html" aria-label="Green Light Driving School home page">
+      <svg width="34" height="34" viewBox="0 0 34 34" role="img" aria-label="Green Light Driving School mark">
+        <rect x="1" y="1" width="32" height="32" rx="9" fill="#12151b"/>
+        <circle cx="17" cy="10.6" r="3" fill="none" stroke="#3a4150" stroke-width="1.6"/>
+        <circle cx="17" cy="17" r="3" fill="none" stroke="#3a4150" stroke-width="1.6"/>
+        <circle cx="17" cy="23.8" r="6.6" fill="#34c77a" opacity=".22"/>
+        <circle cx="17" cy="23.8" r="3.6" fill="#34c77a"/>
       </svg>
       <span class="brand-name">Green Light<span class="brand-sub">Driving School</span></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="hamburger" type="button" aria-expanded="false" aria-controls="nav-panel">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+
+    <nav aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel">
+        <span class="hamb"></span>
         <span class="sr-only">Menu</span>
       </button>
-      <div class="nav-panel" id="nav-panel">
+
+      <div class="nav-panel" id="navPanel">
+        <div>
         <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item has-submenu">
-            <div class="nav-row">
-              <a class="nav-link" href="services.html" aria-current="page">Services</a>
-              <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-services">
-                <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l7 8 7-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="sr-only">Show services list</span>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-sub" id="svcHasSub">
+            <div class="sub-row">
+              <a href="services.html" aria-current="page">Services</a>
+              <button class="sub-toggle" id="svcToggle" aria-expanded="false" aria-controls="svcPanel" aria-label="Show services list">
+                <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
             </div>
-            <ul class="submenu" id="submenu-services">
-              <li><a class="submenu-link" href="services.html">All services</a></li>
-              <li><a class="submenu-link" href="services.html#beginner-lessons">Beginner lessons</a></li>
-              <li><a class="submenu-link" href="services.html#five-hour-class">5-hour pre-licensing class</a></li>
-              <li><a class="submenu-link" href="services.html#road-test-prep">Road test prep &amp; car use</a></li>
-              <li><a class="submenu-link" href="services.html#nervous-drivers">Nervous &amp; returning drivers</a></li>
-              <li><a class="submenu-link" href="services.html#permit-help">Permit &amp; paperwork help</a></li>
-              <li><a class="submenu-link" href="services.html#packages">Lesson packages</a></li>
-            </ul>
+            <div class="sub-panel" id="svcPanel">
+              <ul>
+                <li><a href="services.html#beginner-lessons">Beginner lessons</a></li>
+                <li><a href="services.html#five-hour-class">5-hour pre-licensing class</a></li>
+                <li><a href="services.html#road-test-prep">Road test prep &amp; car use</a></li>
+                <li><a href="services.html#nervous-drivers">Nervous &amp; returning drivers</a></li>
+                <li><a href="services.html#permit-help">Permit &amp; paperwork help</a></li>
+                <li><a href="services.html#lesson-packages">Lesson packages</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a class="phone-pill-mobile" href="tel:+15165550184">
-          <svg class="icn" style="width:16px;height:16px;color:#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-          Call (516) 555-0184
+        <a class="nav-call" href="tel:15165550184">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+          (516) 555-0184
         </a>
+        </div>
       </div>
     </nav>
-    <a class="phone-pill" href="tel:+15165550184">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-      (516) 555-0184
-    </a>
   </div>
 </header>
 
 <main>
-  <section class="page-band">
-    <div class="wrap page-band-grid">
-      <div class="anim-rise">
-        <h1 class="page-title">What we teach</h1>
-        <p class="page-lede">Call and tell us where you are: never driven, halfway there, or just need the road test handled. Six ways in, one phone call to start.</p>
-      </div>
-      <svg class="page-band-icon anim-rise d1" viewBox="0 0 150 150" role="img" aria-label="A shield with a checkmark, representing a completed lesson.">
-        <path d="M75 8 L134 30 V72 C134 104 108 128 75 142 C42 128 16 104 16 72 V30 Z" fill="#FBF7EC" stroke="#1B1D22" stroke-width="5"/>
-        <path d="M48 74 l20 20 38 -46" fill="none" stroke="#1B1D22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </section>
-
-  <div class="stripe" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
-      <rect width="1200" height="34" fill="#1B1D22"/>
-      <rect y="14" width="1200" height="6" fill="#FFC42B" opacity="0.9"/>
-    </svg>
-  </div>
-
-  <section class="service-block section-paper" id="beginner-lessons">
-    <div class="wrap service-grid">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a steering wheel with two hands positioned at nine and three o'clock.">
-          <circle cx="130" cy="115" r="72" fill="none" stroke="#1B1D22" stroke-width="10"/>
-          <circle cx="130" cy="115" r="16" fill="#1B1D22"/>
-          <line x1="130" y1="99" x2="130" y2="60" stroke="#1B1D22" stroke-width="8" stroke-linecap="round"/>
-          <g transform="translate(58,115)"><rect x="-16" y="-24" width="32" height="48" rx="15" fill="#FFC42B" stroke="#1B1D22" stroke-width="3"/></g>
-          <g transform="translate(202,115)"><rect x="-16" y="-24" width="32" height="48" rx="15" fill="#FFC42B" stroke="#1B1D22" stroke-width="3"/></g>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">90 minutes</span>
-        <h2>Beginner lessons</h2>
-        <p>First time behind the wheel. We start in a quiet lot with steering, braking, and mirrors, then work up to residential streets once it feels automatic instead of forced.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Quiet-lot basics: steering, braking, mirrors</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A residential-street stretch once you're ready</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Direct feedback after every drive, nothing saved up</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> you've never driven, or only driven a little with a family member and want to start clean.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-block section-paper-dim" id="five-hour-class">
-    <div class="wrap service-grid flip">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a classroom board with a checklist and a certificate.">
-          <rect x="30" y="30" width="150" height="110" rx="8" fill="none" stroke="#1B1D22" stroke-width="6"/>
-          <line x1="50" y1="58" x2="150" y2="58" stroke="#1B1D22" stroke-width="6" stroke-linecap="round"/>
-          <line x1="50" y1="80" x2="150" y2="80" stroke="#1B1D22" stroke-width="6" stroke-linecap="round"/>
-          <line x1="50" y1="102" x2="120" y2="102" stroke="#1B1D22" stroke-width="6" stroke-linecap="round"/>
-          <rect x="95" y="150" width="10" height="30" fill="#1B1D22"/>
-          <g transform="translate(202,152)">
-            <circle r="26" fill="#FFC42B" stroke="#1B1D22" stroke-width="4"/>
-            <path d="M-10,0 l7,8 15,-17" fill="none" stroke="#1B1D22" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M-8,24 l-10,26 18,-8 18,8 -10,-26" fill="#1B1D22"/>
-          </g>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">One session</span>
-        <h2>5-hour pre-licensing class</h2>
-        <p>The classroom course New York requires before your road test. Held on weekends and weekday evenings, with the completion certificate handed to you at the end.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> The full state-required classroom hours, one sitting</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A completion certificate handed to you the same day</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Weekend and weekday-evening sessions to fit school or work</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> before your road test. New York requires the certificate to schedule one.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-block section-paper" id="road-test-prep">
-    <div class="wrap service-grid">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a car parallel parking between two cones with a dashed path showing the turn.">
-          <rect x="10" y="150" width="240" height="14" fill="#1B1D22"/>
-          <g transform="translate(60,150)"><polygon points="0,-20 8,0 -8,0" fill="#E8A800"/><rect x="-9" y="0" width="18" height="4" fill="#1B1D22"/></g>
-          <g transform="translate(170,150)"><polygon points="0,-20 8,0 -8,0" fill="#E8A800"/><rect x="-9" y="0" width="18" height="4" fill="#1B1D22"/></g>
-          <path d="M210,60 C170,60 150,90 150,120" fill="none" stroke="#FFC42B" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/>
-          <g transform="rotate(-4 115 120)">
-            <rect x="95" y="96" width="40" height="48" rx="10" fill="#1B1D22"/>
-            <rect x="102" y="104" width="26" height="18" rx="4" fill="#FFC42B" opacity="0.9"/>
-          </g>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">2 lessons + test</span>
-        <h2>Road test prep &amp; car use</h2>
-        <p>We drill the maneuvers examiners look for: parallel parking, three-point turns, signaling, and you can use our dual-control car for the test appointment itself.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Focused drills on the maneuvers examiners actually score</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Use of our dual-control car for the test itself</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A walkthrough of the test route beforehand, no surprises</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> once the basics are solid and you've got a test date on the calendar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-block section-paper-dim" id="nervous-drivers">
-    <div class="wrap service-grid flip">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a calm arched bridge crossing over gentle water.">
-          <path d="M20,150 Q130,60 240,150" fill="none" stroke="#1B1D22" stroke-width="8" stroke-linecap="round"/>
-          <line x1="60" y1="150" x2="60" y2="112" stroke="#1B1D22" stroke-width="4"/>
-          <line x1="100" y1="150" x2="100" y2="90" stroke="#1B1D22" stroke-width="4"/>
-          <line x1="160" y1="150" x2="160" y2="90" stroke="#1B1D22" stroke-width="4"/>
-          <line x1="200" y1="150" x2="200" y2="112" stroke="#1B1D22" stroke-width="4"/>
-          <rect x="10" y="150" width="240" height="10" fill="#1B1D22"/>
-          <path d="M20,180 q20,-10 40,0 t40,0 t40,0 t40,0 t40,0" fill="none" stroke="#FFC42B" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">60 or 90 minutes</span>
-        <h2>Nervous &amp; returning drivers</h2>
-        <p>For adults who have a license but stopped driving, or who freeze up on highways and merges. Quiet routes first, then bridges and parkways at your pace, not ours.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Quiet routes first, no highway on day one</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> You set the pace, out loud, before each lesson</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Bridges and parkways only when you say you're ready</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> you have a license but stopped driving, or a specific thing (a bridge, a merge) makes you freeze.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-block section-paper" id="permit-help">
-    <div class="wrap service-grid">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a clipboard with three checked items.">
-          <rect x="70" y="30" width="120" height="150" rx="10" fill="none" stroke="#1B1D22" stroke-width="6"/>
-          <rect x="105" y="20" width="50" height="20" rx="6" fill="#1B1D22"/>
-          <g stroke="#1B1D22" stroke-width="4.5" stroke-linecap="round" fill="none">
-            <path d="M88,72 l8,8 14,-16"/>
-            <path d="M88,104 l8,8 14,-16"/>
-            <path d="M88,136 l8,8 14,-16"/>
-          </g>
-          <line x1="122" y1="76" x2="170" y2="76" stroke="#1B1D22" stroke-width="5" stroke-linecap="round"/>
-          <line x1="122" y1="108" x2="170" y2="108" stroke="#1B1D22" stroke-width="5" stroke-linecap="round"/>
-          <line x1="122" y1="140" x2="160" y2="140" stroke="#1B1D22" stroke-width="5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">Included with lessons</span>
-        <h2>Permit &amp; paperwork help</h2>
-        <p>We walk you through the written permit test material and what to bring to the DMV, so nothing sends you home for a missing document.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A plain-language walkthrough of the permit material</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A checklist of exactly what to bring to the DMV</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Answers to whatever's actually confusing you about it</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> before you've even started, if the permit process itself feels like the hard part.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-block section-paper-dim" id="packages">
-    <div class="wrap service-grid flip">
-      <div class="service-media">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram of a dashed route connecting three waypoints, the last one marked complete.">
-          <path d="M30,180 C60,120 90,160 120,110 C150,60 180,100 220,50" fill="none" stroke="#FFC42B" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
-          <circle cx="30" cy="180" r="12" fill="#1B1D22"/>
-          <circle cx="120" cy="112" r="12" fill="#1B1D22"/>
-          <circle cx="220" cy="50" r="14" fill="#17703C"/>
-          <path d="M213,50 l5,6 10,-11" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="service-body">
-        <span class="service-tag">Ask by phone</span>
-        <h2>Lesson packages</h2>
-        <p>Three, five, or ten lessons booked together at a set rate, with the road test scheduling handled for you. Ask what fits your timeline when you call.</p>
-        <ul class="service-list">
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Three, five, or ten lessons booked at once, one set rate</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> Road test scheduling handled for you, not left to chase</li>
-          <li><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg> A plan that fits your actual timeline, built on the call</li>
-        </ul>
-        <p class="service-when"><strong>When you need it:</strong> you already know you'll need more than a lesson or two and want it mapped out.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-paper">
+  <section class="svc-intro">
     <div class="wrap">
-      <div class="closing">
-        <h2>Not sure which one yet?</h2>
-        <p class="center">That's what the phone call is for. Tell us where you are and we'll point you at the right starting place.</p>
-        <div class="btn-row row-sm center">
-          <a class="btn btn-call" href="tel:+15165550184">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
-            Call (516) 555-0184
-          </a>
-          <a class="btn btn-outline-light" href="contact.html">Go to contact page</a>
+      <div class="head">
+        <h1>What we teach</h1>
+        <p>Call and tell us where you are: never driven, halfway there, or just need the road test handled. Every lesson below can be booked on its own, or by phone as a package.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="road-strip" role="presentation" aria-hidden="true"></div>
+
+  <section class="svc-row" id="beginner-lessons">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M4.2 16.5l5.2-3M19.8 16.5l-5.2-3"/></svg></div>
+        <div>
+          <h2 class="svc-name">Beginner lessons</h2>
+          <span class="svc-badge">90 minutes</span>
         </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">Start in a quiet lot with steering, braking, and mirrors, then work up to residential streets when you feel ready.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          You&rsquo;ve never driven before, or it&rsquo;s been so long it might as well be never.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-row is-dark" id="five-hour-class">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h7"/></svg></div>
+        <div>
+          <h2 class="svc-name">5-hour pre-licensing class</h2>
+          <span class="svc-badge">One session</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">The classroom course New York requires before your road test. Held on weekends and weekday evenings, with the completion certificate handed to you at the end.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          Before you can schedule your road test: it&rsquo;s a state requirement, not optional.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-row" id="road-test-prep">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l2-6h14l2 6"/><path d="M3 17v3M21 17v3"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg></div>
+        <div>
+          <h2 class="svc-name">Road test prep &amp; car use</h2>
+          <span class="svc-badge">2 lessons + test</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">We drill the maneuvers examiners look for: parallel parking, three-point turns, signaling. Our dual-control car is yours to use for the test itself.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          Your test is booked and you want the last mile to feel rehearsed, not risky.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-row is-dark" id="nervous-drivers">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div>
+          <h2 class="svc-name">Nervous &amp; returning drivers</h2>
+          <span class="svc-badge">60 or 90 minutes</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">For adults who have a license but stopped driving, or who freeze up on highways and merges. Quiet routes first, then bridges and parkways at your pace.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          You already know how to drive, technically. You just don&rsquo;t trust yourself out there yet.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-row" id="permit-help">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-6h6v6"/></svg></div>
+        <div>
+          <h2 class="svc-name">Permit &amp; paperwork help</h2>
+          <span class="svc-badge">Included with lessons</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">We walk you through the written permit test material and what to bring to the DMV, so nothing sends you home for a missing document.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          Before lesson one, so a missing document doesn&rsquo;t cost you the appointment.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-row is-dark" id="lesson-packages">
+    <div class="wrap svc-row-inner">
+      <div class="svc-head">
+        <div class="svc-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div>
+          <h2 class="svc-name">Lesson packages</h2>
+          <span class="svc-badge">Ask by phone</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="muted">Three, five, or ten lessons booked together at a set rate, with the road test scheduling handled for you.</p>
+        <div class="svc-when">
+          <b>When you need it</b>
+          You already know you&rsquo;ll need more than one or two lessons and want it planned out, not booked call by call.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Not sure which one fits?</h2>
+      <p>Tell us where you are on the phone and we&rsquo;ll figure out the right starting point together.</p>
+      <div class="cta-row">
+        <a class="btn btn-on-go" href="tel:15165550184">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+          Call (516) 555-0184
+        </a>
+        <a class="btn btn-outline-light" href="work.html">See sample lessons</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">
-          <svg class="footer-brand-mark" viewBox="0 0 36 46" aria-hidden="true">
-            <rect x="3" y="1" width="30" height="40" rx="10" fill="#1B1D22"/>
-            <circle cx="18" cy="11.5" r="5.4" fill="#C81E2C" opacity=".3"/>
-            <circle cx="18" cy="21" r="5.4" fill="#FFC42B" opacity=".34"/>
-            <circle cx="18" cy="30.6" r="5.9" fill="#2FA562"/>
-          </svg>
-          <span class="footer-brand-name">Green Light</span>
-        </div>
-        <p>Long Island, NY. Nassau &amp; Suffolk counties, with pickup included. Lessons in English and Spanish.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Green Light Driving School</strong>
+        <p>Long Island, NY &middot; <a href="tel:15165550184">(516) 555-0184</a></p>
+        <p>Mon&ndash;Fri 8am&ndash;8pm &middot; Sat 8am&ndash;5pm &middot; Sun 9am&ndash;2pm</p>
       </div>
-      <div>
-        <p class="footer-h">Site</p>
-        <ul class="footer-nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-h">Reach us</p>
-        <p style="margin-bottom:10px"><a href="tel:+15165550184" style="color:#fff;font-weight:700">(516) 555-0184</a></p>
-        <table class="footer-hours">
-          <tr><td>Mon&ndash;Fri</td><td>8am&ndash;8pm</td></tr>
-          <tr><td>Saturday</td><td>8am&ndash;5pm</td></tr>
-          <tr><td>Sunday</td><td>9am&ndash;2pm</td></tr>
-        </table>
-      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <p>Demo website built by Samuel Ochoa. <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
-      <p class="disclaimer">Fictional business shown for demonstration.</p>
-    </div>
+    <p class="demo-note">Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a><br>Fictional business shown for demonstration.</p>
   </div>
 </footer>
 
-<a class="callbar" href="tel:+15165550184">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+<a class="callbar" href="tel:15165550184">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
   Call (516) 555-0184
 </a>
 
 <script>
 (function(){
-  var header = document.querySelector('.site-header');
-  var burger = document.querySelector('.hamburger');
+  var navToggle = document.getElementById('navToggle');
+  var navPanel = document.getElementById('navPanel');
+  var svcHasSub = document.getElementById('svcHasSub');
+  var svcToggle = document.getElementById('svcToggle');
+  var svcPanel = document.getElementById('svcPanel');
+
   function closeNav(){
-    header.classList.remove('nav-open');
-    if (burger) burger.setAttribute('aria-expanded','false');
+    navToggle.setAttribute('aria-expanded','false');
+    navPanel.classList.remove('is-open');
   }
   function openNav(){
-    header.classList.add('nav-open');
-    if (burger) burger.setAttribute('aria-expanded','true');
+    navToggle.setAttribute('aria-expanded','true');
+    navPanel.classList.add('is-open');
   }
-  if (burger) {
-    burger.addEventListener('click', function(){
-      header.classList.contains('nav-open') ? closeNav() : openNav();
-    });
-  }
-  var toggles = document.querySelectorAll('.submenu-toggle');
-  toggles.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.nav-item');
-      var open = item.classList.contains('submenu-open');
-      toggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.closest('.nav-item').classList.remove('submenu-open'); });
-      if (!open) { item.classList.add('submenu-open'); btn.setAttribute('aria-expanded','true'); }
-    });
+  navToggle.addEventListener('click', function(){
+    var open = navToggle.getAttribute('aria-expanded') === 'true';
+    if(open){ closeNav(); } else { openNav(); }
   });
+
+  function closeSvc(){
+    svcToggle.setAttribute('aria-expanded','false');
+    svcHasSub.classList.remove('is-open');
+  }
+  function openSvc(){
+    svcToggle.setAttribute('aria-expanded','true');
+    svcHasSub.classList.add('is-open');
+  }
+  svcToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = svcToggle.getAttribute('aria-expanded') === 'true';
+    if(open){ closeSvc(); } else { openSvc(); }
+  });
+
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') {
-      closeNav();
-      toggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.closest('.nav-item').classList.remove('submenu-open'); });
+    if(e.key === 'Escape'){
+      if(svcToggle.getAttribute('aria-expanded') === 'true'){ closeSvc(); svcToggle.focus(); }
+      else if(navToggle.getAttribute('aria-expanded') === 'true'){ closeNav(); navToggle.focus(); }
     }
   });
+
   document.addEventListener('click', function(e){
-    if (!header.contains(e.target)) closeNav();
+    if(!svcHasSub.contains(e.target)){ closeSvc(); }
+    if(!navPanel.contains(e.target) && !navToggle.contains(e.target) && window.innerWidth < 900){ closeNav(); }
   });
-  var plainLinks = document.querySelectorAll('.nav-panel a:not(.submenu-link)');
-  plainLinks.forEach(function(a){ a.addEventListener('click', closeNav); });
-  var subLinks = document.querySelectorAll('.submenu-link');
-  subLinks.forEach(function(a){ a.addEventListener('click', closeNav); });
+
+  navPanel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.innerWidth < 900){ closeNav(); closeSvc(); }
+    });
+  });
 })();
 </script>
 </body>
