@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  THESIS: A same-day bakery that never dresses up yesterday's shelf as today's — the ovens go on at four, the case sells down through the day, and when something is gone, that is the whole story.
+  OWN-WORLD: The bakery at first light. A dark burnt-sugar "crust" shell (header, footer, call bar) holds two alternating interior rooms — drenched honey-gold (the oven glow) and paper-white flour (the proofing room). No stock photography anywhere; every scene is drawn.
+  STORY: Flour and butter go in at four in the morning. By the time the counter opens, half the day's work is already done, and the rest bakes in waves until the shelf runs out and stays out.
+  FIRST VIEWPORT: A full-bleed honey-gold field with one oversized, capped-scale headline standing in for a photograph, a direct call CTA and a text link into the counter, no imagery competing with the type.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Crust Bakery | Fresh Bread &amp; Pastry, Long Island NY</title>
+<meta name="description" content="Golden Crust Bakery — sourdough and croissants baked the same morning, plus pies and cakes to order. Long Island, NY. Call (516) 555-0118.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-bar">
+    <a class="brand" href="index.html">
+      <span class="brand-name">Golden Crust</span>
+      <span class="brand-sub">Bakery</span>
+    </a>
+
+    <div class="head-actions">
+      <a class="telbtn" href="tel:+15165550118">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        <span class="telbtn-num">(516) 555-0118</span>
+      </a>
+      <button class="navtoggle" type="button" aria-expanded="false" aria-controls="sitenav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="sitenav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="navlink is-active" aria-current="page">Home</a></li>
+        <li class="has-submenu">
+          <div class="submenu-row">
+            <a href="services.html" class="navlink">Services</a>
+            <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-label="Show services list">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="submenu" id="services-submenu">
+            <li><a href="services.html#breads">Daily breads</a></li>
+            <li><a href="services.html#pastry">Morning pastry</a></li>
+            <li><a href="services.html#cakes">Cakes to order</a></li>
+            <li><a href="services.html#pies">Pies &amp; seasonal</a></li>
+            <li><a href="services.html#coffee">Coffee &amp; the counter</a></li>
+            <li><a href="services.html#trays">Office trays &amp; catering</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="navlink">Work</a></li>
+        <li><a href="about.html" class="navlink">About</a></li>
+        <li><a href="contact.html" class="navlink">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO — drenched honey field, the first viewport is the thesis -->
+<section class="room room--honey hero">
+  <div class="wrap rise-in">
+    <div class="hero-head">
+      <h1>The ovens go on <em>at four.</em></h1>
+    </div>
+    <p class="lede">Sourdough, croissants, pies, and cakes to order, baked the same morning you buy them. When the shelf's empty, that's the end of it until tomorrow.</p>
+    <div class="ctas">
+      <a class="btn btn--dark" href="tel:+15165550118">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        Call (516) 555-0118
+      </a>
+      <a class="textcta" href="services.html">
+        See what's on the shelf
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <p class="fine">Cake and tray orders by phone. Three days' notice for most sizes.</p>
+
+    <svg class="hero-scene" viewBox="0 0 760 190" role="img" aria-label="Line drawing of three loaves, a croissant, and a pie set out along the counter">
+      <rect x="46" y="120" width="668" height="5" rx="2.5" fill="#2a1608" opacity=".5"/>
+      <g fill="#faf1e2" stroke="#2a1608" stroke-width="2.5">
+        <ellipse cx="130" cy="104" rx="54" ry="22"/>
+        <ellipse cx="238" cy="104" rx="54" ry="22"/>
+        <ellipse cx="346" cy="104" rx="54" ry="22"/>
+      </g>
+      <g stroke="#2a1608" stroke-width="2" opacity=".5" fill="none" stroke-linecap="round">
+        <path d="M104 92l52-16"/>
+        <path d="M212 92l52-16"/>
+        <path d="M320 92l52-16"/>
+      </g>
+      <g transform="translate(418,66)" fill="#faf1e2" stroke="#2a1608" stroke-width="2.5">
+        <ellipse cx="56" cy="32" rx="52" ry="21"/>
+        <ellipse cx="14" cy="36" rx="18" ry="13"/>
+        <ellipse cx="98" cy="36" rx="18" ry="13"/>
+      </g>
+      <g transform="translate(556,74)" stroke="#2a1608" stroke-width="2.5" fill="#f6d998">
+        <ellipse cx="70" cy="38" rx="70" ry="25"/>
+        <path d="M6 24h128M6 38h128" stroke-width="2" opacity=".65" fill="none"/>
+      </g>
+      <g fill="#2a1608" opacity=".35">
+        <circle cx="70" cy="150" r="4"/><circle cx="96" cy="158" r="3"/><circle cx="646" cy="150" r="3"/><circle cx="672" cy="158" r="4"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- PROOF OF WORK — the bakery's actual day, real clock times, not decorative numbers -->
+<section class="room room--crust">
+  <div class="wrap">
+    <div class="room-head">
+      <h2>What four in the morning gets you</h2>
+      <p class="muted">Nothing here is complicated. It's flour, water, salt, butter, and time, handled by people who show up while it's still dark out.</p>
+    </div>
+
+    <div class="daytimeline">
+      <div class="day-row">
+        <div class="day-time">
+          <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6a11 11 0 100 20 9 9 0 010-20z"/></svg>
+          4:00 AM
+        </div>
+        <p>Dough that started the night before comes out, gets shaped, and goes into the oven in the day's first wave.</p>
+      </div>
+      <div class="day-row">
+        <div class="day-time">
+          <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24h24"/><path d="M9 24a7 7 0 0114 0"/><path d="M16 10v3M9 14l2 2M23 14l-2 2"/></svg>
+          6:30 AM
+        </div>
+        <p>Doors open Tuesday through Friday, 7:00 on weekends. Sourdough, baguettes, and rolls are already out; croissants and danish are close behind.</p>
+      </div>
+      <div class="day-row">
+        <div class="day-time">
+          <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="19" rx="11" ry="6"/><path d="M9 16l4-3M15.5 16l4-3M21 15.4l1.6-1.1"/></svg>
+          Late morning
+        </div>
+        <p>A second bake finishes what the case needs to make it through the afternoon. Fridays, that's when the challah comes out.</p>
+      </div>
+      <div class="day-row">
+        <div class="day-time">
+          <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="15" width="14" height="12" rx="2"/><path d="M12 15v-4a4 4 0 018 0v4"/></svg>
+          At close
+        </div>
+        <p>Whatever's left doesn't go back out tomorrow. We'd rather tell you it's gone than sell you yesterday's.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES TEASER — text-forward rows into services.html, not a card grid -->
+<section class="room room--flour">
+  <div class="wrap">
+    <div class="room-head">
+      <h2>A full counter, not just bread</h2>
+      <p class="muted">Six things come out of this kitchen regularly. Here are three to start with.</p>
+    </div>
+
+    <div class="teaserlist">
+      <div class="teaser-item">
+        <h3>Daily breads</h3>
+        <p>Sourdough, rye, rolls, and baguettes twice a day, plus challah every Friday.</p>
+        <a class="textcta" href="services.html#breads">See breads<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="teaser-item">
+        <h3>Cakes to order</h3>
+        <p>Birthdays, showers, retirements. Three days' notice for most sizes.</p>
+        <a class="textcta" href="services.html#cakes">See cakes<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="teaser-item">
+        <h3>Office trays &amp; catering</h3>
+        <p>Pastry platters and cookie trays for meetings, with a day's notice.</p>
+        <a class="textcta" href="services.html#trays">See trays<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY-US / PRINCIPLES — asymmetric two-column, not an icon grid -->
+<section class="room room--flour-dim">
+  <div class="wrap principles-wrap">
+    <div>
+      <h2>What doesn't change here</h2>
+      <p class="muted" style="margin-top:14px">A small kitchen can't compete on hours or variety. This is what it competes on instead.</p>
+      <svg class="principles-art" viewBox="0 0 320 240" role="img" aria-label="Line drawing of a round dough ball resting in a ridged proofing basket">
+        <path d="M46 176a114 30 0 00228 0" fill="none" stroke="#6b3f1a" stroke-width="2"/>
+        <ellipse cx="160" cy="176" rx="114" ry="30" fill="none" stroke="#6b3f1a" stroke-width="2"/>
+        <ellipse cx="160" cy="140" rx="98" ry="66" fill="none" stroke="#e3cfa4" stroke-width="9"/>
+        <ellipse cx="160" cy="140" rx="98" ry="66" fill="none" stroke="#6b3f1a" stroke-width="2"/>
+        <ellipse cx="160" cy="112" rx="76" ry="50" fill="#f6d998" stroke="#2a1608" stroke-width="2.5"/>
+        <path d="M120 98q40-20 80 0M112 118q48-16 96 0" fill="none" stroke="#2a1608" stroke-width="1.6" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="principles">
+      <div class="principle">
+        <h3>Same-day, no exceptions.</h3>
+        <p>Nothing sits overnight to be sold the next morning. If it's on the shelf, it was baked today.</p>
+      </div>
+      <div class="principle">
+        <h3>Small batches, all morning.</h3>
+        <p>We're not filling the case once and coasting. Baking in waves means something's usually just come out.</p>
+      </div>
+      <div class="principle">
+        <h3>We'll tell you when it's gone.</h3>
+        <p>No frozen backstock, no checking in the back. When the sourdough's sold, we say so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA — bookend back to drenched honey -->
+<section class="room room--honey room--tight closecta">
+  <div class="wrap closecta-grid">
+    <div>
+      <h2>Come while it's warm.</h2>
+      <p class="hours-inline">Tue&ndash;Fri 6:30a&ndash;4p &middot; Sat 7a&ndash;4p &middot; Sun 7a&ndash;1p &middot; Closed Mon</p>
+    </div>
+    <a class="btn btn--dark" href="tel:+15165550118">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+      Call (516) 555-0118
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="index.html"><span class="brand-name">Golden Crust</span><span class="brand-sub">Bakery</span></a>
+      <p>A small counter bakery in Long Island, NY. Bread and pastry made the same morning you buy them, plus pies and cakes to order.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="foot-visit">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="tel:+15165550118">(516) 555-0118</a></li>
+        <li>Long Island, NY</li>
+        <li>Tue&ndash;Fri 6:30a&ndash;4p</li>
+        <li>Sat 7a&ndash;4p, Sun 7a&ndash;1p</li>
+        <li>Closed Mondays</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="disclose">Demo website built by Samuel Ochoa — samuelochoa.com/websites<br>Fictional business shown for demonstration.</p>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15165550118">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+  Call (516) 555-0118
+</a>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.navtoggle');
+  var panel = document.getElementById('sitenav');
+  if(toggle && panel){
+    function closeNav(focusBack){
+      panel.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      if(focusBack) toggle.focus();
+    }
+    function openNav(){
+      panel.classList.add('is-open');
+      toggle.setAttribute('aria-expanded','true');
+    }
+    toggle.addEventListener('click', function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      if(open){ closeNav(false); } else { openNav(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+        closeNav(true);
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(panel.classList.contains('is-open') && !panel.contains(e.target) && !toggle.contains(e.target)){
+        closeNav(false);
+      }
+    });
+  }
+  var subToggles = document.querySelectorAll('.submenu-toggle');
+  subToggles.forEach(function(btn){
+    var sub = document.getElementById(btn.getAttribute('aria-controls'));
+    if(!sub) return;
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      sub.classList.toggle('is-open', !open);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

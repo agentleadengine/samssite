@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; Booking | Ember &amp; Bun Food Truck</title>
+<meta name="description" content="Call or text Ember &amp; Bun for today's spot, current wait, or to book the truck for your next event. (516) 555-0132. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M6.7 4H4a1 1 0 0 0-1 1c0 8.8 7.2 16 16 16a1 1 0 0 0 1-1v-2.7a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1.2 1.4a13.4 13.4 0 0 1-6-6l1.4-1.2a1 1 0 0 0 .3-1L9.7 4.8a1 1 0 0 0-1-.8z"/></symbol>
+  <symbol id="ic-msg" viewBox="0 0 24 24"><path d="M4 5.5h16a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H9l-4 4v-4H4a.5.5 0 0 1-.5-.5V6a.5.5 0 0 1 .5-.5z"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="ribbon" aria-hidden="true">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="index.html" aria-label="Ember &amp; Bun Food Truck, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="6" fill="#FF5A1F"/>
+        <path d="M20 6c5 6 1 8 4 12 1-2 2-3 3-4 3 6 3 11-1 14-3 2-9 2-12 0-4-3-4-9 0-13 3-3 5-6 6-9z" fill="#F7C531"/>
+        <rect x="10" y="29" width="20" height="4" rx="2" fill="#17130F"/>
+      </svg>
+      <span>
+        <b>Ember &amp; Bun</b>
+        <span class="kind">Food Truck</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <svg class="icon icon-menu" aria-hidden="true"><use href="#ic-menu"></use></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#ic-close"></use></svg>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <div class="nav-item">
+            <a class="nav-link" href="services.html">Menu</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="menuSub" aria-label="Show menu items">
+              <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+            </button>
+          </div>
+          <ul class="submenu" id="menuSub">
+            <li><a href="services.html#ember-smash">The Ember Smash</a></li>
+            <li><a href="services.html#bacon-hot-honey">Bacon &amp; Hot Honey</a></li>
+            <li><a href="services.html#green-chile-chicken">Green Chile Chicken</a></li>
+            <li><a href="services.html#mushroom-melt">Mushroom Melt (veg)</a></li>
+            <li><a href="services.html#crinkle-fries">Crinkle Fries</a></li>
+            <li><a href="services.html#book-the-truck">Book the Truck</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="work.html">Bookings</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550132">
+      <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+      (516) 555-0132
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="contact-hero">
+    <div class="wrap contact-grid">
+      <div class="rise rise-1">
+        <h1>Call us.<br>We answer.</h1>
+        <a class="big-tel" href="tel:+15165550132">
+          <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+          (516) 555-0132
+        </a>
+        <div>
+          <a class="sms-link" href="sms:+15165550132">
+            <svg class="icon" aria-hidden="true"><use href="#ic-msg"></use></svg>
+            Text the truck
+          </a>
+        </div>
+        <p class="lead">Fastest way to get today's location, hold a date for a party, or ask if we can feed forty people at a job site by noon.</p>
+        <p class="quick-facts">
+          <b>Service area:</b> Long Island, NY
+          <b>Window hours:</b> Wednesday through Sunday — <a class="link-cta" href="about.html#schedule">see this week's lineup<svg class="icon" aria-hidden="true"><use href="#ic-arrow"></use></svg></a>
+        </p>
+      </div>
+
+      <form class="book-form rise rise-2" aria-labelledby="bookform-title">
+        <h3 id="bookform-title">Book the truck</h3>
+        <div class="field">
+          <label for="n">Your name</label>
+          <input id="n" name="name" type="text" placeholder="First and last">
+        </div>
+        <div class="field">
+          <label for="p">Phone</label>
+          <input id="p" name="phone" type="tel" placeholder="Best number to reach you">
+        </div>
+        <div class="field">
+          <label for="d">Date you have in mind</label>
+          <input id="d" name="date" type="text" placeholder="Saturday, September 12">
+        </div>
+        <div class="field">
+          <label for="h">Headcount</label>
+          <select id="h" name="headcount">
+            <option>Under 40</option>
+            <option>40 to 80</option>
+            <option>80 to 150</option>
+            <option>More than 150</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m">What's the event?</label>
+          <textarea id="m" name="message" placeholder="Backyard graduation party, outdoor power available, want the double smash and fries."></textarea>
+        </div>
+        <button class="field-submit" type="button">Send request</button>
+        <p class="form-note">Sample form — for the real thing, call or text.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="wrap">
+      <div class="hours-block">
+        <h2>Good to know</h2>
+        <p class="hours-summary">Open Wednesday through Sunday. Monday is prep, shopping, and truck maintenance — closed. Tuesday is private bookings only, by phone. <a href="about.html#schedule">See the full weekly lineup.</a></p>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary>How do I find you on a given day?
+            <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+          </summary>
+          <p>Call or text the number above. We'll give you the exact spot, the current wait, and tell you if the weather has us closing early.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you cater a private event?
+            <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+          </summary>
+          <p>Yes. Truck bookings start at $1,200 for two hours of service. Tell us your headcount and whether there's power on site and we'll work out a real number.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you take cards?
+            <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+          </summary>
+          <p>Cash, tap, or card, right at the window.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band-in">
+      <p>Still deciding? Call. We'll talk you through it.</p>
+      <a class="btn" href="tel:+15165550132">
+        <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+        (516) 555-0132
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Ember &amp; Bun</b>
+        <p>Smash burger truck rolling around Long Island, NY.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Menu</a>
+        <a href="work.html">Bookings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="tel:+15165550132">(516) 555-0132</a>
+      </nav>
+    </div>
+    <p class="foot-credit">Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+    <p class="foot-legal">Ember &amp; Bun is a fictional business created to demonstrate website design. Nothing on this page is a real offer, and the phone number is not in service.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Today's spot &amp; wait<b>(516) 555-0132</b></div>
+  <a class="cb-call" href="tel:+15165550132">
+    <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+    Call
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle'),
+      nav=document.getElementById('siteNav');
+
+  function closeNav(){
+    if(!nav) return;
+    nav.classList.remove('is-open');
+    if(toggle) toggle.setAttribute('aria-expanded','false');
+  }
+  function openNav(){
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  if(toggle && nav){
+    toggle.addEventListener('click',function(){
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+  }
+
+  var subToggles=[].slice.call(document.querySelectorAll('.sub-toggle'));
+  function closeAllSub(){
+    subToggles.forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var li=b.closest('.has-sub');
+      if(li) li.classList.remove('sub-open');
+    });
+  }
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var li=btn.closest('.has-sub');
+      var isOpen=li && li.classList.contains('sub-open');
+      closeAllSub();
+      if(!isOpen && li){
+        li.classList.add('sub-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ closeNav(); closeAllSub(); }
+  });
+  document.addEventListener('click',function(e){
+    if(nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
+    if(!e.target.closest || !e.target.closest('.has-sub')){ closeAllSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

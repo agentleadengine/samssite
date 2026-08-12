@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Carta — Café El Molino</title>
+<meta name="description" content="La carta de Café El Molino: barra de espresso, café de la casa, panadería, bebidas sin café, café al mayoreo y pedidos para oficina. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Yeseva+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Café El Molino, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--tueste)"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--terracota)" stroke-width="2.2"/>
+        <path d="M22 9v26M9 22h26" stroke="var(--crema)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="4.5" fill="var(--terracota)"/>
+      </svg>
+      <span class="brand">Café El Molino<small>Cafetería de barrio</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550171">(516) 555-0171</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html" aria-current="page">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#barra">Barra de espresso</a></li>
+          <li><a href="services.html#casa">Café de la casa</a></li>
+          <li><a href="services.html#pan">Panadería para acompañar</a></li>
+          <li><a href="services.html#bebidas">Bebidas sin café</a></li>
+          <li><a href="services.html#mayoreo">Café al mayoreo</a></li>
+          <li><a href="services.html#oficina">Pedidos para oficina</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Momentos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550171">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0171
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro svc-intro band-dark on-dark">
+    <div class="wrap svc-intro-grid">
+      <div class="reveal">
+        <h1>La Carta</h1>
+        <p class="lead measure" style="color:rgba(250,241,224,.84)">Seis maneras de pedir en El Molino: desde un espresso rápido en la barra hasta el café que surte su oficina toda la semana.</p>
+      </div>
+      <svg class="accent-cup reveal reveal-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de una taza de espresso con vapor">
+        <ellipse cx="80" cy="132" rx="46" ry="9" fill="#000" opacity=".14"/>
+        <path d="M46 70h68l-6 42a13 13 0 0 1-13 11H65a13 13 0 0 1-13-11Z" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+        <path d="M50 80h60l-2 11H52Z" fill="var(--terracota-2)" opacity=".85"/>
+        <path d="M112 82h8a13 13 0 0 1 0 26h-5" fill="none" stroke="var(--tueste-2)" stroke-width="7" stroke-linecap="round"/>
+        <g class="steam" stroke="var(--terracota-2)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8">
+          <path d="M60 62c7-9-5-14 2-24"/>
+          <path d="M80 62c7-10-5-15 2-25"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap">
+
+      <div class="svc-section" id="barra">
+        <div class="svc-head">
+          <h2>Barra de espresso</h2>
+          <span class="svc-from">Desde $3</span>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Bebidas de espresso preparadas al momento, con leche de avena sin costo adicional.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Cuando quiere su café ajustado a su gusto y listo en un par de minutos.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Espresso</span><span class="leader"></span><span class="price">$3</span>
+            <span class="desc">Doble carga de nuestro tueste de la casa, preparado al momento.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Cortado</span><span class="leader"></span><span class="price">$4</span>
+            <span class="desc">Mitad espresso, mitad leche vaporizada. Taza chica, sin espuma alta.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Café con leche</span><span class="leader"></span><span class="price">$5</span>
+            <span class="desc">De 12 o 16 onzas. La leche de avena no se cobra aparte.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Capuchino</span><span class="leader"></span><span class="price">$4.50</span>
+            <span class="desc">Seis onzas, espuma suave y canela si usted la pide.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-section" id="casa">
+        <div class="svc-head">
+          <h2>Café de la casa</h2>
+          <span class="svc-from">Desde $2.75</span>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Café de filtro y especialidades de la casa, sin pasar por la máquina de espresso.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Para quedarse un rato o llevar una taza sencilla y económica.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Café americano</span><span class="leader"></span><span class="price">$2.75</span>
+            <span class="desc">Siempre hay uno suave y uno oscuro. La segunda taza cuesta $1.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Café de olla</span><span class="leader"></span><span class="price">$3.50</span>
+            <span class="desc">Con piloncillo y canela, en olla de barro. Lo hacemos los fines de semana.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Café frío</span><span class="leader"></span><span class="price">$4.75</span>
+            <span class="desc">Reposado 18 horas, servido con hielo. Con crema dulce si gusta.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-section" id="pan">
+        <div class="svc-head">
+          <h2>Panadería para acompañar</h2>
+          <span class="svc-from">Desde $3</span>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Pan dulce horneado temprano y un par de platillos salados hasta el mediodía.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Desayuno o almuerzo ligero para acompañar el café.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Concha</span><span class="leader"></span><span class="price">$3</span>
+            <span class="desc">De vainilla o chocolate, recién horneadas por la mañana.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Oreja</span><span class="leader"></span><span class="price">$3</span>
+            <span class="desc">Hojaldre con azúcar, crujiente. Se acaban temprano.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Torta de jamón y queso</span><span class="leader"></span><span class="price">$7.50</span>
+            <span class="desc">En pan telera, con frijol, aguacate y chipotle al gusto.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Huevos con chorizo</span><span class="leader"></span><span class="price">$8.50</span>
+            <span class="desc">Con tortillas de maíz y frijoles. Se sirve hasta el mediodía.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-section" id="bebidas">
+        <div class="svc-head">
+          <h2>Bebidas sin café</h2>
+          <span class="svc-from">Desde $3.25</span>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Opciones calientes y frías para quien no toma café o quiere algo distinto.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Para acompañantes, niños o cualquier día que no le provoque cafeína.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Chocolate caliente</span><span class="leader"></span><span class="price">$4</span>
+            <span class="desc">Tablilla de chocolate batida, con leche entera o de avena.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Té de hierbas</span><span class="leader"></span><span class="price">$3.25</span>
+            <span class="desc">Manzanilla, hierbabuena, jamaica y uno que cambia cada semana.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Agua fresca</span><span class="leader"></span><span class="price">$3.50</span>
+            <span class="desc">Horchata o jamaica, preparada cada mañana.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-section" id="mayoreo">
+        <div class="svc-head">
+          <h2>Café al mayoreo y para llevar</h2>
+          <span class="svc-from">Desde $16</span>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Grano tostado en bolsa, molido sin costo si usted lo pide, con la fecha de tueste marcada.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Para tener café en casa toda la semana o surtir una oficina chica.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Bolsa de 12 onzas</span><span class="leader"></span><span class="price">$16</span>
+            <span class="desc">Con la fecha de tueste al reverso. Lo molemos sin costo.</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Pedido de 2 libras</span><span class="leader"></span><span class="price">$38</span>
+            <span class="desc">Para oficinas y restaurantes. Llámenos para dejar un pedido fijo.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-section" id="oficina">
+        <div class="svc-head">
+          <h2>Pedidos para oficina y reuniones</h2>
+        </div>
+        <div class="svc-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Café por jarra, pedidos fijos semanales y entregas de bolsas al mayoreo.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo lo necesita</span>
+            <p>Antes de una junta grande o para mantener surtida la cocina de la oficina.</p>
+          </div>
+        </div>
+        <div class="svc-rows">
+          <div class="menu-row">
+            <span class="name">Café por jarra para reuniones</span><span class="leader"></span><span class="tag-val">Según cantidad</span>
+          </div>
+          <div class="menu-row">
+            <span class="name">Bolsas al mayoreo, entrega miércoles</span><span class="leader"></span><span class="tag-val">Pedido fijo</span>
+          </div>
+        </div>
+        <p class="svc-note">Coordine cantidades y horario por teléfono. Entregamos los miércoles por la mañana.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <div class="wrap">
+      <h2>¿Listo para pedir?</h2>
+      <p class="measure" style="color:rgba(250,241,224,.82)">Llame y le contesta alguien del mostrador. Para pedidos grandes o al mayoreo, mejor con un día de anticipación.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550171">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+          Llamar (516) 555-0171
+        </a>
+        <a class="btn-line" href="contact.html">
+          Ver formulario de contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Café El Molino</div>
+        <p>Café tostado en casa, panadería y desayunos en Long Island, NY.</p>
+        <p><a href="tel:+15165550171">(516) 555-0171</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Momentos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550171">Llamar (516) 555-0171</a></li>
+          <li><a href="sms:+15165550171">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550171">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0171
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

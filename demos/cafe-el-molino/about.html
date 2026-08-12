@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Café El Molino</title>
+<meta name="description" content="Cómo funciona Café El Molino: tueste en casa tres mañanas a la semana, panadería temprana y servicio en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Yeseva+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Café El Molino, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--tueste)"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--terracota)" stroke-width="2.2"/>
+        <path d="M22 9v26M9 22h26" stroke="var(--crema)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="4.5" fill="var(--terracota)"/>
+      </svg>
+      <span class="brand">Café El Molino<small>Cafetería de barrio</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550171">(516) 555-0171</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#barra">Barra de espresso</a></li>
+          <li><a href="services.html#casa">Café de la casa</a></li>
+          <li><a href="services.html#pan">Panadería para acompañar</a></li>
+          <li><a href="services.html#bebidas">Bebidas sin café</a></li>
+          <li><a href="services.html#mayoreo">Café al mayoreo</a></li>
+          <li><a href="services.html#oficina">Pedidos para oficina</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Momentos</a></li>
+      <li><a href="about.html" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550171">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0171
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-light">
+    <div class="wrap svc-intro-grid">
+      <div class="reveal">
+        <h1>Un café que se toma sin apuro</h1>
+        <p class="lead measure">Nada de cadenas ni vasos con nombres inventados. Así es como funciona El Molino, día a día.</p>
+      </div>
+      <svg class="accent-cup reveal reveal-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de un letrero de abierto colgado junto a una taza de café">
+        <rect x="40" y="30" width="80" height="26" rx="4" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+        <text x="80" y="48" text-anchor="middle" font-family="Karla, sans-serif" font-weight="800" font-size="11" letter-spacing="2" fill="var(--terracota-2)">ABIERTO</text>
+        <line x1="55" y1="30" x2="48" y2="14" stroke="var(--tueste-3)" stroke-width="2"/>
+        <line x1="105" y1="30" x2="112" y2="14" stroke="var(--tueste-3)" stroke-width="2"/>
+        <path d="M56 90h48l-4 34a10 10 0 0 1-10 9H70a10 10 0 0 1-10-9Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+        <ellipse cx="80" cy="90" rx="24" ry="5" fill="var(--terracota-2)" opacity=".85"/>
+        <g class="wisp-static" stroke="var(--tueste-2)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".7">
+          <path d="M70 80c-5-10 6-13 1-23"/>
+          <path d="M88 80c-5-11 6-14 1-24"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-light-2 section-tight">
+    <div class="wrap about-grid">
+      <div class="story">
+        <p class="measure-wide">El Molino empezó como una idea sencilla: un lugar donde el café supiera a lo que cuesta tostarlo bien. Nada de cadenas, nada de vasos con nombres inventados. Se pide en el mostrador, se prepara al momento y se sirve en una taza de verdad si usted se va a quedar.</p>
+        <p class="measure-wide">Los martes, jueves y sábados por la mañana se tuesta el grano aquí mismo, en tandas de unas doce libras. El resto de la semana se sirve lo que ya está listo, siempre con la fecha de tueste marcada en la bolsa. La panadería llega temprano y se acaba temprano; si quiere concha, mejor no llegue tarde.</p>
+        <p class="measure-wide">Atendemos en el mostrador en Long Island, NY, y los miércoles llevamos bolsas de café a oficinas, salones y restaurantes de la zona. Hay dos mesas largas y enchufes en las dos paredes para quien quiera quedarse a trabajar. Si trae su propia taza, se la llenamos con 50 centavos de descuento.</p>
+      </div>
+      <div class="hours-box">
+        <h3>Horario</h3>
+        <ul class="hours-list">
+          <li><span class="d">Lunes a viernes</span><span class="leader"></span><span class="h">6:30 a.m. – 4 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="leader"></span><span class="h">7 a.m. – 5 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="leader"></span><span class="h">7:30 a.m. – 3 p.m.</span></li>
+          <li><span class="d">Días de tueste</span><span class="leader"></span><span class="h">Mar · Jue · Sáb</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <div class="wrap">
+      <h2>¿Preguntas antes de venir?</h2>
+      <p class="measure" style="color:rgba(250,241,224,.82)">Llámenos o revise las preguntas frecuentes en la página de contacto.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550171">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+          Llamar (516) 555-0171
+        </a>
+        <a class="btn-line" href="contact.html">
+          Ir a contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Café El Molino</div>
+        <p>Café tostado en casa, panadería y desayunos en Long Island, NY.</p>
+        <p><a href="tel:+15165550171">(516) 555-0171</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Momentos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550171">Llamar (516) 555-0171</a></li>
+          <li><a href="sms:+15165550171">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550171">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0171
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

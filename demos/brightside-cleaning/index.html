@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--
+THESIS: A cleaning that gets out of the way and lets the light back into a room, proven every week by the same crew working from the same list.
+OWN-WORLD: Sunbeam-through-glass grammar: a crisp sun-yellow beam raking across a deep sky-blue field, dust that scatters before a visit and settles into ordered light after one, window-mullion lines as structure rather than decoration.
+STORY: The hero states the promise as a beam breaking through; one interior vignette shows what a visit actually changes; three services get named and linked; the why-us strip grounds the promise in plain facts; the close repeats the call.
+FIRST VIEWPORT: A full sky-blue field holding a large window-and-beam scene that animates open, a centered thesis headline and one-line promise, a primary tel CTA and a text CTA, all before any scroll.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brightside Cleaning Co. | House Cleaning on Long Island</title>
+<meta name="description" content="Brightside Cleaning Co. handles recurring house cleaning, deep cleans, and move-out cleans across Long Island. Same crew every visit. Call (516) 555-0108.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="12" fill="#0E4A73"/>
+        <path d="M23 6 L34 6 L21 34 L14 34 Z" fill="#FFC22B"/>
+        <line x1="20.5" y1="4" x2="20.5" y2="36" stroke="#FFFDF8" stroke-width="2" opacity=".9"/>
+        <line x1="4" y1="20.5" x2="36" y2="20.5" stroke="#FFFDF8" stroke-width="2" opacity=".9"/>
+      </svg>
+      <span class="brand-text">Brightside Cleaning Co.<small>Long Island, NY</small></span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+        <svg class="ic icon-burger" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ic icon-close" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="nav-panel" id="nav-panel" hidden>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-svc-wrap">
+            <button class="nav-link nav-svc-toggle" type="button" aria-expanded="false" aria-controls="svc-panel">
+              Services
+              <svg class="ic icon-chevron" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-panel" id="svc-panel" hidden>
+              <a href="services.html#recurring">Recurring house cleaning</a>
+              <a href="services.html#deep-clean">Deep clean</a>
+              <a href="services.html#move">Move-in / move-out</a>
+              <a href="services.html#one-time">One-time &amp; occasion cleans</a>
+              <a href="services.html#offices">Small offices &amp; studios</a>
+              <a href="services.html#add-ons">Add-ons</a>
+            </div>
+          </li>
+          <li><a class="nav-link" href="work.html">Work</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a class="nav-phone-mobile" href="tel:+15165550108">
+          <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+          Call (516) 555-0108
+        </a>
+      </div>
+    </nav>
+
+    <a class="header-phone" href="tel:+15165550108">
+      <svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+      (516) 555-0108
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero bg-sky pane">
+    <div class="wrap hero-inner">
+      <svg class="hero-scene" viewBox="0 0 340 280" role="img" aria-label="Illustration of a beam of sunlight breaking through a window, an authored scene for this demo">
+        <circle cx="176" cy="120" r="150" fill="#FFC22B" opacity=".14"/>
+        <rect x="66" y="24" width="150" height="176" rx="16" fill="none" stroke="#FFFDF8" stroke-width="3" opacity=".9"/>
+        <line x1="141" y1="24" x2="141" y2="200" stroke="#FFFDF8" stroke-width="2.5" opacity=".7"/>
+        <line x1="66" y1="112" x2="216" y2="112" stroke="#FFFDF8" stroke-width="2.5" opacity=".7"/>
+        <path class="anim-beam" d="M186 32 L296 32 L208 234 L138 234 Z" fill="#FFC22B"/>
+        <circle class="anim-mote d1" cx="258" cy="66" r="4" fill="#FFFDF8" fill-opacity=".9"/>
+        <circle class="anim-mote d2" cx="242" cy="104" r="3" fill="#FFFDF8" fill-opacity=".7"/>
+        <circle class="anim-mote d3" cx="270" cy="138" r="5" fill="#FFFDF8" fill-opacity=".85"/>
+        <circle class="anim-mote d4" cx="226" cy="164" r="2.5" fill="#FFFDF8" fill-opacity=".6"/>
+        <circle class="anim-mote d5" cx="252" cy="196" r="3.5" fill="#FFFDF8" fill-opacity=".8"/>
+        <line x1="40" y1="234" x2="300" y2="234" stroke="#FFFDF8" stroke-width="2" opacity=".35"/>
+      </svg>
+
+      <h1>The clean that lets the light back in.</h1>
+      <p class="promise">Recurring cleanings, deep cleans, and move-out cleans across Long Island. Same two-person crew every visit, so nobody has to be re-trained on your home.</p>
+
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+15165550108">
+          <svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+          Call (516) 555-0108
+        </a>
+        <a class="btn btn-ghost-light" href="contact.html">Get a quote</a>
+      </div>
+      <p class="hero-note">Free walkthrough before your first clean &middot; No contracts, cancel any time</p>
+    </div>
+  </section>
+
+  <!-- PROOF OF WORK -->
+  <section class="proof bg-paper">
+    <div class="wrap proof-grid">
+      <div class="proof-scene">
+        <svg viewBox="0 0 460 300" role="img" aria-label="Illustration of a kitchen corner: scattered dust on the left, a clean beam of light on the right">
+          <rect x="0" y="0" width="460" height="300" fill="#0E4A73"/>
+          <rect x="30" y="190" width="400" height="18" fill="#0B2A40"/>
+          <rect x="46" y="70" width="150" height="60" rx="6" fill="none" stroke="#FFFDF8" stroke-width="2" opacity=".35"/>
+          <rect x="264" y="70" width="150" height="60" rx="6" fill="none" stroke="#FFFDF8" stroke-width="2" opacity=".55"/>
+          <line x1="230" y1="24" x2="230" y2="276" stroke="#FFFDF8" stroke-width="1.5" stroke-dasharray="3 7" opacity=".3"/>
+          <circle cx="70" cy="150" r="3" fill="#FFFDF8" opacity=".22"/>
+          <circle cx="110" cy="170" r="2" fill="#FFFDF8" opacity=".18"/>
+          <circle cx="150" cy="140" r="4" fill="#FFFDF8" opacity=".2"/>
+          <circle cx="90" cy="120" r="2.5" fill="#FFFDF8" opacity=".16"/>
+          <circle cx="180" cy="165" r="2" fill="#FFFDF8" opacity=".2"/>
+          <circle cx="60" cy="185" r="2.5" fill="#FFFDF8" opacity=".18"/>
+          <path d="M330 30 L410 30 L340 208 L292 208 Z" fill="#FFC22B"/>
+          <circle cx="310" cy="196" r="3" fill="#FFFDF8" opacity=".9"/>
+          <circle cx="330" cy="196" r="3" fill="#FFFDF8" opacity=".9"/>
+          <circle cx="350" cy="196" r="3" fill="#FFFDF8" opacity=".9"/>
+        </svg>
+      </div>
+      <div class="proof-copy">
+        <h2>What a visit actually changes.</h2>
+        <p>Fifteen minutes before the first clean, we walk the house and write down what matters to you: the floors, the pets, the spot by the door that always collects mail. That list is what the crew works from every time after, whether it's your first visit or your fiftieth.</p>
+        <p class="proof-line">Same list, every visit. Nothing improvised.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER -->
+  <section class="teaser bg-tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Pick the cleaning that fits the week you're having.</h2>
+        <p>Three of the six ways a Brightside visit gets aimed at your house. The rest are on the services page.</p>
+      </div>
+      <div class="teaser-grid">
+        <a class="teaser-feature" href="services.html#recurring">
+          <svg class="teaser-scene" viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="6" width="36" height="36" rx="8" fill="#FFFFFF" opacity=".08"/>
+            <rect x="12" y="12" width="24" height="24" rx="4" fill="none" stroke="#FFFDF8" stroke-width="2.4"/>
+            <line x1="24" y1="12" x2="24" y2="36" stroke="#FFFDF8" stroke-width="2.4"/>
+            <line x1="12" y1="24" x2="36" y2="24" stroke="#FFFDF8" stroke-width="2.4"/>
+            <path d="M30 12 L38 12 L38 20 Z" fill="#FFC22B"/>
+          </svg>
+          <h3>Recurring house cleaning</h3>
+          <p>Weekly, every other week, or monthly. The same checklist and the same two people, every time they're in your kitchen.</p>
+          <span class="link-arrow">See what's included
+            <svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <div class="teaser-side">
+          <a class="teaser-item" href="services.html#deep-clean">
+            <svg class="teaser-scene" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="6" y="6" width="36" height="36" rx="8" fill="#0E4A73" opacity=".08"/>
+              <circle cx="24" cy="24" r="12" fill="none" stroke="#0E4A73" stroke-width="2.4"/>
+              <path d="M30 10 L40 10 L26 34 L20 34 Z" fill="#FFC22B" opacity=".92"/>
+            </svg>
+            <h3>Deep clean</h3>
+            <p>The reset before regular visits start, or any time the house needs more than a surface pass.</p>
+            <span class="link-arrow">See what's included
+              <svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <a class="teaser-item" href="services.html#move">
+            <svg class="teaser-scene" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="6" y="6" width="36" height="36" rx="8" fill="#0E4A73" opacity=".08"/>
+              <path d="M14 20 L24 13 L34 20 L34 34 L14 34 Z" fill="none" stroke="#0E4A73" stroke-width="2.4" stroke-linejoin="round"/>
+              <path d="M28 34 L38 34 L38 22 Z" fill="#FFC22B"/>
+            </svg>
+            <h3>Move-in / move-out</h3>
+            <p>Empty-house cleaning timed for closings and lease turnovers.</p>
+            <span class="link-arrow">See what's included
+              <svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="whyus bg-sun">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The same crew, every time. That's the whole idea.</h2>
+        <p>Nothing here is complicated. It's a short list, followed the same way on every visit.</p>
+      </div>
+      <ul class="fact-grid">
+        <li class="fact-row">
+          <span class="tick-wrap"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></span>
+          <p>Same two-person crew on your account, visit to visit</p>
+        </li>
+        <li class="fact-row">
+          <span class="tick-wrap"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></span>
+          <p>A written checklist made for your home, not a generic one</p>
+        </li>
+        <li class="fact-row">
+          <span class="tick-wrap"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></span>
+          <p>We bring all our own supplies</p>
+        </li>
+        <li class="fact-row">
+          <span class="tick-wrap"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></span>
+          <p>Pet- and kid-safe products throughout</p>
+        </li>
+        <li class="fact-row">
+          <span class="tick-wrap"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></span>
+          <p>Bonded and insured crews</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="close-cta bg-ink pane">
+    <div class="wrap">
+      <h2>Let's get the light back in.</h2>
+      <p>Call for a quote, or send the details on the contact page and we'll call you back.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+15165550108">
+          <svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+          Call (516) 555-0108
+        </a>
+        <a class="btn btn-ghost-light" href="contact.html">Get a quote</a>
+      </div>
+      <p class="hero-note">Mon&ndash;Fri 7:30a&ndash;6p &middot; Sat 8a&ndash;2p</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-name">Brightside Cleaning Co.</div>
+      <p>House cleaning for Long Island, NY. Supplies included, no contracts.</p>
+    </div>
+    <div>
+      <p class="footer-label">Call</p>
+      <p><a href="tel:+15165550108">(516) 555-0108</a></p>
+      <p class="footer-hours">Mon&ndash;Fri 7:30a&ndash;6p<br>Sat 8a&ndash;2p</p>
+    </div>
+    <div>
+      <p class="footer-label">Services</p>
+      <nav aria-label="Services">
+        <ul class="footer-links">
+          <li><a href="services.html#recurring">Recurring cleaning</a></li>
+          <li><a href="services.html#deep-clean">Deep clean</a></li>
+          <li><a href="services.html#move">Move-in / move-out</a></li>
+          <li><a href="services.html#offices">Small offices</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-label">Site</p>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="disclosure">
+      Demo website built by <a href="https://samuelochoa.com/websites">Samuel Ochoa &mdash; samuelochoa.com/websites</a><br>
+      Brightside Cleaning Co. is a fictional business shown for demonstration. Phone number and pricing are examples only.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="callbar-text">Questions or quotes<b>(516) 555-0108</b></div>
+  <a class="callbar-btn" href="tel:+15165550108">
+    <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+    Call
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var svcBtn = document.querySelector('.nav-svc-toggle');
+  var svcPanel = document.getElementById('svc-panel');
+
+  function closeNav(){
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openNav(){
+    panel.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeSvc(){
+    svcBtn.setAttribute('aria-expanded', 'false');
+    svcPanel.hidden = true;
+  }
+
+  toggle.addEventListener('click', function(){
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    if (open) { closeNav(); closeSvc(); } else { openNav(); }
+  });
+  svcBtn.addEventListener('click', function(){
+    var open = svcBtn.getAttribute('aria-expanded') === 'true';
+    svcBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    svcPanel.hidden = open;
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeNav(); closeSvc(); }
+  });
+  document.addEventListener('click', function(e){
+    if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) {
+      closeNav();
+    }
+    if (!svcPanel.hidden && !svcPanel.contains(e.target) && e.target !== svcBtn && !svcBtn.contains(e.target)) {
+      closeSvc();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

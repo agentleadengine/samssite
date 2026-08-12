@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto | Escuela de Manejo El Volante</title>
+<meta name="description" content="Llame o mande un mensaje de texto a Escuela de Manejo El Volante para reservar su primera clase. Horario, formulario de muestra y preguntas frecuentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark icon" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4"/>
+        <circle cx="24" cy="24" r="5.4"/>
+        <path d="M24 5.6v13M9.2 32.6L20 26.3M38.8 32.6L28 26.3"/>
+      </svg>
+      <span class="brand-name">El Volante<span class="brand-sub">Escuela de Manejo</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="nav-panel">
+        <span class="hamburger-bars"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="has-submenu">
+            <button class="nav-link submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-clases">
+              Clases
+              <svg class="submenu-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="submenu" id="submenu-clases">
+              <li><a href="services.html#primeras-clases">Primeras clases</a></li>
+              <li><a href="services.html#practica-carretera">Práctica en carretera</a></li>
+              <li><a href="services.html#preparacion-examen">Preparación para el examen</a></li>
+              <li><a href="services.html#curso-5-horas">Curso de 5 horas</a></li>
+              <li><a href="services.html#estacionamiento-maniobras">Estacionamiento y maniobras</a></li>
+              <li><a href="services.html#repaso-conductores">Repaso para conductores</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="work.html">Rutas de práctica</a></li>
+          <li><a class="nav-link" href="about.html">Nosotros</a></li>
+          <li><a class="nav-link" href="contact.html" aria-current="page">Contacto</a></li>
+        </ul>
+        <a class="nav-phone" href="tel:+15165550185">Llamar (516) 555-0185</a>
+      </div>
+    </nav>
+    <a class="header-phone" href="tel:+15165550185">(516) 555-0185</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="section section--tight section--crema">
+    <div class="wrap">
+      <div class="section-head">
+        <h1 class="page-h1">Reserve su primera clase</h1>
+        <p class="prose">Lo más rápido es llamar. Si prefiere escribir, mándenos un mensaje de texto o deje sus datos abajo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--blanco" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-top">
+        <div>
+          <div class="call-panel">
+            <p style="color:var(--on-verde-muted);font-weight:600">Disponible en el horario de oficina</p>
+            <a class="tel-big" href="tel:+15165550185">(516) 555-0185</a>
+            <p class="tel-note">Le devolvemos la llamada el mismo día si no contestamos</p>
+            <div class="call-actions">
+              <a class="btn btn--primary" href="tel:+15165550185">Llamar ahora</a>
+              <a class="btn btn--ghost-dark" href="sms:+15165550185">Enviar mensaje de texto</a>
+            </div>
+          </div>
+          <div class="info-panel contact-hours" style="margin-top:26px">
+            <h3>Horario</h3>
+            <ul class="hours-list">
+              <li><span>Lunes a viernes</span><span>7:00 a.m. – 8:00 p.m.</span></li>
+              <li><span>Sábado</span><span>7:00 a.m. – 6:00 p.m.</span></li>
+              <li><span>Domingo</span><span>9:00 a.m. – 3:00 p.m.</span></li>
+              <li><span>Oficina (teléfono)</span><span>8:00 a.m. – 8:00 p.m.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="form-sample">
+          <span class="form-tag">Formulario de muestra</span>
+          <div class="field-row two">
+            <div class="field">
+              <label for="n">Nombre</label>
+              <input id="n" type="text" placeholder="Su nombre" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="t">Teléfono</label>
+              <input id="t" type="tel" placeholder="(516) 000-0000" autocomplete="off">
+            </div>
+          </div>
+          <div class="field">
+            <label for="c">Qué clase le interesa</label>
+            <select id="c">
+              <option>Primeras clases</option>
+              <option>Práctica en carretera</option>
+              <option>Preparación para el examen</option>
+              <option>Curso de 5 horas</option>
+              <option>Estacionamiento y maniobras</option>
+              <option>Repaso para conductores</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="m">Mensaje</label>
+            <textarea id="m" placeholder="Cuéntenos su experiencia manejando y qué días puede."></textarea>
+          </div>
+          <button class="btn-send" type="button">Enviar solicitud</button>
+          <p class="form-confirm" hidden>Esto es una demostración: no se envía ningún dato.</p>
+          <p class="form-caption">Formulario de muestra</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--crema">
+    <div class="wrap wrap--narrow">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>¿Necesito el permiso de aprendizaje antes de la primera clase?
+            <span class="faq-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Sí, debe tener el permiso vigente. Si todavía no lo tiene, podemos orientarlo sobre el trámite en nuestra primera llamada.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Las clases son en español o en inglés?
+            <span class="faq-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Las damos en español, y también en inglés si lo prefiere. Explicamos las señales en los dos idiomas para que el examen no lo tome por sorpresa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuántas clases necesito antes del examen?
+            <span class="faq-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Depende de la experiencia que ya tenga. Se lo decimos con honestidad después de la primera clase, no antes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--verde">
+    <div class="wrap cta-block">
+      <h2>¿Alguna otra pregunta?</h2>
+      <p>Llámenos, es la forma más rápida de resolverlo.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="tel:+15165550185">Llamar (516) 555-0185</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Escuela de Manejo El Volante</p>
+        <p class="footer-brand-sub">Long Island, NY · <a href="tel:+15165550185">(516) 555-0185</a></p>
+        <p class="footer-brand-sub">Clases en español e inglés</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="footer-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Clases</a></li>
+          <li><a href="work.html">Rutas de práctica</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a></p>
+      <p class="disc">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a class="call-primary" href="tel:+15165550185">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 2a12 12 0 0 0 6 6l2-2.5 5 2v3a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+    Llamar
+  </a>
+  <a class="call-secondary" href="sms:+15165550185">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 4V5z"/></svg>
+    Mensaje
+  </a>
+</div>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var panel = document.getElementById('nav-panel');
+  var submenuToggle = header.querySelector('.submenu-toggle');
+  var submenu = document.getElementById('submenu-clases');
+
+  function closePanel(){ hamburger.setAttribute('aria-expanded','false'); panel.classList.remove('is-open'); }
+  function openPanel(){ hamburger.setAttribute('aria-expanded','true'); panel.classList.add('is-open'); }
+  hamburger.addEventListener('click', function(){
+    (hamburger.getAttribute('aria-expanded') === 'true') ? closePanel() : openPanel();
+  });
+
+  function closeSubmenu(){ submenuToggle.setAttribute('aria-expanded','false'); submenu.classList.remove('is-open'); }
+  function openSubmenu(){ submenuToggle.setAttribute('aria-expanded','true'); submenu.classList.add('is-open'); }
+  submenuToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    (submenuToggle.getAttribute('aria-expanded') === 'true') ? closeSubmenu() : openSubmenu();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(submenuToggle.getAttribute('aria-expanded') === 'true'){ closeSubmenu(); submenuToggle.focus(); }
+      else if(hamburger.getAttribute('aria-expanded') === 'true'){ closePanel(); hamburger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!header.contains(e.target)){ closeSubmenu(); closePanel(); }
+    else if(!e.target.closest('.has-submenu')){ closeSubmenu(); }
+  });
+
+  var sendBtn = document.querySelector('.btn-send');
+  var confirmMsg = document.querySelector('.form-confirm');
+  if(sendBtn && confirmMsg){
+    sendBtn.addEventListener('click', function(){ confirmMsg.hidden = false; });
+  }
+})();
+</script>
+</body>
+</html>

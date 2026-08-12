@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momentos — Café El Molino</title>
+<meta name="description" content="Escenas ilustradas de una semana típica en Café El Molino: la barra, el tueste, la panadería, los pedidos al mayoreo y las mesas largas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Yeseva+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Café El Molino, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--tueste)"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--terracota)" stroke-width="2.2"/>
+        <path d="M22 9v26M9 22h26" stroke="var(--crema)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="4.5" fill="var(--terracota)"/>
+      </svg>
+      <span class="brand">Café El Molino<small>Cafetería de barrio</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550171">(516) 555-0171</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#barra">Barra de espresso</a></li>
+          <li><a href="services.html#casa">Café de la casa</a></li>
+          <li><a href="services.html#pan">Panadería para acompañar</a></li>
+          <li><a href="services.html#bebidas">Bebidas sin café</a></li>
+          <li><a href="services.html#mayoreo">Café al mayoreo</a></li>
+          <li><a href="services.html#oficina">Pedidos para oficina</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Momentos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550171">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0171
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-light-2">
+    <div class="wrap reveal">
+      <h1>Momentos del mostrador</h1>
+      <p class="lead measure">Seis escenas típicas de una semana en El Molino. Son ilustraciones propias, no fotografías de clientes o pedidos reales.</p>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap">
+      <div class="gallery">
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de la barra de espresso preparando una bebida por la mañana">
+              <rect x="60" y="90" width="230" height="90" rx="14" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <rect x="80" y="70" width="60" height="24" rx="4" fill="var(--tueste-3)"/>
+              <circle cx="110" cy="82" r="5" fill="var(--terracota-2)"/>
+              <rect x="150" y="150" width="30" height="18" rx="3" fill="var(--tueste-3)"/>
+              <path d="M148 168h34l10 8h-54Z" fill="var(--tueste-3)"/>
+              <path d="M230 150v34l16 10" stroke="var(--tueste-3)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <g class="steam" stroke="var(--crema)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".75">
+                <path d="M246 190c-6-12 7-15 1-27"/>
+                <path d="M256 194c-6-13 7-16 1-28"/>
+              </g>
+              <path d="M136 190h56l-4 26a9 9 0 0 1-9 8h-30a9 9 0 0 1-9-8Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <ellipse cx="164" cy="190" rx="28" ry="5" fill="var(--terracota-2)" opacity=".85"/>
+              <path d="M300 196h34l-3 16a6 6 0 0 1-6 5h-16a6 6 0 0 1-6-5Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>La barra a las 7 de la mañana</h3>
+            <p>La máquina se calibra antes de abrir y otra vez después de la comida. Cada bebida se prepara cuando usted la pide, no antes.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de bolsas de café siendo selladas la mañana del tueste, con un reloj marcando temprano">
+              <rect x="40" y="210" width="320" height="14" rx="4" fill="var(--tueste-3)"/>
+              <path d="M70 130h58l-5 78a10 10 0 0 1-10 9H85a10 10 0 0 1-10-9Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <rect x="76" y="128" width="46" height="10" fill="var(--tueste)"/>
+              <path d="M162 140h64l-5 68a10 10 0 0 1-10 9h-34a10 10 0 0 1-10-9Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <path d="M168 140c2-10 10-16 26-16s24 6 26 16" fill="none" stroke="var(--tueste-3)" stroke-width="2.4"/>
+              <g fill="var(--tueste)" opacity=".9">
+                <circle cx="188" cy="108" r="3"/><circle cx="200" cy="96" r="3"/><circle cx="210" cy="112" r="3"/>
+                <circle cx="196" cy="122" r="3"/><circle cx="182" cy="118" r="3"/>
+              </g>
+              <path d="M264 130h58l-5 78a10 10 0 0 1-10 9h-28a10 10 0 0 1-10-9Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <rect x="270" y="128" width="46" height="10" fill="var(--tueste)"/>
+              <rect x="277" y="158" width="34" height="24" rx="3" fill="none" stroke="var(--terracota)" stroke-width="1.6" stroke-dasharray="2 4"/>
+              <text x="294" y="173" text-anchor="middle" font-family="Karla, sans-serif" font-weight="800" font-size="7" letter-spacing="1" fill="var(--terracota-2)">MAR</text>
+              <circle cx="330" cy="70" r="20" fill="none" stroke="var(--muted-dark)" stroke-width="2"/>
+              <path d="M330 60v10l7 5" stroke="var(--terracota-2)" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>Tueste de los martes</h3>
+            <p>Cada martes, jueves y sábado por la mañana se tuesta el grano en tandas de unas doce libras. Las bolsas salen selladas con la fecha marcada.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de la vitrina de pan dulce recién horneado">
+              <rect x="60" y="120" width="280" height="90" rx="8" fill="none" stroke="var(--muted-dark)" stroke-width="2"/>
+              <rect x="60" y="118" width="280" height="8" fill="var(--tueste-3)"/>
+              <rect x="60" y="208" width="280" height="16" rx="3" fill="var(--tueste-3)"/>
+              <ellipse cx="130" cy="196" rx="32" ry="18" fill="var(--terracota-2)"/>
+              <path d="M104 190h52M110 182h40M116 174h28" stroke="var(--tueste)" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="200" cy="200" rx="30" ry="17" fill="var(--crema-2)"/>
+              <path d="M176 194h48M182 186h36M188 179h24" stroke="var(--terracota-deep)" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+              <path d="M250 202c6-18 18-30 32-30s26 12 32 30c-10 6-22 9-32 9s-22-3-32-9Z" fill="var(--terracota-2)"/>
+              <path d="M266 178c4 10 4 18 0 26M298 178c-4 10-4 18 0 26" stroke="var(--tueste)" stroke-width="2" fill="none" opacity=".6"/>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>Vitrina de pan dulce</h3>
+            <p>Conchas y orejas horneadas temprano, mientras hay. La vitrina se vacía rápido los fines de semana.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de bolsas de café al mayoreo listas para reparto de oficina, con una ruta marcada">
+              <rect x="120" y="150" width="160" height="90" rx="6" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <path d="M120 150l40-26h80l40 26Z" fill="var(--tueste-3)"/>
+              <path d="M160 124v116M240 124v116" stroke="var(--tueste)" stroke-width="2" opacity=".5"/>
+              <path d="M150 168h44l-4 52a8 8 0 0 1-8 7h-24a8 8 0 0 1-8-7Z" fill="var(--crema-2)" stroke="var(--tueste)" stroke-width="1.6"/>
+              <rect x="154" y="167" width="36" height="8" fill="var(--tueste)"/>
+              <path d="M212 174h44l-4 46a8 8 0 0 1-8 7h-24a8 8 0 0 1-8-7Z" fill="var(--crema-2)" stroke="var(--tueste)" stroke-width="1.6"/>
+              <rect x="216" y="173" width="36" height="8" fill="var(--tueste)"/>
+              <path d="M280 230c30 6 46 20 60 40" stroke="var(--terracota-2)" stroke-width="2.4" fill="none" stroke-dasharray="1 8" stroke-linecap="round"/>
+              <path d="M344 250c-9 0-16 7-16 16 0 12 16 26 16 26s16-14 16-26c0-9-7-16-16-16Z" fill="none" stroke="var(--terracota-2)" stroke-width="2.4"/>
+              <circle cx="344" cy="266" r="5" fill="var(--terracota-2)"/>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>Bolsas para la oficina</h3>
+            <p>Los miércoles por la mañana salen las entregas al mayoreo hacia oficinas y restaurantes de la zona.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una olla de barro con café de olla, canela y piloncillo">
+              <ellipse cx="200" cy="228" rx="70" ry="12" fill="#000" opacity=".18"/>
+              <path d="M150 150c0-14 22-24 50-24s50 10 50 24l-8 60c-2 14-20 24-42 24s-40-10-42-24Z" fill="var(--terracota-2)" stroke="var(--tueste-3)" stroke-width="2.4"/>
+              <ellipse cx="200" cy="150" rx="50" ry="14" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <ellipse cx="200" cy="150" rx="38" ry="9" fill="var(--tueste)"/>
+              <path d="M150 168c-16 0-16 24 0 24" stroke="var(--tueste-3)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <path d="M250 168c16 0 16 24 0 24" stroke="var(--tueste-3)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <rect x="192" y="112" width="8" height="34" rx="4" fill="var(--terracota-deep)" transform="rotate(-8 196 129)"/>
+              <path d="M226 140l14-26 14 26Z" fill="var(--terracota-deep)"/>
+              <g class="wisp-static" stroke="var(--crema)" stroke-width="2.8" fill="none" stroke-linecap="round" opacity=".65">
+                <path d="M190 108c-6-12 7-15 1-27"/>
+                <path d="M210 108c-6-13 7-16 1-28"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>Olla de café del sábado</h3>
+            <p>Con piloncillo y canela, en olla de barro, solo los fines de semana. Se sirve mientras dura la tanda del día.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="vg">
+          <div class="scene-frame">
+            <span class="vg-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una mesa larga junto a la ventana, con enchufe en la pared">
+              <rect x="270" y="50" width="90" height="110" rx="4" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+              <path d="M315 50v110M270 105h90" stroke="var(--tueste-3)" stroke-width="2"/>
+              <rect x="50" y="190" width="240" height="12" rx="4" fill="var(--tueste-3)"/>
+              <rect x="70" y="202" width="8" height="40" fill="var(--tueste-3)"/>
+              <rect x="262" y="202" width="8" height="40" fill="var(--tueste-3)"/>
+              <path d="M100 168h30l-3 20a6 6 0 0 1-6 5h-12a6 6 0 0 1-6-5Z" fill="var(--crema-2)" stroke="var(--tueste)" stroke-width="1.6"/>
+              <path d="M190 168h30l-3 20a6 6 0 0 1-6 5h-12a6 6 0 0 1-6-5Z" fill="var(--crema-2)" stroke="var(--tueste)" stroke-width="1.6"/>
+              <rect x="140" y="176" width="34" height="20" rx="2" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="1.6"/>
+              <rect x="140" y="196" width="34" height="4" rx="1" fill="var(--tueste-3)"/>
+              <rect x="330" y="200" width="20" height="26" rx="3" fill="var(--tueste-2)" stroke="var(--muted-dark)" stroke-width="1.6"/>
+              <circle cx="337" cy="210" r="1.6" fill="var(--muted-dark)"/>
+              <circle cx="344" cy="210" r="1.6" fill="var(--muted-dark)"/>
+              <path d="M337 217h8" stroke="var(--muted-dark)" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <figcaption class="vg-body">
+            <h3>Las mesas largas</h3>
+            <p>Dos mesas largas y enchufes en las dos paredes para quien quiera quedarse a trabajar. Nadie lo va a apurar.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <div class="wrap">
+      <h2>Véalo en persona</h2>
+      <p class="measure" style="color:rgba(250,241,224,.82)">Las ilustraciones dan una idea. La mejor manera de conocer El Molino sigue siendo pasar por el mostrador.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550171">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+          Llamar (516) 555-0171
+        </a>
+        <a class="btn-line" href="about.html">
+          Conocer la cafetería
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Café El Molino</div>
+        <p>Café tostado en casa, panadería y desayunos en Long Island, NY.</p>
+        <p><a href="tel:+15165550171">(516) 555-0171</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Momentos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550171">Llamar (516) 555-0171</a></li>
+          <li><a href="sms:+15165550171">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550171">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0171
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

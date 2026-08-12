@@ -1,0 +1,312 @@
+<!--
+  THESIS: The truck is one honest promise — call, find out where we're parked, get it smashed to order and handed to you in about eight minutes.
+  OWN-WORLD: Charcoal night lit by flame orange and mustard. Thick charcoal outlines, griddle-press marks, steam curls, menu-board energy — a parked truck under its own lights, not a clean modern app.
+  STORY: You call. We tell you where we are and how long the wait is. You walk up, order at the window, and eat it hot standing right there.
+  FIRST VIEWPORT: Full-bleed flame hero, one oversized double-smash burger in outline, the promise line in charcoal, the phone number already in reach — no scrolling required to find it.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Bun Food Truck | Smash Burgers on Long Island, NY</title>
+<meta name="description" content="Ember &amp; Bun is a smash burger truck rolling around Long Island, NY. Flat-top burgers, crinkle fries, and truck bookings for parties and job sites. Call (516) 555-0132.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M6.7 4H4a1 1 0 0 0-1 1c0 8.8 7.2 16 16 16a1 1 0 0 0 1-1v-2.7a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1.2 1.4a13.4 13.4 0 0 1-6-6l1.4-1.2a1 1 0 0 0 .3-1L9.7 4.8a1 1 0 0 0-1-.8z"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="ribbon" aria-hidden="true">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="index.html" aria-label="Ember &amp; Bun Food Truck, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="6" fill="#FF5A1F"/>
+        <path d="M20 6c5 6 1 8 4 12 1-2 2-3 3-4 3 6 3 11-1 14-3 2-9 2-12 0-4-3-4-9 0-13 3-3 5-6 6-9z" fill="#F7C531"/>
+        <rect x="10" y="29" width="20" height="4" rx="2" fill="#17130F"/>
+      </svg>
+      <span>
+        <b>Ember &amp; Bun</b>
+        <span class="kind">Food Truck</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <svg class="icon icon-menu" aria-hidden="true"><use href="#ic-menu"></use></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#ic-close"></use></svg>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul>
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <div class="nav-item">
+            <a class="nav-link" href="services.html">Menu</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="menuSub" aria-label="Show menu items">
+              <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+            </button>
+          </div>
+          <ul class="submenu" id="menuSub">
+            <li><a href="services.html#ember-smash">The Ember Smash</a></li>
+            <li><a href="services.html#bacon-hot-honey">Bacon &amp; Hot Honey</a></li>
+            <li><a href="services.html#green-chile-chicken">Green Chile Chicken</a></li>
+            <li><a href="services.html#mushroom-melt">Mushroom Melt (veg)</a></li>
+            <li><a href="services.html#crinkle-fries">Crinkle Fries</a></li>
+            <li><a href="services.html#book-the-truck">Book the Truck</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="work.html">Bookings</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550132">
+      <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+      (516) 555-0132
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1 class="rise rise-1">Off the flat top,<br>out the window.</h1>
+        <p class="sub rise rise-2">Smashed thin, pressed hard, and handed to you about eight minutes after you order. Call for today's spot or lock in the truck for your next thing.</p>
+        <div class="hero-cta rise rise-3">
+          <a class="btn" href="tel:+15165550132">
+            <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+            Call (516) 555-0132
+          </a>
+          <a class="link-cta" href="about.html#schedule">
+            This week's stops
+            <svg class="icon" aria-hidden="true"><use href="#ic-arrow"></use></svg>
+          </a>
+        </div>
+        <p class="hero-note rise rise-4">Call the truck for today's spot, current wait, and party bookings.</p>
+      </div>
+      <div class="hero-art rise rise-2">
+        <svg viewBox="0 0 400 320" role="img" aria-label="Illustration of a double smash burger stacked high, steam rising off the griddle-fresh patties">
+          <ellipse cx="200" cy="298" rx="148" ry="16" fill="#D63F0C" opacity=".9"/>
+          <g opacity=".8" stroke="#FBF5EA" stroke-width="5" stroke-linecap="round" fill="none">
+            <path d="M150 46c-10 14 10 20 0 34s10 20 0 34"/>
+            <path d="M250 40c10 14-10 20 0 34s-10 20 0 34"/>
+          </g>
+          <path d="M56 128c0-50 45-78 144-78s144 28 144 78z" fill="#F7C531" stroke="#17130F" stroke-width="6"/>
+          <circle cx="132" cy="92" r="5.5" fill="#FBF5EA"/>
+          <circle cx="176" cy="76" r="5.5" fill="#FBF5EA"/>
+          <circle cx="222" cy="76" r="5.5" fill="#FBF5EA"/>
+          <circle cx="266" cy="92" r="5.5" fill="#FBF5EA"/>
+          <circle cx="200" cy="66" r="5.5" fill="#FBF5EA"/>
+          <path d="M52 128h296l-16 24-30-13-28 18-30-16-28 16-30-18-30 13z" fill="#FBF5EA" stroke="#17130F" stroke-width="6" stroke-linejoin="round"/>
+          <rect x="46" y="150" width="308" height="30" rx="10" fill="#4A2C1B" stroke="#17130F" stroke-width="6"/>
+          <ellipse cx="120" cy="165" rx="10" ry="4" fill="#2E1B10" opacity=".6"/>
+          <ellipse cx="280" cy="165" rx="10" ry="4" fill="#2E1B10" opacity=".6"/>
+          <rect x="40" y="182" width="320" height="20" rx="10" fill="#7FA83C" stroke="#17130F" stroke-width="6"/>
+          <rect x="46" y="204" width="308" height="30" rx="10" fill="#4A2C1B" stroke="#17130F" stroke-width="6"/>
+          <ellipse cx="150" cy="219" rx="10" ry="4" fill="#2E1B10" opacity=".6"/>
+          <ellipse cx="250" cy="219" rx="10" ry="4" fill="#2E1B10" opacity=".6"/>
+          <path d="M50 234h300v20c0 20-16 36-36 36H86c-20 0-36-16-36-36z" fill="#F7C531" stroke="#17130F" stroke-width="6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Smashed to order</span><span>Crinkle fries</span><span>Griddled onions</span><span>Party bookings</span><span>Cash, tap, or card</span><span>Potato buns</span>
+      <span>Smashed to order</span><span>Crinkle fries</span><span>Griddled onions</span><span>Party bookings</span><span>Cash, tap, or card</span><span>Potato buns</span>
+    </div>
+  </div>
+
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <div class="proof-copy">
+        <h2>Every patty hits the griddle when you order it.</h2>
+        <p>No heat lamp, no holding tray. We smash it thin right after you order, press hard for the crust, and call your name when it's ready — about eight minutes for a normal order.</p>
+      </div>
+      <div class="proof-scene">
+        <svg viewBox="0 0 360 260" role="img" aria-label="Illustration of patties being smashed on a hot flat-top griddle, with steam rising">
+          <rect x="14" y="152" width="332" height="84" rx="6" fill="#332921" stroke="#FBF5EA" stroke-width="5"/>
+          <rect x="26" y="162" width="308" height="7" rx="3.5" fill="#4A3A2C"/>
+          <ellipse cx="112" cy="198" rx="52" ry="19" fill="#4A2C1B" stroke="#FBF5EA" stroke-width="5"/>
+          <ellipse cx="112" cy="193" rx="38" ry="8" fill="#6B4128" opacity=".55"/>
+          <ellipse cx="238" cy="202" rx="46" ry="17" fill="#4A2C1B" stroke="#FBF5EA" stroke-width="5"/>
+          <ellipse cx="238" cy="197" rx="32" ry="7" fill="#6B4128" opacity=".55"/>
+          <ellipse cx="300" cy="205" rx="34" ry="13" fill="#4A2C1B" stroke="#FBF5EA" stroke-width="5"/>
+          <path d="M300 108v78" stroke="#F7C531" stroke-width="8" stroke-linecap="round"/>
+          <rect x="266" y="92" width="68" height="20" rx="5" fill="#F7C531" stroke="#17130F" stroke-width="4"/>
+          <g opacity=".85" stroke="#FBF5EA" stroke-width="5" stroke-linecap="round" fill="none">
+            <path d="M60 50c-9 12 9 18 0 30s9 18 0 30"/>
+            <path d="M180 36c9 12-9 18 0 30s-9 18 0 30"/>
+            <path d="M300 50c-9 12 9 18 0 30s9 18 0 30"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What's on the board</h2>
+        <p>Six things, cooked the same careful way every time.</p>
+      </div>
+      <div class="teaser-list">
+        <a class="teaser-item" href="services.html#ember-smash">
+          <span class="ti-main">
+            <span class="ti-name">The Ember Smash</span>
+            <span class="ti-desc">Double patty, American cheese, pickles, griddled onion, house sauce.</span>
+          </span>
+          <span class="ti-price">$11</span>
+        </a>
+        <a class="teaser-item" href="services.html#bacon-hot-honey">
+          <span class="ti-main">
+            <span class="ti-name">Bacon &amp; Hot Honey</span>
+            <span class="ti-desc">Thick-cut bacon, sharp cheddar, a hot honey drizzle with a slow catch-up.</span>
+          </span>
+          <span class="ti-price">From $9</span>
+        </a>
+        <a class="teaser-item" href="services.html#book-the-truck">
+          <span class="ti-main">
+            <span class="ti-name">Book the Truck</span>
+            <span class="ti-desc">Birthdays, job sites, brewery nights, and office lunches.</span>
+          </span>
+          <span class="ti-price">From $1,200</span>
+        </a>
+      </div>
+      <p class="teaser-more">
+        <a class="link-cta" href="services.html">
+          See the full board
+          <svg class="icon" aria-hidden="true"><use href="#ic-arrow"></use></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap why-grid">
+      <div class="why-item">
+        <h3>Cooked when you order it, not before.</h3>
+        <p>Nothing sits under a heat lamp waiting for you. It hits the griddle when you ask for it.</p>
+      </div>
+      <div class="why-item">
+        <h3>Told straight, not oversold.</h3>
+        <p>Real wait times on the phone, no runaround. If it's a twenty-minute wait, we'll say twenty minutes.</p>
+      </div>
+      <div class="why-item">
+        <h3>We'll bring the truck to your thing too.</h3>
+        <p>Job site, backyard, brewery lot — tell us the headcount and we'll work out the rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-close">
+    <div class="wrap">
+      <h2>Hungry? Call<br>the truck.</h2>
+      <a class="big-tel" href="tel:+15165550132">
+        <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+        (516) 555-0132
+      </a>
+      <p>We'll tell you exactly where we're parked and how long the wait is running.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Ember &amp; Bun</b>
+        <p>Smash burger truck rolling around Long Island, NY.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Menu</a>
+        <a href="work.html">Bookings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+15165550132">(516) 555-0132</a>
+      </nav>
+    </div>
+    <p class="foot-credit">Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+    <p class="foot-legal">Ember &amp; Bun is a fictional business created to demonstrate website design. Nothing on this page is a real offer, and the phone number is not in service.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Today's spot &amp; wait<b>(516) 555-0132</b></div>
+  <a class="cb-call" href="tel:+15165550132">
+    <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+    Call
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle'),
+      nav=document.getElementById('siteNav');
+
+  function closeNav(){
+    if(!nav) return;
+    nav.classList.remove('is-open');
+    if(toggle) toggle.setAttribute('aria-expanded','false');
+  }
+  function openNav(){
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  if(toggle && nav){
+    toggle.addEventListener('click',function(){
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+  }
+
+  var subToggles=[].slice.call(document.querySelectorAll('.sub-toggle'));
+  function closeAllSub(){
+    subToggles.forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var li=b.closest('.has-sub');
+      if(li) li.classList.remove('sub-open');
+    });
+  }
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var li=btn.closest('.has-sub');
+      var isOpen=li && li.classList.contains('sub-open');
+      closeAllSub();
+      if(!isOpen && li){
+        li.classList.add('sub-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ closeNav(); closeAllSub(); }
+  });
+  document.addEventListener('click',function(e){
+    if(nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
+    if(!e.target.closest || !e.target.closest('.has-sub')){ closeAllSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

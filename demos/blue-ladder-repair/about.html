@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Blue Ladder Home Repair | Demo Site</title>
+<meta name="description" content="How Blue Ladder Home Repair works: one truck, one guy, a stocked van, and a straight answer on the phone. Serving Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-ladder" viewBox="0 0 20 26"><path d="M4 2v22M16 2v22M4 8h12M4 14h12M4 20h12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 3.5V16H4V5Z"/><path d="M8 9h8M8 12h5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M7.5 12.6l3 3 6.2-6.7"/></symbol>
+<symbol id="i-trowel" viewBox="0 0 24 24"><path d="M4 20 14.5 9.5"/><path d="M12.3 7.3l4.4 4.4-2.4 2.4-4.4-4.4Z"/><path d="M16.8 4.8l2.4 2.4-1.6 1.6-2.4-2.4Z"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="5" y="3" width="12" height="18" rx="1.2"/><circle cx="14" cy="12" r="1.1" fill="currentColor" stroke="none"/><path d="M17.5 7.5h2.5M17.5 17h2.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.2c3 4.2 6 7.7 6 11.1a6 6 0 1 1-12 0c0-3.4 3-6.9 6-11.1Z"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="11" rx="1.2"/><path d="M9 20h6M12 16v4"/><circle cx="12" cy="10.5" r="1.7"/></symbol>
+<symbol id="i-gutter" viewBox="0 0 24 24"><path d="M3 8h18l-2.2 3H5.2L3 8Z"/><path d="M11 11v6.2c0 1.7 1.3 3 3 3"/><path d="M7 6.2c.5-1.9 2.1-2.6 3.1-1.5.9 1-.2 2.6-1.5 3"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8 12 3.5 21 8l-9 4.5L3 8Z"/><path d="M3 8v9l9 4.5V12.5M21 8v9l-9 4.5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-ladder"></use></svg>
+        <span class="word"><b>Blue Ladder</b><span>Home Repair</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+15165550106">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+      <span style="flex:1">(516) 555-0106</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#drywall">Drywall &amp; plaster patches</a></li>
+            <li><a href="services.html#doors">Doors, locks &amp; hardware</a></li>
+            <li><a href="services.html#plumbing">Faucets, toilets &amp; small plumbing</a></li>
+            <li><a href="services.html#mounting">Mounting &amp; shelving</a></li>
+            <li><a href="services.html#gutters">Gutters, caulk &amp; weather-proofing</a></li>
+            <li><a href="services.html#movein">Move-in &amp; move-out lists</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html" class="current" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk"><b>Hours</b>Mon&ndash;Fri &nbsp;7:30a&ndash;5:30p<br>Sat &nbsp;8:00a&ndash;1:00p<br>Sun &nbsp;Closed</div>
+      <div class="blk"><b>Service area</b>Long Island, NY<br>Nassau &amp; Suffolk</div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+
+  <section class="band">
+    <div class="pad story-wrap">
+      <div class="story-head">
+        <div class="torn-rule" aria-hidden="true"></div>
+        <h2 style="font-size:clamp(2.2rem,6vw,3.4rem)">One truck. No dispatcher.</h2>
+      </div>
+      <div class="story">
+        <p>Blue Ladder started because every property manager I worked for kept a running list of small stuff that never got fixed &mdash; not because it was hard, but because no contractor wanted to drive out for a two-hour job. I figured if I stocked the truck right and kept the jobs small, I could actually keep up with that list instead of watching it grow.</p>
+        <p>Most days start with a phone call and a rough list &mdash; a sticking door, a patch that needs feathering, a faucet somebody already bought. I&rsquo;ll tell you honestly how long the whole thing looks like before anything gets booked, and if something needs a license I don&rsquo;t have, I&rsquo;ll say so instead of taking the job anyway and figuring it out on your wall.</p>
+        <p>There&rsquo;s no office and no dispatcher &mdash; just the truck, the tools that live in it, and a phone that gets answered until seven most evenings. If you get voicemail, leave the town you&rsquo;re in and what needs fixing, and you&rsquo;ll hear back the same day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2 style="font-size:clamp(1.8rem,4.6vw,2.4rem)">What a normal call sounds like</h2>
+      </div>
+      <div class="story">
+        <p>You read off the list, I ask a few questions &mdash; what it&rsquo;s made of, how bad it is, whether you&rsquo;ve got the part already. We land on a morning or afternoon window that works for you, and I text when I&rsquo;m on the way so you&rsquo;re not staring out the window all day. Before I leave, we walk the finished list together &mdash; nothing gets marked done that you haven&rsquo;t seen for yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2>Area &amp; hours</h2>
+      </div>
+      <div class="duo">
+        <div class="card">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Hours</h3>
+          <div class="rowline"><b>Monday &ndash; Friday</b><span>7:30a &ndash; 5:30p</span></div>
+          <div class="rowline"><b>Saturday</b><span>8:00a &ndash; 1:00p</span></div>
+          <div class="rowline"><b>Sunday</b><span>Closed</span></div>
+          <div class="rowline"><b>Phone answered until</b><span>7:00p</span></div>
+          <p class="fine">Booked out a week or two most of the spring. Emergencies like a stuck door or a running toilet get squeezed in the same week when I can.</p>
+        </div>
+        <div class="card">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>Service area</h3>
+          <p class="fine" style="margin:0 0 14px">Long Island, NY. Anything past a 40-minute drive gets a trip charge, quoted on the phone before you commit to anything.</p>
+          <ul class="chips">
+            <li>Long Island, NY</li><li>Nassau County</li><li>Suffolk County</li><li>North Shore</li><li>South Shore</li>
+          </ul>
+          <p class="fine">Landlords and property managers: I can key-box in and text photos when the job is done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Read me your list</h2>
+      <p>Call and walk through it, or leave it on the contact page. Either way you get a straight answer, not a runaround.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+15165550106">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (516) 555-0106
+        </a>
+        <a class="btn btn-out" href="contact.html">Go to contact</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-ladder"></use></svg>
+          <b>Blue Ladder Home Repair</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+15165550106">(516) 555-0106</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Blue Ladder Home Repair &middot; Serving Long Island, NY &middot; <a href="tel:+15165550106">(516) 555-0106</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+15165550106">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Blue Ladder<span class="s">(516) 555-0106</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

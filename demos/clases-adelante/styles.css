@@ -1,0 +1,586 @@
+/* =========================================================================
+   Clases Adelante — shared stylesheet
+   World: the paper trail of an actual tutoring session. Royal blue is the
+   printed problem's ink, cream is the page, pencil yellow is the moment
+   a corrected answer clicks. Red pencil only ever appears inside the
+   illustrated scenes (a teacher's correction mark), never as UI chrome.
+   ========================================================================= */
+
+:root{
+  /* ---- palette (committed: azul owns the field, lapiz is the one accent) ---- */
+  --azul:#1a3ea8;
+  --azul-osc:#0e2568;
+  --azul-tint:#dbe4fb;
+  --sobre-azul:#c7d3f7;
+  --crema:#f6efdd;
+  --papel:#fffcf4;
+  --tinta:#1b1f2e;
+  --tinta-suave:#4a5478;
+  --lapiz:#f3c23f;
+  --lapiz-osc:#3d2a05;
+  --rojo:#ab3b28;
+  --linea:#e6dcc0;
+  --linea-azul:rgba(255,255,255,.16);
+
+  /* ---- structure ---- */
+  --rail-w:296px;
+  --measure:68ch;
+  --radius-lg:22px;
+  --radius-md:14px;
+  --radius-sm:10px;
+
+  /* ---- depth (offset + blur, never flat) ---- */
+  --shadow-sm:0 2px 8px rgba(20,26,60,.10);
+  --shadow-md:0 14px 30px -14px rgba(14,25,70,.32),0 3px 9px rgba(14,25,70,.10);
+  --shadow-lg:0 30px 60px -22px rgba(9,18,58,.40),0 10px 20px rgba(9,18,58,.14);
+  --shadow-btn:0 10px 22px -8px rgba(14,37,104,.5);
+  --shadow-btn-hover:0 16px 30px -10px rgba(14,37,104,.58);
+
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+/* =========================================================================
+   Reset + base
+   ========================================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+img,svg{display:block;max-width:100%}
+body{
+  font-family:'Karla',system-ui,-apple-system,sans-serif;
+  color:var(--tinta);
+  background:var(--crema);
+  line-height:1.6;
+  overflow-x:hidden;
+  min-height:100vh;
+  padding-bottom:calc(78px + env(safe-area-inset-bottom));
+}
+h1,h2,h3{
+  font-family:'Literata',Georgia,serif;
+  font-weight:700;
+  line-height:1.14;
+  letter-spacing:-.015em;
+  color:var(--tinta);
+}
+h1{text-wrap:balance}
+h2{text-wrap:balance}
+p{max-width:var(--measure)}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;background:none;border:0;color:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit}
+[id]{scroll-margin-top:92px}
+
+:focus-visible{outline:3px solid var(--lapiz);outline-offset:2px;border-radius:4px}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* =========================================================================
+   Ribbon (fixed, every page, never overlaps header)
+   ========================================================================= */
+.ribbon{
+  position:fixed;top:0;right:0;z-index:500;pointer-events:none;
+  background:var(--tinta);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  padding:7px 12px;border-bottom-left-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.22);
+}
+
+/* =========================================================================
+   Rail — sticky brochure sidebar; collapses to a slim sticky top bar on
+   mobile with a hamburger-revealed panel. Same element, two shapes.
+   ========================================================================= */
+.rail{
+  position:sticky;top:0;z-index:200;
+  background:var(--azul);color:#fff;
+  padding:34px 18px 12px;
+}
+.rail-top{display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1 1 auto}
+.mark{
+  width:34px;height:34px;flex:0 0 34px;border-radius:9px;
+  background:var(--lapiz);display:grid;place-items:center;
+}
+.brand-text{
+  font-family:'Literata',Georgia,serif;font-weight:700;font-size:16.5px;
+  line-height:1.15;color:#fff;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.brand-text small{
+  display:block;font-family:'Karla',sans-serif;font-weight:600;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sobre-azul);
+  margin-top:2px;white-space:normal;
+}
+.rail-top-actions{margin-left:auto;display:flex;align-items:center;gap:6px;flex:0 0 auto}
+
+.rail-phone--icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.14);
+  transition:background .18s var(--ease);
+}
+.rail-phone--icon:hover{background:rgba(255,255,255,.24)}
+.rail-phone--icon svg{width:18px;height:18px}
+
+.rail-phone--full{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  background:var(--lapiz);color:var(--lapiz-osc);font-weight:800;font-size:15.5px;
+  padding:12px 18px;border-radius:999px;text-decoration:none;
+  box-shadow:var(--shadow-btn);
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease);
+}
+.rail-phone--full:hover{transform:translateY(-1px);box-shadow:var(--shadow-btn-hover)}
+.rail-phone--full:active{transform:translateY(1px);box-shadow:var(--shadow-sm)}
+.rail-phone--full svg{width:16px;height:16px;flex:0 0 auto}
+
+.menu-btn{
+  width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.14);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .18s var(--ease);
+}
+.menu-btn:hover{background:rgba(255,255,255,.24)}
+.menu-btn .i-close{display:none}
+.rail.is-open .menu-btn .i-burger{display:none}
+.rail.is-open .menu-btn .i-close{display:block}
+
+.rail-panel{display:none;padding-top:20px}
+.rail.is-open .rail-panel{display:block}
+
+.rail-nav a,.rail-nav summary{
+  display:flex;align-items:center;gap:8px;color:var(--sobre-azul);text-decoration:none;
+  font-size:15px;font-weight:600;padding:10px 2px;border-bottom:1px solid var(--linea-azul);
+  list-style:none;cursor:pointer;
+}
+.rail-nav summary::-webkit-details-marker{display:none}
+.rail-nav summary::marker{content:""}
+.rail-nav a:hover,.rail-nav summary:hover{color:#fff}
+.rail-nav a[aria-current="page"]{color:#fff}
+.rail-nav a[aria-current="page"]::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--lapiz);flex:0 0 auto;
+}
+.rail-nav .chev{width:14px;height:14px;margin-left:auto;flex:0 0 auto;transition:transform .18s var(--ease)}
+.nav-services[open] > summary .chev{transform:rotate(180deg)}
+.nav-services.is-active > summary{color:#fff}
+.nav-services.is-active > summary::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--lapiz);flex:0 0 auto;
+}
+/* No base display rule here on purpose: a closed <details> hides this via
+   the UA stylesheet, which is the actual mobile accordion mechanic. */
+.nav-services[open] > .nav-sub{display:flex;flex-direction:column}
+.nav-sub{padding:2px 0 10px 14px}
+.nav-sub a{
+  border-bottom:0;font-size:13.5px;font-weight:600;padding:7px 2px;color:var(--sobre-azul);
+}
+.nav-sub a:first-child{
+  font-weight:700;color:#fff;border-bottom:1px solid var(--linea-azul);margin-bottom:4px;padding-bottom:9px;
+}
+
+.rail-hours{margin-top:14px;font-size:13px;color:var(--sobre-azul)}
+.rail-hours dt{
+  font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.09em;
+  font-size:10.5px;margin-top:12px;
+}
+.rail-hours dt:first-child{margin-top:0}
+.rail-hours dd{margin-top:2px}
+.rail-note{font-size:11.5px;color:var(--sobre-azul);margin-top:16px;line-height:1.5}
+
+/* =========================================================================
+   Buttons
+   ========================================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 24px;border-radius:999px;font-weight:700;font-size:16px;
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .18s var(--ease);
+}
+.btn svg{width:17px;height:17px;flex:0 0 auto}
+.btn-p{background:var(--lapiz);color:var(--lapiz-osc);box-shadow:var(--shadow-btn)}
+.btn-p:hover{transform:translateY(-1px);box-shadow:var(--shadow-btn-hover)}
+.btn-p:active{transform:translateY(1px);box-shadow:var(--shadow-sm)}
+.btn-s{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-s:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-outline{background:transparent;color:var(--azul);border:1.5px solid var(--azul)}
+.btn-outline:hover{background:var(--azul-tint)}
+.cta-row{display:flex;flex-direction:column;gap:10px}
+
+/* =========================================================================
+   Layout primitives
+   ========================================================================= */
+main{display:block}
+.wrap{padding:0 20px;max-width:760px;margin:0 auto}
+section{padding:52px 0}
+.section-tight{padding:38px 0}
+.section-azul{background:var(--azul);color:#fff}
+.section-azul h2{color:#fff}
+.section-azul p{color:var(--sobre-azul)}
+.section-papel{background:var(--papel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+
+.lede{font-size:16.5px;color:var(--tinta-suave);max-width:56ch;margin-top:12px}
+.section-azul .lede{color:var(--sobre-azul)}
+
+/* =========================================================================
+   Hero (index) — the field is committed blue; the page floats on it
+   ========================================================================= */
+.hero{background:var(--azul);color:#fff;padding-top:40px;overflow:hidden}
+.hero h1{
+  color:#fff;font-size:clamp(2.05rem,1.55rem + 2.6vw,3.15rem);
+  letter-spacing:-.02em;margin-bottom:16px;
+}
+.hero h1 mark{
+  background:linear-gradient(transparent 60%,var(--lapiz) 60%);
+  color:#fff;font-weight:700;
+}
+.hero .lede{margin-top:2px;font-size:17px}
+.hero .cta-row{margin-top:26px}
+.tick{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.tick span{
+  font-size:12.5px;font-weight:700;background:rgba(255,255,255,.14);color:#fff;
+  padding:7px 12px;border-radius:999px;
+}
+.hero-inner{display:grid}
+.hero-scene-wrap{margin-top:34px}
+@media (min-width:960px){
+  .hero-inner{grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+  .hero-inner .hero-scene-wrap{margin-top:0}
+}
+.scene{
+  background:var(--papel);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.scene svg{width:100%;height:auto}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-scene-wrap{
+    opacity:1;transform:none;
+    animation:rise .8s var(--ease) both;
+  }
+  .hero h1,.hero .lede,.hero .cta-row,.hero .tick{
+    animation:rise .7s var(--ease) both;
+  }
+  .hero h1{animation-delay:.02s}
+  .hero .lede{animation-delay:.08s}
+  .hero .cta-row{animation-delay:.14s}
+  .hero .tick{animation-delay:.19s}
+  .hero-scene-wrap{animation-delay:.16s}
+  .scene .draw-line{
+    stroke-dasharray:340;stroke-dashoffset:340;
+    animation:draw 1.1s .7s var(--ease) both;
+  }
+  .scene .pop-in{
+    opacity:0;transform:scale(.85);transform-origin:center;
+    animation:pop .5s 1.5s var(--ease) both;
+  }
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+
+/* Generic "one authored moment" utility for the non-index pages: applied to
+   exactly one intro block per page. Everything else stays visible-by-default. */
+@media (prefers-reduced-motion:no-preference){
+  .rise-in{animation:rise .7s var(--ease) both}
+  .rise-in-delay{animation:rise .7s .09s var(--ease) both}
+  .rise-in-delay2{animation:rise .7s .16s var(--ease) both}
+}
+
+/* =========================================================================
+   Proof-of-work vignette (index)
+   ========================================================================= */
+.proof{display:grid;gap:28px}
+.proof-scene{order:-1}
+.proof h2{font-size:clamp(1.5rem,1.3rem + 1vw,2rem)}
+
+/* =========================================================================
+   Services teaser (index) — a record list, not a card grid
+   ========================================================================= */
+.teaser-list{
+  margin-top:22px;background:var(--papel);border:1px solid var(--linea);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;
+}
+.teaser-row{
+  display:flex;align-items:center;gap:14px;padding:18px 20px;
+  border-bottom:1px solid var(--linea);transition:background .16s var(--ease);
+}
+.teaser-row:last-child{border-bottom:0}
+.teaser-row:hover{background:var(--crema)}
+.teaser-ic{
+  width:40px;height:40px;flex:0 0 40px;border-radius:10px;background:var(--azul-tint);
+  display:grid;place-items:center;color:var(--azul);
+}
+.teaser-ic svg{width:20px;height:20px}
+.teaser-body{min-width:0;flex:1}
+.teaser-body h3{
+  font-family:'Literata',serif;font-size:17px;font-weight:700;color:var(--tinta);
+}
+.teaser-body p{font-size:13.5px;color:var(--tinta-suave);margin-top:2px;max-width:46ch}
+.teaser-arrow{flex:0 0 auto;color:var(--azul);transition:transform .16s var(--ease)}
+.teaser-row:hover .teaser-arrow{transform:translateX(3px)}
+.teaser-arrow svg{width:18px;height:18px}
+.teaser-more{margin-top:16px;font-weight:700;color:var(--azul);display:inline-flex;align-items:center;gap:6px}
+.teaser-more svg{width:16px;height:16px}
+.teaser-more:hover{text-decoration:underline}
+
+/* =========================================================================
+   Why-us checklist (index) — a checklist, not an icon-card grid
+   ========================================================================= */
+.why-list{margin-top:22px;display:grid;gap:2px}
+.why-item{
+  display:flex;align-items:flex-start;gap:14px;padding:16px 4px;
+  border-bottom:1px dashed var(--linea);
+}
+.why-item:last-child{border-bottom:0}
+.why-check{
+  flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--lapiz);
+  display:grid;place-items:center;color:var(--lapiz-osc);margin-top:1px;
+}
+.why-check svg{width:14px;height:14px}
+.why-item p{font-size:15px;color:var(--tinta);font-weight:600;max-width:52ch}
+
+/* =========================================================================
+   Closing CTA block (every page ends on one)
+   ========================================================================= */
+.close-cta{background:var(--azul);color:#fff;text-align:left}
+.close-cta h2{color:#fff;font-size:clamp(1.5rem,1.3rem + 1vw,2.1rem)}
+.close-cta p{color:var(--sobre-azul);margin-top:8px}
+.close-cta .cta-row{margin-top:24px}
+@media (min-width:620px){.close-cta .cta-row{flex-direction:row}}
+
+/* =========================================================================
+   Services page — real sections, alternating composition
+   ========================================================================= */
+.svc-intro h1{font-size:clamp(2rem,1.6rem + 2vw,2.9rem)}
+
+.svc{padding:44px 0;border-bottom:1px solid var(--linea)}
+.svc-grid{display:grid;gap:26px;align-items:center}
+.svc-copy h2{font-size:clamp(1.4rem,1.2rem + .9vw,1.8rem);display:flex;align-items:center;gap:12px}
+.svc-copy h2 .svc-ic{
+  width:36px;height:36px;flex:0 0 36px;border-radius:10px;background:var(--azul-tint);
+  display:grid;place-items:center;color:var(--azul);
+}
+.svc-copy h2 .svc-ic svg{width:19px;height:19px}
+.svc-copy p{margin-top:12px;font-size:15px;color:var(--tinta-suave)}
+.svc-grade{
+  display:inline-block;margin-top:14px;font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--azul);
+  background:var(--azul-tint);padding:6px 12px;border-radius:999px;
+}
+.svc-scene{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md);background:var(--papel)}
+.svc-scene svg{width:100%;height:auto}
+@media (min-width:760px){
+  .svc-grid{grid-template-columns:1.1fr 1fr}
+  .svc--flip .svc-grid{direction:rtl}
+  .svc--flip .svc-grid > *{direction:ltr}
+}
+
+.pricing{background:var(--azul);color:#fff}
+.pricing h2{color:#fff}
+.pricing .lede{color:var(--sobre-azul)}
+.price-grid{margin-top:26px;display:grid;gap:18px}
+.price-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-md);padding:22px}
+.price-panel h3{font-family:'Literata',serif;font-size:16.5px;color:#fff;margin-bottom:12px}
+.price-panel ul{font-size:14px;color:var(--sobre-azul)}
+.price-panel li{
+  padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.18);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 14px;
+}
+.price-panel li:last-child{border-bottom:0}
+.price-panel li b{color:#fff;font-weight:700;white-space:nowrap;margin-left:auto}
+.price-note{margin-top:16px;font-size:13px;color:var(--sobre-azul);max-width:60ch}
+@media (min-width:700px){.price-grid{grid-template-columns:1fr 1fr}}
+
+/* =========================================================================
+   Work gallery
+   ========================================================================= */
+.gallery-intro h1{font-size:clamp(2rem,1.6rem + 2vw,2.9rem)}
+.gallery{margin-top:28px;display:grid;gap:22px}
+.work-item{
+  background:var(--papel);border:1px solid var(--linea);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow-md);
+}
+.work-scene{background:var(--crema)}
+.work-scene svg{width:100%;height:auto;display:block}
+.work-body{padding:20px 22px 22px}
+.work-body h3{font-family:'Literata',serif;font-size:18px}
+.work-body p{margin-top:6px;font-size:14px;color:var(--tinta-suave)}
+.work-tag{
+  display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--lapiz-osc);background:var(--lapiz);padding:5px 11px;border-radius:999px;
+}
+@media (min-width:700px){
+  .gallery{grid-template-columns:1fr 1fr}
+  .work-item.wide{grid-column:1 / -1}
+  .work-item.wide .work-scene{max-width:520px;margin:0 auto}
+}
+
+/* =========================================================================
+   About page — story, process, area
+   ========================================================================= */
+.story h1{font-size:clamp(2rem,1.6rem + 2vw,2.9rem)}
+.story-scene{margin:26px 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);background:var(--papel)}
+.story-scene svg{width:100%;height:auto}
+.story p{margin-top:16px;font-size:16px;color:var(--tinta)}
+.story p:first-of-type{margin-top:20px}
+
+.process{background:var(--azul);color:#fff}
+.process h2{color:#fff}
+.process .lede{color:var(--sobre-azul)}
+.steps{counter-reset:paso;margin-top:26px;display:grid;gap:22px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{
+  counter-increment:paso;flex:0 0 36px;height:36px;border-radius:50%;
+  background:var(--lapiz);color:var(--lapiz-osc);display:grid;place-items:center;
+  font-family:'Literata',serif;font-size:16px;font-weight:800;
+}
+.step-num::before{content:counter(paso)}
+.step h3{font-family:'Karla',sans-serif;font-size:16px;font-weight:800;letter-spacing:0;color:#fff}
+.step p{font-size:14.5px;color:var(--sobre-azul);margin-top:4px}
+
+.area-grid{display:grid;gap:16px;margin-top:22px}
+.area-panel{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radius-md);padding:22px;box-shadow:var(--shadow-sm)}
+.area-panel h3{font-family:'Literata',serif;font-size:16.5px;display:flex;align-items:center;gap:10px}
+.area-panel h3 svg{width:19px;height:19px;color:var(--azul);flex:0 0 auto}
+.area-panel dl{margin-top:12px;font-size:14px;color:var(--tinta-suave)}
+.area-panel dt{font-weight:700;color:var(--tinta);margin-top:9px}
+.area-panel dt:first-child{margin-top:0}
+.area-panel dd{margin-top:1px}
+@media (min-width:700px){.area-grid{grid-template-columns:1fr 1fr}}
+
+/* =========================================================================
+   Contact page
+   ========================================================================= */
+.contact-intro h1{font-size:clamp(2rem,1.6rem + 2vw,2.9rem)}
+.bigphone{
+  margin-top:24px;background:var(--azul);color:#fff;border-radius:var(--radius-lg);
+  padding:26px 26px 24px;box-shadow:var(--shadow-lg);
+}
+.bigphone small{
+  font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--sobre-azul);
+}
+.bigphone-links{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+.bigphone-links a{
+  display:inline-flex;align-items:center;gap:10px;font-weight:700;
+}
+.bigphone-links a.tel{
+  font-family:'Literata',serif;font-size:clamp(1.6rem,1.3rem + 1.6vw,2.1rem);color:#fff;
+}
+.bigphone-links a.sms{font-size:15px;color:var(--sobre-azul)}
+.bigphone-links a.sms:hover{color:#fff}
+.bigphone-links svg{width:18px;height:18px;flex:0 0 auto}
+.bigphone em{
+  display:block;font-style:normal;font-size:13px;color:var(--sobre-azul);margin-top:14px;
+  padding-top:14px;border-top:1px solid rgba(255,255,255,.16);
+}
+
+.form{margin-top:26px;display:grid;gap:14px}
+.form-2{display:grid;gap:14px}
+.f label{
+  display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--tinta-suave);margin-bottom:6px;
+}
+.f input,.f select,.f textarea{
+  width:100%;min-width:0;font-size:16px;padding:13px 14px;
+  border:1.5px solid var(--linea);border-radius:var(--radius-sm);background:var(--papel);color:var(--tinta);
+  transition:border-color .16s var(--ease);
+}
+.f input:hover,.f select:hover,.f textarea:hover{border-color:#cfc4a0}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--azul)}
+.f textarea{min-height:112px;resize:vertical}
+.f ::placeholder{color:#8a8f9e;opacity:1}
+.form-note{font-size:12.5px;color:var(--tinta-suave);margin-top:6px;font-style:italic}
+
+.faq{margin-top:22px;display:grid;gap:2px}
+.faq-item{border-bottom:1px solid var(--linea)}
+.faq-item summary{
+  display:flex;align-items:center;gap:12px;padding:18px 2px;font-weight:700;font-size:15.5px;
+  cursor:pointer;list-style:none;color:var(--tinta);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::marker{content:""}
+.faq-item .chev{width:16px;height:16px;margin-left:auto;flex:0 0 auto;color:var(--azul);transition:transform .18s var(--ease)}
+.faq-item[open] summary .chev{transform:rotate(180deg)}
+.faq-item p{padding:0 2px 18px;font-size:14.5px;color:var(--tinta-suave);max-width:60ch}
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+footer{background:var(--tinta);color:#b9bfcd;padding:38px 0 30px;font-size:13.5px}
+.foot-grid{display:grid;gap:24px}
+.foot-brand strong{font-family:'Literata',serif;font-size:19px;color:#fff;display:block;margin-bottom:6px}
+.foot-brand p{margin-top:4px;color:#b9bfcd}
+.foot-brand a{color:var(--lapiz);font-weight:700}
+footer nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+footer nav a{color:#b9bfcd;font-weight:600}
+footer nav a:hover{color:#fff}
+footer nav a[aria-current="page"]{color:#fff}
+.disc{margin-top:22px;padding-top:18px;border-top:1px solid #2c3242;font-size:12.5px;color:#9aa1af;line-height:1.7}
+.disc a{color:var(--lapiz);text-decoration:underline;text-underline-offset:2px}
+@media (min-width:640px){.foot-grid{grid-template-columns:1fr auto}}
+
+/* =========================================================================
+   Mobile sticky call bar
+   ========================================================================= */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:300;
+  background:var(--azul);border-top:3px solid var(--lapiz);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:12px;align-items:center;box-shadow:0 -8px 20px rgba(9,18,58,.18);
+}
+.callbar-info{flex:1;min-width:0}
+.callbar-info span{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--sobre-azul)}
+.callbar-info b{
+  display:block;color:#fff;font-size:15.5px;font-weight:700;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.callbar a.btn-p{padding:12px 20px;font-size:14.5px;flex:0 0 auto}
+
+/* =========================================================================
+   Responsive — tablet
+   ========================================================================= */
+@media (min-width:620px){
+  .cta-row{flex-direction:row}
+  .form-2{grid-template-columns:1fr 1fr}
+  .proof{grid-template-columns:1fr 1fr;align-items:center}
+  .proof-scene{order:0}
+}
+
+/* =========================================================================
+   Responsive — desktop: rail becomes the sidebar
+   ========================================================================= */
+@media (min-width:1000px){
+  body{padding-bottom:0;display:flex;align-items:flex-start}
+  .ribbon{font-size:11px}
+  .rail{
+    width:var(--rail-w);flex:0 0 var(--rail-w);
+    min-height:100vh;max-height:100vh;overflow-y:auto;
+    padding:36px 26px 26px;display:flex;flex-direction:column;
+  }
+  .rail-top{align-items:flex-start}
+  .brand-text{font-size:19px;white-space:normal}
+  .mark{width:40px;height:40px;flex:0 0 40px}
+  .rail-top-actions{display:none}
+  .menu-btn{display:none}
+  .rail-phone--icon{display:none}
+  .rail-phone--full{display:inline-flex;margin-top:16px}
+  .rail-panel{display:flex !important;flex-direction:column;flex:1;padding-top:22px}
+  .rail-nav a,.rail-nav summary{font-size:14.5px}
+  .rail-note{margin-top:auto;padding-top:20px}
+
+  .rail details.nav-services > .nav-sub{display:flex !important}
+  .rail details.nav-services > summary{cursor:default}
+  .rail details.nav-services > summary:hover{color:var(--sobre-azul)}
+  .rail details.nav-services > summary .chev{display:none}
+
+  main{flex:1;min-width:0}
+  .wrap{padding:0 60px;max-width:840px;margin:0}
+  section{padding:76px 0}
+  .section-tight{padding:52px 0}
+  .hero{padding-top:64px}
+  .callbar{display:none}
+
+  .why-list{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+
+@media (min-width:1300px){
+  .wrap{max-width:900px}
+}

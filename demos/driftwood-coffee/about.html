@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Story | Driftwood Coffee Roasters</title>
+<meta name="description" content="How Driftwood Coffee Roasters started, how the roasting works day to day, and where to find the counter on Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bevan&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">Demo Site</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Driftwood Coffee Roasters, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="9" fill="var(--espresso-2)" stroke="var(--rust)" stroke-width="2"/>
+        <rect x="10" y="17" width="20" height="13" rx="3" fill="none" stroke="var(--oat)" stroke-width="2"/>
+        <circle cx="20" cy="23.5" r="4.4" fill="none" stroke="var(--rust-bright)" stroke-width="2"/>
+        <path d="M15.5 13c1-3-1-4 0-7M21.5 13c1-3-1-4 0-7" stroke="var(--oat)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".85"/>
+      </svg>
+      <span class="brand">Driftwood<small>Coffee Roasters</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550170">(516) 555-0170</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menu</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Show menu categories">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#espresso">Espresso Bar</a></li>
+          <li><a href="services.html#brewed">Brewed &amp; Cold</a></li>
+          <li><a href="services.html#notcoffee">Not Coffee</a></li>
+          <li><a href="services.html#case">From the Case</a></li>
+          <li><a href="services.html#beans">Beans To Go</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Behind the Roast</a></li>
+      <li><a href="about.html" aria-current="page">Our Story</a></li>
+      <li><a href="contact.html">Visit</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550170">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Call (516) 555-0170
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-intro band-oat">
+    <div class="wrap">
+      <h1>Our Story</h1>
+      <p class="lead measure">How a small storefront ended up roasting its own coffee, and why we've kept it that way.</p>
+    </div>
+  </section>
+
+  <section class="section-tight band-oat">
+    <div class="wrap about-grid">
+      <div class="story">
+        <p>Driftwood started because the nearest good cup of coffee was a twenty-minute drive, and that never made sense for a stretch of Long Island with this many people walking past every morning. We found a small storefront, put a roaster in the back, and started small.</p>
+        <p>We buy green coffee in small amounts and roast it ourselves three mornings a week, in batches you could carry under one arm. Whatever's freshest goes on the board. When something better comes along, we switch to that instead.</p>
+        <p>The counter runs the same way. Espresso gets pulled to order, pour-over gets brewed by hand, and nobody's rushing you out for nursing one coffee through a whole afternoon.</p>
+      </div>
+      <div>
+        <div class="info-box">
+          <h2>Hours</h2>
+          <ul class="hours-list">
+            <li><span class="d">Monday – Friday</span><span class="leader"></span><span class="h">6:30am – 4pm</span></li>
+            <li><span class="d">Saturday</span><span class="leader"></span><span class="h">7am – 5pm</span></li>
+            <li><span class="d">Sunday</span><span class="leader"></span><span class="h">7:30am – 3pm</span></li>
+            <li><span class="d">Roasting days</span><span class="leader"></span><span class="h">Tue · Thu · Sat</span></li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h2>Where We Are</h2>
+          <p>Walk-in counter on Long Island, NY. We also drop off wholesale bags to offices, salons and restaurants across Nassau and western Suffolk on Wednesday mornings.</p>
+        </div>
+        <div class="info-box">
+          <h2>Good to Know</h2>
+          <p>Bring your own cup and take fifty cents off. Two long tables, outlets on both walls, and nobody's going to rush you out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-espresso on-dark section-tight">
+    <div class="wrap closing-grid">
+      <div>
+        <h2>Come see the counter.</h2>
+        <p class="measure" style="color:var(--cream-dim)">Walk in any time we're open, or call ahead if you're bringing a large order.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550170">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Call (516) 555-0170
+          </a>
+          <a class="btn-line" href="contact.html">
+            Go to contact
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Driftwood Coffee Roasters</div>
+        <p>Small-batch roasting &amp; a full espresso bar on Long Island, NY.</p>
+        <p><a href="tel:+15165550170">(516) 555-0170</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="work.html">Behind the Roast</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15165550170">Call (516) 555-0170</a></li>
+          <li><a href="sms:+15165550170">Send a text</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550170">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Call (516) 555-0170
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

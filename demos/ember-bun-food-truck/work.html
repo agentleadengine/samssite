@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookings &amp; Events | Ember &amp; Bun Food Truck</title>
+<meta name="description" content="Where the Ember &amp; Bun truck shows up in a normal week, and what a private booking looks like — office park lunches, brewery nights, markets, and backyard parties.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M6.7 4H4a1 1 0 0 0-1 1c0 8.8 7.2 16 16 16a1 1 0 0 0 1-1v-2.7a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1.2 1.4a13.4 13.4 0 0 1-6-6l1.4-1.2a1 1 0 0 0 .3-1L9.7 4.8a1 1 0 0 0-1-.8z"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="scene-truck" viewBox="0 0 340 200">
+    <ellipse cx="170" cy="182" rx="140" ry="10" fill="#17130F" opacity=".18"/>
+    <rect x="18" y="70" width="256" height="82" rx="10" fill="#FF5A1F" stroke="#17130F" stroke-width="5"/>
+    <rect x="256" y="92" width="58" height="60" rx="8" fill="#241C16" stroke="#17130F" stroke-width="5"/>
+    <rect x="146" y="56" width="30" height="16" rx="4" fill="#F7C531" stroke="#17130F" stroke-width="4"/>
+    <path d="M40 86l-10-26h114l-8 26z" fill="#F7C531" stroke="#17130F" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="44" y="86" width="98" height="44" rx="4" fill="#FBF5EA" stroke="#17130F" stroke-width="5"/>
+    <rect x="150" y="98" width="96" height="10" rx="5" fill="#241C16" opacity=".3"/>
+    <circle cx="84" cy="160" r="20" fill="#17130F"/>
+    <circle cx="84" cy="160" r="7" fill="#9A8C7C"/>
+    <circle cx="228" cy="160" r="20" fill="#17130F"/>
+    <circle cx="228" cy="160" r="7" fill="#9A8C7C"/>
+  </symbol>
+</svg>
+
+<div class="ribbon" aria-hidden="true">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="index.html" aria-label="Ember &amp; Bun Food Truck, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="6" fill="#FF5A1F"/>
+        <path d="M20 6c5 6 1 8 4 12 1-2 2-3 3-4 3 6 3 11-1 14-3 2-9 2-12 0-4-3-4-9 0-13 3-3 5-6 6-9z" fill="#F7C531"/>
+        <rect x="10" y="29" width="20" height="4" rx="2" fill="#17130F"/>
+      </svg>
+      <span>
+        <b>Ember &amp; Bun</b>
+        <span class="kind">Food Truck</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <svg class="icon icon-menu" aria-hidden="true"><use href="#ic-menu"></use></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#ic-close"></use></svg>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <div class="nav-item">
+            <a class="nav-link" href="services.html">Menu</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="menuSub" aria-label="Show menu items">
+              <svg class="icon" aria-hidden="true"><use href="#ic-chev"></use></svg>
+            </button>
+          </div>
+          <ul class="submenu" id="menuSub">
+            <li><a href="services.html#ember-smash">The Ember Smash</a></li>
+            <li><a href="services.html#bacon-hot-honey">Bacon &amp; Hot Honey</a></li>
+            <li><a href="services.html#green-chile-chicken">Green Chile Chicken</a></li>
+            <li><a href="services.html#mushroom-melt">Mushroom Melt (veg)</a></li>
+            <li><a href="services.html#crinkle-fries">Crinkle Fries</a></li>
+            <li><a href="services.html#book-the-truck">Book the Truck</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="work.html" aria-current="page">Bookings</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550132">
+      <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+      (516) 555-0132
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero field-cream">
+    <div class="wrap">
+      <h1 class="rise rise-1">The kinds of stops we make</h1>
+      <p class="lead rise rise-2">A look at where the truck shows up in a normal week, plus what a private booking looks like. These are illustrated scenes, not photos — call if you want to talk through your date.</p>
+    </div>
+  </section>
+
+  <section class="field-cream" style="padding-top:0">
+    <div class="wrap">
+      <div class="gallery">
+
+        <article class="g-card">
+          <div class="g-scene">
+            <svg viewBox="0 0 340 230" role="img" aria-label="Illustrated scene of the truck parked outside a low office building with a short line at the window">
+              <rect x="26" y="4" width="288" height="46" fill="#332921"/>
+              <rect x="46" y="14" width="16" height="14" fill="#F7C531"/>
+              <rect x="72" y="14" width="16" height="14" fill="#F7C531"/>
+              <rect x="98" y="14" width="16" height="14" fill="#241C16" stroke="#9A8C7C" stroke-width="1"/>
+              <rect x="230" y="14" width="16" height="14" fill="#F7C531"/>
+              <rect x="256" y="14" width="16" height="14" fill="#241C16" stroke="#9A8C7C" stroke-width="1"/>
+              <rect x="282" y="14" width="16" height="14" fill="#F7C531"/>
+              <use href="#scene-truck" x="6" y="48" width="328" height="176"/>
+              <g fill="#FBF5EA" stroke="#17130F" stroke-width="3">
+                <circle cx="176" cy="150" r="8"/><rect x="169" y="158" width="14" height="24" rx="6"/>
+                <circle cx="198" cy="153" r="8"/><rect x="191" y="161" width="14" height="24" rx="6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h3>Wednesday Office Park Run</h3>
+            <p>Lunch rush outside an office park, 11:30 to 2:30. Quick orders, quick line, back to a desk with something hot.</p>
+            <span class="g-tag">Sample project</span>
+          </div>
+        </article>
+
+        <article class="g-card">
+          <div class="g-scene">
+            <svg viewBox="0 0 340 230" role="img" aria-label="Illustrated scene of the truck parked in a brewery lot under a string of lights">
+              <path d="M20 26c40-30 260-30 300 0" fill="none" stroke="#332921" stroke-width="3"/>
+              <circle cx="50" cy="18" r="4" fill="#F7C531"/>
+              <circle cx="100" cy="10" r="4" fill="#F7C531"/>
+              <circle cx="150" cy="6" r="4" fill="#F7C531"/>
+              <circle cx="200" cy="6" r="4" fill="#F7C531"/>
+              <circle cx="250" cy="10" r="4" fill="#F7C531"/>
+              <circle cx="300" cy="18" r="4" fill="#F7C531"/>
+              <path d="M36 48V22l28-16 28 16v26z" fill="#332921"/>
+              <use href="#scene-truck" x="6" y="48" width="328" height="176"/>
+              <rect x="150" y="190" width="60" height="8" rx="2" fill="#241C16" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h3>Thursday Brewery Lot</h3>
+            <p>Dinner service in a brewery lot, string lights up and the pace a little slower. A line that doesn't mind waiting with a beer in hand.</p>
+            <span class="g-tag">Sample project</span>
+          </div>
+        </article>
+
+        <article class="g-card">
+          <div class="g-scene">
+            <svg viewBox="0 0 340 230" role="img" aria-label="Illustrated scene of the truck parked among weekend market tents">
+              <path d="M40 48V20l30-16 30 16v28z" fill="#D63F0C"/>
+              <path d="M120 48V16l30-18 30 18v32z" fill="#F7C531"/>
+              <path d="M210 48V22l30-16 30 16v26z" fill="#D63F0C"/>
+              <use href="#scene-truck" x="6" y="48" width="328" height="176"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h3>Saturday Market Day</h3>
+            <p>Weekend market crowd, browsing and grazing. We keep the short menu moving so the line never backs up.</p>
+            <span class="g-tag">Sample project</span>
+          </div>
+        </article>
+
+        <article class="g-card">
+          <div class="g-scene">
+            <svg viewBox="0 0 340 230" role="img" aria-label="Illustrated scene of the truck parked near the beach with a sun overhead">
+              <circle cx="280" cy="20" r="16" fill="#F7C531"/>
+              <path d="M10 44c30-14 60-14 90 0s60 14 90 0 60-14 90 0 40 10 50 6" fill="none" stroke="#D63F0C" stroke-width="3" opacity=".6"/>
+              <use href="#scene-truck" x="6" y="48" width="328" height="176"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h3>Sunday Beach &amp; Park</h3>
+            <p>Family crowd, sandy feet, folding chairs. Sunday service runs noon to six.</p>
+            <span class="g-tag">Sample project</span>
+          </div>
+        </article>
+
+        <article class="g-card">
+          <div class="g-scene">
+            <svg viewBox="0 0 340 230" role="img" aria-label="Illustrated scene of the truck parked in a backyard with a pennant banner and balloons for a graduation party">
+              <path d="M20 20h300" stroke="#332921" stroke-width="2"/>
+              <path d="M30 20l14 20 14-20z" fill="#FF5A1F"/>
+              <path d="M70 20l14 20 14-20z" fill="#F7C531"/>
+              <path d="M110 20l14 20 14-20z" fill="#FF5A1F"/>
+              <path d="M230 20l14 20 14-20z" fill="#F7C531"/>
+              <path d="M270 20l14 20 14-20z" fill="#FF5A1F"/>
+              <circle cx="60" cy="8" r="9" fill="#D63F0C"/>
+              <path d="M60 17v14" stroke="#332921" stroke-width="1.5"/>
+              <circle cx="280" cy="8" r="9" fill="#F7C531"/>
+              <path d="M280 17v14" stroke="#332921" stroke-width="1.5"/>
+              <use href="#scene-truck" x="6" y="48" width="328" height="176"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h3>Backyard Graduation Booking</h3>
+            <p>A private booking for a graduation party — the truck, the griddle, and a trimmed-down menu so eighty people move through fast.</p>
+            <span class="g-tag">Sample project</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-close">
+    <div class="wrap">
+      <h2>Want the truck<br>at your thing?</h2>
+      <a class="big-tel" href="tel:+15165550132">
+        <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+        (516) 555-0132
+      </a>
+      <p>Call to book, or send the sample form and we'll call you back.</p>
+      <p class="cta-follow"><a class="link-cta" href="contact.html">Go to Contact<svg class="icon" aria-hidden="true"><use href="#ic-arrow"></use></svg></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Ember &amp; Bun</b>
+        <p>Smash burger truck rolling around Long Island, NY.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Menu</a>
+        <a href="work.html" aria-current="page">Bookings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+15165550132">(516) 555-0132</a>
+      </nav>
+    </div>
+    <p class="foot-credit">Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+    <p class="foot-legal">Ember &amp; Bun is a fictional business created to demonstrate website design. Nothing on this page is a real offer, and the phone number is not in service.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Today's spot &amp; wait<b>(516) 555-0132</b></div>
+  <a class="cb-call" href="tel:+15165550132">
+    <svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg>
+    Call
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle'),
+      nav=document.getElementById('siteNav');
+
+  function closeNav(){
+    if(!nav) return;
+    nav.classList.remove('is-open');
+    if(toggle) toggle.setAttribute('aria-expanded','false');
+  }
+  function openNav(){
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  if(toggle && nav){
+    toggle.addEventListener('click',function(){
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+  }
+
+  var subToggles=[].slice.call(document.querySelectorAll('.sub-toggle'));
+  function closeAllSub(){
+    subToggles.forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var li=b.closest('.has-sub');
+      if(li) li.classList.remove('sub-open');
+    });
+  }
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var li=btn.closest('.has-sub');
+      var isOpen=li && li.classList.contains('sub-open');
+      closeAllSub();
+      if(!isOpen && li){
+        li.classList.add('sub-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ closeNav(); closeAllSub(); }
+  });
+  document.addEventListener('click',function(e){
+    if(nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
+    if(!e.target.closest || !e.target.closest('.has-sub')){ closeAllSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

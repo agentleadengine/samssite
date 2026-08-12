@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos — Eléctrica La Chispa | Proyectos de muestra</title>
+<meta name="description" content="Proyectos de muestra de Eléctrica La Chispa: cambio de panel, cargador para carro eléctrico, iluminación, circuitos, generador y reparación. Sitio de demostración.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1H10l-4.2 3.4a.5.5 0 0 1-.8-.4V16H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/><path d="M7.5 9.5h9M7.5 12.5h5.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M8 12.3l2.6 2.6L16.4 9"/></symbol>
+<symbol id="i-seal" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="22" cy="22" r="15.6" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.6 2.8" opacity=".75"/><path d="M24.5 6 L13 25 h7.5 L18 38 L31 20 h-7.6 z" fill="currentColor"/></symbol>
+<symbol id="i-panel" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8.5 8v2.6M11.5 8v2.6M14.5 8v2.6M8.5 13.4v2.6M11.5 13.4v2.6M14.5 13.4v2.6"/></symbol>
+<symbol id="i-ev" viewBox="0 0 24 24"><rect x="7" y="9" width="10" height="9.5" rx="2"/><path d="M10 9V4.2M14 9V4.2M12 18.5V21.5"/></symbol>
+<symbol id="i-diag" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16.5" rx="1.6"/><path d="M9 4.3v-.8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v.8"/><path d="M9 11.3l2 2 4-4.3M9 16.3h6"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18.3h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.4 10.9c.6.4.9 1.1.9 1.9v.2h5v-.2c0-.8.3-1.5.9-1.9A6 6 0 0 0 12 3Z"/></symbol>
+<symbol id="i-outlet" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2.5"/><path d="M9.3 9.2v3M14.7 9.2v3"/><circle cx="12" cy="15.4" r="1.3"/></symbol>
+<symbol id="i-genset" viewBox="0 0 24 24"><rect x="4" y="9.5" width="12" height="8.5" rx="1.5"/><circle cx="10" cy="13.7" r="2"/><path d="M16 12.2h2a2 2 0 0 1 2 2v.6a2 2 0 0 1-2 2h-1"/><path d="M13 18v2.3"/></symbol>
+</defs>
+</svg>
+
+<div class="ribbon">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="rail">
+  <div class="rail-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-seal"/></svg>
+      <span>
+        <span class="brand-name">Eléctrica <em>La Chispa</em></span>
+        <span class="brand-tag">Electricista</span>
+      </span>
+    </a>
+    <button class="hburg" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menú">
+      <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+
+  <div class="rail-panel-wrap">
+    <div class="rail-panel" id="site-nav">
+      <div class="rail-panel-in">
+        <a class="rail-tel" href="tel:+15165550151">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          (516) 555-0151
+        </a>
+
+        <div class="rail-hours">
+          <p class="rail-h4">Horario</p>
+          <table>
+            <tr><td>Lun–jue</td><td>7:30&nbsp;am–6:00&nbsp;pm</td></tr>
+            <tr><td>Viernes</td><td>7:30&nbsp;am–5:00&nbsp;pm</td></tr>
+            <tr><td>Sábado</td><td>8:00&nbsp;am–2:00&nbsp;pm</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+        </div>
+
+        <nav class="rail-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a>
+          <details class="svc-drop">
+            <summary>Servicios <svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="svc-panel">
+              <a href="services.html#cambio-panel">Cambio de panel eléctrico</a>
+              <a href="services.html#cargador-ev">Cargador para carro eléctrico</a>
+              <a href="services.html#reparacion-diagnostico">Reparación y diagnóstico</a>
+              <a href="services.html#iluminacion">Iluminación</a>
+              <a href="services.html#tomacorrientes-circuitos">Tomacorrientes y circuitos</a>
+              <a href="services.html#generador-picos">Generador y protección contra picos</a>
+              <a class="svc-all" href="services.html">Ver todos los servicios <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+          <a href="work.html" aria-current="page">Trabajos</a>
+          <a href="about.html">Nosotros</a>
+          <a href="contact.html">Contacto</a>
+        </nav>
+
+        <div class="rail-area"><b>Zona de servicio</b><br>Long Island, NY</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<main>
+
+  <!-- ===== intro ===== -->
+  <section class="intro on-carbon">
+    <div class="wrap intro-in">
+      <h1>Proyectos de muestra</h1>
+      <p class="lede">Seis escenas que muestran cómo trabajamos, dibujadas para este sitio de demostración — no son fotos de clientes reales.</p>
+    </div>
+  </section>
+
+  <!-- ===== gallery ===== -->
+  <section>
+    <div class="wrap">
+      <div class="gallery">
+
+        <article class="vignette">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de una caja de fusibles vieja junto a un panel nuevo de 200 amperios con los circuitos ya etiquetados">
+                <rect x="18" y="60" width="70" height="98" rx="3" fill="#ece4cd" stroke="#17181a" stroke-width="2"/>
+                <circle cx="36" cy="80" r="9" fill="#fffdf6" stroke="#17181a" stroke-width="2"/>
+                <circle cx="62" cy="80" r="9" fill="#fffdf6" stroke="#17181a" stroke-width="2"/>
+                <circle cx="36" cy="104" r="9" fill="#fffdf6" stroke="#17181a" stroke-width="2"/>
+                <circle cx="62" cy="104" r="9" fill="#fffdf6" stroke="#17181a" stroke-width="2"/>
+                <text x="53" y="146" font-family="Rajdhani, sans-serif" font-size="9" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">ANTES</text>
+                <path d="M100 108h34" stroke="#17181a" stroke-width="3" stroke-linecap="round"/>
+                <path d="M126 98l12 10-12 10" fill="none" stroke="#17181a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="156" y="30" width="126" height="150" rx="4" fill="#17181a"/>
+                <rect x="168" y="44" width="102" height="14" rx="2" fill="#ffc800"/>
+                <g fill="none" stroke="#ffe27a" stroke-width="3">
+                  <path d="M168 70h30M168 80h30M168 90h30M168 100h30M168 110h30M168 120h30M168 130h30M168 140h30"/>
+                  <path d="M206 70h30M206 80h30M206 90h30M206 100h30M206 110h30M206 120h30M206 130h30M206 140h30"/>
+                </g>
+                <text x="219" y="166" font-family="Rajdhani, sans-serif" font-size="10" font-weight="700" fill="#ffe27a" text-anchor="middle" letter-spacing=".05em">200A · ETIQUETADO</text>
+              </svg>
+            </div>
+            <div>
+              <h2>Panel de 100A a servicio de 200A</h2>
+              <p>Casa con panel de fusibles y una extensión corriendo desde el sótano hasta el ático porque ya no había espacio para otro circuito. Servicio nuevo de 200A, cada circuito reconectado, y la lista escrita de qué controla cada breaker.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette flip">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de un cargador de nivel dos montado en la pared de una cochera, con el cable conectado a un carro">
+                <rect x="0" y="150" width="300" height="4" fill="#17181a"/>
+                <rect x="30" y="40" width="70" height="96" rx="6" fill="#17181a"/>
+                <rect x="40" y="52" width="50" height="34" rx="3" fill="#ffc800"/>
+                <circle cx="65" cy="106" r="14" fill="none" stroke="#ffe27a" stroke-width="4"/>
+                <path d="M90 118 C130 128 150 132 170 140" fill="none" stroke="#e0a800" stroke-width="5" stroke-linecap="round"/>
+                <path d="M170 150 C170 132 186 122 214 122 C244 122 264 132 274 150 Z" fill="#ece4cd" stroke="#17181a" stroke-width="2"/>
+                <circle cx="196" cy="150" r="13" fill="#17181a"/><circle cx="196" cy="150" r="4" fill="#ffc800"/>
+                <circle cx="252" cy="150" r="13" fill="#17181a"/><circle cx="252" cy="150" r="4" fill="#ffc800"/>
+                <rect x="176" y="144" width="14" height="8" rx="2" fill="#ffc800"/>
+                <text x="65" y="26" font-family="Rajdhani, sans-serif" font-size="10" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".06em">NIVEL 2 · 240V</text>
+              </svg>
+            </div>
+            <div>
+              <h2>Cargador nivel 2 en la cochera</h2>
+              <p>Cochera con un tomacorriente regular cargando el carro toda la noche. Circuito propio de 240V desde el panel, cargador nivel 2 montado a la altura correcta, y revisamos que el servicio aguantara el cargador y la secadora al mismo tiempo.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de un techo con luces empotradas encendidas, una tira LED bajo el gabinete y un dimmer en la pared">
+                <rect x="0" y="0" width="300" height="40" fill="#17181a"/>
+                <circle cx="60" cy="20" r="9" fill="#ffc800"/>
+                <circle cx="140" cy="20" r="9" fill="#ffc800"/>
+                <circle cx="220" cy="20" r="9" fill="#ffc800"/>
+                <path d="M60 29 L38 62 M60 29 L82 62 M140 29 L118 62 M140 29 L162 62 M220 29 L198 62 M220 29 L242 62" stroke="#ffe27a" stroke-width="1.5" opacity=".5"/>
+                <rect x="20" y="90" width="120" height="34" rx="3" fill="#ece4cd" stroke="#17181a" stroke-width="2"/>
+                <rect x="20" y="122" width="120" height="6" fill="#ffc800"/>
+                <rect x="24" y="126" width="112" height="4" fill="#ffe27a" opacity=".7"/>
+                <rect x="196" y="86" width="30" height="48" rx="4" fill="#17181a"/>
+                <rect x="203" y="96" width="16" height="24" rx="2" fill="#f7f4ea"/>
+                <circle cx="211" cy="106" r="3.4" fill="#ffc800"/>
+                <text x="211" y="152" font-family="Rajdhani, sans-serif" font-size="9" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">DIMMER</text>
+              </svg>
+            </div>
+            <div>
+              <h2>Cocina con luces empotradas y dimmer</h2>
+              <p>Cocina con un solo bombillo en el centro del techo. Instalamos luces empotradas, tira LED bajo los gabinetes y un dimmer que no zumba con los bombillos LED.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette flip">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de un mostrador de cocina con dos tomacorrientes GFCI dedicados, cada uno con su propio circuito">
+                <rect x="0" y="120" width="300" height="90" fill="#ece4cd"/>
+                <rect x="0" y="112" width="300" height="10" fill="#17181a"/>
+                <rect x="60" y="56" width="46" height="66" rx="4" fill="#17181a"/>
+                <rect x="68" y="66" width="30" height="12" rx="2" fill="none" stroke="#ffe27a" stroke-width="2"/>
+                <circle cx="76" cy="88" r="3" fill="#ffc800"/><circle cx="90" cy="88" r="3" fill="#ffc800"/>
+                <rect x="72" y="98" width="22" height="5" rx="2" fill="#ffe27a"/>
+                <text x="83" y="140" font-family="Rajdhani, sans-serif" font-size="9.5" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">CIRCUITO 1</text>
+                <rect x="194" y="56" width="46" height="66" rx="4" fill="#17181a"/>
+                <rect x="202" y="66" width="30" height="12" rx="2" fill="none" stroke="#ffe27a" stroke-width="2"/>
+                <circle cx="210" cy="88" r="3" fill="#ffc800"/><circle cx="224" cy="88" r="3" fill="#ffc800"/>
+                <rect x="206" y="98" width="22" height="5" rx="2" fill="#ffe27a"/>
+                <text x="217" y="140" font-family="Rajdhani, sans-serif" font-size="9.5" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">CIRCUITO 2</text>
+              </svg>
+            </div>
+            <div>
+              <h2>Dos circuitos dedicados en la cocina</h2>
+              <p>Cocina con una sola regleta alimentando la freidora de aire, la cafetera y el microondas al mismo tiempo. Dos circuitos dedicados de 20A con protección GFCI, cada uno con su propio breaker.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de un generador portátil conectado por un cable hasta el interlock del panel eléctrico">
+                <rect x="0" y="176" width="300" height="4" fill="#17181a"/>
+                <rect x="30" y="118" width="120" height="58" rx="8" fill="#ece4cd" stroke="#17181a" stroke-width="2.5"/>
+                <rect x="42" y="130" width="40" height="30" rx="3" fill="#17181a"/>
+                <circle cx="55" cy="145" r="6" fill="none" stroke="#ffe27a" stroke-width="2.5"/>
+                <rect x="66" y="140" width="10" height="4" fill="#ffc800"/>
+                <rect x="66" y="148" width="10" height="4" fill="#ffc800"/>
+                <circle cx="44" cy="176" r="14" fill="#17181a"/><circle cx="44" cy="176" r="4" fill="#ffc800"/>
+                <circle cx="136" cy="176" r="14" fill="#17181a"/><circle cx="136" cy="176" r="4" fill="#ffc800"/>
+                <rect x="94" y="106" width="10" height="16" rx="2" fill="#17181a"/>
+                <path d="M150 150 C190 158 210 150 222 122" fill="none" stroke="#e0a800" stroke-width="4.5" stroke-linecap="round"/>
+                <rect x="214" y="60" width="70" height="90" rx="4" fill="#17181a"/>
+                <rect x="224" y="72" width="50" height="10" rx="2" fill="#ffc800"/>
+                <g stroke="#ffe27a" stroke-width="3">
+                  <path d="M224 96h20M224 106h20M224 116h20M224 126h20"/>
+                  <path d="M250 96h20M250 106h20M250 116h20M250 126h20"/>
+                </g>
+                <rect x="224" y="136" width="46" height="8" rx="2" fill="none" stroke="#ffc800" stroke-width="2"/>
+                <text x="249" y="20" font-family="Rajdhani, sans-serif" font-size="10" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">INTERLOCK INSTALADO</text>
+              </svg>
+            </div>
+            <div>
+              <h2>Interlock para el generador portátil</h2>
+              <p>Casa que se quedaba sin luz en cada tormenta de invierno. Instalamos un interlock en el panel para el generador portátil, con los circuitos que la familia escogió de antemano ya identificados.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette flip">
+          <div class="vignette-in">
+            <div class="vignette-scene">
+              <span class="vignette-stub"><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Proyecto de muestra</span>
+              <svg viewBox="0 0 300 210" role="img" aria-label="Ilustración de un multímetro junto a un panel eléctrico, señalando el breaker con la causa real de la falla">
+                <rect x="34" y="20" width="120" height="170" rx="4" fill="#17181a"/>
+                <rect x="46" y="34" width="96" height="12" rx="2" fill="#ffc800"/>
+                <g stroke="#ffe27a" stroke-width="3">
+                  <path d="M46 64h40M46 80h40M46 96h40M46 112h40M46 128h40M46 144h40"/>
+                  <path d="M94 64h40M94 80h40M94 96h40M94 112h40M94 128h40M94 144h40"/>
+                </g>
+                <rect x="88" y="102" width="50" height="18" rx="3" fill="none" stroke="#ffc800" stroke-width="3"/>
+                <path d="M166 111 L208 90" stroke="#17181a" stroke-width="4" stroke-linecap="round"/>
+                <rect x="206" y="50" width="52" height="82" rx="8" fill="#f7f4ea" stroke="#17181a" stroke-width="2.5"/>
+                <rect x="215" y="60" width="34" height="36" rx="2" fill="#17181a"/>
+                <text x="232" y="83" font-family="Rajdhani, sans-serif" font-size="15" font-weight="700" fill="#ffc800" text-anchor="middle">240V</text>
+                <circle cx="232" cy="108" r="7" fill="none" stroke="#e0a800" stroke-width="2.5"/>
+                <circle cx="232" cy="108" r="1.8" fill="#e0a800"/>
+                <text x="232" y="176" font-family="Rajdhani, sans-serif" font-size="10" font-weight="700" fill="#5b5646" text-anchor="middle" letter-spacing=".05em">NEUTRO FLOJO</text>
+              </svg>
+            </div>
+            <div>
+              <h2>El breaker que se botaba con el aire</h2>
+              <p>Breaker que se botaba cada vez que prendía el aire acondicionado, sin razón aparente. Encontramos un neutro flojo detrás del breaker, no un breaker malo — reparado sin cambiar piezas de más.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== close cta ===== -->
+  <section class="close-cta on-chispa">
+    <div class="wrap close-in">
+      <div>
+        <h2>¿Su casa tiene algo parecido?</h2>
+        <p class="lede">Cuéntenos qué está pasando por teléfono y le decimos el precio antes de agendar.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+15165550151">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            Llamar (516) 555-0151
+          </a>
+          <a class="btn btn-ghost" href="services.html">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Eléctrica <em>La Chispa</em></div>
+    <p class="foot-tag">Cambio de panel, cargadores para carro eléctrico, iluminación y reparaciones. Servicio en Long Island, NY.</p>
+    <p class="foot-tel"><a href="tel:+15165550151">(516) 555-0151</a> &nbsp;·&nbsp; Lun a vie 7:30am–6pm, sáb 8am–2pm</p>
+    <nav class="foot-links" aria-label="Pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="services.html">Servicios</a>
+      <a href="work.html">Trabajos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <div class="foot-disclose">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<a class="callbar" href="tel:+15165550151">
+  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+  Llamar (516) 555-0151
+</a>
+
+<script>
+(function(){
+  var rail = document.querySelector('.rail');
+  var btn = document.querySelector('.hburg');
+  if(!rail || !btn) return;
+  function closeMenu(focusBtn){
+    rail.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    if(focusBtn) btn.focus();
+  }
+  function openMenu(){
+    rail.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  btn.addEventListener('click', function(){
+    rail.classList.contains('is-open') ? closeMenu(false) : openMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(rail.classList.contains('is-open')) closeMenu(true);
+      document.querySelectorAll('details[open]').forEach(function(d){ d.removeAttribute('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(rail.classList.contains('is-open') && !rail.contains(e.target)){
+      closeMenu(false);
+    }
+  });
+  rail.querySelectorAll('.rail-nav > a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+})();
+</script>
+
+</body>
+</html>
