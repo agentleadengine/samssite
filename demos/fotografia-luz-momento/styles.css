@@ -163,7 +163,7 @@ label{display:block}
 .mobile-nav{
   display:none;max-height:0;overflow:hidden;background:var(--paper);
   border-bottom:1px solid var(--paper-line);
-  transition:max-height .28s var(--ease-out);
+  /* transition removed: layout-property animation */
 }
 .mobile-nav.is-open{max-height:640px}
 .mobile-nav ul{padding:6px 22px 18px}

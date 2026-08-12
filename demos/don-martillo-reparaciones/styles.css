@@ -231,9 +231,7 @@ nav.primary.is-open{display:block}
 .hero-scene{width:100%;height:auto}
 .settle{transform-origin:var(--pivot-x,50%) var(--pivot-y,0%);animation:settle 1.15s var(--ease-out) both}
 @keyframes settle{0%{transform:rotate(-15deg)}58%{transform:rotate(4deg)}80%{transform:rotate(-1.5deg)}100%{transform:rotate(0deg)}}
-.scene-draw{stroke-dasharray:var(--len,240);stroke-dashoffset:var(--len,240);animation:drawLine 1s var(--ease-out) both .5s}
 .scene-fade{opacity:0;transform:translateY(6px);animation:sceneFade .6s var(--ease-out) both .75s}
-@keyframes drawLine{to{stroke-dashoffset:0}}
 @keyframes sceneFade{to{opacity:1;transform:translateY(0)}}
 .scene-label{font-family:"Chivo",sans-serif;font-weight:700;letter-spacing:.09em}
 
@@ -257,7 +255,7 @@ section{padding:56px 0}
 .teaser-row{
   display:flex;align-items:center;gap:18px;padding:22px 4px;
   text-decoration:none;color:inherit;border-bottom:1px solid var(--rule);
-  transition:padding-left .18s var(--ease-out),background-color .18s var(--ease-out);
+  transition:background-color .18s var(--ease-out);
 }
 .teaser-row:hover{padding-left:10px;background:var(--paper-2)}
 .peg-mount{

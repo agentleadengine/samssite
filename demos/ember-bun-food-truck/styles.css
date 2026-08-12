@@ -116,7 +116,7 @@ main{display:block}
   position:absolute;top:100%;left:0;right:0;
   background:var(--charcoal-2);border-bottom:3px solid var(--flame);
   max-height:0;overflow:hidden;visibility:hidden;
-  transition:max-height .32s var(--ease-out-expo), visibility 0s linear .32s;
+  transition:visibility 0s linear .32s;
 }
 .site-nav.is-open{max-height:640px;overflow-y:auto;visibility:visible;transition:max-height .32s var(--ease-out-expo)}
 .site-nav ul{display:flex;flex-direction:column;padding:8px 0 12px}

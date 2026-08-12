@@ -228,7 +228,7 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
   max-height: 0;
   overflow: hidden;
   visibility: hidden;
-  transition: max-height 260ms var(--ease-out-expo), visibility 260ms;
+  transition:visibility 260ms;
 }
 .nav-panel.is-open{
   max-height: calc(100vh - 100px);
@@ -255,7 +255,7 @@ li:last-child > .nav-link{ border-bottom: 0; }
 .submenu{
   max-height: 0; overflow: hidden;
   visibility: hidden;
-  transition: max-height 260ms var(--ease-out-expo), visibility 260ms;
+  transition:visibility 260ms;
   padding-left: 4px;
 }
 .submenu.is-open{ max-height: 420px; visibility: visible; }

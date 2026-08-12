@@ -578,7 +578,7 @@ textarea{min-height:116px;resize:vertical}
     background:var(--gr-950);border:1px solid var(--gr-700);border-radius:0 0 var(--radius-md) var(--radius-md);
     padding:0 16px;z-index:60;box-shadow:var(--shadow-md);
     max-height:0;opacity:0;visibility:hidden;overflow:hidden;
-    transition:opacity .15s linear,max-height .2s var(--ease-out);
+    transition:opacity .15s linear;
   }
   .has-sub .sub-list.is-open,
   .has-sub:hover .sub-list,

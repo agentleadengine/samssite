@@ -267,7 +267,7 @@ header.site{
 .mnav-item.has-sub-m[data-open="true"] .msub-toggle svg{ transform: rotate(180deg); }
 .msublist{
   max-height:0; overflow:hidden;
-  transition: max-height .22s ease-out;
+  /* transition removed: layout-property animation */
   background: var(--ink-1);
 }
 .mnav-item.has-sub-m[data-open="true"] .msublist{ max-height: 420px; }

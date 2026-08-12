@@ -173,7 +173,7 @@ body{padding-top:var(--ribbon-h)}
   position:absolute;top:100%;left:0;right:0;
   background:var(--midnight-2);
   max-height:0;overflow:hidden;
-  transition:max-height .38s var(--ease-out);
+  /* transition removed: layout-property animation */
   border-bottom:1px solid rgba(255,255,255,.1);
 }
 .site-nav.is-open .nav-list{max-height:26rem;overflow-y:auto}
@@ -191,7 +191,7 @@ body{padding-top:var(--ribbon-h)}
 .has-sub.is-open .sub-toggle svg{transform:rotate(180deg)}
 .sub-list{
   max-height:0;overflow:hidden;background:rgba(0,0,0,.18);
-  transition:max-height .3s var(--ease-out);
+  /* transition removed: layout-property animation */
 }
 .has-sub.is-open .sub-list{max-height:20rem}
 .sub-list a{padding-left:clamp(2.25rem,7vw,3.5rem);font-size:.92rem}

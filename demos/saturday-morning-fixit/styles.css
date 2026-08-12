@@ -143,7 +143,7 @@ p,li{max-width:var(--measure)}
   text-transform:uppercase;font-weight:700;
 }
 
-nav.rail-nav{max-height:0;overflow:hidden;transition:max-height .32s var(--ease);margin-top:0}
+nav.rail-nav{max-height:0;overflow:hidden;/* transition removed: layout-property animation */margin-top:0}
 nav.rail-nav.is-open{max-height:640px;margin-top:15px;padding-top:13px;border-top:1px solid rgba(250,243,227,.16)}
 .rail-nav ul{display:flex;flex-direction:column;gap:2px}
 .rail-nav > ul > li{position:relative}

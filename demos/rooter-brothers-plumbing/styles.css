@@ -594,7 +594,7 @@ textarea{min-height:112px;resize:vertical}
     position:absolute;top:100%;left:0;min-width:260px;
     background:var(--navy-950);border:1px solid var(--navy-line);border-top:0;padding:0 16px;z-index:60;
     max-height:0;opacity:0;visibility:hidden;overflow:hidden;
-    transition:opacity .15s linear,max-height .2s var(--ease-out);
+    transition:opacity .15s linear;
   }
   .has-sub .sub-list.is-open,.has-sub:hover .sub-list,.has-sub:focus-within .sub-list{
     max-height:420px;opacity:1;visibility:visible;padding:6px 16px;

@@ -151,7 +151,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;st
 .phone-pill svg.icon{width:18px;height:18px;color:var(--ink)}
 .phone-pill .go{font-family:var(--body);font-size:10px;letter-spacing:.15em;color:#4a3a19;text-transform:uppercase;font-weight:700}
 
-nav.navmain{max-height:0;overflow:hidden;transition:max-height .32s ease;margin-top:0}
+nav.navmain{max-height:0;overflow:hidden;/* transition removed: layout-property animation */margin-top:0}
 nav.navmain.is-open{max-height:640px;margin-top:15px;padding-top:14px;border-top:1px solid var(--rule-on-forest)}
 .navmain ul{display:flex;flex-direction:column;gap:2px}
 .navmain > ul > li{position:relative}

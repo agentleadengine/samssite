@@ -191,7 +191,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sub-caret-m svg{ width:13px; height:9px; transition:transform .18s var(--ease-out) }
 .has-sub-m.is-open .sub-caret-m svg{ transform:rotate(180deg) }
 .submenu-m{
-  list-style:none; margin:0; padding:0; max-height:0; overflow:hidden; transition:max-height .22s var(--ease-out);
+  list-style:none; margin:0; padding:0; max-height:0; overflow:hidden; /* transition removed: layout-property animation */
 }
 .has-sub-m.is-open .submenu-m{ max-height:340px }
 .submenu-m li a{ display:block; padding:11px 2px 11px 14px; text-decoration:none; color:var(--chrome-dim); font-size:1rem }

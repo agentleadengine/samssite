@@ -218,7 +218,7 @@ section{ position: relative; }
 
 .sub-menu{
   grid-column: 1 / -1; max-height: 0; overflow: hidden;
-  transition: max-height .22s var(--ease-out-expo);
+  /* transition removed: layout-property animation */
   background: var(--shingle-2); border-radius: 8px;
 }
 .sub-menu.is-open{ max-height: 460px; margin: 2px 0 8px; }

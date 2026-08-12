@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grooming Services &amp; Pricing | The Soapy Paw Dog Grooming</title>
+<meta name="description" content="Bath &amp; brush, full groom &amp; haircut, de-shed treatment, puppy's first groom, nail trims, and add-ons. What's included, when you need it, and starting prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon" role="note">Demo Site</div>
+
+<header class="site-header">
+  <div class="header-inner wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 42 42" role="img" aria-label="The Soapy Paw mark">
+        <defs>
+          <linearGradient id="markGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ff6a9e"/>
+            <stop offset="1" stop-color="#b8124c"/>
+          </linearGradient>
+        </defs>
+        <rect width="42" height="42" rx="14" fill="url(#markGrad)"/>
+        <ellipse cx="21" cy="26" rx="10" ry="8.5" fill="#fffdfb"/>
+        <ellipse cx="12.5" cy="14" rx="4.3" ry="5.4" fill="#fffdfb"/>
+        <ellipse cx="29.5" cy="14" rx="4.3" ry="5.4" fill="#fffdfb"/>
+        <ellipse cx="6" cy="21.5" rx="3.6" ry="4.6" fill="#fffdfb"/>
+        <ellipse cx="36" cy="21.5" rx="3.6" ry="4.6" fill="#fffdfb"/>
+      </svg>
+      <span class="brand-text"><strong>The Soapy Paw</strong><em>Dog Grooming</em></span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <svg class="icon icon-burger" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item has-submenu">
+          <div class="nav-row">
+            <a class="nav-link" href="services.html" aria-current="page">Services</a>
+            <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-label="Toggle services menu">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 8l7 7 7-7"/></svg>
+            </button>
+          </div>
+          <ul class="submenu" id="services-submenu">
+            <li><a href="services.html#bath-brush">Bath &amp; Brush</a></li>
+            <li><a href="services.html#full-groom">Full Groom &amp; Haircut</a></li>
+            <li><a href="services.html#de-shed">De-Shed Treatment</a></li>
+            <li><a href="services.html#puppy-groom">Puppy's First Groom</a></li>
+            <li><a href="services.html#nail-trim">Nail Trim &amp; Paw Care</a></li>
+            <li><a href="services.html#add-ons">Add-Ons</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="header-phone" href="tel:+15165550154">
+      <span>Call the shop</span>
+      <span>(516) 555-0154</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-intro">
+    <div class="wrap">
+      <h1>Grooming services</h1>
+      <p class="measure">Tell us your dog's breed, coat, and what you want off, and we'll build the appointment around it. Every groom below includes nails, ears, and a full brush-out.</p>
+      <div class="page-intro-actions">
+        <a class="btn btn-primary" href="tel:+15165550154">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 3h3.1l1.6 4-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2 4 1.6v3.1a2.6 2.6 0 0 1-2.6 2.6A15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z"/></svg>
+          Call (516) 555-0154
+        </a>
+        <a class="btn btn-outline-brown" href="#visit">See how a visit goes</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="suds-divider" aria-hidden="true"></div>
+
+  <section class="service-row" id="bath-brush">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z"/></svg>
+          </div>
+          <h2>Bath &amp; Brush</h2>
+        </div>
+        <p class="measure">A warm bath with a shampoo picked for your dog's coat and skin, full hand-dry, brush-out, nail trim, ear cleaning, and a quick sanitary tidy.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Bath, hand-dry, brush-out, nails, ears, sanitary trim.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>Between full grooms, before a family visit, or any time your dog just needs to smell better and feel better.</p>
+          </div>
+        </div>
+        <span class="service-price">Starting at $45</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="full-groom">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M7.8 7.6 19 17M7.8 16.4 19 7"/></svg>
+          </div>
+          <h2>Full Groom &amp; Haircut</h2>
+        </div>
+        <p class="measure">Everything in the bath, plus the cut you want: breed trim, puppy cut, teddy face, or short and tidy for summer. Scissored finish on the face and feet.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Bath, hand-dry, breed or custom cut, scissor-finished face and feet, nails, ears.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>Coat is overgrown or starting to mat, or it's just time for the cut your dog gets every 6–8 weeks.</p>
+          </div>
+        </div>
+        <span class="service-price">Starting at $70</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="de-shed">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M6 6v14M10 6v14M14 6v14M18 6v14"/></svg>
+          </div>
+          <h2>De-Shed Treatment</h2>
+        </div>
+        <p class="measure">For huskies, shepherds, labs, and anyone leaving a coat behind on the couch. A deep bath, undercoat rake, and a long dry that pulls the loose fur out.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Deep bath, undercoat rake, extended hand-dry, brush-out, nails, ears.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>Double coats heading into shedding season, or any dog whose fur is taking over the house.</p>
+          </div>
+        </div>
+        <span class="service-price">Starting at $65</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="puppy-groom">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.6-9.5 9-9.5 9z"/></svg>
+          </div>
+          <h2>Puppy's First Groom</h2>
+        </div>
+        <p class="measure">A short, low-pressure visit for puppies: gentle bath, face and paw tidy, nails, and plenty of breaks so the table and the dryer stop being scary.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Gentle bath, face and paw tidy, nail trim, breaks as needed.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>First groom ever, so the next one isn't a fight.</p>
+          </div>
+        </div>
+        <span class="service-price">Starting at $35</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="nail-trim">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="9" y="4" width="6" height="14" rx="3"/><path d="M9 11H4a2.5 2.5 0 0 0 0 5h5"/></svg>
+          </div>
+          <h2>Nail Trim &amp; Paw Care</h2>
+        </div>
+        <p class="measure">Trim, file, a paw-pad shave, and a rub of balm on dry pads. Takes about ten minutes.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Nail trim, file, paw-pad shave, balm.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>Every 3–4 weeks, or the second you hear nails clicking on the floor. Walk in Tuesday–Friday before 11:00 am, no appointment needed.</p>
+          </div>
+        </div>
+        <span class="service-price">$18</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="add-ons">
+    <div class="wrap">
+      <div class="service-inner">
+        <div class="service-head">
+          <div class="service-mark">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+          </div>
+          <h2>Add-Ons</h2>
+        </div>
+        <p class="measure">Teeth brushing, deep ear cleaning, a blueberry facial, oatmeal or fragrance-free shampoo, and a bandana or bow on the way out the door.</p>
+        <div class="service-facts">
+          <div class="service-fact">
+            <strong>What's included</strong>
+            <p>Pick any combination when you book a bath or groom.</p>
+          </div>
+          <div class="service-fact">
+            <strong>When you need it</strong>
+            <p>Sensitive skin, extra-dirty ears, or you just want the full treatment.</p>
+          </div>
+        </div>
+        <span class="service-price">$8 – $15 each</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="anchor-panel">
+        <div class="sec-head">
+          <h2>How a visit goes</h2>
+          <p>No mystery, no all-day stay. Here's the whole thing start to finish.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>You call and tell us about your dog</h3>
+            <p>Breed, coat, last groom, and anything that makes them nervous: dryers, clippers, having their feet held.</p>
+          </li>
+          <li class="step">
+            <h3>Drop off at your appointment time</h3>
+            <p>We book with room between dogs, so nobody sits around waiting for their turn.</p>
+          </li>
+          <li class="step">
+            <h3>Bath, dry, and cut</h3>
+            <p>Hand-dried and hand-finished, with a break whenever your dog needs one. Senior dogs get a slower pace.</p>
+          </li>
+          <li class="step">
+            <h3>We text you when they're ready</h3>
+            <p>Usually two to three hours later. At pickup we'll tell you what we saw on the skin, ears, and nails.</p>
+          </li>
+        </ol>
+      </div>
+      <p class="note">Final price depends on size, coat type, and how much work the coat needs. Call and describe your dog and we'll give you the number before you book.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="closing-cta">
+        <div>
+          <h2>Not sure which service fits?</h2>
+          <p>Describe your dog's breed and coat on the phone and we'll point you to the right groom, or the right combination.</p>
+        </div>
+        <div class="closing-actions">
+          <a class="btn btn-on-cream" href="tel:+15165550154">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 3h3.1l1.6 4-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2 4 1.6v3.1a2.6 2.6 0 0 1-2.6 2.6A15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z"/></svg>
+            Call (516) 555-0154
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Or send a request</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <strong>The Soapy Paw Dog Grooming</strong>
+      <p>Small-shop grooming for dogs of every size and coat. Serving Long Island, NY.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div class="footer-col">
+        <strong>Site</strong>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <ul>
+          <li><a href="tel:+15165550154">(516) 555-0154</a></li>
+          <li><span>Long Island, NY</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <strong>Hours</strong>
+        <ul>
+          <li><span>Tue–Fri 8:00 am–5:00 pm</span></li>
+          <li><span>Sat 8:00 am–3:00 pm</span></li>
+          <li><span>Sun &amp; Mon Closed</span></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p>Demo website built by <a href="https://samuelochoa.com/websites">Samuel Ochoa — samuelochoa.com/websites</a>.</p>
+    <p>Fictional business shown for demonstration.</p>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550154">
+  <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 3h3.1l1.6 4-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2 4 1.6v3.1a2.6 2.6 0 0 1-2.6 2.6A15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z"/></svg>
+  Call (516) 555-0154
+</a>
+
+<script>
+(function(){
+  var navToggle = document.querySelector('.nav-toggle');
+  var navMenu = document.getElementById('nav-menu');
+  var subToggle = document.querySelector('.submenu-toggle');
+  var subMenu = document.getElementById('services-submenu');
+
+  function closeSub(){
+    if(!subMenu) return;
+    subMenu.classList.remove('is-open');
+    subToggle.setAttribute('aria-expanded','false');
+  }
+  function closeNav(){
+    if(!navMenu) return;
+    navMenu.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded','false');
+    closeSub();
+  }
+  if(navToggle && navMenu){
+    navToggle.addEventListener('click', function(){
+      var open = navMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(!open) closeSub();
+    });
+  }
+  if(subToggle && subMenu){
+    subToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = subMenu.classList.toggle('is-open');
+      subToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(subMenu && subMenu.classList.contains('is-open') && !subMenu.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      closeSub();
+    } else if(navMenu && navMenu.classList.contains('is-open') && !navMenu.contains(e.target) && e.target !== navToggle && !navToggle.contains(e.target)){
+      closeNav();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subMenu && subMenu.classList.contains('is-open')){ closeSub(); subToggle.focus(); }
+      else if(navMenu && navMenu.classList.contains('is-open')){ closeNav(); navToggle.focus(); }
+    }
+  });
+
+  var sampleBtn = document.querySelector('.form-sample-submit');
+  if(sampleBtn){
+    sampleBtn.addEventListener('click', function(){
+      var note = document.querySelector('.form-sample-note');
+      if(note){ note.hidden = false; }
+    });
+  }
+})();
+</script>
+</body>
+</html>

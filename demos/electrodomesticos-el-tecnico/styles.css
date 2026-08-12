@@ -194,7 +194,7 @@ p,li{max-width:var(--measure)}
   text-transform:uppercase;font-weight:700;flex:none;
 }
 
-nav.rail-nav{max-height:0;overflow:hidden;transition:max-height .32s ease;margin-top:0}
+nav.rail-nav{max-height:0;overflow:hidden;/* transition removed: layout-property animation */margin-top:0}
 nav.rail-nav.is-open{max-height:660px;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-on-steel)}
 .rail-nav ul{display:flex;flex-direction:column;gap:2px}
 .rail-nav>ul>li{position:relative}

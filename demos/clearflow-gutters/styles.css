@@ -180,7 +180,7 @@ h4{ font-size:1.02rem; letter-spacing:0; }
 .site-nav{
   position:absolute; left:0; right:0; top:100%;
   background:#fff; border-bottom:1px solid var(--line); box-shadow:var(--shadow-md);
-  max-height:0; overflow:hidden; transition:max-height .32s var(--ease-out);
+  max-height:0; overflow:hidden; /* transition removed: layout-property animation */
 }
 .site-nav.is-open{ max-height:80vh; overflow-y:auto; }
 .site-nav > ul{ padding:6px 22px 18px; display:flex; flex-direction:column; }
@@ -194,7 +194,7 @@ h4{ font-size:1.02rem; letter-spacing:0; }
 .site-nav a[aria-current="page"], .sub-toggle[aria-current="page"]{ color:var(--leaf-text); }
 .sub-toggle .chevron{ transition:transform .3s var(--ease-out); flex-shrink:0; color:var(--slate-600); }
 .sub-toggle[aria-expanded="true"] .chevron{ transform:rotate(180deg); }
-.sub-menu{ max-height:0; overflow:hidden; transition:max-height .3s var(--ease-out); padding-left:4px; }
+.sub-menu{ max-height:0; overflow:hidden; /* transition removed: layout-property animation */ padding-left:4px; }
 .has-sub.is-open .sub-menu{ max-height:420px; }
 .sub-menu li a{ padding:11px 2px 11px 14px; font-weight:500; font-size:15px; color:var(--slate-600); }
 .sub-menu li a:hover{ color:var(--leaf-text); }

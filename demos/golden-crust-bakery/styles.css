@@ -146,7 +146,7 @@ img{max-width:100%;display:block}
 @media (max-width:759.98px){
   .site-nav{
     display:block;max-height:0;overflow:hidden;background:var(--crust);
-    transition:max-height .32s var(--ease-out-expo);
+    /* transition removed: layout-property animation */
   }
   .site-nav.is-open{max-height:640px}
   .site-nav > ul{padding:8px var(--pad) 22px}
@@ -154,7 +154,7 @@ img{max-width:100%;display:block}
   .navlink.is-active{color:var(--honey)}
   .submenu-row .navlink{border-bottom:0;flex:1}
   .has-submenu{border-bottom:1px solid var(--crust-2)}
-  .submenu{max-height:0;overflow:hidden;transition:max-height .28s var(--ease-out-expo);padding-left:14px}
+  .submenu{max-height:0;overflow:hidden;/* transition removed: layout-property animation */padding-left:14px}
   .submenu.is-open{max-height:360px;padding-bottom:8px}
 }
 

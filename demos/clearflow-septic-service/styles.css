@@ -171,7 +171,7 @@ main { display: block; }
   position: absolute; top: 100%; left: 0; right: 0;
   background: var(--soil-950);
   max-height: 0; overflow: hidden; visibility: hidden;
-  transition: max-height 0.4s var(--ease-out-expo), visibility 0.4s;
+  transition:visibility 0.4s;
   border-top: 1px solid rgba(250, 246, 238, 0.1);
 }
 .primary-nav.is-open { max-height: 85vh; overflow-y: auto; visibility: visible; }
@@ -189,7 +189,7 @@ main { display: block; }
 .has-submenu.is-open .submenu-toggle .caret { transform: rotate(180deg); }
 
 .submenu {
-  max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease-out-expo);
+  max-height: 0; overflow: hidden; /* transition removed: layout-property animation */
   padding-left: 0.75rem; border-left: 1px solid rgba(250, 246, 238, 0.14); margin-left: 0.25rem;
 }
 .has-submenu.is-open .submenu { max-height: 20rem; }

@@ -150,7 +150,7 @@ p,li{max-width:var(--measure)}
 }
 
 nav.rail-nav{
-  max-height:0;overflow:hidden;transition:max-height .32s ease;
+  max-height:0;overflow:hidden;/* transition removed: layout-property animation */
   margin-top:0;
 }
 nav.rail-nav.is-open{max-height:640px;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-on-cobalt)}

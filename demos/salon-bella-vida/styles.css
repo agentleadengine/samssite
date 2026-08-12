@@ -184,7 +184,7 @@ section{padding:58px 0}
 .mob-sub-toggle svg{transition:transform .2s var(--ease-out-expo);flex:0 0 auto}
 .mob-sub-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
 .mob-sub{
-  max-height:0;overflow:hidden;transition:max-height .28s var(--ease-out-expo);
+  max-height:0;overflow:hidden;/* transition removed: layout-property animation */
   display:flex;flex-direction:column;
 }
 .mob-sub.is-open{max-height:560px}

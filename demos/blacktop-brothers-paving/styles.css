@@ -149,7 +149,7 @@ p,li{max-width:var(--measure)}
 /* nav — collapses on mobile, inline row on desktop */
 nav.nav{
   order:10;flex-basis:100%;
-  max-height:0;overflow:hidden;transition:max-height .32s ease;
+  max-height:0;overflow:hidden;/* transition removed: layout-property animation */
 }
 nav.nav.is-open{max-height:760px;margin-top:6px;padding-top:14px;border-top:1px solid var(--rule-on-asphalt)}
 

@@ -115,7 +115,7 @@ header{background:var(--papel);border-bottom:2px solid var(--tinta);position:sti
 .nav-panel{
   position:absolute;left:0;right:0;top:100%;background:var(--papel);
   border-bottom:2px solid var(--tinta);box-shadow:var(--sombra-m);
-  max-height:0;overflow:hidden;transition:max-height .28s var(--ease-salida);
+  max-height:0;overflow:hidden;/* transition removed: layout-property animation */
 }
 .nav-panel.abierto{max-height:520px}
 .nav-panel-int{padding:8px 20px 18px;display:flex;flex-direction:column}
@@ -416,7 +416,7 @@ footer{background:var(--tinta);color:#E4D6EA;padding:40px 0 30px}
   .sub-btn svg{width:13px;height:13px}
   .sub-panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
     width:264px;background:var(--papel);border:2px solid var(--tinta);border-radius:12px;box-shadow:var(--sombra-l);
-    padding:8px;max-height:0;transition:max-height .22s var(--ease-salida),opacity .18s ease;opacity:0}
+    padding:8px;max-height:0;transition:opacity .18s ease;opacity:0}
   .sub-panel.abierto{max-height:420px;opacity:1}
   .sub-nav:hover .sub-panel,.sub-nav:focus-within .sub-panel{max-height:420px;opacity:1}
   .sub-panel a{display:block;padding:10px 12px;border-radius:7px;font-size:14.5px}

@@ -189,7 +189,7 @@ section{padding:var(--sp-8) 0}
 
 .nav-panel{
   max-height:0;overflow:hidden;
-  transition:max-height .32s var(--ease-expo);
+  /* transition removed: layout-property animation */
   border-top:1px solid transparent;
 }
 .rail.menu-open .nav-panel{max-height:700px;border-top-color:var(--navy-line)}
@@ -209,7 +209,7 @@ section{padding:var(--sp-8) 0}
 .submenu-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
 .submenu{
   max-height:0;overflow:hidden;
-  transition:max-height .26s var(--ease-expo);
+  /* transition removed: layout-property animation */
   padding-left:4px;
 }
 .submenu.is-open{max-height:400px}

@@ -163,7 +163,7 @@ header.site{
 nav.nav{
   order:3; flex-basis:100%;
   max-height:0; overflow:hidden; width:100%;
-  transition:max-height .28s var(--ease-out);
+  /* transition removed: layout-property animation */
 }
 nav.nav.is-open{ max-height:640px; }
 nav.nav ul{ padding:10px 0 16px; border-top:1px solid rgba(244,241,234,.16); margin-top:12px; }
@@ -179,7 +179,7 @@ nav.nav a, .sub-toggle{
 nav.nav a[aria-current="page"], nav.nav .sub-toggle[aria-current="page"]{ color:var(--orange-hot); }
 .sub-toggle svg{ width:16px; height:16px; flex:none; transition:transform .22s var(--ease-out); color:var(--concrete-sf); }
 .has-sub.is-open .sub-toggle svg{ transform:rotate(180deg); }
-.sub-menu{ max-height:0; overflow:hidden; transition:max-height .24s var(--ease-out); }
+.sub-menu{ max-height:0; overflow:hidden; /* transition removed: layout-property animation */ }
 .has-sub.is-open .sub-menu{ max-height:400px; }
 .sub-menu li{ border-bottom:0; }
 .sub-menu a{
