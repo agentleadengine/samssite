@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros | Masajes Manos Sanas</title>
+<meta name="description" content="Quién lleva Masajes Manos Sanas, cómo funciona una visita, zona de servicio y horario en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon">Sitio de demostración <span>· negocio ficticio</span></div>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="header-bar">
+    <a class="brand" href="index.html" aria-label="Masajes Manos Sanas, inicio">
+      <svg class="brand-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+      </svg>
+      <span class="brand-word">Masajes<br>Manos Sanas</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-has-sub">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-desktop" aria-label="Mostrar lista de servicios">
+            <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul id="sub-desktop" class="submenu">
+            <li><a href="services.html#relajante">Masaje relajante</a></li>
+            <li><a href="services.html#descontracturante">Descontracturante profundo</a></li>
+            <li><a href="services.html#deportivo">Masaje deportivo</a></li>
+            <li><a href="services.html#prenatal">Masaje prenatal</a></li>
+            <li><a href="services.html#piedras">Piedras calientes</a></li>
+            <li><a href="services.html#domicilio">Silla a domicilio</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Trabajo</a></li>
+        <li><a href="about.html" aria-current="page">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-tel" href="tel:+15165550181">(516) 555-0181</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="ln ln1" d="M3 6h18"/>
+          <path class="ln ln2" d="M3 12h18"/>
+          <path class="ln ln3" d="M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="nav-mobile" class="nav-mobile" aria-label="Principal móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="nav-has-sub">
+        <div class="nav-mobile-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-mobile" aria-label="Mostrar lista de servicios">
+            <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+        </div>
+        <ul id="sub-mobile" class="submenu-mobile">
+          <li><a href="services.html#relajante">Masaje relajante</a></li>
+          <li><a href="services.html#descontracturante">Descontracturante profundo</a></li>
+          <li><a href="services.html#deportivo">Masaje deportivo</a></li>
+          <li><a href="services.html#prenatal">Masaje prenatal</a></li>
+          <li><a href="services.html#piedras">Piedras calientes</a></li>
+          <li><a href="services.html#domicilio">Silla a domicilio</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Trabajo</a></li>
+      <li><a href="about.html" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <div class="nav-mobile-foot">
+      <a class="nav-mobile-tel" href="tel:+15165550181">Llamar (516) 555-0181</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="about-hero">
+    <div class="wrap">
+      <h1>Una sala, una persona, toda la atención.</h1>
+      <p class="lede">Manos Sanas es un espacio pequeño a propósito. Así es como funciona, quién lo lleva y qué puede esperar.</p>
+    </div>
+    <div class="about-scene-wrap" aria-hidden="true">
+      <svg class="contour-art about-scene" viewBox="0 0 900 300" preserveAspectRatio="xMidYMax slice">
+        <path d="M0,60.7 C5.4,60 21.4,57.8 32.1,56.5 C42.8,55.2 53.6,53.7 64.3,52.7 C75,51.7 85.7,51.2 96.4,50.3 C107.1,49.4 117.9,48.1 128.6,47.3 C139.3,46.5 150,46.1 160.7,45.6 C171.4,45.1 182.2,44.6 192.9,44.3 C203.6,44 214.3,43.8 225,43.9 C235.7,44 246.4,44.5 257.1,44.9 C267.8,45.3 278.6,45.6 289.3,46.3 C300,46.9 310.7,47.9 321.4,48.8 C332.1,49.7 342.9,50.5 353.6,51.6 C364.3,52.7 375,54.1 385.7,55.3 C396.4,56.5 407.2,57.5 417.9,58.7 C428.6,59.9 439.3,61.1 450,62.4 C460.7,63.7 471.4,65.1 482.1,66.6 C492.8,68.1 503.6,70 514.3,71.3 C525,72.6 535.7,73.2 546.4,74.4 C557.1,75.6 567.9,77.1 578.6,78.2 C589.3,79.3 600,80.2 610.7,80.8 C621.4,81.4 632.2,81.5 642.9,82.1 C653.6,82.6 664.3,83.9 675,84.1 C685.7,84.3 696.4,83.5 707.1,83.4 C717.8,83.4 728.6,84 739.3,83.8 C750,83.6 760.7,83 771.4,82.3 C782.1,81.5 792.9,80.2 803.6,79.3 C814.3,78.4 825,78 835.7,77 C846.4,76 857.2,74.9 867.9,73.6 C878.6,72.3 894.6,69.8 900,69"/>
+        <path d="M0,119.8 C5.4,119.5 21.4,118.1 32.1,117.8 C42.8,117.5 53.6,117.7 64.3,117.7 C75,117.8 85.7,117.7 96.4,118.1 C107.1,118.5 117.9,119.4 128.6,120.1 C139.3,120.8 150,121.2 160.7,122.1 C171.4,122.9 182.2,124.3 192.9,125.2 C203.6,126.1 214.3,126.5 225,127.6 C235.7,128.7 246.4,130.5 257.1,131.8 C267.8,133.1 278.6,134.1 289.3,135.4 C300,136.7 310.7,138.3 321.4,139.8 C332.1,141.3 342.9,142.9 353.6,144.2 C364.3,145.5 375,146.4 385.7,147.5 C396.4,148.6 407.2,149.8 417.9,151 C428.6,152.2 439.3,153.5 450,154.4 C460.7,155.3 471.4,155.8 482.1,156.3 C492.8,156.8 503.6,156.9 514.3,157.2 C525,157.5 535.7,158 546.4,158.1 C557.1,158.2 567.9,158.3 578.6,157.9 C589.3,157.5 600,156.2 610.7,155.7 C621.4,155.1 632.2,155.3 642.9,154.6 C653.6,153.9 664.3,152.8 675,151.7 C685.7,150.6 696.4,149.2 707.1,147.9 C717.8,146.6 728.6,145.1 739.3,143.9 C750,142.7 760.7,142 771.4,140.7 C782.1,139.3 792.9,137.4 803.6,135.8 C814.3,134.2 825,132.8 835.7,131.4 C846.4,130 857.2,128.7 867.9,127.6 C878.6,126.5 894.6,125.5 900,125.1"/>
+        <path d="M0,194.8 C5.4,195.4 21.4,197.3 32.1,198.3 C42.8,199.3 53.6,199.8 64.3,200.9 C75,202 85.7,203.6 96.4,205 C107.1,206.4 117.9,207.9 128.6,209.3 C139.3,210.7 150,212.3 160.7,213.6 C171.4,214.9 182.2,216 192.9,217.3 C203.6,218.6 214.3,220.1 225,221.2 C235.7,222.3 246.4,223 257.1,224.1 C267.8,225.2 278.6,226.7 289.3,227.6 C300,228.5 310.7,229 321.4,229.7 C332.1,230.4 342.9,231.4 353.6,231.8 C364.3,232.2 375,232 385.7,232 C396.4,232 407.2,232.2 417.9,232 C428.6,231.8 439.3,231.2 450,230.6 C460.7,230 471.4,229 482.1,228.3 C492.8,227.6 503.6,227.3 514.3,226.5 C525,225.7 535.7,224.4 546.4,223.2 C557.1,221.9 567.9,220.4 578.6,219 C589.3,217.6 600,215.9 610.7,214.6 C621.4,213.2 632.2,212.2 642.9,210.9 C653.6,209.6 664.3,208.1 675,206.8 C685.7,205.5 696.4,204.4 707.1,203.2 C717.8,202 728.6,200.6 739.3,199.5 C750,198.4 760.7,197.4 771.4,196.5 C782.1,195.6 792.9,195 803.6,194.3 C814.3,193.6 825,193 835.7,192.5 C846.4,192 857.2,191.6 867.9,191.5 C878.6,191.4 894.6,191.7 900,191.7"/>
+        <path d="M0,280.2 C5.4,280.9 21.4,283.1 32.1,284.5 C42.8,285.9 53.6,287.7 64.3,288.9 C75,290.1 85.7,290.6 96.4,291.6 C107.1,292.6 117.9,293.8 128.6,294.7 C139.3,295.6 150,296.2 160.7,296.9 C171.4,297.5 182.2,298.2 192.9,298.6 C203.6,299 214.3,299.2 225,299.3 C235.7,299.4 246.4,299.4 257.1,299.4 C267.8,299.3 278.6,299.3 289.3,299 C300,298.7 310.7,298.5 321.4,297.8 C332.1,297.1 342.9,296 353.6,294.9 C364.3,293.8 375,292.6 385.7,291.4 C396.4,290.2 407.2,289 417.9,287.8 C428.6,286.6 439.3,285.6 450,284.2 C460.7,282.8 471.4,281.1 482.1,279.6 C492.8,278.1 503.6,276.4 514.3,275.1 C525,273.9 535.7,273.2 546.4,272.1 C557.1,271 567.9,269.4 578.6,268.2 C589.3,266.9 600,265.6 610.7,264.6 C621.4,263.6 632.2,262.8 642.9,262.1 C653.6,261.4 664.3,260.6 675,260.4 C685.7,260.1 696.4,260.7 707.1,260.6 C717.8,260.5 728.6,259.6 739.3,259.7 C750,259.8 760.7,260.6 771.4,261.2 C782.1,261.8 792.9,262.7 803.6,263.3 C814.3,263.9 825,263.8 835.7,264.6 C846.4,265.4 857.2,267 867.9,268.2 C878.6,269.4 894.6,271.3 900,271.9"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="story">
+        <p>Marisol Peña empezó a dar masajes ayudando a su propia familia. Su padre pasaba el día de pie en un almacén y llegaba con la espalda hecha nudo. Ahí aprendió lo primero: escuchar antes de tocar, y no adivinar dónde duele.</p>
+        <p>La idea detrás del negocio es sencilla. Una sala, una persona a la vez, y una conversación antes de empezar sobre qué le molesta y qué prefiere evitar. No hay paquetes que ofrecer al final ni presión para reservar la próxima cita en ese momento.</p>
+        <p>Si nunca ha recibido un masaje terapéutico o no sabe qué pedir, dígalo al llamar. Cada sesión se arma según lo que necesite ese día, no según un menú fijo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-sand">
+    <div class="wrap">
+      <div class="info-grid">
+        <div class="info-block">
+          <h2>Zona de servicio</h2>
+          <p>Las citas se atienden en el mismo espacio de Manos Sanas, con servicio para Long Island, NY y los pueblos cercanos. El masaje en silla a domicilio viaja dentro de esa misma zona, coordinado por teléfono con anticipación.</p>
+        </div>
+        <div class="info-block">
+          <h2>Horario</h2>
+          <ul class="hours-list">
+            <li>Lunes <span>Cerrado</span></li>
+            <li>Martes a jueves <span>10:00 a.m. – 8:00 p.m.</span></li>
+            <li>Viernes <span>10:00 a.m. – 6:00 p.m.</span></li>
+            <li>Sábado <span>9:00 a.m. – 4:00 p.m.</span></li>
+            <li>Domingo <span>A pedido</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cómo funciona una visita</h2>
+        <p>Sin sorpresas, de principio a fin.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Llama y elige la hora</h3>
+          <p>Se deja margen entre citas para que la sala esté lista y en silencio cuando usted llegue.</p>
+        </div>
+        <div class="step">
+          <h3>Conversación antes de empezar</h3>
+          <p>Se revisan lesiones, presión preferida y zonas a evitar. Cinco minutos que cambian la hora completa.</p>
+        </div>
+        <div class="step">
+          <h3>Usted marca la presión</h3>
+          <p>Si es demasiado o hace falta más, se dice con confianza. No hay ningún mérito en aguantar una sesión incómoda.</p>
+        </div>
+        <div class="step">
+          <h3>Agua y a seguir el día</h3>
+          <p>Se comparte qué se notó y algún estiramiento útil. Agendar otra vez es decisión suya.</p>
+        </div>
+      </div>
+      <div class="know-block">
+        <h2>Conviene saberlo</h2>
+        <p>Se trabaja solo con cita previa, así que llame antes de venir.</p>
+        <p>Avisar con veinticuatro horas si necesita cancelar deja el espacio libre para otra persona.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-deep cta-band">
+    <div class="wrap">
+      <h2>¿Primera vez? Cuéntelo al llamar y empezamos por ahí.</h2>
+      <div class="cta-stack">
+        <a class="btn btn-primary" href="tel:+15165550181">Llamar (516) 555-0181</a>
+        <a class="btn btn-ghost-dark" href="services.html">Ver servicios</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Masajes Manos Sanas</div>
+        <p>Masaje terapéutico con cita previa</p>
+        <p>Long Island, NY y pueblos cercanos</p>
+        <p><a class="footer-tel" href="tel:+15165550181">(516) 555-0181</a></p>
+      </div>
+      <div class="footer-col">
+        <nav class="footer-nav" aria-label="Pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="services.html">Servicios</a>
+          <a href="work.html">Trabajo</a>
+          <a href="about.html">Nosotros</a>
+          <a href="contact.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <p>Martes a jueves, 10 a.m. a 8 p.m.</p>
+        <p>Viernes, 10 a.m. a 6 p.m.</p>
+        <p>Sábado, 9 a.m. a 4 p.m.</p>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <span>Sitio de demostración creado por Samuel Ochoa —</span>
+      <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a>
+      <span>· Negocio ficticio mostrado como demostración.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-callbar">
+  <a href="tel:+15165550181">Llamar (516) 555-0181</a>
+</div>
+
+<script>
+(function () {
+  function setup(toggleBtn, panel, useHidden) {
+    if (!toggleBtn || !panel) return null;
+    function close() {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      if (useHidden) panel.hidden = true; else panel.classList.remove('is-open');
+    }
+    function open() {
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      if (useHidden) panel.hidden = false; else panel.classList.add('is-open');
+    }
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) close(); else open();
+    });
+    return { close: close, el: panel, btn: toggleBtn };
+  }
+
+  var mobileMenu = setup(document.querySelector('.menu-toggle'), document.getElementById('nav-mobile'), true);
+  var subDesktop = setup(document.querySelector('.nav-desktop .sub-toggle'), document.getElementById('sub-desktop'), false);
+  var subMobile = setup(document.querySelector('.nav-mobile .sub-toggle'), document.getElementById('sub-mobile'), false);
+  var all = [mobileMenu, subDesktop, subMobile].filter(Boolean);
+
+  document.addEventListener('click', function (e) {
+    all.forEach(function (inst) {
+      if (!inst.el.contains(e.target) && e.target !== inst.btn && !inst.btn.contains(e.target)) inst.close();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      all.forEach(function (inst) { inst.close(); });
+      if (mobileMenu) mobileMenu.btn.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

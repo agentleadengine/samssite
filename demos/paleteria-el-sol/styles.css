@@ -1,0 +1,449 @@
+/* ==========================================================================
+   Paletería El Sol — shared stylesheet
+   Own-world: a papel-picado mercado stall at noon. Drenched color fields
+   (sol / rosa / turquesa / tinta) that own whole regions, hand-lettered
+   marker display type, papel-picado pennants used as real structure.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+:root{
+  /* brand hues — ticket palette family, kept */
+  --sol:#FFC61E;
+  --sol-hondo:#F2A007;
+  --rosa:#E8318A;
+  --rosa-hondo:#C01F70;
+  --turquesa:#17B8B0;
+  --turquesa-hondo:#0C7A75;
+  --naranja:#F26A2E;
+  --crema:#FFF9EE;
+  --papel:#FFFFFF;
+  --tinta:#2B1B33;
+
+  /* text-on-surface pairs, contrast-checked against the field they sit on */
+  --tx-on-sol:var(--tinta);          /* ink on sol yellow    ~9.0:1 */
+  --tx-on-sol-suave:#5A4326;         /* honey secondary/sol  ~5.4:1 */
+  --tx-on-rosa-hondo:#FFFFFF;        /* white on deep pink   ~5.8:1 */
+  --tx-on-turquesa-hondo:#FFFFFF;    /* white on deep teal   ~5.5:1 */
+  --tx-on-tinta:#FFF3D6;             /* warm cream on ink    ~14:1  */
+  --tx-suave:#6B5A72;                /* plum secondary/crema ~5.6:1 */
+  --enlace:var(--rosa-hondo);        /* link/label on light surfaces ~5.5:1 */
+  --borde:#E7DCCB;
+
+  --sombra-s:0 4px 12px -6px rgba(43,27,51,.36);
+  --sombra-m:0 16px 32px -18px rgba(43,27,51,.42);
+  --sombra-l:0 30px 60px -28px rgba(43,27,51,.48);
+
+  --header-h:60px;
+  --ease-salida:cubic-bezier(.16,1,.3,1);
+}
+@media(min-width:900px){:root{--header-h:76px}}
+
+/* ── reset ────────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--crema);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:16px;line-height:1.6;overflow-x:hidden;
+  padding-bottom:66px;
+}
+@media(min-width:900px){body{padding-bottom:0}}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:'Luckiest Guy',system-ui,sans-serif;font-weight:400;line-height:1.04;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;background:none;border:0}
+input,textarea,select{font-family:inherit}
+.caja{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+.medida{max-width:66ch}
+.solo-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+:focus-visible{outline:3px solid var(--turquesa-hondo);outline-offset:3px;border-radius:3px}
+
+/* ── demo ribbon (never overlaps header: header height is locked and the
+     ribbon is pinned just past its bottom edge, coupled via --header-h) ── */
+.liston{
+  position:fixed;top:calc(var(--header-h) + 8px);right:8px;z-index:300;
+  font-family:'Nunito Sans',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;color:#4A3352;
+  background:rgba(255,249,238,.96);border:1.5px solid rgba(232,49,138,.55);
+  border-radius:5px;padding:6px 10px;
+  box-shadow:var(--sombra-s);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);pointer-events:none;
+}
+
+/* ── papel picado divider strip ──────────────────────────────────────── */
+.picado{
+  height:30px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30' viewBox='0 0 120 30'%3E%3Cpath d='M0 0h30v19L15 28 0 19z' fill='%23E8318A'/%3E%3Cpath d='M30 0h30v19L45 28 30 19z' fill='%23FFC61E'/%3E%3Cpath d='M60 0h30v19L75 28 60 19z' fill='%230C7A75'/%3E%3Cpath d='M90 0h30v19L105 28 90 19z' fill='%23F26A2E'/%3E%3Ccircle cx='15' cy='8' r='3.2' fill='%23FFF9EE'/%3E%3Ccircle cx='45' cy='8' r='3.2' fill='%23FFF9EE'/%3E%3Ccircle cx='75' cy='8' r='3.2' fill='%23FFF9EE'/%3E%3Ccircle cx='105' cy='8' r='3.2' fill='%23FFF9EE'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:96px 24px;background-position:top center;
+}
+
+/* ── header ───────────────────────────────────────────────────────────── */
+header{background:var(--papel);border-bottom:2px solid var(--tinta);position:sticky;top:0;z-index:120}
+.enc{display:flex;align-items:center;gap:10px;height:var(--header-h)}
+.marca{display:flex;align-items:center;gap:9px;text-decoration:none;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden}
+.marca svg{width:32px;height:32px;flex:none}
+.marca-txt{display:flex;flex-direction:column;line-height:1;min-width:0;overflow:hidden}
+.marca-txt b{font-family:'Luckiest Guy',sans-serif;font-weight:400;font-size:16px;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis}
+.marca-txt em{display:none;font-style:normal;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--rosa-hondo);margin-top:3px;font-weight:800}
+
+.enc-tel{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;text-decoration:none;
+  background:var(--rosa-hondo);color:#fff;font-weight:800;font-size:14px;
+  width:40px;height:40px;border-radius:50%;box-shadow:var(--sombra-s);
+  transition:transform .15s ease;
+}
+.enc-tel:hover{transform:translateY(-1px)}
+.enc-tel svg{width:17px;height:17px}
+.enc-tel .txt{display:none}
+
+.menu-btn{
+  display:flex;flex:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  width:40px;height:40px;border-radius:9px;border:2px solid var(--tinta);cursor:pointer;
+}
+.menu-btn .b{display:block;width:19px;height:2.5px;background:var(--tinta);border-radius:2px;transition:transform .2s var(--ease-salida),opacity .2s ease}
+.menu-btn[aria-expanded="true"] .b1{transform:translateY(7.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .b2{opacity:0}
+.menu-btn[aria-expanded="true"] .b3{transform:translateY(-7.5px) rotate(-45deg)}
+
+/* ── mobile nav panel ────────────────────────────────────────────────── */
+.nav-panel{
+  position:absolute;left:0;right:0;top:100%;background:var(--papel);
+  border-bottom:2px solid var(--tinta);box-shadow:var(--sombra-m);
+  max-height:0;overflow:hidden;transition:max-height .28s var(--ease-salida);
+}
+.nav-panel.abierto{max-height:520px}
+.nav-panel-int{padding:8px 20px 18px;display:flex;flex-direction:column}
+.nav-panel a{display:block;padding:13px 4px;font-weight:700;font-size:16px;border-bottom:1px solid var(--borde);text-decoration:none;color:var(--tinta)}
+.nav-panel a[aria-current="page"]{color:var(--rosa-hondo)}
+.sub-nav{border-bottom:1px solid var(--borde)}
+.sub-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 4px;font-weight:700;font-size:16px;cursor:pointer;color:var(--tinta)}
+.sub-btn.activa{color:var(--rosa-hondo)}
+.sub-btn svg{width:16px;height:16px;transition:transform .2s ease;flex:none}
+.sub-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.sub-panel{max-height:0;overflow:hidden;transition:max-height .25s var(--ease-salida)}
+.sub-panel.abierto{max-height:420px}
+.sub-panel a{padding:10px 4px 10px 16px;font-size:14.5px;font-weight:600;border-bottom:0;color:var(--tx-suave)}
+.sub-panel a.ver-todo{color:var(--rosa-hondo);font-weight:800}
+
+/* ── buttons ──────────────────────────────────────────────────────────── */
+.boton{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  font-weight:800;font-size:16px;padding:15px 22px;border-radius:10px;border:2.5px solid var(--tinta);
+  cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;
+}
+.boton svg{width:17px;height:17px;flex:none}
+.boton:hover{transform:translateY(-2px)}
+.boton-primario{background:var(--rosa-hondo);color:#fff;border-color:var(--tinta);box-shadow:0 14px 26px -16px rgba(43,27,51,.95)}
+.boton-fantasma{background:transparent;color:inherit;border-color:currentColor}
+.enlace-cta{display:inline-flex;align-items:center;gap:7px;font-weight:800;text-decoration:none;color:inherit;padding-bottom:2px;border-bottom:2px solid currentColor}
+.enlace-cta svg{width:15px;height:15px;transition:transform .15s ease}
+.enlace-cta:hover svg{transform:translateX(3px)}
+
+/* ── hero (framed, large SVG scene) ──────────────────────────────────── */
+.portada{padding:22px 0 0}
+.marco{position:relative;border:3px solid var(--tinta);border-radius:16px;background:var(--sol);padding:7px;box-shadow:var(--sombra-l)}
+.marco-int{
+  border:2px solid rgba(43,27,51,.26);border-radius:11px;
+  background:
+    radial-gradient(120% 100% at 84% 4%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 52%),
+    linear-gradient(172deg,#FFD75A 0%,#FFC61E 50%,#FFB300 100%);
+  padding:30px 20px 26px;overflow:hidden;position:relative;
+}
+.hero-anim{animation:entra-arriba .8s var(--ease-salida) both}
+.hero-anim.retraso{animation-delay:.12s}
+h1{font-size:clamp(2rem,7.4vw,2.9rem);position:relative;color:var(--tx-on-sol)}
+h1 .giro{display:block;color:var(--rosa-hondo)}
+.promesa{margin-top:16px;font-size:17px;color:var(--tx-on-sol-suave);max-width:46ch;position:relative;font-weight:700}
+.acciones{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:24px;position:relative}
+.aviso-fiesta{margin-top:16px;font-size:14px;color:var(--tx-on-sol-suave);position:relative;font-weight:700;max-width:44ch}
+.escena-marco{margin-top:26px;position:relative}
+.escena-marco svg{display:block;width:100%;height:auto;border:2.5px solid var(--tinta);border-radius:10px;background:#BFF0EC}
+
+/* ── overlapping ticket / boleto strip ───────────────────────────────── */
+.encimadas{position:relative;z-index:5;margin-top:-30px}
+.boletos{display:grid;gap:16px}
+.boleto{
+  position:relative;background:var(--papel);border:2px solid var(--tinta);border-top:7px solid var(--tinta);border-radius:14px;
+  padding:22px 20px 20px;box-shadow:var(--sombra-m);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);
+}
+.b1{border-top-color:var(--rosa-hondo)}
+.b2{border-top-color:var(--turquesa-hondo)}
+.b3{border-top-color:var(--naranja)}
+.boleto h3{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:17px;margin-bottom:7px;letter-spacing:0}
+.boleto p{font-size:14.5px;color:var(--tx-suave)}
+
+/* ── section rhythm ───────────────────────────────────────────────────── */
+.sec{padding:52px 0}
+.encabezado h2{font-size:clamp(1.7rem,5.4vw,2.35rem);max-width:18ch}
+.encabezado{margin-bottom:30px}
+.raya{width:60px;height:6px;background:var(--rosa-hondo);margin-top:14px;border-radius:3px}
+.intro{margin-top:14px;font-size:16px;max-width:56ch}
+
+.franja-crema{background:var(--crema)}
+.franja-papel{background:var(--papel);border-top:2px solid var(--tinta);border-bottom:2px solid var(--tinta)}
+.franja-sol{background:var(--sol);color:var(--tx-on-sol)}
+.franja-sol .intro{color:var(--tx-on-sol-suave)}
+.franja-sol .raya{background:var(--tinta)}
+.franja-turquesa{background:linear-gradient(168deg,#0A625E 0%,var(--turquesa-hondo) 100%);color:var(--tx-on-turquesa-hondo)}
+.franja-turquesa .intro{color:#DFF6F4}
+.franja-turquesa .raya{background:var(--sol)}
+.franja-rosa{background:linear-gradient(168deg,#A81862 0%,var(--rosa-hondo) 100%);color:var(--tx-on-rosa-hondo)}
+.franja-rosa .intro{color:#FBDCEB}
+.franja-rosa .raya{background:var(--sol)}
+.franja-tinta{background:var(--tinta);color:var(--tx-on-tinta)}
+.franja-tinta .intro{color:#D8C6DE}
+.franja-tinta .raya{background:var(--sol)}
+
+/* ── proof-of-work: process strip (numbered — order is real information) ── */
+.escena-proceso{margin-bottom:30px}
+.escena-proceso svg{display:block;width:100%;height:auto;border:2.5px solid var(--tinta);border-radius:12px}
+.pasos{display:flex;flex-direction:column;gap:0;counter-reset:paso}
+.paso{display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--borde);color:var(--tx-suave)}
+.paso:last-child{border-bottom:0}
+.paso b{
+  counter-increment:paso;flex:none;width:34px;height:34px;border-radius:8px;background:var(--sol);color:var(--tinta);
+  font-family:'Luckiest Guy',sans-serif;font-size:15px;display:grid;place-items:center;
+}
+.paso b::before{content:counter(paso)}
+.paso h3{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:16px;margin-bottom:4px;letter-spacing:0;color:var(--tinta)}
+.paso p{font-size:14.5px;color:var(--tx-suave)}
+
+/* ── services teaser (index): 3 asymmetric stub links ─────────────────── */
+.probaditas{display:grid;gap:16px}
+.probadita{
+  position:relative;display:block;text-decoration:none;color:var(--tinta);
+  background:var(--papel);border:2px solid var(--tinta);border-radius:14px;padding:22px 20px;
+  box-shadow:var(--sombra-s);transition:transform .16s ease,box-shadow .16s ease;
+}
+.probadita:hover{transform:translateY(-3px);box-shadow:var(--sombra-m)}
+.probadita h3{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:18px;margin-bottom:6px;letter-spacing:0}
+.probadita p{font-size:14.5px;color:var(--tx-suave)}
+.probadita .precio{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:800;color:var(--rosa-hondo);background:#FCE3EF;border-radius:5px;padding:5px 10px}
+.probadita .ver{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:800;font-size:14px;color:var(--turquesa-hondo)}
+.probadita .ver svg{width:14px;height:14px;transition:transform .15s ease}
+.probadita:hover .ver svg{transform:translateX(3px)}
+
+/* ── why-us pennant strip ────────────────────────────────────────────── */
+.hilo{position:relative;padding-top:18px}
+.hilo::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--tinta) 0 10px,transparent 10px 16px)}
+.banderines{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.bandera{
+  --bw:158px;width:var(--bw);flex:0 0 auto;
+  clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
+  padding:20px 14px 40px;text-align:center;color:#fff;box-shadow:var(--sombra-s);
+}
+.bandera p{font-weight:800;font-size:14px;line-height:1.35}
+.f1{background:var(--rosa-hondo)}
+.f2{background:var(--turquesa-hondo)}
+.f3{background:var(--sol-hondo);color:var(--tinta)}
+.f4{background:var(--naranja);color:var(--tinta)}
+
+/* ── closing CTA band ────────────────────────────────────────────────── */
+.cierre{text-align:center}
+.cierre h2{color:#fff;font-size:clamp(1.8rem,6vw,2.5rem);max-width:16ch;margin:0 auto}
+.cierre p{margin-top:12px;color:#F3D9E6;font-size:16px}
+.cierre .numero-grande{
+  display:inline-flex;align-items:center;gap:12px;margin:26px 0 8px;
+  font-family:'Luckiest Guy',sans-serif;font-size:clamp(1.7rem,7vw,2.4rem);color:#fff;text-decoration:none;
+}
+.cierre .numero-grande svg{width:24px;height:24px;color:var(--sol)}
+.cierre .acciones-cierre{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:22px}
+
+/* ── work gallery vignettes ──────────────────────────────────────────── */
+.galeria{display:grid;gap:20px}
+.vineta{
+  background:var(--papel);border:2px solid var(--tinta);border-radius:14px;overflow:hidden;
+  box-shadow:var(--sombra-s);transition:transform .16s ease,box-shadow .16s ease;
+}
+.vineta:hover{transform:translateY(-3px);box-shadow:var(--sombra-m)}
+.vineta .escena-v{border-bottom:2px solid var(--tinta);line-height:0}
+.vineta .escena-v svg{display:block;width:100%;height:auto}
+.vineta-cuerpo{padding:18px 18px 20px}
+.vineta h3{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:17px;letter-spacing:0;margin-bottom:8px}
+.vineta p{font-size:14.5px;color:var(--tx-suave)}
+.muestra-tag{display:inline-block;margin-top:12px;font-size:10.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--turquesa-hondo);background:#DFF6F4;border-radius:5px;padding:5px 9px}
+.vineta.grande{grid-column:1 / -1}
+.vineta.grande .escena-v svg{max-height:280px}
+
+/* ── services detail rows ────────────────────────────────────────────── */
+.servicio{padding:46px 0;scroll-margin-top:calc(var(--header-h) + 20px)}
+.servicio-grid{display:grid;gap:26px;align-items:center}
+.servicio h2{font-size:clamp(1.5rem,5vw,2.1rem);margin-bottom:12px}
+.servicio .desc{font-size:16px;max-width:52ch}
+.servicio .cuando{margin-top:16px;font-size:14.5px;font-weight:700;max-width:52ch}
+.servicio .precio-grande{
+  display:inline-flex;align-items:baseline;gap:6px;margin-top:18px;font-family:'Luckiest Guy',sans-serif;
+  font-size:1.9rem;padding:8px 16px;border-radius:10px;
+}
+.servicio .precio-grande small{font-family:'Nunito Sans',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.servicio-escena{line-height:0}
+.servicio-escena svg{display:block;width:100%;height:auto;border:2.5px solid var(--tinta);border-radius:12px}
+.servicio:nth-of-type(odd) .servicio-escena{order:2}
+.lista-sabores{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.lista-sabores li{font-size:13.5px;font-weight:700;padding:6px 12px;border-radius:20px;border:1.5px solid currentColor}
+
+/* ── about story ──────────────────────────────────────────────────────── */
+.historia{display:grid;gap:28px;align-items:start}
+.historia .texto p{margin-bottom:16px;font-size:16.5px}
+.historia .texto p:last-child{margin-bottom:0}
+.historia-escena{line-height:0}
+.historia-escena svg{display:block;width:100%;height:auto;border:2.5px solid var(--tinta);border-radius:12px}
+.como-funciona{margin-top:8px;display:flex;flex-direction:column}
+.como-funciona li{display:flex;gap:14px;padding:15px 0;border-bottom:1px dashed var(--borde)}
+.como-funciona li:last-child{border-bottom:0}
+.como-funciona svg{flex:none;width:24px;height:24px;color:var(--rosa-hondo);margin-top:2px}
+.como-funciona h3{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:16px;margin-bottom:3px;letter-spacing:0}
+.como-funciona p{font-size:14.5px;color:var(--tx-suave)}
+.horario-lista{list-style:none;margin:0;padding:0}
+.horario-lista li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--borde);font-size:14.5px}
+.horario-lista li:last-child{border-bottom:0}
+.horario-lista b{font-weight:800}
+.horario-lista span{color:var(--tx-suave);text-align:right}
+.zona-caja{margin-top:4px;background:linear-gradient(150deg,#FFE9A6,#CDEEEA);border:2px dashed rgba(43,27,51,.3);border-radius:10px;padding:18px;text-align:center}
+.zona-caja b{display:block;font-family:'Luckiest Guy',sans-serif;font-size:20px;margin-bottom:4px;color:var(--tinta)}
+.zona-caja span{font-size:13.5px;color:#5A4326}
+
+/* ── contact page ─────────────────────────────────────────────────────── */
+.llamada-grande{
+  background:var(--tinta);color:var(--tx-on-tinta);border-radius:16px;padding:28px 24px;box-shadow:var(--sombra-m);
+}
+.llamada-grande h3{font-size:20px;color:#fff;margin-bottom:6px}
+.llamada-grande p{font-size:14.5px;color:#D8C6DE}
+.numero-tel{
+  display:inline-flex;align-items:center;gap:10px;margin:18px 0 10px;
+  font-family:'Luckiest Guy',sans-serif;font-size:clamp(1.4rem,6vw,1.9rem);color:#fff;text-decoration:none;
+}
+.numero-tel svg{width:20px;height:20px;color:var(--sol)}
+.sms-enlace{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;color:var(--sol);text-decoration:none;border-bottom:2px solid var(--sol);padding-bottom:2px}
+.sms-enlace svg{width:16px;height:16px}
+.mini-horario{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18)}
+.mini-horario li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:13.5px;color:#E4D6EA}
+.mini-horario b{color:#fff;font-weight:700}
+
+form{background:var(--papel);border:2px solid var(--tinta);border-radius:14px;padding:24px}
+form h3{font-family:'Luckiest Guy',sans-serif;font-size:19px;margin-bottom:5px;font-weight:400}
+form .fsub{font-size:13.5px;color:var(--tx-suave);margin-bottom:18px}
+.campo{margin-bottom:14px}
+label{display:block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--tx-suave);margin-bottom:6px}
+input,textarea,select{
+  width:100%;font-size:15.5px;color:var(--tinta);background:var(--crema);
+  border:1.5px solid #D9CBB6;border-radius:8px;padding:12px 13px;
+}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--rosa-hondo);outline-offset:1px;border-color:var(--rosa-hondo)}
+.enviar{
+  width:100%;border:2.5px solid var(--tinta);cursor:pointer;background:var(--turquesa-hondo);color:#fff;
+  font-family:'Luckiest Guy',sans-serif;font-size:17px;padding:15px;border-radius:10px;font-weight:400;
+}
+.form-muestra{margin-top:10px;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx-suave);font-weight:800}
+
+.faq{display:flex;flex-direction:column;gap:12px}
+.faq details{background:var(--papel);border:2px solid var(--tinta);border-radius:12px;padding:4px 18px;box-shadow:var(--sombra-s)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:16px 26px 16px 0;font-weight:800;font-size:16px;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:2px;top:50%;width:11px;height:11px;
+  border-right:2.5px solid var(--rosa-hondo);border-bottom:2.5px solid var(--rosa-hondo);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .resp{padding:0 0 18px;font-size:15px;color:var(--tx-suave);max-width:60ch}
+
+/* ── mobile sticky call bar ──────────────────────────────────────────── */
+.llamada{
+  position:fixed;left:0;right:0;bottom:0;z-index:250;display:flex;align-items:center;justify-content:center;gap:10px;
+  height:60px;background:var(--rosa-hondo);color:#fff;text-decoration:none;font-weight:800;font-size:16px;
+  border-top:2.5px solid var(--tinta);box-shadow:0 -8px 22px -12px rgba(43,27,51,.7);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.llamada svg{width:18px;height:18px}
+@media(min-width:900px){.llamada{display:none}}
+
+/* ── footer ───────────────────────────────────────────────────────────── */
+footer{background:var(--tinta);color:#E4D6EA;padding:40px 0 30px}
+.pie{display:grid;gap:26px}
+.pie-marca b{font-family:'Luckiest Guy',sans-serif;font-size:19px;color:#fff;display:block;font-weight:400}
+.pie-marca p{font-size:13.5px;margin-top:9px;color:#B9A7C1;max-width:40ch}
+.pie-links{display:flex;flex-wrap:wrap;gap:5px 16px;font-size:14px}
+.pie-links a{color:#E4D6EA;text-decoration:none;border-bottom:1px solid rgba(228,214,234,.32);padding-bottom:2px}
+.pie-tel{font-family:'Luckiest Guy',sans-serif;font-size:18px;color:#fff;text-decoration:none;display:inline-block;font-weight:400}
+.pie-zona{font-size:13.5px;color:#B9A7C1;margin-top:7px}
+.revelar{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);font-size:12.5px;color:#A895B1}
+.revelar a{color:#C9B6D0}
+.revelar p{margin-top:5px}
+
+/* ── motion: one authored entrance per page ──────────────────────────── */
+@keyframes entra-arriba{from{opacity:0;transform:translateY(22px) scale(.985)} to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes entra-difusa{from{opacity:0;filter:blur(6px);transform:translateY(14px)} to{opacity:1;filter:blur(0);transform:translateY(0)}}
+.anim-difusa{animation:entra-difusa .85s var(--ease-salida) both}
+
+/* ==========================================================================
+   Responsive tiers: 620 / 900 / 1120 — mentally verified clean at 375/768/1200
+   ========================================================================== */
+@media(min-width:480px){
+  .marca-txt em{display:block}
+}
+@media(min-width:620px){
+  .boletos{grid-template-columns:repeat(3,1fr)}
+  .probaditas{grid-template-columns:repeat(3,1fr)}
+  .galeria{grid-template-columns:repeat(2,1fr)}
+  .pasos{flex-direction:row}
+  .paso{flex-direction:column;flex:1;border-bottom:0;border-left:1px dashed var(--borde);padding:0 0 0 16px}
+  .paso:first-child{border-left:0;padding-left:0}
+  .acciones{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .cierre .acciones-cierre{flex-direction:row}
+  .como-funciona{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+}
+@media(min-width:900px){
+  .nav-panel{position:static;max-height:none;overflow:visible;border:0;box-shadow:none;background:none}
+  .nav-panel.abierto{max-height:none}
+  .nav-panel-int{flex-direction:row;align-items:center;gap:26px;padding:0}
+  .nav-panel a{padding:0;border-bottom:0;font-size:15px;position:relative}
+  .nav-panel a:not([aria-current="page"]):hover{color:var(--rosa-hondo)}
+  .nav-panel a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-26px;height:3px;background:var(--rosa-hondo);border-radius:2px}
+  .sub-nav{position:relative;border-bottom:0}
+  .sub-nav.activa .sub-btn::after{content:"";position:absolute;left:0;right:0;bottom:-26px;height:3px;background:var(--rosa-hondo);border-radius:2px}
+  .sub-btn{padding:0;width:auto;font-size:15px}
+  .sub-btn svg{width:13px;height:13px}
+  .sub-panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
+    width:264px;background:var(--papel);border:2px solid var(--tinta);border-radius:12px;box-shadow:var(--sombra-l);
+    padding:8px;max-height:0;transition:max-height .22s var(--ease-salida),opacity .18s ease;opacity:0}
+  .sub-panel.abierto{max-height:420px;opacity:1}
+  .sub-nav:hover .sub-panel,.sub-nav:focus-within .sub-panel{max-height:420px;opacity:1}
+  .sub-panel a{display:block;padding:10px 12px;border-radius:7px;font-size:14.5px}
+  .sub-panel a:hover{background:var(--crema)}
+  .menu-btn{display:none}
+  .enc{gap:28px}
+  .marca{flex:0 0 auto}
+  .nav-panel-int{flex:1 1 auto;justify-content:center}
+  .enc-tel{width:auto;height:auto;border-radius:9px;padding:11px 18px;gap:8px}
+  .enc-tel .txt{display:inline}
+  .marca svg{width:40px;height:40px}
+  .marca-txt b{font-size:18px}
+
+  h1{font-size:clamp(2.6rem,4.4vw,3.6rem)}
+  .marco-int{padding:44px 44px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+  .escena-marco{margin-top:0}
+  .sec{padding:78px 0}
+  .encimadas{margin-top:-42px}
+  .servicio-grid{grid-template-columns:1fr 1fr}
+  .historia{grid-template-columns:1.1fr .9fr}
+  .galeria{grid-template-columns:repeat(3,1fr)}
+  .vineta.grande{grid-column:span 2}
+  .contacto-grid{grid-template-columns:.85fr 1.15fr;align-items:start}
+  .pie{grid-template-columns:1.3fr 1fr 1fr;align-items:start}
+  .escena-proceso svg{max-height:340px}
+}
+@media(min-width:1120px){
+  .caja{padding:0 32px}
+  h1{font-size:clamp(3rem,4vw,4rem)}
+}

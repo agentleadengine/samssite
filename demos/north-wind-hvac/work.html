@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work | North Wind Heating &amp; Air</title>
+<meta name="description" content="Sample repair, installation and maintenance calls from North Wind Heating &amp; Air, Long Island, NY. Illustrative project vignettes, not real client records.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <g stroke="#fdf9f0" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+          <line x1="20" y1="4" x2="20" y2="7.6"/>
+          <line x1="20" y1="32.4" x2="20" y2="36"/>
+          <line x1="4" y1="20" x2="7.6" y2="20"/>
+          <line x1="32.4" y1="20" x2="36" y2="20"/>
+          <line x1="9.3" y1="9.3" x2="11.7" y2="11.7"/>
+          <line x1="28.3" y1="11.7" x2="30.7" y2="9.3"/>
+          <line x1="9.3" y1="30.7" x2="11.7" y2="28.3"/>
+          <line x1="28.3" y1="28.3" x2="30.7" y2="30.7"/>
+        </g>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.4" fill="#fdf9f0"/>
+        <circle cx="20" cy="20" r="1.6" fill="#1c1b18"/>
+      </svg>
+      <span class="brand-name">North Wind<br>Heating &amp; Air</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+            <li><a href="services.html#installation">System installation</a></li>
+            <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+            <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+            <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+            <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+15165550114">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(516) 555-0114</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+          <li><a href="services.html#installation">System installation</a></li>
+          <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+          <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+          <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+          <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+15165550114">Call (516) 555-0114</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <div class="section-head center page-intro">
+        <h1 style="font-size:clamp(2.2rem,5.6vw,3.4rem)">Sample work</h1>
+        <p class="lede center">Six calls that show how the gauge moves from a problem to a fixed reading. Illustrative composites, not real client records or photos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <!-- 1: frozen line set -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 150" role="img" aria-label="A dial needle moving from a low-charge alert zone into the steady zone, with fading frost ticks">
+              <defs>
+                <linearGradient id="wk1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#e8752f"/><stop offset="1" stop-color="#2ea0cd"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 120a82 82 0 0 1 164 0" fill="none" stroke="#ddd3bf" stroke-width="9" stroke-linecap="round"/>
+              <path d="M18 120a82 82 0 0 1 164 0" fill="none" stroke="url(#wk1)" stroke-width="9" stroke-linecap="round"/>
+              <line x1="100" y1="120" x2="55" y2="72" stroke="#c04f22" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+              <line x1="100" y1="120" x2="148" y2="68" stroke="#1c1b18" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="100" cy="120" r="6" fill="#fdf9f0" stroke="#1c1b18" stroke-width="2"/>
+              <g stroke="#8fa0a6" stroke-width="1.5" stroke-linecap="round" opacity=".55">
+                <line x1="34" y1="52" x2="40" y2="58"/><line x1="34" y1="58" x2="40" y2="52"/>
+                <line x1="46" y1="40" x2="52" y2="46"/><line x1="46" y1="46" x2="52" y2="40"/>
+              </g>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>Frozen line set, mid-July <span class="tag tag-cool">Cooling</span></h2>
+            <p>The system had been running low on refrigerant for months, and ice built up on the line set until the coil choked entirely. We recovered what was left, pressure-tested for the leak, repaired it, and recharged to spec. The reading held steady a week later.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: furnace short-cycling -->
+      <article class="work-item reverse">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 120" role="img" aria-label="A cycle chart showing short, irregular pulses settling into one long, steady pulse">
+              <line x1="10" y1="90" x2="190" y2="90" stroke="#ddd3bf" stroke-width="2"/>
+              <path d="M10 90 L20 90 L20 55 L28 55 L28 90 L36 90 L36 60 L44 60 L44 90 L52 90 L52 50 L60 50 L60 90 L68 90 L68 58 L76 58 L76 90 L86 90" fill="none" stroke="#c04f22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M86 90 L100 90 L100 32 L172 32 L172 90 L190 90" fill="none" stroke="#0f6e93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="14" y="105" fill="#4d473e" font-family="Hanken Grotesk, sans-serif" font-size="9" letter-spacing="1">SHORT CYCLES</text>
+              <text x="118" y="105" fill="#4d473e" font-family="Hanken Grotesk, sans-serif" font-size="9" letter-spacing="1">FULL RUN</text>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>Furnace short-cycling, January <span class="tag tag-warm">Heating</span></h2>
+            <p>Furnace was firing for ninety seconds, shutting off, and firing again, all night. A cracked flame sensor was reading a false signal. New sensor, and the cycle length went from ninety seconds to a full, normal run.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: load calc -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 150" role="img" aria-label="A house outline with measurement ticks at the roof, wall and window, on a graph-paper background">
+              <defs>
+                <pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse">
+                  <path d="M14 0H0V14" fill="none" stroke="#ddd3bf" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect x="14" y="14" width="172" height="122" rx="10" fill="url(#grid)" opacity=".6"/>
+              <path d="M40 92 100 46 160 92" fill="none" stroke="#0a3a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M56 92v34h88V92" fill="none" stroke="#0a3a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="90" y="106" width="20" height="20" fill="none" stroke="#c04f22" stroke-width="2.5"/>
+              <line x1="100" y1="46" x2="100" y2="30" stroke="#8fa0a6" stroke-width="1.5" stroke-dasharray="2 3"/>
+              <line x1="94" y1="32" x2="106" y2="32" stroke="#8fa0a6" stroke-width="1.5"/>
+              <line x1="160" y1="92" x2="176" y2="92" stroke="#8fa0a6" stroke-width="1.5" stroke-dasharray="2 3"/>
+              <line x1="174" y1="86" x2="174" y2="98" stroke="#8fa0a6" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A load calc before the swap <span class="tag tag-neutral">Installation</span></h2>
+            <p>The old system had been sized off square footage alone and short-cycled every summer. We ran a full load calculation, windows, insulation, orientation, before quoting the replacement. The new system runs longer cycles at a lower speed and actually pulls the humidity down.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: duct leak -->
+      <article class="work-item reverse">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 130" role="img" aria-label="A duct cross-section with a leaking seam on the left transitioning to a sealed, smooth seam on the right">
+              <rect x="14" y="40" width="80" height="50" rx="4" fill="none" stroke="#c04f22" stroke-width="3"/>
+              <path d="M60 40 L66 52 L58 58 L66 66 L60 90" fill="none" stroke="#c04f22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <g stroke="#c04f22" stroke-width="1.6" stroke-linecap="round" opacity=".5">
+                <line x1="70" y1="50" x2="82" y2="44"/><line x1="72" y1="60" x2="86" y2="58"/>
+              </g>
+              <rect x="106" y="40" width="80" height="50" rx="4" fill="none" stroke="#0f6e93" stroke-width="3"/>
+              <line x1="146" y1="40" x2="146" y2="90" stroke="#0f6e93" stroke-width="3" stroke-linecap="round"/>
+              <path d="M136 60l6 6 10-11" fill="none" stroke="#0f6e93" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="20" y="110" fill="#4d473e" font-family="Hanken Grotesk, sans-serif" font-size="9" letter-spacing="1">LEAKING</text>
+              <text x="118" y="110" fill="#4d473e" font-family="Hanken Grotesk, sans-serif" font-size="9" letter-spacing="1">SEALED</text>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>Duct leak found in the attic <span class="tag tag-neutral">Ductwork</span></h2>
+            <p>Upstairs never matched the thermostat reading downstairs. A static pressure test pointed to a split seam in the attic trunk line, twenty feet from the unit, losing conditioned air into the insulation. Sealed and retested; upstairs closed the gap by several degrees.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: mini-split -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 130" role="img" aria-label="One outdoor unit connected by two lines to two indoor heads, each with its own thermostat dot">
+              <rect x="150" y="70" width="38" height="38" rx="4" fill="none" stroke="#0a3a4d" stroke-width="3"/>
+              <line x1="156" y1="80" x2="182" y2="80" stroke="#0a3a4d" stroke-width="2"/>
+              <line x1="156" y1="88" x2="182" y2="88" stroke="#0a3a4d" stroke-width="2" opacity=".6"/>
+              <rect x="14" y="20" width="60" height="18" rx="6" fill="none" stroke="#0f6e93" stroke-width="2.6"/>
+              <circle cx="66" cy="29" r="3" fill="#0f6e93"/>
+              <rect x="14" y="92" width="60" height="18" rx="6" fill="none" stroke="#c04f22" stroke-width="2.6"/>
+              <circle cx="66" cy="101" r="3" fill="#c04f22"/>
+              <path d="M74 29h50a20 20 0 0 1 20 20v11" fill="none" stroke="#8fa0a6" stroke-width="1.6" stroke-dasharray="2 3.4"/>
+              <path d="M74 101h50a20 20 0 0 0 20-20V70" fill="none" stroke="#8fa0a6" stroke-width="1.6" stroke-dasharray="2 3.4"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A mini-split for a finished attic <span class="tag tag-neutral">Mini-splits</span></h2>
+            <p>The finished attic had no ductwork to extend into and no reasonable path to add any. One outdoor condenser now feeds two indoor heads on separate thermostats, one for the office end and one for the sitting area.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: fall tune-up catches cracked exchanger -->
+      <article class="work-item reverse">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg class="gauge-scene" viewBox="0 0 200 140" role="img" aria-label="A furnace outline with a hairline crack highlighted, a small caution gauge, and a camera lens for the inspection">
+              <rect x="16" y="14" width="80" height="112" rx="8" fill="none" stroke="#7a2e10" stroke-width="3"/>
+              <path d="M48 46c9 10 13 16 13 23a13 13 0 0 1-26 0c0-7 4-13 13-23z" fill="none" stroke="#7a2e10" stroke-width="2.6"/>
+              <path d="M40 90l8-10 6 8 10-14" fill="none" stroke="#c04f22" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="150" cy="46" r="30" fill="none" stroke="#ddd3bf" stroke-width="8"/>
+              <path d="M150 46m-30 0a30 30 0 0 1 52 -18" fill="none" stroke="#c04f22" stroke-width="8" stroke-linecap="round"/>
+              <line x1="150" y1="46" x2="170" y2="26" stroke="#1c1b18" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="150" cy="46" r="5" fill="#fdf9f0" stroke="#1c1b18" stroke-width="2"/>
+              <circle cx="150" cy="106" r="18" fill="none" stroke="#0a3a4d" stroke-width="3"/>
+              <circle cx="150" cy="106" r="8" fill="none" stroke="#0a3a4d" stroke-width="2.4"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A fall tune-up catches a cracked exchanger <span class="tag tag-warm">Heating</span></h2>
+            <p>Routine fall tune-up, nothing had been complained about yet. Combustion analysis and the camera found a hairline crack in the heat exchanger, and the CO reading confirmed it. The furnace was shut down on the spot and the part was ordered, before it became a cold-night emergency.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Have a system that needs a look?</h2>
+      <p class="measure-center">Same process every time: measure, quote it flat, show you the reading.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+15165550114">Call (516) 555-0114</a>
+        <a class="btn btn-ghost" href="services.html">See the services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3" fill="#fdf9f0"/>
+      </svg>
+      <span>North Wind Heating &amp; Air</span>
+    </div>
+    <p class="footer-line">Heating, cooling and ductwork &middot; Long Island, NY &middot; <a href="tel:+15165550114">(516) 555-0114</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550114">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call (516) 555-0114
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

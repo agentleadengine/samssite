@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  THESIS: A house's comfort system has one real job, holding a number steady against whatever the sky is doing outside, and North Wind shows you that reading before it shows you a bill.
+  OWN-WORLD: the heat/cool duality rendered as a literal instrument, a split dial with a needle that settles at true center, reused as the grammar for every page (ticks, arcs, readings) instead of a logo that just sits there.
+  STORY: a Long Island HVAC shop that treats your house like a system to be measured, not a lead to be closed. You see the gauge before you see the sale.
+  FIRST VIEWPORT: an oversized split dial mid-settle, needle finding center, cool half left / warm half right, each side carrying its own icon and label so the split still reads in grayscale.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>North Wind Heating &amp; Air | Long Island HVAC</title>
+<meta name="description" content="North Wind Heating &amp; Air services and installs air conditioning, furnaces, heat pumps and mini-splits across Long Island, NY. Measured before it's quoted. Call (516) 555-0114.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <g stroke="#fdf9f0" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+          <line x1="20" y1="4" x2="20" y2="7.6"/>
+          <line x1="20" y1="32.4" x2="20" y2="36"/>
+          <line x1="4" y1="20" x2="7.6" y2="20"/>
+          <line x1="32.4" y1="20" x2="36" y2="20"/>
+          <line x1="9.3" y1="9.3" x2="11.7" y2="11.7"/>
+          <line x1="28.3" y1="11.7" x2="30.7" y2="9.3"/>
+          <line x1="9.3" y1="30.7" x2="11.7" y2="28.3"/>
+          <line x1="28.3" y1="28.3" x2="30.7" y2="30.7"/>
+        </g>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.4" fill="#fdf9f0"/>
+        <circle cx="20" cy="20" r="1.6" fill="#1c1b18"/>
+      </svg>
+      <span class="brand-name">North Wind<br>Heating &amp; Air</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+            <li><a href="services.html#installation">System installation</a></li>
+            <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+            <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+            <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+            <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+15165550114">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(516) 555-0114</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+          <li><a href="services.html#installation">System installation</a></li>
+          <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+          <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+          <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+          <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+15165550114">Call (516) 555-0114</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1>Cool in July. Warm in January. <span class="cool">One number,</span> <span class="warm">held steady.</span></h1>
+        <p class="sub">North Wind repairs, installs and tunes the air conditioning, furnaces, heat pumps and mini-splits already running in your Long Island home. We measure before we quote, and we hand you the part that failed.</p>
+        <div class="cta">
+          <div class="btn-row">
+            <a class="btn btn-primary" href="tel:+15165550114">Call (516) 555-0114</a>
+            <a class="btn btn-secondary" href="contact.html">Book a tune-up</a>
+          </div>
+          <a class="textlink" href="services.html">
+            See every service
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dial is-hero" role="img" aria-label="A gauge split cool on the left and warm on the right, needle settling at true center">
+        <div class="dial-hub"></div>
+        <div class="needle-arm"></div>
+      </div>
+      <div class="dial-labels">
+        <span class="tag tag-cool">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="4" y1="7" x2="20" y2="17"/><line x1="20" y1="7" x2="4" y2="17"/></svg>
+          Cooling
+        </span>
+        <span class="tag tag-warm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4 0-6.5-2.6-6.5-6 0-2.6 1.6-4 2.4-6 .5 1.2 1.4 1.8 2.1 1.6C9.2 8 8.6 4.8 11 2c.6 3 2.4 4 3.6 6.4.5-.7.7-1.6.6-2.4 1.6 1.6 3.3 4 3.3 6.9 0 3.5-2.5 8.1-6.5 8.1z"/></svg>
+          Heating
+        </span>
+      </div>
+
+      <p class="hero-note center">Serving Nassau and western Suffolk from one shop, so arrival windows stay tight.</p>
+
+      <div class="duality">
+        <div>
+          <span class="tag tag-cool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="4" y1="7" x2="20" y2="17"/><line x1="20" y1="7" x2="4" y2="17"/></svg>
+            April&ndash;September
+          </span>
+          <p>Cooling calls, duct sealing and system swaps. Book the tune-up in spring and skip the first-heat-wave queue.</p>
+        </div>
+        <div>
+          <span class="tag tag-warm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4 0-6.5-2.6-6.5-6 0-2.6 1.6-4 2.4-6 .5 1.2 1.4 1.8 2.1 1.6C9.2 8 8.6 4.8 11 2c.6 3 2.4 4 3.6 6.4.5-.7.7-1.6.6-2.4 1.6 1.6 3.3 4 3.3 6.9 0 3.5-2.5 8.1-6.5 8.1z"/></svg>
+            October&ndash;March
+          </span>
+          <p>Furnaces, boilers, heat pumps and ductless heads. No-heat calls go to the front of the schedule, including after hours.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- proof of work -->
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <div class="proof-scene">
+        <svg class="gauge-scene" viewBox="0 0 220 150" role="img" aria-label="A gauge needle moving out of the alert zone and settling into the steady zone">
+          <defs>
+            <linearGradient id="nw-scale" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#e8752f"/>
+              <stop offset="1" stop-color="#2ea0cd"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 122a90 90 0 0 1 180 0" class="gauge-track"/>
+          <path d="M20 122a90 90 0 0 1 180 0" class="gauge-fill" stroke="url(#nw-scale)"/>
+          <line x1="110" y1="122" x2="163" y2="68" class="gauge-needle"/>
+          <circle cx="110" cy="122" r="7" fill="#fdf9f0"/>
+          <circle cx="110" cy="122" r="3" fill="#1c1b18"/>
+          <text x="40" y="140" fill="#bcd7e2" font-family="Hanken Grotesk, sans-serif" font-size="10" letter-spacing="1.5">ALERT</text>
+          <text x="168" y="140" fill="#bcd7e2" font-family="Hanken Grotesk, sans-serif" font-size="10" letter-spacing="1.5">STEADY</text>
+        </svg>
+      </div>
+      <div class="proof-copy">
+        <h2>What a repair call actually looks like</h2>
+        <p class="measure">Blowing warm since Tuesday. We check refrigerant charge, capacitor and airflow, in that order, because that's usually where the fault sits. On this call the capacitor had swollen and lost its charge: a small part causing a system-wide symptom.</p>
+        <p class="measure">We swapped it, watched the gauge settle back into the steady zone, and left the old one on the counter so you can see exactly what failed.</p>
+        <div class="callout">This is the shape of most repair calls: a specific part, a specific reading, a specific fix. Not a guess and a number.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services teaser -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Two systems, one crew</h2>
+        <p class="lede center">We work on the equipment already in your basement, attic or side yard, and replace it only when replacing it is genuinely the cheaper answer.</p>
+      </div>
+
+      <div class="svc-panel">
+        <div class="svc-row">
+          <a class="svc-link" href="services.html#ac-repair">
+            <span class="ic">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="8" width="24" height="14" rx="3"/><line x1="8" y1="13" x2="20" y2="13"/><line x1="8" y1="17" x2="17" y2="17"/>
+                <line x1="9" y1="22" x2="9" y2="27"/><line x1="16" y1="22" x2="16" y2="28"/><line x1="23" y1="22" x2="23" y2="27"/>
+              </svg>
+            </span>
+            <span class="svc-row-body">
+              <h3>Air conditioning repair</h3>
+              <p>Blowing warm, tripping the breaker, or a line set frozen solid.</p>
+            </span>
+            <span class="svc-row-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="svc-row is-warm">
+          <a class="svc-link" href="services.html#furnaces">
+            <span class="ic">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="7" y="4" width="18" height="24" rx="3"/><path d="M16 11c2.4 2.7 3.4 4.3 3.4 6.1a3.4 3.4 0 0 1-6.8 0c0-1.8 1-3.4 3.4-6.1z"/><line x1="11" y1="24" x2="21" y2="24"/>
+              </svg>
+            </span>
+            <span class="svc-row-body">
+              <h3>Furnaces &amp; boilers</h3>
+              <p>No heat on the coldest night of the year, cleaned, tested and left running right.</p>
+            </span>
+            <span class="svc-row-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="svc-row">
+          <a class="svc-link" href="services.html#tune-ups">
+            <span class="ic">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5"/><line x1="12" y1="7" x2="12" y2="12"/><line x1="12" y1="12" x2="15.2" y2="14"/>
+                <path d="M20 20l6.5 6.5a2 2 0 0 1-2.8 2.8L17 22.6"/><path d="M19 17l-2.6 2.6"/>
+              </svg>
+            </span>
+            <span class="svc-row-body">
+              <h3>Tune-ups &amp; maintenance</h3>
+              <p>Spring for cooling, fall for heat, plus a written list of what we found.</p>
+            </span>
+            <span class="svc-row-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="svc-panel-foot">
+          <a class="textlink" href="services.html">
+            See all six services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- why us / reading strip -->
+  <section style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Four things we do every job</h2>
+        <p class="lede center">HVAC has a reputation for surprise numbers and hard upsells. This is how we stay out of that, in the order it actually happens.</p>
+      </div>
+
+      <div class="readings">
+        <div class="reading-list">
+          <div class="reading">
+            <div class="reading-step">01</div>
+            <h3>We measure before we quote</h3>
+            <p>Square footage, insulation, window load, duct condition. Guessing the size is how a house ends up clammy in August.</p>
+          </div>
+          <div class="reading">
+            <div class="reading-step">02</div>
+            <h3>One flat number, in writing</h3>
+            <p>You get the price before we start, parts and labor both. Find something else once we're in the wall, we stop and ask first.</p>
+          </div>
+          <div class="reading">
+            <div class="reading-step">03</div>
+            <h3>You see the part that failed</h3>
+            <p>Swollen capacitor, seized blower motor, a contactor burned black; it goes on the counter. Anything we can't pull out, like a cracked heat exchanger, you get the camera photo and the CO reading.</p>
+          </div>
+          <div class="reading">
+            <div class="reading-step">04</div>
+            <h3>Repair first when it makes sense</h3>
+            <p>A ten-year-old system with one dead part usually gets fixed, not replaced. We'll tell you plainly when it's throwing good money after bad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- closing cta -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready when the system isn't.</h2>
+      <p class="measure-center">Tell us what it's doing and roughly how old it is. That's usually enough to know what to load on the truck.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+15165550114">Call (516) 555-0114</a>
+        <a class="btn btn-ghost" href="contact.html">Send details instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3" fill="#fdf9f0"/>
+      </svg>
+      <span>North Wind Heating &amp; Air</span>
+    </div>
+    <p class="footer-line">Heating, cooling and ductwork &middot; Long Island, NY &middot; <a href="tel:+15165550114">(516) 555-0114</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550114">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call (516) 555-0114
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
