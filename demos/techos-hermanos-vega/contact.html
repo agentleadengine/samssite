@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Techos Hermanos Vega</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Sen:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-ribbon">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Techos Hermanos <span>Vega</span></a>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li>
+          <a href="services.html">Servicios</a>
+          <ul class="submenu">
+            <li><a href="services.html#reemplazo">Reemplazo completo de techo</a></li>
+            <li><a href="services.html#fugas">Reparación de fugas</a></li>
+            <li><a href="services.html#tormentas">Inspección de daños por tormenta</a></li>
+            <li><a href="services.html#canalones">Integración de canalones</a></li>
+            <li><a href="services.html#planos">Sistemas de techo plano</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-phone"><a href="tel:+16315550134">(631) 555-0134</a></div>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li>
+      <button aria-expanded="false" aria-controls="mobileSubmenu">Servicios</button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="services.html#reemplazo">Reemplazo completo de techo</a></li>
+        <li><a href="services.html#fugas">Reparación de fugas</a></li>
+        <li><a href="services.html#tormentas">Inspección de daños por tormenta</a></li>
+        <li><a href="services.html#canalones">Integración de canalones</a></li>
+        <li><a href="services.html#planos">Sistemas de techo plano</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Trabajos</a></li>
+    <li><a href="about.html">Nosotros</a></li>
+    <li><a href="contact.html" class="active">Contacto</a></li>
+    <li><a href="tel:+16315550134" style="color: var(--teja); font-size: 22px;">(631) 555-0134</a></li>
+  </ul>
+</div>
+
+<main>
+  <div class="page-header">
+    <h1>Contacto</h1>
+    <p>Llámenos o envíe un mensaje. Le respondemos el mismo día durante el horario de trabajo.</p>
+  </div>
+
+  <div class="contact-main">
+    <div class="contact-phone-block">
+      <h2>Llámenos</h2>
+      <a href="tel:+16315550134" class="contact-phone-big">(631) 555-0134</a>
+      <p>O envíe un mensaje de texto al mismo número.</p>
+      <a href="sms:+16315550134" class="btn-text">Enviar texto / SMS</a>
+      <div class="contact-hours">
+        <h3>Horario</h3>
+        <p>Lunes a viernes: 7:00 a.m. — 6:00 p.m.<br>Sábados: 8:00 a.m. — 2:00 p.m.<br>Domingos: cerrado</p>
+      </div>
+    </div>
+
+    <div class="contact-form-block">
+      <h2>Envíe un mensaje</h2>
+      <p class="form-sample-label">Formulario de muestra</p>
+      <div class="form-field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Su nombre">
+      </div>
+      <div class="form-field">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Su teléfono">
+      </div>
+      <div class="form-field">
+        <label for="tipo">Tipo de trabajo</label>
+        <select id="tipo" name="tipo">
+          <option value="">Seleccione una opción</option>
+          <option value="reemplazo">Reemplazo completo</option>
+          <option value="fugas">Reparación de fugas</option>
+          <option value="tormentas">Inspección de daños</option>
+          <option value="canalones">Canalones</option>
+          <option value="planos">Techo plano</option>
+          <option value="otro">Otro / no estoy seguro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Cuéntenos qué necesita"></textarea>
+      </div>
+      <button type="button" class="form-button">Enviar mensaje</button>
+    </div>
+  </div>
+
+  <div class="contact-faq">
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="faq-item">
+      <h3>¿La evaluación tiene costo?</h3>
+      <p>No. La primera visita para evaluar el estado de su techo y darle un presupuesto es sin costo. Le decimos lo que vemos y lo que recomendamos.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cuánto dura un reemplazo completo?</h3>
+      <p>Depende del tamaño y la complejidad del techo. Una casa residencial promedio en Long Island toma entre dos y cuatro días laborables, clima permitting. Le damos un estimado exacto después de la evaluación.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Trabajan después de una tormenta?</h3>
+      <p>Sí. Las inspecciones de daños por tormenta son prioritarias para nosotros. Si su techo sufrió daños por viento o granizo, llámenos el mismo día y agendamos lo antes posible.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <ul class="footer-nav">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="work.html">Trabajos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <div class="footer-credit">
+      Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a><br>
+      Negocio ficticio mostrado como demostración.
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+16315550134">(631) 555-0134</a>
+</div>
+
+<script>
+(function() {
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var subBtn = mobileNav.querySelector('button[aria-controls="mobileSubmenu"]');
+  var subMenu = document.getElementById('mobileSubmenu');
+
+  hamburger.addEventListener('click', function() {
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !open);
+    mobileNav.classList.toggle('open', !open);
+  });
+
+  subBtn.addEventListener('click', function() {
+    var open = subBtn.getAttribute('aria-expanded') === 'true';
+    subBtn.setAttribute('aria-expanded', !open);
+    subMenu.classList.toggle('open', !open);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    }
+  });
+
+  mobileNav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    }
+  });
+})();
+</script>
+</body>
+</html>
