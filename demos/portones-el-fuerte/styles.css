@@ -30,7 +30,7 @@
   /* orange */
   --orange-500:#ea5b13;
   --orange-400:#f2701f;
-  --orange-700:#b8420c;
+  --orange-700:#ac3e0a;
 
   --font-display:'Archivo Black', 'Arial Black', sans-serif;
   --font-body:'Barlow', 'Helvetica Neue', Arial, sans-serif;
@@ -96,7 +96,7 @@ strong{ font-weight:700; }
 }
 .skip-link:focus{ left:1rem; }
 
-:focus-visible{ outline:3px solid var(--orange-400); outline-offset:3px; border-radius:3px; }
+:focus-visible{ outline:3px solid var(--orange-500); outline-offset:3px; border-radius:3px; }
 
 /* ==========================================================================
    Demo ribbon — full-width strip above everything; header sticks below it,
@@ -119,27 +119,37 @@ strong{ font-weight:700; }
 }
 .head-top-in{
   display:flex; align-items:center; justify-content:space-between;
-  gap:1rem; padding-block:.85rem;
+  gap:.75rem; padding-block:.85rem;
 }
-.brand{ display:flex; align-items:center; gap:.65rem; min-width:0; }
+.brand{ display:flex; align-items:center; gap:.65rem; min-width:0; flex:none; }
 .brand-mark{ width:38px; height:38px; flex:none; }
 .brand-mark .plate{ fill:var(--steel-800); stroke:var(--orange-500); stroke-width:1.6; }
 .brand-mark .rib{ stroke:var(--orange-500); }
 .brand-mark .rivet{ fill:var(--paper); }
-.brand-text{ display:flex; flex-direction:column; line-height:1.12; }
-.brand-name{ font-family:var(--font-display); font-size:1.05rem; color:var(--paper); letter-spacing:.01em; }
-.brand-sub{ font-size:.72rem; color:var(--steel-mist); font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-top:.2rem; }
+.brand-text{ display:flex; flex-direction:column; line-height:1.12; min-width:0; }
+.brand-name{ font-family:var(--font-display); font-size:1.05rem; color:var(--paper); letter-spacing:.01em; white-space:nowrap; }
+.brand-sub{
+  display:none; font-size:.72rem; color:var(--steel-mist); font-weight:600;
+  letter-spacing:.04em; text-transform:uppercase; margin-top:.2rem; white-space:nowrap;
+}
+@media(min-width:600px){ .brand-sub{ display:block; } }
 
-.head-actions{ display:flex; align-items:center; gap:.9rem; }
-.head-phone{ display:flex; flex-direction:column; align-items:flex-end; gap:.15rem; }
+.head-actions{ display:flex; align-items:center; gap:.6rem; min-width:0; flex:none; }
+.head-phone{ display:flex; flex-direction:column; align-items:flex-end; gap:.15rem; min-width:0; }
 .head-tel{
-  display:flex; align-items:center; gap:.45rem;
+  display:flex; align-items:center; gap:.45rem; justify-content:center;
+  width:40px; height:40px; border-radius:var(--radius-sm);
   font-family:var(--font-body); font-weight:800; font-size:1rem; color:var(--paper);
   white-space:nowrap;
 }
-.head-tel svg{ width:18px; height:18px; color:var(--orange-400); flex:none; }
-.head-hint{ display:none; font-size:.7rem; color:var(--steel-mist); font-weight:500; white-space:nowrap; }
-@media(min-width:560px){ .head-hint{ display:block; } }
+.head-tel svg{ width:19px; height:19px; color:var(--orange-400); flex:none; }
+.head-tel-text{ display:none; }
+@media(min-width:480px){
+  .head-tel{ width:auto; height:auto; justify-content:flex-start; }
+  .head-tel-text{ display:inline; }
+}
+.head-hint{ display:none; font-size:.7rem; color:var(--steel-mist); font-weight:500; }
+@media(min-width:760px){ .head-hint{ display:block; } }
 
 .hamburger{
   width:42px; height:42px; flex:none; display:grid; place-items:center;
@@ -216,8 +226,6 @@ strong{ font-weight:700; }
 .btn-primary{ background:var(--orange-500); color:var(--ink); box-shadow:var(--shadow-sm); }
 .btn-primary:hover{ background:var(--orange-400); transform:translateY(-2px); box-shadow:var(--shadow-md); }
 .btn-primary:active{ transform:translateY(0); box-shadow:var(--shadow-sm); }
-.btn-outline{ background:transparent; color:var(--paper); border:1.5px solid var(--steel-600); }
-.btn-outline:hover{ border-color:var(--orange-400); color:var(--orange-400); }
 .btn-block{ width:100%; }
 
 .cta-link{
@@ -261,7 +269,6 @@ strong{ font-weight:700; }
    Section rhythm
    ========================================================================== */
 .section{ padding-block:var(--sp-6); }
-.section-tight{ padding-block:var(--sp-5); }
 .on-steel{ background:var(--steel-950); color:var(--paper); }
 .on-paper{ background:var(--paper); }
 .on-paper-dim{ background:var(--paper-dim); border-block:1px solid var(--paper-line); }
@@ -404,7 +411,7 @@ strong{ font-weight:700; }
   transition:transform .15s var(--ease-out-expo), background-color .15s ease;
 }
 .cta-phone:hover{ background:var(--orange-400); transform:translateY(-2px); }
-.cta-phone .lbl{ font-size:.76rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; opacity:.8; }
+.cta-phone .lbl{ font-size:.76rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink); }
 .cta-phone .num{ font-family:var(--font-display); font-size:1.5rem; letter-spacing:-.01em; }
 .cta-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1.2rem 1.6rem; }
 
@@ -567,7 +574,7 @@ input, textarea{
   background:var(--paper); color:var(--ink); font:inherit; padding:.8rem .9rem;
   transition:border-color .15s ease;
 }
-input::placeholder, textarea::placeholder{ color:var(--ink-soft); opacity:.65; }
+input::placeholder, textarea::placeholder{ color:var(--ink-soft); opacity:1; }
 input:focus, textarea:focus{ border-color:var(--orange-500); }
 textarea{ min-height:108px; resize:vertical; }
 .form-note{ font-size:.84rem; color:var(--ink-soft); text-align:center; }
@@ -620,9 +627,3 @@ textarea{ min-height:108px; resize:vertical; }
 body.has-callbar{ padding-bottom:68px; }
 @media(min-width:960px){ body.has-callbar{ padding-bottom:0; } }
 
-/* ==========================================================================
-   Misc utility
-   ========================================================================== */
-.measure{ max-width:68ch; }
-.text-center{ text-align:center; }
-@media(max-width:759px){ .desktop-only{ display:none; } }

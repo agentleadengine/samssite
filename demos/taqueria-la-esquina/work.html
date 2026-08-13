@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De la Cocina — Taquería La Esquina</title>
+<meta name="description" content="Seis escenas ilustradas de cómo se prepara la comida en Taquería La Esquina: el trompo, la tortilla, el molcajete y más. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Chango&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cinta">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap barra-top">
+    <a class="marca-link" href="index.html" aria-label="Taquería La Esquina, inicio">
+      <svg class="marca" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--chile)"/>
+        <path d="M8 24a14 14 0 0128 0z" fill="var(--maiz)"/>
+        <path d="M11 24a11 11 0 0122 0z" fill="var(--masa)"/>
+        <circle cx="17" cy="21" r="2" fill="var(--verde)"/>
+        <circle cx="22" cy="19.4" r="2" fill="var(--verde)"/>
+        <circle cx="27" cy="21" r="2" fill="var(--verde)"/>
+        <rect x="8" y="24" width="28" height="3.4" rx="1.7" fill="var(--carbon)"/>
+      </svg>
+      <span class="nombre">Taquería La Esquina<small>Tacos y antojitos</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550101">(516) 555-0101</a>
+
+    <button type="button" class="hamburguesa" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icono icono-abrir" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icono icono-cerrar" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="con-sub">
+        <div class="fila-nav">
+          <a href="services.html">El Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="panel-sub" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul id="panel-sub" hidden>
+          <li><a href="services.html#tacos">Tacos</a></li>
+          <li><a href="services.html#plancha">De la Plancha</a></li>
+          <li><a href="services.html#mesa">Para la Mesa</a></li>
+          <li><a href="services.html#bebidas">Bebidas</a></li>
+          <li><a href="services.html#finde">Fin de Semana</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">De la Cocina</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="tel-movil" href="tel:+15165550101">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" stroke="var(--masa)"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0101
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="intro-pagina banda-masa">
+    <div class="wrap revela">
+      <h1>De la cocina</h1>
+      <p class="lede medida">Seis escenas de cómo se hace la comida aquí. Son ilustraciones propias, no fotografías de platillos o clientes reales.</p>
+    </div>
+  </section>
+
+  <svg class="picado" viewBox="0 0 1200 20" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="var(--maiz)">
+      <polygon points="0,0 80,0 40,20"/><polygon points="160,0 240,0 200,20"/>
+      <polygon points="320,0 400,0 360,20"/><polygon points="480,0 560,0 520,20"/>
+      <polygon points="640,0 720,0 680,20"/><polygon points="800,0 880,0 840,20"/>
+      <polygon points="960,0 1040,0 1000,20"/><polygon points="1120,0 1200,0 1160,20"/>
+    </g>
+    <g fill="var(--verde)">
+      <polygon points="80,0 160,0 120,20"/><polygon points="240,0 320,0 280,20"/>
+      <polygon points="400,0 480,0 440,20"/><polygon points="560,0 640,0 600,20"/>
+      <polygon points="720,0 800,0 760,20"/><polygon points="880,0 960,0 920,20"/>
+      <polygon points="1040,0 1120,0 1080,20"/>
+    </g>
+  </svg>
+
+  <section class="banda-masa seccion-ajustada">
+    <div class="wrap">
+      <div class="galeria">
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración del trompo completo armado temprano en la mañana, listo junto al asador">
+              <ellipse cx="200" cy="250" rx="110" ry="20" fill="var(--carbon-2)"/>
+              <rect x="196" y="40" width="9" height="196" rx="4" fill="var(--hueso)"/>
+              <ellipse cx="200.5" cy="44" rx="15" ry="9" fill="var(--maiz)"/>
+              <path d="M162 90q38-18 76 0l-7 130q-31 15-62 0z" fill="var(--pastor)"/>
+              <path d="M166 114q34-14 68 0" stroke="var(--pastor-2)" stroke-width="5" fill="none"/>
+              <path d="M168 140q32-13 64 0" stroke="var(--pastor-2)" stroke-width="5" fill="none"/>
+              <path d="M170 166q30-12 60 0" stroke="var(--pastor-2)" stroke-width="5" fill="none"/>
+              <path d="M172 192q27-11 54 0" stroke="var(--pastor-2)" stroke-width="5" fill="none"/>
+              <path d="M188 86l12-19 12 19z" fill="var(--maiz)"/>
+              <rect x="120" y="236" width="160" height="14" rx="6" fill="var(--carbon-3)"/>
+              <g fill="var(--chile-3)" opacity=".5">
+                <ellipse cx="150" cy="248" rx="10" ry="4"/><ellipse cx="180" cy="250" rx="10" ry="4"/>
+                <ellipse cx="220" cy="250" rx="10" ry="4"/><ellipse cx="250" cy="248" rx="10" ry="4"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>El trompo desde temprano</h3>
+            <p>Se arma antes de abrir y se corta en capas finas apenas entra la orden. Nada se sirve del trompo hasta que se lo piden.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una prensa de madera para tortillas junto a una pila de tortillas recién hechas y el comal">
+              <path d="M110 150h100v14a50 50 0 01-100 0z" fill="var(--carbon-3)"/>
+              <ellipse cx="160" cy="150" rx="50" ry="10" fill="var(--masa-3)"/>
+              <rect x="106" y="96" width="108" height="14" rx="4" fill="var(--carbon-3)"/>
+              <rect x="150" y="70" width="20" height="30" rx="4" fill="var(--carbon-2)"/>
+              <circle cx="160" cy="128" r="16" fill="var(--masa-2)"/>
+              <g transform="translate(250,150)">
+                <ellipse cx="20" cy="70" rx="60" ry="14" fill="var(--carbon-2)"/>
+                <ellipse cx="20" cy="10" rx="34" ry="9" fill="var(--masa-2)"/>
+                <ellipse cx="20" cy="24" rx="34" ry="9" fill="var(--masa)"/>
+                <ellipse cx="20" cy="38" rx="34" ry="9" fill="var(--masa-2)"/>
+                <ellipse cx="20" cy="52" rx="34" ry="9" fill="var(--masa)"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>Masa propia, prensada al momento</h3>
+            <p>La tortilla se prensa a mano durante todo el turno y se calienta en el comal; no se compra ya hecha.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de un molcajete de piedra con guacamole recién molido, un tejolote y un limón partido al lado">
+              <path d="M110 210a90 30 0 00180 0z" fill="var(--carbon-3)"/>
+              <path d="M118 176a82 46 0 01164 0l-8 34a90 30 0 01-148 0z" fill="var(--carbon-2)"/>
+              <ellipse cx="200" cy="176" rx="72" ry="34" fill="var(--verde)"/>
+              <ellipse cx="200" cy="170" rx="60" ry="26" fill="var(--verde)" opacity=".65"/>
+              <rect x="235" y="120" width="16" height="60" rx="8" fill="var(--carbon-3)" transform="rotate(18 243 150)"/>
+              <circle cx="90" cy="222" r="26" fill="var(--maiz)"/>
+              <path d="M90 202v40M70 222h40" stroke="var(--masa)" stroke-width="2" opacity=".6"/>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>El guacamole se muele aquí</h3>
+            <p>Aguacate, limón y sal en el molcajete de piedra, cada vez que alguien lo pide.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de la plancha con quesabirria dorándose y una taza de consomé aparte">
+              <rect x="50" y="170" width="300" height="16" rx="4" fill="var(--carbon-3)"/>
+              <path d="M90 168h64l-6-10h-52z" fill="var(--pastor-2)"/>
+              <ellipse cx="122" cy="168" rx="34" ry="9" fill="var(--pastor)"/>
+              <path d="M180 168h70l-7-12h-56z" fill="var(--pastor-2)"/>
+              <ellipse cx="215" cy="168" rx="38" ry="10" fill="var(--pastor)"/>
+              <g class="vapor" stroke="var(--hueso)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7">
+                <path d="M120 150c-6-12 7-15 1-27"/>
+                <path d="M210 150c-6-13 7-16 1-28"/>
+              </g>
+              <path d="M300 190h40l-4 34a8 8 0 01-8 7h-16a8 8 0 01-8-7z" fill="var(--masa-2)"/>
+              <path d="M296 196h6a14 14 0 010 28h-4" stroke="var(--masa-2)" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>La quesabirria, dorada en la plancha</h3>
+            <p>Se sirve con el consomé aparte, para remojar cada taco antes de comerlo.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de la barra alta para comer de pie, con un plato de tacos servido y servilletero al lado">
+              <rect x="70" y="150" width="260" height="18" rx="4" fill="var(--carbon-3)"/>
+              <rect x="90" y="168" width="12" height="70" fill="var(--carbon-2)"/>
+              <rect x="298" y="168" width="12" height="70" fill="var(--carbon-2)"/>
+              <ellipse cx="180" cy="140" rx="46" ry="12" fill="var(--masa-2)"/>
+              <g fill="var(--pastor)">
+                <ellipse cx="158" cy="134" rx="16" ry="8" transform="rotate(-8 158 134)"/>
+                <ellipse cx="188" cy="130" rx="16" ry="8" transform="rotate(6 188 130)"/>
+                <ellipse cx="204" cy="138" rx="14" ry="7" transform="rotate(-4 204 138)"/>
+              </g>
+              <rect x="252" y="122" width="22" height="30" rx="4" fill="var(--masa-2)" stroke="var(--carbon-3)" stroke-width="2"/>
+              <circle cx="263" cy="130" r="1.6" fill="var(--carbon-3)"/><circle cx="263" cy="138" r="1.6" fill="var(--carbon-3)"/>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>De pie en la barra, plato en mano</h3>
+            <p>No hay mesas de mantel. Se come parado en la barra, como en cualquier buena taquería.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="pieza">
+          <div class="marco-escena">
+            <span class="etiqueta-muestra">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una olla grande de menudo con un cucharón y un tazón pequeño al lado">
+              <ellipse cx="200" cy="240" rx="90" ry="16" fill="var(--carbon-2)"/>
+              <path d="M130 130c0-16 30-26 70-26s70 10 70 26l-10 84c-3 16-28 26-60 26s-57-10-60-26z" fill="var(--chile-2)" stroke="var(--carbon-3)" stroke-width="3"/>
+              <ellipse cx="200" cy="130" rx="70" ry="18" fill="var(--carbon-2)"/>
+              <ellipse cx="200" cy="130" rx="54" ry="12" fill="var(--chile)"/>
+              <path d="M130 150c-20 0-20 30 0 30" stroke="var(--carbon-3)" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M270 150c20 0 20 30 0 30" stroke="var(--carbon-3)" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <g class="vapor" stroke="var(--hueso)" stroke-width="3.2" fill="none" stroke-linecap="round" opacity=".7">
+                <path d="M186 112c-7-14 8-18 1-32"/>
+                <path d="M212 112c-7-15 8-19 1-34"/>
+              </g>
+              <ellipse cx="320" cy="238" rx="26" ry="10" fill="var(--masa-2)"/>
+              <ellipse cx="320" cy="234" rx="20" ry="7" fill="var(--chile-2)"/>
+            </svg>
+          </div>
+          <figcaption class="pieza-cuerpo">
+            <h3>La olla del domingo</h3>
+            <p>El menudo se sirve sábado y domingo desde temprano, mientras dura la olla.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="banda-chile cierre">
+    <div class="wrap">
+      <h2>Véalo en persona</h2>
+      <p class="medida silenciado-rojo">Las ilustraciones dan una idea. La mejor manera de conocer la cocina sigue siendo pasar por el mostrador.</p>
+      <div class="fila-cta">
+        <a class="btn" href="tel:+15165550101">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+          Llamar (516) 555-0101
+        </a>
+        <a class="btn-linea" href="about.html">
+          Conocer la taquería
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pie-grid">
+      <div class="pie-col">
+        <div class="pie-marca">Taquería La Esquina</div>
+        <p>Tacos, antojitos y bebidas de la casa en Long Island, NY.</p>
+        <p><a href="tel:+15165550101">(516) 555-0101</a></p>
+      </div>
+      <div class="pie-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">El Menú</a></li>
+          <li><a href="work.html">De la Cocina</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="pie-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550101">Llamar (516) 555-0101</a></li>
+          <li><a href="sms:+15165550101">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="barra-llamada" href="tel:+15165550101">
+  <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" stroke="var(--masa)"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0101
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('panel-sub');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

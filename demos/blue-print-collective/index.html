@@ -1,0 +1,344 @@
+<!--
+THESIS: You see every drawing, not just the reveal, from first sketch to stamped permit set.
+OWN-WORLD: A cyanotype drafting sheet brought to page scale: deep Prussian-cyanotype blue fields, hand-drafted white linework, dimension ticks, door-swing arcs, a title block, pin-dot registration marks. Not a "blue theme": you're standing inside an actual drawing.
+STORY: Every page proves the same claim: you're a collaborator on the drawing set, not a client waiting on a big reveal. Services = the real phases, in order. Work = sample drawings, not staged photos of someone's finished house. About = how the studio actually works day to day. Contact = the real first step.
+FIRST VIEWPOINT: Full-bleed cyanotype-blue hero built like a blueprint sheet: grid paper, a hand-drafted floor plan and dimension line drawing themselves in, a north arrow, a small title tag. H1 promise, one-line studio/area subhead, phone CTA + "See sample work" text CTA.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blueprint Collective | Architecture Studio, Long Island, NY</title>
+<meta name="description" content="Blueprint Collective is a small, collaborative architecture studio on Long Island, NY. Custom home design, additions, permit drawings, and 3D visualization: you see every drawing as it happens.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" class="icon-sprite">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><line x1="10.2" y1="18" x2="13.8" y2="18"/></symbol>
+  <symbol id="ic-sms" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4.5 3.5V15H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="13" y2="12"/></symbol>
+  <symbol id="ic-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13 7 18 12 13 17"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><line x1="12" y1="13" x2="12" y2="20"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="12 5 14.2 12 12 19 9.8 12"/><line x1="12" y1="3" x2="12" y2="5"/></symbol>
+</svg>
+
+<div class="demo-ribbon">DEMO SITE <span class="rb-extra">: fictional business, shown for demonstration</span></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <svg class="icon brand-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-compass"/></svg>
+      <span class="brand-name">Blueprint Collective</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" aria-expanded="false" aria-controls="services-sub" aria-label="Show services menu">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-chevron"/></svg>
+          </button>
+          <ul class="submenu" id="services-sub">
+            <li><a href="services.html#custom-home-design">Custom Home Design</a></li>
+            <li><a href="services.html#additions-renovations">Additions &amp; Renovations</a></li>
+            <li><a href="services.html#permit-drawings">Permit Drawings</a></li>
+            <li><a href="services.html#concept-visualization">3D Concept Visualization</a></li>
+            <li><a href="services.html#feasibility-studies">Site Feasibility Studies</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="phone-pill" href="tel:+16315550117">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+      <span>(631) 555-0117</span>
+    </a>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <div class="wrap">
+    <a class="mobile-phone" href="tel:+16315550117">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+      (631) 555-0117
+    </a>
+    <a href="index.html" class="is-active" aria-current="page">Home</a>
+    <div class="mobile-services">
+      <button class="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-panel">
+        Services
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-chevron"/></svg>
+      </button>
+      <div class="mobile-services-panel" id="mobile-services-panel">
+        <ul>
+          <li><a href="services.html#custom-home-design">Custom Home Design</a></li>
+          <li><a href="services.html#additions-renovations">Additions &amp; Renovations</a></li>
+          <li><a href="services.html#permit-drawings">Permit Drawings</a></li>
+          <li><a href="services.html#concept-visualization">3D Concept Visualization</a></li>
+          <li><a href="services.html#feasibility-studies">Site Feasibility Studies</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="hero on-field grid-tex">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>You see every drawing, not just the reveal.</h1>
+        <p class="lede">Blueprint Collective is a small architecture studio on Long Island. Custom homes, additions, and permit-ready drawings, worked out together instead of handed over at the end.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+16315550117">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+            Call (631) 555-0117
+          </a>
+          <a class="btn-text" href="work.html">
+            See sample work
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-scene-wrap">
+        <svg class="hero-scene" viewBox="0 0 620 420" role="img" aria-label="A hand-drafted floor plan and dimension line, drawn in cyanotype blueprint style">
+          <path class="draw" pathLength="1" d="M 70 70 L 430 70 L 430 190 L 530 190 L 530 310 L 70 310 Z"/>
+          <path class="draw" pathLength="1" d="M 250 70 L 250 215"/>
+          <path class="draw" pathLength="1" d="M 250 215 L 430 215"/>
+          <path class="draw" pathLength="1" d="M 480 190 L 480 310"/>
+          <path class="draw draw-accent" pathLength="1" d="M 250 130 L 280 102 A 34 34 0 0 1 250 164"/>
+          <path class="draw draw-accent" pathLength="1" d="M 480 250 L 452 250 A 28 28 0 0 0 480 278"/>
+          <path class="draw" pathLength="1" d="M 70 352 L 530 352"/>
+          <g class="fade fine">
+            <path d="M 70 316 L 70 346 M 530 316 L 530 346"/>
+            <path d="M 65 347 L 75 357 M 525 347 L 535 357"/>
+            <path d="M 110 64 L 110 76 M 150 64 L 150 76"/>
+            <path d="M 64 240 L 76 240 M 64 280 L 76 280"/>
+            <path d="M 555 115 L 555 75 M 548 84 L 562 84 L 555 68"/>
+            <circle cx="555" cy="115" r="2.5" fill="var(--line-soft)" stroke="none"/>
+          </g>
+          <g class="fade">
+            <text x="300" y="378" text-anchor="middle" font-size="15" class="mono">42&#8242;-0&#8243;</text>
+            <text x="555" y="60" text-anchor="middle" font-size="13" font-weight="700">N</text>
+          </g>
+        </svg>
+        <span class="hero-tag">Sheet A-000 · Concept</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How a set actually comes together</h2>
+        <p>Every project moves through the same three sheets. Here's one sample project, start to finish: a screened porch and mudroom addition.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-num" aria-hidden="true">01</span>
+          <div class="sheet">
+            <svg viewBox="0 0 120 90" aria-hidden="true">
+              <path class="draw" d="M20 70 L20 30 L55 12 L95 30 L95 70 Z"/>
+              <path class="draw accent" d="M35 70 L35 45 L60 45 L60 70"/>
+              <path class="draw" d="M70 55 L88 55" stroke-dasharray="3 4"/>
+              <path class="draw" d="M20 30 L95 30" stroke-dasharray="2 3" opacity=".6"/>
+            </svg>
+          </div>
+          <h3>Sketch</h3>
+          <p>First pass, drawn with you at the table. Rough massing, rough cost, no surprises yet.</p>
+        </div>
+        <svg class="process-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg>
+        <div class="process-step">
+          <span class="process-num" aria-hidden="true">02</span>
+          <div class="sheet">
+            <svg viewBox="0 0 120 90" aria-hidden="true">
+              <path class="draw" d="M15 75 L15 20 L60 20 L60 45 L100 45 L100 75 Z"/>
+              <path class="draw" d="M40 20 L40 45"/>
+              <path class="draw accent" d="M60 60 L52 60 A8 8 0 0 0 60 68"/>
+              <path class="draw" d="M22 30 L22 40 M85 52 L95 52"/>
+            </svg>
+          </div>
+          <h3>Working drawing</h3>
+          <p>Plans and elevations locked in. This is what your contractor prices from.</p>
+        </div>
+        <svg class="process-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg>
+        <div class="process-step">
+          <span class="process-num" aria-hidden="true">03</span>
+          <div class="sheet">
+            <svg viewBox="0 0 120 90" aria-hidden="true">
+              <path class="draw" d="M15 75 L15 20 L60 20 L60 45 L100 45 L100 75 Z"/>
+              <path class="draw" d="M40 20 L40 45"/>
+              <path class="draw accent" d="M60 60 L52 60 A8 8 0 0 0 60 68"/>
+              <circle class="draw accent" cx="85" cy="62" r="11" fill="none"/>
+              <path class="draw accent" d="M79 62 L91 62 M85 56 L85 68" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3>Permit set</h3>
+          <p>Stamped, dimensioned, and ready for the building department.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Five services. Most projects use two or three of them, roughly in this order.</p>
+      </div>
+      <div class="teaser-spine">
+        <div class="teaser-list">
+          <div class="teaser-item">
+            <h3><a href="services.html#feasibility-studies">Site Feasibility Studies</a></h3>
+            <p>Find out what your lot can actually support before you commit to anything.</p>
+            <a class="btn-text" href="services.html#feasibility-studies">Learn more <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </div>
+          <div class="teaser-item">
+            <h3><a href="services.html#custom-home-design">Custom Home Design</a></h3>
+            <p>A house designed around your site, your budget, and how you actually live.</p>
+            <a class="btn-text" href="services.html#custom-home-design">Learn more <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </div>
+          <div class="teaser-item">
+            <h3><a href="services.html#permit-drawings">Permit Drawings</a></h3>
+            <p>Construction documents built for what your building department actually asks for.</p>
+            <a class="btn-text" href="services.html#permit-drawings">Learn more <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why on-field grid-tex">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why it works this way</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <svg viewBox="0 0 44 64" aria-hidden="true"><path class="leader-line" d="M22 4 L22 40 L38 56"/><circle class="leader-dot" cx="22" cy="4" r="4"/></svg>
+          <h3>You're in the shared drawing file, not waiting on one.</h3>
+          <p>Redlines, sketches, and revisions live in one place you can open anytime, not a folder that only opens at the next meeting.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 44 64" aria-hidden="true"><path class="leader-line" d="M22 4 L22 40 L38 56"/><circle class="leader-dot" cx="22" cy="4" r="4"/></svg>
+          <h3>Plain language, not architect-speak.</h3>
+          <p>If a drawing note needs a word like "egress" or "schedule" explained, that's on us to explain, not on you to look up.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 44 64" aria-hidden="true"><path class="leader-line" d="M22 4 L22 40 L38 56"/><circle class="leader-dot" cx="22" cy="4" r="4"/></svg>
+          <h3>Small studio, direct line.</h3>
+          <p>You're talking to the person actually drawing your project, not an account manager relaying messages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing on-field">
+    <div class="wrap">
+      <h2>Start with a straight answer about your lot.</h2>
+      <p>A feasibility study tells you what's actually possible before you spend real money on design. Call, text, or send a few details. We'll tell you plainly what we see.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+16315550117">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+          Call (631) 555-0117
+        </a>
+        <a class="btn-text" href="contact.html">
+          Send project details
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<a class="callbar" href="tel:+16315550117">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+  Call now: (631) 555-0117
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-compass"/></svg>
+        Blueprint Collective
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-legal">
+      <p>Demo website built by Samuel Ochoa — samuelochoa.com/websites</p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  function closeMobile(){
+    mobileNav.setAttribute('data-open','false');
+    hamburger.setAttribute('aria-expanded','false');
+    setTimeout(function(){ mobileNav.hidden = true; }, 280);
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){ mobileNav.setAttribute('data-open','true'); });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobile); });
+
+  var msToggle = document.querySelector('.mobile-services-toggle');
+  var msPanel = document.getElementById('mobile-services-panel');
+  msToggle.addEventListener('click', function(){
+    var open = msToggle.getAttribute('aria-expanded') === 'true';
+    msToggle.setAttribute('aria-expanded', String(!open));
+    msPanel.setAttribute('data-open', String(!open));
+  });
+
+  var subToggle = document.querySelector('.sub-toggle');
+  if(subToggle){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.has-sub')){ subToggle.setAttribute('aria-expanded','false'); }
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(hamburger.getAttribute('aria-expanded') === 'true'){ closeMobile(); }
+      if(subToggle) subToggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

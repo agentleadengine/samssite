@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Electricidad Luz del Sur</title>
+<meta name="description" content="Llame al (631) 555-0124 o envíe un mensaje. Electricista en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#1845E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 3L5 16h7l-2 9 9-13h-7l2-9z"/>
+      </svg>
+      Luz del Sur
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Servicios
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5l3 3 3-3"/></svg>
+        </a>
+        <div class="submenu">
+          <a href="services.html#paneles">Actualización de paneles</a>
+          <a href="services.html#cargadores-ev">Cargadores para vehículos eléctricos</a>
+          <a href="services.html#iluminacion">Diseño e instalación de iluminación</a>
+          <a href="services.html#reparacion">Diagnóstico y reparación</a>
+          <a href="services.html#generadores">Conexión de generadores</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="work.html" class="nav-link">Trabajos</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link" aria-current="page">Contacto</a></div>
+    </nav>
+    <a href="tel:+16315550124" class="header-phone">(631) 555-0124</a>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="m-sub-toggle" aria-expanded="false" aria-controls="mSub">Servicios
+    <svg class="chev" width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5l3 3 3-3"/></svg>
+  </button>
+  <div class="m-submenu" id="mSub">
+    <a href="services.html#paneles">Actualización de paneles</a>
+    <a href="services.html#cargadores-ev">Cargadores para vehículos eléctricos</a>
+    <a href="services.html#iluminacion">Diseño e instalación de iluminación</a>
+    <a href="services.html#reparacion">Diagnóstico y reparación</a>
+    <a href="services.html#generadores">Conexión de generadores</a>
+  </div>
+  <a href="work.html" class="m-link">Trabajos</a>
+  <a href="about.html" class="m-link">Nosotros</a>
+  <a href="contact.html" class="m-link" aria-current="page">Contacto</a>
+  <a href="tel:+16315550124" class="m-phone">(631) 555-0124</a>
+</div>
+
+<main>
+<!-- CONTACT -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT: Phone + hours -->
+      <div>
+        <div class="contact-phone-block page-hero-entrance">
+          <h2>Llame ahora</h2>
+          <a href="tel:+16315550124" class="big-phone">(631) 555-0124</a>
+          <p class="phone-sub">Lun — Vie: 7:00 a 18:00<br>Sábado: 8:00 a 14:00<br>Domingo: Cerrado</p>
+        </div>
+        <div style="text-align:center; margin:2rem 0;">
+          <p style="font-size:.95rem; color:var(--text-2); margin-bottom:1rem;">¿Prefiere enviar un mensaje de texto?</p>
+          <a href="sms:+16315550124" class="btn btn-blue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Enviar mensaje de texto
+          </a>
+        </div>
+        <div style="background:var(--blue-tint); border-radius:12px; padding:1.5rem;">
+          <h3 style="font-size:1.1rem; margin-bottom:.75rem;">Zona de servicio</h3>
+          <p style="font-size:.95rem; color:var(--text-2);">Long Island, NY — Suffolk y Nassau County. Trabajo residencial.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sample form -->
+      <div>
+        <div class="sample-form">
+          <h3 style="margin-bottom:.5rem; font-size:1.2rem;">Formulario de muestra</h3>
+          <p style="font-size:.85rem; color:var(--text-2); margin-bottom:1.25rem;">Este formulario es de demostración. Para una respuesta inmediata, llame al (631) 555-0124.</p>
+          <label class="form-label" for="nombre">Nombre</label>
+          <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre">
+          <label class="form-label" for="telefono">Teléfono</label>
+          <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="Su número de teléfono">
+          <label class="form-label" for="servicio">Servicio que necesita</label>
+          <input class="form-input" type="text" id="servicio" name="servicio" placeholder="Ejemplo: actualización de panel">
+          <label class="form-label" for="mensaje">Mensaje</label>
+          <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos qué necesita..."></textarea>
+          <button type="button" class="btn btn-blue" style="width:100%; justify-content:center;">Enviar (demo)</button>
+          <p class="form-note">Formulario de muestra — no envía información real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-tint">
+  <div class="container-narrow">
+    <div class="section-head" style="text-align:center;">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>¿Cuánto cuesta una actualización de panel?</h3>
+        <p>El costo depende del amperaje que necesite y del estado de su panel actual. Le damos un diagnóstico claro antes de empezar, con el costo total por adelantado. Llame para una evaluación de su caso.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Instalan cargadores para cualquier vehículo eléctrico?</h3>
+        <p>Instalamos estaciones de carga de Nivel 2 compatibles con todos los vehículos eléctricos e híbridos enchufables. La estación usa un conector estándar J1772 que funciona con la mayoría de los vehículos.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Atienden emergencias eléctricas?</h3>
+        <p>Si tiene un problema urgente — un interruptor que se calienta, un olor a quemado, o un cortocircuito — llame inmediatamente. Atendemos llamadas urgentes durante el horario de trabajo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-block section-dark">
+  <div class="container-narrow">
+    <h2>Llámenos ahora</h2>
+    <p>El primer paso es una llamada. Le escuchamos y le damos un plan claro.</p>
+    <div class="btns">
+      <a href="tel:+16315550124" class="btn btn-yellow btn-lg">(631) 555-0124</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav" aria-label="Pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="services.html">Servicios</a>
+      <a href="work.html">Trabajos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <div class="footer-credit">
+      Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a><br>
+      <span class="footer-disclaimer">Negocio ficticio mostrado como demostración.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <div class="call-bar-inner">
+    <a href="tel:+16315550124" class="call-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Llamar
+    </a>
+    <a href="sms:+16315550124" class="text-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Mensaje
+    </a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!hamburger) return;
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open');
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      hamburger.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      hamburger.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+    });
+  });
+  var subToggle = menu.querySelector('.m-sub-toggle');
+  if(subToggle){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      document.getElementById('mSub').classList.toggle('open');
+    });
+  }
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    var link = item.querySelector('.nav-link');
+    if(!link) return;
+    item.addEventListener('mouseenter', function(){ item.classList.add('open'); });
+    item.addEventListener('mouseleave', function(){ item.classList.remove('open'); });
+    link.addEventListener('focus', function(){ item.classList.add('open'); });
+    item.addEventListener('focusout', function(e){
+      if(!item.contains(e.relatedTarget)) item.classList.remove('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
