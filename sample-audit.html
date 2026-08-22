@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample AI Revenue Leak Audit (fictional agency) | Samuel Ochoa</title>
+<meta name="description" content="A complete sample AI Revenue Leak Audit for a fictional insurance agency, with the leak ledger, dollar math, fix plan, KPI table, and roadmap you can expect in the real thing.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://samuelochoa.com/sample-audit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:title" content="Sample AI Revenue Leak Audit (fictional agency) | Samuel Ochoa">
+<meta property="og:description" content="A complete sample AI Revenue Leak Audit for a fictional insurance agency, with the leak ledger, dollar math, fix plan, KPI table, and roadmap you can expect in the real thing.">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18240559803"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18240559803');
+  gtag('config', 'AW-18240559803/eh8MCJCxgMEcELu14_lD', {
+    'phone_conversion_number': '(516) 780-1385'
+  });
+</script>
+<style>
+*{box-sizing:border-box}
+:root{--ink:#1a1726;--ink2:#544e63;--muted:#8b8499;--purple:#5a1fe0;--purple2:#7c3aed;--soft:#f7f4fc;--softer:#fbf9fe;--line:#ebe6f6;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--soft);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}img{display:block}em{font-style:italic;font-family:'Instrument Serif',Georgia,serif;font-weight:400}h1,h2,h3{letter-spacing:-.02em;margin:0}.wrap{width:min(1140px,calc(100% - 48px));margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}.btn-primary{background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;box-shadow:0 10px 26px rgba(90,31,224,.26)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(90,31,224,.32)}.btn-call{background:#fff;color:var(--ink);border:1.5px solid #d8cffa;box-shadow:0 8px 22px rgba(90,31,224,.08)}.btn-call:hover{transform:translateY(-2px);border-color:var(--purple)}
+.hdr{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}.hdr img{height:40px}.hdr-actions{display:flex;align-items:center;gap:10px}.hdr-phone{display:inline-flex;align-items:center;gap:5px;color:var(--ink);font-size:13.5px;font-weight:800;white-space:nowrap;background:var(--softer);border:1px solid var(--line);padding:10px 14px;border-radius:999px}.hdr-phone span{color:var(--purple)}.hdr .btn{padding:11px 18px;font-size:14px}
+.sample-banner{padding:14px 20px;background:#fff7df;border-bottom:1px solid #ead79d;color:#5f4b12;text-align:center;font-size:13px;line-height:1.45}.sample-banner strong{color:#4d3700}
+.page{padding:38px 0 70px}.report{max-width:920px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:38px 48px;box-shadow:0 18px 55px rgba(20,16,30,.07)}
+.chip{display:inline-block;color:var(--purple);background:#f1eaff;border:1px solid #d8c7ff;border-radius:999px;padding:4px 8px;font:700 10px/1.1 var(--mono);letter-spacing:.04em;vertical-align:middle}.report>h1{margin:14px 0 5px;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.05em}.report>h2{margin:0;color:var(--muted);font-size:20px;line-height:1.2}.report h2:not(:first-of-type){margin:48px 0 14px;padding-top:18px;border-top:1px solid var(--line);font-size:28px;line-height:1.2;color:var(--ink);letter-spacing:-.04em}.report h3{margin:28px 0 8px;font-size:18px;line-height:1.3}.report p,.report li{color:var(--ink2);font-size:14px;line-height:1.6}.report p{margin:12px 0}.report blockquote{margin:22px 0;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#faf8ff;color:var(--ink2);font-size:14px;line-height:1.6}.report ul{padding-left:22px}.report li{margin:0 0 9px}.report strong{color:var(--ink)}.report em{color:#6f6386}.report .chip{font-style:normal}.total{margin:26px 0;padding:22px;background:#faf8ff;border:1px solid #d7c7ff;border-radius:18px;font-size:18px;line-height:1.5}.report table{width:100%;border-collapse:collapse;margin:22px 0 30px;font-size:13px}.report th,.report td{padding:11px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}.report th{background:#faf8ff;font-weight:700;color:var(--ink)}.report td{color:var(--ink2)}
+.report-cta{margin-top:52px;padding:32px 24px;background:linear-gradient(160deg,#faf7ff,#f1e9fe);border:1px solid #d7c7ff;border-radius:20px;text-align:center}.report-cta h2{margin:0!important;padding:0!important;border:0!important;font-size:28px!important}.report-cta p{max-width:650px;margin:12px auto 18px}.report-cta .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+footer{padding:28px 0;border-top:1px solid var(--line);background:#fff;color:var(--muted);font-size:13.5px;text-align:center}footer a{color:var(--ink2)}
+:focus-visible{outline:3px solid rgba(90,31,224,.4);outline-offset:3px}
+@media(max-width:700px){.wrap{width:min(100% - 24px,1140px)}.hdr .btn{display:none}.hdr-phone{font-size:12px;padding:9px 11px}.page{padding:24px 0 48px}.report{padding:25px 20px;border-radius:18px}.report table{display:block;overflow-x:auto}.report th,.report td{min-width:120px}.sample-banner{font-size:12px}.report-cta{padding:28px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a href="index.html"><img src="logo.png" alt="Samuel Ochoa"></a>
+    <div class="hdr-actions">
+      <a href="tel:+15167801385" class="hdr-phone"><span>Call</span> (516) 780-1385</a>
+      <a href="audit.html#intake" class="btn btn-primary">Get your audit</a>
+    </div>
+  </div>
+</header>
+
+<div class="sample-banner"><strong>FICTIONAL SAMPLE:</strong> Maple Grove Insurance Agency is a fictional agency. Every number below is realistic but invented, shown so you can judge the depth of the real thing.</div>
+
+<main class="page"><article class="report">
+  <span class="chip">SAMPLE, FICTIONAL AGENCY</span>
+  <h1>Sample, AI Revenue Leak Audit</h1>
+  <h2>Maple Grove Insurance Agency (fictional)</h2>
+  <blockquote><strong>This is a sample report.</strong> Maple Grove Insurance Agency is a fictional 4-person independent agency on Long Island. Every number below is invented to show what a real audit deliverable looks like. The structure, math style, confidence tags, and fix plan are exactly what a paying client receives.</blockquote>
+
+  <h2>Deliverable 1 of 3, Leak Map</h2>
+  <p><em>Dollar figures are estimates built from intake answers and conservative industry benchmarks. They show scale, not an audit to the dollar. Commission math uses $1,800 average annual premium × 12% commission × 4-year average retention ≈ <strong>$860 lifetime commission per bound account</strong>. Each figure is tagged <b class="chip">MEASURED</b> from records or my probe, <b class="chip">ESTIMATED</b> from volume and a conservative rate, or <b class="chip">BENCHMARKED</b> as directional only.</em></p>
+  <h3>Leak 1: After-hours calls go to voicemail and die there</h3>
+  <ul><li><strong>What happens today:</strong> “If it rings after 5:30 it goes to the machine. Maria checks messages first thing, but half of them don't leave one.” I called at 6:15pm on a Tuesday, four rings, generic voicemail, no text-back, no callback by noon the next day.</li><li><strong>The math:</strong> ~5 after-hours calls/week × 52 × 40% who never reconnect × 25% close rate × $860 = <strong>~$22,400/yr</strong></li><li><strong>Annual cost, estimated:</strong> $22,000</li><li><strong>Confidence:</strong> <b class="chip">ESTIMATED</b> call volume from their phone logs; reconnect and close rates are conservative industry figures. Probe evidence: <b class="chip">MEASURED</b>.</li></ul>
+  <h3>Leak 2: Quoted-not-sold follow-up lives in the producer's head</h3>
+  <ul><li><strong>What happens today:</strong> “Joe sends the quote and follows up if he remembers. There's no list.” No second touch is scheduled for roughly half of all quotes.</li><li><strong>The math:</strong> 25 quotes/mo × 12 × 50% with no 2nd touch × 10-point close-rate lift from one follow-up × $860 = <strong>~$12,900/yr</strong></li><li><strong>Annual cost, estimated:</strong> $12,000</li><li><strong>Confidence:</strong> <b class="chip">ESTIMATED</b> quote volume from their register; lift from published follow-up studies, rounded down.</li></ul>
+  <h3>Leak 3: Web leads answered in hours, not minutes</h3>
+  <ul><li><strong>What happens today:</strong> Website form sends an email to the office inbox. First response averages 3+ hours during the day; Saturday submissions wait until Monday.</li><li><strong>The math:</strong> 12 web leads/mo × 12 × ~10% of leads lost outright to slow response × 25% close × $860 ≈ <strong>~$3,100/yr</strong></li><li><strong>Annual cost, estimated:</strong> $3,000</li><li><strong>Confidence:</strong> <b class="chip">BENCHMARKED</b> no web-lead outcome records exist, worth instrumenting; excluded from guarantee.</li></ul>
+  <h3>Leak 4: Renewal outreach starts when the notice arrives</h3>
+  <ul><li><strong>What happens today:</strong> First client touch is the carrier's renewal notice, which is also the client's cue to shop. No 90/60/30-day cadence exists.</li><li><strong>The math:</strong> 650 households × 4% lost at renewal that proactive outreach retains × $860 = <strong>~$22,400/yr</strong></li><li><strong>Annual cost, estimated:</strong> $22,000</li><li><strong>Confidence:</strong> <b class="chip">ESTIMATED</b> book size from AMS export; retention lift is an industry benchmark, low end.</li></ul>
+  <h3>Leak 5: Every inbound lead is typed three times</h3>
+  <ul><li><strong>What happens today:</strong> Website email → spreadsheet → AMS, re-keyed by hand. Staff estimate 6 hours/week across the office, plus the occasional wrong phone number that kills a lead.</li><li><strong>The math:</strong> 6 hrs/week × 52 × $22/hr including taxes and benefits = <strong>~$6,900/yr</strong></li><li><strong>Annual cost, estimated:</strong> $6,900</li><li><strong>Confidence:</strong> <b class="chip">MEASURED</b> hours from staff interviews; loaded cost from their payroll figure.</li></ul>
+  <div class="total"><strong>Total</strong><br><strong>Estimated annual recoverable leak: ~$66,000 (conservative range $45,000-$85,000).</strong> Headline uses the low end of every range.</div>
+
+  <h2>Deliverable 2 of 3, Findings &amp; Evidence (excerpt)</h2>
+  <ul><li>Probe call, Tue 6:15pm: voicemail after 4 rings, no text-back, no callback within 18 hours. <b class="chip">MEASURED</b></li><li>Phone logs, trailing 90 days: 31% of weekday calls arrive after 5pm or before 9am. <b class="chip">MEASURED</b></li><li>Quote register sample (40 quotes): 19 show no recorded second touch. <b class="chip">MEASURED</b></li><li>AMS renewal report: no first-touch date field is populated for any 2026 renewal. <b class="chip">MEASURED</b></li><li>“I think Joe handles those.”, owner, on Saturday web leads. <em>(Interview, instrumented as Leak 3.)</em></li></ul>
+
+  <h2>Deliverable 3 of 3, Fix Plan</h2>
+  <p><em>Ranked by payback period (build cost ÷ monthly recovered value). ICE score = Impact × Confidence × Ease, each 1 to 10. Every fix is scoped so any competent vendor could build it. No obligation to build with me.</em></p>
+  <h3>Fix 1: 90/60/30 renewal outreach cadence, maps to Leak 4</h3>
+  <ul><li><strong>What it does:</strong> Pulls the renewal list from the AMS monthly, and starts a personalized email/text touch sequence 90 days before each renewal date (the X-date), review offer at 90, rate-check at 60, “your renewal is coming, we've already re-shopped it” at 30.</li><li><strong>ICE:</strong> Impact 8 × Confidence 7 × Ease 9 = <strong>504</strong></li><li><strong>Build cost:</strong> $2,000 one-time + $97/mo</li><li><strong>Recovers:</strong> ~$22,000/yr</li><li><strong>Payback period:</strong> ~1.1 months</li><li><strong>Time to live:</strong> 10 days</li><li><strong>What I need from you:</strong> AMS read access, 1 hour with whoever knows the renewal book.</li></ul>
+  <h3>Fix 2: AI receptionist with missed-call text-back, maps to Leak 1</h3>
+  <ul><li><strong>What it does:</strong> Answers every call on the first ring, 24/7, books the appointment or takes a structured message, and texts the caller instantly so the conversation never dies. You get a summary by text and email.</li><li><strong>ICE:</strong> Impact 9 × Confidence 8 × Ease 7 = <strong>504</strong></li><li><strong>Build cost:</strong> $3,500 one-time + $297/mo</li><li><strong>Recovers:</strong> ~$22,000/yr</li><li><strong>Payback period:</strong> ~1.9 months</li><li><strong>Time to live:</strong> 7 days</li><li><strong>What I need from you:</strong> phone number porting decision, 30 minutes of FAQ answers.</li></ul>
+  <h3>Fix 3: Quoted-not-sold follow-up sequence, maps to Leak 2</h3>
+  <ul><li><strong>What it does:</strong> Every quote automatically gets a 5-touch follow-up over 14 days (email + text), stops when the client responds, and hands warm replies to the producer. Nobody has to remember anything.</li><li><strong>ICE:</strong> Impact 7 × Confidence 7 × Ease 8 = <strong>392</strong></li><li><strong>Build cost:</strong> $2,500 one-time + $97/mo</li><li><strong>Recovers:</strong> ~$12,000/yr</li><li><strong>Payback period:</strong> ~2.5 months</li><li><strong>Time to live:</strong> 7 days</li><li><strong>What I need from you:</strong> quote register access, approval of message copy.</li></ul>
+  <h3>Fix 4: Website-to-AMS lead pipe, maps to Leaks 3 &amp; 5</h3>
+  <ul><li><strong>What it does:</strong> Web form submissions instantly create the AMS/CRM record, text the lead within 60 seconds with a booking link, and notify the office. No inbox, no spreadsheet, no re-typing.</li><li><strong>ICE:</strong> Impact 6 × Confidence 6 × Ease 7 = <strong>252</strong></li><li><strong>Build cost:</strong> $1,500 one-time + $47/mo</li><li><strong>Recovers:</strong> ~$9,900/yr ($3,000 speed-to-lead + $6,900 re-keying)</li><li><strong>Payback period:</strong> ~1.8 months</li><li><strong>Time to live:</strong> 5 days</li><li><strong>What I need from you:</strong> website form access, AMS credentials.</li></ul>
+  <h3>Build-vs-buy note</h3>
+  <p>Every fix above is assembled from standard tools (phone AI, workflow automation, your AMS's export). Vendor shortlist with pricing is included in the full report; I take <strong>no referral fees</strong>, the recommendation is whichever option is cheapest that actually fits your systems.</p>
+  <h3>If you build with me</h3>
+  <p>The full audit fee credits toward the first build. Recommended first build is <strong>Fix 1 or Fix 2 alone</strong>, stacking everything at once is not recommended. Build pricing is fixed per fix, quoted before work starts, no hourly billing.</p>
+  <h3>If you build with someone else</h3>
+  <p>This document is yours. Each fix is written vendor-neutral. If another vendor says a fix is impossible or quotes 5x, email me and I'll tell you plainly whether that sounds right.</p>
+  <p><em>Note: light single-workflow fixes like the ones above can price below my typical $2,500 to $5,000 build range. The audit quotes every fix exactly before any work starts.</em></p>
+
+  <h2>KPI baseline → targets</h2>
+  <table><thead><tr><th>Metric</th><th>Baseline (measured)</th><th>Day 30</th><th>Day 90</th><th>Year 1</th></tr></thead><tbody><tr><td>Calls answered live (incl. AI)</td><td>69%</td><td>95%</td><td>99%</td><td>99%</td></tr><tr><td>First response to web lead</td><td>~3 hrs</td><td>&lt; 2 min</td><td>&lt; 1 min</td><td>&lt; 1 min</td></tr><tr><td>Quotes with a 2nd touch</td><td>~50%</td><td>100%</td><td>100%</td><td>100%</td></tr><tr><td>First renewal touch before X-date</td><td>0 days (notice-driven)</td><td>90 days</td><td>90 days</td><td>90 days</td></tr><tr><td>Staff re-keying hours/week</td><td>6</td><td>2</td><td>0</td><td>0</td></tr></tbody></table>
+
+  <h2>13-week roadmap (if all fixes are built)</h2>
+  <ul><li><strong>Weeks 1-2:</strong> Fix 1 (renewal cadence) live; first 90-day list pulled.</li><li><strong>Weeks 2-3:</strong> Fix 2 (AI receptionist) live; after-hours probe re-run as proof.</li><li><strong>Weeks 4-5:</strong> Fix 3 (quote follow-up) live; producer trained on warm-handoff.</li><li><strong>Weeks 6-7:</strong> Fix 4 (lead pipe) live; spreadsheet retired.</li><li><strong>Weeks 8-12:</strong> measurement pass, KPI table re-run against baseline, leak map updated with real numbers.</li><li><strong>Week 13:</strong> review, decide what's next (cross-sell campaigns, Google review engine) or stop. You keep everything either way.</li></ul>
+  <p><em>Sample ends. A real audit is built from your call logs, your quote register, your AMS exports, and a probe of your own phones, with your numbers in place of these. The guarantee: if I can't find a leak worth more than the fee, I refund it.</em></p>
+
+  <section class="report-cta"><h2>Want this on your real numbers?</h2><p><strong>AI Revenue Leak Audit: $1,500 flat.</strong> Founding rate: $750 for the first 3 agencies. Five days, written leak map, recorded walkthrough, ranked fix plan, and a refund guarantee. The fee counts toward any build.</p><div class="actions"><a href="audit.html" class="btn btn-primary">Get your audit &rarr;</a><a href="tel:+15167801385" class="btn btn-call">Call: (516) 780-1385</a></div></section>
+</article></main>
+
+<footer><div class="wrap">&copy; 2026 Samuel Ochoa &middot; <a href="tel:+15167801385">Call: (516) 780-1385</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></div></footer>
+</body>
+</html>
