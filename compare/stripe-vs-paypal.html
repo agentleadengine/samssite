@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stripe vs PayPal | Compare | Samuel Ochoa</title>
-<meta name="description" content="Developer-first vs consumer-first payment processor.">
+<meta name="description" content="Stripe vs PayPal in 2026: verified per-transaction fees, checkout conversion tradeoffs, and which processor fits your business. My honest take.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stripe vs PayPal | Compare | Samuel Ochoa">
-<meta property="og:description" content="Developer-first vs consumer-first payment processor.">
+<meta property="og:description" content="Stripe vs PayPal in 2026: verified per-transaction fees, checkout conversion tradeoffs, and which processor fits your business. My honest take.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Stripe vs PayPal | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Developer-first vs consumer-first payment processor.">
+<meta name="twitter:description" content="Stripe vs PayPal in 2026: verified per-transaction fees, checkout conversion tradeoffs, and which processor fits your business. My honest take.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Stripe vs PayPal | Compare | Samuel Ochoa","description":"Developer-first vs consumer-first payment processor.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/stripe-vs-paypal.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Stripe vs PayPal | Compare | Samuel Ochoa","description":"Stripe vs PayPal in 2026: verified per-transaction fees, checkout conversion tradeoffs, and which processor fits your business. My honest take.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/stripe-vs-paypal.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Stripe Vs Paypal","item":"https://samuelochoa.com/compare/stripe-vs-paypal"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Payments</span>
 <h1 class="cmp-title">Stripe vs PayPal</h1>
-<p class="cmp-subtitle">Developer-first vs consumer-first payment processor.</p>
+<p class="cmp-subtitle">Developer-first vs consumer-first payment processing, with the actual 2026 fees.</p>
 
-<div class="cmp-summary">Stripe is built for developers with rich APIs. PayPal is familiar to consumers and often preferred for trust.</div>
+<div class="cmp-summary">The real decision axis here is not features, it is who owns the checkout. Stripe gives you an API and gets out of the way, so the payment experience is yours to build and the fees are lower per card transaction. PayPal puts its own brand in front of your buyer, which costs more per transaction but can lift conversion with audiences that already trust the button. Most businesses I work with end up needing a primary processor plus PayPal as an option, so the question is really which one sits at the center.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Stripe</th><th>PayPal</th></tr></thead>
-<tbody><tr><th scope="row">Developer API</th><td>Best in class</td><td>Solid</td></tr><tr><th scope="row">Consumer trust</th><td>Strong</td><td>Very strong</td></tr><tr><th scope="row">Fees</th><td>2.9% + $0.30</td><td>Similar</td></tr></tbody>
+<tbody><tr><th scope="row">Standard online card fee (US)</th><td>2.9% + $0.30</td><td>2.99% + $0.49 (advanced card processing)</td></tr><tr><th scope="row">Branded wallet checkout</th><td>Link (no extra fee on top of card rate)</td><td>PayPal Checkout: 3.49% + $0.49</td></tr><tr><th scope="row">ACH / bank debit</th><td>0.8%, capped at $5.00</td><td>Not a flat published equivalent; varies by product</td></tr><tr><th scope="row">In-person</th><td>2.7% + $0.05 (Terminal)</td><td>2.29% + $0.09 (QR code transactions)</td></tr><tr><th scope="row">International card surcharge</th><td>+1.5% (plus 1% currency conversion)</td><td>+1.5% cross-border (plus 3-4% conversion spread)</td></tr><tr><th scope="row">Dispute / chargeback fee</th><td>$15 per dispute</td><td>$20 per chargeback</td></tr><tr><th scope="row">Monthly fee</th><td>$0 on standard pricing</td><td>$0 on standard pricing</td></tr><tr><th scope="row">Developer experience</th><td>Best-in-class API, docs, test mode</td><td>Improved (Braintree, newer APIs), still behind</td></tr><tr><th scope="row">Buyer-side familiarity</th><td>Invisible to buyers (white label)</td><td>Very high; buyers have accounts and saved balances</td></tr><tr><th scope="row">Subscriptions and invoicing</th><td>Stripe Billing at 0.7% of volume; invoices 0.4% capped at $2</td><td>Invoicing at standard checkout rates</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>These are the published US rates as of August 2026, from each vendor's own pricing pages. Both companies negotiate custom rates at volume, so treat these as the starting point, not the ceiling.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Fee</th><th>Stripe</th><th>PayPal</th></tr></thead>
+<tbody><tr><th scope="row">Domestic online card</th><td>2.9% + $0.30</td><td>2.99% + $0.49</td></tr><tr><th scope="row">Branded checkout button</th><td>n/a (card rate applies)</td><td>3.49% + $0.49</td></tr><tr><th scope="row">Micropayments</th><td>No special published tier</td><td>4.99% + $0.09</td></tr><tr><th scope="row">Dispute</th><td>$15</td><td>$20</td></tr><tr><th scope="row">Currency conversion</th><td>+1%</td><td>3% to 4% spread</td></tr><tr><th scope="row">Instant payout to bank</th><td>1.5%, $0.50 minimum</td><td>Varies by transfer type</td></tr></tbody>
+</table></div>
+<p>On a $50 sale, that fixed-fee difference matters more than the percentage. Stripe takes about $1.75. PayPal's branded checkout takes about $2.24. On small tickets the gap widens further, which is why PayPal publishes a separate micropayments rate at all.</p>
+
 <h2>When to pick Stripe</h2>
-<p>Building custom checkout, developer-first, subscription business.</p>
+<p>Pick Stripe if you are building anything custom. SaaS subscriptions, usage-based billing, marketplaces with split payouts, or any checkout you want to control end to end. The API, the docs, and the test environment are the best in the industry, and that is not a small thing. I have watched developers get a working Stripe integration running in an afternoon that would have taken days of reading PayPal's older documentation.</p>
+<p>Stripe also wins on the boring plumbing. ACH debits at 0.8% capped at $5 make large B2B invoices much cheaper than running them through cards. Stripe Billing handles proration, dunning, and failed-payment retries for 0.7% of volume, which is usually cheaper than building or buying that logic separately. If your revenue is recurring, that stack is the strongest argument for Stripe.</p>
+<p>The tradeoff is that Stripe is invisible to your buyers. You get no trust halo, no stored buyer accounts, no PayPal balance sitting there waiting to be spent. You are responsible for making your own checkout feel safe.</p>
 
 <h2>When to pick PayPal</h2>
-<p>Consumer trust matters, marketplace where buyers prefer PayPal.</p>
+<p>Pick PayPal when your buyers already trust the button more than they trust you. For a new store with no brand recognition, an unfamiliar checkout form asking for card numbers is a real conversion risk. The PayPal button removes that friction because millions of buyers have accounts, saved payment methods, and sometimes an actual balance. For consumer marketplaces, one-off ecommerce, and international buyers who do not want to type a card into a site they just found, that familiarity is worth the extra roughly half a percent plus the higher fixed fee.</p>
+<p>PayPal is also the pragmatic choice if you sell where PayPal is simply expected: eBay-style resale, digital goods to consumers, donations, and cross-border consumer sales. And if you are not technical and have no developer, PayPal's no-code buttons and invoicing get you taking payments today.</p>
+<p>Watch the currency conversion spread, though. The 3% to 4% PayPal takes on conversion is one of the least visible costs in this comparison, and for cross-border sellers it can quietly outweigh every other fee difference on this page.</p>
+
+<h2>What most comparisons miss</h2>
+<p>This is rarely an either-or decision, and framing it that way leads people to the wrong architecture. Stripe versus PayPal is really a question of which system is your ledger. Your primary processor is where subscriptions live, where payout schedules run, and where your revenue reporting comes from. Switching that later is painful. Adding PayPal as a secondary wallet button on top of a Stripe-centered stack is easy. Doing the reverse, building your billing core on PayPal and bolting on card processing later, is the direction people regret.</p>
+<p>The other thing comparisons gloss over is account risk. Both companies can hold funds or freeze accounts when their risk models get nervous, and both have long forum threads full of angry merchants to prove it. The practical mitigation is the same for either: keep a payout cadence that does not leave your whole balance inside the processor, and never run payroll assumptions off money that has not landed in your bank.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Stripe for most SaaS/modern DTC. Offer PayPal as a secondary option if your audience expects it.</p>
+<p>I default to Stripe as the primary processor for almost every business I advise. The per-transaction math is better, the ACH and billing tooling saves real money on recurring revenue, and owning your own checkout matters as your brand grows. Then I add PayPal as a secondary button when the audience expects it, which for consumer ecommerce is most of the time. The only case where I would center on PayPal is a non-technical seller who needs to take payments this week with no developer involved. Everyone else should build on Stripe and let PayPal ride along.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://stripe.com/pricing" target="_blank" rel="noopener nofollow">Stripe - Official pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.paypal.com/us/business/paypal-business-fees" target="_blank" rel="noopener nofollow">PayPal - Merchant fees</a></li>
 </ul>
 </div>
 </div>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Supabase vs Firebase | Compare | Samuel Ochoa</title>
-<meta name="description" content="Open-source Postgres-based BaaS vs Google's closed-source BaaS.">
+<meta name="description" content="Supabase vs Firebase in 2026: verified free tier limits and pricing, SQL vs Firestore, and which backend platform I would start a new app on.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Supabase vs Firebase | Compare | Samuel Ochoa">
-<meta property="og:description" content="Open-source Postgres-based BaaS vs Google's closed-source BaaS.">
+<meta property="og:description" content="Supabase vs Firebase in 2026: verified free tier limits and pricing, SQL vs Firestore, and which backend platform I would start a new app on.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -56,7 +56,7 @@
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Supabase vs Firebase | Compare | Samuel Ochoa","description":"Open-source Postgres-based BaaS vs Google's closed-source BaaS.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/supabase-vs-firebase.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Supabase vs Firebase | Compare | Samuel Ochoa","description":"Supabase vs Firebase in 2026: verified free tier limits and pricing, SQL vs Firestore, and which backend platform I would start a new app on.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/supabase-vs-firebase.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Supabase Vs Firebase","item":"https://samuelochoa.com/compare/supabase-vs-firebase"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">BaaS</span>
 <h1 class="cmp-title">Supabase vs Firebase</h1>
-<p class="cmp-subtitle">Open-source Postgres-based BaaS vs Google's closed-source BaaS.</p>
+<p class="cmp-subtitle">Open-source Postgres platform against Google's mobile backend, with 2026 pricing.</p>
 
-<div class="cmp-summary">Supabase is Postgres + auth + storage + functions, open-source. Firebase is NoSQL (Firestore), real-time, deeply integrated with Google services.</div>
+<div class="cmp-summary">The core decision is the database model, because everything else follows from it. Supabase is a real Postgres database with auth, storage, realtime, and edge functions attached, and it is open source and self-hostable. Firebase is Google's managed backend built around Firestore, a NoSQL document store with excellent realtime sync and deep ties to Google Cloud and mobile tooling. Their pricing models differ as much as their databases: Supabase bills for resources, Firebase bills per operation.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Supabase</th><th>Firebase</th></tr></thead>
-<tbody><tr><th scope="row">Database</th><td>Postgres (SQL)</td><td>Firestore (NoSQL)</td></tr><tr><th scope="row">Real-time</th><td>Good</td><td>Best-in-class</td></tr><tr><th scope="row">Self-hostable</th><td>Yes</td><td>No</td></tr><tr><th scope="row">Ecosystem</th><td>Growing</td><td>Mature + Google integrations</td></tr></tbody>
+<tbody><tr><th scope="row">Database</th><td>Postgres, full SQL, joins, extensions</td><td>Firestore (NoSQL documents) + Realtime Database</td></tr><tr><th scope="row">Free tier</th><td>500 MB database, 1 GB storage, 50K MAUs, 2 projects</td><td>Spark plan: 1 GB Firestore, 50K reads/20K writes per day</td></tr><tr><th scope="row">Paid entry</th><td>Pro, $25/mo flat plus usage overages</td><td>Blaze, pure pay-per-operation, no base fee</td></tr><tr><th scope="row">Pricing model</th><td>Resources: database size, storage, egress, MAUs</td><td>Operations: every read, write, delete is metered</td></tr><tr><th scope="row">Serverless functions</th><td>Edge Functions (Deno), on free tier too</td><td>Cloud Functions, Blaze plan only, not on free</td></tr><tr><th scope="row">Realtime</th><td>Good: Postgres changes, broadcast, presence</td><td>Best in class, offline sync built into the SDKs</td></tr><tr><th scope="row">Auth</th><td>Included, priced by monthly active users</td><td>Firebase Auth, generous free allowance</td></tr><tr><th scope="row">Self-hostable</th><td>Yes, open source stack, or plain Postgres anywhere</td><td>No, Google-hosted only</td></tr><tr><th scope="row">Vendor</th><td>Independent company, open-source core</td><td>Google, part of Google Cloud</td></tr><tr><th scope="row">Best-known for</th><td>Web apps, SaaS, anything SQL-shaped</td><td>Mobile apps, realtime sync, analytics + crash tooling</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Numbers below are from the official pricing pages as of 2026.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Tier</th><th>Supabase</th><th>Firebase</th></tr></thead>
+<tbody><tr><th scope="row">Free</th><td>$0: 500 MB DB, 1 GB storage, 5 GB egress, 50K MAUs, projects pause after a week idle</td><td>Spark $0: hard daily quotas, no Cloud Functions</td></tr><tr><th scope="row">Paid</th><td>Pro $25/mo: 8 GB DB, 100 GB storage, 250 GB egress, 100K MAUs included</td><td>Blaze: pay per use, Firestore reads about $0.06 per 100K, plus storage, egress, function invocations</td></tr><tr><th scope="row">Team / scale</th><td>Team $599/mo (SOC 2, priority support), Enterprise custom</td><td>No tiers, the bill just scales with usage</td></tr></tbody>
+</table></div>
+<p>The practical difference: a tiny Firebase app can cost literally nothing for a long time, while Supabase asks for $25 the day you outgrow the free tier. But Firebase costs scale with how chatty your app is, not how big it is. A poorly structured listener that re-reads a collection on every screen load can multiply your bill without adding a single user. Supabase's flat base plus resource overages is easier to forecast.</p>
+
 <h2>When to pick Supabase</h2>
-<p>Want SQL/Postgres, want open-source, prefer not to lock into Google.</p>
+<p>Pick Supabase when your data is relational, which for SaaS and most web apps it is. Users, teams, subscriptions, and permissions want joins and constraints, and with Firestore you end up denormalizing and maintaining duplicate data by hand. With Supabase you just write SQL, and row level security policies give you authorization enforced in the database instead of scattered through client rules.</p>
+<p>It is also the better fit if you care about exit options. The core is open source and the database is plain Postgres, so leaving means pointing a standard Postgres dump at any other host. That exit may not be trivial in practice, you would still replace auth and storage APIs, but your data is never hostage. Add pgvector for AI features and the Postgres extension ecosystem, and Supabase has become the default backend for the current wave of web and AI apps.</p>
+<p>Its weaker spots: mobile offline sync is not close to Firebase's, the free tier pausing after a week of inactivity annoys hobby projects, and the surrounding product suite (analytics, crash reporting, push messaging) is thinner.</p>
 
 <h2>When to pick Firebase</h2>
-<p>Want best real-time, Google ecosystem, don't need SQL.</p>
+<p>Pick Firebase for mobile-first apps, especially anything collaborative or realtime. Firestore's client SDKs handle offline caching, conflict-free sync, and reconnection for you, and reproducing that on Supabase means writing the hard parts yourself. For chat, live location, multiplayer state, or field apps with flaky connectivity, this is Firebase's home turf and it is still the best at it.</p>
+<p>Firebase also wins on breadth of the surrounding platform. Auth, Cloud Messaging for push, Crashlytics, Analytics, Remote Config, and App Distribution are all first-party and wired together, which for a small mobile team replaces several separate vendors. If your organization already runs on Google Cloud, the integration story is seamless. Worth knowing: Google has been extending Firebase toward SQL too, with Data Connect exposing a Cloud SQL Postgres backend through Firebase tooling, a quiet admission of where developer demand went.</p>
+<p>The costs to accept: NoSQL modeling debt as your queries get more relational, per-operation billing that punishes inefficient access patterns, and full dependence on Google's hosting and roadmap.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparisons stop at open versus closed source and miss where the lock-in actually lives. Firebase lock-in is architectural, not contractual. Firestore's data model and security rules shape your entire application structure, so migrating off is a rewrite, not a data export. Supabase's lock-in is inverted: the database is portable, but the convenience layer (auth, storage, edge functions, realtime APIs) is what you would rebuild. The difference is that with Supabase your worst case is owning a normal Postgres database, which is a good worst case.</p>
+<p>The other blind spot is billing failure modes. Supabase's failure mode is hitting a resource ceiling and being asked to upgrade. Firebase's failure mode is an unbounded bill from a runaway read loop or a traffic spike, since Blaze has no built-in hard cap, only alerts. For a solo developer, which failure mode you can live with is a legitimate deciding factor on its own.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Supabase for most new projects. Firebase for real-time-heavy apps or Google-native teams.</p>
+<p>For a new web app or SaaS in 2026 I would start on Supabase without much deliberation. SQL fits the data, $25/mo is predictable, and the escape hatch to plain Postgres is real. I would still choose Firebase for a mobile app that leans on offline sync and realtime collaboration, because nothing else makes that as easy. The honest tiebreaker is your data shape: relational data on Firestore hurts more than document data on Postgres.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://supabase.com/pricing" target="_blank" rel="noopener nofollow">Supabase - Official pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://firebase.google.com/pricing" target="_blank" rel="noopener nofollow">Firebase - Official pricing</a></li>
 </ul>
 </div>
 </div>

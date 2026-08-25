@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AWS vs GCP | Compare | Samuel Ochoa</title>
-<meta name="description" content="Market leader vs Google's cloud offering.">
+<meta name="description" content="AWS vs GCP in 2026: new free tier credit models, discount mechanics, egress costs, and the deciding factors the marketing pages skip.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS vs GCP | Compare | Samuel Ochoa">
-<meta property="og:description" content="Market leader vs Google's cloud offering.">
+<meta property="og:description" content="AWS vs GCP in 2026: new free tier credit models, discount mechanics, egress costs, and the deciding factors the marketing pages skip.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AWS vs GCP | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Market leader vs Google&#x27;s cloud offering.">
+<meta name="twitter:description" content="AWS vs GCP in 2026: new free tier credit models, discount mechanics, egress costs, and the deciding factors the marketing pages skip.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AWS vs GCP | Compare | Samuel Ochoa","description":"Market leader vs Google's cloud offering.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/aws-vs-gcp.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AWS vs GCP | Compare | Samuel Ochoa","description":"AWS vs GCP in 2026: new free tier credit models, discount mechanics, egress costs, and the deciding factors the marketing pages skip.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/aws-vs-gcp.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Aws Vs Gcp","item":"https://samuelochoa.com/compare/aws-vs-gcp"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,63 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Cloud</span>
 <h1 class="cmp-title">AWS vs GCP</h1>
-<p class="cmp-subtitle">Market leader vs Google's cloud offering.</p>
+<p class="cmp-subtitle">The default choice vs the data and AI specialist, compared on how they actually bill you.</p>
 
-<div class="cmp-summary">AWS has the broadest product catalog and ecosystem. GCP is often better for data/AI workloads.</div>
+<div class="cmp-summary">Both clouds run the same workloads reliably, so the real decision axis is ecosystem versus specialization, and how each one charges you. AWS has the broadest catalog, the deepest talent pool, and the most third-party integrations, which makes it the safe default. GCP is smaller but genuinely better at data and AI work, with BigQuery, Vertex AI, and TPUs, plus a billing model that discounts steady usage automatically instead of asking for commitments up front.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>AWS</th><th>GCP</th></tr></thead>
-<tbody><tr><th scope="row">Breadth</th><td>Largest catalog</td><td>Strong catalog</td></tr><tr><th scope="row">AI/ML tools</th><td>Good</td><td>Excellent (Vertex, TPUs)</td></tr><tr><th scope="row">Pricing</th><td>Complex</td><td>Often simpler, often cheaper</td></tr></tbody>
+<tbody>
+<tr><th scope="row">Market position</th><td>Clear leader, roughly a third of the market</td><td>Third place, roughly an eighth</td></tr>
+<tr><th scope="row">Service breadth</th><td>200+ services, largest catalog</td><td>Smaller catalog, strong core</td></tr>
+<tr><th scope="row">Free tier</th><td>$100 credit at signup, up to $200 with onboarding tasks, 6-month free plan</td><td>$300 credit for 90 days, plus an always-free tier</td></tr>
+<tr><th scope="row">Always-free services</th><td>30+ with permanent monthly limits</td><td>20+ including a small VM and BigQuery quota</td></tr>
+<tr><th scope="row">Discount model</th><td>Savings Plans and Reserved Instances, 1 or 3 year commitments</td><td>Automatic sustained-use discounts, no commitment, plus committed-use options</td></tr>
+<tr><th scope="row">Data egress</th><td>100 GB/mo free, then roughly $0.09/GB at low volumes</td><td>Comparable per-GB rates, allowances vary by tier</td></tr>
+<tr><th scope="row">Data and analytics</th><td>Redshift, Athena, EMR</td><td>BigQuery, widely considered the category benchmark</td></tr>
+<tr><th scope="row">AI/ML</th><td>SageMaker, Bedrock</td><td>Vertex AI, Gemini models, TPUs</td></tr>
+<tr><th scope="row">Kubernetes</th><td>EKS, solid</td><td>GKE, generally the most polished managed option</td></tr>
+<tr><th scope="row">Hiring and ecosystem</th><td>Largest talent pool and integration ecosystem</td><td>Smaller pool, strong in data engineering</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Cloud pricing depends on region, instance family, and usage shape, so exact totals only come from each vendor's calculator. But the entry economics and discount mechanics are concrete, verified as of August 2026.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th></th><th>AWS</th><th>GCP</th></tr></thead>
+<tbody>
+<tr><th scope="row">New account credits</th><td>$100 at signup, up to $200 total via onboarding activities (since July 2025)</td><td>$300, valid 90 days</td></tr>
+<tr><th scope="row">Free plan duration</th><td>6 months or until credits run out, then the free-plan account closes unless upgraded</td><td>Always-free tier has no expiry</td></tr>
+<tr><th scope="row">Steady-workload discounts</th><td>Requires 1 or 3 year Savings Plans or Reserved Instances</td><td>Sustained-use discounts applied automatically each month</td></tr>
+<tr><th scope="row">Free monthly egress</th><td>100 GB to the internet</td><td>Allowances vary by network tier</td></tr>
+</tbody>
+</table></div>
+<p>One change worth knowing: AWS retired its old 12-month free tier in July 2025 and moved new accounts to the credit model above. Older comparisons that mention a year of free t2.micro hours are describing a program that no longer exists for new signups.</p>
+
 <h2>When to pick AWS</h2>
-<p>Breadth of services, largest community, default choice.</p>
+<p>Pick AWS when you are optimizing for optionality and people. Whatever odd requirement shows up in year two, AWS almost certainly has a managed service for it, and there is a blog post, a Terraform module, and a contractor who has done it before. That ecosystem depth is not a soft factor. For a small team, being able to hire engineers who already know the platform is worth more than a modest compute discount.</p>
+<p>It is also the safer choice when your customers or partners dictate architecture. Enterprise procurement, compliance checklists, and third-party tools tend to assume AWS first. If you sell into companies that will review your infrastructure, running on the platform their own teams use removes friction you would otherwise pay for in sales cycles.</p>
+<p>The tradeoff is billing complexity. Getting good prices on AWS requires active work: choosing Savings Plans, right-sizing instances, and watching egress. AWS rewards teams that manage it and quietly overcharges teams that do not.</p>
 
 <h2>When to pick GCP</h2>
-<p>AI/ML-heavy workloads, simpler pricing, Google ecosystem.</p>
+<p>Pick GCP when data and AI are the center of the workload. BigQuery is the strongest argument: a serverless warehouse where you pay for storage and queries rather than managing clusters, and it routinely wins on analyst productivity. Vertex AI, first-party access to Gemini models, and TPUs make it the natural home for teams training or heavily using models.</p>
+<p>GCP also suits small teams that do not want to become billing experts. Sustained-use discounts apply automatically when a workload runs most of the month, with no commitment or forecasting required. The always-free tier, including a small VM and a monthly BigQuery quota, has no expiry date, which makes GCP friendlier for side projects and long-running experiments than the new time-boxed AWS free plan.</p>
+<p>The honest downsides: a smaller catalog, a smaller hiring pool, and a long-standing reputation for deprecating products that makes some teams nervous about betting on less central services. Stay near the core services and that risk is small.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparisons rank feature checklists, but feature parity is close enough that it rarely decides anything. The bigger real-world cost differences come from billing mechanics. AWS prices assume you will actively manage commitments; GCP discounts passively. Egress pricing punishes chatty architectures on both clouds, and it is also the exit tax: moving petabytes out is expensive enough that your first choice is stickier than any contract. Both vendors now waive egress fees for customers who are fully migrating away, after regulatory pressure, but that only helps if you leave entirely.</p>
+<p>The second missed point is that team composition should outweigh benchmarks. If your first three hires know AWS, picking GCP for a 10 percent theoretical savings means paying a learning tax that dwarfs the discount. The cheapest cloud is almost always the one your team already knows, and the comparison only gets interesting when the workload is data-heavy enough for BigQuery and TPUs to overcome that.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>AWS for most. GCP for AI-centric teams or if you prefer Google's tooling.</p>
+<p>AWS is still the right default for most teams. The ecosystem, the hiring pool, and the enterprise acceptance are real advantages that compound over years. I would pick GCP in two specific cases: when the workload is analytics or AI heavy, where BigQuery and Vertex AI are genuinely better tools, or when a small team wants decent pricing without managing commitments. If you are undecided, that indecision itself is a signal that your workload is generic, and generic workloads belong on the platform your team can hire for. That is usually AWS.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://aws.amazon.com/free/" target="_blank" rel="noopener nofollow">AWS - Free tier details</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://cloud.google.com/free" target="_blank" rel="noopener nofollow">Google Cloud - Free program</a></li>
 </ul>
 </div>
 </div>

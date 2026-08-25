@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Postgres vs MongoDB | Compare | Samuel Ochoa</title>
-<meta name="description" content="Relational workhorse vs document database.">
+<meta name="description" content="Postgres vs MongoDB in 2026: data models, licensing, verified Atlas and managed Postgres pricing, and when the document model actually earns its keep.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Postgres vs MongoDB | Compare | Samuel Ochoa">
-<meta property="og:description" content="Relational workhorse vs document database.">
+<meta property="og:description" content="Postgres vs MongoDB in 2026: data models, licensing, verified Atlas and managed Postgres pricing, and when the document model actually earns its keep.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Postgres vs MongoDB | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Relational workhorse vs document database.">
+<meta name="twitter:description" content="Postgres vs MongoDB in 2026: data models, licensing, verified Atlas and managed Postgres pricing, and when the document model actually earns its keep.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Postgres vs MongoDB | Compare | Samuel Ochoa","description":"Relational workhorse vs document database.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/postgres-vs-mongodb.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Postgres vs MongoDB | Compare | Samuel Ochoa","description":"Postgres vs MongoDB in 2026: data models, licensing, verified Atlas and managed Postgres pricing, and when the document model actually earns its keep.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/postgres-vs-mongodb.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Postgres Vs Mongodb","item":"https://samuelochoa.com/compare/postgres-vs-mongodb"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Databases</span>
 <h1 class="cmp-title">Postgres vs MongoDB</h1>
-<p class="cmp-subtitle">Relational workhorse vs document database.</p>
+<p class="cmp-subtitle">The relational workhorse against the document database, with real 2026 hosting numbers.</p>
 
-<div class="cmp-summary">Postgres is the SQL standard with JSONB for flexibility. MongoDB is document-first, easier for schema-less data.</div>
+<div class="cmp-summary">The real decision here is not SQL versus NoSQL, it is how your data relates to itself. If entities reference each other and you will ask questions across them, Postgres is the safer bet, and its JSONB column type covers most flexible-schema needs. If your data is genuinely self-contained documents read and written as a unit, MongoDB's model maps to your code cleanly. Both are mature, transactional, and horizontally scalable in 2026, so the old caricatures on both sides are out of date.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Postgres</th><th>MongoDB</th></tr></thead>
-<tbody><tr><th scope="row">Model</th><td>Relational + JSONB</td><td>Document</td></tr><tr><th scope="row">Query</th><td>SQL</td><td>Mongo query language</td></tr><tr><th scope="row">Transactions</th><td>Strong</td><td>Good (multi-document)</td></tr><tr><th scope="row">Ecosystem</th><td>Vast</td><td>Large</td></tr></tbody>
+<tbody><tr><th scope="row">Data model</th><td>Relational tables, plus JSONB documents in columns</td><td>Document (BSON), collections of nested objects</td></tr><tr><th scope="row">Query language</th><td>SQL, the industry standard</td><td>MQL and aggregation pipelines</td></tr><tr><th scope="row">Transactions</th><td>Full ACID, decades of production hardening</td><td>ACID, multi-document transactions since 4.0</td></tr><tr><th scope="row">License</th><td>PostgreSQL License, permissive open source</td><td>SSPL for Community Server, not OSI-approved</td></tr><tr><th scope="row">Free hosted tier</th><td>Via providers: Supabase (500 MB), Neon, others</td><td>Atlas M0, free forever, 512 MB storage</td></tr><tr><th scope="row">Entry paid hosting</th><td>Roughly $10 to $25/mo on Neon, Supabase, or small RDS</td><td>Atlas Flex, $0.011/hr, capped around $30/mo</td></tr><tr><th scope="row">Production hosting</th><td>Any cloud, many vendors, no single gatekeeper</td><td>Atlas dedicated from about $57/mo (M10), or self-host</td></tr><tr><th scope="row">Scaling story</th><td>Vertical first, read replicas, Citus for sharding</td><td>Built-in sharding and replica sets</td></tr><tr><th scope="row">Extensions</th><td>Huge: PostGIS, pgvector, TimescaleDB, and more</td><td>Platform features: Atlas Search, Vector Search</td></tr><tr><th scope="row">Who runs it</th><td>Community project, no owning company</td><td>MongoDB Inc., a public company</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Postgres itself is free software, so the cost question is really about managed hosting. These are vendor list prices as of 2026.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Tier</th><th>Managed Postgres (typical)</th><th>MongoDB Atlas</th></tr></thead>
+<tbody><tr><th scope="row">Free</th><td>Supabase Free (500 MB DB), Neon free tier</td><td>M0, $0 forever, 512 MB, shared CPU</td></tr><tr><th scope="row">Hobby / small</th><td>Supabase Pro $25/mo (8 GB included)</td><td>Flex, $8 to $30/mo based on ops/sec, 5 GB</td></tr><tr><th scope="row">Production entry</th><td>Small RDS or equivalent, tens of dollars per month</td><td>M10 dedicated, $0.08/hr, about $57/mo</td></tr><tr><th scope="row">Scale</th><td>Priced per instance size, many competing vendors</td><td>M30 at $0.54/hr up to M700 at $33.26/hr</td></tr></tbody>
+</table></div>
+<p>One structural difference matters more than any single number. Postgres hosting is a competitive market, so if a provider raises prices you can move. Atlas is the only first-party MongoDB cloud, and while you can self-host Community Server, the SSPL license and the pull of Atlas-only features (Search, Vector Search) mean pricing leverage sits with MongoDB Inc.</p>
+
 <h2>When to pick Postgres</h2>
-<p>Structured data, relations, SQL expertise, almost always the default.</p>
+<p>Pick Postgres when your data has relationships you will query across: users and orders, accounts and invoices, anything shaped like a business. Joins, foreign keys, and constraints are not legacy ceremony, they are the database catching bugs your application code would otherwise ship. And when you need flexible fields, JSONB gives you indexed, queryable documents inside a relational table. In my experience that combination covers a large share of what people reach for MongoDB to get.</p>
+<p>Postgres is also the ecosystem bet. Every ORM, BI tool, and data warehouse speaks SQL first. The extension catalog is unmatched: PostGIS for geospatial, pgvector for embeddings, TimescaleDB for time series. In the AI tooling wave, Postgres has quietly become the default substrate. Supabase, Neon, and most new backend platforms are Postgres underneath.</p>
+<p>The honest weaknesses: write-heavy horizontal scaling takes real work (Citus or careful sharding), connection management needs a pooler like PgBouncer, and major-version upgrades require planning. None of these bite at small scale.</p>
 
 <h2>When to pick MongoDB</h2>
-<p>Document-shaped data, schema-less workflows, rapid schema changes.</p>
+<p>Pick MongoDB when your records are genuinely document-shaped: a product catalog where every item carries different attributes, event payloads, content management, IoT readings. If you always read and write the whole object and rarely join across entities, the document model removes a translation layer, and your code gets simpler, not sloppier.</p>
+<p>MongoDB also earns its place when you know you will shard. Horizontal scaling is a first-class, built-in feature, not an extension, and replica sets with automatic failover are the default deployment shape. Teams that expect to spread one logical database across many nodes get a smoother path than Postgres offers out of the box. Atlas is a genuinely polished managed product, and the Flex tier's roughly $30 monthly cap fixed the runaway-serverless-bill problem of the old pricing.</p>
+<p>The trade-offs: the aggregation pipeline is powerful but harder to hire for than SQL, schema flexibility becomes schema debt without discipline, and analytics tooling usually means syncing data out to a SQL warehouse anyway.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparisons treat this as a technical choice and skip the governance difference. Postgres belongs to no company. Its license is permissive, dozens of vendors compete to host it, and it cannot be acquired, repriced, or relicensed. MongoDB's Community Server moved to the SSPL in 2018, which is why AWS built DocumentDB as a compatible clone rather than offering real MongoDB. When you choose MongoDB you are, in practice, choosing a long-term commercial relationship with MongoDB Inc. That can be fine, Atlas is good, but it belongs in the decision explicitly.</p>
+<p>The second miss: the flexible-schema argument cuts the opposite way from how it is sold. Early in a project, schema flexibility feels like speed. Two years in, the schema still exists, it just lives implicitly across your application code and old documents with three different shapes. Postgres migrations force the conversation early, when it is cheap. Schemaless does not mean no schema, it means unenforced schema.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Postgres by default. MongoDB when document is a genuinely better fit (rare but real).</p>
+<p>Postgres by default, and I hold that position more strongly in 2026 than I did five years ago, because JSONB, pgvector, and platforms like Supabase and Neon have absorbed most of MongoDB's historical advantages. Choose MongoDB deliberately when your data is truly document-shaped or when built-in sharding is a hard requirement, and go in with your eyes open about the single-vendor relationship. If you cannot articulate why documents beat tables for your workload, that means they don't.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener nofollow">PostgreSQL - Official documentation</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.mongodb.com/pricing" target="_blank" rel="noopener nofollow">MongoDB - Official Atlas pricing</a></li>
 </ul>
 </div>
 </div>

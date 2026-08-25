@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cypress vs Playwright | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two leading end-to-end testing frameworks.">
+<meta name="description" content="Cypress vs Playwright compared on browser support, speed, and the real cost of parallel CI. Playwright for new projects, Cypress for working suites.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cypress vs Playwright | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two leading end-to-end testing frameworks.">
+<meta property="og:description" content="Cypress vs Playwright compared on browser support, speed, and the real cost of parallel CI. Playwright for new projects, Cypress for working suites.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cypress vs Playwright | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two leading end-to-end testing frameworks.">
+<meta name="twitter:description" content="Cypress vs Playwright compared on browser support, speed, and the real cost of parallel CI. Playwright for new projects, Cypress for working suites.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cypress vs Playwright | Compare | Samuel Ochoa","description":"Two leading end-to-end testing frameworks.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/cypress-vs-playwright.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cypress vs Playwright | Compare | Samuel Ochoa","description":"Cypress vs Playwright compared on browser support, speed, and the real cost of parallel CI. Playwright for new projects, Cypress for working suites.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/cypress-vs-playwright.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Cypress Vs Playwright","item":"https://samuelochoa.com/compare/cypress-vs-playwright"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">E2E Testing</span>
 <h1 class="cmp-title">Cypress vs Playwright</h1>
-<p class="cmp-subtitle">Two leading end-to-end testing frameworks.</p>
+<p class="cmp-subtitle">The two dominant end-to-end testing frameworks, compared on browser coverage, parallelization cost, and what a migration actually involves.</p>
 
-<div class="cmp-summary">Cypress has been the incumbent with great DX. Playwright (from Microsoft) is newer, faster, cross-browser, cross-language.</div>
+<div class="cmp-summary">Both frameworks are open source and free to run, so the real decision axis is what parallelization costs and how wide your browser matrix needs to be. Playwright parallelizes for free on any CI and covers Chromium, Firefox, and WebKit in multiple languages. Cypress has arguably the nicer interactive debugging experience, but its parallel orchestration and analytics live in Cypress Cloud, a paid service starting at $67/month. In 2026 the momentum, download numbers, and hiring market have all shifted toward Playwright.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Cypress</th><th>Playwright</th></tr></thead>
-<tbody><tr><th scope="row">Browsers</th><td>Chrome-family + Firefox</td><td>All browsers + mobile</td></tr><tr><th scope="row">Language</th><td>JavaScript</td><td>JS, Python, C#, Java</td></tr><tr><th scope="row">Speed</th><td>Good</td><td>Faster</td></tr><tr><th scope="row">Parallel testing</th><td>Paid</td><td>Free</td></tr></tbody>
+<tbody><tr><th scope="row">Maintainer</th><td>Cypress.io (venture-backed company)</td><td>Microsoft</td></tr><tr><th scope="row">License and core cost</th><td>Open source, free to run locally</td><td>Open source, free, no paid tier at all</td></tr><tr><th scope="row">Browsers</th><td>Chrome family, Edge, Firefox; WebKit support experimental</td><td>Chromium, Firefox, WebKit (Safari engine), plus mobile emulation</td></tr><tr><th scope="row">Languages</th><td>JavaScript / TypeScript only</td><td>JS/TS, Python, Java, .NET</td></tr><tr><th scope="row">Parallel runs</th><td>Orchestrated through Cypress Cloud, paid from $67/mo</td><td>Built in and free on any CI runner</td></tr><tr><th scope="row">Architecture</th><td>Runs inside the browser, same-origin model with workarounds</td><td>Drives browsers over protocol, multiple tabs, origins, and contexts</td></tr><tr><th scope="row">Speed</th><td>Slower per action in independent benchmarks</td><td>Consistently faster, better CI-minute efficiency</td></tr><tr><th scope="row">Debugging experience</th><td>Excellent interactive runner with time-travel</td><td>Trace viewer and UI mode, now roughly at parity</td></tr><tr><th scope="row">Auto-waiting</th><td>Built-in retryability</td><td>Built-in auto-wait, web-first assertions</td></tr><tr><th scope="row">Ecosystem momentum</th><td>Mature but flat</td><td>npm downloads several times Cypress's, growing</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Running tests is free in both. The money shows up when you want parallelization, dashboards, and flake analytics in CI. Published numbers as of mid-2026.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Capability</th><th>Cypress</th><th>Playwright</th></tr></thead>
+<tbody><tr><th scope="row">Framework</th><td>Free (open source)</td><td>Free (open source)</td></tr><tr><th scope="row">Parallel orchestration</th><td>Cypress Cloud: free tier 500 test results/mo, Team $67/mo (120k results/yr), Business $267/mo</td><td>Free, native sharding on your own CI workers</td></tr><tr><th scope="row">Overages</th><td>Roughly $5-6 per 1,000 extra test results</td><td>None, you pay only your CI compute</td></tr><tr><th scope="row">Reporting/flake analytics</th><td>Included in Cloud plans</td><td>Free HTML report and traces; third-party dashboards optional</td></tr></tbody>
+</table></div>
+<p>Note the unit: Cypress Cloud bills per recorded test result, so a large suite running on every PR burns through allowances fast. Teams with big suites regularly land in four or five figures a year. Playwright's equivalent cost is just CI minutes, and because it runs faster per test, it usually uses fewer of them.</p>
+
 <h2>When to pick Cypress</h2>
-<p>JavaScript-only team, established Cypress workflows.</p>
+<p>Pick Cypress when you already have a working Cypress suite and it is not hurting you. Migration is a real project: selectors mostly carry over, but command chains, custom commands, and intercept logic all need rewriting, and a stable suite of several hundred specs can take weeks to port. If your tests are green, your team knows the tool, and your Cloud bill is tolerable, rewriting for the sake of fashion is a bad trade.</p>
+<p>Cypress also still has a case for teams that prize its interactive runner. Watching commands execute step by step in a live browser, with time-travel snapshots, is a genuinely good way for less test-experienced developers to build and debug specs. For a small JavaScript-only team testing a single Chrome-first web app, staying inside the free local tier and running specs serially in CI can be perfectly fine.</p>
+<p>Be honest about the trajectory, though. If you expect the suite to grow, budget for Cypress Cloud or for slower serial CI runs, because that cost curve is the main reason teams eventually leave.</p>
 
 <h2>When to pick Playwright</h2>
-<p>Cross-browser testing, cross-language teams, performance matters.</p>
+<p>Pick Playwright for any new project in 2026. Free native parallelization is the headline: you shard tests across CI workers with a config flag and pay nothing beyond compute. It covers WebKit, so you actually test the Safari engine instead of hoping. It handles multiple tabs, origins, and browser contexts naturally, which makes auth flows, OAuth popups, and multi-user scenarios far less painful than Cypress's same-origin workarounds.</p>
+<p>It is also the better fit for mixed-language organizations. QA teams in Python or Java shops can write Playwright in their own language against the same engine the frontend team uses. The tooling has caught up with Cypress's old DX advantage: UI mode gives interactive debugging, trace viewer gives post-mortem replay of CI failures with DOM snapshots and network logs, and codegen records flows into starter scripts.</p>
+<p>The main caution is that Playwright's flexibility lets you write bad tests faster. It assumes more engineering maturity, and teams coming from Cypress sometimes miss the guardrails. Pair it with a clear page-object or fixture convention from day one.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparisons treat this as a feature checklist, but the structural difference is who pays for scale. Playwright is funded by Microsoft and gives away everything, including the parts Cypress needs to sell to survive. That is why parallelization, the single most valuable capability for a growing suite, is free on one side and the revenue model on the other. When you pick Cypress for a suite you expect to grow, you are not choosing a framework, you are choosing a future SaaS line item, and it is worth pricing that honestly up front.</p>
+<p>The second thing that gets missed: flaky tests, not framework speed, are what kill E2E programs. Both tools auto-wait and retry, but Playwright's protocol-level control and trace artifacts make root-causing a flake in CI meaningfully faster. The framework you can debug at 2am from a trace file is the one whose tests stay trusted, and untrusted tests get deleted no matter which logo is on them.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Playwright for new projects. Cypress when existing Cypress suite works.</p>
+<p>For new projects I pick Playwright and I do not think it is close anymore. Free parallelization, real WebKit coverage, multi-language support, and faster runs beat Cypress's interactive runner, which Playwright's UI mode has largely matched anyway. The one situation where I would stay on Cypress is a stable existing suite with a tolerable Cloud bill, because a migration costs weeks and green tests are worth more than modern tests. If your Cypress Cloud invoice is climbing, that is the signal to plan the port rather than renew.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.cypress.io/pricing" target="_blank" rel="noopener nofollow">Cypress Cloud - Official pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener nofollow">Playwright - Official docs</a></li>
 </ul>
 </div>
 </div>

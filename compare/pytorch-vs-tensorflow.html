@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PyTorch vs TensorFlow | Compare | Samuel Ochoa</title>
-<meta name="description" content="Research-friendly vs production-hardened ML frameworks.">
+<meta name="description" content="PyTorch vs TensorFlow in 2026: research dominance vs an installed production base, deployment tooling, Keras 3, and which framework to learn now.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyTorch vs TensorFlow | Compare | Samuel Ochoa">
-<meta property="og:description" content="Research-friendly vs production-hardened ML frameworks.">
+<meta property="og:description" content="PyTorch vs TensorFlow in 2026: research dominance vs an installed production base, deployment tooling, Keras 3, and which framework to learn now.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PyTorch vs TensorFlow | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Research-friendly vs production-hardened ML frameworks.">
+<meta name="twitter:description" content="PyTorch vs TensorFlow in 2026: research dominance vs an installed production base, deployment tooling, Keras 3, and which framework to learn now.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PyTorch vs TensorFlow | Compare | Samuel Ochoa","description":"Research-friendly vs production-hardened ML frameworks.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pytorch-vs-tensorflow.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PyTorch vs TensorFlow | Compare | Samuel Ochoa","description":"PyTorch vs TensorFlow in 2026: research dominance vs an installed production base, deployment tooling, Keras 3, and which framework to learn now.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pytorch-vs-tensorflow.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Pytorch Vs Tensorflow","item":"https://samuelochoa.com/compare/pytorch-vs-tensorflow"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">ML Frameworks</span>
 <h1 class="cmp-title">PyTorch vs TensorFlow</h1>
-<p class="cmp-subtitle">Research-friendly vs production-hardened ML frameworks.</p>
+<p class="cmp-subtitle">The research-dominant framework vs the one with the installed production base.</p>
 
-<div class="cmp-summary">PyTorch dominates research and modern LLM work. TensorFlow has better production deployment tooling historically.</div>
+<div class="cmp-summary">The real question in 2026 is not which framework is better, it is whether you are starting new work or maintaining old work. PyTorch owns the flow: new research, new models, the entire modern LLM ecosystem, and most new hiring. TensorFlow owns the stock: years of production systems, mobile deployments, and Google Cloud integrations that still run and still need engineers. Both are free and open source, so the cost is entirely in your time, your team, and your migration path.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>PyTorch</th><th>TensorFlow</th></tr></thead>
-<tbody><tr><th scope="row">Research share</th><td>Dominant</td><td>Declining</td></tr><tr><th scope="row">Production tools</th><td>Improving</td><td>Mature (TF Serving, TFX)</td></tr><tr><th scope="row">Ecosystem in 2026</th><td>AI-native</td><td>Production-focused</td></tr></tbody>
+<tbody><tr><th scope="row">License and cost</th><td>Free, open source (BSD-style)</td><td>Free, open source (Apache 2.0)</td></tr><tr><th scope="row">Governance</th><td>PyTorch Foundation under the Linux Foundation; Meta-originated</td><td>Google</td></tr><tr><th scope="row">Research adoption</th><td>Dominant; the large majority of new deep learning papers ship PyTorch code</td><td>Small and declining share of new papers</td></tr><tr><th scope="row">LLM ecosystem</th><td>Native home of Hugging Face Transformers, vLLM, and most fine-tuning tooling</td><td>Peripheral; most new model releases are PyTorch-first</td></tr><tr><th scope="row">Production serving</th><td>TorchServe, ONNX export, torch.compile; now common in production</td><td>TF Serving and TFX, mature and battle-tested</td></tr><tr><th scope="row">Mobile and edge</th><td>ExecuTorch (newer)</td><td>LiteRT, formerly TensorFlow Lite, huge installed base</td></tr><tr><th scope="row">In the browser</th><td>Limited</td><td>TensorFlow.js, still the standard option</td></tr><tr><th scope="row">Keras 3 support</th><td>Supported backend</td><td>Supported backend (alongside JAX and OpenVINO)</td></tr><tr><th scope="row">Vendor momentum</th><td>Active, fast-moving development</td><td>Maintained and released, but Google's frontier model work runs on JAX</td></tr><tr><th scope="row">Job market</th><td>Ahead in new ML job postings</td><td>Still widely listed, weighted toward maintaining existing systems</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both frameworks cost nothing to license, so the honest pricing section is about where the money actually goes.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Cost driver</th><th>PyTorch</th><th>TensorFlow</th></tr></thead>
+<tbody><tr><th scope="row">License</th><td>$0</td><td>$0</td></tr><tr><th scope="row">Compute</th><td>Whatever your GPUs or cloud cost; framework-neutral</td><td>Same, with first-class Google Cloud TPU support</td></tr><tr><th scope="row">Hiring</th><td>Larger pool of new grads and researchers</td><td>Shrinking pool for new development, fine for maintenance</td></tr><tr><th scope="row">Migration risk</th><td>Low; the ecosystem is moving toward it</td><td>Real; new tooling increasingly assumes PyTorch or JAX</td></tr></tbody>
+</table></div>
+<p>That last row is the one that shows up on invoices three years from now. Building new systems on the framework the ecosystem is leaving means paying a migration tax later or paying a scarcity premium for engineers who still want to work in it.</p>
+
 <h2>When to pick PyTorch</h2>
-<p>Modern ML/AI work, LLMs, research, close to latest papers.</p>
+<p>Pick PyTorch for essentially all new deep learning work. If you are fine-tuning LLMs, working with Hugging Face models, serving with vLLM, or trying to reproduce anything published in the last few years, PyTorch is not just the better choice, it is the assumed default. New model releases land as PyTorch weights first, and the tutorials, forum answers, and hiring pipelines all follow the research community, which moved years ago.</p>
+<p>The old argument against PyTorch was deployment, and it has mostly expired. torch.compile closed much of the performance gap with graph-compiled execution, ONNX export covers cross-runtime serving, and companies run PyTorch in production at serious scale. I no longer see teams choose TensorFlow for a new system because of serving concerns, and when I hear that reasoning it usually turns out to be a habit from 2019.</p>
+<p>It is also the right default for learners. If you are choosing what to study, the market signal is unambiguous: PyTorch appears in more new job postings and virtually all current research code.</p>
 
 <h2>When to pick TensorFlow</h2>
-<p>Legacy production ML, TF-integrated stack.</p>
+<p>Pick TensorFlow when you already have it. A working TFX pipeline, models served through TF Serving, or a mobile app on TensorFlow Lite (now LiteRT) represents real invested engineering, and ripping it out to chase the trend is usually bad economics. Maintained TensorFlow systems keep working, security releases keep shipping, and the mature production tooling remains genuinely good at what it does.</p>
+<p>There are also a few frontier cases where TensorFlow still earns its spot on merit. TensorFlow.js remains the standard way to run models in the browser. The LiteRT path for on-device inference is mature where PyTorch's ExecuTorch is still younger. And teams deep in Google Cloud with TPU-based pipelines may find the integration smoother, although Google's own guidance now points new generative AI work toward JAX, Keras 3, or PyTorch rather than classic TensorFlow.</p>
+<p>What I would not do is start a greenfield project on TensorFlow in 2026 without one of those specific reasons written down. The default has flipped, and the burden of proof is now on choosing TF.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The most important 2026 development is that this stopped being a two-horse race. Google trains its frontier models on JAX, not TensorFlow, which reframes TensorFlow's status: it is not losing to PyTorch so much as being succeeded inside Google itself. Meanwhile Keras 3 became a multi-backend layer that runs the same model code on TensorFlow, JAX, or PyTorch. If your codebase is written against Keras rather than raw TensorFlow ops, you already have a supported off-ramp, and that changes the migration math for a lot of legacy teams.</p>
+<p>The second miss: framework choice matters less than it used to for application teams. If your actual work is calling hosted model APIs and fine-tuning occasionally, the framework decision touches a small fraction of your code. Spend the decision energy where the lock-in really lives, which is your data pipelines and serving infrastructure, not the training library.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>PyTorch for nearly all new work. TF for legacy maintenance.</p>
+<p>PyTorch for nearly everything new, and I do not consider it a close call anymore. The research community, the LLM tooling, the hiring pool, and even Google's own guidance for new generative AI work all point the same direction. TensorFlow remains the right choice for maintaining systems already built on it and for a few niches like browser inference, where its tooling is still ahead. If you are on legacy TensorFlow through Keras, Keras 3 gives you a gradual migration path worth planning around. If you are learning from scratch, learn PyTorch and do not look back.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener nofollow">PyTorch - Official docs and install</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.tensorflow.org/guide" target="_blank" rel="noopener nofollow">TensorFlow - Official guide</a></li>
 </ul>
 </div>
 </div>

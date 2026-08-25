@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AWS vs Azure | Compare | Samuel Ochoa</title>
-<meta name="description" content="Leader vs enterprise-focused competitor.">
+<meta name="description" content="AWS vs Azure in 2026: free tier credits, real pricing differences, Microsoft licensing math, and which cloud fits your existing stack.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS vs Azure | Compare | Samuel Ochoa">
-<meta property="og:description" content="Leader vs enterprise-focused competitor.">
+<meta property="og:description" content="AWS vs Azure in 2026: free tier credits, real pricing differences, Microsoft licensing math, and which cloud fits your existing stack.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AWS vs Azure | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Leader vs enterprise-focused competitor.">
+<meta name="twitter:description" content="AWS vs Azure in 2026: free tier credits, real pricing differences, Microsoft licensing math, and which cloud fits your existing stack.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AWS vs Azure | Compare | Samuel Ochoa","description":"Leader vs enterprise-focused competitor.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/aws-vs-azure.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AWS vs Azure | Compare | Samuel Ochoa","description":"AWS vs Azure in 2026: free tier credits, real pricing differences, Microsoft licensing math, and which cloud fits your existing stack.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/aws-vs-azure.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Aws Vs Azure","item":"https://samuelochoa.com/compare/aws-vs-azure"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Cloud</span>
 <h1 class="cmp-title">AWS vs Azure</h1>
-<p class="cmp-subtitle">Leader vs enterprise-focused competitor.</p>
+<p class="cmp-subtitle">The market leader vs the Microsoft-native challenger, and why your existing stack decides it.</p>
 
-<div class="cmp-summary">AWS has broader tooling. Azure wins enterprise deals via Microsoft ecosystem (AD, Office, Windows Server).</div>
+<div class="cmp-summary">The honest answer to AWS vs Azure is that list prices land within a few percent of each other for most compute and storage, so the decision is really about your existing stack. AWS is the market leader with roughly 30 percent share, the broadest service catalog, and the deepest pool of engineers who know it. Azure holds roughly a quarter of the market and wins wherever a company already runs on Microsoft: Active Directory, Microsoft 365, Windows Server licensing. Pick based on what you already own and who you can hire, not on a pricing spreadsheet.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>AWS</th><th>Azure</th></tr></thead>
-<tbody><tr><th scope="row">Services</th><td>Broadest</td><td>Comprehensive</td></tr><tr><th scope="row">Enterprise integration</th><td>Strong</td><td>Best for MS shops</td></tr><tr><th scope="row">Developer preference</th><td>Strong</td><td>Growing</td></tr></tbody>
+<tbody><tr><th scope="row">Market position</th><td>Leader, roughly 30% of cloud infrastructure spend</td><td>Second, roughly a quarter of the market and growing fastest</td></tr><tr><th scope="row">Service catalog</th><td>Broadest, 200+ services</td><td>Comprehensive, strongest where it touches Microsoft products</td></tr><tr><th scope="row">Free tier</th><td>Up to $200 in credits ($100 at signup plus $100 earned by using services), 6-month free plan, 30+ always-free services</td><td>$200 credit for the first 30 days, popular services free for 12 months, 25+ always-free services</td></tr><tr><th scope="row">Windows licensing</th><td>Pay full price for Windows/SQL Server VMs</td><td>Hybrid Benefit reuses existing licenses, often 40%+ savings on those workloads</td></tr><tr><th scope="row">Identity</th><td>IAM (its own model)</td><td>Entra ID (formerly Azure AD), native with Microsoft 365</td></tr><tr><th scope="row">Kubernetes</th><td>EKS, control plane billed hourly</td><td>AKS, free control plane on the standard tier</td></tr><tr><th scope="row">AI partnerships</th><td>Anthropic (Claude on Bedrock), plus its own Trainium chips</td><td>OpenAI partnership, GPT models via Azure OpenAI, plus Copilot tie-ins</td></tr><tr><th scope="row">Hiring pool</th><td>Largest, most certified engineers and tutorials</td><td>Large, strongest among enterprise IT teams</td></tr><tr><th scope="row">Compliance</th><td>Extensive</td><td>Extensive, widely cited as the broadest certification list</td></tr><tr><th scope="row">Best for</th><td>Startups, greenfield builds, breadth of managed services</td><td>Microsoft-stack enterprises, hybrid cloud, regulated IT</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Neither cloud is universally cheaper. For most standard compute and storage, published list prices sit within about 5 to 10 percent of each other, and discounts (reserved instances, savings plans, enterprise agreements) matter more than list price. A few verified differences as of 2026 are worth calling out.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Item</th><th>AWS</th><th>Azure</th></tr></thead>
+<tbody><tr><th scope="row">New account credits</th><td>Up to $200 over 6 months ($100 signup + $100 earned)</td><td>$200, expires after 30 days</td></tr><tr><th scope="row">Hot object storage</th><td>S3 Standard, about $0.023/GB/mo (first tier)</td><td>Blob hot, about $0.018/GB/mo (first tier)</td></tr><tr><th scope="row">Kubernetes control plane</th><td>Billed per cluster hour on EKS</td><td>Free on AKS standard tier</td></tr><tr><th scope="row">Windows Server + SQL workloads</th><td>Full license cost baked in</td><td>Hybrid Benefit can cut those VM costs by 40% or more</td></tr><tr><th scope="row">Billing granularity</th><td>Per-second billing on most compute</td><td>Per-minute or per-second depending on service</td></tr></tbody>
+</table></div>
+<p>Prices vary by region and change often, so treat these as directional and confirm current numbers in each vendor's calculator before committing.</p>
+
 <h2>When to pick AWS</h2>
-<p>Pure tech, startups, broadest services.</p>
+<p>Pick AWS for greenfield builds and startup work. Whatever you are trying to do, AWS almost certainly has a managed service for it, the documentation and community answers are deeper, and nearly every third-party tool integrates with AWS first. When I help small businesses stand up infrastructure, the practical argument is hiring: more contractors and engineers know AWS well than any other cloud, so you will never struggle to find help.</p>
+<p>AWS also fits teams that want fine-grained control over cost and architecture. Per-second billing, the widest range of instance types, and mature spot-instance tooling reward teams that actively optimize. And if you are building on Anthropic's Claude models, Bedrock is the native home for them.</p>
+<p>The tradeoff is sprawl. Two hundred plus services means real decision fatigue, and the console assumes you know what you are looking for. Budget alarms are not optional; surprise bills are the most common AWS complaint for a reason.</p>
 
 <h2>When to pick Azure</h2>
-<p>Microsoft-stack enterprises, AD integration.</p>
+<p>Pick Azure if your organization runs on Microsoft, because the economics stack in your favor before you deploy anything. Hybrid Benefit lets you bring existing Windows Server and SQL Server licenses, which routinely cuts 40 percent or more off those VM costs. Entra ID means your users, groups, and conditional access policies extend into the cloud instead of being rebuilt in a second identity system. If your IT team already administers Microsoft 365, Azure feels like an extension of what they know.</p>
+<p>Azure is also the pragmatic choice for hybrid setups where some workloads stay on-premises, since Microsoft has invested heavily in tools like Azure Arc for managing both sides. And through the OpenAI partnership, Azure is the enterprise path to GPT models with the compliance and data-residency wrapper that regulated industries need.</p>
+<p>The tradeoff is polish. Azure's portal and documentation are less consistent than AWS's, service quality varies more between products, and community answers are thinner outside the Microsoft ecosystem.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparisons obsess over list prices, which is the least decision-relevant number in cloud. Real cloud bills are dominated by architecture choices (egress, cross-zone traffic, over-provisioned instances) and by negotiated discounts, not by whether a VM lists at $0.096 or $0.101 per hour. A team fluent in its platform will run either cloud cheaper than a team fumbling through the "cheaper" one. Skills are the real cost lever.</p>
+<p>The other miss is treating this as a permanent marriage. Egress fees and proprietary services create real lock-in, but the practical lock-in is knowledge: your runbooks, your IAM policies, your team's instincts. That is why my advice is to pick the cloud that matches your existing stack and skills, go deep on it, and ignore the grass on the other side. Multi-cloud sounds sophisticated and mostly doubles your surface area for mistakes.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>AWS for most. Azure for Microsoft-native orgs.</p>
+<p>AWS for most independent builds, Azure for Microsoft-native organizations, and the deciding factor is almost never price. If you have no Microsoft estate, AWS's breadth, ecosystem, and hiring pool make it the default, and its new credit-based free tier (up to $200 over six months) gives you a longer runway to learn than Azure's 30-day credit. If your company already pays for Microsoft 365 and Windows Server licenses, Azure's Hybrid Benefit and Entra ID integration will likely beat AWS on total cost no matter what the per-hour rates say. Pick one, learn it deeply, and revisit only if your stack changes.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://aws.amazon.com/free/" target="_blank" rel="noopener nofollow">AWS Free Tier (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" target="_blank" rel="noopener nofollow">Azure free account (official)</a></li>
 </ul>
 </div>
 </div>
