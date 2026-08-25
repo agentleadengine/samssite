@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LangChain vs LlamaIndex | Compare | Samuel Ochoa</title>
-<meta name="description" content="General LLM orchestration vs data-focused framework.">
+<meta name="description" content="I compare LangChain and LlamaIndex in 2026: MIT licenses, versions, LangGraph, LangSmith and LlamaCloud pricing, and which fits agents vs document RAG.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LangChain vs LlamaIndex | Compare | Samuel Ochoa">
-<meta property="og:description" content="General LLM orchestration vs data-focused framework.">
+<meta property="og:description" content="I compare LangChain and LlamaIndex in 2026: MIT licenses, versions, LangGraph, LangSmith and LlamaCloud pricing, and which fits agents vs document RAG.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LangChain vs LlamaIndex | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="General LLM orchestration vs data-focused framework.">
+<meta name="twitter:description" content="I compare LangChain and LlamaIndex in 2026: MIT licenses, versions, LangGraph, LangSmith and LlamaCloud pricing, and which fits agents vs document RAG.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LangChain vs LlamaIndex | Compare | Samuel Ochoa","description":"General LLM orchestration vs data-focused framework.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/langchain-vs-llamaindex.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LangChain vs LlamaIndex | Compare | Samuel Ochoa","description":"I compare LangChain and LlamaIndex in 2026: MIT licenses, versions, LangGraph, LangSmith and LlamaCloud pricing, and which fits agents vs document RAG.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/langchain-vs-llamaindex.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Langchain Vs Llamaindex","item":"https://samuelochoa.com/compare/langchain-vs-llamaindex"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,60 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">LLM Frameworks</span>
 <h1 class="cmp-title">LangChain vs LlamaIndex</h1>
-<p class="cmp-subtitle">General LLM orchestration vs data-focused framework.</p>
+<p class="cmp-subtitle">Both are MIT licensed, both do agents and RAG. Here is where each one actually earns its place in 2026, and what the hosted platforms cost.</p>
 
-<div class="cmp-summary">LangChain is a broad toolkit for LLM apps. LlamaIndex is specifically focused on connecting LLMs to data (RAG, knowledge bases, indexing).</div>
+<div class="cmp-summary">The old framing for this comparison, LangChain for agents and LlamaIndex for RAG, is out of date. Both frameworks now ship agent runtimes and both handle retrieval. The real decision axis is where your complexity lives. If the hard part of your app is orchestration (multi-step agents, branching, retries, human approval steps), LangChain with LangGraph underneath is the stronger base. If the hard part is your data (messy PDFs, tables, chunking, retrieval quality), LlamaIndex has deeper primitives. Both are MIT licensed and free to run. The money shows up in the hosted platforms, which I cover below.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>LangChain</th><th>LlamaIndex</th></tr></thead>
-<tbody><tr><th scope="row">Focus</th><td>Broad LLM apps</td><td>Data + RAG</td></tr><tr><th scope="row">Abstractions</th><td>Many, sometimes heavy</td><td>Data-focused</td></tr><tr><th scope="row">RAG features</th><td>Good</td><td>Best-in-class</td></tr></tbody>
+<tbody>
+<tr><th scope="row">License</th><td>MIT</td><td>MIT</td></tr>
+<tr><th scope="row">Current release</th><td>1.3.x on PyPI; 1.0 shipped October 2025</td><td>0.14.x on PyPI; no 1.0 yet</td></tr>
+<tr><th scope="row">Primary focus</th><td>Agent orchestration and LLM app plumbing</td><td>Document parsing, indexing, and retrieval</td></tr>
+<tr><th scope="row">Agent support</th><td>create_agent, built on the LangGraph runtime</td><td>Agent workflows on its own workflow system</td></tr>
+<tr><th scope="row">RAG support</th><td>Retrievers and vector store integrations; more assembly required</td><td>First-class ingestion, index types, and retrieval strategies</td></tr>
+<tr><th scope="row">Hosted platform</th><td>LangSmith: tracing, evals, deployment</td><td>LlamaCloud: parsing, extraction, managed indexes</td></tr>
+<tr><th scope="row">Hosted entry price</th><td>Free tier; Plus at $39 per seat per month</td><td>Free 10,000 credits per month; Starter at $50 per month</td></tr>
+<tr><th scope="row">GitHub adoption</th><td>About 145,000 stars</td><td>About 52,000 stars</td></tr>
+<tr><th scope="row">API stability</th><td>1.x promises no breaking changes until 2.0</td><td>Pre-1.0; interfaces still change between minors</td></tr>
+<tr><th scope="row">Best first fit</th><td>Multi-step agents and complex control flow</td><td>Document-heavy RAG and messy source files</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both frameworks are MIT licensed open source. You can build and ship with either one for free and pay only your model provider. The companies monetize hosted platforms, and that is where a real budget line can appear.</p>
+<p>LangSmith, LangChain's observability and deployment platform, has a free Developer plan (one seat, 5,000 base traces per month) and a Plus plan at $39 per seat per month with 10,000 base traces included. Enterprise pricing is custom. Past the included volume you pay usage-based fees, and retention matters: base traces keep data for 14 days, while 400-day extended retention costs extra.</p>
+<p>LlamaCloud, LlamaIndex's hosted parsing and indexing platform, is credit based: 1,000 credits cost $1.25. The free tier includes 10,000 credits per month, Starter is $50 per month with 40,000 credits, Pro is $500 per month with 400,000 credits, and Enterprise is custom. Basic LlamaParse parsing starts around 1 credit per page; the agentic modes that run LLMs or vision models over each page cost several times more.</p>
+<p>Neither platform is required to use its framework. But note where each vendor charges you: LangChain bills traces, LlamaIndex bills pages. A high-traffic agent gets expensive on LangSmith, and a large document backlog gets expensive on LlamaCloud.</p>
+
 <h2>When to pick LangChain</h2>
-<p>General agent apps, need broad LLM tooling.</p>
+<p>LangChain hit 1.0 in October 2025, and that release mattered more than most version bumps. The team cut down the abstraction sprawl the framework was known for, and it committed to no breaking changes until 2.0. The core agent API, create_agent, runs on the LangGraph runtime, so a standard LangChain agent gets durable execution, persistence, and human-in-the-loop pauses without extra wiring. When an agent needs custom control flow beyond what create_agent offers, you drop down to LangGraph itself rather than switching frameworks.</p>
+<p>I would pick LangChain when orchestration is the hard part of the build: agents that call many tools, branch on results, need retries and checkpoints, or wait for a human to approve a step. The integration catalog is the widest of any LLM framework, and adoption is a practical advantage too. At about 145,000 GitHub stars, it is the framework a new hire is most likely to already know, and most model and vector store vendors ship a LangChain integration early.</p>
+<p>The honest caveat: it is still a lot of framework. If your app is one or two prompt calls with some formatting, LangChain adds a layer you will spend time learning without getting much back.</p>
 
 <h2>When to pick LlamaIndex</h2>
-<p>RAG-heavy, complex data indexing, specialized retrieval strategies.</p>
+<p>I would pick LlamaIndex when the data is the hard part. Its core loop (ingest, index, retrieve, synthesize) treats chunking strategy, index type, and retrieval method as first-class decisions instead of configuration afterthoughts. If your app depends on retrieval quality over a difficult corpus, LlamaIndex gives you more levers: routing across indexes, sub-question decomposition, fusion retrieval, rerankers, and structured extraction.</p>
+<p>The company's center of gravity is documents. LlamaParse exists specifically to turn ugly PDFs, scans, and tables into clean input, and LlamaIndex now describes itself as a document agent and OCR platform. If your pipeline starts with contracts, filings, invoices, or scanned paperwork, that focus works in your favor: the parsing layer is a product, not a side feature.</p>
+<p>The caveat here is maturity. The core library is still pre-1.0 (0.14.x as of August 2026), and interfaces have moved between minor versions. It is also a smaller project than LangChain, at about 52,000 GitHub stars, which in practice means fewer third-party tutorials and a thinner trail of answered questions when something breaks.</p>
+
+<h2>What most comparisons miss</h2>
+<p>First, this is not an either-or choice. The frameworks compose. A pattern I like is LlamaIndex as the retrieval layer inside a LangGraph agent: LlamaIndex handles parsing and indexing, and the agent framework handles control flow. Most comparison posts treat the two as rivals for the same slot, and that framing pushes people into a false decision.</p>
+<p>Second, the monetization split predicts the roadmaps. LangChain raised a $125 million Series B in 2025 and calls itself an agent engineering platform, so expect continued investment in observability, evals, and deployment. LlamaIndex sells parsing by the page, so expect continued investment in document understanding. Pick the framework whose commercial incentive lines up with your problem, because that is where the polish will accumulate.</p>
+<p>Third, the versioning gap is an operational fact, not a scorecard point. LangChain 1.x comes with a stability commitment; LlamaIndex 0.x does not. If you run a small team that cannot absorb upgrade churn, that difference is worth more than most feature rows above.</p>
+<p>Finally, you might need neither. If your app is a single prompt chain with no retrieval and no branching, the model provider's SDK plus fifty lines of your own code is easier to debug than either framework.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>For RAG-focused apps, LlamaIndex has better primitives. For general agents, LangChain (or LangGraph).</p>
+<p>For agent products where control flow, tool use, and human approvals are the core difficulty, I would start with LangChain and drop to LangGraph when I need custom orchestration. For document-heavy products where retrieval quality decides whether the app is useful at all, I would start with LlamaIndex, and I would test LlamaParse on my worst PDFs before committing to LlamaCloud spend. When a project has both problems, combining the two is a legitimate architecture, not a hack. And for simple pipelines I would skip both. Frameworks earn their keep on complexity; without it they are just indirection.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.langchain.com/" target="_blank" rel="noopener nofollow">LangChain documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.langchain.com/pricing" target="_blank" rel="noopener nofollow">LangSmith pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://developers.llamaindex.ai/" target="_blank" rel="noopener nofollow">LlamaIndex documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.llamaindex.ai/pricing" target="_blank" rel="noopener nofollow">LlamaCloud pricing</a></li>
 </ul>
 </div>
 </div>
