@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agent vs Workflow | Compare | Samuel Ochoa</title>
-<meta name="description" content="Autonomous reasoning loops vs deterministic step-by-step pipelines.">
+<meta name="description" content="Agents pick their own next step. Workflows follow predefined code paths. How I decide which to build, what each costs to run, and where each breaks.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent vs Workflow | Compare | Samuel Ochoa">
-<meta property="og:description" content="Autonomous reasoning loops vs deterministic step-by-step pipelines.">
+<meta property="og:description" content="Agents pick their own next step. Workflows follow predefined code paths. How I decide which to build, what each costs to run, and where each breaks.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agent vs Workflow | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Autonomous reasoning loops vs deterministic step-by-step pipelines.">
+<meta name="twitter:description" content="Agents pick their own next step. Workflows follow predefined code paths. How I decide which to build, what each costs to run, and where each breaks.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Agent vs Workflow | Compare | Samuel Ochoa","description":"Autonomous reasoning loops vs deterministic step-by-step pipelines.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/agent-vs-workflow.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Agent vs Workflow | Compare | Samuel Ochoa","description":"Agents pick their own next step. Workflows follow predefined code paths. How I decide which to build, what each costs to run, and where each breaks.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/agent-vs-workflow.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Agent Vs Workflow","item":"https://samuelochoa.com/compare/agent-vs-workflow"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">AI Patterns</span>
 <h1 class="cmp-title">Agent vs Workflow</h1>
-<p class="cmp-subtitle">Autonomous reasoning loops vs deterministic step-by-step pipelines.</p>
+<p class="cmp-subtitle">Autonomous reasoning loops vs predefined pipelines, and how I decide which one a task deserves.</p>
 
-<div class="cmp-summary">An agent reasons about what to do next. A workflow has hardcoded steps. Different reliability, cost, and appropriate use cases.</div>
+<div class="cmp-summary">The real decision axis is predictability, not capability. Anthropic's engineering guide defines workflows as systems where LLMs and tools run through predefined code paths, and agents as systems where the model directs its own process and tool use at runtime. A workflow runs the same steps every time, so it is cheaper to operate and easier to debug, while an agent trades that predictability for flexibility on tasks where you cannot write the steps down in advance. Most business automation I build is the first kind, with a model call or two inside.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Agent</th><th>Workflow</th></tr></thead>
-<tbody><tr><th scope="row">Steps</th><td>Dynamic (agent decides)</td><td>Fixed (predefined)</td></tr><tr><th scope="row">Reliability</th><td>Variable</td><td>Predictable</td></tr><tr><th scope="row">Cost</th><td>Higher (multiple LLM calls)</td><td>Lower</td></tr><tr><th scope="row">Debug</th><td>Harder</td><td>Easier</td></tr></tbody>
+<tbody><tr><th scope="row">Who decides the next step</th><td>The model, at runtime</td><td>Your code, in advance</td></tr><tr><th scope="row">Reliability</th><td>Varies run to run; needs guardrails and evals</td><td>Same input, same path, every time</td></tr><tr><th scope="row">Cost per run</th><td>Higher; multiple model calls and context that grows each loop</td><td>Lower and capped; a fixed number of calls, sometimes zero</td></tr><tr><th scope="row">Latency</th><td>Variable; can run for minutes</td><td>Bounded; usually seconds</td></tr><tr><th scope="row">Debugging</th><td>Hard; you read reasoning traces and replay nondeterministic runs</td><td>Straightforward; step-level logs show exactly where it broke</td></tr><tr><th scope="row">Failure mode</th><td>Wanders, loops, or returns a confident wrong answer</td><td>Breaks loudly when an input does not fit the path</td></tr><tr><th scope="row">Named patterns</th><td>Tool-use loop with stop conditions and a human checkpoint</td><td>Prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer</td></tr><tr><th scope="row">Typical tooling</th><td>Model APIs with tool use, agent SDKs, sandboxed execution</td><td>Plain scripts, queues, and workflow platforms like n8n, Make, or Temporal</td></tr><tr><th scope="row">Best fit</th><td>Open-ended work: research, coding, messy triage</td><td>Known sequences: intake, enrichment, reporting, notifications</td></tr><tr><th scope="row">Ongoing maintenance</th><td>Prompts, evals, and guardrails</td><td>Steps and API integrations</td></tr></tbody>
 </table></div>
 
-<h2>When to pick Agent</h2>
-<p>Task with dynamic branching, exploration needed.</p>
+<h2>Cost drivers</h2>
+<p>Putting dollar figures on this comparison would be dishonest, because both patterns run on the same model APIs and the bill depends on which model you pick and how often the thing runs. What differs is the shape of the cost. These are the drivers I actually budget for.</p>
+<div class="cmp-matrix"><table>
+<thead><tr><th>Driver</th><th>Agent</th><th>Workflow</th></tr></thead>
+<tbody><tr><th scope="row">Model calls per task</th><td>Unbounded until a stop condition hits</td><td>Fixed by design</td></tr><tr><th scope="row">Context growth</th><td>History accumulates every loop turn, so later calls cost more than early ones</td><td>Each step sends only what it needs</td></tr><tr><th scope="row">Retries and dead ends</th><td>You pay for exploration that gets thrown away</td><td>Rare; a failed step retries once and alerts someone</td></tr><tr><th scope="row">Engineering time</th><td>Cheap to prototype, expensive to make reliable</td><td>More upfront design, fewer surprises later</td></tr><tr><th scope="row">Monitoring</th><td>Eval suites and trace review</td><td>Step logs and simple alerting</td></tr></tbody>
+</table></div>
+<p>The practical rule: an agent's cost has a long tail. The median run may be cheap while the worst runs burn tokens for many minutes. Workflows do not have that tail, which is why the automations that survive a budget review tend to be workflows.</p>
 
-<h2>When to pick Workflow</h2>
-<p>Known sequence of steps, reliability matters.</p>
+<h2>When to pick an agent</h2>
+<p>Pick an agent when you genuinely cannot enumerate the steps. Coding is the clearest case: fixing a bug means reading files, forming a hypothesis, testing it, and changing course, and no fixed pipeline survives contact with a real codebase. Deep research is similar, because the next source you read depends on what the last one said.</p>
+<p>Agents also fit messy triage. If inbound requests arrive in unpredictable shapes, an agent that can inspect the request, ask a clarifying question, and choose between several tools will beat a router with hardcoded categories. The tradeoff is that you need evaluation in place before you trust it, and ideally a human checkpoint on anything that reaches a customer or moves money.</p>
+<p>Even then, Anthropic's published guidance matches my experience: start with the simplest thing that works and add autonomy only when a measurable gap shows up. I treat agent status as something a task graduates into, not the default.</p>
+
+<h2>When to pick a workflow</h2>
+<p>Pick a workflow whenever you can write the steps on a whiteboard. A lead comes in, the email gets verified, the record gets enriched, the CRM row gets created, someone gets notified. That is a workflow even if two of those steps call a language model. Most of what small businesses are sold as AI agents is exactly this.</p>
+<p>Workflows win wherever reliability or auditability matters: billing, compliance-adjacent messaging, anything a customer sees without human review. They are also right for high-volume tasks, because the per-run cost is flat and known in advance. When I build automations for clients I default to a workflow and log every step, because six months later someone who did not build it will have to debug it.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Agent versus workflow is a spectrum, not a fork in the road. Anthropic's five workflow patterns, prompt chaining, routing, parallelization, orchestrator-workers, and evaluator-optimizer, cover a surprising share of the use cases that get marketed as agents. A routing step feeding a chained pipeline looks autonomous from the outside and stays deterministic on the inside.</p>
+<p>The strongest production systems I have seen are hybrids: a deterministic workflow that hands one bounded step to an agent, with a sandbox, a spend budget, and a stop condition. The workflow guarantees the shape of the outcome. The agent handles the one step nobody could hardcode.</p>
+<p>Also worth naming: vendor marketing now calls almost everything an agent, so the label tells you little about what a product actually does. Ask who decides the next step. That one question sorts every tool I have evaluated.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Most production 'agents' should actually be workflows. Use agents only when the branching is genuinely dynamic.</p>
+<p>Most production systems that get called agents should be workflows. I build the deterministic version first, put a model call inside the steps that need judgment, and only promote a step to a full agent loop when the branching truly cannot be written down. Agents have earned their place in coding, research, and triage, where flexibility beats predictability. Everywhere else, boring and predictable wins, and so does the bill.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener nofollow">Anthropic - Building Effective Agents</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" target="_blank" rel="noopener nofollow">OpenAI - A Practical Guide to Building Agents (PDF)</a></li>
 </ul>
 </div>
 </div>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chroma vs Pinecone | Compare | Samuel Ochoa</title>
-<meta name="description" content="Embedded vs managed. Different use cases entirely.">
+<meta name="description" content="Chroma and Pinecone both sell serverless vector search in 2026. I compare verified usage pricing, free tiers, and the self-hosting escape hatch.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chroma vs Pinecone | Compare | Samuel Ochoa">
-<meta property="og:description" content="Embedded vs managed. Different use cases entirely.">
+<meta property="og:description" content="Chroma and Pinecone both sell serverless vector search in 2026. I compare verified usage pricing, free tiers, and the self-hosting escape hatch.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chroma vs Pinecone | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Embedded vs managed. Different use cases entirely.">
+<meta name="twitter:description" content="Chroma and Pinecone both sell serverless vector search in 2026. I compare verified usage pricing, free tiers, and the self-hosting escape hatch.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chroma vs Pinecone | Compare | Samuel Ochoa","description":"Embedded vs managed. Different use cases entirely.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/chroma-vs-pinecone.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chroma vs Pinecone | Compare | Samuel Ochoa","description":"Chroma and Pinecone both sell serverless vector search in 2026. I compare verified usage pricing, free tiers, and the self-hosting escape hatch.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/chroma-vs-pinecone.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Chroma Vs Pinecone","item":"https://samuelochoa.com/compare/chroma-vs-pinecone"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,44 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Vector DBs</span>
 <h1 class="cmp-title">Chroma vs Pinecone</h1>
-<p class="cmp-subtitle">Embedded vs managed. Different use cases entirely.</p>
+<p class="cmp-subtitle">Open source with a serverless cloud vs the managed incumbent. The old prototype-vs-production framing is stale.</p>
 
-<div class="cmp-summary">Chroma is great for local dev, prototyping, single-node deployments. Pinecone is a production managed service.</div>
+<div class="cmp-summary">The framing this page used to carry, Chroma for prototypes and Pinecone for production, is out of date. Chroma is still open source, but Chroma Cloud is a real serverless managed service with usage pricing, SOC 2 on paid plans, and enterprise options. Pinecone remains proprietary and managed only, with the deeper compliance and scale story. Storage costs about the same $0.33 per gigabyte-month on both, so the decision comes down to billing model, enterprise requirements, and whether you want a self-hosting escape hatch.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Chroma</th><th>Pinecone</th></tr></thead>
-<tbody><tr><th scope="row">Hosting</th><td>Embedded or self</td><td>Managed only</td></tr><tr><th scope="row">Scale</th><td>Single node, ~millions</td><td>Billions</td></tr><tr><th scope="row">Use case</th><td>Prototype, desktop apps</td><td>Production at scale</td></tr></tbody>
+<tbody><tr><th scope="row">Source model</th><td>Open source; self-host or Chroma Cloud</td><td>Proprietary; managed only</td></tr><tr><th scope="row">Free tier</th><td>Starter: $0 per month plus usage, $5 in credits</td><td>Starter: free, with 2 GB storage, 2M write units and 1M read units per month</td></tr><tr><th scope="row">Paid plans</th><td>Team: $250 per month plus usage; Enterprise custom</td><td>Builder $20 flat; Standard from $50; Enterprise from $500 per month</td></tr><tr><th scope="row">Storage</th><td>$0.33 per GiB per month</td><td>$0.33 per GB per month on Standard</td></tr><tr><th scope="row">Writes</th><td>$2.50 per logical GiB written</td><td>$4 to $4.50 per million write units</td></tr><tr><th scope="row">Queries</th><td>$0.0075 per TiB queried, plus $0.09 per GiB returned</td><td>$16 to $18 per million read units</td></tr><tr><th scope="row">Trial credits</th><td>$5 on Starter, $100 included with Team</td><td>$300 with Standard</td></tr><tr><th scope="row">Compliance</th><td>SOC 2 from the Team plan</td><td>SOC 2 on all plans; audit logs, BYOC, 99.95% SLA at Enterprise</td></tr><tr><th scope="row">Self-host option</th><td>Yes, run it anywhere</td><td>No</td></tr><tr><th scope="row">Best fit</th><td>Local-first builds that may grow into a managed cloud</td><td>Production platforms with enterprise requirements</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Chroma itself is open source, so self-hosting costs only your infrastructure. Chroma Cloud, the managed serverless service, bills usage on three meters: $2.50 per logical GiB written, $0.33 per GiB per month stored, and query costs split between data scanned ($0.0075 per TiB) and data returned ($0.09 per GiB). The Starter plan is $0 per month plus usage and comes with $5 in credits. Team is $250 per month plus usage with $100 in included credits, 100 databases, and SOC 2. Enterprise is custom, with single-tenant clusters and bring-your-own-cloud options.</p>
+<p>Pinecone's Starter plan is free with hard caps: 2 GB of storage, 2 million write units, and 1 million read units per month. Builder is a flat $20 per month with higher limits. Standard starts at a $50 monthly minimum and then bills usage: storage at $0.33 per GB per month, read units at $16 to $18 per million, and write units at $4 to $4.50 per million depending on cloud and region, with $300 in trial credits. Enterprise starts at a $500 monthly minimum and adds a 99.95% uptime SLA, private endpoints, audit logs, and BYOC. I checked both vendors' pricing pages in August 2026.</p>
+
 <h2>When to pick Chroma</h2>
-<p>Prototyping, Notebook work, small deployments, local-first apps.</p>
+<p>Pick Chroma when you want one tool from laptop to production. Embedded mode is still the fastest way I know to stand up retrieval in a notebook or a small app, and the same API now carries forward to a managed cloud instead of forcing a migration to a different product later. That continuity matters more than any single feature.</p>
+<p>The open source license is the other reason. If Chroma Cloud pricing ever stops making sense for your workload, you can take the database and run it on your own hardware. That exit option is worth real money in a negotiation, and it caps your downside in a category that is still moving fast.</p>
+<p>On cost, the billing models differ more than the totals. Chroma meters raw data: GiB written, stored, and scanned. I find that easier to estimate from a corpus size than translating query patterns into read units.</p>
 
 <h2>When to pick Pinecone</h2>
-<p>Production applications with real scale.</p>
+<p>Pick Pinecone when the requirements are enterprise-shaped. The Enterprise plan has the checklist items a security review will ask for: a 99.95% uptime SLA, audit logs, private endpoints, and bring-your-own-cloud deployment. Standard already includes SSO, RBAC, backups, and dedicated read nodes for latency-sensitive serving.</p>
+<p>It is also the more proven managed platform at large scale. Pinecone has been running hosted vector search longer than anyone in this matchup and runs on AWS, Azure, and GCP across regions. The free Starter tier and the flat $20 Builder plan make it cheap to evaluate before you commit to the $50 minimum on Standard.</p>
+
+<h2>What most comparisons miss</h2>
+<p>First, the units. Chroma bills gigabytes; Pinecone bills read and write units whose dollar cost varies by region. You cannot compare them on headline prices. You have to model your own corpus size, write rate, and query volume against both meters, and for many teams the difference will be smaller than the engineering time spent switching. That is an argument for choosing on architecture rather than price.</p>
+<p>Second, the stale framing. A lot of pages still describe Chroma as a prototyping toy. Since Chroma Cloud shipped, both products are serverless managed services with free tiers and SOC 2 stories, and the real fork is open source versus proprietary.</p>
+<p>Third, the question nobody asks: whether you need a dedicated vector database at all. Plenty of the workloads I see would be fine on Postgres with pgvector, which your team already knows how to run. I would rule that out before comparing these two.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Chroma for exploration, Pinecone for shipping.</p>
+<p>I start builds on Chroma because embedded mode costs nothing to try and the open source license keeps the exit door open. When a project has enterprise requirements attached, an SLA, audit logs, or single-tenant isolation, Pinecone earns its minimums. If you are in between, price both against your actual workload numbers rather than the marketing pages: storage is effectively identical, and the rest depends on your read and write mix.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.trychroma.com/pricing" target="_blank" rel="noopener nofollow">Chroma - Official pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.trychroma.com/cloud/pricing" target="_blank" rel="noopener nofollow">Chroma Cloud - Pricing docs</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.pinecone.io/pricing/" target="_blank" rel="noopener nofollow">Pinecone - Official pricing</a></li>
 </ul>
 </div>
 </div>

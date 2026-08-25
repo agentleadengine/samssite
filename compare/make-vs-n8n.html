@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Make vs n8n | Compare | Samuel Ochoa</title>
-<meta name="description" content="Closed-source hosted vs open-source self-hostable automation.">
+<meta name="description" content="Make vs n8n in 2026: per-operation credits vs whole-run executions, managed cloud vs self-hosting. I compare real pricing and where each one fits.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Make vs n8n | Compare | Samuel Ochoa">
-<meta property="og:description" content="Closed-source hosted vs open-source self-hostable automation.">
+<meta property="og:description" content="Make vs n8n in 2026: per-operation credits vs whole-run executions, managed cloud vs self-hosting. I compare real pricing and where each one fits.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Make vs n8n | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Closed-source hosted vs open-source self-hostable automation.">
+<meta name="twitter:description" content="Make vs n8n in 2026: per-operation credits vs whole-run executions, managed cloud vs self-hosting. I compare real pricing and where each one fits.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Make vs n8n | Compare | Samuel Ochoa","description":"Closed-source hosted vs open-source self-hostable automation.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/make-vs-n8n.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Make vs n8n | Compare | Samuel Ochoa","description":"Make vs n8n in 2026: per-operation credits vs whole-run executions, managed cloud vs self-hosting. I compare real pricing and where each one fits.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/make-vs-n8n.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Make Vs N8N","item":"https://samuelochoa.com/compare/make-vs-n8n"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,48 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Automation</span>
 <h1 class="cmp-title">Make vs n8n</h1>
-<p class="cmp-subtitle">Closed-source hosted vs open-source self-hostable automation.</p>
+<p class="cmp-subtitle">Per-operation credits vs whole-run executions, and who should actually self-host.</p>
 
-<div class="cmp-summary">Make is a hosted product. n8n is open-source, self-hostable, similar capability.</div>
+<div class="cmp-summary">The billing models are the real difference, not the feature lists. Make bills per module operation, so a long scenario spends credits at every step. n8n bills per execution, meaning one workflow run costs one execution no matter how many steps it contains, and its community edition is free to self-host. Make is the easier on-ramp for non-technical teams; n8n rewards technical teams running heavy volume.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Make</th><th>n8n</th></tr></thead>
-<tbody><tr><th scope="row">Hosting</th><td>Managed</td><td>Self-host or cloud</td></tr><tr><th scope="row">Price</th><td>Usage-based</td><td>Free (self-host) or paid</td></tr><tr><th scope="row">Data privacy</th><td>SaaS</td><td>Self-hostable for full control</td></tr></tbody>
+<tbody><tr><th scope="row">Source model</th><td>Closed source SaaS</td><td>Source available on GitHub, fair-code license</td></tr><tr><th scope="row">Hosting</th><td>Make's managed cloud</td><td>n8n Cloud or your own server</td></tr><tr><th scope="row">Billing unit</th><td>Credits, consumed per module operation</td><td>Executions, one per workflow run, unlimited steps</td></tr><tr><th scope="row">Free option</th><td>1,000 credits per month, 2 active scenarios</td><td>Community edition, self-hosted, no execution cap</td></tr><tr><th scope="row">Entry paid plan</th><td>Core, $12 per month billed annually, 10,000 credits</td><td>Starter, 20 euros per month billed annually, 2,500 executions</td></tr><tr><th scope="row">Next tiers</th><td>Pro $21, Teams $38, both at 10,000 credits</td><td>Pro, 50 euros per month, 10,000 executions</td></tr><tr><th scope="row">Scheduling and limits</th><td>15-minute minimum interval on Free, 1 minute on paid</td><td>Caps are executions and concurrency, 5 concurrent on Starter, 20 on Pro</td></tr><tr><th scope="row">Custom code</th><td>Low-code first, limited scripting</td><td>JavaScript and Python code nodes built in</td></tr><tr><th scope="row">Integrations</th><td>3,000+ standard apps</td><td>Fewer prebuilt nodes, plus HTTP and code for the rest</td></tr><tr><th scope="row">Best for</th><td>Non-technical teams that want managed simplicity</td><td>Technical teams, high volume, data control</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Make's free plan includes 1,000 credits a month, two active scenarios, and a 15-minute minimum schedule interval. Paid plans at the 10,000-credit level run $12 a month for Core, $21 for Pro, and $38 for Teams, billed annually, with a 1-minute interval and unlimited active scenarios. Enterprise is custom. One thing to watch: Make moved from counting operations to credits in August 2025, and AI features can consume credits at different rates than ordinary module runs, so audit your usage after turning anything AI-flavored on.</p>
+<p>n8n Cloud starts at 20 euros a month billed annually for 2,500 executions, with Pro at 50 euros for 10,000 executions and Business at 667 euros for around 40,000 executions plus SSO and a self-hosted option. Every plan allows unlimited steps per execution; the practical caps are execution volume and concurrency. The self-hosted community edition is free with no execution cap, but note the license: it is fair-code under a sustainable use license, not OSI open source. Internal business use is fine. Reselling hosted n8n as a service is not, which matters if you are an agency.</p>
+<p>Run the math on your own workflows before choosing. A 20-step workflow that fires 1,000 times a month consumes roughly 20,000 Make credits, twice the entry plan's allowance, but only 1,000 n8n executions, comfortably inside the cheapest cloud tier. Reverse it for short scenarios at low volume and Make's $12 entry, or even its free tier, wins.</p>
+
 <h2>When to pick Make</h2>
-<p>No-ops preference.</p>
+<p>Pick Make when nobody on the team wants to touch a server and the automations are modest: a few hundred runs a month, mostly short scenarios connecting common SaaS tools. The visual builder is polished, the 3,000+ app catalog covers most small-business stacks, and there is nothing to patch or back up.</p>
+<p>It is also the safer handoff. If you build automations for a client who will maintain them without you, a managed platform with a friendly interface fails more gracefully than a self-hosted server nobody owns.</p>
 
 <h2>When to pick n8n</h2>
-<p>Self-hosting, data privacy, full control.</p>
+<p>Pick n8n when volume is high, workflows are long, or data has to stay under your control. The per-execution billing gets cheaper relative to Make as workflows grow more steps, and self-hosting means client or customer data never leaves infrastructure you control, which some regulated businesses require before they will sign off.</p>
+<p>It is also the better fit for technical teams. JavaScript and Python code nodes are built in, the HTTP node covers any API without waiting for an official integration, and the native AI agent nodes make it a reasonable base for LLM workflows. The traction is real; n8n's own pricing page lists over 200,000 GitHub stars.</p>
+<p>Just be honest about capacity. If nobody on the team can maintain a server, use n8n Cloud rather than self-hosting, and price it against Make on your actual workload.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The billing unit dominates total cost, and most comparisons skip it. Comparing $12 to 20 euros tells you almost nothing until you multiply your steps by your run counts under each model. Do that arithmetic on your three heaviest workflows first.</p>
+<p>Fair-code is not open source. n8n's sustainable use license permits free internal use but restricts offering n8n itself as a hosted service to others. If you plan to embed it in something you sell, read the license before you build.</p>
+<p>Self-hosting is not free either. The server is cheap; the real cost is that you become the ops team for updates, backups, and security. An unpatched automation server holding API keys to your whole stack is a liability, not a savings.</p>
+<p>And workflows do not port. There is no clean migration between the two platforms, so whichever you pick, you are likely keeping it for years. Choose based on where your volume and team will be in two years, not where they are this month.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>n8n for technical teams with self-host capacity. Make for faster time-to-value.</p>
+<p>For a non-technical business that wants automations running this week, I recommend Make. For technical teams, heavy volume, long workflows, or data that has to stay put, I recommend n8n, and it is what I run myself. If you are torn, price your three heaviest workflows under both billing models. The answer usually falls out of the arithmetic, not the feature lists.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.make.com/en/pricing" target="_blank" rel="noopener nofollow">Make pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://help.make.com/" target="_blank" rel="noopener nofollow">Make help center</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://n8n.io/pricing/" target="_blank" rel="noopener nofollow">n8n pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.n8n.io/" target="_blank" rel="noopener nofollow">n8n documentation</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.n8n.io/sustainable-use-license/" target="_blank" rel="noopener nofollow">n8n sustainable use license</a></li>
 </ul>
 </div>
 </div>

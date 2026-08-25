@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude Haiku vs GPT-4o-mini | Compare | Samuel Ochoa</title>
-<meta name="description" content="Small, fast, cheap models for high-volume use cases.">
+<meta name="description" content="Claude Haiku vs GPT-4o mini, updated for 2026: current small-model API prices for Haiku 4.5 and OpenAI's mini and nano lines, and how to choose.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Claude Haiku vs GPT-4o-mini | Compare | Samuel Ochoa">
-<meta property="og:description" content="Small, fast, cheap models for high-volume use cases.">
+<meta property="og:description" content="Claude Haiku vs GPT-4o mini, updated for 2026: current small-model API prices for Haiku 4.5 and OpenAI's mini and nano lines, and how to choose.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Claude Haiku vs GPT-4o-mini | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Small, fast, cheap models for high-volume use cases.">
+<meta name="twitter:description" content="Claude Haiku vs GPT-4o mini, updated for 2026: current small-model API prices for Haiku 4.5 and OpenAI's mini and nano lines, and how to choose.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Haiku vs GPT-4o-mini | Compare | Samuel Ochoa","description":"Small, fast, cheap models for high-volume use cases.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/haiku-vs-4o-mini.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Haiku vs GPT-4o-mini | Compare | Samuel Ochoa","description":"Claude Haiku vs GPT-4o mini, updated for 2026: current small-model API prices for Haiku 4.5 and OpenAI's mini and nano lines, and how to choose.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/haiku-vs-4o-mini.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Haiku Vs 4O Mini","item":"https://samuelochoa.com/compare/haiku-vs-4o-mini"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,44 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">AI Models</span>
 <h1 class="cmp-title">Claude Haiku vs GPT-4o-mini</h1>
-<p class="cmp-subtitle">Small, fast, cheap models for high-volume use cases.</p>
+<p class="cmp-subtitle">The 2024 matchup in the title is history. Here is the small-model tier as it stands in 2026.</p>
 
-<div class="cmp-summary">Both are fast and cheap. Haiku is slightly more cautious; 4o-mini is slightly more flexible. Pick by workload.</div>
+<div class="cmp-summary">This page originally compared Claude 3 Haiku with GPT-4o mini, and both are now legacy models. In 2026 the real comparison is Claude Haiku 4.5 at $1 per million input tokens against OpenAI's ladder of mini and nano models, which run from $0.05 to $0.75 per million. The decision axis has shifted: Anthropic sells one small model that leans capable, while OpenAI sells several that lean cheap. Per-task cost on your own workload, not sticker price, should decide it.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
-<thead><tr><th></th><th>Claude Haiku</th><th>GPT-4o-mini</th></tr></thead>
-<tbody><tr><th scope="row">Speed</th><td>Very fast</td><td>Very fast</td></tr><tr><th scope="row">Cost</th><td>$0.25/$1.25 per M</td><td>$0.15/$0.60 per M</td></tr><tr><th scope="row">Context</th><td>200K</td><td>128K</td></tr></tbody>
+<thead><tr><th></th><th>Anthropic (Claude Haiku)</th><th>OpenAI (mini and nano)</th></tr></thead>
+<tbody><tr><th scope="row">Current small model</th><td>Claude Haiku 4.5</td><td>GPT-5.4 mini and GPT-5.4 nano</td></tr><tr><th scope="row">Input price per 1M tokens</th><td>$1.00</td><td>$0.75 (GPT-5.4 mini), $0.20 (GPT-5.4 nano)</td></tr><tr><th scope="row">Output price per 1M tokens</th><td>$5.00</td><td>$4.50 (GPT-5.4 mini), $1.25 (GPT-5.4 nano)</td></tr><tr><th scope="row">Cheapest current option</th><td>Haiku 4.5 is the only current Haiku</td><td>GPT-5 nano at $0.05 / $0.40</td></tr><tr><th scope="row">Context window</th><td>200K</td><td>128K on GPT-4o mini; larger on the GPT-5 family</td></tr><tr><th scope="row">Title models (historical)</th><td>Claude 3 Haiku, launched at $0.25 / $1.25</td><td>GPT-4o mini, still listed at $0.15 / $0.60</td></tr><tr><th scope="row">Cached input discount</th><td>Yes, prompt caching</td><td>Yes, down to $0.005 on GPT-5 nano</td></tr><tr><th scope="row">Batch discount</th><td>Yes, 50 percent via the Batches API</td><td>Yes, via the Batch API</td></tr><tr><th scope="row">Extended reasoning</th><td>Supported (extended thinking)</td><td>GPT-5 family minis are reasoning models</td></tr><tr><th scope="row">Also available on</th><td>Amazon Bedrock, Google Vertex AI</td><td>Microsoft Azure</td></tr></tbody>
 </table></div>
 
-<h2>When to pick Claude Haiku</h2>
-<p>When you need Anthropic's safety posture or are building in Claude ecosystem.</p>
+<h2>Pricing</h2>
+<p>All prices are per million tokens, input and then output, taken from the vendors' official pricing pages in 2026.</p>
+<p>Anthropic's current small model is Claude Haiku 4.5 at $1.00 / $5.00 with a 200K context window. The Claude 3 Haiku this page was named for launched at $0.25 / $1.25, so Anthropic's small tier got four times more expensive per input token while moving much closer to mid-tier quality. Anthropic discounts batch processing by 50 percent and discounts cached input heavily, which matters for classification workloads that reuse a long shared prompt.</p>
+<p>OpenAI's small tier is now a ladder. GPT-4o mini is still listed at $0.15 / $0.60. GPT-4.1 mini and nano run $0.40 / $1.60 and $0.10 / $0.40. GPT-5 mini and nano run $0.25 / $2.00 and $0.05 / $0.40. The newest pair, GPT-5.4 mini and GPT-5.4 nano, run $0.75 / $4.50 and $0.20 / $1.25. Cached input and batch discounts are available across the line.</p>
+<p>Read those numbers with one caution: the newer small models on both sides are reasoning models, and reasoning tokens bill as output. A model with a low sticker price that thinks at length can cost more per task than a pricier model that answers directly.</p>
 
-<h2>When to pick GPT-4o-mini</h2>
-<p>When cost is the top priority or you're on OpenAI.</p>
+<h2>When to pick Claude Haiku</h2>
+<p>Pick Haiku 4.5 when you are already building on Claude. If your main agent runs on a larger Claude model, using Haiku for subagent work, routing, and summarization keeps one vendor, one API surface, and one set of behavioral quirks to learn. The 200K context window is generous for a small model, and it supports extended thinking when a task needs more depth.</p>
+<p>It is also the pick when your small-model tasks are less small than they look. In my experience the gap shows up on multi-step tool use and on instructions with several constraints at once, where Haiku 4.5 behaves like a scaled-down frontier model rather than a stripped one. You pay more per token than OpenAI's nano line and get fewer outright failures to catch and retry.</p>
+
+<h2>When to pick an OpenAI mini or nano</h2>
+<p>Pick the OpenAI side when the price floor is the point. At $0.05 per million input tokens, GPT-5 nano handles extraction, tagging, and routing at a cost where the model is effectively free relative to everything around it. The ladder itself is the feature: you can start on nano, move a workload up to mini when quality falls short, and never leave the API.</p>
+<p>It is also the natural pick if your stack already runs on OpenAI or Azure. Migrating providers for a small-model workload rarely pays for itself; the token savings are real, but the eval and prompt-tuning time you spend to switch is real too.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most pages comparing these two models are frozen in 2024. Claude 3 Haiku against GPT-4o mini was a genuine like-for-like fight; the 2026 tiers are not. Anthropic consolidated on one more capable small model, and OpenAI fragmented into minis and nanos at several price points. Any comparison that ends with a single winner is answering last year's question.</p>
+<p>Per-token price is also a weak proxy for per-task cost. Three things dominate real bills: how many output tokens the model spends (including hidden reasoning tokens), how much of your prompt you can cache, and whether the work can run through a batch API at half price. I have seen workload costs move far more from caching and batching than from switching models.</p>
+<p>And small models churn fast. Both vendors replace this tier roughly yearly, and prices have moved in both directions. Whatever you pick, pin the model version, keep a small eval set, and re-run it when the next mini ships. The eval costs an afternoon and turns every future switch into a measurement instead of a guess.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Both are excellent for classification, extraction, routing. Pick by ecosystem.</p>
+<p>For high-volume, low-stakes work where a wrong answer costs you a retry, OpenAI's nano pricing is very hard to beat. Inside a Claude-based agent stack, Haiku 4.5 is worth its premium because consistency across tiers saves engineering time. Either way, run both against a hundred examples from your actual workload and compare cost per correct answer. That number settles the argument in an afternoon, and it is the only benchmark that transfers to your use case.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://platform.claude.com/docs/en/pricing" target="_blank" rel="noopener nofollow">Anthropic API pricing</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener nofollow">OpenAI API pricing</a></li>
 </ul>
 </div>
 </div>

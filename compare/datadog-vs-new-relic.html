@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Datadog vs New Relic | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two observability platforms.">
+<meta name="description" content="Datadog vs New Relic in 2026: per-host SKU pricing vs usage-based users plus data, verified prices, and where each bill actually grows.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Datadog vs New Relic | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two observability platforms.">
+<meta property="og:description" content="Datadog vs New Relic in 2026: per-host SKU pricing vs usage-based users plus data, verified prices, and where each bill actually grows.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Datadog vs New Relic | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two observability platforms.">
+<meta name="twitter:description" content="Datadog vs New Relic in 2026: per-host SKU pricing vs usage-based users plus data, verified prices, and where each bill actually grows.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Datadog vs New Relic | Compare | Samuel Ochoa","description":"Two observability platforms.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/datadog-vs-new-relic.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Datadog vs New Relic | Compare | Samuel Ochoa","description":"Datadog vs New Relic in 2026: per-host SKU pricing vs usage-based users plus data, verified prices, and where each bill actually grows.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/datadog-vs-new-relic.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Datadog Vs New Relic","item":"https://samuelochoa.com/compare/datadog-vs-new-relic"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,54 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Monitoring</span>
 <h1 class="cmp-title">Datadog vs New Relic</h1>
-<p class="cmp-subtitle">Two observability platforms.</p>
+<p class="cmp-subtitle">Two observability platforms with very different pricing models, compared on cost, breadth, and fit using 2026 vendor list prices.</p>
 
-<div class="cmp-summary">Both cover APM, logs, infrastructure. Datadog has broader product; New Relic has pricing that's often easier at scale.</div>
+<div class="cmp-summary">Both platforms cover the core of modern observability: APM, infrastructure, logs, and user monitoring. The real decision is the pricing model, not the feature list. Datadog sells dozens of separately priced products, mostly per host, which is precise but hard to forecast. New Relic sells one platform billed on data ingested plus full platform user seats, which is easier to model but turns gigabytes and seats into the things you ration.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Datadog</th><th>New Relic</th></tr></thead>
-<tbody><tr><th scope="row">Breadth</th><td>Very wide</td><td>Strong</td></tr><tr><th scope="row">Pricing</th><td>Complex, can be expensive</td><td>Usage-based, predictable</td></tr><tr><th scope="row">UX</th><td>Polished</td><td>Functional</td></tr></tbody>
+<tbody>
+<tr><th scope="row">Pricing model</th><td>Per-product SKUs, mostly per host</td><td>Usage-based: data ingest plus user seats</td></tr>
+<tr><th scope="row">Infrastructure</th><td>Pro $15 per host/mo, Enterprise $23 (annual billing)</td><td>No per-host charge; hosts just send data</td></tr>
+<tr><th scope="row">APM</th><td>From $31 per host/mo with infrastructure, billed annually</td><td>Included in the platform, billed as ingest</td></tr>
+<tr><th scope="row">Logs</th><td>$0.10/GB to ingest, plus $1.70 per million events indexed (15-day retention)</td><td>Same per-GB ingest rate as everything else</td></tr>
+<tr><th scope="row">Free tier</th><td>Free trial, then paid per product</td><td>100 GB of ingest and 1 full platform user free every month</td></tr>
+<tr><th scope="row">Data rates</th><td>Priced per SKU, not one per-GB rate</td><td>$0.40/GB beyond free (Original), $0.60/GB with Data Plus</td></tr>
+<tr><th scope="row">User pricing</th><td>No per-user platform fee</td><td>Standard: $10 first user, $99 each additional (max 5); Pro: $349 per user/mo on annual terms</td></tr>
+<tr><th scope="row">Product breadth</th><td>Very wide: security, synthetics, RUM, CI visibility, each a separate line item</td><td>One bundled platform; most features included</td></tr>
+<tr><th scope="row">Bill predictability</th><td>Hard; every product, host, and custom metric adds cost</td><td>Two dials: GB ingested and full platform seats</td></tr>
+<tr><th scope="row">Best fit</th><td>Platform teams consolidating many tools who will govern the spend</td><td>APM-centric teams that want a simple cost model</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Datadog prices each product separately. Infrastructure monitoring is $15 per host per month on the Pro plan with annual billing ($18 on demand) and $23 on Enterprise ($27 on demand). APM starts at $31 per host per month when bundled with infrastructure, and the DevSecOps bundles run $22 to $34 per host. Logs are metered twice: $0.10 per GB to ingest, then $1.70 per million events to index with 15-day retention. Real user monitoring, synthetics, and the security products are all their own SKUs on top.</p>
+<p>New Relic bills on two things: data and people. Every account gets 100 GB of ingest and one full platform user free each month. Beyond that, data costs $0.40 per GB on the Original option or $0.60 per GB with Data Plus. Full platform users cost $10 for the first and $99 each for up to five on the Standard edition; the Pro edition runs $349 per user per month on annual terms ($418.80 month to month) with unlimited full users. Basic users are free and unlimited, and there are no per-host charges.</p>
+
 <h2>When to pick Datadog</h2>
-<p>Many monitoring needs in one platform.</p>
+<p>I would pick Datadog when the goal is consolidating many tools into one vendor. The product surface is genuinely wider: infrastructure, APM, logs, security monitoring, synthetics, real user monitoring, and CI visibility all live in one place with shared tagging. If you are replacing four or five point tools, that consolidation is worth real money and real attention.</p>
+<p>The integration catalog and the dashboard experience are also a step ahead in my experience. Datadog tends to ship first-class support for new infrastructure patterns quickly, and teams that live in their dashboards all day notice the polish.</p>
+<p>The condition is that someone has to own the bill. Per-host pricing punishes elastic infrastructure, custom metrics carry their own meter, and log indexing costs surprise almost everyone the first time. Datadog works best for teams with the discipline to review usage monthly.</p>
 
 <h2>When to pick New Relic</h2>
-<p>Predictable pricing, APM focus.</p>
+<p>I would pick New Relic when APM is the center of the job and you want a cost model you can explain in one sentence: gigabytes in, seats on. There is no per-host math, so containers, autoscaling groups, and short-lived infrastructure do not multiply the bill the way they can on Datadog.</p>
+<p>The free tier is also genuinely useful, not a demo. 100 GB of ingest per month plus one full platform user covers a small production app indefinitely, which makes New Relic the cheaper way to start for a small team. Unlimited free basic users mean the whole company can look at dashboards without buying seats.</p>
+<p>The tradeoff shows up at scale: full platform seats at $349 per user per month on Pro add up fast for a large engineering org, and teams start rationing who gets a real seat. If everyone needs full access, model that cost honestly before committing.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The two bills grow along different axes, and that matters more than any feature checklist. A Datadog bill grows when you add products, hosts, custom metrics, or indexed logs, so it creeps upward through a hundred small decisions nobody reviews. A New Relic bill grows when you send more data or grant more full seats, which is fewer dials but means engineers start asking who really needs access, and that has its own cost.</p>
+<p>Also watch the billing terms. Datadog's on-demand rates run roughly 20% above the annual-commitment prices, so the numbers people quote are usually the committed ones. And on both platforms, the log pipeline is where budgets die: on Datadog because ingest and indexing are metered separately, on New Relic because verbose logs eat the shared per-GB allowance that everything else also draws from.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Datadog for breadth. New Relic for APM-centric workloads.</p>
+<p>For a small team or an APM-first shop, I would start with New Relic. The free tier carries you further than people expect and the two-dial pricing is easy to reason about. For a platform team consolidating security, synthetics, RUM, and logs into one vendor, Datadog is the stronger platform, but only if someone owns cost governance from day one. In practice the deciding question is not which product is better. It is which bill shape your team can actually manage.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.datadoghq.com/pricing/" target="_blank" rel="noopener nofollow">Datadog pricing (official)</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://newrelic.com/pricing" target="_blank" rel="noopener nofollow">New Relic pricing (official)</a></li>
 </ul>
 </div>
 </div>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GA4 vs Amplitude | Compare | Samuel Ochoa</title>
-<meta name="description" content="Free web analytics vs product analytics platform.">
+<meta name="description" content="GA4 vs Amplitude in 2026: verified pricing, event limits, retention rules, and how I decide between marketing and product analytics.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GA4 vs Amplitude | Compare | Samuel Ochoa">
-<meta property="og:description" content="Free web analytics vs product analytics platform.">
+<meta property="og:description" content="GA4 vs Amplitude in 2026: verified pricing, event limits, retention rules, and how I decide between marketing and product analytics.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GA4 vs Amplitude | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Free web analytics vs product analytics platform.">
+<meta name="twitter:description" content="GA4 vs Amplitude in 2026: verified pricing, event limits, retention rules, and how I decide between marketing and product analytics.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GA4 vs Amplitude | Compare | Samuel Ochoa","description":"Free web analytics vs product analytics platform.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/ga4-vs-amplitude.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GA4 vs Amplitude | Compare | Samuel Ochoa","description":"GA4 vs Amplitude in 2026: verified pricing, event limits, retention rules, and how I decide between marketing and product analytics.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/ga4-vs-amplitude.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Ga4 Vs Amplitude","item":"https://samuelochoa.com/compare/ga4-vs-amplitude"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,54 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Analytics</span>
 <h1 class="cmp-title">GA4 vs Amplitude</h1>
-<p class="cmp-subtitle">Free web analytics vs product analytics platform.</p>
+<p class="cmp-subtitle">Google's free web analytics against a paid product analytics platform, compared on pricing, data limits, and reporting depth.</p>
 
-<div class="cmp-summary">GA4 is Google's free web analytics, succeeding Universal Analytics. Amplitude is a dedicated product analytics platform with deeper behavioral analysis.</div>
+<div class="cmp-summary">The choice here is less about features and more about the question you need answered. GA4 tells you where visitors came from and what your ad spend did, and it is free. Amplitude tells you what users do inside your product after they arrive, and beyond its free tier you pay by event volume. In my experience the deciding factor is who runs the analysis: GA4 rewards teams with an analyst willing to live in BigQuery, while Amplitude lets product managers answer their own questions.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>GA4</th><th>Amplitude</th></tr></thead>
-<tbody><tr><th scope="row">Price</th><td>Free tier</td><td>Paid ($1000+/mo serious use)</td></tr><tr><th scope="row">Focus</th><td>Marketing + web</td><td>Product behavior</td></tr><tr><th scope="row">Event model</th><td>Flexible but quirky</td><td>Clean</td></tr><tr><th scope="row">Funnels, cohorts</th><td>Basic</td><td>Strong</td></tr></tbody>
+<tbody>
+<tr><th scope="row">Price</th><td>Free; Analytics 360 is quote-based, reported to start around $50k/yr</td><td>Free to 2M events/mo; Plus self-serve to 70M events; Growth and Enterprise quoted</td></tr>
+<tr><th scope="row">Pricing unit</th><td>Free until you outgrow it</td><td>Events per month (moved away from tracked-user pricing)</td></tr>
+<tr><th scope="row">Focus</th><td>Marketing, acquisition, ad attribution</td><td>Product behavior, retention, experimentation</td></tr>
+<tr><th scope="row">Event model</th><td>Flexible but capped at 500 distinct event names per property</td><td>Clean taxonomy built for product instrumentation</td></tr>
+<tr><th scope="row">Data retention</th><td>2 or 14 months for event-level data on the free tier</td><td>Longer on paid plans (Plus lists 2 years)</td></tr>
+<tr><th scope="row">Funnels, cohorts</th><td>Basic, via Explorations</td><td>Core strength, deep and fast</td></tr>
+<tr><th scope="row">Session replay</th><td>Not included (I pair it with Microsoft Clarity)</td><td>Included, 10k replays/mo on the free plan</td></tr>
+<tr><th scope="row">Raw data access</th><td>Free BigQuery export, up to 1M events/day</td><td>Export APIs and warehouse destinations</td></tr>
+<tr><th scope="row">Ads integration</th><td>Native Google Ads and Search Console</td><td>Via connectors, not its job</td></tr>
+<tr><th scope="row">Seats</th><td>Effectively unlimited</td><td>Unlimited seats on all plans</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>GA4's standard tier is free, and for most small and mid-sized sites it stays free forever. The catches are structural rather than financial: event-level data retention is capped at 2 or 14 months, properties are limited to 500 distinct event names, and large Explorations can hit sampling. The paid upgrade is Google Analytics 360, which has no published list price and is sold through Google's sales channel; third-party guides consistently report contracts starting around $50,000 per year. The free daily BigQuery export, up to 1 million events per day, is the pressure valve that keeps most teams off 360.</p>
+<p>Amplitude now prices by event volume. The free Starter plan includes 2 million events per month with unlimited seats, session replay, and basic experimentation, which is a genuinely usable allowance for an early product. Plus is self-serve and scales to 70 million events per month, while Growth and Enterprise are custom quotes. Amplitude also runs a startup program that gives qualifying companies (under $10M raised, under 20 employees) a free year of Growth. The shift from monthly-tracked-user pricing to event-based pricing means your bill follows how chatty your instrumentation is, not how many users you have.</p>
+
 <h2>When to pick GA4</h2>
-<p>Budget sensitive, marketing-focused, light product analytics.</p>
+<p>Pick GA4 when the questions that matter are about acquisition. If you spend on Google Ads, GA4 is the path of least resistance: conversions flow into bidding, Search Console ties in, and campaign attribution works with no integration effort. For content sites, lead-gen sites, and local-business sites, where product usage really means page views and form fills, GA4 answers everything worth asking at a price of zero.</p>
+<p>It is also the right call when you have analyst capacity but no tooling budget. The free BigQuery export turns GA4 into a raw event pipeline, and a capable analyst can build retention and funnel analysis on top of it that rivals what paid tools produce. That trade is real, though: you pay in engineering time instead of subscription fees, and the 14-month in-product retention cap means year-over-year work has to happen in the warehouse.</p>
 
 <h2>When to pick Amplitude</h2>
-<p>Product-led SaaS, behavioral analysis, deep cohort work.</p>
+<p>Pick Amplitude when your product is the business and behavioral questions come up weekly: where users drop off in onboarding, which features correlate with retention, what the cohort that upgraded did differently. Answering those in GA4 ranges from awkward to impossible, while in Amplitude they are the default workflow. Unlimited seats matter here too, because product analytics only pays off when the whole team can poke at the data.</p>
+<p>The free tier changes the math more than most people realize. Two million events a month with session replay included means an early-stage product can run Amplitude properly without paying anything, and the startup program extends that window. If you are building product-led SaaS, I would start on Amplitude's free plan from day one and keep GA4 alongside purely for marketing attribution.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Three things rarely make it into the feature tables. First, GA4's retention cap is the quiet dealbreaker: 14 months of event-level data means no clean year-over-year Explorations, and most teams discover this only when they need the comparison. BigQuery solves it, but that converts an analytics decision into a data-engineering commitment.</p>
+<p>Second, Amplitude's move to event-based pricing changed who pays more. In my read, products with many light users got cheaper, while products with heavy per-user instrumentation got more expensive, so audit your event volume before assuming the free tier covers you.</p>
+<p>Third, running both is not free even when both tiers are. Two tools mean two tracking plans, two definitions of every conversion, and eventually two numbers for the same metric in the same meeting. If you run both, decide upfront which tool is the source of truth for which question.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Most teams run both: GA4 for marketing attribution, Amplitude for product analytics.</p>
+<p>I treat this as a division of labor, not a versus. GA4 handles acquisition and ad attribution, because it is free and native to Google's stack. Amplitude handles product behavior, because its free tier is generous enough to start honestly and its paid tiers buy real capability. The one setup I advise against is forcing GA4 to be your product analytics tool past the point where BigQuery gymnastics cost more in analyst hours than an Amplitude plan would.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://amplitude.com/pricing" target="_blank" rel="noopener nofollow">Amplitude pricing (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/11202874" target="_blank" rel="noopener nofollow">GA4 data retention (Google Analytics Help)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/9358801" target="_blank" rel="noopener nofollow">GA4 BigQuery export (Google Analytics Help)</a></li>
 </ul>
 </div>
 </div>

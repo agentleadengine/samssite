@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LangGraph vs CrewAI | Compare | Samuel Ochoa</title>
-<meta name="description" content="Graph-based vs role-based multi-agent frameworks.">
+<meta name="description" content="LangGraph vs CrewAI in 2026: explicit graph control vs role-based crews. I compare pricing, production readiness, and where each one actually fits.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LangGraph vs CrewAI | Compare | Samuel Ochoa">
-<meta property="og:description" content="Graph-based vs role-based multi-agent frameworks.">
+<meta property="og:description" content="LangGraph vs CrewAI in 2026: explicit graph control vs role-based crews. I compare pricing, production readiness, and where each one actually fits.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LangGraph vs CrewAI | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Graph-based vs role-based multi-agent frameworks.">
+<meta name="twitter:description" content="LangGraph vs CrewAI in 2026: explicit graph control vs role-based crews. I compare pricing, production readiness, and where each one actually fits.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LangGraph vs CrewAI | Compare | Samuel Ochoa","description":"Graph-based vs role-based multi-agent frameworks.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/langgraph-vs-crewai.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LangGraph vs CrewAI | Compare | Samuel Ochoa","description":"LangGraph vs CrewAI in 2026: explicit graph control vs role-based crews. I compare pricing, production readiness, and where each one actually fits.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/langgraph-vs-crewai.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Langgraph Vs Crewai","item":"https://samuelochoa.com/compare/langgraph-vs-crewai"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,48 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Agent Frameworks</span>
 <h1 class="cmp-title">LangGraph vs CrewAI</h1>
-<p class="cmp-subtitle">Graph-based vs role-based multi-agent frameworks.</p>
+<p class="cmp-subtitle">Explicit graph control vs role-based crews, compared on pricing, control, and production fit.</p>
 
-<div class="cmp-summary">LangGraph uses explicit graph state machines. CrewAI uses role-based agent 'crews' with tasks. Different metaphors, different fits.</div>
+<div class="cmp-summary">The real choice is how much control you want to own. LangGraph makes you define state and transitions explicitly, which costs more effort up front and pays off the day you have to debug a production run. CrewAI lets you describe agents as roles with goals and tasks, and you can have a working prototype the same afternoon. Both frameworks are free and open source, so the money question is really about their paid platforms and your engineering time.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>LangGraph</th><th>CrewAI</th></tr></thead>
-<tbody><tr><th scope="row">Metaphor</th><td>State machine graph</td><td>Role-based team</td></tr><tr><th scope="row">Complexity</th><td>More explicit control</td><td>Simpler to start</td></tr><tr><th scope="row">Production readiness</th><td>Stronger</td><td>Improving</td></tr><tr><th scope="row">Multi-model</th><td>Yes</td><td>Yes</td></tr></tbody>
+<tbody><tr><th scope="row">Core abstraction</th><td>State graph with nodes and edges</td><td>Role-based crews, plus event-driven Flows</td></tr><tr><th scope="row">License</th><td>MIT open source</td><td>MIT open source</td></tr><tr><th scope="row">Maturity</th><td>1.0 released October 2025, stable API</td><td>1.x releases, still moving fast</td></tr><tr><th scope="row">Learning curve</th><td>Steeper, you think in graphs and state</td><td>Gentler, you think in roles and tasks</td></tr><tr><th scope="row">Execution control</th><td>Explicit, every transition is yours</td><td>Higher level, the framework decides more</td></tr><tr><th scope="row">State and persistence</th><td>Built-in checkpointing and human-in-the-loop</td><td>Less granular, Flows narrow the gap</td></tr><tr><th scope="row">Managed platform</th><td>LangSmith, free tier, then $39 per seat per month</td><td>CrewAI AMP, free tier capped at 50 executions per month</td></tr><tr><th scope="row">Paid pricing model</th><td>Published seat and usage rates</td><td>Custom-quoted Enterprise only</td></tr><tr><th scope="row">Ecosystem</th><td>LangChain tooling and integrations</td><td>Standalone stack, over 40,000 GitHub stars</td></tr><tr><th scope="row">Best for</th><td>Long-running production workflows you must audit</td><td>Fast prototypes and role-shaped team tasks</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both frameworks are MIT licensed and free to use. What you actually pay for is the platform around them, plus model tokens, which usually dwarf everything else in an agent budget.</p>
+<p>On the LangChain side, LangSmith has a free Developer tier with one seat and up to 5,000 base traces a month. The Plus plan is $39 per seat per month with 10,000 base traces included, then usage billing at published rates: $1.50 per compute unit and $1.00 per storage unit as of August 2026. Plus also includes one small serverless deployment for hosting LangGraph agents. The useful part is that the rates are public, so you can model your cost before you commit.</p>
+<p>CrewAI's published pricing is thinner. The free Basic plan on its AMP platform is capped at 50 workflow executions a month, enough to evaluate, not enough to run anything real. Past that, it is a custom-quoted Enterprise plan with SSO, role-based access control, and private deployment options. There is no published mid-tier as of August 2026. If you want a predictable monthly number without a sales call, that gap matters.</p>
+
 <h2>When to pick LangGraph</h2>
-<p>Complex branching logic, production workflows, want explicit state.</p>
+<p>Pick LangGraph when the workflow has real branching logic, needs durable state, or will run in production long enough that someone has to debug it at 2am. Checkpointing, retries, and human-in-the-loop pauses are first-class features, and the 1.0 release in October 2025 came with a commitment to API stability, which matters if you are tired of agent frameworks breaking underneath you.</p>
+<p>It also fits when observability is non-negotiable. LangSmith tracing shows you every step of a run, and LangChain publicly names companies like Uber, LinkedIn, and Klarna as LangGraph users, so the framework has survived contact with large production systems.</p>
+<p>The cost is the learning curve. If your team has not built with graphs and explicit state before, budget real ramp-up time before anything ships.</p>
 
 <h2>When to pick CrewAI</h2>
-<p>Fast prototyping, role-based metaphor fits your problem.</p>
+<p>Pick CrewAI when speed to a first working prototype matters more than fine-grained control. The role, goal, and task metaphor maps cleanly onto work that already looks like a team process, something like research plus writing plus review, and people who do not live in the codebase can read a crew definition and follow it.</p>
+<p>It has genuine momentum. The company reports over 450 million agentic workflows running per month on its platform, and the open source repo has grown past 40,000 GitHub stars. Flows, the event-driven layer, adds more deterministic control when plain crews get too loose.</p>
+<p>Where I hesitate is the pricing cliff, free tier straight to an enterprise sales call, and the pace of change in the framework itself. For a quick internal tool, neither hurts much. For a system a business depends on, I want more predictability.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Framework cost is a rounding error. The real spend is model tokens and engineering hours, and the framework that helps you debug faster saves more than any subscription costs. I weigh debuggability over feature checklists every time.</p>
+<p>The two are also converging. CrewAI's Flows look more like graphs every release, and LangGraph ships prebuilt agent patterns that feel crew-like. You are choosing a default posture and an ecosystem more than a permanent architecture.</p>
+<p>Lock-in lives in the platform, not the framework. Both codebases are MIT, so your code is portable. The switching cost sits in observability, deployment, and eval tooling, so evaluate LangSmith and CrewAI AMP as products in their own right, not as free extras.</p>
+<p>Finally, team fit beats benchmarks. A team that thinks in state machines will fight CrewAI's abstractions. A team that needs to ship this week will resent LangGraph's ceremony. Neither reaction shows up in a feature table.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>LangGraph for production. CrewAI for prototype or when the role metaphor is genuinely your model.</p>
+<p>For production systems I have to stand behind, I use LangGraph. The explicit state model and the stable 1.0 API make failures debuggable, and the public pricing makes costs forecastable. CrewAI is my pick for proving an idea in days, and it is a fair production choice if the role metaphor genuinely matches your problem and a custom-quoted enterprise plan does not bother you. If this is your first agent system, keep the scope small. The scoping will matter more than the framework.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.langchain.com/pricing" target="_blank" rel="noopener nofollow">LangSmith and LangGraph Platform pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener nofollow">LangGraph overview</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.crewai.com/pricing" target="_blank" rel="noopener nofollow">CrewAI pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.crewai.com/" target="_blank" rel="noopener nofollow">CrewAI documentation</a></li>
 </ul>
 </div>
 </div>

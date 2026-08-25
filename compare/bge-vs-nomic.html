@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BGE-M3 vs nomic-embed-v1.5 | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two top open-source embedding models.">
+<meta name="description" content="BGE-M3 vs nomic-embed-text-v1.5 in 2026: MTEB scores, dimensions, licenses, and the storage and compute costs that actually decide it.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BGE-M3 vs nomic-embed-v1.5 | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two top open-source embedding models.">
+<meta property="og:description" content="BGE-M3 vs nomic-embed-text-v1.5 in 2026: MTEB scores, dimensions, licenses, and the storage and compute costs that actually decide it.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BGE-M3 vs nomic-embed-v1.5 | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two top open-source embedding models.">
+<meta name="twitter:description" content="BGE-M3 vs nomic-embed-text-v1.5 in 2026: MTEB scores, dimensions, licenses, and the storage and compute costs that actually decide it.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"BGE-M3 vs nomic-embed-v1.5 | Compare | Samuel Ochoa","description":"Two top open-source embedding models.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/bge-vs-nomic.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"BGE-M3 vs nomic-embed-v1.5 | Compare | Samuel Ochoa","description":"BGE-M3 vs nomic-embed-text-v1.5 in 2026: MTEB scores, dimensions, licenses, and the storage and compute costs that actually decide it.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/bge-vs-nomic.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Bge Vs Nomic","item":"https://samuelochoa.com/compare/bge-vs-nomic"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,44 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Embeddings</span>
 <h1 class="cmp-title">BGE-M3 vs nomic-embed-v1.5</h1>
-<p class="cmp-subtitle">Two top open-source embedding models.</p>
+<p class="cmp-subtitle">Two open weight embedding models with 8K context, built for different retrieval problems.</p>
 
-<div class="cmp-summary">BGE-M3 excels at multilingual and unified dense/sparse/colbert retrieval. Nomic is efficient, 8K context, strong on English.</div>
+<div class="cmp-summary">Both are open weight embedding models with 8,192 token context windows and permissive licenses, and both remain common defaults in production RAG stacks. The real decision axis is multilingual and hybrid retrieval versus efficiency. BGE-M3 is a 568M parameter model that produces dense, sparse, and ColBERT style multi-vector outputs across more than 100 languages in a single forward pass. nomic-embed-text-v1.5 is roughly a quarter of that size, English focused, dense only, and can shrink its embeddings from 768 down to 64 dimensions with a measured, modest quality loss.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>BGE-M3</th><th>nomic-embed-v1.5</th></tr></thead>
-<tbody><tr><th scope="row">Context</th><td>8K</td><td>8K</td></tr><tr><th scope="row">Multilingual</th><td>Excellent</td><td>English-focused</td></tr><tr><th scope="row">License</th><td>Apache-2.0</td><td>Apache-2.0</td></tr><tr><th scope="row">Hybrid</th><td>Unified dense/sparse/colbert</td><td>Dense only</td></tr></tbody>
+<tbody><tr><th scope="row">Parameters</th><td>568M, XLM-RoBERTa backbone</td><td>About 0.1B, roughly a quarter of BGE-M3</td></tr><tr><th scope="row">Dense dimensions</th><td>1,024</td><td>768, resizable to 512, 256, 128, or 64 (Matryoshka)</td></tr><tr><th scope="row">Max input length</th><td>8,192 tokens</td><td>8,192 tokens</td></tr><tr><th scope="row">License</th><td>MIT</td><td>Apache 2.0</td></tr><tr><th scope="row">Language coverage</th><td>More than 100 languages</td><td>English focused</td></tr><tr><th scope="row">Retrieval modes</th><td>Dense, sparse, and multi-vector (ColBERT) in one pass</td><td>Dense only</td></tr><tr><th scope="row">English MTEB score</th><td>Not its headline benchmark; card evals focus on multilingual retrieval</td><td>62.28 at 768 dims; 61.04 at 256; 56.10 at 64</td></tr><tr><th scope="row">Multilingual evals</th><td>Strong MIRACL and MKQA results on the model card</td><td>Not a design goal</td></tr><tr><th scope="row">Task prefixes</th><td>Not required</td><td>Required: search_query, search_document, clustering, classification</td></tr><tr><th scope="row">Multimodal pairing</th><td>None</td><td>Aligned with nomic-embed-vision-v1.5 for text and image search</td></tr></tbody>
 </table></div>
 
+<h2>Cost drivers</h2>
+<p>Neither model has a license fee. MIT and Apache 2.0 both allow commercial use, self hosting, and fine tuning, so the real costs come from three places: inference compute, vector storage, and the retrieval stack you build around the model.</p>
+<p>Compute first. BGE-M3 carries roughly four times the parameters, so embedding the same corpus takes on the order of four times the work. nomic-embed-text-v1.5 is small enough to run acceptably on CPU or a modest GPU, which is why it shows up so often in local and self hosted deployments.</p>
+<p>Storage is the quieter cost, and it is permanent. Every vector you store keeps its dimension count forever. BGE-M3's 1,024 dimensions cost a third more per vector than nomic's 768, and Matryoshka goes further: storing nomic vectors at 256 dimensions cuts storage to a third of full size while the measured MTEB score only drops from 62.28 to 61.04. On an index of tens of millions of chunks, that difference is a visible line on the vector database bill. BGE-M3's ColBERT mode points the other way; multi-vector output can improve precision but multiplies index size, so turn it on deliberately, not by default.</p>
+<p>Both models are also served by third party inference APIs, with per token prices that vary by provider and change often, so I will not quote numbers that would be stale in a quarter. The structural point holds either way: with open weights your floor price is your own hardware, and you can move between hosted and self hosted serving without re-embedding, as long as you stay on the same model.</p>
+
 <h2>When to pick BGE-M3</h2>
-<p>Multilingual, want hybrid retrieval from one model.</p>
+<p>Pick BGE-M3 when your corpus is not purely English. Support tickets, product docs across markets, or any retrieval task that mixes languages plays to its training across more than 100 languages, and its published evaluations on MIRACL and MKQA are about exactly that setting.</p>
+<p>It is also the practical choice when you want hybrid retrieval without running two systems. Its sparse output covers the exact keyword matching you would otherwise get from BM25, and the dense output covers semantics, from one model in one pass. If you are currently gluing a keyword index to a separate dense model, BGE-M3 can collapse that stack.</p>
+<p>The cost is that everything about it is bigger: more parameters to serve, larger vectors to store, and heavier optional modes. It earns that weight on multilingual and hybrid workloads, and it does not on simple English ones.</p>
 
 <h2>When to pick nomic-embed-v1.5</h2>
-<p>English, want efficient deployment, simple integration.</p>
+<p>Pick nomic-embed-text-v1.5 for English retrieval where cost and latency matter, which in my experience covers most RAG systems that small teams actually ship. Its 62.28 MTEB score at full size is competitive for a model this small, and the Matryoshka dimensions give you a storage dial that fixed size models do not offer.</p>
+<p>It is also the easier operational choice. The small footprint runs on modest hardware, it is packaged widely in local tooling, and the vision aligned variant adds text to image search in the same embedding space if you need it later.</p>
+<p>One warning from the integration side: the task prefixes are mandatory. Queries must be embedded with search_query and documents with search_document, and skipping them silently degrades retrieval quality rather than throwing an error. It is the single most common mistake I see with this model.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Head to head score tables mislead here, because the two models publish results on different benchmarks. Nomic's headline number is the English MTEB suite; BGE-M3's card leads with multilingual retrieval evals. A single ranking that ignores that is comparing answers to different questions. Second, embedding choices are sticky: switching models later means re-embedding every chunk in your index, which on a large corpus is a real compute bill and a migration project, so the dimension and language decisions you make now follow you. Third, neither of these tops the current MTEB leaderboard, and for production that matters less than it seems; language coverage, dimension budget, tooling maturity, and a license your lawyers accept decide more than a point of average score.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>BGE-M3 for breadth. Nomic for English production workloads with tight cost.</p>
+<p>My rule is simple. English corpus, cost sensitive, standard RAG: nomic-embed-text-v1.5, stored at 256 dimensions unless testing on your own data says otherwise. Multilingual corpus, or a real need for hybrid dense plus sparse retrieval: BGE-M3, accepting the heavier serving cost as the price of coverage. Both are permissively licensed open weights, so the honest tiebreaker is a retrieval evaluation on a few hundred of your own queries, which costs an afternoon and beats every leaderboard argument.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Model card</span><a href="https://huggingface.co/BAAI/bge-m3" target="_blank" rel="noopener nofollow">BAAI/bge-m3 on Hugging Face</a></li>
+<li><span class="resource-meta">Model card</span><a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5" target="_blank" rel="noopener nofollow">nomic-ai/nomic-embed-text-v1.5 on Hugging Face</a></li>
 </ul>
 </div>
 </div>
