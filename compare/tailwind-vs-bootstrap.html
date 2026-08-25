@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tailwind CSS vs Bootstrap | Compare | Samuel Ochoa</title>
-<meta name="description" content="Utility-first vs component-first CSS.">
+<meta name="description" content="Tailwind CSS v4 vs Bootstrap 5.3 in 2026: real pricing, build tooling, customization, and which CSS framework fits which kind of project.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tailwind CSS vs Bootstrap | Compare | Samuel Ochoa">
-<meta property="og:description" content="Utility-first vs component-first CSS.">
+<meta property="og:description" content="Tailwind CSS v4 vs Bootstrap 5.3 in 2026: real pricing, build tooling, customization, and which CSS framework fits which kind of project.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tailwind CSS vs Bootstrap | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Utility-first vs component-first CSS.">
+<meta name="twitter:description" content="Tailwind CSS v4 vs Bootstrap 5.3 in 2026: real pricing, build tooling, customization, and which CSS framework fits which kind of project.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Tailwind CSS vs Bootstrap | Compare | Samuel Ochoa","description":"Utility-first vs component-first CSS.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/tailwind-vs-bootstrap.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Tailwind CSS vs Bootstrap | Compare | Samuel Ochoa","description":"Tailwind CSS v4 vs Bootstrap 5.3 in 2026: real pricing, build tooling, customization, and which CSS framework fits which kind of project.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/tailwind-vs-bootstrap.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Tailwind Vs Bootstrap","item":"https://samuelochoa.com/compare/tailwind-vs-bootstrap"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,56 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">CSS Frameworks</span>
 <h1 class="cmp-title">Tailwind CSS vs Bootstrap</h1>
-<p class="cmp-subtitle">Utility-first vs component-first CSS.</p>
+<p class="cmp-subtitle">Utility-first vs component-first CSS, compared on the details that actually change a build.</p>
 
-<div class="cmp-summary">Tailwind provides low-level utility classes. Bootstrap provides prebuilt components.</div>
+<div class="cmp-summary">Tailwind CSS and Bootstrap are both free, MIT-licensed, and actively maintained, but they pull in opposite directions. Tailwind gives you low-level utility classes and expects you to design everything yourself. Bootstrap gives you finished components and expects you to accept its design decisions or override them. The gap widened in 2025 and 2026: Tailwind shipped v4 with a rebuilt engine and CSS-first configuration, while Bootstrap stayed on the 5.3 line with version 6 still in development and no release date. I have shipped projects with both. Here is how I decide between them.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Tailwind CSS</th><th>Bootstrap</th></tr></thead>
-<tbody><tr><th scope="row">Approach</th><td>Utility-first</td><td>Component-first</td></tr><tr><th scope="row">Customization</th><td>Extreme</td><td>Via overrides</td></tr><tr><th scope="row">Learning curve</th><td>Steeper upfront</td><td>Faster to start</td></tr></tbody>
+<tbody>
+<tr><th scope="row">Approach</th><td>Utility classes you compose yourself</td><td>Prebuilt components you assemble</td></tr>
+<tr><th scope="row">Current version</th><td>v4.3, released May 2026</td><td>v5.3.8, with v6 in development</td></tr>
+<tr><th scope="row">Core license</th><td>Free, MIT</td><td>Free, MIT</td></tr>
+<tr><th scope="row">Paid add-ons</th><td>Tailwind Plus: $299 one-time personal, $979 for teams up to 25</td><td>Themes marketplace, priced per theme</td></tr>
+<tr><th scope="row">Build step</th><td>Expected in practice (CLI, Vite plugin, or PostCSS)</td><td>Optional; a CDN link works</td></tr>
+<tr><th scope="row">JavaScript behavior</th><td>None included; bring your own</td><td>Bundled: modals, dropdowns, carousels, tooltips</td></tr>
+<tr><th scope="row">Configuration</th><td>CSS-first design tokens since v4</td><td>Sass variables and maps</td></tr>
+<tr><th scope="row">Default look</th><td>None; every project starts blank</td><td>A recognizable house style out of the box</td></tr>
+<tr><th scope="row">Learning curve</th><td>Steeper upfront, fast once the class names stick</td><td>Faster to a first working page</td></tr>
+<tr><th scope="row">Ecosystem direction</th><td>Catalyst, shadcn/ui, most new React tooling</td><td>Long history, huge installed base, many templates</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both frameworks cost nothing to use in production, so the license line on this comparison is a tie. The money shows up in the official add-ons. Tailwind Plus, the renamed Tailwind UI, is a one-time purchase: $299 for a personal license or $979 for teams of up to 25 people. That covers 500+ components, the full template library, and the Catalyst React kit, with lifetime updates and no subscription. Bootstrap sells themes through its official marketplace, priced per theme, and everything in the core framework stays free.</p>
+<p>The real cost is time. Tailwind front-loads effort into design decisions and pays it back in maintainability. Bootstrap front-loads almost nothing and collects later, when you fight the defaults to make a site look like your brand instead of a Bootstrap site.</p>
+
 <h2>When to pick Tailwind CSS</h2>
-<p>Want custom designs, modern DX, don't want to override components.</p>
+<p>Pick Tailwind when the design matters and it is custom. Utility classes map directly onto a design system: spacing scales, color tokens, and type ramps live in your CSS as first-class values, and v4 made that story much cleaner by moving configuration into a CSS file. Most projects no longer need a JavaScript config file at all, and builds got noticeably faster with the new engine.</p>
+<p>Pick it too when your team already lives in a component framework. React, Vue, or Svelte components give you the reuse that Bootstrap's prebuilt widgets would otherwise provide, so Tailwind slots in as the styling layer without duplication. Much of the current component ecosystem, including shadcn/ui and Tailwind's own Catalyst, assumes Tailwind underneath.</p>
+<p>The honest cost: the first two weeks feel slower, your markup gets long, and someone on the team has to own the design tokens. If nobody will, Tailwind projects drift into inconsistency just like plain CSS ones.</p>
 
 <h2>When to pick Bootstrap</h2>
-<p>Want out-of-the-box components, fast prototyping.</p>
+<p>Pick Bootstrap when you need a working interface this week and nobody is grading the aesthetics. Admin panels, internal tools, prototypes, and back-office CRUD screens are where it still earns its place. One CDN link gets you a grid, forms, and working JavaScript components with no build step.</p>
+<p>It is also the pragmatic choice for server-rendered stacks. If you are shipping Rails, Django, Laravel, or plain PHP templates without a JavaScript framework, Bootstrap's bundled dropdowns, modals, and tooltips do real work that Tailwind simply does not attempt. That behavioral layer is the most under-weighted item in most comparisons.</p>
+<p>One planning note: Bootstrap 5.3 is the current supported line, and version 6 is in development with no announced release date. Existing Bootstrap codebases are in no danger, but I would not start a large new build assuming v6 lands soon.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The comparison is not symmetric. Tailwind is a styling system; Bootstrap is styling plus behavior. The fair matchup is Bootstrap against Tailwind plus a component library, and once you frame it that way, the choice tracks your stack more than your taste.</p>
+<p>Second, v4 retired the most common anti-Tailwind argument. The old config file and PostCSS ceremony were a genuine barrier; the current setup is a CSS import and, for most people, a Vite plugin. Judging Tailwind on v3-era setup friction means judging the wrong product.</p>
+<p>Third, the frameworks are converging. Public work on Bootstrap's v6 branch borrows utility-style conventions, and Tailwind now sells finished components through Tailwind Plus. The philosophical divide that launched a thousand blog posts is narrowing from both sides.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Tailwind for new projects where design matters. Bootstrap for admin panels and internal tools.</p>
+<p>For anything customer-facing where the design is custom, I default to Tailwind, and I think the v4 release settled that direction. For internal tools, admin screens, and server-rendered apps that need working dropdowns today, Bootstrap 5.3 remains the fastest honest path, and there is no urgency to migrate existing Bootstrap code. If you buy one thing, the $299 Tailwind Plus license pays for itself the first time it saves you building a marketing page from scratch.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Official</span><a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" rel="noopener nofollow">Tailwind CSS v4.0 announcement</a></li>
+<li><span class="resource-meta">Official</span><a href="https://tailwindcss.com/plus" target="_blank" rel="noopener nofollow">Tailwind Plus pricing and license terms</a></li>
+<li><span class="resource-meta">Official</span><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener nofollow">Bootstrap 5.3 documentation</a></li>
 </ul>
 </div>
 </div>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SendGrid vs Postmark | Compare | Samuel Ochoa</title>
-<meta name="description" content="Volume-focused vs deliverability-focused.">
+<meta name="description" content="My comparison of SendGrid and Postmark for transactional email: 2026 pricing from $19.95 vs $15 a month, deliverability tradeoffs, and which sender I would trust.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SendGrid vs Postmark | Compare | Samuel Ochoa">
-<meta property="og:description" content="Volume-focused vs deliverability-focused.">
+<meta property="og:description" content="My comparison of SendGrid and Postmark for transactional email: 2026 pricing from $19.95 vs $15 a month, deliverability tradeoffs, and which sender I would trust.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SendGrid vs Postmark | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Volume-focused vs deliverability-focused.">
+<meta name="twitter:description" content="My comparison of SendGrid and Postmark for transactional email: 2026 pricing from $19.95 vs $15 a month, deliverability tradeoffs, and which sender I would trust.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SendGrid vs Postmark | Compare | Samuel Ochoa","description":"Volume-focused vs deliverability-focused.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/sendgrid-vs-postmark.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SendGrid vs Postmark | Compare | Samuel Ochoa","description":"My comparison of SendGrid and Postmark for transactional email: 2026 pricing from $19.95 vs $15 a month, deliverability tradeoffs, and which sender I would trust.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/sendgrid-vs-postmark.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Sendgrid Vs Postmark","item":"https://samuelochoa.com/compare/sendgrid-vs-postmark"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,46 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Transactional Email</span>
 <h1 class="cmp-title">SendGrid vs Postmark</h1>
-<p class="cmp-subtitle">Volume-focused vs deliverability-focused.</p>
+<p class="cmp-subtitle">A high-volume email platform against a sender that only does application email.</p>
 
-<div class="cmp-summary">SendGrid handles very high volumes. Postmark has a reputation for stronger transactional deliverability.</div>
+<div class="cmp-summary">Both services deliver application email, but they are built around different bets. SendGrid, owned by Twilio, bets on scale: tiered plans that get cheaper per email as volume grows, plus marketing sends in the same platform. Postmark, owned by ActiveCampaign, bets on focus: transactional mail kept separate from bulk traffic, 45 days of searchable message history on every plan, and pricing that starts at $15 a month for 10,000 emails. I frame the choice as cost per email versus confidence per email, and which one you should weight depends on what your product loses when a receipt or password reset goes missing.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>SendGrid</th><th>Postmark</th></tr></thead>
-<tbody><tr><th scope="row">Deliverability</th><td>Good</td><td>Best in class</td></tr><tr><th scope="row">Pricing</th><td>Cheaper at volume</td><td>Premium</td></tr><tr><th scope="row">Marketing features</th><td>Some</td><td>None (pure transactional)</td></tr></tbody>
+<tbody><tr><th scope="row">Owner</th><td>Twilio</td><td>ActiveCampaign</td></tr><tr><th scope="row">Entry paid price</th><td>Essentials from $19.95/mo (50,000 emails)</td><td>Basic $15/mo (10,000 emails)</td></tr><tr><th scope="row">Free option</th><td>60-day trial, 100 emails/day</td><td>Developer plan, 100 emails/mo</td></tr><tr><th scope="row">Higher tiers</th><td>Pro from $89.95/mo (100,000 emails), Premier custom</td><td>Pro $16.50/mo, Platform $18/mo (both start at 10,000 emails)</td></tr><tr><th scope="row">Overage model</th><td>Move up a volume tier</td><td>$1.20 to $1.80 per extra 1,000 emails, by plan</td></tr><tr><th scope="row">Marketing email</th><td>Yes, separate Marketing Campaigns product</td><td>No marketing suite; broadcast message streams handle bulk sends</td></tr><tr><th scope="row">Dedicated IP</th><td>Included on Pro and above</td><td>Add-on from $50/mo per IP</td></tr><tr><th scope="row">Message history</th><td>A few days of activity history on standard plans; extended history costs extra</td><td>45 days on every plan, up to 365 days on Pro</td></tr><tr><th scope="row">Inbound processing</th><td>Yes</td><td>Yes, on Pro and Platform</td></tr><tr><th scope="row">Add-ons</th><td>Email validation, expert services</td><td>DMARC monitoring from $14/mo per domain, custom retention from $5/mo</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Postmark prices in small, predictable steps. Basic is $15 a month for 10,000 emails with overage at $1.80 per 1,000. Pro is $16.50 for the same volume with 45-day to 365-day retention options and inbound processing, and Platform is $18 with unlimited custom domains. Larger prepaid volume tiers bring the per-thousand rate down. The free developer plan covers 100 emails a month for testing only, and dedicated IPs are a $50 a month add-on that Postmark only recommends at meaningful volume.</p>
+<p>SendGrid prices for scale. Essentials starts at $19.95 a month for 50,000 emails, Pro starts at $89.95 for 100,000 with a dedicated IP included, and both climb through volume tiers, with Pro reaching into the millions before Premier's custom pricing takes over. The old perpetual free plan is gone for new accounts; what remains is a 60-day trial at 100 emails a day. At equal volume the gap is real: 50,000 emails a month costs $19.95 on SendGrid Essentials, while the same volume on Postmark Basic runs about $87 at overage rates, less on a bigger prepaid tier but still several times SendGrid's price.</p>
+
 <h2>When to pick SendGrid</h2>
-<p>High-volume, cost-sensitive, mixed use.</p>
+<p>Pick SendGrid when volume economics dominate. If you send hundreds of thousands or millions of emails a month, its per-email cost is far below Postmark's, and the tiering keeps dropping as you grow. For a notification-heavy product where any single email matters little but the aggregate bill matters a lot, that math usually settles it.</p>
+<p>It is also the practical choice when you want transactional and marketing email under one vendor. The Marketing Campaigns product, template tooling, and email validation add-on mean one contract and one set of API credentials for everything you send. If you are already inside the Twilio ecosystem for SMS or voice, consolidation has value too.</p>
+<p>The caveat is that you inherit more responsibility. On shared IPs your deliverability rides with the other senders in the pool, so at scale you should budget for a dedicated IP, proper warmup, and someone who watches the metrics.</p>
 
 <h2>When to pick Postmark</h2>
-<p>Transactional only, deliverability is the priority.</p>
+<p>Pick Postmark when a missing email costs you money or trust. Password resets, receipts, magic links, and shipping notices are the emails users wait for, and Postmark's whole design serves them: transactional traffic is kept separate from bulk mail through message streams, so a promo blast cannot drag down your receipt deliverability. Postmark publishes its delivery data, and its reputation for fast inbox placement is the main thing people pay the premium for.</p>
+<p>The operational details are better for small teams as well. Every plan keeps 45 days of searchable message history, which turns the customer never got the email ticket from an investigation into a lookup. Overages are billed per 1,000 emails at a published rate instead of forcing a plan jump, so a spiky month does not surprise you.</p>
+<p>The tradeoff is cost at volume and no real marketing feature set. If your roadmap includes serious newsletter or campaign work, you will end up pairing Postmark with another tool.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The free tier story changed. Many older comparisons still cite SendGrid's 100-emails-a-day free plan as permanent; for new signups it is now a 60-day trial. Postmark's free option is 100 emails a month and is explicitly for testing. Neither service is a free-forever choice anymore, so compare paid entry points, not free tiers.</p>
+<p>Deliverability claims are about traffic mix, not magic. Postmark's edge comes largely from what it refuses to carry: keeping cold and bulk mail off its transactional infrastructure keeps the shared reputation clean. A well-run SendGrid account with a warmed dedicated IP can match it, but that is your work to do, and on shared IPs your results depend partly on your neighbors.</p>
+<p>Log retention is the sleeper feature. When support asks whether an email was delivered three weeks ago, Postmark's 45-day standard history answers the question; on SendGrid's standard activity window you may simply not know without paying for extended history. Price that into the comparison if your support team debugs email regularly.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Postmark for pure transactional. SendGrid for volume + marketing mix.</p>
+<p>For a small product whose transactional email is revenue-critical, I would pick Postmark and pay the premium without much agonizing. $15 to $18 a month buys deliverability I do not have to manage and history I can search when something goes wrong. Once volume climbs toward six figures a month, or marketing sends enter the picture, SendGrid's pricing becomes hard to argue with, and at that scale you should be running a dedicated IP and watching deliverability yourself anyway. My rough rule: under 100,000 revenue-critical emails a month, Postmark; above that or mixed sending, SendGrid with proper IP warmup.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://postmarkapp.com/pricing" target="_blank" rel="noopener nofollow">Postmark pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://postmarkapp.com/developer" target="_blank" rel="noopener nofollow">Postmark developer documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://sendgrid.com/en-us/pricing" target="_blank" rel="noopener nofollow">Twilio SendGrid pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.twilio.com/docs/sendgrid" target="_blank" rel="noopener nofollow">Twilio SendGrid documentation</a></li>
 </ul>
 </div>
 </div>

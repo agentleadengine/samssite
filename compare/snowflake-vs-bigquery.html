@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snowflake vs BigQuery | Compare | Samuel Ochoa</title>
-<meta name="description" content="Multi-cloud vs Google's native warehouse.">
+<meta name="description" content="My comparison of Snowflake and BigQuery pricing models: credits from $2 each vs $6.25 per TiB scanned, what each bill rewards, and which warehouse I would pick.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Snowflake vs BigQuery | Compare | Samuel Ochoa">
-<meta property="og:description" content="Multi-cloud vs Google's native warehouse.">
+<meta property="og:description" content="My comparison of Snowflake and BigQuery pricing models: credits from $2 each vs $6.25 per TiB scanned, what each bill rewards, and which warehouse I would pick.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Snowflake vs BigQuery | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Multi-cloud vs Google&#x27;s native warehouse.">
+<meta name="twitter:description" content="My comparison of Snowflake and BigQuery pricing models: credits from $2 each vs $6.25 per TiB scanned, what each bill rewards, and which warehouse I would pick.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Snowflake vs BigQuery | Compare | Samuel Ochoa","description":"Multi-cloud vs Google's native warehouse.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/snowflake-vs-bigquery.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Snowflake vs BigQuery | Compare | Samuel Ochoa","description":"My comparison of Snowflake and BigQuery pricing models: credits from $2 each vs $6.25 per TiB scanned, what each bill rewards, and which warehouse I would pick.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/snowflake-vs-bigquery.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Snowflake Vs Bigquery","item":"https://samuelochoa.com/compare/snowflake-vs-bigquery"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,46 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Data Warehouses</span>
 <h1 class="cmp-title">Snowflake vs BigQuery</h1>
-<p class="cmp-subtitle">Multi-cloud vs Google's native warehouse.</p>
+<p class="cmp-subtitle">Two strong warehouses whose pricing models push your team toward different habits.</p>
 
-<div class="cmp-summary">Snowflake is cloud-agnostic and handles complex workloads. BigQuery is Google-native and simpler.</div>
+<div class="cmp-summary">Feature lists barely separate these two anymore; the pricing models do. Snowflake bills for compute time: virtual warehouses burn credits, from $2 per credit on Standard edition in AWS US East, whenever they are running, whether your queries are efficient or not. BigQuery on demand bills for data scanned at $6.25 per TiB, with the first TiB free each month, whether the compute worked hard or not. I think the honest comparison is not which is cheaper in general, because neither is, but which billing failure mode your team is better equipped to manage.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Snowflake</th><th>BigQuery</th></tr></thead>
-<tbody><tr><th scope="row">Cloud</th><td>AWS/GCP/Azure</td><td>GCP only</td></tr><tr><th scope="row">Pricing</th><td>Compute-separated</td><td>Usage-based, simpler</td></tr><tr><th scope="row">Feature depth</th><td>Rich</td><td>Solid</td></tr></tbody>
+<tbody><tr><th scope="row">Runs on</th><td>AWS, Azure, Google Cloud</td><td>Google Cloud</td></tr><tr><th scope="row">Pricing model</th><td>Credits consumed by running warehouses</td><td>On-demand per TiB scanned, or slot capacity</td></tr><tr><th scope="row">Entry compute price</th><td>From $2 per credit (Standard edition, AWS US East, on demand)</td><td>$6.25 per TiB scanned on demand</td></tr><tr><th scope="row">Free allowance</th><td>Trial credits only</td><td>1 TiB of queries plus 10 GiB storage free each month</td></tr><tr><th scope="row">Higher editions</th><td>Enterprise $3, Business Critical $4 per credit (same region)</td><td>Editions from $0.04 per slot-hour (Standard), $0.06 Enterprise, $0.10 Enterprise Plus</td></tr><tr><th scope="row">Storage</th><td>About $23 per TB per month on demand in US regions</td><td>Billed per GiB, with a discount for tables not modified in 90 days</td></tr><tr><th scope="row">Billing granularity</th><td>Per second, with a 60-second minimum each time a warehouse resumes</td><td>Per query (bytes scanned) or per slot usage</td></tr><tr><th scope="row">Idle cost</th><td>Warehouses bill while running; auto-suspend is your safety net</td><td>None on demand; queries are the only compute charge</td></tr><tr><th scope="row">Workload isolation</th><td>Separate warehouses per team or job</td><td>Slots shared, or reserved through editions</td></tr><tr><th scope="row">Cost controls</th><td>Warehouse sizing, auto-suspend, resource monitors</td><td>Partitioning, clustering, custom quotas, maximum bytes billed</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Snowflake's unit is the credit. An X-Small warehouse consumes one credit per hour of running time, and each size step up doubles the burn rate, so a Large burns eight credits an hour whether it is running one query or twenty. What a credit costs depends on edition and region: on demand in AWS US East, Standard is $2 per credit, Enterprise $3, and Business Critical $4, with other regions typically higher. Billing is per second with a 60-second minimum each time a warehouse resumes, and storage runs about $23 per TB per month on demand in US regions. Most real contracts are pre-purchased capacity at negotiated discounts, so list price is the ceiling, not the norm.</p>
+<p>BigQuery gives you two modes. On demand charges $6.25 per TiB of data scanned, and every account gets 1 TiB of queries and 10 GiB of storage free each month, which means small workloads can genuinely run at zero. Capacity pricing through editions charges per slot-hour instead: roughly $0.04 for Standard, $0.06 for Enterprise, and $0.10 for Enterprise Plus at pay-as-you-go rates, with one and three year commitments cutting those rates by about 20 to 37 percent. Storage is billed per GiB, and tables untouched for 90 days drop to a lower long-term rate automatically. Prices vary by region on both platforms, so confirm your region on the official pages linked below.</p>
+
 <h2>When to pick Snowflake</h2>
-<p>Multi-cloud, complex workloads, cost optimization.</p>
+<p>Pick Snowflake when multi-cloud is a real requirement rather than a slide. It runs the same way on AWS, Azure, and Google Cloud, which matters if your company's data gravity is outside Google or if an acquisition could change your cloud overnight. If you are not on Google Cloud today, this decision often makes itself.</p>
+<p>It also fits organizations that want hard isolation between workloads. Giving the finance team, the data science team, and the ETL jobs their own warehouses means one team's runaway query cannot slow down another's dashboards, and each team's spend is visible on its own line. For steady, heavy workloads, per-second warehouse billing plus negotiated credit pricing can come out cheaper than paying per TiB scanned.</p>
+<p>The discipline it demands is operational: someone has to size warehouses sensibly, set auto-suspend aggressively, and watch resource monitors, because the meter runs on time, not on usefulness.</p>
 
 <h2>When to pick BigQuery</h2>
-<p>Google-native, simpler setup, analytics-first.</p>
+<p>Pick BigQuery if your company already lives on Google Cloud. It is serverless, so there are no warehouses to size or suspend, and the integration with the rest of the Google stack, including GA4 exports, Google Sheets, and IAM, removes a lot of glue work. For an analytics-first team without a dedicated data platform engineer, that absence of knobs is a feature.</p>
+<p>The free tier and the on-demand model also make it the cheapest credible way to start. A small team querying a few hundred gigabytes a month can stay inside the free 1 TiB indefinitely, and spiky workloads pay nothing between queries because there is no idle compute. Snowflake has no comparable free floor.</p>
+<p>The discipline BigQuery demands is query hygiene: partition and cluster your tables, avoid scanning columns you do not need, and set cost guardrails, because the meter runs on bytes scanned, not on time.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Each pricing model punishes a different bad habit. Snowflake punishes leaving warehouses running and oversizing them; a forgotten Large warehouse burns eight credits an hour doing nothing. BigQuery on demand punishes careless SQL; a single select-star over a wide unpartitioned table bills the full scan instantly. Neither platform is expensive or cheap in the abstract. Your team's habits decide which bill grows.</p>
+<p>The small print compounds. Snowflake's 60-second minimum per warehouse resume means many tiny, frequent jobs cost more than their runtime suggests. On BigQuery, skipping custom quotas or a maximum-bytes-billed setting leaves you one bad query away from a surprising invoice. In both cases the safety features exist; they are just off until someone turns them on.</p>
+<p>Finally, list prices are the start of the conversation, not the end. Snowflake capacity deals and BigQuery commitments both discount steeply, and storage, region premiums, and data egress move real-world bills. The only comparison that settles this is replaying a month of your own workload under both models.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Snowflake for multi-cloud + sophistication. BigQuery for Google-shop simplicity.</p>
+<p>For a team already on Google Cloud, I would default to BigQuery. The free tier, the absence of idle cost, and the serverless model mean a small analytics operation can run for close to nothing while it figures out what it actually needs. I would pick Snowflake when multi-cloud is a genuine requirement, when several teams need isolated compute with separate budgets, or when workloads are steady enough that negotiated credit pricing beats paying per TiB scanned. If the decision is close, model one month of your real queries under both pricing models before committing. The models diverge enough that generic advice, mine included, loses to your own numbers.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.snowflake.com/en/pricing-options/" target="_blank" rel="noopener nofollow">Snowflake pricing options</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.snowflake.com/" target="_blank" rel="noopener nofollow">Snowflake documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://cloud.google.com/bigquery/pricing" target="_blank" rel="noopener nofollow">BigQuery pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://cloud.google.com/bigquery/docs" target="_blank" rel="noopener nofollow">BigQuery documentation</a></li>
 </ul>
 </div>
 </div>

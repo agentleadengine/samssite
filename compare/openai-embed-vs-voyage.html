@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenAI text-embedding-3 vs Voyage-3 | Compare | Samuel Ochoa</title>
-<meta name="description" content="Both flagship embedding APIs. Different strengths.">
+<meta name="description" content="OpenAI text-embedding-3 vs Voyage AI embeddings: verified pricing per 1M tokens, dimensions, free tiers, and when the specialist beats the default.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenAI text-embedding-3 vs Voyage-3 | Compare | Samuel Ochoa">
-<meta property="og:description" content="Both flagship embedding APIs. Different strengths.">
+<meta property="og:description" content="OpenAI text-embedding-3 vs Voyage AI embeddings: verified pricing per 1M tokens, dimensions, free tiers, and when the specialist beats the default.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="OpenAI text-embedding-3 vs Voyage-3 | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Both flagship embedding APIs. Different strengths.">
+<meta name="twitter:description" content="OpenAI text-embedding-3 vs Voyage AI embeddings: verified pricing per 1M tokens, dimensions, free tiers, and when the specialist beats the default.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OpenAI text-embedding-3 vs Voyage-3 | Compare | Samuel Ochoa","description":"Both flagship embedding APIs. Different strengths.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/openai-embed-vs-voyage.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OpenAI text-embedding-3 vs Voyage-3 | Compare | Samuel Ochoa","description":"OpenAI text-embedding-3 vs Voyage AI embeddings: verified pricing per 1M tokens, dimensions, free tiers, and when the specialist beats the default.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/openai-embed-vs-voyage.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Openai Embed Vs Voyage","item":"https://samuelochoa.com/compare/openai-embed-vs-voyage"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,47 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Embeddings</span>
 <h1 class="cmp-title">OpenAI text-embedding-3 vs Voyage-3</h1>
-<p class="cmp-subtitle">Both flagship embedding APIs. Different strengths.</p>
+<p class="cmp-subtitle">The default choice vs the retrieval specialist. Verified pricing, dimensions, and when domain models earn their keep.</p>
 
-<div class="cmp-summary">OpenAI's text-embedding-3 is the most widely used. Voyage consistently tops MTEB in specific domains (finance, law, code).</div>
+<div class="cmp-summary">OpenAI's text-embedding-3 models are the default in most RAG tutorials and production stacks. Voyage AI, now part of MongoDB, does one thing: retrieval-focused embeddings and rerankers, including domain models for code, finance, and law. Voyage's current voyage-4 line undercuts OpenAI's large model on price at every tier and publishes stronger retrieval numbers, though those numbers are its own. The real question is whether the default's ecosystem convenience is worth more to you than the specialist's price and quality.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
-<thead><tr><th></th><th>OpenAI text-embedding-3</th><th>Voyage-3</th></tr></thead>
-<tbody><tr><th scope="row">Price (large)</th><td>$0.13/M tokens</td><td>$0.18/M tokens</td></tr><tr><th scope="row">Dimensions</th><td>3072 (MRL)</td><td>2048</td></tr><tr><th scope="row">MTEB rank</th><td>Strong</td><td>Top tier</td></tr><tr><th scope="row">Specialty</th><td>General</td><td>Domain specialist models</td></tr></tbody>
+<thead><tr><th></th><th>OpenAI text-embedding-3</th><th>Voyage AI</th></tr></thead>
+<tbody><tr><th scope="row">Current models</th><td>text-embedding-3-small and -large</td><td>voyage-4-lite, voyage-4, voyage-4-large</td></tr><tr><th scope="row">Price per 1M tokens</th><td>$0.02 small, $0.13 large</td><td>$0.02 lite, $0.06 mid, $0.12 large</td></tr><tr><th scope="row">Free tier</th><td>None, pay per token</td><td>First 200M tokens free on current models</td></tr><tr><th scope="row">Default dimensions</th><td>1536 small, 3072 large</td><td>1024, with 256, 512, 2048 options</td></tr><tr><th scope="row">Context length</th><td>8,192 tokens</td><td>32,000 tokens</td></tr><tr><th scope="row">Quantization</th><td>Dimension shortening only</td><td>int8, uint8, binary, ubinary output</td></tr><tr><th scope="row">Domain models</th><td>None</td><td>voyage-code-3, voyage-finance-2, voyage-law-2</td></tr><tr><th scope="row">Published MTEB (English)</th><td>62.3 small, 64.6 large</td><td>Publishes own evals showing leads over OpenAI large</td></tr><tr><th scope="row">Reranker</th><td>None native</td><td>rerank-2.5 at $0.05 per 1M tokens</td></tr><tr><th scope="row">Ownership and ecosystem</th><td>OpenAI, also on Azure OpenAI</td><td>MongoDB since 2025, native in Atlas Vector Search</td></tr></tbody>
 </table></div>
 
-<h2>When to pick OpenAI text-embedding-3</h2>
-<p>General-purpose retrieval, cost-sensitive workloads, ecosystem fit.</p>
+<h2>Pricing</h2>
+<p>OpenAI charges $0.02 per 1M tokens for text-embedding-3-small and $0.13 for text-embedding-3-large. Voyage's current lineup runs $0.02 for voyage-4-lite, $0.06 for voyage-4, and $0.12 for voyage-4-large, and the first 200M tokens on current models are free per account. The older models are still sold: voyage-3.5 at $0.06, voyage-3-large at $0.18, and the domain models between $0.12 and $0.18, with voyage-code-3 at $0.18.</p>
+<p>Two things stand out in those numbers. First, Voyage's flagship is now cheaper than OpenAI's flagship, $0.12 against $0.13, which was not true a generation ago when voyage-3-large cost $0.18. Second, the 200M free tokens mean a serious pilot costs nothing. That is enough to embed a few hundred thousand documents and run a full evaluation before spending a dollar.</p>
+<p>The bigger cost lever is dimensions, not token price. Voyage's 1024-dimension default takes roughly one third the storage of OpenAI large's 3072, and its int8 and binary output types shrink the index further. At scale, your vector database bill usually exceeds the embedding API bill, so that difference compounds.</p>
 
-<h2>When to pick Voyage-3</h2>
-<p>Domain-specific workloads (finance, legal, code) or top-of-benchmark quality.</p>
+<h2>When to pick OpenAI text-embedding-3</h2>
+<p>Pick OpenAI when convenience and ecosystem fit are worth more than squeezing out retrieval quality. Every framework, tutorial, and vector database quickstart assumes these models, and if you already run generation through OpenAI or Azure OpenAI, embeddings share the same account, keys, and compliance approval. One vendor review instead of two is a real saving in most companies.</p>
+<p>text-embedding-3-small is the specific model to know. At $0.02 per 1M tokens with a published 62.3 MTEB score, it is very hard to beat on cost for English retrieval, and both OpenAI models let you shorten dimensions through an API parameter when index size matters.</p>
+<p>If your retrieval already works well enough, staying put is a defensible choice. I would not re-embed a healthy production corpus just to chase a benchmark delta.</p>
+
+<h2>When to pick Voyage</h2>
+<p>Pick Voyage when retrieval quality per dollar is the goal. voyage-4 at $0.06 per 1M tokens costs less than half of OpenAI large, and Voyage publishes evaluations showing its models ahead on retrieval tasks. Those are vendor-run numbers, so verify them on your own data, but the free 200M tokens make that verification cost nothing.</p>
+<p>The domain models are the clearest differentiator. voyage-code-3 for code search, voyage-finance-2 for filings and financial documents, and voyage-law-2 for legal text target exactly the corpora where general models underperform. The 32,000 token context window, four times OpenAI's 8,192, also gives you more room before chunking decisions start distorting your documents.</p>
+<p>If you are on MongoDB, the case gets easier: MongoDB acquired Voyage AI in 2025 and has been integrating its models into Atlas Vector Search, so the embedding model and the database come from one vendor.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparison pages still talk about voyage-3, but the voyage-4 series is the current generation, at lower prices than the models those pages benchmark. Pricing pages move faster than blog posts, so check the vendor's numbers before trusting anyone's table, including mine.</p>
+<p>Benchmark asymmetry is the other quiet problem. OpenAI's 62.3 and 64.6 MTEB figures are self-reported and date to the models' 2024 launch, while Voyage's leads come from Voyage's own eval suite. Neither is neutral. A local evaluation with 20 to 50 labeled queries on your actual corpus settles the question in an afternoon and routinely disagrees with public leaderboards.</p>
+<p>Finally, remember that embeddings lock you in through the index, not the contract. Switching models later means re-embedding everything, so the cheap time to test alternatives is before launch, which is exactly what Voyage's free tier is for.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Start with OpenAI. Evaluate Voyage if your domain has a specialty model available.</p>
+<p>For a quick prototype I still reach for text-embedding-3-small, because everything integrates with it and $0.02 per 1M tokens is close to free. But for anything where retrieval quality is the product, I evaluate voyage-4 against it before committing, and the 200M free tokens mean that comparison costs an afternoon, not a budget line. On domain-heavy corpora like code, contracts, or filings, the Voyage specialist models have earned the first look in my stack. The mistake I try to avoid is picking either one by default and finding out at scale, when re-embedding is expensive, that the other would have been better.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://docs.voyageai.com/docs/pricing" target="_blank" rel="noopener nofollow">Voyage AI pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.voyageai.com/docs/embeddings" target="_blank" rel="noopener nofollow">Voyage AI embeddings docs</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://platform.openai.com/docs/pricing" target="_blank" rel="noopener nofollow">OpenAI API pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://developers.openai.com/api/docs/guides/embeddings" target="_blank" rel="noopener nofollow">OpenAI embeddings guide</a></li>
 </ul>
 </div>
 </div>

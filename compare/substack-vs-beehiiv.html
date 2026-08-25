@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Substack vs Beehiiv | Compare | Samuel Ochoa</title>
-<meta name="description" content="Paid newsletters focus vs creator growth focus.">
+<meta name="description" content="My comparison of Substack and beehiiv: the 10% revenue cut vs flat plans from $43 a month, where the crossover point sits, and which fits how you plan to grow.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Substack vs Beehiiv | Compare | Samuel Ochoa">
-<meta property="og:description" content="Paid newsletters focus vs creator growth focus.">
+<meta property="og:description" content="My comparison of Substack and beehiiv: the 10% revenue cut vs flat plans from $43 a month, where the crossover point sits, and which fits how you plan to grow.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Substack vs Beehiiv | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Paid newsletters focus vs creator growth focus.">
+<meta name="twitter:description" content="My comparison of Substack and beehiiv: the 10% revenue cut vs flat plans from $43 a month, where the crossover point sits, and which fits how you plan to grow.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Substack vs Beehiiv | Compare | Samuel Ochoa","description":"Paid newsletters focus vs creator growth focus.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/substack-vs-beehiiv.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Substack vs Beehiiv | Compare | Samuel Ochoa","description":"My comparison of Substack and beehiiv: the 10% revenue cut vs flat plans from $43 a month, where the crossover point sits, and which fits how you plan to grow.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/substack-vs-beehiiv.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Substack Vs Beehiiv","item":"https://samuelochoa.com/compare/substack-vs-beehiiv"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,46 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Newsletters</span>
 <h1 class="cmp-title">Substack vs Beehiiv</h1>
-<p class="cmp-subtitle">Paid newsletters focus vs creator growth focus.</p>
+<p class="cmp-subtitle">A revenue-share platform against a flat-fee growth machine.</p>
 
-<div class="cmp-summary">Substack pioneered paid newsletters with a built-in audience. Beehiiv leans into growth tools (referrals, ads, cross-promotion).</div>
+<div class="cmp-summary">The core tradeoff is the fee model, and everything else follows from it. Substack is free to use at any list size and takes 10 percent of your paid subscription revenue, plus Stripe's processing fees. beehiiv flips that: a free Launch plan up to 2,500 subscribers, then flat plans starting at $43 a month on annual billing that take 0 percent of your paid subscription revenue. Which one costs less depends on two numbers, how large your free list gets and how much paid revenue you collect, and the answer changes as those numbers grow. I walk through the actual math below.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Substack</th><th>Beehiiv</th></tr></thead>
-<tbody><tr><th scope="row">Paid subs</th><td>Core feature</td><td>Supported</td></tr><tr><th scope="row">Growth tools</th><td>Limited</td><td>Strong</td></tr><tr><th scope="row">Discovery</th><td>Substack network</td><td>SEO + referral tools</td></tr><tr><th scope="row">Revenue share</th><td>10%</td><td>None on paid plans</td></tr></tbody>
+<tbody><tr><th scope="row">Platform fee</th><td>None</td><td>Free to 2,500 subscribers, then from $43/mo (annual billing)</td></tr><tr><th scope="row">Cut of paid subscriptions</th><td>10% plus Stripe fees</td><td>0% on paid plans, plus Stripe fees</td></tr><tr><th scope="row">Free plan ceiling</th><td>No subscriber limit</td><td>2,500 subscribers on Launch</td></tr><tr><th scope="row">Cost at scale</th><td>Still free to use; the 10% grows with revenue</td><td>Tiered by subscriber count, roughly $290-329/mo near 100,000 on Scale</td></tr><tr><th scope="row">Growth tools</th><td>Recommendations, Notes, network effects</td><td>Recommendations, referral program, Boosts</td></tr><tr><th scope="row">Ad monetization</th><td>None built in</td><td>Ad network on Scale and above</td></tr><tr><th scope="row">Remove platform branding</th><td>Limited</td><td>On Max, from $96/mo (annual billing)</td></tr><tr><th scope="row">Automations and segmentation</th><td>Basic</td><td>Email automations, surveys, polls on paid plans</td></tr><tr><th scope="row">Multiple publications</th><td>Separate publications</td><td>Up to 10 on Max</td></tr><tr><th scope="row">Payments</th><td>Stripe</td><td>Stripe</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Substack has no plans and no subscription fee. Publishing is free at any list size, and the platform takes 10 percent of paid subscription revenue. On top of that, Stripe charges its standard processing fee of 2.9 percent plus 30 cents per transaction, and a 0.5 percent billing fee on recurring payments, per Substack's own help center. On a $10 monthly subscription you keep roughly $8.40. If nobody pays you, Substack costs you nothing forever.</p>
+<p>beehiiv charges by plan and list size. Launch is free up to 2,500 subscribers with unlimited sends. Scale starts at $43 a month on annual billing, $49 monthly, at the entry subscriber tier, and steps up at thresholds like 10,000, 25,000, 50,000, and 75,000 subscribers, reaching roughly $290 to $329 a month near the 100,000 cap. Scale adds the ad network, a 0 percent take rate on paid subscriptions, automations, and three team seats. Max starts at $96 a month on annual billing and removes beehiiv branding, adds a sponsorship storefront, up to 10 publications, and unlimited seats. Enterprise is custom above 100,000 subscribers. The crossover is easy to compute: 10 percent of paid revenue passes $43 a month at about $430 a month of subscription income, so above that level beehiiv's flat fee usually wins, as long as your subscriber tier stays put.</p>
+
 <h2>When to pick Substack</h2>
-<p>Paid subscriptions, Substack's built-in discovery.</p>
+<p>Pick Substack if you are a writing-first creator who wants zero cost until money shows up. There is no bill at 500 subscribers and no bill at 200,000 free subscribers; the platform only earns when you do. For a new paid newsletter with an unproven audience, that is the correct risk allocation, and it is the reason I would start most paid-first writers there.</p>
+<p>The network is the other real asset. Substack's recommendations and Notes send actual subscribers, and for many publications the network is a meaningful share of new signups. beehiiv has a recommendation system too, but Substack's reader-facing app and cross-promotion culture are further along. If your niche already has established Substack publications that might recommend you, that distribution is hard to replicate elsewhere.</p>
+<p>The cost is the permanent 10 percent. If you grow into thousands of dollars of monthly subscription revenue, you will be paying hundreds a month for a platform others rent for a flat fee.</p>
 
 <h2>When to pick Beehiiv</h2>
-<p>Growth tools, sponsorship revenue, SEO focus.</p>
+<p>Pick beehiiv if your model is a large free list monetized with ads and sponsorships. The ad network on Scale connects you with sponsors directly, the referral program and Boosts are built for audience growth, and none of that exists natively on Substack. This is the playbook beehiiv's founders ran at Morning Brew, and the product is shaped around it.</p>
+<p>It is also the better deal for established paid newsletters. At $1,000 a month of subscription revenue, Substack's cut is $100 a month and rising with every new subscriber; beehiiv Scale at a small list size stays at $43 and takes nothing from the revenue itself. Add the operator features, automations, surveys, segmentation, and, on Max, full white labeling, and it looks less like a blog host and more like an email business platform.</p>
+<p>The costs are the subscriber-tier pricing, which charges you for list growth whether or not it earns anything, and a smaller discovery network than Substack's.</p>
+
+<h2>What most comparisons miss</h2>
+<p>A large free list is free on Substack and expensive on beehiiv. Most comparisons run the math on paid revenue only, but beehiiv's tiers price on total subscribers. Fifty thousand free subscribers with weak paid conversion can cost more in beehiiv plan fees than Substack's 10 percent would take on the same publication. Run your own numbers in both directions, not just the revenue-share direction.</p>
+<p>The effective Substack fee is more than 10 percent. Once Stripe's 2.9 percent plus 30 cents and the 0.5 percent recurring billing fee are counted, small-priced subscriptions give up 15 percent or more of gross, because the flat 30 cents hits a $5 subscription much harder than a $50 one. Annual plans soften this, since one transaction covers twelve months.</p>
+<p>Switching costs are lower than people fear, in both directions. Both platforms let you export your subscriber list, and both bill through Stripe. What you cannot export is Substack's recommendation traffic, so if the network drives a big share of your growth, treat that as the real lock-in, not the tooling.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Substack for paid newsletters in established niches. Beehiiv for newer newsletters focused on scale.</p>
+<p>I would start most paid-first writers on Substack. It costs nothing until revenue arrives, the discovery network is real, and a 10 percent fee on a small number is a small number. Once paid revenue clears roughly $500 a month, or if the plan from day one is a big free list monetized with sponsorships, beehiiv's flat pricing and 0 percent take rate win the math, and its operator tooling is stronger. The mistake I see most is choosing on brand affinity. This is genuinely a spreadsheet decision: put your expected list size and paid revenue into both fee models, and let the totals pick the platform. Both will let you leave with your list if you get it wrong.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://support.substack.com/hc/en-us/articles/360037607131-How-much-does-Substack-cost" target="_blank" rel="noopener nofollow">Substack: How much does Substack cost?</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://support.substack.com/" target="_blank" rel="noopener nofollow">Substack help center</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.beehiiv.com/pricing" target="_blank" rel="noopener nofollow">beehiiv pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://support.beehiiv.com/" target="_blank" rel="noopener nofollow">beehiiv knowledge base</a></li>
 </ul>
 </div>
 </div>

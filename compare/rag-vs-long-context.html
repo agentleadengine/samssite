@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAG vs Long-context window | Compare | Samuel Ochoa</title>
-<meta name="description" content="Fetch-relevant-context vs stuff-everything-in-context.">
+<meta name="description" content="RAG or a million-token prompt? I compare 2026 context limits, token prices, cache economics, and the context rot research, with real math.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RAG vs Long-context window | Compare | Samuel Ochoa">
-<meta property="og:description" content="Fetch-relevant-context vs stuff-everything-in-context.">
+<meta property="og:description" content="RAG or a million-token prompt? I compare 2026 context limits, token prices, cache economics, and the context rot research, with real math.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RAG vs Long-context window | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Fetch-relevant-context vs stuff-everything-in-context.">
+<meta name="twitter:description" content="RAG or a million-token prompt? I compare 2026 context limits, token prices, cache economics, and the context rot research, with real math.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RAG vs Long-context window | Compare | Samuel Ochoa","description":"Fetch-relevant-context vs stuff-everything-in-context.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/rag-vs-long-context.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RAG vs Long-context window | Compare | Samuel Ochoa","description":"RAG or a million-token prompt? I compare 2026 context limits, token prices, cache economics, and the context rot research, with real math.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/rag-vs-long-context.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Rag Vs Long Context","item":"https://samuelochoa.com/compare/rag-vs-long-context"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,45 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">AI Techniques</span>
 <h1 class="cmp-title">RAG vs Long-context window</h1>
-<p class="cmp-subtitle">Fetch-relevant-context vs stuff-everything-in-context.</p>
+<p class="cmp-subtitle">Retrieve a relevant slice, or ship the whole library with every request.</p>
 
-<div class="cmp-summary">RAG retrieves a small relevant subset. Long context (1M tokens) can fit entire documents. Different tradeoffs on cost, latency, and quality.</div>
+<div class="cmp-summary">RAG searches your corpus and puts only the relevant chunks in the prompt. Long-context models let you skip retrieval and paste in entire documents: Claude models since 4.6 take 1M tokens at standard per-token rates, Gemini Pro models take large prompts at a higher price tier past 200K tokens, and OpenAI lists a 272K window for GPT-5.5. Window size stopped being the constraint. Cost per query and accuracy at depth are the real tradeoffs now, and the research on both is worth reading before you pick.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>RAG</th><th>Long-context window</th></tr></thead>
-<tbody><tr><th scope="row">Cost per query</th><td>Low</td><td>High (full context billed)</td></tr><tr><th scope="row">Latency</th><td>Lower</td><td>Higher</td></tr><tr><th scope="row">Quality</th><td>Depends on retrieval</td><td>Can degrade mid-context</td></tr><tr><th scope="row">Freshness</th><td>Easy to refresh</td><td>Same</td></tr></tbody>
+<tbody><tr><th scope="row">How it works</th><td>Search first, prompt with the top matches</td><td>Put whole documents in every prompt</td></tr><tr><th scope="row">Practical limit</th><td>Corpus size, effectively unbounded</td><td>The window: 1M tokens on current Claude models, 272K on GPT-5.5</td></tr><tr><th scope="row">Cost per query</th><td>Input tokens for a few retrieved chunks</td><td>Input tokens for everything you send, every time</td></tr><tr><th scope="row">Long-prompt surcharge</th><td>Not applicable</td><td>Gemini bills input at 2x past 200K tokens; Claude 1M is standard rate</td></tr><tr><th scope="row">Latency</th><td>Retrieval plus a short prefill</td><td>Long prefill; cached repeats are faster</td></tr><tr><th scope="row">Accuracy risk</th><td>The retriever misses the right passage</td><td>Context rot: reliability drops as input grows</td></tr><tr><th scope="row">Freshness</th><td>Reindex the changed documents</td><td>Resend the changed documents, cache re-warms</td></tr><tr><th scope="row">Engineering effort</th><td>Chunking, embeddings, index, retrieval evals</td><td>Almost none to start</td></tr><tr><th scope="row">Cost control</th><td>Cheap by construction</td><td>Depends on prompt caching discipline</td></tr><tr><th scope="row">Best for</th><td>Big or growing corpora, high query volume</td><td>One document set, one deep pass, fast prototypes</td></tr></tbody>
 </table></div>
 
+<h2>Cost drivers</h2>
+<p>Prices below come from the vendors' own pricing pages as of August 2026. Anthropic bills its 1M-token context window at standard per-token rates on Claude 4.6 and later models, so a 900K-token request costs the same per token as a 9K one: $2 per million input tokens on Sonnet 5, $5 on Opus 5. Google tiers Gemini by prompt size: Gemini 2.5 Pro input is $1.25 per million tokens up to 200K and $2.50 beyond it, with output at $10 and $15 respectively, and the newer Gemini 3.1 Pro preview doubles those input rates. OpenAI lists a 272K window for GPT-5.5, and its GPT-5.6 family is priced in separate short-context and long-context tiers.</p>
+<p>Now the math that matters. Suppose your knowledge base is 500K tokens and you answer questions against it on Sonnet 5. Stuffing the whole thing into each request costs about $1.00 per query in input tokens alone. A RAG pipeline that retrieves 5K tokens of relevant context costs about a penny. That is a 100x gap, and it compounds with every query.</p>
+<p>Prompt caching narrows it. Anthropic bills cache reads at 0.1x the input price, so that cached 500K-token corpus drops to roughly $0.10 per query, and OpenAI lists cached input at about 10 percent of the standard rate. But caches come with terms: Claude cache writes cost 1.25x the base rate for a 5-minute window or 2x for an hour, and Gemini charges $4.50 per million tokens per hour just to keep a cache warm. Idle gaps re-bill the full prompt, and any change to the documents invalidates the cache. Caching makes long context viable for bursts of questions against one document set. It does not make it free.</p>
+
 <h2>When to pick RAG</h2>
-<p>Large corpora, recurring queries, cost sensitivity.</p>
+<p>Pick RAG when the corpus is bigger than any window, when it changes often, or when query volume is high enough that per-request token cost dominates. Retrieval also gives you citations and per-user access control, since you decide what enters the prompt on each request. Those two properties alone settle the question for most internal knowledge tools.</p>
+<p>RAG is also the sober choice when accuracy at depth matters. A retriever that surfaces the right 5K tokens puts the evidence next to the question. The model does not have to find a needle in 500K tokens of hay, which the research below suggests models are worse at than their benchmark scores imply.</p>
 
 <h2>When to pick Long-context window</h2>
-<p>One-off analysis of a single long document.</p>
+<p>Pick long context for one-shot deep work on a bounded document set: reviewing a contract, auditing a codebase, comparing a handful of long reports. Retrieval would fragment exactly the cross-references you care about, and the whole point is that the model sees everything at once.</p>
+<p>It is also the right way to start. If your corpus fits in the window, skip the vector database, paste the documents, and find out whether the product idea works at all. With caching, a prototype serving a small team against one document set can run surprisingly cheap. Add retrieval when volume, corpus growth, or the bill tells you to, and by then you will know exactly what the retriever needs to be good at.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Context rot is real and measured. Chroma's July 2025 technical report evaluated 18 models, including GPT-4.1, Claude 4, and Gemini 2.5, and found that reliability degrades as input length grows, even on tasks as simple as retrieval and text copying. The decline is continuous rather than a cliff, and distractor text that resembles the answer makes it worse. The earlier Lost in the Middle work by Liu et al. found the same shape: models use the start and end of a long context better than the middle. A million-token window is not a million tokens of uniform attention.</p>
+<p>Second, the pricing pages quietly agree. Google charges double for input past 200K tokens, and OpenAI prices its newest models higher on long context than short. When vendors tier prices by prompt length, treating the full window as your default rather than a special case gets expensive fast. Anthropic is currently the exception, billing 1M-token requests at standard rates.</p>
+<p>Third, this is a spectrum, not a fork. The pattern that wins in production is a hybrid: retrieval selects the candidate documents, and the big window lets you be generous about how much of each one you include. Coarse retrieval plus long context beats both extremes, because it spends tokens on recall where the retriever is weakest.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>For production systems, RAG. Long-context is for specific use cases, not a general replacement.</p>
+<p>For a production system answering many queries against a large or changing corpus, I build RAG, and I use generous context per query because windows are big now. For bounded, deep, one-off analysis, I paste the documents and let the model read everything. The 100x cost gap and the context rot research both point the same way at scale. Long context changed how much retrieval you need. It did not replace it.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Report</span><a href="https://research.trychroma.com/context-rot" target="_blank" rel="noopener nofollow">Chroma, Context Rot (2025)</a></li>
+<li><span class="resource-meta">Paper</span><a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener nofollow">Liu et al., Lost in the Middle</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener nofollow">Anthropic model pricing</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener nofollow">Gemini API pricing</a></li>
 </ul>
 </div>
 </div>

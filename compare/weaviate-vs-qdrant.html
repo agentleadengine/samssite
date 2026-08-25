@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weaviate vs Qdrant | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two strong open-source vector DBs with different design tradeoffs.">
+<meta name="description" content="Weaviate vs Qdrant in 2026: verified cloud pricing, licenses, hybrid search, quantization, and which vector database fits your retrieval stack.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Weaviate vs Qdrant | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two strong open-source vector DBs with different design tradeoffs.">
+<meta property="og:description" content="Weaviate vs Qdrant in 2026: verified cloud pricing, licenses, hybrid search, quantization, and which vector database fits your retrieval stack.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Weaviate vs Qdrant | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two strong open-source vector DBs with different design tradeoffs.">
+<meta name="twitter:description" content="Weaviate vs Qdrant in 2026: verified cloud pricing, licenses, hybrid search, quantization, and which vector database fits your retrieval stack.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Weaviate vs Qdrant | Compare | Samuel Ochoa","description":"Two strong open-source vector DBs with different design tradeoffs.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/weaviate-vs-qdrant.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Weaviate vs Qdrant | Compare | Samuel Ochoa","description":"Weaviate vs Qdrant in 2026: verified cloud pricing, licenses, hybrid search, quantization, and which vector database fits your retrieval stack.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/weaviate-vs-qdrant.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Weaviate Vs Qdrant","item":"https://samuelochoa.com/compare/weaviate-vs-qdrant"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,58 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Vector DBs</span>
 <h1 class="cmp-title">Weaviate vs Qdrant</h1>
-<p class="cmp-subtitle">Two strong open-source vector DBs with different design tradeoffs.</p>
+<p class="cmp-subtitle">Two production-grade open source vector databases, compared on price, search features, and design philosophy.</p>
 
-<div class="cmp-summary">Both are production-ready open source. Weaviate leans toward rich features and hybrid search; Qdrant leans toward raw performance and filtering.</div>
+<div class="cmp-summary">Both are open source vector databases you can self-host for free or run as a managed cloud. Weaviate (written in Go, BSD-3-Clause license) is the batteries-included option: native BM25 hybrid search, built-in embedding integrations, and a growing platform around retrieval. Qdrant (written in Rust, Apache 2.0 license) is the performance primitive: filterable HNSW, aggressive quantization, sparse and multivector support, and you bring your own embedding pipeline. Managed pricing differs in shape too: Weaviate Cloud starts free and moves to Flex at $45 per month, while Qdrant Cloud keeps a permanent free 1 GB cluster and then bills on actual resource usage.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Weaviate</th><th>Qdrant</th></tr></thead>
-<tbody><tr><th scope="row">Language</th><td>Go</td><td>Rust</td></tr><tr><th scope="row">Hybrid search</th><td>Native BM25</td><td>Via sparse vectors</td></tr><tr><th scope="row">Filtering</th><td>Strong</td><td>Excellent performance</td></tr><tr><th scope="row">Modules</th><td>Many built-in</td><td>Lean core</td></tr></tbody>
+<tbody>
+<tr><th scope="row">Written in</th><td>Go</td><td>Rust</td></tr>
+<tr><th scope="row">License</th><td>BSD-3-Clause</td><td>Apache 2.0</td></tr>
+<tr><th scope="row">GitHub stars (Aug 2026)</th><td>About 17,000</td><td>About 34,000</td></tr>
+<tr><th scope="row">Hybrid search</th><td>Native BM25 plus vector fusion</td><td>Sparse vectors (SPLADE, miniCOIL) alongside dense</td></tr>
+<tr><th scope="row">Embeddings</th><td>Built-in vectorizer modules plus a hosted embedding service from $0.025 per 1M tokens</td><td>Bring your own; FastEmbed library and cloud inference available</td></tr>
+<tr><th scope="row">Quantization</th><td>Product, binary, and scalar</td><td>Scalar, product, and binary</td></tr>
+<tr><th scope="row">Filtering</th><td>Integrated with object storage, strong for complex queries</td><td>Filterable HNSW index, built for filtered search at speed</td></tr>
+<tr><th scope="row">APIs</th><td>REST, GraphQL, gRPC</td><td>REST, gRPC</td></tr>
+<tr><th scope="row">Managed free tier</th><td>Free sandbox: 100k objects, 1 GB memory, 10 GB disk</td><td>Free 1 GB cluster (0.5 vCPU, 4 GB disk), no time limit</td></tr>
+<tr><th scope="row">Managed paid entry</th><td>Flex from $45 per month; Premium from $400 per month</td><td>Usage-based on vCPU, RAM, and storage; Premium tier has a minimum spend</td></tr>
+</tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both databases are free to self-host under permissive licenses, and that is the right starting point for most projects: run it in Docker, build against it, and decide about managed hosting once you know your workload.</p>
+<p>Weaviate Cloud has three serverless tiers. A free sandbox covers 100,000 objects with 1 GB of memory and 10 GB of disk, one cluster per user. Flex starts at $45 per month, pay as you go, with replication and a 99.5 percent uptime target. Premium starts at $400 per month on a prepaid contract with up to 99.95 percent uptime and the option of dedicated deployment. The real cost driver is stored vector dimensions, and the rate varies by index type, compression, and region, so run your own numbers in their console before committing. Weaviate also sells hosted embeddings starting at $0.025 per million tokens.</p>
+<p>Qdrant Cloud starts with a free single-node cluster (0.5 vCPU, 1 GB RAM, 4 GB disk) that has no time limit, which is genuinely useful for prototypes. Paid clusters bill monthly on actual resource usage: vCPU, RAM, storage, and backups. There is no published per-vector rate; you size a cluster in their calculator. A Premium tier with SSO and private networking carries a minimum spend, and hybrid and private cloud deployments are quote-based.</p>
+
 <h2>When to pick Weaviate</h2>
-<p>You want batteries-included (hybrid search, embeddings modules).</p>
+<p>Weaviate is the faster path to a working retrieval pipeline. Its vectorizer modules mean you point it at an embedding provider and it handles vectorizing on ingest and at query time, so you skip building and maintaining that plumbing yourself. Hybrid search is native: BM25 keyword scoring fused with vector similarity in one query, which is what most real-world search actually needs.</p>
+<p>It also suits teams whose data is more than a pile of vectors. The object storage model, GraphQL API, and multi-tenancy support make it comfortable as the single system behind a search feature that mixes structured fields with semantic similarity. If your team is small and shipping its first retrieval feature, fewer moving parts wins.</p>
+<p>The cost is opinionation. You adopt Weaviate's schema, its module system, and increasingly its platform ambitions (hosted embeddings, agents). That is fine if you want a platform. It chafes if you only wanted an index.</p>
 
 <h2>When to pick Qdrant</h2>
-<p>You want max speed and tight filtering, will bring your own embedding pipeline.</p>
+<p>Qdrant is the pick when you control the embedding pipeline and want the storage and search layer to be lean and fast. It is written in Rust, and its filterable HNSW index was designed around the hard problem of filtered vector search, where naive pre- or post-filtering wrecks either recall or speed. If your queries always carry filters (tenant, date range, category), that design focus shows.</p>
+<p>It is also the stronger cost-control story. Scalar, product, and binary quantization plus on-disk storage let you trade precision for memory in measured steps, and memory is what actually drives vector database bills. The permanent free 1 GB cluster is the most generous managed entry point of the two.</p>
+<p>Modern retrieval stacks lean on it comfortably too: sparse vectors for SPLADE and miniCOIL style models and multivector support give you room to move past plain dense retrieval without switching databases.</p>
+
+<h2>What most comparisons miss</h2>
+<p>First, benchmark numbers in this category mostly come from the vendors themselves, and the gap between engines shrinks a lot once each is tuned. Your payload sizes, filter patterns, and hardware matter more than the headline chart. Treat any speed claim, including the ones in this page's framing, as a hypothesis to test on your own data.</p>
+<p>Second, the bill is memory, not the plan name. Vector count times dimensions times replicas decides what you pay, and quantization and compression choices move that number several fold in either direction. A team that learns quantization on either engine will usually end up spending less than a team that just picked the cheaper sticker price.</p>
+<p>Third, these projects are diverging in philosophy. Weaviate is building toward a retrieval platform with hosted embeddings and agent tooling; Qdrant keeps shipping a focused engine. The question to ask is not which is better but whether you want to buy a platform or compose one. Migration later is real work either way, since the query APIs are different shapes.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Weaviate when you want an opinionated system. Qdrant when you want a performance primitive you build around.</p>
+<p>Both are safe choices; this is not a comparison with a trap door. I default to Qdrant when I control the embedding pipeline and care about cost per query at scale, and its permanent free cluster makes it my usual prototype choice. I point people to Weaviate when the team wants hybrid search and embedding handled inside the database, because fewer moving parts is worth real money to a small team. If you cannot decide, self-host each in Docker for an afternoon against your real data. The developer experience difference will make the call for you faster than any comparison page.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://weaviate.io/pricing" target="_blank" rel="noopener nofollow">Weaviate - Pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://weaviate.io/developers/weaviate" target="_blank" rel="noopener nofollow">Weaviate - Documentation</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://qdrant.tech/pricing/" target="_blank" rel="noopener nofollow">Qdrant - Pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://qdrant.tech/documentation/" target="_blank" rel="noopener nofollow">Qdrant - Documentation</a></li>
 </ul>
 </div>
 </div>

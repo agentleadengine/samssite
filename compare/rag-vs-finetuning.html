@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAG vs Fine-tuning | Compare | Samuel Ochoa</title>
-<meta name="description" content="Retrieval-augmented generation vs fine-tuning an LLM.">
+<meta name="description" content="RAG or fine-tuning? I compare what each one changes, real cost drivers, update cycles, and failure modes, and why retrieval is my default for facts.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RAG vs Fine-tuning | Compare | Samuel Ochoa">
-<meta property="og:description" content="Retrieval-augmented generation vs fine-tuning an LLM.">
+<meta property="og:description" content="RAG or fine-tuning? I compare what each one changes, real cost drivers, update cycles, and failure modes, and why retrieval is my default for facts.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RAG vs Fine-tuning | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Retrieval-augmented generation vs fine-tuning an LLM.">
+<meta name="twitter:description" content="RAG or fine-tuning? I compare what each one changes, real cost drivers, update cycles, and failure modes, and why retrieval is my default for facts.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RAG vs Fine-tuning | Compare | Samuel Ochoa","description":"Retrieval-augmented generation vs fine-tuning an LLM.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/rag-vs-finetuning.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RAG vs Fine-tuning | Compare | Samuel Ochoa","description":"RAG or fine-tuning? I compare what each one changes, real cost drivers, update cycles, and failure modes, and why retrieval is my default for facts.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/rag-vs-finetuning.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Rag Vs Finetuning","item":"https://samuelochoa.com/compare/rag-vs-finetuning"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,45 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">AI Techniques</span>
 <h1 class="cmp-title">RAG vs Fine-tuning</h1>
-<p class="cmp-subtitle">Retrieval-augmented generation vs fine-tuning an LLM.</p>
+<p class="cmp-subtitle">Two different levers: what the model can look up versus how the model behaves.</p>
 
-<div class="cmp-summary">RAG gives models access to new facts. Fine-tuning changes model behavior/style/format. They solve different problems.</div>
+<div class="cmp-summary">RAG (retrieval-augmented generation) fetches relevant documents at query time and puts them in the prompt, so the model can answer from facts it was never trained on. Fine-tuning adjusts the model weights on your examples, which changes style, format, and task behavior, but it is a poor way to teach a model new facts. These are not two answers to the same question. Most systems I build need RAG on day one, fine-tuning rarely, and occasionally both. The market moved in 2026 too: OpenAI is winding down its self-serve fine-tuning API, which says a lot about where hosted providers think this tradeoff landed.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>RAG</th><th>Fine-tuning</th></tr></thead>
-<tbody><tr><th scope="row">Changes</th><td>What facts the model can access</td><td>How the model behaves</td></tr><tr><th scope="row">Cost</th><td>Low (infrastructure)</td><td>High (training)</td></tr><tr><th scope="row">Update frequency</th><td>Anytime (reindex)</td><td>Rare (retrain)</td></tr><tr><th scope="row">Use case</th><td>Facts, docs, grounding</td><td>Style, format, specialized tasks</td></tr></tbody>
+<tbody><tr><th scope="row">What it changes</th><td>What the model can look up at answer time</td><td>The model weights, so its default behavior</td></tr><tr><th scope="row">Good at</th><td>Grounding answers in private, current, or changing facts</td><td>Consistent format, tone, and narrow task behavior</td></tr><tr><th scope="row">Weak at</th><td>Fixing tone or output structure</td><td>Reliably adding or updating facts</td></tr><tr><th scope="row">Updating knowledge</th><td>Reindex the documents, minutes</td><td>Run a new training job, re-evaluate, redeploy</td></tr><tr><th scope="row">Main cost drivers</th><td>Embeddings, a vector store, extra input tokens per query</td><td>Training runs, evaluation sets, hosting or price premiums</td></tr><tr><th scope="row">Data you need</th><td>Your documents, roughly as they are</td><td>Hundreds to thousands of curated example pairs</td></tr><tr><th scope="row">Attribution</th><td>Can cite the retrieved source</td><td>None, knowledge is baked into the weights</td></tr><tr><th scope="row">Typical failure mode</th><td>Retrieval pulls the wrong context</td><td>Overfitting, regressions on general tasks</td></tr><tr><th scope="row">Hosted support in 2026</th><td>Universal</td><td>Shrinking; OpenAI is winding down self-serve fine-tuning</td></tr><tr><th scope="row">Do they combine?</th><td>Yes, retrieval supplies the facts</td><td>Yes, tuning shapes how the model uses them</td></tr></tbody>
 </table></div>
 
+<h2>Cost drivers</h2>
+<p>RAG has mostly boring infrastructure costs. Embedding a corpus is a one-time job that usually costs less than lunch, and a small vector database is cheap or free to run. The real recurring cost is tokens: every query carries retrieved context as input tokens. Prompt caching softens this a lot. Anthropic bills cache reads at 0.1x the base input price, and OpenAI lists cached input at about 10 percent of the standard rate, so a stable system prompt plus stable context gets close to 90 percent off on repeat requests.</p>
+<p>Fine-tuning costs show up in different places. Before its wind-down announcement, OpenAI listed supervised fine-tuning for GPT-4.1 at $25 per million training tokens and reinforcement fine-tuning for o4-mini at $100 per training hour, with fine-tuned inference priced above the base model. On open-weight models the training itself, usually LoRA on a rented GPU, is often cheap. The ongoing costs are serving the custom model and, above all, evaluation. Every base model upgrade invites you to retrain and retest, and that engineering time is the line item nobody budgets for.</p>
+<p>The asymmetry that matters is the cost of change. When facts change, RAG reindexes in minutes. A fine-tuned model has to be retrained, re-evaluated, and redeployed, so stale knowledge is its default state.</p>
+
 <h2>When to pick RAG</h2>
-<p>You need the model to answer from specific (changing) facts.</p>
+<p>Pick RAG when the job is answering from facts: internal docs, product data, policies, tickets, anything private or changing. Retrieval gives you three things fine-tuning cannot: fresh knowledge without retraining, citations you can show a user, and per-query access control, since you can retrieve only what the person asking is allowed to see.</p>
+<p>It is also the cheaper experiment. You can stand up a useful RAG prototype in a day with an embedding model and a vector index, and the failure modes are inspectable. When an answer is wrong, you can look at what was retrieved and fix the chunking, the index, or the query. When a fine-tuned model is wrong, your main lever is more data and another training run.</p>
 
 <h2>When to pick Fine-tuning</h2>
-<p>You need stable output format/style the model can't get via prompting.</p>
+<p>Pick fine-tuning when the problem is behavior, not knowledge: a strict output format the model keeps drifting from, a house writing style, a narrow classification task, or tool-use patterns you want to make reflexive. Fine-tuning can also make a small, cheap model perform like a bigger one on a single narrow task, which matters at high volume where per-token cost dominates.</p>
+<p>Be honest about the prerequisites. You need hundreds to thousands of good examples, an evaluation set you trust, and the willingness to repeat the loop whenever the base model changes. In 2026 this mostly points at open-weight models served through providers that host LoRA adapters, since OpenAI is retiring self-serve fine-tuning and its current flagship models never offered it.</p>
+
+<h2>What most comparisons miss</h2>
+<p>First, this is not actually a versus. The two techniques move different levers, and the strongest production systems I have seen use retrieval for facts and prompting, or a light fine-tune, for behavior. The moment someone frames it as either-or, they are usually about to fine-tune facts into a model, which fails slowly and expensively.</p>
+<p>Second, the vendor signal from 2026 is loud. OpenAI told developers on May 7, 2026 that self-serve fine-tuning is winding down: new organizations were cut off immediately, and no customer can create new fine-tuning jobs after January 6, 2027. Its stated reason was that newer base models follow instructions and formats well enough to make most fine-tuning unnecessary, and its GPT-5 flagship models never supported fine-tuning at all. Whatever you think of that reasoning, betting a product on hosted fine-tuning now carries platform risk that RAG does not.</p>
+<p>Third, a fine-tuned model still needs retrieval. Tuning does not un-freeze the model in time. If your fine-tuned support bot needs to know this week's pricing, you are back to putting documents in the prompt anyway.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Start with RAG. Fine-tune only when RAG isn't enough and the behavior you need is stable.</p>
+<p>Start with a strong prompt and RAG. That combination covers most business use cases I get hired for, updates in minutes, and produces answers you can trace to a source. Reach for fine-tuning only when the behavior you need is stable, prompting has demonstrably failed, and you have the examples and evaluation discipline to maintain it, which today usually means an open-weight model rather than a hosted API. And treat them as layers, not rivals: retrieval for what the model knows, tuning for how it acts.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Paper</span><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener nofollow">Lewis et al., Retrieval-Augmented Generation (2020)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener nofollow">OpenAI API deprecations (fine-tuning wind-down)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" rel="noopener nofollow">Anthropic, Contextual Retrieval</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener nofollow">OpenAI API pricing (fine-tuning rates)</a></li>
 </ul>
 </div>
 </div>

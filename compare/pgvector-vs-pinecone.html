@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>pgvector vs Pinecone | Compare | Samuel Ochoa</title>
-<meta name="description" content="Postgres extension vs dedicated vector DB.">
+<meta name="description" content="pgvector vs Pinecone in 2026: real costs, index and dimension limits, and scale tradeoffs. When Postgres is enough and when a managed vector DB earns its bill.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pgvector vs Pinecone | Compare | Samuel Ochoa">
-<meta property="og:description" content="Postgres extension vs dedicated vector DB.">
+<meta property="og:description" content="pgvector vs Pinecone in 2026: real costs, index and dimension limits, and scale tradeoffs. When Postgres is enough and when a managed vector DB earns its bill.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="pgvector vs Pinecone | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Postgres extension vs dedicated vector DB.">
+<meta name="twitter:description" content="pgvector vs Pinecone in 2026: real costs, index and dimension limits, and scale tradeoffs. When Postgres is enough and when a managed vector DB earns its bill.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"pgvector vs Pinecone | Compare | Samuel Ochoa","description":"Postgres extension vs dedicated vector DB.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pgvector-vs-pinecone.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"pgvector vs Pinecone | Compare | Samuel Ochoa","description":"pgvector vs Pinecone in 2026: real costs, index and dimension limits, and scale tradeoffs. When Postgres is enough and when a managed vector DB earns its bill.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pgvector-vs-pinecone.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Pgvector Vs Pinecone","item":"https://samuelochoa.com/compare/pgvector-vs-pinecone"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,46 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Vector DBs</span>
 <h1 class="cmp-title">pgvector vs Pinecone</h1>
-<p class="cmp-subtitle">Postgres extension vs dedicated vector DB.</p>
+<p class="cmp-subtitle">A free Postgres extension vs a managed vector database. Cost shape, dimension limits, and who owns the operations.</p>
 
-<div class="cmp-summary">pgvector is free and integrates with your existing Postgres. Pinecone is purpose-built for vector search at scale. Choice depends on scale and simplicity priorities.</div>
+<div class="cmp-summary">pgvector adds vector search to the Postgres you already run, so embeddings live next to your relational data and cost only what your database costs. Pinecone is a managed, serverless vector database that scales elastically and bills by usage. The real decision axis is not scale, it is operations and data gravity: whether you want to own index tuning and capacity yourself, and whether keeping vectors joinable with your business data in SQL is worth more to you than elastic managed infrastructure.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>pgvector</th><th>Pinecone</th></tr></thead>
-<tbody><tr><th scope="row">Cost</th><td>Marginal (existing DB)</td><td>Usage-based</td></tr><tr><th scope="row">Scale</th><td>Good to 1-10M vectors</td><td>Billions</td></tr><tr><th scope="row">Setup</th><td>SQL, familiar</td><td>New API</td></tr><tr><th scope="row">Features</th><td>Basic HNSW</td><td>Rich (filtering, quantization)</td></tr></tbody>
+<tbody><tr><th scope="row">What it is</th><td>Open-source Postgres extension (v0.8.x)</td><td>Managed serverless vector database</td></tr><tr><th scope="row">Cost model</th><td>Free extension; you pay for Postgres</td><td>Usage-based: reads, writes, storage</td></tr><tr><th scope="row">Entry cost</th><td>$0 self-hosted; managed Postgres from about $25/mo</td><td>Free Starter tier; $20/mo Builder; $50/mo minimum Standard</td></tr><tr><th scope="row">Index types</th><td>HNSW and IVFFlat, tuned by you</td><td>Managed serverless indexes, tuned for you</td></tr><tr><th scope="row">Dimension limits</th><td>vector type indexes to 2,000 dims; halfvec to 4,000</td><td>Handles common embedding sizes, including 3072, without a special type</td></tr><tr><th scope="row">Filtering and joins</th><td>Full SQL: joins, transactions, exact filters</td><td>Metadata filtering within namespaces</td></tr><tr><th scope="row">Scale sweet spot</th><td>Up to a few million to tens of millions of vectors per instance, RAM permitting</td><td>Built for very large and elastic workloads</td></tr><tr><th scope="row">Ops burden</th><td>Yours: index builds, memory, tuning, vacuum</td><td>Pinecone's: capacity and tuning are managed</td></tr><tr><th scope="row">Reliability path</th><td>Whatever your Postgres setup provides</td><td>99.95% uptime SLA on Enterprise</td></tr><tr><th scope="row">Where it runs</th><td>Anywhere Postgres runs: RDS, Supabase, Neon, Cloud SQL, your laptop</td><td>Pinecone's cloud (AWS, GCP, Azure regions)</td></tr></tbody>
 </table></div>
 
+<h2>Cost drivers</h2>
+<p>pgvector itself is free open source under the PostgreSQL license. Your cost is the database it runs in, and the driver is RAM, because an HNSW index performs best when it fits in memory. A managed Postgres like Supabase Pro starts at $25 per month, entry-level RDS instances land in a similar range, and self-hosting costs whatever your server does. The important property is the shape: cost grows in steps when you size up the instance, not per query.</p>
+<p>Pinecone bills the opposite way. The Starter tier is free with 2GB of storage and monthly read and write unit allowances, Builder is a flat $20 per month, and Standard starts at a $50 monthly minimum and then meters usage: storage at $0.33 per GB per month, writes at $4 to $4.50 per million write units, and reads at $16 to $18 per million read units depending on cloud region. Enterprise starts at a $500 monthly minimum with higher unit rates and a 99.95 percent uptime SLA.</p>
+<p>That difference in shape matters more than the sticker prices. Steady moderate traffic favors pgvector's fixed instance. Spiky or fast-growing query volume favors Pinecone's elasticity, but it also means a traffic spike shows up directly on the bill, so estimate your read units before committing.</p>
+
 <h2>When to pick pgvector</h2>
-<p>You already run Postgres, under 10M vectors, want simplicity.</p>
+<p>Pick pgvector when you already run Postgres and your vectors need to live near your business data. Retrieval in real applications is rarely pure similarity search: it is similarity plus tenant scoping, permissions, date ranges, and joins against customers or documents. In SQL that is one query with transactional guarantees. In a separate vector store it is metadata syncing and glue code you now maintain.</p>
+<p>It also keeps the stack boringly simple. One database, one backup story, one connection string, and it works identically on a laptop and in production. For the RAG systems I build for small businesses, corpus sizes are in the thousands to low millions of vectors, and pgvector handles that comfortably on modest hardware.</p>
+<p>Two caveats from experience. First, the standard vector type can only be indexed up to 2,000 dimensions, so 3072-dimension embeddings like OpenAI's text-embedding-3-large need the halfvec type or a shortened dimension setting. Second, you own the tuning: HNSW build memory, ef_search, and the iterative index scans added in 0.8.0 that fix recall on heavily filtered queries. None of it is hard, but it is yours.</p>
 
 <h2>When to pick Pinecone</h2>
-<p>Serious scale, want purpose-built features, accept managed cost.</p>
+<p>Pick Pinecone when the index outgrows what one Postgres box comfortably holds, when traffic is unpredictable, or when nobody on the team wants to own database tuning. Serverless means capacity, index management, and recall tuning are Pinecone's problem, and namespaces give you clean multi-tenant isolation without designing it yourself.</p>
+<p>The current pricing tiers removed the old objection that Pinecone was expensive to start on. A free tier with 2GB of storage and a $20 Builder plan cover small production apps, which was not true a couple of years ago, and the Enterprise tier with its uptime SLA gives you a compliance and reliability path that a self-managed extension cannot promise.</p>
+<p>The caveat is cost predictability at scale. Reads at $16 to $18 per million units are where bills climb, so run your projected query volume through their pricing before you commit, not after the first surprising invoice.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most pgvector vs Pinecone posts frame this as a performance shootout, but benchmarks age badly here. pgvector's 0.8.x releases fixed the filtered-query recall problem that older benchmark posts lean on, so a 2023 comparison tells you little about the current extension. The durable difference is architectural: whether retrieval needs SQL joins against live business data, and who carries the operational pager.</p>
+<p>The dimension limit is the other thing that rarely gets mentioned and bites in week one: pgvector's standard vector type indexes up to 2,000 dimensions, which quietly rules out 3072-dimension embeddings unless you use halfvec or shorten the embedding. Pinecone does not make you think about this. And on the other side, Pinecone's $50 Standard minimum is billed even in a quiet month, while nobody bills you for an idle Postgres extension you already had.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>pgvector until you outgrow it. Most teams never need to migrate.</p>
+<p>Start with pgvector if you already run Postgres. Most teams I work with never outgrow it, and the ones that do know exactly why: the index no longer fits in RAM at a sane instance price, or nobody wants to keep tuning it. That is the right moment to move to Pinecone, with real usage numbers in hand so the read-unit bill is a calculation instead of a surprise. Starting on Pinecone from day one makes sense mainly when you know the scale is coming or you have no Postgres and no appetite for running one. What I would avoid is adopting a second database for a corpus of fifty thousand vectors.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener nofollow">pgvector on GitHub</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.pinecone.io/pricing/" target="_blank" rel="noopener nofollow">Pinecone pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.pinecone.io/" target="_blank" rel="noopener nofollow">Pinecone docs</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://supabase.com/pricing" target="_blank" rel="noopener nofollow">Supabase pricing (managed Postgres example)</a></li>
 </ul>
 </div>
 </div>

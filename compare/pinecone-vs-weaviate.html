@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pinecone vs Weaviate | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two of the most popular vector databases. Different posture on managed vs open-source.">
+<meta name="description" content="I compare Pinecone and Weaviate on 2026 pricing, hybrid search, and hosting. Fully managed serverless vs open source with a serverless cloud of its own.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pinecone vs Weaviate | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two of the most popular vector databases. Different posture on managed vs open-source.">
+<meta property="og:description" content="I compare Pinecone and Weaviate on 2026 pricing, hybrid search, and hosting. Fully managed serverless vs open source with a serverless cloud of its own.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pinecone vs Weaviate | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two of the most popular vector databases. Different posture on managed vs open-source.">
+<meta name="twitter:description" content="I compare Pinecone and Weaviate on 2026 pricing, hybrid search, and hosting. Fully managed serverless vs open source with a serverless cloud of its own.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pinecone vs Weaviate | Compare | Samuel Ochoa","description":"Two of the most popular vector databases. Different posture on managed vs open-source.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pinecone-vs-weaviate.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pinecone vs Weaviate | Compare | Samuel Ochoa","description":"I compare Pinecone and Weaviate on 2026 pricing, hybrid search, and hosting. Fully managed serverless vs open source with a serverless cloud of its own.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pinecone-vs-weaviate.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Pinecone Vs Weaviate","item":"https://samuelochoa.com/compare/pinecone-vs-weaviate"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,45 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Vector DBs</span>
 <h1 class="cmp-title">Pinecone vs Weaviate</h1>
-<p class="cmp-subtitle">Two of the most popular vector databases. Different posture on managed vs open-source.</p>
+<p class="cmp-subtitle">Both are serverless now. The split is open source versus proprietary, and how each one bills you.</p>
 
-<div class="cmp-summary">Pinecone is fully managed, serverless pricing, easiest to start. Weaviate is open-source with managed option, stronger hybrid search, richer filtering.</div>
+<div class="cmp-summary">Pinecone and Weaviate used to be easy to tell apart: one managed, one self-hosted. In 2026 both sell serverless clouds, so the real differences are elsewhere. Pinecone is proprietary and bills you per read unit, write unit, and GB stored. Weaviate is open source and its serverless cloud bills mostly by stored vector dimensions, which makes your embedding model choice a direct cost lever. Hybrid search and self-hosting still favor Weaviate; simplicity still favors Pinecone.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Pinecone</th><th>Weaviate</th></tr></thead>
-<tbody><tr><th scope="row">Hosted</th><td>Managed only</td><td>Self-hosted or managed</td></tr><tr><th scope="row">Pricing</th><td>Usage-based (serverless)</td><td>Cheaper self-hosted</td></tr><tr><th scope="row">Hybrid search</th><td>Sparse + dense</td><td>Native BM25 + dense</td></tr><tr><th scope="row">Filtering</th><td>Solid</td><td>Excellent</td></tr><tr><th scope="row">Scaling</th><td>Easy</td><td>Requires ops knowledge</td></tr></tbody>
+<tbody><tr><th scope="row">Hosting</th><td>Managed cloud only</td><td>Self-hosted or Weaviate Cloud (serverless or dedicated)</td></tr><tr><th scope="row">Open source</th><td>No, proprietary</td><td>Yes, the core database is open source</td></tr><tr><th scope="row">Free tier</th><td>2 GB storage, 2M write units, 1M read units per month</td><td>Free sandbox: 100k objects, 1 GB memory, 10 GB disk</td></tr><tr><th scope="row">Entry price</th><td>$20/mo flat (Builder); Standard from a $50/mo minimum</td><td>Flex serverless from $45/mo, pay as you go</td></tr><tr><th scope="row">Billing model</th><td>Read units, write units, GB stored</td><td>Stored vector dimensions (from $0.00465 per million) plus storage from $0.12/GiB</td></tr><tr><th scope="row">Hybrid search</th><td>Dense, sparse, and full-text indexes</td><td>Native BM25 plus vector fusion in a single query</td></tr><tr><th scope="row">Embeddings</th><td>Hosted embedding and reranking models built in</td><td>Vectorizer modules that call OpenAI, Cohere, and others, plus hosted embeddings in the cloud</td></tr><tr><th scope="row">Multi-tenancy</th><td>Namespaces per index</td><td>Native multi-tenancy per collection</td></tr><tr><th scope="row">Enterprise posture</th><td>$500/mo minimum, 99.95% uptime SLA, BYOC</td><td>Premium from $400/mo prepaid, dedicated capacity, HIPAA support on AWS</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>From the official pricing pages as of August 2026. Pinecone: the Starter tier is free with 2 GB of storage, 2 million write units, and 1 million read units per month. Builder is $20 per month flat. Standard has a $50 per month minimum, then charges $0.33 per GB per month for storage, about $4 to $4.50 per million write units, and about $16 to $18 per million read units depending on region. Enterprise starts at a $500 monthly minimum with a 99.95% uptime SLA.</p>
+<p>Weaviate: the free sandbox gives you 100,000 objects, 1 GB of memory, and 10 GB of disk, plus 2,000 embedding requests per day. The Flex serverless plan starts at $45 per month with no commitment and bills stored vector dimensions from $0.00465 per million and storage from $0.12 per GiB. The Premium plan starts around $400 per month on prepaid contracts with lower unit rates and dedicated-capacity options. Self-hosting the open-source database is free apart from your own infrastructure.</p>
+
 <h2>When to pick Pinecone</h2>
-<p>Starting fast, managed preference, simple multi-tenancy.</p>
+<p>Pinecone is still the fastest path from zero to a working retrieval feature. There is one deployment model, one bill, and nothing to operate. If your team is small, or retrieval is a feature rather than the product, I think that simplicity wins, and the free and $20 tiers keep the experiment phase cheap.</p>
+<p>Pinecone also suits teams whose costs are driven by traffic rather than corpus size. Unit billing means a modest index with bursty queries pays for the queries, not for provisioned capacity. Namespaces give you workable multi-tenancy for SaaS products, and the built-in hosted embedding and reranking models mean you can ship without standing up a separate embedding pipeline.</p>
+<p>If procurement needs a contractual SLA and options like bring-your-own-cloud, Pinecone's Enterprise tier is designed for exactly that conversation.</p>
 
 <h2>When to pick Weaviate</h2>
-<p>Self-hosting, advanced hybrid search, richer filtering needs.</p>
+<p>Weaviate is the better fit when hybrid search actually matters to your quality bar. Its BM25 plus vector fusion is native and mature, and in my experience keyword-plus-semantic retrieval is what most production RAG systems end up needing once real users start typing product codes and exact names into the search box.</p>
+<p>It is also the right call when you want the open-source escape hatch. You can prototype on the serverless cloud, then move the same database into your own Kubernetes cluster for data residency, compliance, or cost reasons. The vectorizer module system is convenient too: the database can call your embedding provider for you, so ingestion stays simple.</p>
+<p>Teams with large corpora and moderate traffic should look hard at the dimension-based billing. If you control dimensionality, for example by using a smaller embedding model or Matryoshka-style truncation, you control the bill in a way Pinecone's storage pricing does not directly reward.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The billing units are different in kind, not just in price. Pinecone charges mostly for activity; Weaviate's serverless charges mostly for what you store, priced per vector dimension. That means the same application can be cheaper on either platform depending on its shape: read-heavy chat over a small corpus tends to favor Weaviate's storage-based model, while a huge, rarely-queried archive tends to favor Pinecone's low storage rate. Model the bill with your own numbers before believing anyone's cost comparison, including mine.</p>
+<p>The other overlooked point is that dimensionality is now a pricing decision. A 3,072-dimension embedding costs four times what a 768-dimension one does to store on Weaviate's meter. Teams pick embedding models on benchmark scores alone and then wonder why the database bill grew.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Pinecone for quick starts. Weaviate when you need hybrid search and scale on your infrastructure.</p>
+<p>For a small team shipping its first retrieval feature, I would use Pinecone and not overthink it. For anything where hybrid search quality, self-hosting, or long-term cost control matters, I lean Weaviate: the open-source core keeps you portable, and the dimension-based pricing rewards deliberate embedding choices. The lazy framing of managed versus open source is out of date; both are serverless now, and the honest comparison is about billing shape and how much control you want.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.pinecone.io/pricing/" target="_blank" rel="noopener nofollow">Pinecone pricing (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.pinecone.io/" target="_blank" rel="noopener nofollow">Pinecone documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://weaviate.io/pricing" target="_blank" rel="noopener nofollow">Weaviate pricing (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.weaviate.io/" target="_blank" rel="noopener nofollow">Weaviate documentation</a></li>
 </ul>
 </div>
 </div>

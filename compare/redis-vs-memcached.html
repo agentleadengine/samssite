@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redis vs Memcached | Compare | Samuel Ochoa</title>
-<meta name="description" content="Full-featured vs minimal in-memory cache.">
+<meta name="description" content="Redis vs Memcached in 2026: the license changes, the Valkey fork, real managed service prices, and where Memcached's simplicity still earns its keep.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis vs Memcached | Compare | Samuel Ochoa">
-<meta property="og:description" content="Full-featured vs minimal in-memory cache.">
+<meta property="og:description" content="Redis vs Memcached in 2026: the license changes, the Valkey fork, real managed service prices, and where Memcached's simplicity still earns its keep.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Redis vs Memcached | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Full-featured vs minimal in-memory cache.">
+<meta name="twitter:description" content="Redis vs Memcached in 2026: the license changes, the Valkey fork, real managed service prices, and where Memcached's simplicity still earns its keep.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Redis vs Memcached | Compare | Samuel Ochoa","description":"Full-featured vs minimal in-memory cache.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/redis-vs-memcached.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Redis vs Memcached | Compare | Samuel Ochoa","description":"Redis vs Memcached in 2026: the license changes, the Valkey fork, real managed service prices, and where Memcached's simplicity still earns its keep.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/redis-vs-memcached.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Redis Vs Memcached","item":"https://samuelochoa.com/compare/redis-vs-memcached"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,44 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Caching</span>
 <h1 class="cmp-title">Redis vs Memcached</h1>
-<p class="cmp-subtitle">Full-featured vs minimal in-memory cache.</p>
+<p class="cmp-subtitle">A data structure server with a licensing saga, versus a cache that never tried to be more.</p>
 
-<div class="cmp-summary">Redis is a data structure server (strings, lists, sets, pub/sub). Memcached is a minimal key-value cache.</div>
+<div class="cmp-summary">Redis is a data structure server: strings, hashes, lists, sets, sorted sets, streams, pub/sub, Lua scripting, optional persistence, and, since Redis 8, JSON, query, and time series in the core. Memcached is a deliberately minimal multithreaded key-value cache, and it is still actively maintained. The technical comparison has been stable for a decade. What changed is licensing: Redis left its BSD license in 2024, the community forked it as Valkey, and Redis came back with an AGPL option in 2025. That story now belongs in the decision.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Redis</th><th>Memcached</th></tr></thead>
-<tbody><tr><th scope="row">Data types</th><td>Many</td><td>Key-value only</td></tr><tr><th scope="row">Persistence</th><td>Optional</td><td>None</td></tr><tr><th scope="row">Pub/sub</th><td>Yes</td><td>No</td></tr><tr><th scope="row">Use case</th><td>Cache + more</td><td>Pure cache</td></tr></tbody>
+<tbody><tr><th scope="row">Data model</th><td>Strings, hashes, lists, sets, sorted sets, streams, JSON</td><td>Key-value only</td></tr><tr><th scope="row">License</th><td>Tri-license since Redis 8 (May 2025): AGPLv3, RSALv2, or SSPLv1</td><td>BSD 3-clause</td></tr><tr><th scope="row">Open-source fork</th><td>Valkey (Linux Foundation, BSD, backed by AWS and Google)</td><td>Not applicable</td></tr><tr><th scope="row">Threading</th><td>Mostly single-threaded command core with I/O threads</td><td>Multithreaded, scales with cores</td></tr><tr><th scope="row">Persistence</th><td>Optional (RDB snapshots, AOF log)</td><td>None; extstore extends memory to flash, not durability</td></tr><tr><th scope="row">Replication and cluster</th><td>Built in</td><td>Not built in; clients shard</td></tr><tr><th scope="row">Extras</th><td>Pub/sub, Lua, transactions, streams, vector sets</td><td>A built-in proxy, little else by design</td></tr><tr><th scope="row">Managed node example</th><td>ElastiCache cache.t4g.micro: about $0.016/hr on the Redis OSS engine, $0.0128/hr on Valkey</td><td>About $0.016/hr, same node</td></tr><tr><th scope="row">Cheapest managed entry</th><td>Redis Cloud: free 30 MB tier, paid from $5/mo</td><td>A small ElastiCache or Memorystore node</td></tr><tr><th scope="row">Maintenance</th><td>Very active (Redis 8.x plus Valkey releases)</td><td>Active and quiet: 1.6.41 shipped March 2026</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>Both are free to self-host, so pricing really means managed services. On AWS ElastiCache, the same cache.t4g.micro node runs about $0.016 per hour, roughly $12 a month, on the Redis OSS or Memcached engines, and about $0.0128 per hour, roughly $9 a month, on Valkey, because AWS prices Valkey nodes about 20 percent below the other engines (us-east-1, on-demand, as of August 2026). Engine choice barely moves the bill. Node size, replicas, and data transfer are what actually cost money.</p>
+<p>Redis the company sells Redis Cloud, with a free 30 MB tier and Essentials plans starting at $5 a month for 250 MB, which is the cheapest hosted Redis with zero ops work that I know of. Memcached has no company behind it, so managed Memcached means a cloud provider engine such as ElastiCache or Google Cloud Memorystore.</p>
+<p>The license question affects hosting providers more than it affects most application teams. The RSALv2 and SSPLv1 terms restrict offering Redis itself as a competing managed service, which is why the big clouds rallied around Valkey. If your company has rules about AGPL or source-available software, that is a question for your legal review, not for a caching benchmark.</p>
+
 <h2>When to pick Redis</h2>
-<p>More than just cache: pub/sub, queues, data structures.</p>
+<p>Pick Redis, or Valkey, when you want more than a flat cache: rate limiting with sorted sets, job queues with lists or streams, pub/sub, session stores that survive a restart, distributed locks, leaderboards. These patterns are one command in Redis and a project of their own without it. Since Redis 8 folded the former Stack modules into the core distribution, JSON documents, query and search, and time series come standard too.</p>
+<p>The fork question is separate from this page's question. If you want the pre-2024 open-source lineage, drop-in compatibility, and cloud provider backing, Valkey is the continuation, and on ElastiCache it is also the cheaper engine. If you want the company's engine under an OSI-approved license, Redis 8 under AGPLv3 restored that path. Either way you are choosing Redis-shaped software, and the commands you learn work on both.</p>
 
 <h2>When to pick Memcached</h2>
-<p>Pure caching, max simplicity.</p>
+<p>Pick Memcached when the job is a pure ephemeral cache in front of a database and you want the fewest moving parts possible: no persistence to configure, no replication to reason about, no data types to misuse. Its multithreaded design is a real advantage on big nodes, since one instance can use every core for a flat key-value workload while stock Redis concentrates command execution on far fewer threads.</p>
+<p>It is also the license nobody has to think about. Memcached stayed BSD 3-clause through the entire Redis licensing drama, and it keeps shipping: version 1.6.41 arrived in March 2026, and the extstore feature lets a node overflow warm items to flash cheaply. Calling Memcached legacy, as an earlier version of this page did, undersells software that still backs some of the largest cache fleets in the world.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The licensing timeline is the part most write-ups skip. In March 2024, Redis moved from BSD to a dual RSALv2 and SSPLv1 license starting with Redis 7.4. Within weeks, AWS, Google, and other maintainers forked Redis 7.2.4 as Valkey under the Linux Foundation, keeping the BSD license. Then in May 2025, after original author Salvatore Sanfilippo returned to the company, Redis 8 added AGPLv3 as a third option, making Redis available under an OSI-approved license again. So the practical menu in 2026 is Redis under AGPL or commercial terms, Valkey under BSD, or Memcached under BSD.</p>
+<p>The other miss is framing. The interesting choice today is rarely Redis versus Memcached. It is Redis versus Valkey, with Memcached as the deliberately boring third option. The managed platforms reflect that: ElastiCache now leads with Valkey and prices it below the Redis OSS engine it maintains for compatibility. A comparison that ignores Valkey is answering a 2014 question with 2014 information.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Redis for almost all new use cases. Memcached is legacy.</p>
+<p>For new work I default to Redis-shaped software, because sooner or later every backend wants a queue, a lock, or a counter, and having them one command away changes what you build. On AWS I would reach for Valkey first: same commands, BSD license, lower price. I keep Memcached in the toolbox for what it was always best at, a big flat multithreaded cache with nothing to configure and no license conversation to have. What I no longer say is that Memcached is legacy. It is finished software, which is a different thing.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://redis.io/legal/licenses/" target="_blank" rel="noopener nofollow">Redis licensing</a></li>
+<li><span class="resource-meta">Official</span><a href="https://valkey.io/" target="_blank" rel="noopener nofollow">Valkey project</a></li>
+<li><span class="resource-meta">Official</span><a href="https://memcached.org/" target="_blank" rel="noopener nofollow">Memcached</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://aws.amazon.com/elasticache/pricing/" target="_blank" rel="noopener nofollow">Amazon ElastiCache pricing</a></li>
 </ul>
 </div>
 </div>

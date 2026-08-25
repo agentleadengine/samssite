@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pinecone vs Qdrant | Compare | Samuel Ochoa</title>
-<meta name="description" content="Managed leader vs open-source leader. Different cost curves.">
+<meta name="description" content="I compare Pinecone and Qdrant on 2026 pricing, quantization, filtering, and operations. Managed serverless convenience vs an open-source Rust engine.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pinecone vs Qdrant | Compare | Samuel Ochoa">
-<meta property="og:description" content="Managed leader vs open-source leader. Different cost curves.">
+<meta property="og:description" content="I compare Pinecone and Qdrant on 2026 pricing, quantization, filtering, and operations. Managed serverless convenience vs an open-source Rust engine.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pinecone vs Qdrant | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Managed leader vs open-source leader. Different cost curves.">
+<meta name="twitter:description" content="I compare Pinecone and Qdrant on 2026 pricing, quantization, filtering, and operations. Managed serverless convenience vs an open-source Rust engine.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pinecone vs Qdrant | Compare | Samuel Ochoa","description":"Managed leader vs open-source leader. Different cost curves.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pinecone-vs-qdrant.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pinecone vs Qdrant | Compare | Samuel Ochoa","description":"I compare Pinecone and Qdrant on 2026 pricing, quantization, filtering, and operations. Managed serverless convenience vs an open-source Rust engine.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/pinecone-vs-qdrant.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Pinecone Vs Qdrant","item":"https://samuelochoa.com/compare/pinecone-vs-qdrant"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,45 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Vector DBs</span>
 <h1 class="cmp-title">Pinecone vs Qdrant</h1>
-<p class="cmp-subtitle">Managed leader vs open-source leader. Different cost curves.</p>
+<p class="cmp-subtitle">A managed serverless service against an open-source Rust engine. The real question is whether you want to buy operations or own them.</p>
 
-<div class="cmp-summary">Pinecone is the easiest to get started with. Qdrant offers excellent open-source performance with strong filtering and quantization support.</div>
+<div class="cmp-summary">Pinecone and Qdrant solve the same problem with different business models, and that difference drives most of the tradeoffs between them. Pinecone is proprietary and fully managed: you get an API key, never touch a server, and pay Pinecone's unit prices for reads, writes, and storage. Qdrant is an open-source engine written in Rust that you can self-host for free or run on Qdrant Cloud. In my experience the decision axis is not raw features, which have largely converged, but whether you want to buy operations or own them.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
 <thead><tr><th></th><th>Pinecone</th><th>Qdrant</th></tr></thead>
-<tbody><tr><th scope="row">Managed</th><td>Pinecone cloud only</td><td>Qdrant cloud or self</td></tr><tr><th scope="row">Performance</th><td>Strong</td><td>Rust-based, extremely fast</td></tr><tr><th scope="row">Quantization</th><td>Supported</td><td>Strong native (binary, scalar)</td></tr><tr><th scope="row">Cost at scale</th><td>Higher</td><td>Lower (self-hosted)</td></tr></tbody>
+<tbody><tr><th scope="row">Hosting</th><td>Managed cloud only (AWS, GCP, Azure)</td><td>Self-hosted, Qdrant Cloud, hybrid or private cloud</td></tr><tr><th scope="row">Open source</th><td>No, proprietary</td><td>Yes, Apache 2.0, written in Rust</td></tr><tr><th scope="row">Free tier</th><td>2 GB storage, 2M write units, 1M read units per month</td><td>Free cloud cluster (1 GB RAM, 4 GB disk), no time limit</td></tr><tr><th scope="row">Entry price</th><td>$20/mo flat (Builder); Standard from a $50/mo minimum</td><td>$0 self-hosted; managed cloud billed by cluster size</td></tr><tr><th scope="row">Billing model</th><td>Per read unit, write unit, and GB stored</td><td>Per provisioned resources (CPU, RAM, disk)</td></tr><tr><th scope="row">Quantization</th><td>Supported</td><td>Scalar, product, and binary quantization built in</td></tr><tr><th scope="row">Filtering</th><td>Metadata filtering</td><td>Payload filtering with rich conditions and payload indexes</td></tr><tr><th scope="row">Hybrid search</th><td>Dense, sparse, and full-text indexes</td><td>Dense plus sparse vectors in one collection</td></tr><tr><th scope="row">Enterprise posture</th><td>$500/mo minimum, 99.95% uptime SLA, BYOC option</td><td>Premium tier with 99.9% SLA; hybrid cloud runs in your own infrastructure</td></tr></tbody>
 </table></div>
 
+<h2>Pricing</h2>
+<p>These numbers come from the official pricing pages as of August 2026. Pinecone's free Starter tier covers 2 GB of storage, 2 million write units, and 1 million read units per month, which is enough to build something real. The Builder plan is $20 per month flat with higher caps. Standard starts at a $50 per month minimum and then bills usage: storage at $0.33 per GB per month, writes at roughly $4 to $4.50 per million write units, and reads at roughly $16 to $18 per million read units depending on cloud and region. Enterprise starts at a $500 per month minimum with higher unit rates, a 99.95% uptime SLA, and a bring-your-own-cloud option.</p>
+<p>Qdrant's open-source engine is free to self-host; you pay only for your own servers. Qdrant Cloud includes a free cluster with 1 GB of RAM and 4 GB of disk that does not expire, which covers prototypes and small production workloads. Paid managed clusters are billed by the resources you provision rather than by query volume, and Qdrant does not publish flat sticker prices, so budget with their calculator. The premium tier adds SSO, private network links, and a 99.9% uptime SLA with a minimum spend.</p>
+
 <h2>When to pick Pinecone</h2>
-<p>You want no-ops, and Pinecone's serverless pricing fits your volume.</p>
+<p>I would pick Pinecone when nobody on the team wants to think about infrastructure. You create an index, send vectors, and query. There is no cluster to size, no version to upgrade, and no disk to watch. For a small team shipping a retrieval feature, that is worth real money, and the free and $20 tiers make the early phase cheap.</p>
+<p>Pinecone also fits spiky or unpredictable workloads. Because you pay per read and write unit, a product with bursty traffic pays for what it uses instead of for peak capacity. Namespaces make basic multi-tenant SaaS patterns straightforward, and Pinecone's hosted embedding and reranking models remove a couple of moving parts if you do not already have an embedding pipeline.</p>
+<p>Finally, if you need a contractual SLA and enterprise controls without an ops team, the Enterprise tier's 99.95% uptime commitment and BYOC option are the kind of thing procurement departments accept without a fight.</p>
 
 <h2>When to pick Qdrant</h2>
-<p>You're scaling and want self-hosting, strong filtering, and aggressive quantization options.</p>
+<p>I would pick Qdrant when you have a steady, sizable workload and someone who can own a database. Provisioned resources are usually cheaper than per-query unit pricing once traffic is consistent, and self-hosting drops the software cost to zero. The engine is written in Rust and benchmarks well, though I treat all vendor benchmarks as marketing until reproduced.</p>
+<p>Qdrant is also the stronger choice for filter-heavy retrieval. Payload filtering with dedicated payload indexes is a first-class feature, and the quantization options (scalar, product, and binary) let you trade a little recall for a large cut in memory, which is where most vector database bills actually come from.</p>
+<p>The control argument matters too. Apache 2.0 licensing means no lock-in, data residency is solvable because the database can run wherever you need it, and the hybrid cloud option gives you managed operations on your own infrastructure if you want both.</p>
+
+<h2>What most comparisons miss</h2>
+<p>The two pricing models fail in opposite directions, and almost nobody says this plainly. Pinecone's unit billing means your bill tracks query behavior: a chatty agent loop or an aggressive retrieval pipeline can multiply read units without anyone noticing until the invoice arrives. Qdrant Cloud's provisioned billing means the opposite risk: you pay for the cluster whether or not anyone queries it, and you have to capacity-plan. Neither is wrong. Match the model to your traffic shape.</p>
+<p>Migration is also cheaper than people fear. Embeddings are portable, so moving between these two is mostly re-pointing an ingestion pipeline and rewriting filter expressions, not re-embedding your corpus. That means the common advice to agonize over this choice up front is overweighted. Pick one, instrument your costs, and revisit at scale.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>Start with Pinecone; migrate to Qdrant self-hosted when scale or cost makes the migration worth it.</p>
+<p>I default to Pinecone for small teams with no ops capacity: the free tier is genuinely usable and the $20 Builder plan keeps early costs boring. Once there is a steady production workload in the millions of vectors and someone who can own infrastructure, Qdrant self-hosted or provisioned on Qdrant Cloud usually costs less and leaves you an exit. Decide on billing geometry and ops ownership, not on feature checklists, because the feature gap between these two is small and shrinking.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://www.pinecone.io/pricing/" target="_blank" rel="noopener nofollow">Pinecone pricing (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.pinecone.io/" target="_blank" rel="noopener nofollow">Pinecone documentation</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://qdrant.tech/pricing/" target="_blank" rel="noopener nofollow">Qdrant pricing (official)</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://qdrant.tech/documentation/" target="_blank" rel="noopener nofollow">Qdrant documentation</a></li>
 </ul>
 </div>
 </div>

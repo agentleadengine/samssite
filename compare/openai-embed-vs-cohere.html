@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenAI text-embedding-3 vs Cohere embed-v3 | Compare | Samuel Ochoa</title>
-<meta name="description" content="Two managed embedding APIs.">
+<meta name="description" content="OpenAI text-embedding-3 vs Cohere Embed: verified per-token pricing, dimensions, context limits, and multilingual tradeoffs for RAG in 2026.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenAI text-embedding-3 vs Cohere embed-v3 | Compare | Samuel Ochoa">
-<meta property="og:description" content="Two managed embedding APIs.">
+<meta property="og:description" content="OpenAI text-embedding-3 vs Cohere Embed: verified per-token pricing, dimensions, context limits, and multilingual tradeoffs for RAG in 2026.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260706">
@@ -52,11 +52,11 @@
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="OpenAI text-embedding-3 vs Cohere embed-v3 | Compare | Samuel Ochoa">
-<meta name="twitter:description" content="Two managed embedding APIs.">
+<meta name="twitter:description" content="OpenAI text-embedding-3 vs Cohere Embed: verified per-token pricing, dimensions, context limits, and multilingual tradeoffs for RAG in 2026.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OpenAI text-embedding-3 vs Cohere embed-v3 | Compare | Samuel Ochoa","description":"Two managed embedding APIs.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/openai-embed-vs-cohere.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OpenAI text-embedding-3 vs Cohere embed-v3 | Compare | Samuel Ochoa","description":"OpenAI text-embedding-3 vs Cohere Embed: verified per-token pricing, dimensions, context limits, and multilingual tradeoffs for RAG in 2026.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/openai-embed-vs-cohere.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Openai Embed Vs Cohere","item":"https://samuelochoa.com/compare/openai-embed-vs-cohere"}]}</script>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -88,31 +88,46 @@
 <a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
 <span class="cmp-topic" style="margin-top: 16px;">Embeddings</span>
 <h1 class="cmp-title">OpenAI text-embedding-3 vs Cohere embed-v3</h1>
-<p class="cmp-subtitle">Two managed embedding APIs.</p>
+<p class="cmp-subtitle">Two managed embedding APIs. Price and ecosystem simplicity on one side, multilingual and multimodal depth on the other.</p>
 
-<div class="cmp-summary">Cohere is particularly strong for multilingual retrieval and has a well-paired reranker (Cohere Rerank).</div>
+<div class="cmp-summary">OpenAI's text-embedding-3 models are the default in most RAG stacks: cheap, well documented, and good enough for the majority of English retrieval work. Cohere's Embed models are the stronger pick when your corpus is multilingual, when you want images and PDFs in the same index, or when you plan to pair embeddings with Cohere's reranker. The decision axis is that simple: default ecosystem and price against multilingual and multimodal depth.</div>
 
 <h2>At a glance</h2>
 <div class="cmp-matrix"><table>
-<thead><tr><th></th><th>OpenAI text-embedding-3</th><th>Cohere embed-v3</th></tr></thead>
-<tbody><tr><th scope="row">Languages</th><td>Good English + others</td><td>Excellent multilingual</td></tr><tr><th scope="row">Reranker pairing</th><td>Via Anthropic/OpenAI</td><td>Native Cohere Rerank</td></tr><tr><th scope="row">Price</th><td>$0.02-0.13/M</td><td>~$0.10/M</td></tr></tbody>
+<thead><tr><th></th><th>OpenAI text-embedding-3</th><th>Cohere Embed</th></tr></thead>
+<tbody><tr><th scope="row">Current models</th><td>text-embedding-3-small and -large</td><td>Embed 4 (embed-v3 still offered)</td></tr><tr><th scope="row">Price per 1M text tokens</th><td>$0.02 small, $0.13 large</td><td>$0.12 (Embed 4)</td></tr><tr><th scope="row">Image and PDF input</th><td>Not supported, text only</td><td>Yes; images $0.47 per 1M image tokens</td></tr><tr><th scope="row">Dimensions</th><td>1536 or 3072, shortenable via API parameter</td><td>1536 default; 256, 512, 1024 options (v4)</td></tr><tr><th scope="row">Context length</th><td>8,192 tokens</td><td>128k tokens (v4); 512 for embed-v3</td></tr><tr><th scope="row">Multilingual</th><td>Solid across major languages</td><td>Built for 100+ languages</td></tr><tr><th scope="row">Published MTEB (English)</th><td>62.3 small, 64.6 large</td><td>No single comparable published number</td></tr><tr><th scope="row">Compressed embeddings</th><td>Dimension shortening only</td><td>int8 and binary output types</td></tr><tr><th scope="row">Reranker pairing</th><td>None native, bring your own</td><td>Native Cohere Rerank</td></tr><tr><th scope="row">Where it runs</th><td>OpenAI API, Azure OpenAI</td><td>Cohere API, AWS Bedrock, Azure, SageMaker</td></tr></tbody>
 </table></div>
 
-<h2>When to pick OpenAI text-embedding-3</h2>
-<p>English-first, cost-sensitive, simple stack.</p>
+<h2>Pricing</h2>
+<p>OpenAI charges $0.02 per 1M tokens for text-embedding-3-small and $0.13 for text-embedding-3-large. The older ada-002 still exists at $0.10, but I see no reason to use it: small is cheaper and scores better on OpenAI's own benchmarks. Cohere's Embed 4 is $0.12 per 1M text tokens, with image inputs billed at $0.47 per 1M image tokens.</p>
+<p>Some quick math to make that concrete. Embedding 10,000 documents at roughly 1,000 tokens each is 10M tokens: about $0.20 with OpenAI small, $1.30 with OpenAI large, and $1.20 with Cohere Embed 4. At typical corpus sizes, the embedding API bill is noise. The costs that actually matter are storing and querying the vectors, which is where dimensions come in.</p>
+<p>One caveat when comparing per-token prices across vendors: each uses its own tokenizer, so a million OpenAI tokens and a million Cohere tokens do not cover exactly the same amount of text. Treat the prices as close, not identical.</p>
 
-<h2>When to pick Cohere embed-v3</h2>
-<p>Multilingual retrieval or want to pair with Cohere Rerank.</p>
+<h2>When to pick OpenAI text-embedding-3</h2>
+<p>Pick OpenAI when your corpus is mostly English and you want the least friction. Small at $0.02 per 1M tokens is the sleeper pick: it scores 62.3 on MTEB against large's 64.6, which is most of the quality at about 15 percent of the price. I default to small and only move up when an eval on my own data shows a real gap.</p>
+<p>The ecosystem argument is legitimate too. Every vector database tutorial, framework default, and code sample assumes these models, and if you are already paying OpenAI or Azure OpenAI for generation, embeddings ride on the same account, keys, and compliance review.</p>
+<p>Both models also accept a dimensions parameter that shortens embeddings below their 1536 or 3072 defaults, which lets you trade a little quality for a much smaller index without switching models.</p>
+
+<h2>When to pick Cohere Embed</h2>
+<p>Pick Cohere when retrieval crosses languages. The Embed models are built for 100+ languages, and they handle the harder case where the query and the document are in different languages. If your users search in Spanish against English documents, that is the exact scenario Cohere optimizes for and the place I have found the clearest wins.</p>
+<p>Embed 4 also changes the shape of the pipeline. A 128k token context window means you can embed whole documents or large sections instead of aggressively chunking, and text, images, and PDFs share one embedding space. The int8 and binary output types cut vector storage substantially, which matters more than API price at scale.</p>
+<p>Finally, if you already plan a two-stage pipeline with a reranker, Cohere is the only one of the two with a native rerank model, and it also ships through AWS Bedrock, Azure, and SageMaker for teams that cannot send data to a startup's API directly.</p>
+
+<h2>What most comparisons miss</h2>
+<p>Most comparison pages, including the older version of this one, still benchmark against embed-v3. Cohere's current generation is Embed 4, and the deltas are not minor: context went from 512 tokens to 128k, the model became multimodal, and dimensions became configurable. Judging Cohere on v3 numbers understates it.</p>
+<p>The second thing that goes unmentioned is lock-in. Embeddings from different models are not interchangeable, so switching later means re-embedding the entire corpus and rebuilding the index. That is cheap in API dollars but disruptive in practice. Run a small evaluation on your own documents before committing; 20 to 50 real queries with labeled answers tells you more than any leaderboard, because public benchmark gaps often disappear on a specific corpus.</p>
 
 <div class="cmp-verdict">
 <h3>My verdict</h3>
-<p>OpenAI for most English workloads. Cohere for multilingual or when rerank is mandatory.</p>
+<p>I default to text-embedding-3-small for English-first projects. At $0.02 per 1M tokens it is the best price-to-quality ratio either vendor offers, and I step up to large only when my own eval shows the gap is real. I reach for Cohere first in three cases: the corpus is meaningfully multilingual, the documents include images or PDFs worth embedding directly, or the pipeline already includes Cohere Rerank. Whichever way you lean, decide with a small eval on your own data, because re-embedding a corpus later is the switching cost nobody budgets for.</p>
 <!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.g2.com/" target="_blank" rel="noopener nofollow">G2 - Software reviews</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.capterra.com/" target="_blank" rel="noopener nofollow">Capterra</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://platform.openai.com/docs/pricing" target="_blank" rel="noopener nofollow">OpenAI API pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://developers.openai.com/api/docs/guides/embeddings" target="_blank" rel="noopener nofollow">OpenAI embeddings guide</a></li>
+<li><span class="resource-meta">Pricing</span><a href="https://cohere.com/pricing" target="_blank" rel="noopener nofollow">Cohere pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://docs.cohere.com/docs/cohere-embed" target="_blank" rel="noopener nofollow">Cohere Embed docs</a></li>
 </ul>
 </div>
 </div>
