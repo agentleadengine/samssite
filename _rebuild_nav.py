@@ -11,13 +11,15 @@ where Resources folds the whole knowledge base into one dropdown.
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/ale/Desktop/samssite")
+ROOT = Path("/Users/ale/samssite-work")
 
 # -----------------------------------------------------------------------------
 # Resources dropdown: the knowledge base, folded into a single simple menu.
 # Each entry is (label, href) pointing at that section's landing page.
 # -----------------------------------------------------------------------------
 RESOURCES = [
+    ("GHL snapshots", "snapshots.html"),
+    ("Daily AI brief", "newsletter.html"),
     ("Framework", "framework/index.html"),
     ("Expertise", "expertise/index.html"),
     ("Playbooks", "playbooks/index.html"),
@@ -188,9 +190,19 @@ replaced_script = 0
 scanned = 0
 
 for html in sorted(ROOT.rglob("*.html")):
+    # Keep the YouTube funnel rollout inside its approved file boundary.
+    rel = html.relative_to(ROOT)
+    if rel.parts[0] in {"framework", "expertise", "playbooks"} and rel.as_posix() not in {
+        "framework/index.html", "expertise/index.html", "playbooks/index.html"
+    }:
+        continue
+    if rel.as_posix() in {"audit.html", "links.html", "thanks-ghl.html", "thanks-ai.html", "thanks-web.html", "gracias.html"}:
+        continue
     scanned += 1
     text = html.read_text(encoding="utf-8")
     orig = text
+    if not NAV_RE.search(text):
+        continue
 
     R = rel_prefix(html)
     new_nav = build_nav(R)
