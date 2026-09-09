@@ -2052,3 +2052,91 @@ footer p { margin: 0; letter-spacing: 0.02em; }
         padding: 20px;
     }
 }
+
+/* YouTube resource pages: extend the homepage's light landing-page style. */
+.funnel{--ink:#1a1726;--ink2:#544e63;--purple:#5a1fe0;--soft:#f7f4fc;--line:#ebe6f6;background:#fff;color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;}
+.funnel .lp-wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+.funnel h1,.funnel h2,.funnel h3,.funnel h4{text-transform:none;color:var(--ink);letter-spacing:-.025em;text-wrap:balance;}
+.funnel h1{font-size:clamp(36px,5vw,58px);line-height:1.08;font-weight:800;max-width:850px;margin:0 0 24px;}
+.funnel h2{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:0 0 24px;}
+.funnel h3{font-size:21px;line-height:1.3;margin:12px 0;}
+.funnel h4{font-size:18px;margin:28px 0 8px;}
+.funnel p{line-height:1.65;max-width:72ch;}
+.funnel a{color:var(--purple);text-underline-offset:3px;}
+.funnel a:hover{text-decoration:underline;}
+.funnel :is(a,button,input):focus-visible,.resource-strip a:focus-visible{outline:3px solid #5a1fe0;outline-offset:4px;}
+.funnel .lp-hero{padding:64px 0 48px;background:var(--soft);border-bottom:1px solid var(--line);}
+.funnel .lp-lead{font-size:19px;color:var(--ink2);max-width:760px;margin:0 0 24px;}
+.funnel .lp-checks{padding-left:22px;line-height:1.6;margin:24px 0;}
+.funnel .lp-checks li{margin:8px 0;}
+.funnel .lp-checks li::marker{color:var(--purple);}
+.funnel .lp-availability{font-size:15px;color:var(--ink2);margin:24px 0 0;}
+.funnel .lp-signup{margin-top:28px;max-width:820px;}
+.funnel .lp-signup label{display:block;font-size:15px;font-weight:700;margin-bottom:8px;}
+.funnel .lp-form-row{display:flex;gap:12px;align-items:stretch;}
+.funnel .lp-form-row input{min-width:0;flex:1;font:inherit;font-size:16px;padding:14px 16px;border:1px solid #8b8499;border-radius:12px;background:#fff;color:var(--ink);}
+.funnel input::placeholder{color:#666073;opacity:1;}
+.funnel .lp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 22px;font:inherit;font-size:15px;font-weight:700;text-align:center;text-decoration:none;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:background .15s ease;}
+.funnel .lp-btn-primary{background:var(--purple);color:#fff;}
+.funnel .lp-btn-primary:hover{background:#4514b2;text-decoration:none;}
+.funnel .lp-btn-ghost{background:#fff;color:var(--purple);border-color:#c9bce5;}
+.funnel .lp-btn-ghost:hover{background:var(--soft);text-decoration:none;}
+.funnel .lp-fine{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0 0;}
+.funnel .lp-sec{padding:56px 0;}
+.funnel .lp-library{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.funnel .lp-resource{padding:26px;border:1px solid var(--line);border-radius:14px;}
+.funnel .lp-resource p{color:var(--ink2);}
+.funnel .lp-status{display:inline-block;background:var(--soft);color:#4e2795;border:1px solid #ddd0f7;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;white-space:nowrap;}
+.funnel .lp-map{margin-top:16px;font-size:14px;line-height:1.7;}
+.funnel .lp-section-note{margin:24px 0 0;color:var(--ink2);}
+.funnel .lp-signup-heading{margin-top:48px;}
+.funnel .lp-playbooks{list-style:none;padding:0;margin:28px 0 0;}
+.funnel .lp-playbooks li{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:24px 0;border-top:1px solid var(--line);}
+.funnel .lp-playbooks h3{margin:0 0 8px;}
+.funnel .lp-playbooks p{color:var(--ink2);max-width:64ch;}
+.funnel .lp-help{background:var(--soft);}
+.funnel .lp-help p+p{margin-top:16px;}
+.funnel .lp-reading{max-width:800px;}
+.funnel .lp-sample{border-top:1px solid var(--line);padding-top:24px;}
+.funnel .lp-sample h3{font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-weight:400;}
+.funnel .lp-sample-label{font-size:14px;font-weight:700;color:var(--purple);}
+.funnel .lp-sample p{margin-bottom:16px;}
+.funnel .lp-sample blockquote{margin:24px 0;padding:24px;background:var(--soft);border:0;border-radius:12px;font:inherit;color:var(--ink);}
+.funnel .lp-sample blockquote p{margin:0;}
+.funnel .lp-footer{padding:28px 0;border-top:1px solid var(--line);background:#fff;font-size:13px;color:var(--ink2);text-align:left;}
+.funnel .lp-footer p+p{margin-top:8px;}
+.funnel .lp-linkhub{max-width:520px;margin:0 auto;padding:48px 24px;text-align:center;}
+.funnel .lp-linkhub>img{width:88px;height:88px;object-fit:cover;border-radius:50%;margin-bottom:20px;}
+.funnel .lp-linkhub h1{font-size:32px;margin-bottom:12px;}
+.funnel .lp-linkhub>p{color:var(--ink2);}
+.funnel .lp-linkstack{display:grid;gap:12px;margin:28px 0 16px;}
+.funnel .lp-linkstack a{display:flex;align-items:center;justify-content:center;min-height:60px;padding:16px 20px;border:1px solid #d9ccef;border-radius:12px;background:var(--soft);font-weight:700;line-height:1.4;text-decoration:none;}
+.funnel .lp-linkstack a:hover{background:#ede4ff;}
+.funnel .lp-linksecondary{display:flex;flex-wrap:wrap;justify-content:center;gap:0 20px;}
+.funnel .lp-linksecondary a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;}
+.funnel .lp-confirm{max-width:760px;padding-top:100px;padding-bottom:72px;}
+.funnel .lp-confirm h1{font-size:clamp(36px,6vw,52px);}
+.funnel .lp-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+.funnel-skip{position:absolute;top:8px;left:8px;transform:translateY(-200%);padding:12px 18px;background:#fff;z-index:10001;}
+.funnel-skip:focus{transform:none;}
+.resource-strip{padding:32px 24px;border-top:1px solid #ebe6f6;background:#f7f4fc;}
+.resource-strip-inner{max-width:1080px;margin:0 auto;}
+.resource-strip h2{font-family:'Inter',system-ui,sans-serif;font-size:24px;font-weight:800;line-height:1.25;letter-spacing:-.02em;color:#1a1726;text-transform:none;margin:0 0 20px;}
+.resource-strip-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.resource-strip-links>a{display:block;background:#fff;border:1px solid #ebe6f6;border-radius:12px;padding:20px;color:#1a1726;text-decoration:none;}
+.resource-strip-links>a:hover{border-color:#5a1fe0;}
+.resource-strip h3{font-family:inherit;font-size:18px;font-weight:700;letter-spacing:0;text-transform:none;margin:0 0 8px;color:#5a1fe0;}
+.resource-strip p{font-size:15px;line-height:1.6;color:#544e63;margin:0;}
+@media(max-width:640px){
+ .funnel .lp-hero{padding:40px 0 36px;}
+ .funnel .lp-sec{padding:40px 0;}
+ .funnel .lp-lead{font-size:18px;}
+ .funnel .lp-form-row{flex-direction:column;}
+ .funnel .lp-form-row input{min-height:52px;}
+ .funnel .lp-library,.resource-strip-links{grid-template-columns:1fr;}
+ .funnel .lp-resource{padding:22px;}
+ .funnel .lp-playbooks li{flex-direction:column;gap:12px;}
+ .funnel .lp-confirm{padding-top:64px;}
+ .funnel .lp-actions{flex-direction:column;}
+}
+@media(prefers-reduced-motion:reduce){.funnel *{scroll-behavior:auto;transition:none;}}
