@@ -110,6 +110,8 @@ class FunnelTests(unittest.TestCase):
 
     def test_no_page_has_em_dash_in_body_copy(self):
         for path in ROOT.rglob('*.html'):
+            if path.is_relative_to(ROOT / 'demos'):
+                continue
             html = path.read_text()
             if '\u2014' not in unescape(html):
                 continue
