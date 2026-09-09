@@ -65,6 +65,20 @@
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -127,6 +141,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));
