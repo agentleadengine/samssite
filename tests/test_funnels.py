@@ -2,6 +2,7 @@
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import re
+from html import unescape
 import unittest
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
@@ -106,6 +107,15 @@ class FunnelTests(unittest.TestCase):
             for a in soup.select('a[href]'):
                 if re.match(r'book\b', a.get_text(' ', strip=True), re.I):
                     self.assertEqual(a['href'], '/book')
+
+    def test_no_page_has_em_dash_in_body_copy(self):
+        for path in ROOT.rglob('*.html'):
+            html = path.read_text()
+            if '\u2014' not in unescape(html):
+                continue
+            soup = BeautifulSoup(html, 'html.parser')
+            if soup.body:
+                self.assertNotIn('\u2014', soup.body.get_text(' ', strip=True), str(path))
 
     def test_all_booking_ctas_use_shared_route(self):
         for path in ROOT.rglob('*.html'):
