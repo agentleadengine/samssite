@@ -107,6 +107,17 @@ class FunnelTests(unittest.TestCase):
                 if re.match(r'book\b', a.get_text(' ', strip=True), re.I):
                     self.assertEqual(a['href'], '/book')
 
+    def test_all_booking_ctas_use_shared_route(self):
+        for path in ROOT.rglob('*.html'):
+            html = path.read_text()
+            self.assertNotIn('api.leadconnectorhq.com/widget/booking', html, str(path))
+            for markup in re.findall(r'<a\b[^>]*>.*?</a>', html, re.S | re.I):
+                if 'book' not in markup.lower():
+                    continue
+                a = BeautifulSoup(markup, 'html.parser').find('a')
+                if a and re.match(r'book\b', a.get_text(' ', strip=True), re.I):
+                    self.assertEqual(a.get('href'), '/book', str(path))
+
     def test_internal_links_and_assets_resolve(self):
         for slug in (*NEW, 'thanks-web', 'gracias'):
             soup = read(slug)
