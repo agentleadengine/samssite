@@ -75,23 +75,26 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="breakup.html" class="card"><h3>The breakup email</h3><p>The last email in a sequence. Short, honest, no guilt. Often the highest-replying message.</p></a>
-<a href="cadence.html" class="card"><h3>Cadence and timing</h3><p>When you send and how often matters as much as what you send. Here&#x27;s the pacing that works.</p></a>
-<a href="length.html" class="card"><h3>Sequence length</h3><p>3 emails? 5? 10? Here&#x27;s how to think about the right number of touches.</p></a>
-<a href="multi-channel.html" class="card"><h3>Multi-channel orchestration</h3><p>Email alone isn&#x27;t the best sequence. Email + LinkedIn + phone outperforms any single channel.</p></a>
-<a href="multi-touch.html" class="card"><h3>Multi-touch sequences</h3><p>A single cold email rarely converts. The multi-touch sequence is how real pipeline gets built.</p></a>
+<a href="breakup.html" class="card"><h3>The breakup email</h3><p>A holdout test for whether a final message adds qualified replies or only opt-outs.</p></a>
+<a href="cadence.html" class="card"><h3>Cadence and timing</h3><p>How to compare timing patterns while holding audience, sender, and copy constant.</p></a>
+<a href="length.html" class="card"><h3>Sequence length</h3><p>An incremental test that keeps a touch only when its qualified replies justify its cost.</p></a>
+<a href="multi-channel.html" class="card"><h3>Multi-channel orchestration</h3><p>Channel-specific consent, unified suppression, ownership, and an incremental test.</p></a>
+<a href="multi-touch.html" class="card"><h3>Multi-touch sequences</h3><p>A method for measuring the additional value and cost of each follow-up.</p></a>
 </div>
 </div>
 </section>
 
+<h2>Decide the next touch</h2>
+<ol><li>If the recipient replied or opted out, stop the automated sequence.</li><li>If complaints or placement worsen, pause the affected sender and investigate.</li><li>If the message reached the inbox but drew no qualified replies, test the audience, offer, or copy before adding touches.</li><li>Add a channel only when its consent rules, owner, and suppression path are clear.</li></ol>
+<div class="callout warning"><strong>Stop example:</strong> A sequence produces replies but the positive share falls while opt-outs rise. Do not add another follow-up. Freeze the list source and compare the recent segment with the earlier one.</div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Write the event that stops every sequence.</li><li>Name the owner of cross-channel suppression.</li><li>Remove one touch that has no distinct purpose.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://instantly.ai/blog" target="_blank" rel="noopener nofollow">Instantly.ai blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.smartlead.ai/blog" target="_blank" rel="noopener nofollow">Smartlead - Cold email blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.apollo.io/blog" target="_blank" rel="noopener nofollow">Apollo.io - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.gmass.co/blog" target="_blank" rel="noopener nofollow">GMass - Cold email guide</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://www.rfc-editor.org/rfc/rfc8058.html" target="_blank" rel="noopener">RFC 8058, one-click unsubscribe</a>: Supports the machine-readable unsubscribe event used as an immediate sequence stop.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/14229414?hl=en" target="_blank" rel="noopener">Gmail sender guidelines FAQ</a>: Supports daily complaint monitoring and the provider guardrail in the sequence decision tree.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

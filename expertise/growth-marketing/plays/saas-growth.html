@@ -78,7 +78,7 @@
     ['$1M-10M', 'Add channels + SDR team'],
     ['$10M+', 'Enterprise + ecosystem + international']
   ]});
-});</script><ul><li>PMF first (qualitative + 40% rule)</li><li>Activation tuning</li><li>Retention bar-raising</li><li>Scale acquisition</li><li>Expansion + pricing</li></ul><h2>Key metrics</h2><ul><li>MRR</li><li>Net Revenue Retention</li><li>CAC payback</li><li>Free-to-paid conversion</li><li>Churn</li></ul><h2>Levers</h2><ul><li>Onboarding → activation</li><li>Feature adoption → retention</li><li>Pricing + packaging → expansion</li></ul>
+});</script><ul><li>Validate recurring customer value before scaling acquisition.</li><li>Define activation from an observable product event.</li><li>Read retention and expansion by signup cohort.</li><li>Scale only when contribution cash supports the payback window.</li></ul><h2>Key metrics</h2><ul><li>Activated and retained accounts</li><li>Recurring contribution and net revenue retention</li><li>Acquisition cost and cash payback</li><li>Conversion, contraction, and churn by cohort</li></ul><h2>Levers</h2><ul><li>Onboarding affects activation.</li><li>Reliable recurring use affects retention.</li><li>Usage-linked packaging affects expansion.</li></ul>
 
 <div class="sketch" data-viewbox="0 0 900 260"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -95,14 +95,11 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Match growth tactics to stage, running $10M-stage paid acquisition at $0-1M burns cash and teaches nothing</li>
-<li>Prioritize retention before scaling acquisition, pouring paid leads into a leaky SaaS bucket is the most common early-stage failure</li>
-<li>Invest in expansion motion early, NRR is the metric that separates 3-year SaaS survivors from casualties</li>
-<li>Layer PLG and sales-led based on ACV, under $10K/yr defaults PLG, above $50K defaults sales-led, in between blend</li>
-<li>Re-evaluate growth model every 6 months, what worked at $2M ARR rarely works at $20M and vice versa</li>
-</ul>
+<h2>Worked saas growth record</h2>
+<p>Define activation as the first completed value event, retention as repeating that event in the chosen window, expansion as paid account growth, and cash payback from contribution cash. Put every assumption beside the model and replace it with cohort observations as data arrives.</p>
+<p><strong>Illustrative model:</strong> 1,000 signups x 40% activation = 400 activated accounts; 75% month-three retention = 300 retained accounts; 20% paid conversion = 60 accounts; 10% expand by $50 MRR = $300 expansion MRR. At $120 CAC and $40 monthly contribution per paid account, simple contribution payback is three months, excluding churn and expansion timing.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Multiplying averages hides dependency between activation, retention, and conversion. Simple payback assumes contribution arrives evenly and ignores collections delay.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Replace each assumption with one cohort observation.</li><li>Recalculate activation through expansion.</li><li>Build a monthly cash schedule.</li><li>Name the assumption with the largest decision impact.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

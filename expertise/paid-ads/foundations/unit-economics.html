@@ -88,14 +88,14 @@
 <li><strong>CAC</strong>: cost to acquire one paying customer = spend / customers</li>
 <li><strong>LTV</strong>: lifetime value of a customer (gross profit over their lifecycle)</li>
 <li><strong>Payback period</strong>: how long until CAC is recovered in gross profit</li>
-<li><strong>LTV:CAC</strong>: should be 3:1 or better to be sustainably profitable</li>
+<li><strong>LTV:CAC</strong>: compare cohort gross profit with acquisition cost, cash timing, and the return the business requires</li>
 </ul>
 
 <h2>The allowable CAC</h2>
-<p>Your LTV, divided by your target LTV:CAC ratio, is your allowable CAC. If LTV is $600 and you target 3:1, allowable CAC is $200. Any campaign whose CAC runs above that is losing money.</p>
+<p>Start with expected cohort revenue, subtract variable delivery costs, refunds, support, and the contribution the business must retain. The remainder is the acquisition ceiling. Label every assumption and rerun it when retention or margin changes.</p>
 
 <h2>Payback period matters too</h2>
-<p>LTV:CAC of 4:1 over 5 years looks great on paper but kills cash flow. You need 4 years of capital to fund it. Payback period under 12 months is healthy; under 18 is acceptable; over 24 is a business model problem.</p>
+<p>A favorable lifetime ratio can still create a cash shortage when receipts arrive long after acquisition and delivery costs. Model payback month by month against the business's actual cash runway and financing cost.</p>
 
 <h2>The blended vs marginal CAC</h2>
 <p>Early dollars of ad spend find the easiest customers (cheap CAC). Later dollars find harder ones (expensive CAC). At scale, blended CAC rises. What matters: the next dollar's CAC, not the average.</p>
@@ -127,22 +127,23 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Compute LTV:CAC per segment, not blended, one 1.2:1 segment can eat the margin of 3 profitable ones while the average looks fine</li>
-<li>Track payback period as rigorously as LTV:CAC, a 4:1 ratio with 30-month payback is a cash trap, not a growth engine</li>
-<li>Use observed LTV, never modeled, until you have 18+ months of data, projected LTV is where bad unit economics hide</li>
-<li>Watch marginal CAC as you scale, blended looks fine while the next dollar loses money, that's how operators overspend into decline</li>
-<li>Kill unprofitable segments even when they feel emotionally hard, the capital reallocation to healthy segments is where real growth comes from</li>
-</ul>
+<div class="lesson-task">
+<h3>Do this today</h3>
+<ol>
+<li>Enter price, variable costs, refunds, retention, payment timing, and acquisition cost for one customer cohort.</li>
+<li><strong>Hypothetical worksheet:</strong> First payment $300, gross margin 70%, refund reserve 5% of revenue, monthly retention assumption 80%, and cash collected 30 days after sale. Month-one contribution before ads is $300 × 70% minus $15 = $195.</li>
+<li>At a $150 CAC, cash payback occurs only after the customer pays. Model later months as separate retained cohorts. Do not multiply one month by an assumed lifetime without showing churn, refunds, service cost, and collection timing.</li>
+<li><strong>Decision rule:</strong> Set the spend ceiling from contribution margin and the cash payback the business can carry.</li>
+<li><strong>Limitation:</strong> Average retention hides cohort decay. Recalculate when customer mix or refunds change.</li>
+</ol>
+</div>
 
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://www.facebook.com/business/help" target="_blank" rel="noopener nofollow">Meta Business Help</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://support.google.com/google-ads/" target="_blank" rel="noopener nofollow">Google Ads Help</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://ppchero.com/" target="_blank" rel="noopener nofollow">PPC Hero - Blog</a></li>
+<li id="src-1"><span class="resource-meta">Official</span><a href="https://www.sba.gov/business-guide/manage-your-business/prepare-your-finances" target="_blank" rel="noopener">SBA: prepare business finances</a></li>
+<li id="src-2"><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/12200568" target="_blank" rel="noopener">Google Analytics: ecommerce measurement</a></li>
 </ul>
 </div>
 <div class="prev-next"><a href="how-paid-works.html" class="prev"><div class="label">Previous</div><div class="title">How paid ads work</div></a><a href="channel-fit.html" class="next"><div class="label">Next</div><div class="title">Channel-market fit</div></a></div></div></div><footer class="site-footer"><div class="container">

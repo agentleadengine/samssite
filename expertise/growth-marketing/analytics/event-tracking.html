@@ -105,14 +105,11 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Start with 30-60 events that answer specific questions, not "track everything in case we need it"</li>
-<li>Version your event schema like code, renaming events without migration breaks every historical report</li>
-<li>Standardize naming (e.g., object_action_verb: user_signed_up, lead_created), ad-hoc naming produces unusable data</li>
-<li>Review events quarterly, delete events nobody queries, they add analytics noise and engineering maintenance</li>
-<li>Document each event's trigger conditions in a single canonical doc, no shared doc = inconsistent event usage across team</li>
-</ul>
+<h2>Worked event tracking record</h2>
+<p>Name events as object_action, such as invoice_sent. Required properties are event_id, occurred_at, user_id, workspace_id, source, and schema_version. QA duplicate IDs, missing identities, impossible order, timezone, retry behavior, and parity between client and server records.</p>
+<table><thead><tr><th>Event</th><th>Required properties</th><th>QA assertion</th></tr></thead><tbody><tr><td>invoice_sent</td><td>event_id, occurred_at, invoice_id, workspace_id, sender_id, schema_version</td><td>One server event per accepted send</td></tr><tr><td>invoice_viewed</td><td>event_id, invoice_id, viewer_type, source</td><td>Never precedes invoice_sent</td></tr><tr><td>payment_received</td><td>invoice_id, amount_minor, currency, processor_id</td><td>Amount is positive and currency present</td></tr></tbody></table>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Client events can be blocked or retried, while server events can arrive late. Without event IDs and schema versions, deduplication and backfills become guesswork.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Choose one decision-critical event.</li><li>Write its owner and property contract.</li><li>Test duplicates, order, identity, and retry.</li><li>Compare client and server counts for one day.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

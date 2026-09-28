@@ -78,7 +78,7 @@
     ['1 month', 'Case study / social proof'],
     ['3+ months', 'Winback offer / discount']
   ]});
-});</script><p>Sweet spot is usually 7-30 days of inactivity. Too soon feels intrusive; too late they've moved on.</p><h2>Channels</h2><ul><li>Email (most common)</li><li>Push notifications (app users)</li><li>SMS (use rarely)</li><li>Retargeting ads (for larger cohorts)</li></ul><h2>Message patterns</h2><ul><li>What's new / what you missed</li><li>Specific new feature</li><li>Discount or promo (last resort)</li><li>Question to re-engage</li></ul><h2>Measure</h2><p>% re-engaged within 14 days. Don't just count opens.</p>
+});</script><p>Set timing from the product's normal value interval. Contact only consented users after the expected event is missing, and keep a holdout to distinguish return from background activity.</p><h2>Channels</h2><ul><li>Email (most common)</li><li>Push notifications (app users)</li><li>SMS (use rarely)</li><li>Retargeting ads (for larger cohorts)</li></ul><h2>Message patterns</h2><ul><li>What's new / what you missed</li><li>Specific new feature</li><li>Discount or promo (last resort)</li><li>Question to re-engage</li></ul><h2>Measure</h2><p>Measure the renewed value event in a predeclared window, then check whether it repeats. Opens are delivery diagnostics, not reactivation.</p>
 
 <div class="sketch" data-viewbox="0 0 900 280"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -98,14 +98,11 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Segment dormant users by dormancy length, 14-day and 180-day dormancies need different messages and offers</li>
-<li>Measure true re-engagement (returned active, not just opened), "opens" from dormant users are a deliverability liability</li>
-<li>Remove users dormant for 180+ days from active campaigns, continuing to email them hurts deliverability and rarely converts</li>
-<li>Lead re-engagement with what's new since they left, generic "we miss you" reads as desperate and converts poorly</li>
-<li>Attach a re-engagement offer (discount, credit, feature access) to give dormant users a concrete reason to return</li>
-</ul>
+<h2>Worked re engagement record</h2>
+<p>Build a consented segment of previously activated accounts missing the value event for one full eligible period. Randomize message and holdout, suppress opt-outs, monitor complaints, and measure renewed value events plus retention after the return.</p>
+<p><strong>Message test:</strong> “Your scheduled report stopped after the data connection expired. Reconnect it here.” Send only to consented, previously activated accounts missing report_shared for one full month. Use a 50/50 message and holdout split, authentication and suppression checks, complaint stop rule, and measure report_shared within 14 days plus another share in the following month.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> A click or one resumed event can be temporary. Deliverability, expired consent, and shared addresses can make the eligible population smaller than the product segment.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Build the consented inactive segment.</li><li>Test authentication, suppression, and opt-out.</li><li>Randomize message and holdout.</li><li>Read reactivation, later retention, and complaints together.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

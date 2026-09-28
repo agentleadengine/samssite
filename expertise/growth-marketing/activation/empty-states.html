@@ -109,14 +109,10 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Audit every table, list, and dashboard in your product for empty states, each one is an activation opportunity</li>
-<li>Design each empty state with a single clear CTA, multiple CTAs in an empty state split attention and drop conversion</li>
-<li>Offer a template or sample row, "pre-filled example" CTAs often convert 2-3x higher than "create from scratch"</li>
-<li>Measure empty-state CTR separately from in-product CTR, they're different metrics and the empty-state is the activation funnel</li>
-<li>Review empty states quarterly, product adds new surfaces and new empty states that tend to start ugly and stay ugly</li>
-</ul>
+<h2>Worked empty states record</h2>
+<p><strong>Before:</strong> “No projects yet.” <strong>After:</strong> “Create a client project, then send the first task for approval.” Show the action only when project_count = 0 and can_create_project = true. The primary metric is project_created / eligible_empty_state_view; permission errors and back-navigation are guardrails. <strong>Illustrative readout:</strong> 140 of 1,000 eligible views versus 190 of 1,000, a 5 percentage-point difference, pending the planned uncertainty check.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> A copy change cannot solve missing permissions or an unavailable template. Repeated views by the same workspace also inflate the denominator.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Write the empty-state trigger and permission rule.</li><li>Draft the before and after copy.</li><li>Instrument eligible view, action, success, and error.</li><li>Set the activation metric and error guardrail.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

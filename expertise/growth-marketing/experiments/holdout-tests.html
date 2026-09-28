@@ -101,14 +101,10 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Use A/B for daily optimization, holdouts for quarterly truth, they answer different questions</li>
-<li>Size the holdout to 5-10% of the population, smaller holdouts don't produce significance, larger costs too much revenue</li>
-<li>Limit holdout duration, longer holdouts produce better data but cost more in deprived users, balance by test priority</li>
-<li>Run holdouts on channels, features, and campaigns periodically, "does this work" is a different question than "which variant wins"</li>
-<li>Document the ethical tradeoff clearly, holdout users get worse experience, teams need to agree the learning is worth it</li>
-</ul>
+<h2>Worked holdout tests record</h2>
+<p><strong>Illustrative design and analysis:</strong> Pair 20 regions on prior qualified-purchase rate and volume, then randomize one of each pair to treatment. Keep shared national sales routing and travelers out of eligibility; log cross-region ad exposure as contamination. Run four weeks because the median purchase cycle is 18 days and two weekly cycles are required. Treatment records 260 qualified purchases among 10,000 eligible accounts versus 210 among 10,000 holdout accounts, an illustrative lift of 0.50 percentage points. Analyze the paired regional differences with an interval, not the pooled total alone.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Twenty regions provide limited cluster-level precision. Spillover, uneven inventory, or a regional promotion can dominate the estimated effect.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Define eligibility and the contamination log.</li><li>Pair clusters on baseline rate and volume.</li><li>Randomize within pairs and lock four weeks.</li><li>Prepare the paired-difference readout before launch.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

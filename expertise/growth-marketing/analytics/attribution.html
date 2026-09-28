@@ -95,14 +95,11 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Stack attribution methods, each answers a different question, using one alone is how teams get misled</li>
-<li>Use platform attribution for tactical daily decisions only, treat its absolute numbers as directional not truth</li>
-<li>Make MER your weekly North Star, it's noisy but it's the truth platform dashboards can't give you</li>
-<li>Run a channel holdout test quarterly, actual revenue drop is the only way to calibrate platform claims</li>
-<li>Skip MMM until you have 12+ months of clean data + $100K+/mo spend, under that it produces noise</li>
-</ul>
+<h2>Worked attribution record</h2>
+<p>Map ad_click, landing_view, lead_created, qualified, opportunity_created, and won to their source systems and identifiers. First-touch can answer where discovery began. Last-touch can answer which recorded touch preceded conversion. Neither alone proves incrementality, so keep a holdout field for decisions that require cause.</p>
+<table><thead><tr><th>Question</th><th>Field or method</th><th>Cannot answer</th></tr></thead><tbody><tr><td>Where did recorded discovery begin?</td><td>First eligible touch</td><td>Whether the touch caused demand</td></tr><tr><td>What preceded the conversion?</td><td>Last eligible touch</td><td>Contribution of earlier touches</td></tr><tr><td>Did the channel add outcomes?</td><td>Randomized or credible holdout</td><td>Every individual conversion path</td></tr></tbody></table>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Identity loss, offline touches, and inconsistent windows change channel credit. No weighting rule turns attributed revenue into causal lift.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Draw the event and identifier path.</li><li>Set one attribution window.</li><li>Mark every unobservable touch.</li><li>Name the decision that requires a holdout.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

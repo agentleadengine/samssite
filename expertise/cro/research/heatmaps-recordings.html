@@ -79,7 +79,7 @@
   ]});
 });</script>
 
-<h2>Heatmap insights</h2><ul><li>Do users see the CTA? (fold test)</li><li>Are they clicking non-clickable elements?</li><li>Are they scrolling?</li><li>Where attention goes</li></ul><h2>Recording insights</h2><ul><li>Rage clicks (frustration)</li><li>Dead clicks</li><li>Form abandonment mid-field</li><li>Navigation confusion</li></ul><h2>Tools</h2><ul><li>Hotjar, Microsoft Clarity (free), Fullstory, Mouseflow</li></ul><h2>Time investment</h2><p>Watch 15-30 recordings per feature. Patterns emerge fast.</p>
+<h2>Heatmap insights</h2><ul><li>Do users see the CTA?</li><li>Are they clicking non-clickable elements?</li><li>Are they scrolling?</li><li>Where does the aggregate pointer data cluster?</li></ul><h2>Recording insights</h2><ul><li>Repeated clicks after no response</li><li>Clicks on non-interactive elements</li><li>Form abandonment after a named field</li><li>Navigation reversals</li></ul><h2>Sampling</h2><p>Sample by device, source, new or returning status, and outcome. Stop when every target cell is covered and new recordings no longer change the issue codes.</p>
 
 <div class="sketch" data-viewbox="0 0 900 292"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -105,24 +105,23 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Use heatmaps first to find anomalies (rage clicks, dead clicks, unexpected scroll patterns), recordings second for diagnosis</li>
-<li>Watch 15-30 recordings per feature or page, patterns emerge fast and more than that has diminishing returns</li>
-<li>Prioritize recordings of users who drop off, not users who convert, you learn more from failures than successes</li>
-<li>Tag recordings with observed friction points as you watch, unstructured watching produces no takeaways</li>
-<li>Refresh heatmaps quarterly, user behavior shifts over time and old heatmaps become stale insights</li>
-</ul>
+<div class="lesson-task">
+<h3>Do this today</h3>
+<ol>
+<li>Sample recordings across device, source, new or returning status, and completed or abandoned outcome.</li>
+<li><strong>Hypothetical sampling plan:</strong> Randomly select 20 mobile and 20 desktop sessions from eligible quote-page visitors. Add 10 sessions with form errors and 10 completed sessions. Exclude staff and sessions without required consent.</li>
+<li><strong>Coding sheet:</strong> session ID, device, journey stage, observed behavior, suspected issue, severity, confidence, and timestamp. Two reviewers code the first 10 independently and reconcile definitions. Counts guide investigation, not population estimates.</li>
+<li><strong>Decision rule:</strong> Escalate an issue when the same coded behavior appears across relevant sessions and a metric supports it.</li>
+<li><strong>Limitation:</strong> A recording shows behavior, not intent. Do not infer motivation without follow-up evidence.</li>
+</ol>
+</div>
 
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://cxl.com/blog/" target="_blank" rel="noopener nofollow">CXL - Blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://goodui.org/" target="_blank" rel="noopener nofollow">GoodUI - Patterns</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener nofollow">Nielsen Norman Group</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://baymard.com/blog" target="_blank" rel="noopener nofollow">Baymard Institute - UX research</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.growthbook.io/" target="_blank" rel="noopener nofollow">Google Optimize alternatives - Growthbook</a></li>
+<li id="src-1"><span class="resource-meta">Docs</span><a href="https://learn.microsoft.com/en-us/clarity/" target="_blank" rel="noopener">Microsoft Clarity documentation</a></li>
+<li id="src-2"><span class="resource-meta">Research</span><a href="https://www.nngroup.com/articles/how-many-test-users/" target="_blank" rel="noopener">NN/g: qualitative sample size</a></li>
 </ul>
 </div>
 </div></div><footer class="site-footer"><div class="container">

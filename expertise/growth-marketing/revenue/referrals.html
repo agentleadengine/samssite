@@ -105,14 +105,11 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Build referral into the core value delivery (shared docs, multi-user features), bolted-on "refer a friend" programs rarely move the needle</li>
-<li>Track referred-customer LTV separately, referred users typically have 2-3x the LTV of paid-acquired and different CAC economics</li>
-<li>Two-sided incentives beat one-sided, reward both the referrer and the new user, friction drops on both sides</li>
-<li>Monitor the K-factor explicitly, assumed virality without measurement almost always overestimates real contribution</li>
-<li>Don't oversize the reward, $50 for a referral that costs you $30 to acquire through paid is a structural loss, cap the spend</li>
-</ul>
+<h2>Worked referrals record</h2>
+<p>Trigger the referral request after a completed value event. Store referrer_id, invite_id, recipient_id, incentive_cost, qualified_at, and paid_at. Compare referred and non-referred cohorts on qualification and retained contribution using the same window.</p>
+<p><strong>Illustrative cohort comparison, not observed company results:</strong> 1,000 eligible customers generate 200 invites, 50 qualified recipients, and 20 paid accounts. A $25 reward on each paid account costs $500, or $25 per referred customer. At an assumed $120 of 90-day contribution, the referral cohort contributes $2,400 before incentive and $1,900 after. Compare its 90-day retention with a same-period non-referred cohort.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Friends and colleagues are not exchangeable with other acquisition cohorts. Duplicate identity and self-referral can inflate both conversion and cost.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Choose the post-value referral trigger.</li><li>Join invite, recipient, qualification, and payment IDs.</li><li>Calculate incentive cost per paid account.</li><li>Compare retained contribution on one fixed window.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

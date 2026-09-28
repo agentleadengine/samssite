@@ -108,14 +108,10 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Track retention by cohort, not aggregate MAU, aggregate numbers hide the decline that should alarm you</li>
-<li>Compare retention curves across 6-12 cohorts, if newer cohorts trend worse, your product or audience has drifted</li>
-<li>Look for the flattening point in each cohort, if a curve never flattens, that cohort has a PMF problem</li>
-<li>Benchmark against your category, 30% month-3 retention is weak for B2B SaaS but great for consumer social</li>
-<li>Review cohort analysis weekly, when a cohort's curve bends the wrong way, the root cause is usually still fixable</li>
-</ul>
+<h2>Worked cohort analysis record</h2>
+<p>For a reporting product, cohort on first_report_shared month. <strong>Illustrative curve:</strong> a 200-account January cohort has 130 accounts share in month one, 110 in month two, and 106 in month three, or 65%, 55%, and 53%. The curve flattens after month two, so the decision is to repair the loss before month one rather than add a month-three reminder.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> The curve excludes signups that never activated and can overstate whole-funnel retention. Calendar-month cohorts can also differ in plan or acquisition mix.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Choose the activation and repeat value events.</li><li>Build three mature relative-month cells.</li><li>Locate the steepest loss before the plateau.</li><li>Assign an intervention to that interval.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

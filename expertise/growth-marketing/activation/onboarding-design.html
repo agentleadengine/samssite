@@ -104,14 +104,11 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Ditch the tutorial wall, progressive in-product onboarding beats upfront tours on every activation metric that matters</li>
-<li>Use empty-state CTAs instead of modal tours, users learn by doing, not by watching</li>
-<li>Make onboarding skippable for experienced users, forced flows punish the users most likely to convert</li>
-<li>Show a progress checklist, but don't gate the product behind it, visibility drives completion without blocking value</li>
-<li>Ask for the minimum info needed at each step, deferred fields at signup convert 30-50% more users than front-loaded forms</li>
-</ul>
+<h2>Worked onboarding design record</h2>
+<p>Plan four screens: choose the job, connect the required account, create the first usable object, and verify it with a test. Define loading, permission denied, invalid credentials, empty import, and retry states. Activation is the verified test event, not finishing the tour.</p>
+<ul><li><strong>Screen 1:</strong> choose the reporting job; fail with “Choose one job to continue.”</li><li><strong>Screen 2:</strong> connect the source; preserve state across permission denial and retry.</li><li><strong>Screen 3:</strong> create the first report; handle empty import and delayed processing.</li><li><strong>Screen 4:</strong> open the verified report and expose the next recurring action.</li></ul>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Completion of four screens can become a vanity metric. Activation requires a successfully generated report from the user's data, not a dismissed tour.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Sketch the four screens and back paths.</li><li>Write copy for five failure states.</li><li>Define activation as verified_report_opened.</li><li>Instrument exits, retries, success, and time.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

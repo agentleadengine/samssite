@@ -75,22 +75,35 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="convertkit.html" class="card"><h3>ConvertKit (now Kit)</h3><p>Email marketing for creators, bloggers, course creators. Tag-based, simple.</p></a>
-<a href="klaviyo.html" class="card"><h3>Klaviyo</h3><p>The dominant email + SMS platform for DTC. Deep Shopify integration, segmentation, automation.</p></a>
-<a href="mailchimp.html" class="card"><h3>Mailchimp</h3><p>The original email platform. Broadly capable, not best-in-class at anything.</p></a>
+<a href="convertkit.html" class="card"><h3>Kit</h3><p>Subscriber-tier pricing, tagging, automation, export, and migration checks.</p></a>
+<a href="klaviyo.html" class="card"><h3>Klaviyo</h3><p>Profile and send pricing, commerce events, channels, automation, and export checks.</p></a>
+<a href="mailchimp.html" class="card"><h3>Mailchimp</h3><p>Contact-tier pricing, send limits, automation fit, migration, and export checks.</p></a>
 <a href="tool-fit.html" class="card"><h3>Picking an email tool</h3><p>The right tool depends on use case. Here&#x27;s how to pick.</p></a>
 </div>
 </div>
 </section>
 
+<h2>Vendor comparison, checked 28 Sep 2026</h2>
+<div class="table-wrap"><table><thead><tr><th>Criterion</th><th>Kit</th><th>Klaviyo</th><th>Mailchimp</th></tr></thead><tbody><tr><td>List model</td><td>Pricing counts unique active subscribers.</td><td>Email plans use active profiles. Suppressed profiles do not count toward that price.</td><td>Contact type affects billing. The same contact in multiple audiences can increase the count.</td></tr><tr><td>Sends</td><td>The displayed Free plan lists unlimited broadcasts.</td><td>Free lists 250 active profiles and 500 email sends monthly.</td><td>Allowance varies by plan, contact tier, and sends.</td></tr><tr><td>Automation</td><td>The displayed Creator plan lists unlimited Visual Automations and sequences.</td><td>The free plan includes automations, segmentation, and reporting.</td><td>Automation flows support marketing, API, event, and integration triggers. Verify plan access.</td></tr><tr><td>Integrations</td><td>Apps and integrations appear on the displayed Creator plan.</td><td>The pricing page lists more than 350 built-in integrations.</td><td>Its directory covers commerce, CRM, analytics, and other categories. Synced data varies by app.</td></tr><tr><td>Export</td><td>Subscriber CSV includes status, tags, attribution, and custom fields.</td><td>List or segment CSV can include profile and consent fields, but not event data or messages received.</td><td>Account export covers audiences, templates, campaigns, events, and other listed data, with stated exclusions.</td></tr><tr><td>Switching cost, My take</td><td>Rebuild and test tags, forms, sequences, and automation entry rules.</td><td>Map profile properties, consent, commerce events, segments, and flows.</td><td>Consolidate duplicate audiences, then rebuild journeys, integrations, and templates.</td></tr></tbody></table></div>
+<div class="claim"><p>Kit's checked pricing page counts unique active subscribers, lists unlimited broadcasts on Free, and lists unlimited Visual Automations, sequences, and app integrations on the displayed Creator tier. Its subscriber CSV includes status, tags, attribution, and custom fields.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a><a href="#src-2">Source 02</a></div></div>
+<div class="claim"><p>Klaviyo's checked pricing page uses active profiles for email plans, shows 250 active profiles and 500 monthly email sends on Free, includes automations there, and lists more than 350 built-in integrations. Its CSV export omits event data and received-message history.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-3">Source 03</a><a href="#src-4">Source 04</a></div></div>
+<div class="claim"><p>Mailchimp pricing varies by plan, contact tier, and sends. Contacts in multiple audiences can increase the total count. Automation supports documented trigger types, integrations vary by app, and account export has documented inclusions and exclusions.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-5">Source 05</a><a href="#src-6">Source 06</a><a href="#src-7">Source 07</a><a href="#src-8">Source 08</a><a href="#src-9">Source 09</a></div></div>
+<div class="claim is-take"><p>Switching cost is the work to preserve consent, suppression, events, templates, integrations, and live automations. I would not choose from the feature matrix until one production-like flow and one complete export pass.</p><div class="claim-mark"><span class="status is-take">My take</span><span>migration check</span></div></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Price the same active audience and monthly sends in all three tools.</li><li>Build one trigger, branch, suppression rule, and test message in the leading option.</li><li>Export subscribers, consent, suppressions, and one event sample. Record what is missing.</li><li>Estimate the hours to rebuild templates, integrations, forms, and live automations.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://www.litmus.com/blog/" target="_blank" rel="noopener nofollow">Litmus - Email design blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://reallygoodemails.com/" target="_blank" rel="noopener nofollow">Really Good Emails - Inspiration gallery</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.emailonacid.com/blog/" target="_blank" rel="noopener nofollow">Email on Acid - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.klaviyo.com/learn" target="_blank" rel="noopener nofollow">Klaviyo - Learn</a></li>
+<li id="src-1"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://kit.com/pricing" target="_blank" rel="noopener">Kit pricing and plans</a>: Supports Kit's dated subscriber, broadcast, automation, and integration rows.</li>
+<li id="src-2"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://help.kit.com/en/articles/2502489-how-to-export-subscribers-in-kit" target="_blank" rel="noopener">Kit export subscribers</a>: Supports the fields and exclusions in Kit's export row.</li>
+<li id="src-3"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://www.klaviyo.com/pricing/" target="_blank" rel="noopener">Klaviyo pricing</a>: Supports Klaviyo's dated active-profile, send, automation, and integration rows.</li>
+<li id="src-4"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://help.klaviyo.com/hc/en-us/articles/115005078687" target="_blank" rel="noopener">Klaviyo export a list or segment</a>: Supports the available profile and consent fields plus the stated export exclusions.</li>
+<li id="src-5"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/pricing/marketing/" target="_blank" rel="noopener">Mailchimp marketing pricing</a>: Supports Mailchimp's dated plan and allowance rows.</li>
+<li id="src-6"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/help/export-back-up-data/" target="_blank" rel="noopener">Mailchimp account export guide</a>: Supports the export coverage and exclusions in Mailchimp's switching-cost row.</li>
+<li id="src-7"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/help/create-audience/" target="_blank" rel="noopener">Mailchimp create an audience</a>: Supports the contact model and duplicate-audience billing caution.</li>
+<li id="src-8"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/help/all-the-starting-points/" target="_blank" rel="noopener">Mailchimp automation flow triggers</a>: Supports the listed marketing, API, event, and integration trigger types.</li>
+<li id="src-9"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/help/about-integrations/" target="_blank" rel="noopener">Mailchimp integrations overview</a>: Supports the integration categories and the warning that synced data varies by app.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

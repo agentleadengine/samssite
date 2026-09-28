@@ -88,7 +88,7 @@
 <li>Total ad spend yesterday (all channels)</li>
 <li>Total revenue yesterday</li>
 <li>MER yesterday</li>
-<li>Anomalies (channel up/down more than 30% vs 7-day average)</li>
+<li>Anomalies that cross a threshold set from normal variation and business risk</li>
 </ul>
 <p>Goal: catch problems early. Not comprehensive, early warning.</p>
 
@@ -153,22 +153,23 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Limit dashboards to 8-10 tiles max, dashboards with 30 tiles become ignored overnight, nobody reads them in practice</li>
-<li>Every tile must answer "what would I do if this moves?", tiles without a tied action are ornaments, cut them</li>
-<li>Show trend alongside the number, a CAC of $80 means nothing without context, "$80 up 14% WoW" drives action</li>
-<li>Separate weekly dashboards (tactical) from monthly dashboards (strategic), don't mix cadences on one view or both decisions get ignored</li>
-<li>Review dashboards with the team Monday morning, dashboards without a review ritual stop working inside 3 weeks</li>
-</ul>
+<div class="lesson-task">
+<h3>Do this today</h3>
+<ol>
+<li>For every dashboard metric, name the owner, decision, threshold, cadence, source, freshness, and quality check.</li>
+<li><strong>Hypothetical decision log:</strong> Spend, media buyer, cap or reallocate, daily, reconcile to platform billing. Sales-accepted leads, sales lead, review targeting and offer, weekly, match CRM IDs to click IDs. Contribution margin, owner, change allowable CAC, monthly, reconcile refunds and fulfillment cost.</li>
+<li>Every row needs one action threshold and one owner. If a metric cannot change a decision, remove it from the operating view and keep it in the audit export.</li>
+<li><strong>Decision rule:</strong> Remove a tile when no owner can name an action it changes.</li>
+<li><strong>Limitation:</strong> A clean dashboard can hide stale joins, changing definitions, and delayed CRM outcomes.</li>
+</ol>
+</div>
 
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://developers.facebook.com/docs/marketing-api/conversions-api" target="_blank" rel="noopener nofollow">Meta - Conversions API</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://support.google.com/google-ads/answer/9888656" target="_blank" rel="noopener nofollow">Google - Enhanced conversions</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/10596866" target="_blank" rel="noopener nofollow">GA4 - Attribution</a></li>
+<li id="src-1"><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/10596866" target="_blank" rel="noopener">Google Analytics: attribution</a></li>
+<li id="src-2"><span class="resource-meta">Docs</span><a href="https://developers.facebook.com/docs/marketing-api/conversions-api" target="_blank" rel="noopener">Meta: Conversions API</a></li>
 </ul>
 </div>
 <div class="prev-next"><a href="ltv-cac.html" class="prev"><div class="label">Previous</div><div class="title">LTV:CAC</div></a></div></div></div><footer class="site-footer"><div class="container">

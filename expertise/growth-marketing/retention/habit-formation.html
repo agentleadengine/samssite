@@ -92,14 +92,11 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Design for triggers users already have (morning routine, end-of-day review), manufactured triggers produce fragile habits</li>
-<li>Make the core action as small as possible, high-friction actions break the habit loop</li>
-<li>Use variable rewards where ethically appropriate, fixed rewards lose stickiness faster than variable ones</li>
-<li>Build in investment loops (saved data, custom workflows, earned badges), investment makes the next-use easier and harder to leave</li>
-<li>Avoid dark-pattern habits, engagement that doesn't benefit the user generates churn when they realize it + brand damage long-term</li>
-</ul>
+<h2>Worked habit formation record</h2>
+<p>For weekly payroll review, define the repeat behavior as payroll_review_approved in consecutive eligible pay periods. The loop is reminder, review, exception resolution, approval, and saved audit record. Require repeated observed behavior before calling it a habit.</p>
+<p>Evidence threshold: an eligible administrator approves payroll in four consecutive pay periods, with no manual override outside the product. Compare the next-period completion rate for accounts meeting and missing that threshold; do not infer automaticity from frequency alone.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> Payroll is required work, so repeated use may reflect obligation rather than habit. Holiday schedules and delegated approvers interrupt otherwise healthy sequences.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Define eligibility by pay schedule.</li><li>Query four consecutive approvals.</li><li>Separate reminders, exceptions, and overrides.</li><li>Check whether the threshold predicts the fifth period.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

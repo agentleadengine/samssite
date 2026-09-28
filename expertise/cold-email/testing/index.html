@@ -75,22 +75,25 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="iteration.html" class="card"><h3>The iteration loop</h3><p>Cold email isn&#x27;t set-and-forget. Here&#x27;s the weekly rhythm for getting better each cycle.</p></a>
-<a href="methodology.html" class="card"><h3>Testing methodology</h3><p>How to A/B test cold email campaigns properly. Sample sizes, variables, confidence, and the common mistakes.</p></a>
-<a href="reply-metrics.html" class="card"><h3>Reply rate vs positive reply rate</h3><p>Overall reply rate lies. Positive reply rate is the metric that correlates to pipeline.</p></a>
-<a href="what-to-test.html" class="card"><h3>What to test</h3><p>Not every variable is worth testing. Here&#x27;s the priority order, ranked by expected impact.</p></a>
+<a href="iteration.html" class="card"><h3>The iteration loop</h3><p>Version logging, one-variable changes, and decisions tied to the declared metric.</p></a>
+<a href="methodology.html" class="card"><h3>Testing methodology</h3><p>Baseline, minimum detectable effect, power, assignment, and stopping rule.</p></a>
+<a href="reply-metrics.html" class="card"><h3>Reply classification</h3><p>A written labeling rubric, blinded review, and agreement checks for ambiguous replies.</p></a>
+<a href="what-to-test.html" class="card"><h3>What to test</h3><p>How to rank audience, offer, message, and timing tests by cost and decision value.</p></a>
 </div>
 </div>
 </section>
 
+<h2>The experiment sheet</h2>
+<table><tbody><tr><th>Baseline</th><td>Your recent qualified positive reply rate for the same segment</td></tr><tr><th>Minimum detectable effect</th><td>The smallest improvement worth changing the campaign for</td></tr><tr><th>Primary metric</th><td>Qualified positive replies, defined before review</td></tr><tr><th>Guardrails</th><td>Complaints, opt-outs, and delivery failures</td></tr><tr><th>Power and sample</th><td>Calculated from the baseline and desired effect</td></tr><tr><th>Stopping rule</th><td>The declared sample and observation window</td></tr></tbody></table>
+<p>Do not stop because the early result looks exciting. Do not combine a new list, offer, subject, and call to action in one test.</p>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Write the baseline and smallest useful change.</li><li>Choose one variable.</li><li>Record the stopping rule before sending.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://instantly.ai/blog" target="_blank" rel="noopener nofollow">Instantly.ai blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.smartlead.ai/blog" target="_blank" rel="noopener nofollow">Smartlead - Cold email blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.apollo.io/blog" target="_blank" rel="noopener nofollow">Apollo.io - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.gmass.co/blog" target="_blank" rel="noopener nofollow">GMass - Cold email guide</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://www.gov.uk/guidance/ab-testing-comparative-studies" target="_blank" rel="noopener">GOV.UK A/B testing guidance</a>: Supports the experiment template's hypothesis, control, random split, sample decision, duration, and inconclusive outcome.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/14229414?hl=en" target="_blank" rel="noopener">Gmail sender guidelines FAQ</a>: Supplies the complaint-rate guardrail and daily Postmaster Tools measurement used as a safety stop.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

@@ -75,23 +75,31 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="abandoned-cart.html" class="card"><h3>Abandoned cart</h3><p>For e-commerce, abandoned cart emails recover 10-30% of lost revenue.</p></a>
-<a href="behavioral.html" class="card"><h3>Behavioral triggers</h3><p>Emails triggered by specific user actions. Highest relevance, highest conversion.</p></a>
-<a href="post-purchase.html" class="card"><h3>Post-purchase</h3><p>What you send after a purchase determines retention and next purchase.</p></a>
-<a href="welcome-series.html" class="card"><h3>Welcome series</h3><p>The first emails a new subscriber receives. Critical for first impressions and early conversion.</p></a>
-<a href="win-back.html" class="card"><h3>Win-back</h3><p>Re-engaging inactive subscribers before they&#x27;re gone for good.</p></a>
+<a href="abandoned-cart.html" class="card"><h3>Abandoned cart</h3></a>
+<a href="behavioral.html" class="card"><h3>Behavioral triggers</h3><p>Event definition, eligibility, suppression, holdout, and conversion measurement.</p></a>
+<a href="post-purchase.html" class="card"><h3>Post-purchase</h3><p>Messages tested against repeat use, support contacts, returns, and retained margin.</p></a>
+<a href="welcome-series.html" class="card"><h3>Welcome series</h3><p>Promise, activation event, suppression, holdout, and fixed observation window.</p></a>
+<a href="win-back.html" class="card"><h3>Win-back</h3></a>
 </div>
 </div>
 </section>
 
+
+<h2>Where this breaks and how to measure it</h2>
+<p>Map every automation from trigger to eligibility, suppression, message, conversion, and holdout. Report incremental revenue rather than attributed revenue alone.</p>
+
+<h2>Map the flow before writing messages</h2>
+<table><thead><tr><th>Field</th><th>Example decision</th></tr></thead><tbody><tr><td>Trigger</td><td>Cart created or product event completed</td></tr><tr><td>Eligibility</td><td>Consent and customer state allow this message</td></tr><tr><td>Suppression</td><td>Purchase, opt-out, support issue, or conflicting flow</td></tr><tr><td>Holdout</td><td>Random eligible group receives no automation</td></tr><tr><td>Outcome</td><td>Incremental margin or product activation</td></tr></tbody></table>
+<p>Draw the branch that exits the flow before the branch that sends the next message. That is where duplicate and badly timed messages usually begin.</p>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Choose one automation.</li><li>Write its trigger, eligibility, and suppression in plain language.</li><li>Add a holdout and one outcome metric.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://www.litmus.com/blog/" target="_blank" rel="noopener nofollow">Litmus - Email design blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://reallygoodemails.com/" target="_blank" rel="noopener nofollow">Really Good Emails - Inspiration gallery</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.emailonacid.com/blog/" target="_blank" rel="noopener nofollow">Email on Acid - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.klaviyo.com/learn" target="_blank" rel="noopener nofollow">Klaviyo - Learn</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://help.klaviyo.com/hc/en-us/articles/115002774932" target="_blank" rel="noopener">Klaviyo guide to flows</a>: Supports the trigger, eligibility filter, delay, conditional split, and suppression fields in the automation map.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://mailchimp.com/help/getting-started-with-segments/" target="_blank" rel="noopener">Mailchimp segmentation guide</a>: Supports the AND/OR rules used to define who enters and who stays out of a flow.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/analytics/answer/9322688?hl=en" target="_blank" rel="noopener">Google Analytics event guide</a>: Supports naming the trigger and outcome events before the automation launches.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

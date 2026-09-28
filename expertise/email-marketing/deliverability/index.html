@@ -75,23 +75,27 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="authentication.html" class="card"><h3>SPF, DKIM, DMARC</h3><p>Three DNS records that authenticate your email. Without them, deliverability suffers.</p></a>
-<a href="list-hygiene.html" class="card"><h3>List hygiene</h3><p>Send to engaged subscribers. Remove the rest. Your deliverability depends on it.</p></a>
+<a href="authentication.html" class="card"><h3>SPF, DKIM, DMARC</h3><p>Provider-specific authentication requirements, alignment, DNS, and unsubscribe rules.</p></a>
+<a href="list-hygiene.html" class="card"><h3>List hygiene</h3><p>Source, consent, delivery, engagement, suppression, and re-permission decisions.</p></a>
 <a href="monitoring.html" class="card"><h3>Monitoring placement</h3><p>Inbox placement isn&#x27;t automatic. Monitor where your emails actually land.</p></a>
 <a href="sender-reputation.html" class="card"><h3>Sender reputation</h3><p>Your domain and IP build reputation over time. Here&#x27;s how to protect it.</p></a>
-<a href="spam-triggers.html" class="card"><h3>Spam triggers</h3><p>Certain words, patterns, and structures trigger spam filters. Here&#x27;s what to avoid.</p></a>
+<a href="spam-triggers.html" class="card"><h3>Content and placement</h3><p>A seed test that changes one content element while holding sender and audience constant.</p></a>
 </div>
 </div>
 </section>
 
+<h2>The send and complaint runbook</h2>
+<ol><li>Verify SPF, DKIM, DMARC, alignment, TLS, and the production From address.</li><li>Send to seed accounts at the providers represented in the list.</li><li>Record placement, bounces, complaints, and unsubscribes by recipient domain.</li><li>When complaints rise, pause the affected stream and inspect source, promise, frequency, and suppression.</li><li>Resume only after a smaller controlled test is stable.</li></ol>
+<div class="callout warning"><strong>Failure example:</strong> A campaign removes an address from one list but leaves it active in another automation. The next message creates a complaint. Suppression must be global.</div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Test one real production message.</li><li>Trace an unsubscribe through every automation.</li><li>Write who can pause a sender.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://www.litmus.com/blog/" target="_blank" rel="noopener nofollow">Litmus - Email design blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://reallygoodemails.com/" target="_blank" rel="noopener nofollow">Really Good Emails - Inspiration gallery</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.emailonacid.com/blog/" target="_blank" rel="noopener nofollow">Email on Acid - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.klaviyo.com/learn" target="_blank" rel="noopener nofollow">Klaviyo - Learn</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/81126?hl=en" target="_blank" rel="noopener">Google email sender guidelines</a>: Supports the runbook's SPF or DKIM baseline, bulk-sender DMARC and alignment checks, complaint monitoring, and gradual volume changes.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://senders.yahooinc.com/best-practices/" target="_blank" rel="noopener">Yahoo sender best practices</a>: Used for list quality, complaint, and unsubscribe controls in authentication, complaints, and placement.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://www.rfc-editor.org/rfc/rfc8058.html" target="_blank" rel="noopener">RFC 8058, one-click unsubscribe</a>: Supports the one-click mechanism referenced in the deliverability runbook.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

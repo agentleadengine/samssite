@@ -62,8 +62,8 @@
 <a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
 <a href="../../../newsletter.html" class="nav-link nav-cta">Daily brief</a>
 </div>
-</div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Cold Email (45 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/what-is-cold-email.html">What is cold email?</a></li><li><a href="../foundations/spam-vs-cold.html">Cold email vs spam</a></li><li><a href="../foundations/legal.html">Legal landscape</a></li><li><a href="../foundations/when-it-works.html">When cold email works</a></li></ul><h4>Deliverability</h4><ul><li><a href="../deliverability/why-it-matters.html">Why deliverability is everything</a></li><li><a href="../deliverability/dns.html" class="active">SPF, DKIM, DMARC</a></li><li><a href="../deliverability/sending-domains.html">Sending domain strategy</a></li><li><a href="../deliverability/warming.html">Inbox warming</a></li><li><a href="../deliverability/ip-reputation.html">IP reputation</a></li><li><a href="../deliverability/spam-triggers.html">Content that triggers spam filters</a></li><li><a href="../deliverability/monitoring.html">Monitoring inbox placement</a></li></ul><h4>Infrastructure</h4><ul><li><a href="../infra/sending-tools.html">Sending tools</a></li><li><a href="../infra/multi-inbox.html">Multi-inbox rotation</a></li><li><a href="../infra/warming-tools.html">Warming tools</a></li><li><a href="../infra/crm-integration.html">CRM and data integration</a></li><li><a href="../infra/reply-management.html">Reply management</a></li></ul><h4>Lists + Targeting</h4><ul><li><a href="../lists/icp.html">Defining the ICP</a></li><li><a href="../lists/databases.html">Lead databases</a></li><li><a href="../lists/clay.html">Clay and enrichment</a></li><li><a href="../lists/verification.html">Verification + hygiene</a></li><li><a href="../lists/intent-signals.html">Intent signals</a></li><li><a href="../lists/segmentation.html">Segmentation strategy</a></li></ul><h4>Copy</h4><ul><li><a href="../copy/anatomy.html">Cold email anatomy</a></li><li><a href="../copy/subject-lines.html">Subject lines</a></li><li><a href="../copy/first-lines.html">First lines</a></li><li><a href="../copy/the-pitch.html">The pitch</a></li><li><a href="../copy/ctas.html">CTAs for cold</a></li><li><a href="../copy/signatures.html">Signatures</a></li><li><a href="../copy/personalization.html">Personalization at scale</a></li></ul><h4>Sequences</h4><ul><li><a href="../sequences/multi-touch.html">Multi-touch sequences</a></li><li><a href="../sequences/cadence.html">Cadence and timing</a></li><li><a href="../sequences/breakup.html">The breakup email</a></li><li><a href="../sequences/multi-channel.html">Multi-channel orchestration</a></li><li><a href="../sequences/length.html">Sequence length</a></li></ul><h4>Testing</h4><ul><li><a href="../testing/methodology.html">Testing methodology</a></li><li><a href="../testing/what-to-test.html">What to test</a></li><li><a href="../testing/reply-metrics.html">Reply rate vs positive reply</a></li><li><a href="../testing/iteration.html">The iteration loop</a></li></ul><h4>Playbooks</h4><ul><li><a href="../plays/b2b-saas.html">B2B SaaS outbound</a></li><li><a href="../plays/agency.html">Agency + services outbound</a></li><li><a href="../plays/founder-led.html">Founder-led outbound</a></li><li><a href="../plays/sdr-led.html">SDR-led outbound</a></li><li><a href="../plays/link-building.html">Cold email for SEO</a></li><li><a href="../plays/recruiting.html">Recruiting outreach</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Cold Email</a><span class="sep">›</span><span>SPF, DKIM, DMARC</span></div><h1 class="title">SPF, DKIM, DMARC</h1><div class="article-meta"><span>5 min read</span><span>Updated 2026-04-18</span></div>
-<p class="lede">SPF, DKIM, and DMARC are DNS records that prove your email is actually from your domain. Without them, modern email providers treat your messages as suspicious. Proper configuration is a 20-minute task that most teams do wrong or not at all.</p>
+</div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Cold Email (45 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/what-is-cold-email.html">What is cold email?</a></li><li><a href="../foundations/spam-vs-cold.html">Cold email vs spam</a></li><li><a href="../foundations/legal.html">Legal landscape</a></li><li><a href="../foundations/when-it-works.html">When cold email works</a></li></ul><h4>Deliverability</h4><ul><li><a href="../deliverability/why-it-matters.html">Why deliverability is everything</a></li><li><a href="../deliverability/dns.html" class="active">SPF, DKIM, DMARC</a></li><li><a href="../deliverability/sending-domains.html">Sending domain strategy</a></li><li><a href="../deliverability/warming.html">Inbox warming</a></li><li><a href="../deliverability/ip-reputation.html">IP reputation</a></li><li><a href="../deliverability/spam-triggers.html">Content that triggers spam filters</a></li><li><a href="../deliverability/monitoring.html">Monitoring inbox placement</a></li></ul><h4>Infrastructure</h4><ul><li><a href="../infra/sending-tools.html">Sending tools</a></li><li><a href="../infra/multi-inbox.html">Multi-inbox rotation</a></li><li><a href="../infra/warming-tools.html">Warming tools</a></li><li><a href="../infra/crm-integration.html">CRM and data integration</a></li><li><a href="../infra/reply-management.html">Reply management</a></li></ul><h4>Lists + Targeting</h4><ul><li><a href="../lists/icp.html">Defining the ICP</a></li><li><a href="../lists/databases.html">Lead databases</a></li><li><a href="../lists/clay.html">Clay and enrichment</a></li><li><a href="../lists/verification.html">Verification + hygiene</a></li><li><a href="../lists/intent-signals.html">Intent signals</a></li><li><a href="../lists/segmentation.html">Segmentation strategy</a></li></ul><h4>Copy</h4><ul><li><a href="../copy/anatomy.html">Cold email anatomy</a></li><li><a href="../copy/subject-lines.html">Subject lines</a></li><li><a href="../copy/first-lines.html">First lines</a></li><li><a href="../copy/the-pitch.html">The pitch</a></li><li><a href="../copy/ctas.html">CTAs for cold</a></li><li><a href="../copy/signatures.html">Signatures</a></li><li><a href="../copy/personalization.html">Personalization at scale</a></li></ul><h4>Sequences</h4><ul><li><a href="../sequences/multi-touch.html">Multi-touch sequences</a></li><li><a href="../sequences/cadence.html">Cadence and timing</a></li><li><a href="../sequences/breakup.html">The breakup email</a></li><li><a href="../sequences/multi-channel.html">Multi-channel orchestration</a></li><li><a href="../sequences/length.html">Sequence length</a></li></ul><h4>Testing</h4><ul><li><a href="../testing/methodology.html">Testing methodology</a></li><li><a href="../testing/what-to-test.html">What to test</a></li><li><a href="../testing/reply-metrics.html">Reply rate vs positive reply</a></li><li><a href="../testing/iteration.html">The iteration loop</a></li></ul><h4>Playbooks</h4><ul><li><a href="../plays/b2b-saas.html">B2B SaaS outbound</a></li><li><a href="../plays/agency.html">Agency + services outbound</a></li><li><a href="../plays/founder-led.html">Founder-led outbound</a></li><li><a href="../plays/sdr-led.html">SDR-led outbound</a></li><li><a href="../plays/link-building.html">Cold email for SEO</a></li><li><a href="../plays/recruiting.html">Recruiting outreach</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Cold Email</a><span class="sep">›</span><span>SPF, DKIM, DMARC</span></div><h1 class="title">SPF, DKIM, DMARC</h1><div class="article-meta"><span>5 min read</span><span>Last checked 2026-09-28</span></div>
+
 
 <div class="sketch" data-viewbox="0 0 900 280"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -98,13 +98,10 @@ v=spf1 include:_spf.google.com include:sendgrid.net ~all
 <ul>
   <li>Missing SPF entirely</li>
   <li>Multiple SPF records on same domain (must be one)</li>
-  <li>SPF permerror from too many DNS lookups (over 10 = broken)</li>
+
   <li>Missing include for your sending tool</li>
   <li>Using -all (hard fail) without all senders included, causing legitimate mail to bounce</li>
 </ul>
-
-<h3>Setup</h3>
-<p>Your sending tool (Instantly, Smartlead, whatever) will tell you what to include. Your email host (Google Workspace, Microsoft 365) will give you their include. Combine them in one record.</p>
 
 <h2>DKIM (DomainKeys Identified Mail)</h2>
 
@@ -136,11 +133,6 @@ v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEB...[long key]...
 <h3>What it does</h3>
 <p>Tells receiving servers what to do with emails that fail SPF or DKIM checks. Also provides reporting so you can see who's sending as your domain.</p>
 
-<h3>What it looks like</h3>
-<pre style="background:#f5f5f7; padding:12px; border-radius:6px; font-family:'JetBrains Mono', monospace; font-size:13px;">
-v=DMARC1; p=none; rua=mailto:dmarc-reports@yourdomain.com; pct=100
-</pre>
-
 <h3>The three policy levels</h3>
 <ul>
   <li><strong>p=none</strong>: monitor only, don't reject. Start here.</li>
@@ -149,9 +141,9 @@ v=DMARC1; p=none; rua=mailto:dmarc-reports@yourdomain.com; pct=100
 </ul>
 
 <h3>Setup progression</h3>
-<p>Month 1: publish DMARC with p=none and rua reporting. Watch who's sending as you.</p>
-<p>Month 2-3: identify any legitimate senders failing SPF/DKIM. Fix.</p>
-<p>Month 4+: move to p=quarantine, then p=reject once you're confident.</p>
+
+
+
 
 <p>Many domains stay at p=none forever. For cold email sending domains, p=none is sufficient; the key benefit is authentication passing, not the policy enforcement.</p>
 
@@ -184,7 +176,7 @@ v=DMARC1; p=none; rua=mailto:dmarc-reports@yourdomain.com; pct=100
 <p>Brand Indicators for Message Identification: displays your logo next to emails in supporting clients. Requires DMARC at p=quarantine or stricter plus a verified mark certificate. Nice-to-have, not relevant for most cold email.</p>
 
 <h2>The real-time check</h2>
-<p>Before sending anything, send a test email from the domain to mail-tester.com. Score should be 9+/10. If under, your configuration has problems. Fix before sending to real prospects.</p>
+
 
 <p>Also check at Google Postmaster Tools (postmaster.google.com) after you've sent some volume. Provides spam rate, domain reputation, IP reputation, and authentication pass rates for Gmail specifically.</p>
 
@@ -202,25 +194,31 @@ v=DMARC1; p=none; rua=mailto:dmarc-reports@yourdomain.com; pct=100
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Configure SPF + DKIM + DMARC on every sending domain before sending a single cold email, missing any one drops deliverability hard</li>
-<li>Test every domain at mail-tester.com, require a 9+/10 score before graduating to real sends</li>
-<li>Set DMARC to p=none initially (monitoring only), tighten to quarantine/reject only after 2-4 weeks of clean data</li>
-<li>Check Google Postmaster Tools weekly once you have send volume, it's the only direct window into Gmail's reputation judgment</li>
-<li>When DNS changes, wait 24-48 hours before resuming sends, propagation delays can produce fake authentication failures</li>
-</ul>
+
+<div class="claim"><p>SPF evaluation allows no more than 10 DNS-query-causing terms. Exceeding that limit produces a permanent error.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-2">Source 02</a></div></div>
+
+<div class="claim"><p>Google tells senders to verify SPF, DKIM, DMARC alignment, forward and reverse DNS, and TLS for the sender they actually use.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div>
+
+<h2>Where this breaks and how to measure it</h2>
+<p>Time the setup on your own DNS host. Save the final SPF, DKIM, and DMARC lookups, then retest after the provider reports propagation complete.</p>
+
+<div class="lesson-task"><h3>Do this today</h3><ol>
+<li>List every sending domain, mailbox provider, DNS host, and current SPF, DKIM, and DMARC record.</li>
+<li>Configure each record from the mailbox provider's official instructions. Save the expected hostname and value as the audit output.</li>
+<li>Send an authenticated test and inspect its headers for SPF, DKIM, DMARC, and alignment results. DNS propagation can delay a valid change, so retest before diagnosing failure.</li>
+<li>Review authentication failures and provider reputation data weekly. Do not release a domain until every test message passes the recorded checks.</li>
+
+
+
+</ol></div>
 
 <p style="margin-top:40px;">Next: <a href="sending-domains.html">Sending domain strategy</a>.</p>
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://support.google.com/mail/answer/81126" target="_blank" rel="noopener nofollow">Google - Email sender guidelines</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://sendersupport.olc.protection.outlook.com/snds/" target="_blank" rel="noopener nofollow">Microsoft - Smart Network Data Services</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.mail-tester.com/" target="_blank" rel="noopener nofollow">MailTester - Inbox placement test</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://glockapps.com/" target="_blank" rel="noopener nofollow">GlockApps - Deliverability testing</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://dmarc.org/" target="_blank" rel="noopener nofollow">DMARC.org</a></li>
+<li id="src-1"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/81126?hl=en" target="_blank" rel="noopener">Google email sender guidelines</a>: Supports the SPF or DKIM requirement for all senders and the SPF, DKIM, DMARC, and alignment requirements for bulk senders.</li>
+<li id="src-2"><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://www.rfc-editor.org/rfc/rfc7208" target="_blank" rel="noopener">RFC 7208, Sender Policy Framework</a>: Defines SPF records, evaluation, and results used in the DNS examples.</li>
 </ul>
 </div>
 <div class="prev-next"><a href="why-it-matters.html" class="prev"><div class="label">Previous</div><div class="title">Why deliverability is everything</div></a><a href="sending-domains.html" class="next"><div class="label">Next</div><div class="title">Sending domain strategy</div></a></div></div></div><footer class="site-footer"><div class="container">

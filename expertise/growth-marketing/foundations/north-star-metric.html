@@ -105,14 +105,11 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Pick one North Star metric, not five, the whole point is alignment and five metrics give everyone an excuse</li>
-<li>Measure value delivered, not value promised, signups are promises, "messages sent" or "nights booked" are value</li>
-<li>Review the North Star weekly as a team, if the team doesn't know the number without looking, it's not really the North Star</li>
-<li>Re-examine the North Star annually, what measured value at $1M ARR may be the wrong metric at $10M, evolve it deliberately</li>
-<li>Align compensation with the North Star where possible, nothing drives behavior change faster than what's being rewarded</li>
-</ul>
+<h2>Worked north star metric record</h2>
+<p>For a scheduling product, the value event is a completed booking between two people. Candidate metric: workspaces with a completed booking each week. Guardrails: cancellations, failed calendar syncs, and support contacts. Instrument booking_completed on the server with workspace and booking identifiers.</p>
+<p><strong>Selection exercise:</strong> reject total accounts because creation is not value, and reject total booking links because unused links do not help anyone. Choose weekly workspaces with at least one completed booking because it combines recurring use with the user value event.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> One power workspace can complete many bookings, while a weekly workspace count can hide booking quality. Cancellations and sync failures remain necessary guardrails.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Write the user value event.</li><li>Reject two tempting activity metrics.</li><li>Specify the server event and identifiers.</li><li>Add quality, reliability, and concentration guardrails.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

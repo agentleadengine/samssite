@@ -75,7 +75,7 @@
     {label: 'Trend over time', sub: 'weekly or monthly'},
     {label: 'Segment cut', sub: 'by plan / geo / channel'}
   ]});
-});</script><ul><li>North Star value (current)</li><li>7-day and 30-day trend</li><li>Supporting leading indicators (what drives it)</li><li>Segment breakdowns</li></ul><h2>Keep it simple</h2><p>10 tiles max. More than that and no one reads it.</p><h2>Display publicly</h2><p>Team room display or always-open tab builds shared awareness.</p>
+});</script><ul><li>North Star value (current)</li><li>7-day and 30-day trend</li><li>Supporting leading indicators (what drives it)</li><li>Segment breakdowns</li></ul><h2>Decision density</h2><p>Show the North Star, its input metrics, and the segments needed for the weekly decision. Remove a tile when no owner can name an action its change would trigger.</p><h2>Review placement</h2><p>Put the same dashboard in the weekly decision record so definitions, anomalies, and assigned follow-ups stay together.</p>
 
 <div class="sketch" data-viewbox="0 0 900 260"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -93,14 +93,11 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Build a dashboard around the North Star + its 3-4 inputs, dashboards with 30 metrics are ignored within a month</li>
-<li>Display the dashboard publicly (TV in office, pinned tab, Slack digest), hidden dashboards stop working in 3 weeks</li>
-<li>Add alerts for significant changes (up or down), the dashboard should pull you in when something shifts, not require you to visit</li>
-<li>Review the dashboard as a team Monday morning, without a review ritual the dashboard becomes wallpaper</li>
-<li>Attach an action log, dashboards that show numbers without the "what we did" story lose their power to drive behavior</li>
-</ul>
+<h2>Worked north star dashboards record</h2>
+<p>For a scheduling product, the main card is weekly completed bookings for active workspaces. Guardrails show cancellations, failed syncs, and support contacts. A cohort panel shows new workspaces reaching first completed booking. The Monday review chooses one product action and records its owner.</p>
+<table><thead><tr><th>Panel</th><th>Weekly view</th><th>Decision</th></tr></thead><tbody><tr><td>User value</td><td>Completed bookings by active workspace</td><td>Which workflow blocks value?</td></tr><tr><td>Acquisition cohort</td><td>First completed booking within 7 days</td><td>Which entry source needs repair?</td></tr><tr><td>Guardrails</td><td>Cancellations, failed syncs, support contacts</td><td>Did growth harm reliability?</td></tr></tbody></table>
+<div class="callout warning"><p><strong>Where it breaks:</strong> A single total can rise because a few large workspaces expand. Missing failed-sync events can make the north star improve while customer experience worsens.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Draw the three-panel dashboard.</li><li>Write numerator, denominator, and owner for each measure.</li><li>Add cohort and workspace-size cuts.</li><li>Schedule Monday's decision and record it on the dashboard.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

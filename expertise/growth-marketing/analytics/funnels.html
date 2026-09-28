@@ -93,14 +93,10 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Build the funnel once and review it weekly, the biggest drop-off is usually where the product or flow is broken</li>
-<li>Complement funnels with path analysis, real users rarely go through linear funnels, path analysis shows actual behavior</li>
-<li>Fix the highest-drop step first, shoring up small leaks while the main one is broken produces no measurable lift</li>
-<li>Segment the funnel by source + user type, different cohorts drop at different steps and need different fixes</li>
-<li>Track conversion rate step-by-step, not just start-to-finish, end-to-end alone hides where you're losing people</li>
-</ul>
+<h2>Worked funnels record</h2>
+<p>Entry is quote_started and exit is qualified_quote_submitted; count unique quote_id values in one fixed window. <strong>Illustrative sample:</strong> 1,000 starts, 820 contact_saved, 574 risk_details_saved, 430 review_opened, and 344 qualified submissions. Step conversion is 82%, 70%, 74.9%, and 80%. Losses are 180, 246, 144, and 86, so contact to risk is the largest bottleneck at 246 records and a 30% loss rate. Raising that step from 70% to 75% would pass 41 more records; at the downstream 74.9% x 80% rate, that is about 25 additional qualified submissions.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> The 25 is a scenario, not an observed result. Retries, duplicate quote IDs, and delayed qualification can move counts between steps.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Query unique quote IDs by event.</li><li>Calculate conversion and absolute loss at each step.</li><li>Split the largest loss by error code and device.</li><li>Register one repair and its downstream guardrail.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

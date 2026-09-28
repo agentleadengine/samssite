@@ -76,21 +76,25 @@
 <div class="container">
 <div class="cards">
 <a href="crm-integration.html" class="card"><h3>CRM and data integration</h3><p>Cold email doesn&#x27;t live in a silo. Leads flow from the tool into CRM, replies sync back, analytics roll up. Here&#x27;s how to wire it.</p></a>
-<a href="multi-inbox.html" class="card"><h3>Multi-inbox rotation</h3><p>A single mailbox caps at ~50 emails/day. Multi-inbox rotation spreads volume across many mailboxes for higher throughput and better deliverability.</p></a>
+<a href="multi-inbox.html" class="card"><h3>Multi-inbox rotation</h3><p>Mailbox-level monitoring, routing, suppression, and a controlled capacity test.</p></a>
 <a href="reply-management.html" class="card"><h3>Reply management</h3><p>Responses to cold email aren&#x27;t just &#x27;booked&#x27; or &#x27;not interested.&#x27; Here&#x27;s the taxonomy of replies and how to handle each.</p></a>
-<a href="sending-tools.html" class="card"><h3>Sending tools</h3><p>Instantly, Smartlead, Lemlist, Salesloft. Here&#x27;s how the major cold email platforms differ and which one to use when.</p></a>
-<a href="warming-tools.html" class="card"><h3>Warming tools</h3><p>Every cold email operation runs warming. Here&#x27;s the landscape of tools, what they actually do, and how to evaluate them.</p></a>
+<a href="sending-tools.html" class="card"><h3>Sending tools</h3><p>A purchase-day comparison of sending, replies, exports, reporting, and operator workload.</p></a>
+<a href="warming-tools.html" class="card"><h3>Warming tools</h3><p>A seed-inbox test for plan scope, placement, complaints, and sender reputation.</p></a>
 </div>
 </div>
 </section>
 
+<h2>The data path</h2>
+<p><strong>Source record to verification to suppression check to sender to reply inbox to CRM.</strong> Every handoff needs an owner and a field that proves the handoff happened.</p>
+<table><thead><tr><th>Component</th><th>Selection test</th><th>Failure to catch</th></tr></thead><tbody><tr><td>Data source</td><td>Exports source and refresh date</td><td>Stale or untraceable records</td></tr><tr><td>Sender</td><td>Shows mailbox-level delivery data</td><td>One weak mailbox hidden by averages</td></tr><tr><td>Reply handling</td><td>Preserves thread and suppression state</td><td>A reply followed by another automated touch</td></tr><tr><td>CRM</td><td>Accepts source, status, and consent fields</td><td>Pipeline without provenance</td></tr></tbody></table>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Draw your actual handoffs on one line.</li><li>Mark the step where an opt-out can be lost.</li><li>Run one test contact through the entire path.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://workspace.google.com/" target="_blank" rel="noopener nofollow">Google Workspace</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank" rel="noopener nofollow">Microsoft 365</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://instantly.ai/blog" target="_blank" rel="noopener nofollow">Instantly.ai - Blog</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/81126?hl=en" target="_blank" rel="noopener">Google email sender guidelines</a>: Used for the authentication, complaint, and subscription controls in the infrastructure map.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://learn.microsoft.com/en-us/defender-office-365/outbound-spam-protection-about" target="_blank" rel="noopener">Microsoft outbound spam protection</a>: Used for provider enforcement and compromised-account failure modes.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

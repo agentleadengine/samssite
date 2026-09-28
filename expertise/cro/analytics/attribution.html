@@ -79,7 +79,22 @@
     ['Position-based', '40/20/40 across touches'],
     ['Data-driven', 'ML-weighted (needs scale)']
   ]});
-});</script><ul><li>Last-click (simple, biased to bottom of funnel)</li><li>First-click (biased to top)</li><li>Linear (equal weight)</li><li>Data-driven (algorithmic)</li></ul><h2>CRO-specific concerns</h2><ul><li>Same-user multi-touch: which page gets credit?</li><li>Cross-device: hard to attribute</li><li>Delayed conversions: attribute to session or first-touch?</li></ul><h2>Pragmatic</h2><p>Use platform attribution for directional signal, test for specific optimization, holdouts for truth.</p>
+});</script><ul><li>Last-click (simple, biased to bottom of funnel)</li><li>First-click (biased to top)</li><li>Linear (equal weight)</li><li>Data-driven (algorithmic)</li></ul><h2>CRO-specific concerns</h2><ul><li>Same-user multi-touch: which page gets credit?</li><li>Cross-device: hard to attribute</li><li>Delayed conversions: attribute to session or first-touch?</li></ul><h2>A worked multi-touch order</h2><p>This is an illustrative $200 order. The customer first clicks a paid social ad, returns through organic search, clicks an email, then buys in a direct session.</p>
+<div class="table-wrap"><table><thead><tr><th>Model</th><th>Paid social</th><th>Organic search</th><th>Email</th><th>Direct</th></tr></thead><tbody>
+<tr><td>First touch</td><td>$200</td><td>$0</td><td>$0</td><td>$0</td></tr>
+<tr><td>Last touch</td><td>$0</td><td>$0</td><td>$0</td><td>$200</td></tr>
+<tr><td>Linear</td><td>$50</td><td>$50</td><td>$50</td><td>$50</td></tr>
+</tbody></table></div>
+<p>The order and revenue do not change. Only the reporting rule changes. None of these rows proves that the paid social ad caused the order.</p>
+
+<h2>Validate the channel with a holdout</h2>
+<ol>
+<li>Write the eligible audience, primary outcome, guardrails, test window, and minimum detectable effect before assignment.</li>
+<li>Randomly assign eligible people or regions. Suppress the channel only for the control group.</li>
+<li>Check assignment balance, exposure leakage, other campaign changes, and conversion lag.</li>
+<li>Compare outcomes by original assignment. Report the absolute difference, interval, spend, and contribution margin.</li>
+<li>Use the holdout result to calibrate the attribution report. Do not force the report to equal the experiment.</li>
+</ol>
 
 <div class="sketch" data-viewbox="0 0 900 320"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -100,24 +115,22 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Pick one attribution model for reporting, switching between models confuses stakeholders and hides trends</li>
-<li>Use last-click for tactical optimization, data-driven or MMM for strategic allocation</li>
-<li>Don't trust platform attribution as truth, it over-claims and is directional only</li>
-<li>Run quarterly holdout tests to validate attribution assumptions, models drift from reality over time</li>
-<li>Track blended MER alongside platform attribution, the gap tells you how much the models are over-claiming</li>
-</ul>
+<div class="lesson-task">
+<h3>Do this today</h3>
+<ol>
+<li>Export one converted path with ordered timestamps, source, campaign, device, and order value.</li>
+<li>Apply first-touch, last-touch, and linear credit to that same path.</li>
+<li>Write a holdout plan that names the unit assigned, suppression method, contamination check, and business outcome.</li>
+<li>Do not interpret a credit shift as incremental lift. A model can reassign the same order without creating one.</li>
+</ol>
+</div>
 
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://cxl.com/blog/" target="_blank" rel="noopener nofollow">CXL - Blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://goodui.org/" target="_blank" rel="noopener nofollow">GoodUI - Patterns</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener nofollow">Nielsen Norman Group</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://baymard.com/blog" target="_blank" rel="noopener nofollow">Baymard Institute - UX research</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.growthbook.io/" target="_blank" rel="noopener nofollow">Google Optimize alternatives - Growthbook</a></li>
+<li id="src-1"><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/9322688" target="_blank" rel="noopener">Google Analytics: events</a></li>
+<li id="src-2"><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/10596866" target="_blank" rel="noopener">Google Analytics: attribution</a></li>
 </ul>
 </div>
 </div></div><footer class="site-footer"><div class="container">

@@ -76,21 +76,29 @@
 <div class="container">
 <div class="cards">
 <a href="churn-prevention.html" class="card"><h3>Churn prevention emails</h3><p>Emails to users showing churn signals, to prevent cancellation.</p></a>
-<a href="feature-education.html" class="card"><h3>Feature education emails</h3><p>Most SaaS users use 20% of features. Emails that introduce new ones drive retention.</p></a>
-<a href="onboarding.html" class="card"><h3>SaaS onboarding emails</h3><p>The email sequence for new SaaS users drives activation and retention.</p></a>
-<a href="trial-nudges.html" class="card"><h3>Trial nudges</h3><p>Trial users are the highest-value prospects. Emails during trial drive conversion.</p></a>
+<a href="feature-education.html" class="card"><h3>Feature education emails</h3></a>
+<a href="onboarding.html" class="card"><h3>SaaS onboarding emails</h3><p>Activation events, suppression rules, cohort assignment, and retained-use measurement.</p></a>
+<a href="trial-nudges.html" class="card"><h3>Trial nudges</h3><p>Messages triggered by missing activation events and measured against a cohort holdout.</p></a>
 </div>
 </div>
 </section>
 
+
+<h2>Where this breaks and how to measure it</h2>
+<p>Name the product events for signup, activation, value, risk, and retention. Connect each email to one event and measure it against a cohort holdout.</p>
+
+<h2>The event taxonomy</h2>
+<table><thead><tr><th>Stage</th><th>Event</th><th>Email job</th></tr></thead><tbody><tr><td>Signup</td><td>Account created</td><td>Reach the first useful action</td></tr><tr><td>Activation</td><td>Product-specific value event</td><td>Remove the next obstacle</td></tr><tr><td>Adoption</td><td>Repeated use of a key workflow</td><td>Teach the adjacent feature</td></tr><tr><td>Risk</td><td>Expected use stops</td><td>Diagnose the barrier</td></tr><tr><td>Retention</td><td>Value event repeats across cohorts</td><td>Support continued use</td></tr></tbody></table>
+<p>Compare cohorts at the same age. A new signup cohort should not be judged beside mature accounts with a longer chance to activate.</p>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Name the activation event in product language.</li><li>List the event that suppresses each nudge.</li><li>Create a cohort view with equal observation windows.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://www.litmus.com/blog/" target="_blank" rel="noopener nofollow">Litmus - Email design blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://reallygoodemails.com/" target="_blank" rel="noopener nofollow">Really Good Emails - Inspiration gallery</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.emailonacid.com/blog/" target="_blank" rel="noopener nofollow">Email on Acid - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.klaviyo.com/learn" target="_blank" rel="noopener nofollow">Klaviyo - Learn</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://help.klaviyo.com/hc/en-us/articles/115002774932" target="_blank" rel="noopener">Klaviyo guide to flows</a>: Supports the trigger, eligibility filter, delay, split, and suppression fields in the lifecycle map.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/analytics/answer/9355644?hl=en" target="_blank" rel="noopener">Google Analytics cohort definition</a>: Supports comparing activation and retention for users who entered the lifecycle during the same period.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/analytics/answer/9322688?hl=en" target="_blank" rel="noopener">Google Analytics event guide</a>: Supports defining the product events that make each lifecycle state measurable.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

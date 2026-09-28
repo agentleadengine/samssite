@@ -75,26 +75,28 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="dns.html" class="card"><h3>SPF, DKIM, DMARC</h3><p>The three DNS records that tell receiving servers your email is legitimate. Here&#x27;s exactly how to configure each and what breaks when you don&#x27;t.</p></a>
-<a href="ip-reputation.html" class="card"><h3>IP reputation</h3><p>Every IP has a reputation score with every email provider. Here&#x27;s what affects it and how shared vs dedicated IPs change your strategy.</p></a>
+<a href="dns.html" class="card"><h3>SPF, DKIM, DMARC</h3><p>Record syntax, alignment, lookup limits, production-path tests, and failure checks.</p></a>
+<a href="ip-reputation.html" class="card"><h3>IP reputation</h3><p>Provider dashboards, complaints, bounces, authentication, and controlled volume changes.</p></a>
 <a href="monitoring.html" class="card"><h3>Monitoring inbox placement</h3><p>If you can&#x27;t see where your emails land, you can&#x27;t improve. Here&#x27;s the monitoring stack that tells you what&#x27;s actually happening.</p></a>
-<a href="sending-domains.html" class="card"><h3>Sending domain strategy</h3><p>Never send cold email from your primary domain. Here&#x27;s the sending-domain architecture that protects your brand and scales safely.</p></a>
-<a href="spam-triggers.html" class="card"><h3>Content that triggers spam filters</h3><p>Spam filters read your content. Certain words, structures, and patterns immediately raise flags. Here&#x27;s what to avoid and why.</p></a>
-<a href="warming.html" class="card"><h3>Inbox warming</h3><p>A new mailbox is a new stranger to email providers. Warming teaches them that you&#x27;re a real sender. Here&#x27;s how it works and why you can&#x27;t skip it.</p></a>
-<a href="why-it-matters.html" class="card"><h3>Why deliverability is everything</h3><p>You can have the best list, best copy, and best offer. If your emails land in spam, none of it matters. Deliverability is the first and most important lever.</p></a>
+<a href="sending-domains.html" class="card"><h3>Sending domain strategy</h3><p>Stream separation, authentication, cost checks, and capacity based on provider feedback.</p></a>
+<a href="spam-triggers.html" class="card"><h3>Content and placement</h3><p>A seed-test procedure for isolating content changes from authentication and reputation problems.</p></a>
+<a href="warming.html" class="card"><h3>Sender ramp</h3><p>How to increase volume against real provider feedback without copying a universal calendar.</p></a>
+<a href="why-it-matters.html" class="card"><h3>Why placement matters</h3><p>How authentication, list quality, complaints, and provider feedback affect a campaign.</p></a>
 </div>
 </div>
 </section>
 
+<h2>The provider check</h2>
+<ol><li>Resolve SPF and confirm the lookup stays within the protocol limit.</li><li>Send a message and inspect the DKIM signature and DMARC alignment.</li><li>Confirm forward DNS, reverse DNS, and TLS for the actual sender.</li><li>Use seed inboxes at the providers your recipients use.</li><li>Review complaints, bounces, and provider reputation by domain.</li></ol>
+<div class="callout warning"><strong>Failure example:</strong> SPF passes for the workspace, but a separate sender signs with an unaligned domain. The dashboard looks healthy while that stream fails DMARC alignment. Test each real sending path.</div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Send one message through every production path.</li><li>Save the authentication results beside the sender name.</li><li>Assign an owner for complaint and placement review.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://support.google.com/mail/answer/81126" target="_blank" rel="noopener nofollow">Google - Email sender guidelines</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://sendersupport.olc.protection.outlook.com/snds/" target="_blank" rel="noopener nofollow">Microsoft - Smart Network Data Services</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.mail-tester.com/" target="_blank" rel="noopener nofollow">MailTester - Inbox placement test</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://glockapps.com/" target="_blank" rel="noopener nofollow">GlockApps - Deliverability testing</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://dmarc.org/" target="_blank" rel="noopener nofollow">DMARC.org</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://support.google.com/mail/answer/81126" target="_blank" rel="noopener">Google email sender guidelines</a>: Supports the authentication, alignment, wanted-mail, complaint, and unsubscribe checks in the provider runbook.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://sendersupport.olc.protection.outlook.com/snds/" target="_blank" rel="noopener">Microsoft Smart Network Data Services</a>: Supports checking Outlook-facing IP data and complaint signals during diagnosis.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

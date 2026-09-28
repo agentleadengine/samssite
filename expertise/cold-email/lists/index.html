@@ -75,24 +75,29 @@
 <section class="block">
 <div class="container">
 <div class="cards">
-<a href="clay.html" class="card"><h3>Clay and enrichment</h3><p>Clay changed the cold email data game. Here&#x27;s how enrichment platforms work and the workflows that separate amateur targeting from the best operators.</p></a>
-<a href="databases.html" class="card"><h3>Lead databases</h3><p>Apollo, ZoomInfo, LinkedIn Sales Navigator, Lusha, Seamless. Here&#x27;s how the major B2B data providers differ and which to pick when.</p></a>
-<a href="icp.html" class="card"><h3>Defining the ICP</h3><p>Cold email quality is capped by list quality. List quality is capped by ICP definition. Here&#x27;s how to write one that actually targets.</p></a>
-<a href="intent-signals.html" class="card"><h3>Intent signals</h3><p>Most cold email goes to people who aren&#x27;t thinking about your category. Intent signals help you find the few who are, and they convert 5-10x better.</p></a>
-<a href="segmentation.html" class="card"><h3>Segmentation strategy</h3><p>One list isn&#x27;t a strategy. Segmenting by ICP, intent, role, and stage produces campaigns that actually convert.</p></a>
-<a href="verification.html" class="card"><h3>Verification + hygiene</h3><p>Sending to unverified addresses destroys domain reputation fast. Here&#x27;s how to verify, when, and how strict to be.</p></a>
+<a href="clay.html" class="card"><h3>Clay and enrichment</h3><p>Waterfall enrichment, record-level provenance, credit use, and a local coverage test.</p></a>
+<a href="databases.html" class="card"><h3>Lead databases</h3><p>Apollo, ZoomInfo, LinkedIn Sales Navigator, and Lusha. Here&#x27;s how the major B2B data providers differ and which to pick when.</p></a>
+<a href="icp.html" class="card"><h3>Defining the ICP</h3><p>Named company, role, location, problem, source, and exclusion fields for a usable search.</p></a>
+<a href="intent-signals.html" class="card"><h3>Intent signals</h3><p>A matched holdout method for checking whether a signal improves qualified replies.</p></a>
+<a href="segmentation.html" class="card"><h3>Segmentation strategy</h3><p>How to keep only the segments that change the message or sales decision.</p></a>
+<a href="verification.html" class="card"><h3>Verification + hygiene</h3><p>Verification states, catch-all policy, source-level bounce review, and suppression checks.</p></a>
 </div>
 </div>
 </section>
 
+<h2>From ICP to a usable row</h2>
+<p>Start with role, company type, location, and a reason the problem is plausible. A usable record then needs a source URL, email status, last verification date, exclusion result, and campaign segment.</p>
+<div class="callout note"><strong>Worked record:</strong> Operations manager, commercial roofing company, Mid-Atlantic region, hiring signal confirmed on the company site, business email verified, no suppression match, segment set to seasonal staffing.</div>
+<h2>Audit checks</h2>
+<ul><li>Open a random sample and confirm the person still holds the role.</li><li>Reject records with no traceable source or an ambiguous employer.</li><li>Keep exclusion reasons so the same bad record does not return later.</li></ul>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Add source, verification, and exclusion columns.</li><li>Review a random sample manually.</li><li>Remove the segment whose message would not change.</li></ol></div>
+
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://instantly.ai/blog" target="_blank" rel="noopener nofollow">Instantly.ai blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.smartlead.ai/blog" target="_blank" rel="noopener nofollow">Smartlead - Cold email blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.apollo.io/blog" target="_blank" rel="noopener nofollow">Apollo.io - Blog</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.gmass.co/blog" target="_blank" rel="noopener nofollow">GMass - Cold email guide</a></li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/" target="_blank" rel="noopener">ICO direct marketing guidance</a>: Supports recording data source, purpose, lawful basis, notice, objections, and suppression in the worked list workflow.</li>
+<li><span class="resource-meta">Checked 28 Sep 2026</span><a href="https://commission.europa.eu/law/law-topic/data-protection/data-protection-eu_en" target="_blank" rel="noopener">European Commission data-protection overview</a>: Supports the boundary that contact data remains personal data when a list is bought or enriched.</li>
 </ul>
 </div>
 <footer class="site-footer"><div class="container">

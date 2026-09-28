@@ -104,14 +104,10 @@
   });
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Design onboarding around 3-5 small wins in the first session, one big win at the end loses users mid-flow</li>
-<li>Celebrate real wins with subtle UI feedback (progress bar, confetti, notification), skip fake celebrations users see through</li>
-<li>Sequence wins from easiest to most meaningful, the first 30 seconds must produce visible progress or users bounce</li>
-<li>Measure completion rate per win, not just final activation, reveals where in the flow you're losing people</li>
-<li>Pre-populate data where possible, a user's "first project" created with sample content feels like a win in 30 seconds</li>
-</ul>
+<h2>Worked early wins record</h2>
+<p>For a scheduling tool, the path is choose availability, connect a calendar, create one booking link, then complete a test booking. Measure signup_at to test_booking_completed_at. <strong>Illustrative before and after, not observed product results:</strong> the old path has 320 completions among 1,000 eligible signups with median time to value of 18 minutes; the revised path has 410 of 1,000 with median 11 minutes.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> A faster test booking is not customer value if real invitees never book. Calendar-provider mix and existing accounts can change both completion and elapsed time.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>List every action before the first test booking.</li><li>Remove one action not required for that event.</li><li>Compare completion and median time for eligible cohorts.</li><li>Check later real bookings as a guardrail.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">

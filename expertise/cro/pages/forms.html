@@ -75,7 +75,7 @@
     {label: '7 fields', value: 50, note: '~50% fewer'},
     {label: '10+ fields', value: 25, note: 'big drop-off'}
   ]});
-});</script><ul><li>Ask only what you need</li><li>One field per line (not cramped)</li><li>Inline validation</li><li>Clear error messages</li><li>Progress indicator for multi-step</li></ul><h2>Field count</h2><p>Each added field drops conversion 5-15%. Email-only is the baseline.</p><h2>Multi-step vs single</h2><p>For 5+ fields, multi-step usually converts better. Shorter perceived commitment at each step.</p><h2>Mobile</h2><p>Use appropriate input types (email, tel, number) to trigger right keyboard.</p>
+});</script><ul><li>Ask only what you need</li><li>One field per line</li><li>Inline validation</li><li>Clear error recovery</li><li>Progress indicator when the form has meaningful stages</li></ul><h2>Field removal test</h2><p>Instrument focus, error, abandon, submit, accepted lead, and revenue. Remove one field, keep the traffic and offer stable, and compare completion with downstream lead quality.</p><h2>Multi-step vs single</h2><p>Choose the structure from task order and test evidence, not a field-count rule.</p><h2>Mobile</h2><p>Use appropriate input types such as email, telephone, and number to show the useful keyboard.</p>
 
 <div class="sketch" data-viewbox="0 0 900 310"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -92,24 +92,23 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Audit every form field, each drops conversion 5-15%, cut anything not needed for the next step</li>
-<li>Use mobile-optimized input types (email, tel, number), wrong keyboard types add friction users feel</li>
-<li>Test multi-step vs single-step forms, multi-step often wins because each step feels lighter than the total</li>
-<li>Show inline validation, users fill forms faster when they see errors at the field, not on submit</li>
-<li>Pre-fill where possible (returning user, URL params), reducing typing burden lifts conversion meaningfully</li>
-</ul>
+<div class="lesson-task">
+<h3>Do this today</h3>
+<ol>
+<li>Map view, focus, error, abandon, submit, accepted-lead, and revenue events to each form field.</li>
+<li><strong>Hypothetical instrumentation map:</strong> <code>form_view</code> once per eligible view, <code>field_error</code> with field name and error type, <code>form_start</code> on first change, <code>form_submit</code> on server acceptance, and <code>lead_accepted</code> from the CRM. Never send field values containing personal data.</li>
+<li>Test removing optional company size while holding traffic and copy constant. Primary metric: accepted submissions per assigned user. Guardrails: sales-accepted rate and duplicate rate after seven days.</li>
+<li><strong>Decision rule:</strong> Remove a field only when completion improves and CRM acceptance does not fall.</li>
+<li><strong>Limitation:</strong> Field-level events can expose sensitive input. Record interaction states, not entered values.</li>
+</ol>
+</div>
 
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Blog</span><a href="https://cxl.com/blog/" target="_blank" rel="noopener nofollow">CXL - Blog</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://goodui.org/" target="_blank" rel="noopener nofollow">GoodUI - Patterns</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener nofollow">Nielsen Norman Group</a></li>
-<li><span class="resource-meta">Blog</span><a href="https://baymard.com/blog" target="_blank" rel="noopener nofollow">Baymard Institute - UX research</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://www.growthbook.io/" target="_blank" rel="noopener nofollow">Google Optimize alternatives - Growthbook</a></li>
+<li id="src-1"><span class="resource-meta">Research</span><a href="https://www.nngroup.com/articles/web-form-design/" target="_blank" rel="noopener">NN/g: web form design</a></li>
+<li id="src-2"><span class="resource-meta">Docs</span><a href="https://support.google.com/analytics/answer/9267735" target="_blank" rel="noopener">Google Analytics: recommended lead events</a></li>
 </ul>
 </div>
 </div></div><footer class="site-footer"><div class="container">

@@ -76,7 +76,7 @@
     {title: 'Revenue / user', sub: 'active → $'},
     {title: 'Retention %', sub: 'active → stay'}
   ]});
-});</script><ul><li>Inputs: traffic, conversion rates, retention, LTV, CAC</li><li>Formulas linking them</li><li>Outputs: MRR, revenue, users</li></ul><h2>Simple version</h2><p>Even a 20-cell spreadsheet showing channels → visitors → signups → activations → paid → MRR is valuable.</p>
+});</script><ul><li>Inputs: traffic, conversion rates, retention, LTV, CAC</li><li>Formulas linking them</li><li>Outputs: MRR, revenue, users</li></ul><h2>Simple version</h2><p>A useful model names each input, unit, dependency, observation window, and owner, then exposes which assumption changes the decision.</p>
 
 <div class="sketch" data-viewbox="0 0 900 260"></div>
 <script>window.addEventListener('sketch:ready', function(){
@@ -93,14 +93,10 @@
   ]});
 });</script>
 
-<h2>What to do with this</h2>
-<ul>
-<li>Build a spreadsheet-based growth model with each stage as a variable, running scenarios exposes which lever matters most</li>
-<li>Update the model monthly with actuals, the delta between model and reality tells you what assumptions to revisit</li>
-<li>Use the model to size bets, "if conversion improves 10%, revenue grows $X" makes prioritization obvious</li>
-<li>Don't over-engineer the model, a simple Sheet with 10 variables beats a complex consulting-style deck nobody updates</li>
-<li>Share the model with the team, shared visibility into the growth machine aligns everyone on what to optimize</li>
-</ul>
+<h2>Worked growth models record</h2>
+<p><strong>Illustrative assumptions, not observed results:</strong> 12,000 eligible visitors x 8% signup = 960 signups; x 50% activation = 480 activated accounts; x 25% paid conversion = 120 new paid accounts. At $40 monthly contribution per paid account, month-one contribution is $4,800. With $12,000 acquisition spend, CAC is $100 and simple contribution payback is 2.5 months.</p><table><thead><tr><th>Sensitivity</th><th>Paid accounts</th><th>Month-one contribution</th></tr></thead><tbody><tr><td>Activation falls to 40%</td><td>96</td><td>$3,840, down 20%</td></tr><tr><td>Paid conversion rises to 30%</td><td>144</td><td>$5,760, up 20%</td></tr></tbody></table><p>Dependencies are explicit: paid accounts = visitors x signup rate x activation rate x paid conversion; contribution = paid accounts x contribution per account.</p>
+<div class="callout warning"><p><strong>Where it breaks:</strong> The model treats rates as independent and contribution as immediate. Cohort mix, churn, collections timing, and capacity can invalidate the simple payback.</p></div>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Replace the six assumptions with sourced values.</li><li>Recalculate paid accounts and monthly cash.</li><li>Move each rate by a plausible range.</li><li>Record which sensitivity changes the decision.</li></ol></div>
 
 <!-- further-reading -->
 <div class="further-reading">
