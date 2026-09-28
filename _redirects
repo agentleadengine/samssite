@@ -2,5 +2,10 @@
 /ai-consulting https://agentleadengine.com/ 301!
 /ai-consulting/ https://agentleadengine.com/ 301!
 /ai-consulting.html https://agentleadengine.com/ 301!
+# MAINTENANCE MODE (2026-09-28). To turn off: delete this block down to END MAINTENANCE.
+/maintenance.html  /maintenance.html  200
+/logo.png  /logo.png  200
+/*  /maintenance.html  302!
+# END MAINTENANCE
 /PRODUCT.md /404.html 404!
 /DESIGN.md /404.html 404!
