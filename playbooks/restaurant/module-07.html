@@ -10,531 +10,9 @@
 <meta property="og:title" content="Video scripts | The Restaurant Owner's Claude Playbook">
 <meta property="og:description" content="Scripts for explainers, shorts, intros, case studies.">
 <meta property="og:site_name" content="Samuel Ochoa">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css?v=20260706">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260929">
 
-<style>
-/* Playbook-specific styles */
-.playbook-layout {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 0;
-    min-height: calc(100vh - 80px);
-    max-width: 1400px;
-    margin: 0 auto;
-    background: #fff;
-}
-.playbook-sidebar {
-    background: #fafafa;
-    border-right: 1px solid #e5e5ea;
-    padding: 32px 24px;
-    position: sticky;
-    top: 80px;
-    height: calc(100vh - 80px);
-    overflow-y: auto;
-}
-.playbook-sidebar h4 {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--gray-500, #8e8e93);
-    margin: 0 0 12px 0;
-}
-.playbook-progress {
-    background: #fff;
-    border: 1px solid #e5e5ea;
-    border-radius: 6px;
-    padding: 14px;
-    margin-bottom: 24px;
-}
-.playbook-progress-bar {
-    height: 6px;
-    background: #f0f0f5;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 8px;
-}
-.playbook-progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #4a00e0, #7c3aed);
-    transition: width 0.3s;
-}
-.playbook-progress-text {
-    font-size: 12px;
-    color: var(--gray-500, #666);
-    display: flex;
-    justify-content: space-between;
-}
-.playbook-progress-text strong {
-    color: #4a00e0;
-}
-.playbook-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 24px 0;
-}
-.playbook-sidebar li {
-    margin: 2px 0;
-}
-.playbook-sidebar a {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    font-size: 14px;
-    color: #333;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.15s;
-    position: relative;
-}
-.playbook-sidebar a:hover {
-    background: #fff;
-    color: #4a00e0;
-}
-.playbook-sidebar a.active {
-    background: #4a00e0;
-    color: #fff;
-    font-weight: 500;
-}
-.playbook-sidebar a.completed::before {
-    content: "✓";
-    margin-right: 8px;
-    color: #10b981;
-    font-weight: 700;
-}
-.playbook-sidebar a.active.completed::before {
-    color: #fff;
-}
-.playbook-content {
-    padding: 48px 56px;
-    max-width: 820px;
-}
-.playbook-header {
-    margin-bottom: 48px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e5e5ea;
-}
-.playbook-module-label {
-    display: inline-block;
-    background: #f3f0ff;
-    color: #4a00e0;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 12px;
-}
-.playbook-content h1.title {
-    font-size: 36px;
-    line-height: 1.2;
-    margin: 0 0 8px 0;
-}
-.playbook-subtitle {
-    font-size: 18px;
-    color: var(--gray-500, #666);
-    margin: 0;
-}
-.playbook-content h2 {
-    font-size: 24px;
-    margin: 40px 0 16px 0;
-    padding-top: 8px;
-}
-.playbook-content h3 {
-    font-size: 18px;
-    margin: 28px 0 12px 0;
-}
-.playbook-content p, .playbook-content li {
-    font-size: 16px;
-    line-height: 1.7;
-}
-.playbook-content ul, .playbook-content ol {
-    padding-left: 24px;
-}
-.playbook-content li {
-    margin: 6px 0;
-}
-
-/* Prompt template blocks */
-.prompt-box {
-    background: #1a1a2e;
-    color: #e4e4e7;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin: 20px 0;
-    position: relative;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13.5px;
-    line-height: 1.6;
-    overflow: hidden;
-}
-.prompt-box pre {
-    margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-.prompt-box-label {
-    display: inline-block;
-    background: #4a00e0;
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 12px;
-    font-family: 'Inter', sans-serif;
-}
-.copy-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    transition: all 0.15s;
-}
-.copy-btn:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.35);
-}
-.copy-btn.copied {
-    background: #10b981;
-    border-color: #10b981;
-}
-
-/* Callout boxes */
-.callout {
-    background: #f3f0ff;
-    border-left: 4px solid #4a00e0;
-    padding: 16px 20px;
-    margin: 20px 0;
-    border-radius: 0 8px 8px 0;
-}
-.callout.warning {
-    background: #fff7ed;
-    border-left-color: #f97316;
-}
-.callout.success {
-    background: #f0fdf4;
-    border-left-color: #10b981;
-}
-.callout-title {
-    font-weight: 700;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 6px;
-    color: #4a00e0;
-}
-.callout.warning .callout-title {
-    color: #ea580c;
-}
-.callout.success .callout-title {
-    color: #059669;
-}
-.callout p {
-    margin: 0 0 8px 0;
-}
-.callout p:last-child {
-    margin-bottom: 0;
-}
-
-/* Insurance-type tabs */
-.tabs {
-    display: flex;
-    gap: 4px;
-    margin: 24px 0 16px;
-    border-bottom: 2px solid #e5e5ea;
-    padding-bottom: 0;
-    overflow-x: auto;
-}
-.tab-btn {
-    background: none;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #666;
-    cursor: pointer;
-    position: relative;
-    font-family: inherit;
-    white-space: nowrap;
-}
-.tab-btn:hover { color: #4a00e0; }
-.tab-btn.active {
-    color: #4a00e0;
-    font-weight: 600;
-}
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #4a00e0;
-}
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* Expandable sections */
-.expandable {
-    border: 1px solid #e5e5ea;
-    border-radius: 8px;
-    margin: 12px 0;
-    overflow: hidden;
-}
-.expandable-toggle {
-    width: 100%;
-    background: #fafafa;
-    border: none;
-    padding: 14px 18px;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: left;
-    cursor: pointer;
-    font-family: inherit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.expandable-toggle:hover { background: #f0f0f5; }
-.expandable-toggle::after {
-    content: '+';
-    font-size: 22px;
-    font-weight: 400;
-    color: #4a00e0;
-    transition: transform 0.2s;
-}
-.expandable.open .expandable-toggle::after {
-    transform: rotate(45deg);
-}
-.expandable-body {
-    display: none;
-    padding: 16px 18px;
-}
-.expandable.open .expandable-body { display: block; }
-
-/* Checklist with persistence */
-.checklist {
-    background: #fafafa;
-    border: 1px solid #e5e5ea;
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin: 24px 0;
-}
-.checklist-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 6px 0;
-    cursor: pointer;
-}
-.checklist-item input[type=checkbox] {
-    margin-top: 4px;
-    width: 18px;
-    height: 18px;
-    accent-color: #4a00e0;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-.checklist-item label {
-    cursor: pointer;
-    font-size: 15px;
-    line-height: 1.6;
-    user-select: none;
-}
-.checklist-item input[type=checkbox]:checked + label {
-    color: #8e8e93;
-    text-decoration: line-through;
-}
-
-/* Module complete button */
-.module-complete {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid #e5e5ea;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.btn-complete {
-    background: #4a00e0;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.15s;
-}
-.btn-complete:hover { background: #3b0a8a; }
-.btn-complete.done {
-    background: #10b981;
-    cursor: default;
-}
-.module-nav {
-    display: flex;
-    gap: 12px;
-}
-.module-nav a {
-    padding: 10px 16px;
-    border: 1px solid #e5e5ea;
-    border-radius: 8px;
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-.module-nav a:hover {
-    border-color: #4a00e0;
-    color: #4a00e0;
-}
-
-/* Search + filter for prompt library */
-.library-search {
-    display: flex;
-    gap: 12px;
-    margin: 24px 0;
-    flex-wrap: wrap;
-}
-.library-search input {
-    flex: 1;
-    min-width: 240px;
-    padding: 12px 16px;
-    border: 1px solid #e5e5ea;
-    border-radius: 8px;
-    font-size: 15px;
-    font-family: inherit;
-}
-.library-filter {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin: 16px 0 24px;
-}
-.filter-chip {
-    background: #fff;
-    border: 1px solid #e5e5ea;
-    color: #333;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 500;
-}
-.filter-chip:hover { border-color: #4a00e0; color: #4a00e0; }
-.filter-chip.active {
-    background: #4a00e0;
-    color: #fff;
-    border-color: #4a00e0;
-}
-.library-prompt {
-    border: 1px solid #e5e5ea;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 16px 0;
-    background: #fff;
-}
-.library-prompt.hidden { display: none; }
-.library-prompt-title {
-    font-size: 17px;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-}
-.library-prompt-meta {
-    display: flex;
-    gap: 8px;
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-}
-.library-tag {
-    background: #f3f0ff;
-    color: #4a00e0;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.library-count {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-/* Hero / landing */
-.playbook-hero {
-    background: linear-gradient(135deg, #4a00e0 0%, #7c3aed 100%);
-    color: #fff;
-    padding: 64px 56px;
-    margin: -48px -56px 48px -56px;
-    border-radius: 0;
-}
-.playbook-hero h1 {
-    font-size: 42px;
-    margin: 0 0 12px 0;
-    color: #fff;
-    line-height: 1.15;
-}
-.playbook-hero-subtitle {
-    font-size: 20px;
-    opacity: 0.95;
-    max-width: 600px;
-}
-.playbook-hero-stats {
-    display: flex;
-    gap: 32px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-}
-.playbook-stat strong {
-    display: block;
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1;
-}
-.playbook-stat span {
-    font-size: 13px;
-    opacity: 0.85;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-@media (max-width: 900px) {
-    .playbook-layout { grid-template-columns: 1fr; }
-    .playbook-sidebar {
-        position: static;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e5e5ea;
-    }
-    .playbook-content { padding: 32px 24px; }
-    .playbook-hero { padding: 40px 24px; margin: -32px -24px 32px -24px; }
-    .playbook-hero h1 { font-size: 30px; }
-}
-</style>
 
 <link rel="icon" type="image/png" href="../../logo.png">
 
@@ -551,7 +29,7 @@
 <meta name="twitter:title" content="Video scripts | The Restaurant Owner&#x27;s Claude Playbook">
 <meta name="twitter:description" content="Scripts for explainers, shorts, intros, case studies.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
-<meta name="theme-color" content="#4a00e0">
+<meta name="theme-color" content="#f3ecdd">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Video scripts | The Restaurant Owner's Claude Playbook","description":"Scripts for explainers, shorts, intros, case studies.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/playbooks/restaurant/module-07.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://samuelochoa.com/playbooks/"},{"@type":"ListItem","position":3,"name":"Restaurant","item":"https://samuelochoa.com/playbooks/restaurant/"},{"@type":"ListItem","position":4,"name":"Module 07","item":"https://samuelochoa.com/playbooks/restaurant/module-07"}]}</script>
@@ -563,23 +41,28 @@
 })(window, document, "clarity", "script", "x9tyuivf47");
 </script>
 </head>
-<body><nav class="topbar"><div class="topbar-inner">
-<a href="../../index.html" class="logo"><img class="brand-logo" src="../../logo.png" alt="Samuel Ochoa"></a>
+<body><nav class="topbar" aria-label="Main"><div class="topbar-inner">
+<a href="../../index.html" class="logo"><img class="brand-logo" src="../../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
-<a href="../../index.html" class="nav-link">Home</a>
-<a href="https://agentleadengine.com/" class="nav-link">Work with me</a>
-<a href="../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../learn/index.html" class="nav-link">Start here</a>
+<a href="../../learn/owners/index.html" class="nav-link">Owners</a>
+<a href="../../framework/index.html" class="nav-link">Builders</a>
 <div class="nav-group">
-<a href="../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<a href="../../learn/library.html" class="nav-link nav-has-submenu">Library</a>
 <div class="nav-submenu">
-<a href="../../framework/index.html">Framework</a>
-<a href="../../expertise/index.html">Expertise</a>
-<a href="../../playbooks/index.html">Playbooks</a>
-<a href="../../writing.html">Writing</a>
+<a href="../../framework/index.html">The Framework <small>41</small></a>
+<a href="../../expertise/index.html">Expertise libraries <small>486</small></a>
+<a href="../../playbooks/index.html">Industry playbooks <small>240</small></a>
+<a href="../../compare/index.html">Tool comparisons <small>77</small></a>
+<a href="../../glossary/index.html">Glossary <small>111</small></a>
+<a href="../../writing.html">Essays <small>20</small></a>
+<a href="../../snapshots.html">GHL snapshots</a>
 </div></div>
 <a href="../../about.html" class="nav-link">About</a>
-<a href="../../contact.html" class="nav-link">Contact</a>
+<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
+<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
+<a href="../../newsletter.html" class="nav-link nav-cta">Daily brief</a>
 </div>
 </div></nav><div class="playbook-layout"><aside class="playbook-sidebar">
 <div class="playbook-progress">
@@ -666,15 +149,21 @@ Warm, not corny. Contractions. Short sentences.</pre>
 <div class="checklist-item"><input type="checkbox" id="m7-2" data-key="restaurant-m7-2"><label for="m7-2">Block 30 min. Record 3.</label></div>
 <div class="checklist-item"><input type="checkbox" id="m7-3" data-key="restaurant-m7-3"><label for="m7-3">Write personal intro. Record it.</label></div>
 </div>
-<div class="module-complete"><button class="btn-complete" data-module="module-07">Mark module complete</button><div class="module-nav"><a href="module-06.html">← Blog posts + SEO</a><a href="module-08.html">Direct mail →</a></div></div><!-- further-reading -->
+<div class="module-complete"><button class="btn-complete" data-module="module-07">Mark module complete</button><div class="module-nav"><a href="module-06.html" class="arrow-link is-back">Blog posts + SEO</a><a href="module-08.html" class="arrow-link">Direct mail</a></div></div><!-- further-reading -->
 <div class="further-reading">
 <h2>Further reading</h2>
 <ul>
 <li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/" target="_blank" rel="noopener nofollow">Anthropic docs</a></li>
 </ul>
 </div>
-</div></div><footer><div class="container">
-<p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></p>
+</div></div><footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div class="foot-brand"><img src="../../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
+<div><h4>Learn</h4><ul><li><a href="../../learn/index.html">Start here</a></li><li><a href="../../learn/owners/index.html">Owner track</a></li><li><a href="../../framework/index.html">Builder track</a></li><li><a href="../../newsletter.html">Daily AI brief</a></li></ul></div>
+<div><h4>Library</h4><ul><li><a href="../../framework/index.html">Framework</a></li><li><a href="../../expertise/index.html">Expertise</a></li><li><a href="../../playbooks/index.html">Playbooks</a></li><li><a href="../../compare/index.html">Comparisons</a></li><li><a href="../../glossary/index.html">Glossary</a></li><li><a href="../../writing.html">Essays</a></li></ul></div>
+<div><h4>Sam</h4><ul><li><a href="../../about.html">About</a></li><li><a href="../../testimonials.html">Testimonials</a></li><li><a href="../../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
+</div>
+<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
 </div></footer>
 
 <script>
@@ -852,114 +341,42 @@ Warm, not corny. Contractions. Short sentences.</pre>
   const bar = document.querySelector('nav.topbar');
   if (!bar || bar.dataset.navInit) return;
   bar.dataset.navInit = '1';
-
-  const OPEN_DELAY = 120;   // ms - hover intent
-  const CLOSE_DELAY = 450;  // ms - forgiving close
-  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
-
+  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
+  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
   const hamb = bar.querySelector('.hamburger');
   const links = bar.querySelector('.nav-links');
   const groups = Array.from(bar.querySelectorAll('.nav-group'));
-
-  // --- Mobile hamburger ---------------------------------------------------
-  if (hamb && links) {
-    hamb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const open = bar.classList.toggle('nav-open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-
-  // --- Per-group hover-intent open/close ---------------------------------
-  groups.forEach(function(group) {
-    let openTimer = null;
-    let closeTimer = null;
-
-    const open = () => {
-      clearTimeout(closeTimer); closeTimer = null;
-      if (openTimer) return;
-      openTimer = setTimeout(() => {
-        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
-        group.classList.add('is-open');
-        openTimer = null;
-      }, OPEN_DELAY);
-    };
-    const close = () => {
-      clearTimeout(openTimer); openTimer = null;
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        group.classList.remove('is-open');
-        closeTimer = null;
-      }, CLOSE_DELAY);
-    };
-    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
-
-    // Desktop: hover opens, mouseleave closes after delay
+  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+  let best = null, bestLen = 0;
+  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
+    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
+  });
+  if (best) best.setAttribute('aria-current', 'page');
+  if (hamb && links) hamb.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = bar.classList.toggle('nav-open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  groups.forEach(function(group){
+    let openT = null, closeT = null;
+    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
+    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
-    // If cursor re-enters while closing, cancel the close
-    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
-
-    // Click trigger: mobile toggles accordion; desktop follows the link
+    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
+    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
     const trigger = group.querySelector('.nav-has-submenu');
-    if (trigger) {
-      trigger.addEventListener('click', function(e) {
-        if (isMobile()) {
-          e.preventDefault();
-          const wasOpen = group.classList.contains('is-open');
-          groups.forEach(g => g.classList.remove('is-open'));
-          if (!wasOpen) group.classList.add('is-open');
-        }
-      });
-    }
-  });
-
-  // --- Mega menu (legacy): swap right-panel content on category hover -----
-  // No-op now that Resources is a simple dropdown, but harmless if any
-  // mega markup lingers on a not-yet-rebuilt page.
-  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
-  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
-  let catTimer = null;
-  megaCats.forEach(function(cat) {
-    cat.addEventListener('mouseenter', function() {
-      clearTimeout(catTimer);
-      const id = cat.dataset.cat;
-      catTimer = setTimeout(() => {
-        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
-        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
-      }, 80); // snappier than top-level hover intent
+    if (trigger) trigger.addEventListener('click', function(e){
+      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
     });
   });
-
-  // --- Close menu when a leaf link is clicked ----------------------------
-  if (links) {
-    links.querySelectorAll('a').forEach(function(a) {
-      if (a.classList.contains('nav-has-submenu')) return;
-      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
-      a.addEventListener('click', function() {
-        bar.classList.remove('nav-open');
-        if (hamb) hamb.setAttribute('aria-expanded', 'false');
-        groups.forEach(g => g.classList.remove('is-open'));
-      });
-    });
-  }
-
-  // --- Close on outside click ---------------------------------------------
-  document.addEventListener('click', function(e) {
-    if (!bar.contains(e.target)) {
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
+  document.addEventListener('click', function(e){
+    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
   });
-
-  // --- Escape key closes everything ---------------------------------------
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
   });
 })();
-</script></body></html>
+</script><script defer src="../../js/site.js"></script>
+</body></html>

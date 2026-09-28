@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Context engineering | Samuel Ochoa</title>
+<meta name="description" content="Context engineering is the practice of preparing the right instructions, evidence, and tools for a model run.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Context engineering | Samuel Ochoa">
+<meta property="og:description" content="Context engineering is the practice of preparing the right instructions, evidence, and tools for a model run.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260929">
+<link rel="icon" type="image/png" href="../../logo.png">
+
+<script defer src="../../js/sketch.js"></script>
+<script defer src="../../js/translate.js"></script>
+
+<link rel="canonical" href="https://samuelochoa.com/framework/patterns/context-engineering">
+<meta property="og:url" content="https://samuelochoa.com/framework/patterns/context-engineering">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Context engineering | Samuel Ochoa">
+<meta name="twitter:description" content="Context engineering is the practice of preparing the right instructions, evidence, and tools for a model run.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#f3ecdd">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Context engineering | Samuel Ochoa","description":"Context engineering is the practice of preparing the right instructions, evidence, and tools for a model run.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/framework/patterns/context-engineering.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://samuelochoa.com/framework/"},{"@type":"ListItem","position":3,"name":"Claude Code","item":"https://samuelochoa.com/framework/claude-code/"},{"@type":"ListItem","position":4,"name":"Hooks","item":"https://samuelochoa.com/framework/patterns/context-engineering"}]}</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar" aria-label="Main"><div class="topbar-inner">
+<a href="../../index.html" class="logo"><img class="brand-logo" src="../../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="../../learn/index.html" class="nav-link">Start here</a>
+<a href="../../learn/owners/index.html" class="nav-link">Owners</a>
+<a href="../../framework/index.html" class="nav-link">Builders</a>
+<div class="nav-group">
+<a href="../../learn/library.html" class="nav-link nav-has-submenu">Library</a>
+<div class="nav-submenu">
+<a href="../../framework/index.html">The Framework <small>41</small></a>
+<a href="../../expertise/index.html">Expertise libraries <small>486</small></a>
+<a href="../../playbooks/index.html">Industry playbooks <small>240</small></a>
+<a href="../../compare/index.html">Tool comparisons <small>77</small></a>
+<a href="../../glossary/index.html">Glossary <small>111</small></a>
+<a href="../../writing.html">Essays <small>20</small></a>
+<a href="../../snapshots.html">GHL snapshots</a>
+</div></div>
+<a href="../../about.html" class="nav-link">About</a>
+<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
+<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
+<a href="../../newsletter.html" class="nav-link nav-cta">Daily brief</a>
+</div>
+</div></nav><div class="framework-layout">
+<aside class="framework-sidebar"><h4>Foundations</h4>
+<ul>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../what-is-autonomous-ai.html">What is autonomous AI</a></li>
+<li><a href="../the-autonomy-spectrum.html">The autonomy spectrum</a></li>
+<li><a href="../glossary.html">Glossary</a></li>
+</ul>
+<h4>Claude</h4>
+<ul>
+<li><a href="../claude/overview.html">Overview</a></li>
+<li><a href="../claude/prompting-for-agents.html">Prompting for agents</a></li>
+<li><a href="../claude/extended-thinking.html">Extended thinking</a></li>
+<li><a href="../claude/tool-use.html">Tool use</a></li>
+</ul>
+<h4>MCP</h4>
+<ul>
+<li><a href="../mcp/index.html">Overview</a></li>
+<li><a href="../mcp/what-is-mcp.html">What is MCP</a></li>
+<li><a href="../mcp/anatomy.html">Anatomy</a></li>
+<li><a href="../mcp/transports.html">Transports</a></li>
+<li><a href="../mcp/servers.html">Servers</a></li>
+<li><a href="../mcp/clients.html">Clients</a></li>
+<li><a href="../mcp/security.html">Security</a></li>
+<li><a href="../mcp/directory.html">Directory</a></li>
+</ul>
+<h4>Plugins</h4>
+<ul>
+<li><a href="../plugins/index.html">Overview</a></li>
+<li><a href="../plugins/vs-mcp.html">Plugins vs MCP</a></li>
+<li><a href="../plugins/marketplace.html">Marketplace</a></li>
+</ul>
+<h4>Claude Code</h4>
+<ul>
+<li><a href="../claude-code/index.html">Overview</a></li>
+<li><a href="../claude-code/settings.html">Settings</a></li>
+<li><a href="../claude-code/permissions.html">Permissions</a></li>
+<li><a href="../claude-code/hooks.html">Hooks</a></li>
+<li><a href="../claude-code/subagents.html">Subagents</a></li>
+<li><a href="../claude-code/skills.html">Skills</a></li>
+<li><a href="../claude-code/memory.html">Memory</a></li>
+</ul>
+<h4>Patterns</h4>
+<ul>
+<li><a href="index.html">Overview</a></li>
+<li><a href="react-loop.html">ReAct loop</a></li>
+<li><a href="plan-execute.html">Plan-execute</a></li>
+<li><a href="multi-agent.html">Multi-agent</a></li>
+<li><a href="evaluation.html">Evaluation</a></li>
+<li><a href="prompt-caching.html">Prompt caching</a></li>
+<li><a href="context-engineering.html" class="active">Context engineering</a></li>
+</ul>
+<h4>Autonomous</h4>
+<ul>
+<li><a href="../autonomous/index.html">Overview</a></li>
+<li><a href="../autonomous/headless.html">Headless</a></li>
+<li><a href="../autonomous/scheduling.html">Scheduling</a></li>
+<li><a href="../autonomous/self-monitoring.html">Self-monitoring</a></li>
+<li><a href="../autonomous/safety.html">Safety</a></li>
+</ul>
+<h4>Build Guides</h4>
+<ul>
+<li><a href="../build/index.html">Overview</a></li>
+<li><a href="../build/first-agent.html">First agent (60 min)</a></li>
+<li><a href="../build/first-skill.html">Write your first skill</a></li>
+<li><a href="../build/mcp-server.html">Build an MCP server</a></li>
+<li><a href="../build/agent-sdk.html">The Claude Agent SDK</a></li>
+<li><a href="../build/voice-agent.html">Voice agent</a></li>
+<li><a href="../build/research-agent.html">Research agent</a></li>
+</ul>
+<h4>Tools</h4>
+<ul>
+<li><a href="../tools/browser-automation.html">Browser automation</a></li>
+<li><a href="../tools/desktop-control.html">Desktop control</a></li>
+<li><a href="../tools/local-models.html">Local and open models (Ollama)</a></li>
+</ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Framework</a><span class="sep">›</span><span>Patterns</span><span class="sep">›</span><span>Context engineering</span></div>
+<h1 class="title">Context engineering</h1>
+<dl class="record is-builder"><div class="rec-item"><dt>Track</dt><dd>Builders · pattern</dd></div><div class="rec-item"><dt>Time</dt><dd>About 20 minutes</dd></div><div class="rec-item"><dt>You need</dt><dd>An agent task and a way to inspect its inputs</dd></div><div class="rec-item"><dt>Last checked</dt><dd><time datetime="2026-09-28">28 Sep 2026</time></dd></div></dl>
+<p class="lede">Context engineering is the practice of deciding what an agent sees, when it sees it, and what it carries forward. It is less about finding a perfect prompt and more about giving a capable model the smallest high-signal working set for the decision in front of it.</p>
+<h2>Context is a finite resource</h2>
+<p>Anthropic's engineering post on context engineering makes a simple point worth taking seriously: a long context window is not an excuse to paste everything in. Models have an attention budget. More tokens can add relevant evidence, but they can also bury the instruction, repeat stale decisions, and make retrieval less precise.</p>
+<div class="claim"><p>Anthropic describes context as a finite resource: as token volume grows, attention becomes harder to focus. The practical goal is informative, tight context rather than maximum context.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div>
+<p>Think of every system prompt, search result, tool output, example, and previous message as a candidate for a limited desk. Put the work order, constraints, and evidence needed for the next action on the desk. Leave archived logs, unrelated reference material, and speculative rules in a place the agent can retrieve later.</p>
+<h2>Set the system prompt at the right altitude</h2>
+<p>Too much detail turns a prompt into brittle pseudo-code. Too little says “be helpful” and hopes the model invents the operating rules. The post calls the middle the right altitude: clear, direct guidance that supplies strong heuristics without trying to script every branch.</p>
+<pre><code>&lt;background&gt;
+You are reviewing a pull request for a web application.
+&lt;/background&gt;
+
+## Instructions
+Review only changed application code. Report security, correctness, and test risks.
+Do not edit files. Cite a path and evidence for each finding.
+
+## Output
+Return findings ordered by severity, then open questions.</code></pre>
+<p>Sections and headings help people maintain prompts and help the model identify purpose. Start with the minimal version, test it against real failures, then add an instruction or a canonical example that addresses a demonstrated gap. Do not add a long exception list just because it feels thorough.</p>
+<div class="claim"><p>Anthropic recommends the minimal information that fully outlines expected behavior, with prompts organized into clear sections and improved from observed failure modes rather than by adding a laundry list of edge cases.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div>
+<h2>Design tools as context controls</h2>
+<p>Tools decide both what an agent can do and how efficiently it learns. A well-named <code>get_customer_by_id</code> is easier to choose than a broad <code>database</code> tool. Return the fields needed for the decision, not a giant object the agent must search mentally. Make inputs descriptive, validation explicit, and errors actionable.</p>
+<p>Examples are also context. A few diverse, canonical examples teach an output shape better than paragraphs of abstract instructions. Keep them close to the behavior they demonstrate, and replace an example when the underlying policy changes.</p>
+<h2>Retrieve just in time</h2>
+<p>Instead of loading a whole repository or knowledge base before work starts, give an agent identifiers: paths, indexes, saved queries, or links. Let it search and open the relevant material as the task develops. This is just-in-time retrieval. It supports progressive disclosure, where each small discovery informs the next search.</p>
+<pre><code># A useful retrieval path for a code task
+1. List the project directories.
+2. Search for the route or function named in the task.
+3. Open the implementation and its focused tests.
+4. Read only the configuration that affects that path.
+5. Record the decision and source paths before making a change.</code></pre>
+<p>This approach can be slower than loading a precomputed bundle, and the agent needs competent search tools and naming conventions. A hybrid is often better: provide stable project instructions up front, then retrieve changing or large material only when it becomes relevant.</p>
+<div class="claim"><p>Anthropic describes just-in-time context as keeping lightweight references such as file paths, queries, and links, then using tools to load relevant data at runtime. It can reduce context pollution and support incremental exploration.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div>
+<h2>Keep long work coherent</h2>
+<p>Long tasks need a deliberate handoff. Compaction summarizes a near-full conversation into a new context window, keeping decisions, unresolved bugs, and implementation details while dropping repeated messages and obsolete raw tool output. Tune compaction for recall first. A beautiful short summary that loses the key constraint is worse than a slightly longer one.</p>
+<p>Structured notes add durable memory outside the active context. A simple <code>NOTES.md</code> or task record can track goal, completed work, decisions, evidence, and next steps. Update it at meaningful milestones, not after every trivial tool call. The next agent or resumed session should be able to orient itself without replaying the entire transcript.</p>
+<p>Subagents are another context boundary. Let a specialist search deeply in a clean window, then return a concise report to the lead agent. The lead keeps the plan and integration decisions. The specialist keeps the investigative detail. This division is especially useful for parallel research or independent review.</p>
+<div class="claim is-take"><p>My take: treat a note as an engineering artifact, not a chat recap. Record the decision, why it was made, the evidence location, and what would invalidate it. That is what makes the next context trustworthy.</p><div class="claim-mark"><span class="status is-take">My take</span><span>For long-running work</span></div></div>
+<h2>A practical checklist</h2>
+<ul><li>State the task, success condition, and stop condition first.</li><li>Keep the system prompt at a clear but non-brittle altitude.</li><li>Offer a minimal tool set with distinct names and compact results.</li><li>Use a few canonical examples rather than an exhaustive rulebook.</li><li>Load large or changing material through targeted retrieval.</li><li>Compact before context gets noisy, not only when it overflows.</li><li>Persist decisions and open questions in structured notes.</li><li>Use subagents for focused exploration, then ask for a condensed evidence-based handoff.</li></ul>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Take one agent task that feels unreliable.</li><li>Remove one irrelevant context source and add one missing success criterion.</li><li>Replace one broad tool result with a focused query or retrieval step.</li><li>Run the same example twice and compare whether the output became easier to review.</li></ol></div>
+<div class="further-reading"><h2>Sources</h2><ul><li id="src-1"><span class="resource-meta">Engineering post</span><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Effective context engineering for AI agents</a></li><li id="src-2"><span class="resource-meta">Docs</span><a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code memory</a></li></ul></div>
+<!-- further-reading -->
+<div class="prev-next">
+<a href="../claude-code/permissions.html" class="prev"><div class="label">&larr; Previous</div>
+<div class="title">Permissions</div></a><a href="../claude-code/skills.html" class="next"><div class="label">Next &rarr;</div>
+<div class="title">Skills</div></a>
+</div>
+</div>
+</div>
+<footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div class="foot-brand"><img src="../../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
+<div><h4>Learn</h4><ul><li><a href="../../learn/index.html">Start here</a></li><li><a href="../../learn/owners/index.html">Owner track</a></li><li><a href="../../framework/index.html">Builder track</a></li><li><a href="../../newsletter.html">Daily AI brief</a></li></ul></div>
+<div><h4>Library</h4><ul><li><a href="../../framework/index.html">Framework</a></li><li><a href="../../expertise/index.html">Expertise</a></li><li><a href="../../playbooks/index.html">Playbooks</a></li><li><a href="../../compare/index.html">Comparisons</a></li><li><a href="../../glossary/index.html">Glossary</a></li><li><a href="../../writing.html">Essays</a></li></ul></div>
+<div><h4>Sam</h4><ul><li><a href="../../about.html">About</a></li><li><a href="../../testimonials.html">Testimonials</a></li><li><a href="../../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
+</div>
+<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
+</div></footer><script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
+  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+  let best = null, bestLen = 0;
+  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
+    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
+  });
+  if (best) best.setAttribute('aria-current', 'page');
+  if (hamb && links) hamb.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = bar.classList.toggle('nav-open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  groups.forEach(function(group){
+    let openT = null, closeT = null;
+    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
+    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
+    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) trigger.addEventListener('click', function(e){
+      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+})();
+</script><script defer src="../../js/site.js"></script>
+</body>
+</html>

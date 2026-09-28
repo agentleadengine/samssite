@@ -1,5 +1,5 @@
 /*
- * sketch.js - Blueprint × Purple Marker on Cream diagram library.
+ * sketch.js - Ledger ink + ribbon diagram library (design v2).
  *
  * Usage inside any HTML page:
  *
@@ -28,17 +28,11 @@
   (function injectCss() {
     if (document.getElementById('sketch-css')) return;
     const css = '' +
-      '.sketch{position:relative;margin:36px auto;max-width:940px;padding:28px 20px;' +
-        'border-radius:18px;background:#faf7f2;' +
-        'background-image:linear-gradient(rgba(74,0,224,0.08) 1px, transparent 1px),' +
-        'linear-gradient(90deg, rgba(74,0,224,0.08) 1px, transparent 1px);' +
-        'background-size:24px 24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);' +
-        'box-sizing:border-box;}' +
-      '.sketch svg{display:block;width:100%;height:auto;max-width:960px;margin:0 auto;}' +
-      '.sketch svg text{fill:#1d1d23;}' +
-      '.sketch-caption{text-align:center;font-family:\'Caveat\',\'Kalam\',cursive;' +
-        'color:#8b5cf6;font-size:20px;font-weight:700;margin-top:8px;' +
-        'letter-spacing:0.02em;}';
+      '.sketch{position:relative;margin:34px 0;padding:26px 18px 16px;background:#faf6ec;' +
+        'border:1px solid #cdbfa5;box-sizing:border-box;}' +
+      '.sketch svg{display:block;width:100%;height:auto;margin:0 auto;}' +
+      '.sketch-caption{text-align:left;font-family:\'Source Serif 4\',Georgia,serif;font-style:italic;' +
+        'color:#6e604f;font-size:15px;font-weight:400;margin-top:12px;padding-top:8px;border-top:1px dotted #cdbfa5;}';
     const s = document.createElement('style');
     s.id = 'sketch-css';
     s.textContent = css;
@@ -47,14 +41,26 @@
 
   const NS = 'http://www.w3.org/2000/svg';
   const COLORS = {
-    stroke:     '#4a00e0',
-    strokeSoft: '#8b5cf6',
-    fill:       '#f1ecff',
-    text:       '#4a00e0',
-    sub:        '#6b21a8',
-    dim:        '#8b5cf6',
-    page:       '#faf7f2'
+    stroke:     '#2a1f1a',
+    strokeSoft: '#a1171c',
+    fill:       '#fbf8f0',
+    text:       '#2a1f1a',
+    sub:        '#6e604f',
+    dim:        '#8f8a80',
+    page:       '#faf6ec'
   };
+  // Legacy purple values passed in by inline page scripts get re-inked.
+  const REMAP = {
+    '#4a00e0':'#7b0f14','#5a1fe0':'#7b0f14','#6d28d9':'#7b0f14','#7c3aed':'#a1171c','#8b5cf6':'#a1171c',
+    '#6b21a8':'#544639','#a78bfa':'#c8343a','#c4b5fd':'#e2c4bb','#ddd6fe':'#efe0d6','#e9d5ff':'#f0d6cd',
+    '#ede9fe':'#f3ebe0','#f1ecff':'#fbf8f0','#f5f3ff':'#fbf8f0','#faf5ff':'#fbf8f0','#faf7f2':'#faf6ec',
+    '#dc2626':'#a1171c','#fef3f2':'#f6e4dc','#7f1d1d':'#7b0f14','#ef4444':'#a1171c','#fee2e2':'#f6e4dc',
+    '#16a34a':'#3f6b3a','#22c55e':'#3f6b3a','#dcfce7':'#e3eadb','#f0fdf4':'#eef1e6','#15803d':'#3f6b3a',
+    '#2563eb':'#4d5a66','#3b82f6':'#4d5a66','#dbeafe':'#dfe3e3','#eff6ff':'#eef0ef','#1d4ed8':'#4d5a66',
+    '#f59e0b':'#9a6a12','#fef3c7':'#f3e7c6','#fbbf24':'#b98a2c','#d97706':'#9a6a12','#1d1d23':'#2a1f1a'
+  };
+  function ink(c) { if (!c || typeof c !== 'string') return c; const k = c.toLowerCase(); return REMAP[k] || c; }
+  const SERIF = "'Source Serif 4', Georgia, serif";
 
   // ---- Low-level helpers -------------------------------------------------
   function el(tag, attrs) {
@@ -67,10 +73,10 @@
     const t = el('text', {
       x, y,
       'text-anchor': opts.anchor || 'middle',
-      fill: opts.color || COLORS.text,
+      fill: ink(opts.color) || COLORS.text,
       'font-size': opts.size || 20,
-      'font-weight': opts.weight || 400,
-      'font-family': opts.font || "'Kalam', cursive"
+      'font-weight': Math.min(opts.weight || 400, 600),
+      'font-family': (opts.font && /mono/i.test(opts.font)) ? opts.font : SERIF
     });
     if (opts.style) t.setAttribute('font-style', opts.style);
     if (opts.transform) t.setAttribute('transform', opts.transform);
@@ -93,7 +99,7 @@
   function box(svg, rc, b) {
     // Hand-drawn rectangle with lavender fill
     svg.appendChild(rc.rectangle(b.x, b.y, b.w, b.h, {
-      roughness: 1.8,
+      roughness: 0.55,
       stroke: b.strokeColor || COLORS.stroke,
       strokeWidth: 2.5,
       fill: b.fillColor || COLORS.fill,
@@ -125,7 +131,7 @@
   // ---- Circle node (for cases where a box doesn't fit the idea) ---------
   function circle(svg, rc, c) {
     svg.appendChild(rc.circle(c.cx, c.cy, (c.r || 60) * 2, {
-      roughness: 1.8,
+      roughness: 0.55,
       stroke: c.strokeColor || COLORS.stroke,
       strokeWidth: 2.5,
       fill: c.fillColor || COLORS.fill,
@@ -139,7 +145,7 @@
   function arrow(svg, rc, a) {
     // Hand-drawn line
     svg.appendChild(rc.line(a.x1, a.y1 != null ? a.y1 : a.y, a.x2, a.y2 != null ? a.y2 : a.y, {
-      roughness: 1.8, stroke: a.color || COLORS.stroke, strokeWidth: 2.5
+      roughness: 0.55, stroke: a.color || COLORS.stroke, strokeWidth: 2.5
     }));
     // Arrowhead on the destination side
     const y2 = a.y2 != null ? a.y2 : a.y;
@@ -147,14 +153,14 @@
     // Simple right-pointing arrowhead
     svg.appendChild(rc.polygon(
       [[a.x2-14, y2-8], [a.x2, y2], [a.x2-14, y2+8]],
-      { roughness: 1.4, stroke: a.color || COLORS.stroke, strokeWidth: 2,
+      { roughness: 0.45, stroke: a.color || COLORS.stroke, strokeWidth: 2,
         fill: a.color || COLORS.stroke, fillStyle: 'solid' }
     ));
     // Opposite arrowhead if bidirectional
     if (a.bidirectional !== false) {
       svg.appendChild(rc.polygon(
         [[a.x1+14, y1-8], [a.x1, y1], [a.x1+14, y1+8]],
-        { roughness: 1.4, stroke: a.color || COLORS.stroke, strokeWidth: 2,
+        { roughness: 0.45, stroke: a.color || COLORS.stroke, strokeWidth: 2,
           fill: a.color || COLORS.stroke, fillStyle: 'solid' }
       ));
     }
@@ -214,11 +220,11 @@
       }
       // Rough circle
       svg.appendChild(rc.circle(cx, cy, radius * 2, {
-        roughness: 1.8, stroke: COLORS.stroke, strokeWidth: 2.5,
+        roughness: 0.55, stroke: COLORS.stroke, strokeWidth: 2.5,
         fill: COLORS.fill, fillStyle: 'solid'
       }));
       text(svg, cx, cy + 7, String(i + 1), {
-        size: 22, weight: 700, color: COLORS.text, font: "'Kalam', cursive"
+        size: 22, weight: 700, color: COLORS.text, font: SERIF
       });
       // Title below (or to the right for vertical)
       if (dir === 'h') {
@@ -241,15 +247,15 @@
         if (dir === 'h') {
           const nextCx = cfg.x + radius + ((cfg.w || 800) - radius * 2) / Math.max(N-1, 1) * (i + 1);
           svg.appendChild(rc.line(cx + radius + 2, cy, nextCx - radius - 2, cy, {
-            roughness: 1.8, stroke: COLORS.strokeSoft, strokeWidth: 2
+            roughness: 0.55, stroke: COLORS.strokeSoft, strokeWidth: 2
           }));
           svg.appendChild(rc.polygon(
             [[nextCx - radius - 8, cy - 6], [nextCx - radius - 2, cy], [nextCx - radius - 8, cy + 6]],
-            { roughness: 1.4, stroke: COLORS.strokeSoft, strokeWidth: 1.5, fill: COLORS.strokeSoft, fillStyle: 'solid' }
+            { roughness: 0.45, stroke: COLORS.strokeSoft, strokeWidth: 1.5, fill: COLORS.strokeSoft, fillStyle: 'solid' }
           ));
         } else {
           svg.appendChild(rc.line(cx, cy + radius + 2, cx, cy + radius * 2 + stepGap - 2, {
-            roughness: 1.8, stroke: COLORS.strokeSoft, strokeWidth: 2
+            roughness: 0.55, stroke: COLORS.strokeSoft, strokeWidth: 2
           }));
         }
       }
@@ -273,7 +279,7 @@
       // Bar
       const bw = Math.max(4, chartW * (it.value / maxVal));
       svg.appendChild(rc.rectangle(cfg.x + labelW, by, bw, barH, {
-        roughness: 1.6, stroke: COLORS.stroke, strokeWidth: 2,
+        roughness: 0.5, stroke: COLORS.stroke, strokeWidth: 2,
         fill: it.color || COLORS.fill, fillStyle: 'solid'
       }));
       // Value note at end of bar
@@ -294,7 +300,7 @@
       const cx = cfg.x + (i === 0 ? 0 : halfW + 30);
       // Column box
       svg.appendChild(rc.rectangle(cx, cfg.y, halfW, cfg.h, {
-        roughness: 1.8, stroke: COLORS.stroke, strokeWidth: 2.5,
+        roughness: 0.55, stroke: COLORS.stroke, strokeWidth: 2.5,
         fill: i === 0 ? '#fef3f2' : COLORS.fill, fillStyle: 'solid'
       }));
       // Title header
@@ -331,10 +337,10 @@
       [hx - 4*uy, hy + 4*ux],
       [cfg.toX, cfg.toY],
       [hx + 4*uy, hy - 4*ux]
-    ], { roughness: 1.3, stroke: COLORS.strokeSoft, fill: COLORS.strokeSoft, fillStyle: 'solid' }));
+    ], { roughness: 0.4, stroke: COLORS.strokeSoft, fill: COLORS.strokeSoft, fillStyle: 'solid' }));
     // Label at from side
     text(svg, cfg.fromX, cfg.fromY - 8, cfg.text, {
-      size: 17, weight: 700, color: COLORS.strokeSoft, font: "'Kalam', cursive"
+      size: 17, weight: 700, color: COLORS.strokeSoft, font: SERIF
     });
   }
 
@@ -347,7 +353,7 @@
     cfg.sets.forEach((s, i) => {
       const cx = cfg.x + i * overlap;
       svg.appendChild(rc.circle(cx, cfg.y, R * 2, {
-        roughness: 1.8, stroke: COLORS.stroke, strokeWidth: 2.5,
+        roughness: 0.55, stroke: COLORS.stroke, strokeWidth: 2.5,
         fill: s.fill || (i === 0 ? 'rgba(139,92,246,0.15)' : 'rgba(236,72,153,0.15)'),
         fillStyle: 'solid'
       }));
@@ -369,12 +375,12 @@
     const totalH = headerH + cfg.rows.length * rowH;
     // Outer rect
     svg.appendChild(rc.rectangle(cfg.x, cfg.y, totalW, totalH, {
-      roughness: 1.4, stroke: COLORS.stroke, strokeWidth: 2.5,
+      roughness: 0.45, stroke: COLORS.stroke, strokeWidth: 2.5,
       fill: COLORS.fill, fillStyle: 'solid'
     }));
     // Header row background darker
     svg.appendChild(rc.rectangle(cfg.x, cfg.y, totalW, headerH, {
-      roughness: 1.2, stroke: COLORS.stroke, strokeWidth: 1.5,
+      roughness: 0.4, stroke: COLORS.stroke, strokeWidth: 1.5,
       fill: '#e9d5ff', fillStyle: 'solid'
     }));
     // Column dividers
@@ -382,7 +388,7 @@
     cfg.cols.forEach((c, i) => {
       if (i > 0) {
         svg.appendChild(rc.line(curX, cfg.y, curX, cfg.y + totalH, {
-          roughness: 1.4, stroke: COLORS.stroke, strokeWidth: 1
+          roughness: 0.45, stroke: COLORS.stroke, strokeWidth: 1
         }));
       }
       // Header text
@@ -396,7 +402,7 @@
       const ry = cfg.y + headerH + ri * rowH;
       if (ri > 0) {
         svg.appendChild(rc.line(cfg.x, ry, cfg.x + totalW, ry, {
-          roughness: 1.2, stroke: COLORS.stroke, strokeWidth: 0.75
+          roughness: 0.4, stroke: COLORS.stroke, strokeWidth: 0.75
         }));
       }
       let colX = cfg.x;
@@ -413,7 +419,29 @@
   // ---- rough.js convenience ---------------------------------------------
   function rc(svg) {
     if (!window.rough) throw new Error('rough.js not loaded yet');
-    return rough.svg(svg);
+    const r = rough.svg(svg);
+    const fix = function (o) {
+      o = Object.assign({}, o || {});
+      o.roughness = Math.min(o.roughness == null ? 1 : o.roughness, 0.6);
+      o.bowing = 0.6;
+      if (o.stroke) o.stroke = ink(o.stroke);
+      if (o.fill) o.fill = ink(o.fill);
+      if (o.strokeWidth && o.strokeWidth > 2) o.strokeWidth = 1.8;
+      if (o.fillStyle && o.fillStyle !== 'solid') { o.hachureGap = 7; o.fillWeight = 0.6; }
+      return o;
+    };
+    return new Proxy(r, { get: function (t, k) {
+      const v = t[k];
+      if (typeof v !== 'function') return v;
+      if (k === 'draw' || k === 'toPaths' || k === 'opsToPath') return v.bind(t);
+      return function () {
+        const args = Array.prototype.slice.call(arguments);
+        const last = args[args.length - 1];
+        if (last && typeof last === 'object' && !Array.isArray(last)) args[args.length - 1] = fix(last);
+        else args.push(fix({}));
+        return v.apply(t, args);
+      };
+    } });
   }
 
   // ---- createSvg: ensure/resize an SVG inside a wrapper -----------------
@@ -488,48 +516,4 @@
   };
 })();
 
-// Framework sidebar mobile collapse toggle.
-// On viewports <=960px, wrap the sidebar in a collapsible toggle so it doesn't
-// push article content below the fold.
-(function() {
-  function initFrameworkSidebarToggle() {
-    const sidebar = document.querySelector('.framework-sidebar');
-    if (!sidebar || sidebar.dataset.collapseInit) return;
-    sidebar.dataset.collapseInit = '1';
-
-    const mql = window.matchMedia('(max-width: 960px)');
-
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'framework-sidebar-toggle';
-    const activeText = sidebar.querySelector('a.active');
-    const label = activeText ? `On this page: ${activeText.textContent}` : 'On this page';
-    toggle.textContent = label;
-    toggle.setAttribute('aria-expanded', 'false');
-    sidebar.insertBefore(toggle, sidebar.firstChild);
-
-    function apply() {
-      if (mql.matches) {
-        sidebar.classList.add('is-collapsed');
-        toggle.setAttribute('aria-expanded', 'false');
-      } else {
-        sidebar.classList.remove('is-collapsed');
-        toggle.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    toggle.addEventListener('click', function() {
-      sidebar.classList.toggle('is-collapsed');
-      toggle.setAttribute('aria-expanded', sidebar.classList.contains('is-collapsed') ? 'false' : 'true');
-    });
-
-    mql.addEventListener ? mql.addEventListener('change', apply) : mql.addListener(apply);
-    apply();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFrameworkSidebarToggle);
-  } else {
-    initFrameworkSidebarToggle();
-  }
-})();
+// (Mobile sidebar toggle moved to js/site.js in design v2.)

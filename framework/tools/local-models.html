@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local and open models (Ollama) | Samuel Ochoa</title>
+<meta name="description" content="Run and evaluate local or open-weight models with Ollama when data locality, offline work, or experimentation makes that useful.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Local and open models (Ollama) | Samuel Ochoa">
+<meta property="og:description" content="Run and evaluate local or open-weight models with Ollama when data locality, offline work, or experimentation makes that useful.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260929">
+<link rel="icon" type="image/png" href="../../logo.png">
+
+<script defer src="../../js/sketch.js"></script>
+<script defer src="../../js/translate.js"></script>
+
+<link rel="canonical" href="https://samuelochoa.com/framework/tools/local-models">
+<meta property="og:url" content="https://samuelochoa.com/framework/tools/local-models">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Local and open models (Ollama) | Samuel Ochoa">
+<meta name="twitter:description" content="Run and evaluate local or open-weight models with Ollama when data locality, offline work, or experimentation makes that useful.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#f3ecdd">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Local and open models (Ollama) | Samuel Ochoa","description":"Run and evaluate local or open-weight models with Ollama when data locality, offline work, or experimentation makes that useful.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/framework/tools/local-models.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://samuelochoa.com/framework/"},{"@type":"ListItem","position":3,"name":"Claude Code","item":"https://samuelochoa.com/framework/claude-code/"},{"@type":"ListItem","position":4,"name":"Hooks","item":"https://samuelochoa.com/framework/tools/local-models"}]}</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar" aria-label="Main"><div class="topbar-inner">
+<a href="../../index.html" class="logo"><img class="brand-logo" src="../../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="../../learn/index.html" class="nav-link">Start here</a>
+<a href="../../learn/owners/index.html" class="nav-link">Owners</a>
+<a href="../../framework/index.html" class="nav-link">Builders</a>
+<div class="nav-group">
+<a href="../../learn/library.html" class="nav-link nav-has-submenu">Library</a>
+<div class="nav-submenu">
+<a href="../../framework/index.html">The Framework <small>41</small></a>
+<a href="../../expertise/index.html">Expertise libraries <small>486</small></a>
+<a href="../../playbooks/index.html">Industry playbooks <small>240</small></a>
+<a href="../../compare/index.html">Tool comparisons <small>77</small></a>
+<a href="../../glossary/index.html">Glossary <small>111</small></a>
+<a href="../../writing.html">Essays <small>20</small></a>
+<a href="../../snapshots.html">GHL snapshots</a>
+</div></div>
+<a href="../../about.html" class="nav-link">About</a>
+<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
+<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
+<a href="../../newsletter.html" class="nav-link nav-cta">Daily brief</a>
+</div>
+</div></nav><div class="framework-layout">
+<aside class="framework-sidebar"><h4>Foundations</h4>
+<ul>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../what-is-autonomous-ai.html">What is autonomous AI</a></li>
+<li><a href="../the-autonomy-spectrum.html">The autonomy spectrum</a></li>
+<li><a href="../glossary.html">Glossary</a></li>
+</ul>
+<h4>Claude</h4>
+<ul>
+<li><a href="../claude/overview.html">Overview</a></li>
+<li><a href="../claude/prompting-for-agents.html">Prompting for agents</a></li>
+<li><a href="../claude/extended-thinking.html">Extended thinking</a></li>
+<li><a href="../claude/tool-use.html">Tool use</a></li>
+</ul>
+<h4>MCP</h4>
+<ul>
+<li><a href="../mcp/index.html">Overview</a></li>
+<li><a href="../mcp/what-is-mcp.html">What is MCP</a></li>
+<li><a href="../mcp/anatomy.html">Anatomy</a></li>
+<li><a href="../mcp/transports.html">Transports</a></li>
+<li><a href="../mcp/servers.html">Servers</a></li>
+<li><a href="../mcp/clients.html">Clients</a></li>
+<li><a href="../mcp/security.html">Security</a></li>
+<li><a href="../mcp/directory.html">Directory</a></li>
+</ul>
+<h4>Plugins</h4>
+<ul>
+<li><a href="../plugins/index.html">Overview</a></li>
+<li><a href="../plugins/vs-mcp.html">Plugins vs MCP</a></li>
+<li><a href="../plugins/marketplace.html">Marketplace</a></li>
+</ul>
+<h4>Claude Code</h4>
+<ul>
+<li><a href="../claude-code/index.html">Overview</a></li>
+<li><a href="../claude-code/settings.html">Settings</a></li>
+<li><a href="../claude-code/permissions.html">Permissions</a></li>
+<li><a href="../claude-code/hooks.html">Hooks</a></li>
+<li><a href="../claude-code/subagents.html">Subagents</a></li>
+<li><a href="../claude-code/skills.html">Skills</a></li>
+<li><a href="../claude-code/memory.html">Memory</a></li>
+</ul>
+<h4>Patterns</h4>
+<ul>
+<li><a href="../patterns/index.html">Overview</a></li>
+<li><a href="../patterns/react-loop.html">ReAct loop</a></li>
+<li><a href="../patterns/plan-execute.html">Plan-execute</a></li>
+<li><a href="../patterns/multi-agent.html">Multi-agent</a></li>
+<li><a href="../patterns/evaluation.html">Evaluation</a></li>
+<li><a href="../patterns/prompt-caching.html">Prompt caching</a></li>
+<li><a href="../patterns/context-engineering.html">Context engineering</a></li>
+</ul>
+<h4>Autonomous</h4>
+<ul>
+<li><a href="../autonomous/index.html">Overview</a></li>
+<li><a href="../autonomous/headless.html">Headless</a></li>
+<li><a href="../autonomous/scheduling.html">Scheduling</a></li>
+<li><a href="../autonomous/self-monitoring.html">Self-monitoring</a></li>
+<li><a href="../autonomous/safety.html">Safety</a></li>
+</ul>
+<h4>Build Guides</h4>
+<ul>
+<li><a href="../build/index.html">Overview</a></li>
+<li><a href="../build/first-agent.html">First agent (60 min)</a></li>
+<li><a href="../build/first-skill.html">Write your first skill</a></li>
+<li><a href="../build/mcp-server.html">Build an MCP server</a></li>
+<li><a href="../build/agent-sdk.html">The Claude Agent SDK</a></li>
+<li><a href="../build/voice-agent.html">Voice agent</a></li>
+<li><a href="../build/research-agent.html">Research agent</a></li>
+</ul>
+<h4>Tools</h4>
+<ul>
+<li><a href="browser-automation.html">Browser automation</a></li>
+<li><a href="desktop-control.html">Desktop control</a></li>
+<li><a href="local-models.html" class="active">Local and open models (Ollama)</a></li>
+</ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Framework</a><span class="sep">›</span><span>Tools</span><span class="sep">›</span><span>Local and open models</span></div>
+<h1 class="title">Local and open models with Ollama</h1>
+<dl class="record is-builder"><div class="rec-item"><dt>Track</dt><dd>Builders · tools</dd></div><div class="rec-item"><dt>Time</dt><dd>About 20 minutes</dd></div><div class="rec-item"><dt>You need</dt><dd>A computer with enough memory for your chosen model</dd></div><div class="rec-item"><dt>Last checked</dt><dd><time datetime="2026-09-28">28 Sep 2026</time></dd></div></dl>
+<p class="lede">Ollama runs models through a local command line and local API. It is a practical way to try open-weight models, prototype an offline workflow, or keep a narrow task on a machine you control. It does not make hardware limits, evaluation, or data handling disappear.</p>
+<h2>Install and run a first model</h2>
+<p>Ollama publishes installers for macOS, Windows, and Linux. Use the official installer for your platform, then run a model by name. The first run downloads the model, then opens a chat in the terminal.</p>
+<pre><code># macOS or Linux
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Windows PowerShell
+irm https://ollama.com/install.ps1 | iex</code></pre>
+<pre><code>ollama run gemma4</code></pre>
+<div class="claim"><p>Ollama documents <code>ollama run</code> for running local models and a local REST API at <code>http://localhost:11434/api</code>. Local API requests do not need an authorization header.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div>
+<p>Choose a model deliberately. A smaller model can be a fine fit for classification, extraction, or a constrained assistant. A larger model may produce stronger results, but it needs more memory and can be slower. Test the actual prompt and documents you care about instead of selecting from a headline.</p>
+<h2>Call the local API</h2>
+<p>Ollama's local server is useful when a command line chat is no longer enough. This documented chat request asks a local model a question and turns streaming off so the response comes back in one JSON object. Read the answer from <code>message.content</code>.</p>
+<pre><code>curl http://localhost:11434/api/chat -d '{
+  "model": "gemma4",
+  "messages": [{
+    "role": "user",
+    "content": "Why is the sky blue?"
+  }],
+  "stream": false
+}'</code></pre>
+<p>The local base URL is different from Ollama's direct cloud API. A local application points to <code>http://localhost:11434/api</code>. Keep it local unless you have designed network access, authentication, and monitoring around it. A loopback URL is not a public deployment plan.</p>
+<pre><code>from ollama import chat
+
+response = chat(model='gemma4', messages=[
+  {'role': 'user', 'content': 'Why is the sky blue?'},
+])
+print(response.message.content)</code></pre>
+<h2>Open families worth knowing</h2>
+<p>“Open” is not one license or one capability level. Check the model card, terms, sizes, languages, modalities, and deployment requirements before selecting one. The following are current family-level facts, not a performance ranking.</p>
+<div class="claim"><p>Checked open or open-weight families include Meta's Llama 4, Qwen3, DeepSeek R1, Z.ai's GLM releases, Moonshot's Kimi family, Google's Gemma 4, and Mistral's current model families. Each project publishes its own model and usage details.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-2">Source 02</a></div></div>
+<div class="table-wrap"><table><thead><tr><th>Family</th><th>Checked description</th><th>Start by checking</th></tr></thead><tbody><tr><td>Llama</td><td>Meta's current open model family is Llama 4</td><td>Model card and responsible-use material</td></tr><tr><td>Qwen</td><td>Qwen3 has dense and mixture-of-experts variants and reasoning modes</td><td>Variant and intended task</td></tr><tr><td>DeepSeek</td><td>DeepSeek R1 is an openly released reasoning model</td><td>Repository and deployment requirements</td></tr><tr><td>GLM and Kimi</td><td>Z.ai and Moonshot publish current model families</td><td>Release terms and available weights</td></tr><tr><td>Gemma and Mistral</td><td>Google and Mistral maintain current model families</td><td>License, size, and model card</td></tr></tbody></table></div>
+<p>Ollama's library is where you find runnable tags. The upstream family page tells you what the model is. Those are different jobs. A convenient local tag does not replace an evaluation of the original model's limitations or terms.</p>
+<h2>My take: local versus hosted</h2>
+<div class="claim is-take"><p>My take: local models are most attractive when privacy, control, repeatable cost, and offline operation matter more than getting the strongest general result on every prompt. Hosted models are often simpler when you need leading capability, long context, elastic capacity, or no device management.</p><div class="claim-mark"><span class="status is-take">My take</span><span>Choosing a deployment shape</span></div></div>
+<p>The privacy upside is real but conditional. With a downloaded model and local API, the prompt and response need not leave the machine through that inference call. Your application can still send data elsewhere through logging, browser extensions, backups, telemetry, integrations, or a cloud model setting. Check the whole path, not just the model runner.</p>
+<p>Local inference shifts work onto you. You own model downloads, storage, updates, hardware capacity, runtime availability, access to the API, and evaluation. A hosted API shifts much of the operational burden to the provider, while adding vendor dependence, network transfer, and usage-based cost. Neither arrangement proves a model is correct.</p>
+<h2>Evaluate before you depend on it</h2>
+<p>Make a small evaluation set from the requests the workflow will really receive, with sensitive material removed or anonymized. Include an ordinary case, an ambiguous case, and a case where the correct answer is “I do not know.” Compare usefulness, factual support, formatting, latency, and failure behavior. Re-run the same set after changing the model tag, prompt, hardware, or integration. This is more informative than a single impressive demo.</p>
+<p>For a workflow that will extract or classify data, define the expected structure and have code validate it. For a drafting workflow, let a person compare a local response with the current hosted baseline. Keep the local model when it earns its operational cost for the task, not because “local” is automatically safer or cheaper in every setting.</p>
+<h2>Mistakes I see often</h2>
+<ul><li><strong>Calling a model “private” without checking the app around it.</strong> Inspect logs, integrations, and network settings.</li><li><strong>Choosing only by parameter count.</strong> Test task quality, latency, memory use, and failure behavior.</li><li><strong>Exposing port 11434 to a network by accident.</strong> Treat network access as a security design decision.</li><li><strong>Skipping model terms.</strong> Open-weight availability does not make every use identical.</li></ul>
+<div class="lesson-task"><h3>Do this today</h3><ol><li>Install Ollama and run <code>ollama run gemma4</code>.</li><li>Send one harmless prompt to the local API with the curl request above.</li><li>Write down the data path from your application to the model and back.</li><li>Compare a local and hosted result on five representative, non-sensitive examples before choosing a production workflow.</li></ol></div>
+<div class="further-reading"><h2>Sources</h2><ul><li id="src-1"><span class="resource-meta">Docs</span><a href="https://github.com/ollama/ollama" target="_blank" rel="noopener">Ollama README</a></li><li id="src-2"><span class="resource-meta">Model sources</span><a href="https://ai.meta.com/llama/" target="_blank" rel="noopener">Llama</a>, <a href="https://qwenlm.github.io/blog/qwen3/" target="_blank" rel="noopener">Qwen3</a>, <a href="https://deepseek.com/en/news/deepseek-r1/" target="_blank" rel="noopener">DeepSeek R1</a>, <a href="https://ai.google.dev/gemma/docs/core/model_card_4" target="_blank" rel="noopener">Gemma 4</a></li><li id="src-3"><span class="resource-meta">Docs</span><a href="https://docs.ollama.com/api" target="_blank" rel="noopener">Ollama API</a></li></ul></div>
+<!-- further-reading -->
+<div class="prev-next">
+<a href="../claude-code/permissions.html" class="prev"><div class="label">&larr; Previous</div>
+<div class="title">Permissions</div></a><a href="../claude-code/skills.html" class="next"><div class="label">Next &rarr;</div>
+<div class="title">Skills</div></a>
+</div>
+</div>
+</div>
+<footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div class="foot-brand"><img src="../../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
+<div><h4>Learn</h4><ul><li><a href="../../learn/index.html">Start here</a></li><li><a href="../../learn/owners/index.html">Owner track</a></li><li><a href="../../framework/index.html">Builder track</a></li><li><a href="../../newsletter.html">Daily AI brief</a></li></ul></div>
+<div><h4>Library</h4><ul><li><a href="../../framework/index.html">Framework</a></li><li><a href="../../expertise/index.html">Expertise</a></li><li><a href="../../playbooks/index.html">Playbooks</a></li><li><a href="../../compare/index.html">Comparisons</a></li><li><a href="../../glossary/index.html">Glossary</a></li><li><a href="../../writing.html">Essays</a></li></ul></div>
+<div><h4>Sam</h4><ul><li><a href="../../about.html">About</a></li><li><a href="../../testimonials.html">Testimonials</a></li><li><a href="../../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
+</div>
+<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
+</div></footer><script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
+  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+  let best = null, bestLen = 0;
+  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
+    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
+  });
+  if (best) best.setAttribute('aria-current', 'page');
+  if (hamb && links) hamb.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = bar.classList.toggle('nav-open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  groups.forEach(function(group){
+    let openT = null, closeT = null;
+    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
+    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
+    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) trigger.addEventListener('click', function(e){
+      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+})();
+</script><script defer src="../../js/site.js"></script>
+</body>
+</html>

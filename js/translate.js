@@ -107,15 +107,15 @@
       // Our toggle button.
       '#sam-lang-toggle {' +
         'position: fixed; bottom: 18px; right: 18px; z-index: 9998;' +
-        'background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.08);' +
-        'border-radius: 999px; padding: 9px 14px;' +
-        'font: 500 13px/1 \'Inter\', system-ui, -apple-system, sans-serif;' +
-        'cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.18);' +
+        'background: #faf6ec; color: #2a1f1a; border: 1px solid #a8977b;' +
+        'border-radius: 0; padding: 10px 14px; min-height: 40px;' +
+        'font: 600 14px/1 \'Source Serif 4\', Georgia, serif; font-variant-caps: all-small-caps; letter-spacing: .12em;' +
+        'cursor: pointer; box-shadow: 0 10px 24px -14px rgba(60,35,20,.5);' +
         'transition: transform .15s ease, opacity .15s ease;' +
         'display: inline-flex; align-items: center; gap: 6px;' +
       '}' +
       '#sam-lang-toggle:hover { transform: translateY(-1px); }' +
-      '#sam-lang-toggle:focus-visible { outline: 2px solid #7a4dff; outline-offset: 2px; }' +
+      '#sam-lang-toggle:focus-visible { outline: 2px solid #a1171c; outline-offset: 2px; }' +
       '@media (max-width: 600px) {' +
         '#sam-lang-toggle { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 12px; }' +
       '}';

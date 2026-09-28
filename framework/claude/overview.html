@@ -10,8 +10,8 @@
 <meta property="og:title" content="Claude, overview | Samuel Ochoa">
 <meta property="og:description" content="What Claude is, how the model families differ, why it matters for autonomous agents.">
 <meta property="og:site_name" content="Samuel Ochoa">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css?v=20260706">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260929">
 <link rel="icon" type="image/png" href="../../logo.png">
 
 <script defer src="../../js/sketch.js"></script>
@@ -27,7 +27,7 @@
 <meta name="twitter:title" content="Claude, overview | Samuel Ochoa">
 <meta name="twitter:description" content="What Claude is, how the model families differ, why it matters for autonomous agents.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
-<meta name="theme-color" content="#4a00e0">
+<meta name="theme-color" content="#f3ecdd">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude, overview | Samuel Ochoa","description":"What Claude is, how the model families differ, why it matters for autonomous agents.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/framework/claude/overview.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://samuelochoa.com/framework/"},{"@type":"ListItem","position":3,"name":"Claude","item":"https://samuelochoa.com/framework/claude/"},{"@type":"ListItem","position":4,"name":"Overview","item":"https://samuelochoa.com/framework/claude/overview"}]}</script>
@@ -39,278 +39,90 @@
 })(window, document, "clarity", "script", "x9tyuivf47");
 </script>
 </head>
-<body><nav class="topbar"><div class="topbar-inner">
-<a href="../../index.html" class="logo"><img class="brand-logo" src="../../logo.png" alt="Samuel Ochoa"></a>
+<body><nav class="topbar" aria-label="Main"><div class="topbar-inner">
+<a href="../../index.html" class="logo"><img class="brand-logo" src="../../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
-<a href="../../index.html" class="nav-link">Home</a>
-<a href="https://agentleadengine.com/" class="nav-link">Work with me</a>
-<a href="../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../learn/index.html" class="nav-link">Start here</a>
+<a href="../../learn/owners/index.html" class="nav-link">Owners</a>
+<a href="../../framework/index.html" class="nav-link">Builders</a>
 <div class="nav-group">
-<a href="../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<a href="../../learn/library.html" class="nav-link nav-has-submenu">Library</a>
 <div class="nav-submenu">
-<a href="../../framework/index.html">Framework</a>
-<a href="../../expertise/index.html">Expertise</a>
-<a href="../../playbooks/index.html">Playbooks</a>
-<a href="../../writing.html">Writing</a>
+<a href="../../framework/index.html">The Framework <small>41</small></a>
+<a href="../../expertise/index.html">Expertise libraries <small>486</small></a>
+<a href="../../playbooks/index.html">Industry playbooks <small>240</small></a>
+<a href="../../compare/index.html">Tool comparisons <small>77</small></a>
+<a href="../../glossary/index.html">Glossary <small>111</small></a>
+<a href="../../writing.html">Essays <small>20</small></a>
+<a href="../../snapshots.html">GHL snapshots</a>
 </div></div>
 <a href="../../about.html" class="nav-link">About</a>
-<a href="../../contact.html" class="nav-link">Contact</a>
+<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
+<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
+<a href="../../newsletter.html" class="nav-link nav-cta">Daily brief</a>
 </div>
-</div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../what-is-autonomous-ai.html">What is autonomous AI</a></li><li><a href="../the-autonomy-spectrum.html">The autonomy spectrum</a></li><li><a href="../glossary.html">Glossary</a></li></ul><h4>Claude</h4><ul><li><a href="../claude/overview.html" class="active">Overview</a></li><li><a href="../claude/prompting-for-agents.html">Prompting for agents</a></li><li><a href="../claude/extended-thinking.html">Extended thinking</a></li><li><a href="../claude/tool-use.html">Tool use</a></li></ul><h4>MCP</h4><ul><li><a href="../mcp/index.html">Overview</a></li><li><a href="../mcp/what-is-mcp.html">What is MCP</a></li><li><a href="../mcp/anatomy.html">Anatomy</a></li><li><a href="../mcp/transports.html">Transports</a></li><li><a href="../mcp/servers.html">Servers</a></li><li><a href="../mcp/clients.html">Clients</a></li><li><a href="../mcp/security.html">Security</a></li><li><a href="../mcp/directory.html">Directory</a></li></ul><h4>Plugins</h4><ul><li><a href="../plugins/index.html">Overview</a></li><li><a href="../plugins/vs-mcp.html">Plugins vs MCP</a></li><li><a href="../plugins/marketplace.html">Marketplace</a></li></ul><h4>Claude Code</h4><ul><li><a href="../claude-code/index.html">Overview</a></li><li><a href="../claude-code/settings.html">Settings</a></li><li><a href="../claude-code/permissions.html">Permissions</a></li><li><a href="../claude-code/hooks.html">Hooks</a></li><li><a href="../claude-code/skills.html">Skills</a></li><li><a href="../claude-code/memory.html">Memory</a></li></ul><h4>Patterns</h4><ul><li><a href="../patterns/index.html">Overview</a></li><li><a href="../patterns/react-loop.html">ReAct loop</a></li><li><a href="../patterns/plan-execute.html">Plan-execute</a></li><li><a href="../patterns/multi-agent.html">Multi-agent</a></li><li><a href="../patterns/evaluation.html">Evaluation</a></li><li><a href="../patterns/prompt-caching.html">Prompt caching</a></li></ul><h4>Autonomous</h4><ul><li><a href="../autonomous/index.html">Overview</a></li><li><a href="../autonomous/headless.html">Headless</a></li><li><a href="../autonomous/scheduling.html">Scheduling</a></li><li><a href="../autonomous/self-monitoring.html">Self-monitoring</a></li><li><a href="../autonomous/safety.html">Safety</a></li></ul><h4>Build Guides</h4><ul><li><a href="../build/index.html">Overview</a></li><li><a href="../build/first-agent.html">First agent (60 min)</a></li><li><a href="../build/voice-agent.html">Voice agent</a></li><li><a href="../build/research-agent.html">Research agent</a></li></ul><h4>Tools</h4><ul><li><a href="../tools/browser-automation.html">Browser automation</a></li><li><a href="../tools/desktop-control.html">Desktop control</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Framework</a><span class="sep">›</span><span>Claude</span><span class="sep">›</span><span>Claude, overview</span></div><h1 class="title" style="font-size:clamp(32px,4.5vw,42px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px;">Claude, overview</h1><div class="article-meta"><span>📖 4 min read</span><span>Updated 2026-04-18</span></div>
-<p class="lede">Claude is the model at the center of everything else on this site. Before you read about MCP or Claude Code or agent patterns, it helps to understand what Claude actually is, what makes it a good choice for agent work, and how to pick between the different Claude variants. This page is the short answer, with enough detail to make the rest of the framework make sense.</p>
-
-<h2>What Claude is.</h2>
-<p>Claude is a family of large language models made by Anthropic. "Large language model" is a long phrase for what it is: software that, given a prompt, continues the text in a way that looks like what a smart human would write. That's the whole mechanism. Everything clever Claude does, answering questions, writing code, calling tools, reasoning through problems, is built on top of "predict the next likely piece of text."</p>
-
-<p>What makes Claude specifically useful for autonomous AI is that Anthropic built it with agents in mind. Other LLMs were mostly designed for chat and bolted on tool use later. Claude has tool use, long context, and careful reasoning as first-class design goals from the start.</p>
-
-<h2>The Claude family: Opus, Sonnet, Haiku.</h2>
-<p>At any given generation, Claude ships as three tiers. They're the same model family with different sizes and speeds. Think of them like Large / Medium / Small.</p>
-
-<div class="sketch" data-viewbox="0 0 900 290" id="dg-claude-family">
-  <svg></svg>
-  <div class="sketch-caption">~ the Claude family ~</div>
-</div>
-<script>
-document.addEventListener('sketch:ready', function() {
-  var wrap = document.getElementById('dg-claude-family');
-  if (!wrap || wrap.dataset.drawn) return;
-  wrap.dataset.drawn = '1';
-  var svg = wrap.querySelector('svg');
-  var rc = sketch.rc(svg);
-  sketch.table(svg, rc, {
-    x: 20, y: 30,
-    cols: [
-      { title: 'Variant',  w: 140 },
-      { title: 'Vibe',      w: 230 },
-      { title: 'Best for',  w: 330 },
-      { title: 'Relative cost', w: 180 }
-    ],
-    rows: [
-      ['Opus',   'the smart one',       'complex reasoning, hard research, planning',      'highest'],
-      ['Sonnet', 'the balanced one',    'most agent work; the default choice',             'medium'],
-      ['Haiku',  'the fast + cheap one','high-volume tasks, sub-agents, simple workflows', 'lowest']
-    ]
-  });
-});
-</script>
-
-<p>The practical rule: <strong>default to Sonnet</strong>. It's a great general-purpose model for agent work. Reach for Opus when you're hitting the ceiling on hard reasoning. Drop to Haiku when you need to run many calls in parallel for worker tasks and the complexity is low.</p>
-
-<p>A common pattern in multi-agent setups is "Opus plans, Haiku executes." The smart model makes a plan, then spawns Haiku sub-agents to carry out the easy steps in parallel. You get the quality of Opus and the speed/cost of Haiku.</p>
-
-<h2>What makes Claude good for agents specifically.</h2>
-
-<div class="sketch" data-viewbox="0 0 900 350" id="dg-claude-strengths">
-  <svg></svg>
-  <div class="sketch-caption">~ Claude's agent-specific strengths ~</div>
-</div>
-<script>
-document.addEventListener('sketch:ready', function() {
-  var wrap = document.getElementById('dg-claude-strengths');
-  if (!wrap || wrap.dataset.drawn) return;
-  wrap.dataset.drawn = '1';
-  var svg = wrap.querySelector('svg');
-  var rc = sketch.rc(svg);
-  sketch.bars(svg, rc, {
-    x: 30, y: 30, w: 840, barH: 34, gap: 16, labelW: 220,
-    items: [
-      { label: 'Tool use stability',    value: 95, note: 'fewer dropped calls in long sessions' },
-      { label: 'System-prompt following', value: 92, note: 'complex rules actually stick' },
-      { label: 'Long context (1M tokens)', value: 90, note: 'whole codebases, long sessions' },
-      { label: 'Extended thinking',     value: 85, note: 'reasoning budget for hard tasks' },
-      { label: 'Prompt caching (90% off)', value: 88, note: 'economics of long-running agents' },
-      { label: 'Safety tuning',         value: 82, note: 'refuses clearly harmful calls' }
-    ]
-  });
-});
-</script>
-
-<p><strong>Tool use</strong> is the big one. Agents live or die by how reliably they can call a sequence of tools across many turns. Claude is consistently the most stable in long agent loops; fewer dropped calls, fewer weird tool-argument mistakes.</p>
-
-<p><strong>System-prompt following</strong> matters because autonomous agents depend on you being able to put rules in the prompt and have them actually persist. Claude is noticeably better at keeping a complex set of rules in mind across a long conversation.</p>
-
-<p><strong>Long context</strong> means the window can hold a lot at once. At 1M tokens, you can fit an entire medium-sized codebase, a long session's worth of tool results, or a big document set. This changes what's practical.</p>
-
-<p><strong>Extended thinking</strong> lets the model reason privately before it answers. You give it a budget ("think for up to 10k tokens before responding") and it uses the space to work through the problem. See <a href="extended-thinking.html">Extended thinking</a> for when to use it.</p>
-
-<p><strong>Prompt caching</strong> makes long-running agents economically viable. When your system prompt is big (lots of tool descriptions, rules, context), each request normally pays for all of that. With caching, you pay once and get ~90% off for subsequent requests that share the prefix. See <a href="../patterns/prompt-caching.html">Prompt caching</a>.</p>
-
-<p><strong>Safety tuning</strong> means Claude is trained to refuse clearly harmful tool calls even when the user asks for them, to flag prompt-injection attempts in tool output, and to be careful with irreversible actions. It's not bulletproof, but it's one more layer.</p>
-
-<h2>How Claude compares to the other big models.</h2>
-<p>Honest take, without the vendor pitch:</p>
-
-<ul>
-  <li><strong>Pure language tasks</strong> (writing, translation, summary), GPT-4, Claude, and Gemini are all comparable in 2026. Pick on price and latency.</li>
-  <li><strong>Agent work</strong>, Claude has a consistent edge on multi-turn tool-use stability and complex system-prompt adherence. Not huge, but noticeable when you're shipping.</li>
-  <li><strong>Code</strong>, Claude and GPT-4 trade blows. For agentic coding (inside Claude Code, Cursor, etc.), Claude is usually the better pick.</li>
-  <li><strong>Image reasoning</strong>, Gemini is often ahead; Claude and GPT-4 are comparable.</li>
-  <li><strong>Cost</strong>, varies by variant. Haiku is cost-competitive with small OpenAI and Gemini models.</li>
-</ul>
-
-<p>Vendor lock-in is a real thing, though. If you're building for the long term, prefer abstractions (OpenRouter, LiteLLM, or your own thin wrapper) that let you swap providers without rewriting your agent. You gain resilience and negotiation leverage without giving up the ability to use the best model per task.</p>
-
-<h2>Three ways you actually use Claude.</h2>
-<p>You'll encounter Claude through three different surfaces, and it's worth knowing when to use which:</p>
-
-<ol>
-  <li><strong>The Claude API</strong>, direct programmatic access. This is what you use when you're building your own custom agent from scratch. Most flexible, most work.</li>
-  <li><strong>Claude.ai</strong>, the web/desktop chat interface with MCP connectors. Good for exploration, non-technical users, and personal productivity. Not the right choice for production agents.</li>
-  <li><strong>Claude Code</strong>, the CLI agent harness. Anthropic's opinionated wrapper around the API that ships permissions, hooks, skills, MCP support, and memory. For most agent builders this is the right starting point. See <a href="../claude-code/index.html">Claude Code overview</a>.</li>
-</ol>
-
-<h2>Pricing, at a glance.</h2>
-<p>Claude is priced per token, input and output counted separately. A few things to know:</p>
-
-<ul>
-  <li><strong>Output costs ~5× input.</strong> The model pays more for what it generates than for what you send it.</li>
-  <li><strong>Extended thinking counts as output.</strong> A reasoning budget of 10k tokens costs what 10k output tokens cost. Worth it on hard problems; wasted on easy ones.</li>
-  <li><strong>Prompt caching gets you ~90% off cached portions.</strong> Huge for agents with stable system prompts.</li>
-  <li><strong>Opus &gt; Sonnet &gt; Haiku on price, roughly 5× per tier.</strong> Opus is expensive; Haiku is cheap enough to run in parallel.</li>
-</ul>
-
-<p>For a well-designed agent with caching + the right model per task, the economics usually work out much better than you'd expect. The raw per-token prices look high; once you account for caching and tier selection, a typical daily-running agent costs single-digit dollars a month.</p>
-
-<h2>Where to go from here.</h2>
-<ul>
-  <li><a href="prompting-for-agents.html">Prompting for agents</a>, how prompting changes when the model's running in a loop with tools</li>
-  <li><a href="extended-thinking.html">Extended thinking</a>, when to turn on the reasoning budget and when not to</li>
-  <li><a href="tool-use.html">Tool use</a>, the mechanics of how tool calls actually work</li>
-</ul>
+</div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../what-is-autonomous-ai.html">What is autonomous AI</a></li><li><a href="../the-autonomy-spectrum.html">The autonomy spectrum</a></li><li><a href="../glossary.html">Glossary</a></li></ul><h4>Claude</h4><ul><li><a href="overview.html" class="active">Overview</a></li><li><a href="prompting-for-agents.html">Prompting for agents</a></li><li><a href="extended-thinking.html">Extended thinking</a></li><li><a href="tool-use.html">Tool use</a></li></ul><h4>MCP</h4><ul><li><a href="../mcp/index.html">Overview</a></li><li><a href="../mcp/what-is-mcp.html">What is MCP</a></li><li><a href="../mcp/anatomy.html">Anatomy</a></li><li><a href="../mcp/transports.html">Transports</a></li><li><a href="../mcp/servers.html">Servers</a></li><li><a href="../mcp/clients.html">Clients</a></li><li><a href="../mcp/security.html">Security</a></li><li><a href="../mcp/directory.html">Directory</a></li></ul><h4>Plugins</h4><ul><li><a href="../plugins/index.html">Overview</a></li><li><a href="../plugins/vs-mcp.html">Plugins vs MCP</a></li><li><a href="../plugins/marketplace.html">Marketplace</a></li></ul><h4>Claude Code</h4><ul><li><a href="../claude-code/index.html">Overview</a></li><li><a href="../claude-code/settings.html">Settings</a></li><li><a href="../claude-code/permissions.html">Permissions</a></li><li><a href="../claude-code/hooks.html">Hooks</a></li><li><a href="../claude-code/subagents.html">Subagents</a></li><li><a href="../claude-code/skills.html">Skills</a></li><li><a href="../claude-code/memory.html">Memory</a></li></ul><h4>Patterns</h4><ul><li><a href="../patterns/index.html">Overview</a></li><li><a href="../patterns/react-loop.html">ReAct loop</a></li><li><a href="../patterns/plan-execute.html">Plan-execute</a></li><li><a href="../patterns/multi-agent.html">Multi-agent</a></li><li><a href="../patterns/evaluation.html">Evaluation</a></li><li><a href="../patterns/prompt-caching.html">Prompt caching</a></li><li><a href="../patterns/context-engineering.html">Context engineering</a></li></ul><h4>Autonomous</h4><ul><li><a href="../autonomous/index.html">Overview</a></li><li><a href="../autonomous/headless.html">Headless</a></li><li><a href="../autonomous/scheduling.html">Scheduling</a></li><li><a href="../autonomous/self-monitoring.html">Self-monitoring</a></li><li><a href="../autonomous/safety.html">Safety</a></li></ul><h4>Build Guides</h4><ul><li><a href="../build/index.html">Overview</a></li><li><a href="../build/first-agent.html">First agent (60 min)</a></li><li><a href="../build/first-skill.html">Write your first skill</a></li><li><a href="../build/mcp-server.html">Build an MCP server</a></li><li><a href="../build/agent-sdk.html">The Claude Agent SDK</a></li><li><a href="../build/voice-agent.html">Voice agent</a></li><li><a href="../build/research-agent.html">Research agent</a></li></ul><h4>Tools</h4><ul><li><a href="../tools/browser-automation.html">Browser automation</a></li><li><a href="../tools/desktop-control.html">Desktop control</a></li><li><a href="../tools/local-models.html">Local and open models (Ollama)</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Framework</a><span class="sep">›</span><span>Claude</span></div><h1 class="title">Claude, overview</h1><div class="article-meta"><span>6 min read</span><span>Last checked 2026-09-28</span></div><p class="lede">Claude is Anthropic's model family and product surface. For a builder, the useful question is not which model wins a vague benchmark. It is which model has the right capability, context, cost, and operating surface for the task in front of you.</p><h2>Current API lineup</h2><div class="claim"><p>The checked Claude API lineup is Fable 5.1 (<code>claude-fable-5-1</code>), Opus 5.5 (<code>claude-opus-5-5</code>), Sonnet 5 (<code>claude-sonnet-5</code>), and Haiku 4.5 (<code>claude-haiku-4-5</code>). Fable, Opus, and Sonnet list 1M context and 128K maximum output. Haiku lists 200K context and 64K maximum output.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-1">Source 01</a></div></div><div class="table-wrap"><table><thead><tr><th>Model</th><th>API ID</th><th>Context / output</th><th>USD per million tokens, input / output</th></tr></thead><tbody><tr><td>Fable 5.1</td><td><code>claude-fable-5-1</code></td><td>1M / 128K</td><td>$10 / $50</td></tr><tr><td>Opus 5.5</td><td><code>claude-opus-5-5</code></td><td>1M / 128K</td><td>$4 / $20</td></tr><tr><td>Sonnet 5</td><td><code>claude-sonnet-5</code></td><td>1M / 128K</td><td>$2 / $10</td></tr><tr><td>Haiku 4.5</td><td><code>claude-haiku-4-5</code></td><td>200K / 64K</td><td>$1 / $5</td></tr></tbody></table></div><div class="claim"><p>Batch processing is listed at 50% off standard Claude API prices. Dated snapshot IDs are available when you need to pin a behavior, while aliases resolve to the current model version.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-2">Source 02</a></div></div><h2>How I pick a model</h2><p>I start with Sonnet for a general production task. It has the broad context and output limits of the larger tiers at a lower listed price. That is a starting point, not a rule. Build a small evaluation set that looks like your actual work, then compare the reviewed outcome, latency, tool-call behavior, and total token use.</p><p>I reach for Opus when a task needs more careful planning, difficult reasoning, or a costly retry has already shown that a cheaper choice is false economy. I use Haiku for high-volume classification, routing, extraction, or bounded helper work where the prompt and output contract are clear. Fable is a top-tier option to evaluate when the task has a strong reason to justify its price.</p><div class="callout note"><p>Context capacity is not a reason to fill every request with everything you have. Send the instructions and evidence needed for the decision, then test whether retrieval or a compact summary produces a cleaner result.</p></div><h2>Plans and product surfaces</h2><div class="claim"><p>Claude's checked plan materials list Free at $0, Pro at $20 monthly or $200 annual, Max starting at $100 monthly with a $200 tier, Team at $25 monthly or $20 annual per standard seat, and Enterprise seat pricing plus API-rate usage with a listed 20-seat minimum. Availability can vary by region and plan.</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="#src-3">Source 03</a></div></div><p>The web and app plans are useful for collaborative work, Projects, Artifacts, web search, and Claude Code access where available. The API is the surface to use when your own application needs a controlled, measurable call path. Claude Code is the developer-facing environment for work in a repository or terminal. They share a family name but serve different workflows.</p><h2>Set up a useful evaluation</h2><ol><li>Choose ten to twenty representative inputs, including hard cases and failure cases.</li><li>Define what a good answer must include, what it must avoid, and who reviews it.</li><li>Run the same prompt and tool contract through the candidates.</li><li>Record quality, retries, runtime, and token usage, not just a first impression.</li><li>Pin a dated ID when consistency matters, and repeat the evaluation before changing models.</li></ol><p>This practice makes model selection less like following releases and more like ordinary engineering. The best current choice is the one that meets a reviewed standard for a known cost in your own workflow.</p>
 <!-- further-reading -->
 <div class="further-reading">
-<h2>Further reading</h2>
+<h2>Sources</h2>
 <ul>
-<li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/en/docs/get-started" target="_blank" rel="noopener nofollow">Claude API - Getting started</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/en/docs/about-claude/overview" target="_blank" rel="noopener nofollow">Claude - Model overview</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/en/docs/build-with-claude/tool-use/overview" target="_blank" rel="noopener nofollow">Claude - Tool use</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/en/docs/build-with-claude/extended-thinking" target="_blank" rel="noopener nofollow">Claude - Extended thinking</a></li>
-<li><span class="resource-meta">Docs</span><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener nofollow">Claude - Prompt engineering guide</a></li>
-<li><span class="resource-meta">Repo</span><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank" rel="noopener nofollow">Anthropic Cookbook - Examples</a></li>
+<li id="src-1"><span class="resource-meta">Docs</span><a href="https://platform.claude.com/docs/en/models/overview" target="_blank" rel="noopener">Anthropic: models overview</a></li>
+<li id="src-2"><span class="resource-meta">Pricing</span><a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Anthropic: Claude API pricing</a></li>
+<li id="src-3"><span class="resource-meta">Pricing</span><a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude plans and pricing</a></li>
+<li><span class="resource-meta">Docs</span><a href="https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions" target="_blank" rel="noopener">Anthropic: model IDs and versions</a></li>
+<li><span class="resource-meta">Repo</span><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank" rel="noopener">Anthropic Cookbook: examples</a></li>
 </ul>
-<h3>Watch</h3>
-<div class="video-wrap">
-<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/bZQun8Y4L2A" title="Andrej Karpathy - State of GPT (Microsoft Build)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p class="video-caption">Andrej Karpathy - State of GPT (Microsoft Build)</p>
+<div class="prev-next"><a href="../glossary.html" class="prev"><div class="label">Previous</div><div class="title">Glossary</div></a><a href="prompting-for-agents.html" class="next"><div class="label">Next</div><div class="title">Prompting for agents</div></a></div></div></div><footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div class="foot-brand"><img src="../../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
+<div><h4>Learn</h4><ul><li><a href="../../learn/index.html">Start here</a></li><li><a href="../../learn/owners/index.html">Owner track</a></li><li><a href="../../framework/index.html">Builder track</a></li><li><a href="../../newsletter.html">Daily AI brief</a></li></ul></div>
+<div><h4>Library</h4><ul><li><a href="../../framework/index.html">Framework</a></li><li><a href="../../expertise/index.html">Expertise</a></li><li><a href="../../playbooks/index.html">Playbooks</a></li><li><a href="../../compare/index.html">Comparisons</a></li><li><a href="../../glossary/index.html">Glossary</a></li><li><a href="../../writing.html">Essays</a></li></ul></div>
+<div><h4>Sam</h4><ul><li><a href="../../about.html">About</a></li><li><a href="../../testimonials.html">Testimonials</a></li><li><a href="../../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
 </div>
-<div class="prev-next"><a href="../glossary.html" class="prev"><div class="label">← Previous</div><div class="title">Glossary</div></a><a href="prompting-for-agents.html" class="next"><div class="label">Next →</div><div class="title">Prompting for agents</div></a></div></div></div><footer><div class="container">
-<p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="../../framework/index.html">Framework</a></p>
+<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
 </div></footer><script>
 (function(){
   const bar = document.querySelector('nav.topbar');
   if (!bar || bar.dataset.navInit) return;
   bar.dataset.navInit = '1';
-
-  const OPEN_DELAY = 120;   // ms - hover intent
-  const CLOSE_DELAY = 450;  // ms - forgiving close
-  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
-
+  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
+  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
   const hamb = bar.querySelector('.hamburger');
   const links = bar.querySelector('.nav-links');
   const groups = Array.from(bar.querySelectorAll('.nav-group'));
-
-  // --- Mobile hamburger ---------------------------------------------------
-  if (hamb && links) {
-    hamb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const open = bar.classList.toggle('nav-open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-
-  // --- Per-group hover-intent open/close ---------------------------------
-  groups.forEach(function(group) {
-    let openTimer = null;
-    let closeTimer = null;
-
-    const open = () => {
-      clearTimeout(closeTimer); closeTimer = null;
-      if (openTimer) return;
-      openTimer = setTimeout(() => {
-        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
-        group.classList.add('is-open');
-        openTimer = null;
-      }, OPEN_DELAY);
-    };
-    const close = () => {
-      clearTimeout(openTimer); openTimer = null;
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        group.classList.remove('is-open');
-        closeTimer = null;
-      }, CLOSE_DELAY);
-    };
-    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
-
-    // Desktop: hover opens, mouseleave closes after delay
+  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+  let best = null, bestLen = 0;
+  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
+    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
+  });
+  if (best) best.setAttribute('aria-current', 'page');
+  if (hamb && links) hamb.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = bar.classList.toggle('nav-open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  groups.forEach(function(group){
+    let openT = null, closeT = null;
+    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
+    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
-    // If cursor re-enters while closing, cancel the close
-    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
-
-    // Click trigger: mobile toggles accordion; desktop follows the link
+    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
+    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
     const trigger = group.querySelector('.nav-has-submenu');
-    if (trigger) {
-      trigger.addEventListener('click', function(e) {
-        if (isMobile()) {
-          e.preventDefault();
-          const wasOpen = group.classList.contains('is-open');
-          groups.forEach(g => g.classList.remove('is-open'));
-          if (!wasOpen) group.classList.add('is-open');
-        }
-      });
-    }
-  });
-
-  // --- Mega menu (legacy): swap right-panel content on category hover -----
-  // No-op now that Resources is a simple dropdown, but harmless if any
-  // mega markup lingers on a not-yet-rebuilt page.
-  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
-  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
-  let catTimer = null;
-  megaCats.forEach(function(cat) {
-    cat.addEventListener('mouseenter', function() {
-      clearTimeout(catTimer);
-      const id = cat.dataset.cat;
-      catTimer = setTimeout(() => {
-        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
-        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
-      }, 80); // snappier than top-level hover intent
+    if (trigger) trigger.addEventListener('click', function(e){
+      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
     });
   });
-
-  // --- Close menu when a leaf link is clicked ----------------------------
-  if (links) {
-    links.querySelectorAll('a').forEach(function(a) {
-      if (a.classList.contains('nav-has-submenu')) return;
-      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
-      a.addEventListener('click', function() {
-        bar.classList.remove('nav-open');
-        if (hamb) hamb.setAttribute('aria-expanded', 'false');
-        groups.forEach(g => g.classList.remove('is-open'));
-      });
-    });
-  }
-
-  // --- Close on outside click ---------------------------------------------
-  document.addEventListener('click', function(e) {
-    if (!bar.contains(e.target)) {
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
+  document.addEventListener('click', function(e){
+    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
   });
-
-  // --- Escape key closes everything ---------------------------------------
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
   });
 })();
-</script></body></html>
+</script><script defer src="../../js/site.js"></script>
+</body></html>

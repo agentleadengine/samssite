@@ -1,93 +1,156 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Demo Gallery — Samuel Ochoa</title>
-<meta name="description" content="Fictional demo websites across dozens of trades. See what your business site could look like, then get yours for $249.">
+<title>Demo website archive | Samuel Ochoa</title>
+<meta name="description" content="An archive of demo websites for fictional small businesses across dozens of trades, in English and Spanish.">
 <meta name="robots" content="noindex,follow">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f3ecdd">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260928">
 <style>
-:root{--paper:#faf6ef;--deep:#f3ecdf;--ink:#1a2e35;--soft:#41555c;--faint:#6d7f85;--line:rgba(26,46,53,.14);
---accent:#e8562a;--accent-deep:#c43e15;--green:#1d7a53;--sun:#f5c842;--serif:'Fraunces',Georgia,serif;--sans:'Karla',system-ui,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:var(--paper);color:var(--soft);line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-header{padding:54px 0 30px;border-bottom:1.5px solid var(--line)}
-h1{font-family:var(--serif);font-weight:900;font-size:clamp(34px,5vw,54px);color:var(--ink);line-height:1.05;letter-spacing:-.015em;max-width:16ch}
-h1 .mark{position:relative;white-space:nowrap}
-h1 .mark::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:32%;background:var(--sun);z-index:-1;transform:skew(-8deg)}
-.lede{margin-top:14px;font-size:17px;max-width:56ch}
-.lede a{color:var(--accent-deep);font-weight:800}
-.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:20px 0;position:sticky;top:0;background:var(--paper);z-index:20;border-bottom:1.5px solid var(--line)}
-.chip{font-family:var(--sans);font-weight:700;font-size:13.5px;border:1.5px solid var(--line);background:#fffdf8;color:var(--soft);padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .15s ease}
-.chip:hover{border-color:var(--ink);color:var(--ink)}
-.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.chip.lang.on{background:var(--green);border-color:var(--green)}
-.search{margin-left:auto;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font:inherit;font-size:14px;background:#fffdf8;color:var(--ink);min-width:180px}
-.search:focus{outline:none;border-color:var(--accent)}
-.count{font-size:13px;color:var(--faint);padding:14px 0 4px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;padding:18px 0 70px}
-.card{background:#fffdf8;border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:transform .18s ease,box-shadow .18s ease}
-.card:hover{transform:translateY(-5px) rotate(-.3deg);box-shadow:8px 10px 0 rgba(26,46,53,.14)}
-.shot{aspect-ratio:16/10;overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--deep)}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.cbody{padding:14px 16px 16px}
-.cname{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--ink);line-height:1.15}
-.cmeta{display:flex;gap:8px;align-items:center;margin-top:7px;flex-wrap:wrap}
-.tag{font-size:12px;font-weight:700;color:var(--faint)}
-.lang-b{font-size:11px;font-weight:800;letter-spacing:.08em;padding:2px 8px;border-radius:4px;background:var(--deep);color:var(--soft)}
-.lang-b.es{background:#e8f3ec;color:var(--green)}
-.pages{font-size:11.5px;color:var(--faint);margin-left:auto}
-.cta-band{background:var(--ink);color:var(--paper);padding:46px 0;text-align:center}
-.cta-band h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.5vw,34px);color:#fffdf8}
-.cta-band p{margin:8px auto 18px;max-width:52ch;color:rgba(250,246,239,.75)}
-.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:17px;padding:15px 28px;border-radius:10px;text-decoration:none;box-shadow:0 3px 0 var(--accent-deep)}
-.btn:hover{background:var(--accent-deep)}
-footer{padding:26px 0 40px;font-size:13px;color:var(--faint);text-align:center}
-.empty{padding:60px 0;text-align:center;color:var(--faint);display:none}
-@media (prefers-reduced-motion:reduce){.card,.chip{transition:none}}
-</style></head><body>
-<header><div class="wrap">
-<h1>Pick a trade. <span class="mark">See the site.</span></h1>
-<p class="lede">120 complete demo websites — every one a fictional business, built to show what yours could look like. Five pages each: home, services, work, about, contact. <a href="/websites">Get yours: $249, see it free first</a> · <a href="/paginas-web">En español</a></p>
-</div></header>
-<div class="bar"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:100%">
-<button class="chip on" data-g="All">All trades</button>
-<span id="chips"></span>
-<button class="chip lang" data-l="EN">English</button>
-<button class="chip lang" data-l="ES">Español</button>
-<input class="search" id="q" type="search" placeholder="Search: plumber, taquería…" aria-label="Search demos">
+.arch-bar{position:sticky;top:68px;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding:12px 0}
+.arch-bar .container{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.arch-bar .search{margin-left:auto;max-width:280px;min-height:40px;padding:8px 12px;font-size:16px}
+.arch-count{margin:26px 0 14px;font-size:14px;color:var(--ink-3);font-variant-caps:all-small-caps;letter-spacing:.14em;font-weight:600}
+.arch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px 22px;padding-bottom:40px}
+.spec{position:relative;display:block;text-decoration:none;color:var(--ink);background:var(--paper-hi);border:1px solid var(--rule-strong);padding:10px 10px 14px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.spec:hover{transform:translateY(-3px) rotate(-.3deg);box-shadow:0 22px 36px -26px rgba(60,35,20,.6);color:var(--ink)}
+.spec::before{content:"";position:absolute;top:-6px;right:18px;width:12px;height:28px;background:var(--ribbon);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);z-index:2}
+.spec.es::before{background:var(--stamp)}
+.spec .shot{aspect-ratio:16/10;overflow:hidden;border:1px solid var(--rule);background:var(--paper-deep)}
+.spec .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.spec .rid{display:flex;justify-content:space-between;margin:12px 4px 2px;font-size:12px;color:var(--ink-3);font-variant-caps:all-small-caps;letter-spacing:.15em;font-weight:600;font-feature-settings:"tnum","lnum"}
+.spec .sname{display:block;margin:0 4px;font-family:var(--f-display);font-size:26px;line-height:1.08}
+.spec .strade{display:block;margin:4px 4px 0;font-size:15px;color:var(--ink-2);font-style:italic}
+.arch-empty{display:none;padding:40px 0;color:var(--ink-2)}
+@media(max-width:640px){.arch-bar .container{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.arch-bar .filter-chip{flex-shrink:0}.arch-bar .search{min-width:180px}.arch-bar{top:62px}.arch-bar .search{margin-left:0;max-width:none;width:100%}.arch-grid{grid-template-columns:1fr 1fr;gap:18px 12px}.spec .sname{font-size:18px}.spec .strade{font-size:13px}}
+</style>
+</head>
+<body>
+<nav class="topbar" aria-label="Main"><div class="topbar-inner">
+<a href="../index.html" class="logo"><img class="brand-logo" src="../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="../learn/index.html" class="nav-link">Start here</a>
+<a href="../learn/owners/index.html" class="nav-link">Owners</a>
+<a href="../framework/index.html" class="nav-link">Builders</a>
+<div class="nav-group">
+<a href="../learn/library.html" class="nav-link nav-has-submenu">Library</a>
+<div class="nav-submenu">
+<a href="../framework/index.html">The Framework <small>41</small></a>
+<a href="../expertise/index.html">Expertise libraries <small>486</small></a>
+<a href="../playbooks/index.html">Industry playbooks <small>240</small></a>
+<a href="../compare/index.html">Tool comparisons <small>77</small></a>
+<a href="../glossary/index.html">Glossary <small>111</small></a>
+<a href="../writing.html">Essays <small>20</small></a>
+<a href="../snapshots.html">GHL snapshots</a>
 </div></div>
-<main class="wrap">
-<p class="count" id="count"></p>
-<div class="grid" id="grid"></div>
-<p class="empty" id="empty">Nothing matches — clear a filter or two.</p>
+<a href="../about.html" class="nav-link">About</a>
+<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
+<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
+<a href="../newsletter.html" class="nav-link nav-cta">Daily brief</a>
+</div>
+</div></nav>
+<main id="main">
+<section class="hero hero-compact"><div class="container">
+<h1>Pick a trade. See the site.</h1>
+<p class="lead">An archive of complete demo websites, each one for a fictional business, built to show what a small business site can look like. Five pages each, in English and Spanish. Every business here is made up and labeled that way.</p>
+<p class="hero-microcopy">Want one like this for your business? <a href="/contact">Tell me about it</a>.</p>
+</div></section>
+<div class="arch-bar"><div class="container">
+<button class="filter-chip active" data-g="All">All trades</button>
+<span id="chips" style="display:contents"></span>
+<button class="filter-chip lang" data-l="EN">English</button>
+<button class="filter-chip lang" data-l="ES">Español</button>
+<input class="search" id="q" type="search" placeholder="Search: plumber, taquería" aria-label="Search demos">
+</div></div>
+<div class="container">
+<p class="arch-count" id="count" aria-live="polite"></p>
+<p class="arch-legend"><span><span class="bookmark"></span>English site</span><span><span class="bookmark is-stamp"></span>Spanish site</span></p>
+<div class="arch-grid" id="grid"></div>
+<p class="arch-empty" id="empty">Nothing matches. Clear a filter or two.</p>
+</div>
 </main>
-<div class="cta-band"><div class="wrap">
-<h2>Your business could be next on this wall.</h2>
-<p>Every demo here was designed and built the same way your real site would be: $249 to launch, $99/mo all-in, and you see your homepage free before paying anything.</p>
-<a class="btn" href="/websites">Get my free preview</a>
-</div></div>
-<footer><div class="wrap">Every site in this gallery is a clearly labeled fictional demonstration business. Built by Samuel Ochoa · Agent Lead Engine LLC</div></footer>
+<footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div class="foot-brand"><img src="../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
+<div><h4>Learn</h4><ul><li><a href="../learn/index.html">Start here</a></li><li><a href="../learn/owners/index.html">Owner track</a></li><li><a href="../framework/index.html">Builder track</a></li><li><a href="../newsletter.html">Daily AI brief</a></li></ul></div>
+<div><h4>Library</h4><ul><li><a href="../framework/index.html">Framework</a></li><li><a href="../expertise/index.html">Expertise</a></li><li><a href="../playbooks/index.html">Playbooks</a></li><li><a href="../compare/index.html">Comparisons</a></li><li><a href="../glossary/index.html">Glossary</a></li><li><a href="../writing.html">Essays</a></li></ul></div>
+<div><h4>Sam</h4><ul><li><a href="../about.html">About</a></li><li><a href="../testimonials.html">Testimonials</a></li><li><a href="../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
+</div>
+<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
+</div></footer>
 <script id="d" type="application/json">[{"slug": "after-the-build-cleanup", "name": "After The Build Cleanup Co.", "vertical": "cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "ampere-house-electric", "name": "Ampere House Electric", "vertical": "electrical", "lang": "EN", "group": "Home Services"}, {"slug": "antojitos-la-plaza", "name": "Antojitos La Plaza", "vertical": "antojitos / food truck", "lang": "ES", "group": "Food & Drink"}, {"slug": "barberia-el-clasico", "name": "Barbería El Clásico", "vertical": "barbería", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "black-anchor-tattoo", "name": "Black Anchor Tattoo", "vertical": "tattoo studio", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "blacktop-brothers-paving", "name": "blacktop-brothers-paving", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "blue-ladder-repair", "name": "Blue Ladder Home Repair", "vertical": "handyman / home repair", "lang": "EN", "group": "Home Services"}, {"slug": "blue-print-collective", "name": "Blueprint Collective", "vertical": "architects", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "breathe-easy-air", "name": "Breathe Easy Air Systems", "vertical": "hvac", "lang": "EN", "group": "Home Services"}, {"slug": "bright-night-emergency-electric", "name": "Bright Night Emergency Electric", "vertical": "electrical", "lang": "EN", "group": "Home Services"}, {"slug": "bright-smile-dental", "name": "Bright Smile Family Dental", "vertical": "family dental office", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "brightside-cleaning", "name": "Brightside Cleaning Co.", "vertical": "house cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "cafe-el-molino", "name": "Café El Molino", "vertical": "cafetería", "lang": "ES", "group": "Food & Drink"}, {"slug": "canaletas-lluvia-limpia", "name": "Canaletas Lluvia Limpia", "vertical": "limpieza de canaletas", "lang": "ES", "group": "Home Services"}, {"slug": "carriage-house-door-works", "name": "Carriage House Door Works", "vertical": "garage doors", "lang": "EN", "group": "Home Services"}, {"slug": "casa-nueva-bienes-raices", "name": "Bienes Raíces Casa Nueva", "vertical": "bienes raíces", "lang": "ES", "group": "Professional & Creative"}, {"slug": "cedar-and-slate-roofworks", "name": "Cedar & Slate Roofworks", "vertical": "roofing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "cedar-stone-landscaping", "name": "Cedar & Stone Landscaping", "vertical": "landscaping", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "cerca-segura-instalaciones", "name": "cerca-segura-instalaciones", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "cerrajeria-el-candado", "name": "Cerrajería El Candado", "vertical": "cerrajería 24 horas", "lang": "ES", "group": "Home Services"}, {"slug": "clases-adelante", "name": "Clases Adelante", "vertical": "clases particulares / tutoría", "lang": "ES", "group": "Kids & Education"}, {"slug": "clases-do-re-mi", "name": "Clases de Música Do Re Mi", "vertical": "clases de música", "lang": "ES", "group": "Kids & Education"}, {"slug": "clearflow-gutters", "name": "ClearFlow Gutter Cleaning", "vertical": "gutter cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "clearflow-septic-service", "name": "clearflow-septic-service", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "clearview-auto-glass", "name": "clearview-auto-glass", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "clearwater-pool", "name": "Clearwater Pool Service", "vertical": "pool service", "lang": "EN", "group": "Home Services"}, {"slug": "clima-fresco", "name": "Clima Fresco Aire Acondicionado", "vertical": "aire acondicionado / HVAC", "lang": "ES", "group": "Home Services"}, {"slug": "clima-hogar-perez", "name": "Clima Hogar", "vertical": "hvac", "lang": "ES", "group": "Home Services"}, {"slug": "comfort-club-hvac", "name": "The Comfort Club", "vertical": "hvac", "lang": "EN", "group": "Home Services"}, {"slug": "construccion-buenavista", "name": "Construcción Buenavista", "vertical": "construcción / remodelación", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "copper-coil-electric", "name": "Copper Coil Electric", "vertical": "electrician", "lang": "EN", "group": "Home Services"}, {"slug": "copperline-plumbing", "name": "Copperline Plumbing & Heating", "vertical": "plumbing", "lang": "EN", "group": "Home Services"}, {"slug": "crescendo-music", "name": "Crescendo Music Lessons", "vertical": "music lessons", "lang": "EN", "group": "Kids & Education"}, {"slug": "crystal-view-windows", "name": "Crystal View Window Cleaning", "vertical": "window cleaning", "lang": "EN", "group": "Home Services"}, {"slug": "dental-sonrisa-sana", "name": "Dental Sonrisa Sana", "vertical": "consultorio dental", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "detallado-autobrillo", "name": "Detallado AutoBrillo", "vertical": "detallado automotriz", "lang": "ES", "group": "Auto & Transport"}, {"slug": "don-martillo-reparaciones", "name": "Reparaciones Don Martillo", "vertical": "handyman", "lang": "ES", "group": "Home Services"}, {"slug": "driftwood-coffee", "name": "Driftwood Coffee Roasters", "vertical": "coffee shop", "lang": "EN", "group": "Food & Drink"}, {"slug": "electrica-la-chispa", "name": "Eléctrica La Chispa", "vertical": "electricista", "lang": "ES", "group": "Home Services"}, {"slug": "electricidad-luz-del-sur", "name": "Electricidad Luz del Sur", "vertical": "electrical", "lang": "ES", "group": "Home Services"}, {"slug": "electrodomesticos-el-tecnico", "name": "El Técnico Electrodomésticos", "vertical": "reparación de electrodomésticos", "lang": "ES", "group": "Home Services"}, {"slug": "ember-bun-food-truck", "name": "Ember & Bun Food Truck", "vertical": "burger food truck", "lang": "EN", "group": "Food & Drink"}, {"slug": "escombros-el-camion", "name": "Escombros El Camión", "vertical": "recolección de escombros", "lang": "ES", "group": "Home Services"}, {"slug": "escuela-el-volante", "name": "Escuela de Manejo El Volante", "vertical": "escuela de manejo", "lang": "ES", "group": "Auto & Transport"}, {"slug": "estetica-canina-patitas", "name": "Estética Canina Patitas", "vertical": "estética canina", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "estudio-arquitectura-mirador", "name": "Estudio Mirador Arquitectura", "vertical": "architects", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "evergreen-estate-lawncare", "name": "Evergreen Estate Lawn Care", "vertical": "landscaping", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "evready-charger-install", "name": "EV Ready Charger Install", "vertical": "electrical", "lang": "EN", "group": "Home Services"}, {"slug": "fade-district-barbershop", "name": "Fade District Barbershop", "vertical": "barbershop", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "first-light-snow-removal", "name": "first-light-snow-removal", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "fix-point-appliance", "name": "Fix Point Appliance Repair", "vertical": "appliance repair", "lang": "EN", "group": "Home Services"}, {"slug": "flatline-commercial-roofing", "name": "Flatline Flat Roof Co.", "vertical": "roofing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "fotografia-luz-momento", "name": "Fotografía Luz y Momento", "vertical": "fotografía de eventos", "lang": "ES", "group": "Professional & Creative"}, {"slug": "four-seasons-climate", "name": "Four Seasons Climate Co.", "vertical": "hvac", "lang": "EN", "group": "Home Services"}, {"slug": "golden-crust-bakery", "name": "Golden Crust Bakery", "vertical": "bakery", "lang": "EN", "group": "Food & Drink"}, {"slug": "green-light-driving", "name": "Green Light Driving School", "vertical": "driving school", "lang": "EN", "group": "Auto & Transport"}, {"slug": "guarderia-pasitos", "name": "Guardería Pasitos Felices", "vertical": "guardería infantil", "lang": "ES", "group": "Kids & Education"}, {"slug": "harbor-point-realty", "name": "Harbor Point Realty", "vertical": "real estate agent", "lang": "EN", "group": "Professional & Creative"}, {"slug": "haul-away-junk", "name": "Haul Away Junk Removal", "vertical": "junk removal", "lang": "EN", "group": "Home Services"}, {"slug": "hearthstone-design-studio", "name": "Hearthstone Design Studio", "vertical": "architects", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "impuestos-la-oficina", "name": "Impuestos La Oficina", "vertical": "preparación de impuestos", "lang": "ES", "group": "Professional & Creative"}, {"slug": "ironclad-locksmith", "name": "Ironclad Locksmith", "vertical": "24hr locksmith", "lang": "EN", "group": "Home Services"}, {"slug": "ironworks-training", "name": "Ironworks Personal Training", "vertical": "personal training", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "jetstream-pressure-washing", "name": "Jetstream Pressure Washing", "vertical": "pressure washing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "kneaded-relief-massage", "name": "Kneaded Relief Massage", "vertical": "massage therapy", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "lavado-el-chorro", "name": "Lavado a Presión El Chorro", "vertical": "lavado a presión", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "lavanderia-burbujas", "name": "Lavandería Burbujas", "vertical": "lavandería", "lang": "ES", "group": "Home Services"}, {"slug": "ledger-lane-tax", "name": "Ledger Lane Tax Prep", "vertical": "tax preparation", "lang": "EN", "group": "Professional & Creative"}, {"slug": "limpieza-estrella", "name": "Limpieza Estrella", "vertical": "limpieza residencial y comercial", "lang": "ES", "group": "Home Services"}, {"slug": "little-acorns-daycare", "name": "Little Acorns Daycare", "vertical": "daycare / childcare", "lang": "EN", "group": "Kids & Education"}, {"slug": "maple-street-diner", "name": "Maple Street Diner", "vertical": "classic diner", "lang": "EN", "group": "Food & Drink"}, {"slug": "mariscos-el-puerto", "name": "Mariscos El Puerto", "vertical": "marisquería", "lang": "ES", "group": "Food & Drink"}, {"slug": "masajes-manos-sanas", "name": "Masajes Manos Sanas", "vertical": "masajes terapéuticos", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "meridian-line-architects", "name": "Meridian Line Architects", "vertical": "architects", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "mini-split-masters", "name": "Mini-Split Masters", "vertical": "hvac", "lang": "EN", "group": "Home Services"}, {"slug": "mirror-shine-detailing", "name": "Mirror Shine Auto Detailing", "vertical": "auto detailing", "lang": "EN", "group": "Auto & Transport"}, {"slug": "mudanzas-el-camino", "name": "Mudanzas El Camino", "vertical": "mudanzas", "lang": "ES", "group": "Auto & Transport"}, {"slug": "neighborly-pipe-co", "name": "The Neighborly Pipe Co.", "vertical": "plumbing", "lang": "EN", "group": "Home Services"}, {"slug": "north-wind-hvac", "name": "North Wind Heating & Air", "vertical": "HVAC", "lang": "EN", "group": "Home Services"}, {"slug": "oak-grain-flooring", "name": "Oak & Grain Flooring", "vertical": "hardwood flooring", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "old-house-rewire-co", "name": "Old House Rewire Co.", "vertical": "electrical", "lang": "EN", "group": "Home Services"}, {"slug": "one-call-home-repair", "name": "One Call Home Repair", "vertical": "handyman", "lang": "EN", "group": "Home Services"}, {"slug": "overhead-pros-garage", "name": "Overhead Pros Garage Doors", "vertical": "garage doors", "lang": "EN", "group": "Home Services"}, {"slug": "paleteria-el-sol", "name": "Paletería El Sol", "vertical": "paletería", "lang": "ES", "group": "Food & Drink"}, {"slug": "panaderia-el-amanecer", "name": "Panadería El Amanecer", "vertical": "panadería", "lang": "ES", "group": "Food & Drink"}, {"slug": "pintura-nueva-vida", "name": "Pintura Nueva Vida", "vertical": "pintura de casas", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "piscinas-agua-clara", "name": "Piscinas Agua Clara", "vertical": "mantenimiento de piscinas", "lang": "ES", "group": "Home Services"}, {"slug": "pizzeria-la-piedra", "name": "Pizzería La Piedra", "vertical": "pizzería", "lang": "ES", "group": "Food & Drink"}, {"slug": "plomeria-el-faro", "name": "Plomería El Faro", "vertical": "plomería", "lang": "ES", "group": "Home Services"}, {"slug": "plomeria-familiar-hernandez", "name": "Plomería La Familiar", "vertical": "plumbing", "lang": "ES", "group": "Home Services"}, {"slug": "portones-el-fuerte", "name": "Portones y Garajes El Fuerte", "vertical": "garage doors", "lang": "ES", "group": "Home Services"}, {"slug": "quiet-glide-doors", "name": "Quiet Glide Door Co.", "vertical": "garage doors", "lang": "EN", "group": "Home Services"}, {"slug": "rapid-rooter-flatrate", "name": "Rapid Flat-Rate Rooter", "vertical": "plumbing", "lang": "EN", "group": "Home Services"}, {"slug": "restauracion-aguas-claras", "name": "restauracion-aguas-claras", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "ridgeline-roofing", "name": "Ridgeline Roofing", "vertical": "roofing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "rooter-brothers-plumbing", "name": "Rooter Brothers Plumbing", "vertical": "plumbing", "lang": "EN", "group": "Home Services"}, {"slug": "salon-bella-vida", "name": "Salón Bella Vida", "vertical": "salón de belleza", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "salt-line-seafood", "name": "Salt Line Seafood Shack", "vertical": "seafood shack", "lang": "EN", "group": "Food & Drink"}, {"slug": "same-day-springs", "name": "Same-Day Springs", "vertical": "garage doors", "lang": "EN", "group": "Home Services"}, {"slug": "saturday-morning-fixit", "name": "Saturday Morning Fix-It", "vertical": "handyman", "lang": "EN", "group": "Home Services"}, {"slug": "shoreline-residential-design", "name": "Shoreline Residential Design", "vertical": "architects", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "showroom-garage-floors", "name": "showroom-garage-floors", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "soapy-paw-grooming", "name": "The Soapy Paw Dog Grooming", "vertical": "dog grooming", "lang": "EN", "group": "Personal Care & Fitness"}, {"slug": "soot-and-brick-chimney", "name": "soot-and-brick-chimney", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "spark-and-steel-welding", "name": "spark-and-steel-welding", "vertical": "", "lang": "EN", "group": "More Trades"}, {"slug": "stillwater-photography", "name": "Stillwater Photography", "vertical": "family photography", "lang": "EN", "group": "Professional & Creative"}, {"slug": "stone-ember-pizza", "name": "Stone & Ember Pizza", "vertical": "pizzeria", "lang": "EN", "group": "Food & Drink"}, {"slug": "storm-guard-roofers", "name": "Storm Guard Roofers", "vertical": "roofing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "summit-peak-roofing", "name": "Summit Peak Roofing", "vertical": "roofing", "lang": "EN", "group": "Construction & Outdoor"}, {"slug": "summit-tutoring", "name": "Summit Tutoring", "vertical": "tutoring / test prep", "lang": "EN", "group": "Kids & Education"}, {"slug": "sweet-turn-ice-cream", "name": "Sweet Turn Ice Cream", "vertical": "ice cream shop", "lang": "EN", "group": "Food & Drink"}, {"slug": "swift-drain-plumbing", "name": "Swift Drain Plumbing", "vertical": "plumbing", "lang": "EN", "group": "Home Services"}, {"slug": "taller-el-motor", "name": "Taller Mecánico El Motor", "vertical": "taller mecánico", "lang": "ES", "group": "Auto & Transport"}, {"slug": "taqueria-la-esquina", "name": "Taquería La Esquina", "vertical": "taqueria / street tacos", "lang": "ES", "group": "Food & Drink"}, {"slug": "tatuajes-tinta-viva", "name": "Tatuajes Tinta Viva", "vertical": "estudio de tatuajes", "lang": "ES", "group": "Personal Care & Fitness"}, {"slug": "techos-del-sol", "name": "Techos del Sol", "vertical": "techos / roofing", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "techos-hermanos-vega", "name": "Techos Hermanos Vega", "vertical": "roofing", "lang": "ES", "group": "Construction & Outdoor"}, {"slug": "toolbelt-and-level", "name": "Toolbelt & Level", "vertical": "handyman", "lang": "EN", "group": "Home Services"}, {"slug": "torque-auto-repair", "name": "Torque Auto Repair", "vertical": "auto repair", "lang": "EN", "group": "Auto & Transport"}, {"slug": "true-coat-painting", "name": "True Coat Painting", "vertical": "house painting", "lang": "EN", "group": "Construction & Outdoor"}]</script>
 <script>
 var D=JSON.parse(document.getElementById('d').textContent),G='All',L=null,Q='';
+function nice(c){if(c.name&&c.name!==c.slug)return c.name;return c.slug.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1)}).join(' ')}
+D.forEach(function(c,i){c.id='D-'+String(i+1).padStart(3,'0');c.title=nice(c)});
 var groups=[];D.forEach(function(c){if(groups.indexOf(c.group)<0)groups.push(c.group)});groups.sort();
 var chips=document.getElementById('chips');
-groups.forEach(function(g){var b=document.createElement('button');b.className='chip';b.dataset.g=g;b.textContent=g;chips.appendChild(b)});
+groups.forEach(function(g){var b=document.createElement('button');b.className='filter-chip';b.dataset.g=g;b.textContent=g;chips.appendChild(b)});
+function esc(t){return String(t).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
 function draw(){var grid=document.getElementById('grid');grid.innerHTML='';var n=0;
 D.forEach(function(c){if(G!=='All'&&c.group!==G)return;if(L&&c.lang!==L)return;
-if(Q&&(c.name+' '+c.vertical).toLowerCase().indexOf(Q)<0)return;n++;
-var a=document.createElement('a');a.className='card';a.href='/demos/'+c.slug+'/';
-a.innerHTML='<div class="shot"><img loading="lazy" src="/demos/_thumbs/'+c.slug+'.jpg" alt="Homepage of '+c.name.replace(/"/g,'&quot;')+' demo site"></div>'+
-'<div class="cbody"><div class="cname">'+c.name+'</div><div class="cmeta"><span class="tag">'+c.vertical+'</span>'+
-'<span class="lang-b'+(c.lang==='ES'?' es':'')+'">'+c.lang+'</span><span class="pages">5-page site</span></div></div>';
+if(Q&&(c.title+' '+c.vertical+' '+c.group).toLowerCase().indexOf(Q)<0)return;n++;
+var a=document.createElement('a');a.className='spec'+(c.lang==='ES'?' es':'');a.href='/demos/'+c.slug+'/';
+a.innerHTML='<div class="shot"><img loading="lazy" src="/demos/_thumbs/'+c.slug+'.jpg" alt="Homepage of the '+esc(c.title)+' demo site"></div>'+
+'<span class="rid"><span>'+c.id+'</span><span>'+c.lang+' · 5 pages</span></span><span class="sname">'+esc(c.title)+'</span>'+
+'<span class="strade">'+esc(c.vertical||'Demo business')+'</span>';
 grid.appendChild(a)});
-document.getElementById('count').textContent=n+' of '+D.length+' demos';
+document.getElementById('count').textContent=n+' of '+D.length+' demo sites';
 document.getElementById('empty').style.display=n?'none':'block'}
-document.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;
-if(b.dataset.g){document.querySelectorAll('.chip[data-g]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');G=b.dataset.g}
-if(b.dataset.l){var was=b.classList.contains('on');document.querySelectorAll('.chip.lang').forEach(function(x){x.classList.remove('on')});L=was?null:b.dataset.l;if(!was)b.classList.add('on')}
+document.addEventListener('click',function(e){var b=e.target.closest('.filter-chip');if(!b)return;
+if(b.dataset.g){document.querySelectorAll('.filter-chip[data-g]').forEach(function(x){x.classList.remove('active')});b.classList.add('active');G=b.dataset.g}
+if(b.dataset.l){var was=b.classList.contains('active');document.querySelectorAll('.filter-chip.lang').forEach(function(x){x.classList.remove('active')});L=was?null:b.dataset.l;if(!was)b.classList.add('active')}
 draw()});
 document.getElementById('q').addEventListener('input',function(e){Q=e.target.value.toLowerCase().trim();draw()});
 draw();
-</script></body></html>
+</script>
+<script defer src="/js/site.js"></script>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
+  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+  let best = null, bestLen = 0;
+  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
+    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
+  });
+  if (best) best.setAttribute('aria-current', 'page');
+  if (hamb && links) hamb.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = bar.classList.toggle('nav-open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  groups.forEach(function(group){
+    let openT = null, closeT = null;
+    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
+    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
+    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) trigger.addEventListener('click', function(e){
+      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+  });
+})();
+</script>
+</body></html>
