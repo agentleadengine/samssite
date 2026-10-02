@@ -1,0 +1,90 @@
+/* Agent Care pages use the site's shared type, colors, navigation, buttons, and cards. */
+.agent-wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.agent-wrap *, .agent-top-cta * { box-sizing: border-box; }
+.agent-wrap [hidden] { display: none !important; }
+.skip-link { position: absolute; left: 12px; top: -100px; z-index: 1000; padding: 10px 16px; background: var(--white); }
+.skip-link:focus { top: 12px; }
+.agent-top-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; color: var(--primary-purple); font-size: 14px; font-weight: 800; }
+.agent-top-cta a { font-weight: 700; }
+.agent-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); align-items: center; gap: clamp(28px, 5vw, 72px); padding-block: 72px 88px; }
+.agent-audience { color: var(--primary-purple); font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.agent-hero h1 { font-size: clamp(40px, 5vw, 68px); line-height: 1.04; letter-spacing: -.04em; margin: 12px 0 22px; }
+.agent-lede { color: var(--gray-600); font-size: clamp(18px, 1.8vw, 21px); line-height: 1.65; }
+.agent-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+.agent-button { max-width: 100%; text-align: center; justify-content: center; }
+.agent-offer { padding: 18px 22px; background: var(--light-bg); border-left: 3px solid var(--primary-purple); border-radius: 14px; color: var(--gray-700); font-size: 15px; line-height: 1.6; }
+.agent-offer strong { color: var(--gray-900); }
+.agent-intro { min-width: 0; }
+.agent-intro-fallback { overflow: hidden; border: 1px solid var(--gray-200); border-radius: 22px; background: var(--light-bg); box-shadow: 0 18px 46px rgba(74,0,224,.1); }
+.agent-intro-fallback img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.agent-intro-fallback div { padding: 18px 22px; }
+.agent-intro-fallback strong { color: var(--gray-900); }
+.agent-intro-fallback p { margin: 0; font-size: 15px; }
+.agent-intro-video { display: block; width: 100%; border-radius: 20px; background: var(--gray-900); }
+.agent-section { padding-block: 76px; scroll-margin-top: 90px; }
+.agent-tint { background: var(--light-bg); }
+.agent-section h2, .agent-end h2 { font-size: clamp(32px, 3.8vw, 48px); margin: 0 0 18px; }
+.agent-section h3 { font-size: 21px; font-weight: 800; margin: 0 0 10px; }
+.agent-section-lede { max-width: 760px; color: var(--gray-600); margin: 0 0 34px; }
+.agent-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 34px 0 0; }
+.agent-steps li { display: flex; gap: 16px; padding: 25px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 18px; }
+.agent-steps p, .agent-ownership p { margin: 0; color: var(--gray-600); font-size: 16px; }
+.agent-number { flex: 0 0 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--white); background: var(--primary-purple); font-size: 15px; font-weight: 800; }
+.agent-texts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.agent-texts p { margin: 0; padding: 22px; border-radius: 16px; background: var(--light-bg); border: 1px solid var(--gray-200); color: var(--gray-900); font-size: 17px; font-weight: 600; }
+.agent-fine, .agent-disclosure { color: var(--gray-600); font-size: 14px; line-height: 1.7; }
+.agent-fine { margin: 26px 0 0; }
+.agent-proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.agent-proof { background: var(--white); border-color: var(--gray-200); padding: 24px; }
+.agent-proof-role { color: var(--primary-purple) !important; font-weight: 700; margin-bottom: 20px !important; }
+.agent-proof .agent-quote { margin: 0 0 14px; color: var(--gray-700); font-size: 15px; line-height: 1.65; }
+.agent-testimonial-video { display: block; width: 100%; max-height: 400px; margin-top: 22px; border-radius: 12px; background: var(--gray-900); }
+.agent-testimonial-video.agent-tall { width: min(100%, 235px); margin-inline: auto; }
+.agent-david { display: flex; align-items: center; gap: 24px; margin-top: 22px; padding: 28px; border-radius: 18px; border: 1px solid var(--gray-200); background: var(--white); }
+.agent-david img { width: 76px; height: 76px; flex: 0 0 76px; border-radius: 50%; object-fit: cover; }
+.agent-david blockquote { margin: 0 0 12px; color: var(--gray-900); font-family: 'Instrument Serif', Georgia, serif; font-size: 25px; line-height: 1.3; }
+.agent-david p { margin: 0; color: var(--gray-600); font-size: 14px; }
+.agent-disclosure { margin: 16px 0 0; }
+.agent-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
+.agent-pricing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.agent-pricing .card { background: var(--white); border-color: var(--gray-200); padding: 26px; }
+.agent-pricing .card p { margin: 12px 0; font-size: 15px; }
+.agent-pricing .agent-price { color: var(--primary-purple); font-size: 38px; font-weight: 900; line-height: 1.1; }
+.agent-price span { color: var(--gray-600); font-size: 15px; font-weight: 500; }
+.agent-pricing .agent-total { color: var(--gray-900); font-weight: 800; }
+.agent-guarantee { max-width: 850px; margin: 36px auto 0; padding: 30px; border: 1px solid var(--primary-purple); border-radius: 18px; background: var(--white); text-align: center; }
+.agent-guarantee h3 { color: var(--primary-purple); }
+.agent-guarantee p { margin: 0; color: var(--gray-600); font-size: 16px; }
+.agent-faq { max-width: 880px; border-top: 1px solid var(--gray-200); }
+.agent-faq details { border-bottom: 1px solid var(--gray-200); padding: 20px 0; }
+.agent-faq summary { color: var(--gray-900); cursor: pointer; font-size: 18px; font-weight: 700; }
+.agent-faq details p { margin: 14px 26px 0 0; color: var(--gray-600); font-size: 16px; }
+.agent-end { margin-block: 40px 80px; padding: 50px; border-radius: 24px; background: var(--accent-bg); text-align: center; }
+.agent-end p { margin: 0 auto 26px; max-width: 620px; }
+.agent-booking { padding: 30px; margin-bottom: 80px; border: 1px solid var(--gray-200); border-radius: 20px; background: var(--light-bg); scroll-margin-top: 90px; }
+.agent-booking-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.agent-booking-top h2 { margin: 0; font-size: 30px; }
+#booking-close { padding: 8px 16px; border: 1px solid var(--gray-300); border-radius: 999px; background: var(--white); color: var(--gray-900); cursor: pointer; }
+#calendly-inline { min-height: 680px; width: 100%; }
+.agent-footer-note { font-weight: 700; }
+.agent-thanks { min-height: 65vh; }
+.agent-thanks .agent-lede { max-width: 680px; }
+.agent-thanks .agent-button { margin-top: 20px; }
+@media (max-width: 900px) {
+  .agent-hero { grid-template-columns: 1fr; padding-block: 44px 60px; }
+  .agent-intro { max-width: 520px; }
+  .agent-steps, .agent-proof-grid, .agent-pricing { grid-template-columns: 1fr; }
+  .agent-proof-grid { max-width: 650px; }
+  .agent-testimonial-video { max-width: 380px; }
+}
+@media (max-width: 600px) {
+  .agent-wrap { width: min(100% - 32px, 1120px); }
+  .agent-top-cta { padding-inline: 16px; }
+  .agent-section { padding-block: 54px; }
+  .agent-texts, .agent-ownership { grid-template-columns: 1fr; }
+  .agent-actions .btn { width: 100%; }
+  .agent-david { align-items: flex-start; flex-direction: column; }
+  .agent-end { padding: 36px 20px; margin-block: 20px 54px; }
+  .agent-booking { padding: 20px 12px; }
+  .agent-booking-top h2 { font-size: 23px; }
+}
