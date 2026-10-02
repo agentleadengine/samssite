@@ -88,3 +88,9 @@
   .agent-booking { padding: 20px 12px; }
   .agent-booking-top h2 { font-size: 23px; }
 }
+
+/* Headings match the homepage (lp-h1 / lp-h2): sentence case, purple italic accent. */
+main h1, main h2 { text-transform: none; color: var(--gray-900); font-weight: 800; letter-spacing: -0.025em; text-wrap: balance; }
+main h1 { font-size: clamp(36px, 5.2vw, 58px); line-height: 1.04; }
+main h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.06; }
+main h1 em, main h2 em { color: var(--primary-purple); }
