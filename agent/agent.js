@@ -61,7 +61,7 @@
   });
   document.getElementById('booking-close').addEventListener('click', function () {
     booking.hidden = true;
-    document.querySelector('.agent-header-call').focus();
+    document.querySelector('.agent-top-cta .booking-link').focus();
   });
 
   window.addEventListener('message', function (message) {
