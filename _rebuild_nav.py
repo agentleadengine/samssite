@@ -11,7 +11,7 @@ where Resources folds the whole knowledge base into one dropdown.
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/ale/samssite-work")
+ROOT = Path(__file__).resolve().parent
 
 # -----------------------------------------------------------------------------
 # Resources dropdown: the knowledge base, folded into a single simple menu.
@@ -40,7 +40,7 @@ def build_nav(R: str) -> str:
         '<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>',
         '<div class="nav-links">',
         f'<a href="{R}index.html" class="nav-link">Home</a>',
-        f'<a href="{R}ai-consulting.html" class="nav-link">Work with me</a>',
+        '<a href="/assistant/" class="nav-link">Work with me</a>',
         f'<a href="{R}case-studies/index.html" class="nav-link">Case Studies</a>',
         # Resources dropdown - knowledge base folded into one menu
         '<div class="nav-group">',
