@@ -3,7 +3,3 @@
 .claude/
 __pycache__/
 *.py[cod]
-
-# Working files: never publish (Netlify serves the repo root)
-.agent/
-.impeccable/

@@ -1,387 +1,511 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Samuel Ochoa · Learn AI for real work, checked and dated</title>
-<meta name="description" content="A free library for learning AI at work. Plain-English lessons for small-business owners and a builder track for Claude, Claude Code, MCP, and agents. Every page says when it was last checked.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Ochoa | Systems help for small businesses</title>
+<meta name="description" content="I help small businesses set up the tools and systems that run their day, and use AI where it helps.">
 <meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samuel Ochoa | Systems help for small businesses">
+<meta property="og:description" content="I help small businesses set up the tools and systems that run their day, and use AI where it helps.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260706">
+<link rel="icon" type="image/png" href="logo.png">
+
+<script defer src="js/sketch.js"></script>
+<script defer src="js/translate.js"></script>
+
 <link rel="canonical" href="https://samuelochoa.com/">
 <link rel="alternate" hreflang="en" href="https://samuelochoa.com/">
 <link rel="alternate" hreflang="es" href="https://samuelochoa.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://samuelochoa.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Samuel Ochoa · Learn AI for real work, checked and dated">
-<meta property="og:description" content="Free, plain-English AI lessons for small-business owners and builders. Every page dated and checked.">
 <meta property="og:url" content="https://samuelochoa.com/">
 <meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
-<meta property="og:site_name" content="Samuel Ochoa">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f3ecdd">
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260929">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Samuel Ochoa","url":"https://samuelochoa.com/","description":"A free library for learning AI at work, checked and dated."},{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about","image":"https://samuelochoa.com/sam-real.jpg","sameAs":["https://www.linkedin.com/in/samuelochoa"]}]}</script>
-<script defer src="js/translate.js"></script>
+<meta name="twitter:title" content="Samuel Ochoa | Systems help for small businesses">
+<meta name="twitter:description" content="I help small businesses set up the tools and systems that run their day, and use AI where it helps.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/","image":"https://samuelochoa.com/sam-real.jpg","jobTitle":"Systems consultant for small businesses","description":"I help small businesses set up tools and systems for everyday work, and use AI where it helps.","knowsAbout":["Small business systems","Customer follow-up","CRM","Artificial Intelligence"],"sameAs":["https://www.linkedin.com/in/samuelochoa"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Samuel Ochoa","url":"https://samuelochoa.com/","description":"Systems help for small businesses."}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18240559803"></script>
 <script>
-  window.addEventListener('load', function () {
-    var tag = document.createElement('script');
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18240559803';
-    tag.async = true;
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-18240559803');
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r); t.async=1; t.src='https://www.clarity.ms/tag/'+i;
-      y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
-    })(window, document, 'clarity', 'script', 'x9tyuivf47');
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18240559803');
+</script>
+<style>
+/* ===== Homepage conversion redesign (scoped to .lp) - LIGHT ===== */
+.lp{--ink:#1a1726;--ink2:#544e63;--muted:#8b8499;--purple:#5a1fe0;--purple2:#7c3aed;--soft:#f7f4fc;--softer:#fbf9fe;--line:#ebe6f6;color:var(--ink);font-family:'Inter',system-ui,sans-serif;background:#fff;}
+.lp *{box-sizing:border-box;}
+.lp a{text-decoration:none;}
+.lp-wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+.lp em{font-style:italic;font-family:'Instrument Serif',Georgia,serif;font-weight:400;}
+.lp-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+.lp-btn-primary{background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;box-shadow:0 10px 26px rgba(90,31,224,.26);}
+.lp-btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(90,31,224,.32);}
+.lp-btn-ghost{background:#fff;color:var(--purple);border:1.5px solid var(--line);}
+.lp-btn-ghost:hover{border-color:var(--purple);background:var(--softer);}
+.lp-kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;}
+.lp-h2{font-size:clamp(28px,3.6vw,42px);line-height:1.06;font-weight:800;letter-spacing:-.02em;margin:0;color:var(--ink);}
+.lp-h2 em{color:var(--purple);}
+.lp-lead{font-size:18px;line-height:1.55;color:var(--ink2);margin:16px 0 0;}
+.lp-center{text-align:center;max-width:720px;margin:0 auto 40px;}
+.lp-sec{padding:60px 0;}
+.lp-sec.alt{background:var(--soft);}
+
+/* HERO - light */
+.lp-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f6f2fe 100%);padding:56px 0 52px;border-bottom:1px solid var(--line);}
+.lp-hero::before{content:"";position:absolute;top:-140px;right:-90px;width:440px;height:440px;background:radial-gradient(circle,rgba(124,58,237,.13),transparent 65%);pointer-events:none;}
+.lp-hgrid{position:relative;display:grid;grid-template-columns:1fr;gap:46px;align-items:center;max-width:760px;}
+.lp-badge{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--purple);background:#fff;border:1px solid var(--line);padding:6px 14px 6px 6px;border-radius:999px;box-shadow:0 4px 14px rgba(20,16,30,.05);}
+.lp-badge img{width:26px;height:26px;border-radius:50%;object-fit:cover;}
+.lp-h1{font-size:clamp(36px,5.2vw,58px);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin:20px 0 0;color:var(--ink);}
+.lp-h1 em{color:var(--purple);}
+.lp-hsub{font-size:18px;line-height:1.5;color:var(--ink2);margin:18px 0 26px;max-width:31em;}
+.lp-ctarow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.lp-hmicro{margin-top:18px;font-size:13.5px;color:var(--muted);max-width:34em;}
+.lp-video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 22px 60px rgba(20,16,30,.16),0 0 0 1px var(--line);}
+.lp-video iframe{width:100%;height:100%;border:0;display:block;}
+
+/* TRUST BAR - light */
+.lp-trust{background:#fff;color:var(--ink2);padding:16px 0;border-bottom:1px solid var(--line);}
+.lp-trust .lp-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+.lp-trust b{color:var(--purple);}
+.lp-trust span{opacity:.85;}
+
+/* TESTIMONIALS - light */
+.lp-tgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;}
+.lp-tcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 34px rgba(20,16,30,.06);}
+.lp-tcard.dark{background:var(--softer);border:1px solid var(--line);border-left:4px solid var(--purple);}
+.lp-tperson{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.lp-tperson img{width:54px;height:54px;border-radius:50%;object-fit:cover;}
+.lp-tname{font-weight:700;font-size:15px;margin:0;color:var(--ink);}
+.lp-trole{font-size:12.5px;color:var(--muted);margin:3px 0 0;}
+.lp-trole a{color:inherit;text-decoration:underline;}
+.lp-quote{font-size:17px;line-height:1.52;margin:0;color:var(--ink);}
+.lp-tvideo{aspect-ratio:9/16;max-height:430px;border-radius:16px;overflow:hidden;background:#000;margin:0 auto;box-shadow:0 14px 40px rgba(20,16,30,.16);}
+.lp-tinitials{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;font-weight:800;font-size:17px;}
+.lp-tvideo iframe{width:100%;height:100%;border:0;}
+.lp-tvideo-wide{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;margin:6px 0 18px;box-shadow:0 12px 34px rgba(20,16,30,.16);}
+.lp-tvideo-wide iframe{width:100%;height:100%;border:0;display:block;}
+
+/* OWN-IT SPLIT */
+.lp-split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;}
+.lp-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.lp-pills span{font-size:13px;font-weight:600;color:var(--purple);background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:999px;}
+.lp-steps{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:0 10px 34px rgba(20,16,30,.06);}
+.lp-steps ol{margin:14px 0 0;padding-left:20px;line-height:1.95;color:var(--ink2);font-size:15.5px;}
+.lp-steps li::marker{color:var(--purple);font-weight:700;}
+
+/* OFFERS */
+.lp-offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.lp-offer{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;}
+.lp-offer:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(90,31,224,.12);border-color:#cdbdf7;}
+.lp-offer .num{font-family:'Instrument Serif',serif;font-size:30px;color:var(--purple);line-height:1;}
+.lp-offer h3{font-size:19px;margin:8px 0 8px;font-weight:800;color:var(--ink);}
+.lp-offer p{font-size:14.5px;line-height:1.5;color:var(--ink2);margin:0;}
+.lp-offer .step{position:absolute;top:24px;right:24px;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#a99cc4;}
+
+/* MORE (framework / ALE) */
+.lp-more{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.lp-mcard{display:block;color:inherit;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:border-color .15s,transform .15s;}
+.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
+.lp-mcard h3{margin:0 0 6px;font-size:18px;font-weight:800;color:var(--ink);}
+.lp-mcard p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.5;}
+.lp-mcard .go{color:var(--purple);font-weight:700;font-size:14px;margin-top:12px;display:inline-block;}
+
+/* FINAL CTA - light lilac */
+.lp-final{position:relative;overflow:hidden;background:linear-gradient(160deg,#f3edff,#eadffd);border:1px solid var(--line);border-radius:26px;padding:54px 32px;text-align:center;}
+.lp-final h2{position:relative;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink);}
+.lp-final p{position:relative;color:var(--ink2);font-size:18px;margin:0 auto 26px;max-width:34em;}
+.lp-final .lp-ctarow{position:relative;justify-content:center;}
+
+/* guarantee block + hero chip */
+.lp-hguarantee{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13.5px;font-weight:600;color:var(--purple);background:var(--softer);border:1px solid var(--line);padding:8px 14px;border-radius:999px;}
+.lp-guarantee{position:relative;background:linear-gradient(160deg,#faf7ff,#f1e9fe);border:1px solid #ddd0f7;border-radius:24px;padding:44px 40px;text-align:center;box-shadow:0 16px 50px rgba(90,31,224,.08);}
+.lp-gbadge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#7c3aed,#5a1fe0);padding:7px 16px;border-radius:999px;margin-bottom:18px;box-shadow:0 8px 22px rgba(90,31,224,.28);}
+.lp-guarantee .lp-h2{max-width:15em;margin:0 auto;}
+.lp-glead{font-size:17px;line-height:1.6;color:var(--ink2);max-width:42em;margin:16px auto 0;}
+.lp-gpoints{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px;}
+.lp-gpoints span{font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 15px;border-radius:999px;}
+
+/* refinements */
+.lp h1,.lp h2,.lp h3{text-transform:none;}
+@keyframes lpUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lp-hero .lp-badge,.lp-hero .lp-h1,.lp-hero .lp-hsub,.lp-hero .lp-ctarow,.lp-hero .lp-hsocial,.lp-hero .lp-hmicro,.lp-hero .lp-video{animation:lpUp .6s ease both;}
+.lp-hero .lp-h1{animation-delay:.05s}.lp-hero .lp-hsub{animation-delay:.11s}.lp-hero .lp-ctarow{animation-delay:.17s}.lp-hero .lp-hsocial{animation-delay:.22s}.lp-hero .lp-hmicro{animation-delay:.27s}.lp-hero .lp-video{animation-delay:.14s;animation-duration:.7s}
+.lp-hsocial{display:flex;align-items:center;gap:12px;margin-top:20px;font-size:13.5px;color:var(--ink2);}
+.lp-faces{display:flex;}
+.lp-faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-9px;box-shadow:0 2px 8px rgba(20,16,30,.14);}
+.lp-faces img:first-child{margin-left:0;}
+.lp-hsocial a{color:var(--purple);font-weight:600;}
+@media(prefers-reduced-motion:reduce){.lp *{animation:none !important;}}
+
+@media(max-width:900px){
+  .lp-hgrid,.lp-tgrid,.lp-split,.lp-more{grid-template-columns:1fr;}
+  .lp-offers{grid-template-columns:1fr;}
+  .lp-sec{padding:44px 0;}
+  .lp-hero{padding:38px 0 36px;}
+  .lp-tvideo{max-height:480px;}
+}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
 </script>
 </head>
 <body>
-<!--
-THESIS: Learning AI at work, kept as a dated record. Refuses the default AI-course page (gradient hero, feature grid, logo wall): the page is a provenance record whose ribbon runs from 2022 to today and splits into the two tracks.
-OWN-WORLD: archival buff paper with grain, one red silk ribbon as the custody line (solid = checked, dashed = my take, dotted gray = changing), Gloock ledger display, Source Serif small caps labels, dated circular stamps, swallowtail ribbon buttons.
-STORY: A visitor learns this is a free library that says when each fact was checked, picks the owner or builder track, and can join the brief. Help from Sam is one quiet link.
-FIRST VIEWPORT: left, huge red display line "Every AI claim needs a date." with an italic tagline and two ribbon buttons; right, a record card for the library with a dated stamp. The journey ribbon starts right under it.
-FORM: Provenance Ribbon (challenger chosen by Sam over assigned direction 6); seed key 18f15b7f.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
--->
-<a class="skip-link" href="#main">Skip to content</a>
-<nav class="topbar" aria-label="Main"><div class="topbar-inner">
-<a href="index.html" class="logo"><img class="brand-logo" src="images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
+
+<nav class="topbar"><div class="topbar-inner">
+<a href="index.html" class="logo"><img class="brand-logo" src="logo.png" alt="Samuel Ochoa"></a>
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
-<a href="learn/index.html" class="nav-link">Start here</a>
-<a href="learn/owners/index.html" class="nav-link">Owners</a>
-<a href="framework/index.html" class="nav-link">Builders</a>
+<a href="index.html" class="nav-link">Home</a>
+<a href="ai-consulting.html" class="nav-link">Work with me</a>
+<a href="case-studies/index.html" class="nav-link">Case Studies</a>
 <div class="nav-group">
-<a href="learn/library.html" class="nav-link nav-has-submenu">Library</a>
+<a href="framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
-<a href="framework/index.html">The Framework <small>41</small></a>
-<a href="expertise/index.html">Expertise libraries <small>486</small></a>
-<a href="playbooks/index.html">Industry playbooks <small>240</small></a>
-<a href="compare/index.html">Tool comparisons <small>77</small></a>
-<a href="glossary/index.html">Glossary <small>111</small></a>
-<a href="writing.html">Essays <small>20</small></a>
 <a href="snapshots.html">GHL snapshots</a>
+<a href="newsletter.html">Daily AI brief</a>
+<a href="framework/index.html">Framework</a>
+<a href="expertise/index.html">Expertise</a>
+<a href="playbooks/index.html">Playbooks</a>
+<a href="writing.html">Writing</a>
 </div></div>
 <a href="about.html" class="nav-link">About</a>
-<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
-<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
-<a href="newsletter.html" class="nav-link nav-cta">Daily brief</a>
+<a href="contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav>
 
-<main id="main">
-<section class="hero home-hero">
-  <div class="container hero-grid">
+<div class="lp">
+
+<!-- HERO -->
+<main id="main-content">
+<section class="lp-hero">
+  <div class="lp-wrap lp-hgrid">
     <div>
-      <h1>Every AI claim needs a <em>date.</em></h1>
-      <p class="tagline">AI tools change every month. These lessons say what is true now, when I checked it, and what is still moving.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="learn/owners/index.html">Start the owner track</a>
-        <a class="btn-ghost" href="framework/index.html">Start the builder track</a>
+      <span class="lp-badge"><img src="sam-real.jpg" alt="Samuel Ochoa"> Samuel Ochoa</span>
+      <h1 class="lp-h1">Set up the systems <em>that run your day.</em></h1>
+      <p class="lp-hsub">I help small businesses set up the tools and systems that keep work moving. I use AI where it helps, then show your team how to run it.</p>
+      <div class="lp-ctarow">
+        <a href="ai-consulting.html" class="lp-btn lp-btn-primary">Book a short call</a>
+        <a href="ai-consulting.html" class="lp-btn lp-btn-ghost">See how I can help</a>
+        <a href="tel:+15167801385" class="lp-btn lp-btn-ghost">Call: (516) 780-1385</a>
       </div>
-      <p class="hero-aside">Plain English. Free. Written by someone who sets these tools up for real small businesses.</p>
-    </div>
-
-    <aside class="record-card" aria-label="About this library">
-      <div class="rc-id">Record · SO-2026</div>
-      <div class="rc-title">AI at work</div>
-      <p class="rc-sub">A field record, kept by hand</p>
-      <dl>
-        <div class="rc-row"><dt>Kept by</dt><dd>Samuel Ochoa</dd></div>
-        <div class="rc-row"><dt>Library</dt><dd><span data-count="library">985</span> pages</dd></div>
-        <div class="rc-row"><dt>Tracks</dt><dd>Owners · Builders</dd></div>
-        <div class="rc-row"><dt>Last checked</dt><dd>28 Sep 2026</dd></div>
-        <div class="rc-row"><dt>Marks</dt><dd class="rc-legend"><span class="status">Checked</span><span class="status is-take">My take</span><span class="status is-changing">Changing</span></dd></div>
-      </dl>
-      <div class="stamp" aria-hidden="true"><div>Checked<strong>2026</strong>28 Sep</div></div>
-    </aside>
-  </div>
-
-  <div class="container">
-    <div class="journey-panel reveal" id="journey">
-      <div class="journey-tab" aria-hidden="true">The journey</div>
-      <svg class="journey-line" aria-hidden="true"></svg>
-      <ol class="journey" aria-label="How AI got to work">
-        <li style="--y:34px;--i:0"><span class="j-node"></span><span class="j-date">Nov 2022<span class="j-state">Checked</span></span>
-          <h3>ChatGPT opens to everyone</h3><p>Anyone can talk to a large language model. Most offices start by asking it to write emails.</p></li>
-        <li style="--y:52px;--i:1"><span class="j-node"></span><span class="j-date">Mar 2023<span class="j-state">Checked</span></span>
-          <h3>GPT-4 and the first Claude</h3><p>Good enough for real drafts, summaries, and first-pass research. Still needs a careful reader.</p></li>
-        <li style="--y:28px;--i:2"><span class="j-node"></span><span class="j-date">Nov 2024<span class="j-state">Checked</span></span>
-          <h3>MCP is published</h3><p>Anthropic opens the Model Context Protocol, a standard way for AI to use your tools and data.</p></li>
-        <li style="--y:48px;--i:3"><span class="j-node"></span><span class="j-date">Feb 2025<span class="j-state">Checked</span></span>
-          <h3>Claude Code arrives</h3><p>AI starts doing multi-step work in real files and systems, not just answering in a chat box.</p></li>
-        <li class="is-take" style="--y:30px;--i:4"><span class="j-node"></span><span class="j-date">2025 to 2026<span class="j-state">My take</span></span>
-          <h3>Agents go to work</h3><p>Assistants that act on their own become normal. They are useful and uneven, so checking still matters.</p></li>
-        <li class="is-now" style="--y:42px;--i:5"><span class="j-node"></span><span class="j-date">Today<span class="j-state">28 Sep 2026</span></span>
-          <h3>Where you come in</h3><p>The record splits three ways: the owner track, the builder track, and what is still changing.</p></li>
-      </ol>
-      <div class="journey-key"><span class="status">Checked against official sources</span><span class="status is-take">My take, from real setups</span><span class="status is-changing">Still changing</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="tracks">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Start where you are.</h2>
-      <p class="lead">Owners get the short, practical answer. Builders get the parts and how they fit. Both tracks use the same marks, so you always know what was checked and when.</p>
-    </div>
-    <div class="tracks">
-      <article class="track">
-        <h3>The owner track</h3>
-        <span class="t-for">For owners and office staff</span>
-        <p>No code. Which assistant to use, what it costs, the first tasks to hand it, and what to check before you trust it.</p>
-        <ol>
-          <li><a href="learn/owners/what-ai-can-do.html">What AI can and cannot do for a small business</a></li>
-          <li><a href="learn/owners/pick-an-assistant.html">Pick one assistant for the office</a></li>
-          <li><a href="learn/owners/what-it-costs.html">What AI costs a small business in 2026</a></li>
-          <li><a href="learn/owners/first-five-tasks.html">Five tasks to hand AI this week</a></li>
-          <li><a href="learn/owners/how-to-ask.html">How to ask so you get usable work</a></li>
-          <li><a href="learn/owners/check-before-you-trust.html">What to check before you trust the output</a></li>
-        </ol>
-        <div class="t-cta"><a class="btn-primary" href="learn/owners/index.html">See all 16 lessons</a></div>
-      </article>
-      <article class="track is-builder">
-        <h3>The builder track</h3>
-        <span class="t-for">For people who build</span>
-        <p>Claude, Claude Code, MCP, skills, agents, and RAG. How the pieces fit, then hands-on builds you can run.</p>
-        <ol>
-          <li><a href="framework/what-is-autonomous-ai.html">What autonomous AI actually is</a></li>
-          <li><a href="framework/claude/overview.html">Claude: the models and how to pick</a></li>
-          <li><a href="framework/mcp/what-is-mcp.html">MCP: how AI reaches your tools</a></li>
-          <li><a href="framework/claude-code/index.html">Claude Code: the harness</a></li>
-          <li><a href="framework/claude-code/skills.html">Skills, plugins, and subagents</a></li>
-          <li><a href="framework/build/first-agent.html">Build your first agent in an hour</a></li>
-        </ol>
-        <div class="t-cta"><a class="btn-ghost" href="framework/index.html">Open the framework</a></div>
-      </article>
-      <article class="track is-changing">
-        <h3>Watch this</h3>
-        <span class="t-for">Still changing</span>
-        <p>True today, likely to move. I re-check these first.</p>
-        <ul class="changing-list">
-          <li><strong>Model names and prices</strong><span>Checked 28 Sep 2026</span></li>
-          <li><strong>What each plan does with your data</strong><span>Checked 28 Sep 2026</span></li>
-          <li><strong>State rules on AI in business</strong><span>Checked 28 Sep 2026</span></li>
-        </ul>
-        <div class="t-cta"><a href="learn/changes.html">Read the change log</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="marks">
-  <div class="container">
-    <div class="ornament" aria-hidden="true"><span></span></div>
-    <div class="section-header">
-      <h2 class="section-title">Three marks. No guessing.</h2>
-      <p class="lead">Most AI advice online mixes facts, opinions, and old news in the same paragraph. Here each claim carries one of three marks.</p>
-    </div>
-    <div class="legend-grid">
-      <div class="legend-item">
-        <span class="status">Checked</span>
-        <h3>From the source</h3>
-        <p>I read it in the official docs, pricing page, or release notes on the date shown, and the page links to it.</p>
-        <div class="claim"><p>"Claude Code runs in the terminal, a desktop app, the browser, and inside VS Code and JetBrains."</p><div class="claim-mark"><span class="status">Checked</span><span>28 Sep 2026</span><a href="https://code.claude.com/docs/en/overview">Anthropic docs</a></div></div>
+      <div class="lp-hguarantee">&#10003; Clear help for everyday business systems.</div>
+      <div class="lp-hsocial">
+        <div class="lp-faces"><img src="william-kanas.webp" alt=""><img src="ashel.jpg" alt=""></div>
+        <span>Past client work. <a href="#proof">Hear from clients &rarr;</a></span>
       </div>
-      <div class="legend-item">
-        <span class="status is-take">My take</span>
-        <h3>From real setups</h3>
-        <p>My judgment from putting these tools into insurance agencies, law offices, and small teams. Useful, but it is an opinion.</p>
-        <div class="claim is-take"><p>"Pick one assistant for the whole office before you add a second. Two half-used tools help nobody."</p><div class="claim-mark"><span class="status is-take">My take</span><span>From real setups</span></div></div>
-      </div>
-      <div class="legend-item">
-        <span class="status is-changing">Changing</span>
-        <h3>Likely to move</h3>
-        <p>True on the date shown and likely to change soon: prices, model names, limits, and new laws. Re-check before you rely on it.</p>
-        <div class="claim is-changing"><p>"Business plans for the big assistants are not used to train models by default. Consumer plans vary."</p><div class="claim-mark"><span class="status is-changing">Changing</span><span>28 Sep 2026</span><a href="learn/owners/customer-data.html">Lesson 07</a></div></div>
-      </div>
+      <p class="lp-hmicro">Have a small business? <a href="ai-consulting.html" style="text-decoration:underline;color:var(--purple)">See how I can help your team run things better.</a></p>
     </div>
   </div>
 </section>
 
-<section class="block" id="checked">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">The latest entries.</h2>
-      <p class="lead">Pages re-checked against their sources most recently. The full history is in the <a href="learn/changes.html">change log</a>.</p>
-    </div>
-    <div class="table-wrap"><table class="checked-ledger">
-      <thead><tr><th>Page</th><th>Track</th><th>Mark</th><th>Checked</th></tr></thead>
-      <tbody><tr><td><a href="learn/owners/what-it-costs.html">What AI costs a small business in 2026</a></td><td>Owners</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="learn/owners/customer-data.html">Keep customer data safe</a></td><td>Owners</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="learn/owners/the-rules.html">The rules that apply to you</a></td><td>Owners</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="framework/claude/overview.html">Claude: the current models and how to pick</a></td><td>Builders</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="compare/claude-vs-gpt4.html">Claude vs GPT: Claude 5 family vs GPT-6</a></td><td>Builders</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="framework/build/first-skill.html">Write your first skill</a></td><td>Builders</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="framework/claude-code/subagents.html">Subagents</a></td><td>Builders</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr><tr><td><a href="framework/build/mcp-server.html">Build an MCP server</a></td><td>Builders</td><td><span class="status">Checked</span></td><td><time datetime="2026-09-28">28 Sep 2026</time></td></tr></tbody>
-    </table></div>
+<!-- TRUST BAR -->
+<div class="lp-trust">
+  <div class="lp-wrap">
+    <span><b>Built across:</b></span>
+    <span>Insurance</span><span>Real estate</span><span>Law</span><span>Nonprofits</span>
   </div>
-</section>
-
-<section class="block" id="library">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Everything in one place.</h2>
-    </div>
-    <ul class="catalog">
-      <li><a href="framework/index.html"><span class="c-count" data-count="framework">41<small>lessons</small></span><span class="c-name">The Framework</span><span class="c-desc">The builder handbook: Claude, MCP, plugins, Claude Code, agent patterns, going autonomous, and build guides.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="learn/owners/index.html"><span class="c-count">16<small>lessons</small></span><span class="c-name">The owner track</span><span class="c-desc">Plain-English lessons for owners and office staff. No code.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="expertise/index.html"><span class="c-count" data-count="expertise">486<small>pages</small></span><span class="c-name">Expertise libraries</span><span class="c-desc">Ten deep libraries: AI agents, RAG, SEO, paid ads, cold email, email marketing, growth, CRO, direct response, and running a business.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="playbooks/index.html"><span class="c-count" data-count="playbooks">240<small>modules</small></span><span class="c-name">Industry playbooks</span><span class="c-desc">Step-by-step AI playbooks for 15 kinds of business, from insurance and real estate to dentists and restaurants.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="compare/index.html"><span class="c-count" data-count="compare">77<small>matchups</small></span><span class="c-name">Tool comparisons</span><span class="c-desc">Head-to-head pages with a plain verdict: Claude vs GPT, Claude Code vs Cursor, and more.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="glossary/index.html"><span class="c-count" data-count="glossary">111<small>terms</small></span><span class="c-name">Glossary</span><span class="c-desc">Every term the library uses, explained simply, with an example and why it matters.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-      <li><a href="writing.html"><span class="c-count" data-count="writing">20<small>essays</small></span><span class="c-name">Essays</span><span class="c-desc">Longer pieces on systems, small business, and working with AI.</span><span class="c-arrow" aria-hidden="true"></span></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="block" id="brief">
-  <div class="container">
-    <div class="brief-slip">
-      <div>
-        <h2>One useful thing, every day.</h2>
-        <p class="lead">A short email with one AI task to try at work, in plain English, and what to check before you send it. I am still preparing it. You get the first issue when it is ready.</p>
-      </div>
-      <form name="ai-list" method="POST" action="/thanks-ai" data-netlify="true" netlify-honeypot="bot-field" aria-label="Daily AI brief signup">
-        <input type="hidden" name="form-name" value="ai-list">
-        <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <input type="hidden" name="utm_source" id="lf-utm_source" value="">
-        <input type="hidden" name="utm_medium" id="lf-utm_medium" value="">
-        <input type="hidden" name="utm_campaign" id="lf-utm_campaign" value="">
-        <input type="hidden" name="utm_content" id="lf-utm_content" value="">
-        <input type="hidden" name="page" id="lf-page" value="/">
-        <input type="hidden" name="channel" id="lf-channel" value="ai">
-        <input type="hidden" name="interest" id="lf-interest" value="newsletter">
-        <label for="lf-email">Email address</label>
-        <div class="lp-form-row"><input id="lf-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required aria-describedby="list-note"><button class="btn-primary" type="submit">Join the brief</button></div>
-        <p id="list-note" class="lp-fine">Every email has an unsubscribe link. <a href="privacy.html">Privacy</a>.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="keeper">
-  <div class="container keeper">
-    <figure class="keeper-photo">
-      <img src="sam-real.jpg" alt="Samuel Ochoa" width="640" height="640">
-      <figcaption><span class="status">Samuel Ochoa, keeper of this record</span></figcaption>
-    </figure>
-    <div>
-      <h2>I set these tools up for a living.</h2>
-      <p class="lead">I help small businesses put AI and simple systems to work: insurance agencies, law offices, real estate teams, nonprofits, and trades. This library is what I learned doing it, written down so you do not have to learn it the hard way.</p>
-      <div class="keeper-quotes">
-        <blockquote>"He sat down with me, explained CRMs and how they could actually help me, and showed me ways to use AI to handle tasks in the background. He breaks it down in a way that just makes sense."<cite>Brian · Southern Stone and Tile, Georgia</cite></blockquote>
-        <blockquote>"Sam's approach made it stick because he didn't just set it up and leave. He made sure I understood the system well enough to run it myself, adapt it, and build on it."<cite>David Greaves · Uniondale Neighborhood Center</cite></blockquote>
-      </div>
-      <p>Would rather have it set up for you? My team at <a href="https://agentleadengine.com/">Agent Lead Engine</a> does that. Otherwise, <a href="about.html">read more about me</a> or <a href="testimonials.html">hear from people I have worked with</a>.</p>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="site-footer"><div class="container">
-<div class="foot-grid">
-<div class="foot-brand"><img src="images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
-<div><h4>Learn</h4><ul><li><a href="learn/index.html">Start here</a></li><li><a href="learn/owners/index.html">Owner track</a></li><li><a href="framework/index.html">Builder track</a></li><li><a href="newsletter.html">Daily AI brief</a></li></ul></div>
-<div><h4>Library</h4><ul><li><a href="framework/index.html">Framework</a></li><li><a href="expertise/index.html">Expertise</a></li><li><a href="playbooks/index.html">Playbooks</a></li><li><a href="compare/index.html">Comparisons</a></li><li><a href="glossary/index.html">Glossary</a></li><li><a href="writing.html">Essays</a></li></ul></div>
-<div><h4>Sam</h4><ul><li><a href="about.html">About</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
 </div>
-<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
-</div></footer>
 
-<script>
-(function () {
-  try {
-    var qp = new URLSearchParams(window.location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function (k) {
-      var el = document.getElementById('lf-' + k); if (el && qp.get(k)) el.value = qp.get(k);
-    });
-  } catch (e) {}
-})();
-// Journey ribbon: drawn from the real node positions so it fits any width.
-(function () {
-  var panel = document.getElementById('journey');
-  if (!panel) return;
-  var svg = panel.querySelector('.journey-line');
-  var NS = 'http://www.w3.org/2000/svg';
-  function draw() {
-    if (getComputedStyle(svg).display === 'none') return;
-    var box = svg.getBoundingClientRect();
-    var pts = Array.prototype.map.call(panel.querySelectorAll('.j-node'), function (n) {
-      var r = n.getBoundingClientRect();
-      return [r.left - box.left + r.width / 2, r.top - box.top + r.height / 2];
-    });
-    if (pts.length < 2) return;
-    svg.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
-    svg.innerHTML = '<defs><pattern id="silk-rib" patternUnits="userSpaceOnUse" width="240" height="60"><image href="images/silk-h.svg" width="240" height="60"/></pattern></defs>';
-    function seg(a, b) { var mx = (a[0] + b[0]) / 2; return 'C' + mx + ',' + a[1] + ' ' + mx + ',' + b[1] + ' ' + b[0] + ',' + b[1]; }
-    var solid1 = 'M' + pts[0][0] + ',' + pts[0][1];
-    for (var i = 1; i <= 3; i++) solid1 += seg(pts[i - 1], pts[i]);
-    var take = 'M' + pts[3][0] + ',' + pts[3][1] + seg(pts[3], pts[4]);
-    var solid2 = 'M' + pts[4][0] + ',' + pts[4][1] + seg(pts[4], pts[5]);
-    var end = pts[5], w = box.width;
-    var reach = Math.min(w - end[0] - 4, 150);
-    var forkOwner = 'M' + end[0] + ',' + end[1] + ' C' + (end[0] + reach * .5) + ',' + end[1] + ' ' + (end[0] + reach * .6) + ',' + (end[1] - 22) + ' ' + (end[0] + reach) + ',' + (end[1] - 26);
-    var forkBuild = 'M' + end[0] + ',' + end[1] + ' C' + (end[0] + reach * .5) + ',' + end[1] + ' ' + (end[0] + reach * .6) + ',' + (end[1]) + ' ' + (end[0] + reach) + ',' + (end[1] + 2);
-    var forkChange = 'M' + end[0] + ',' + end[1] + ' C' + (end[0] + reach * .5) + ',' + end[1] + ' ' + (end[0] + reach * .6) + ',' + (end[1] + 24) + ' ' + (end[0] + reach) + ',' + (end[1] + 30);
-    [[solid1, 'rib'], [solid1, 'rib-hi'], [take, 'rib-gap'], [solid2, 'rib'], [solid2, 'rib-hi'],
-     [forkOwner, 'rib'], [forkBuild, 'rib rib-build'], [forkChange, 'rib-gap']].forEach(function (p) {
-      var el = document.createElementNS(NS, 'path');
-      el.setAttribute('d', p[0]); el.setAttribute('class', p[1]);
-      svg.appendChild(el);
-      try { el.style.setProperty('--len', Math.ceil(el.getTotalLength()) + 10); } catch (e) {}
-    });
-  }
-  draw();
-  window.addEventListener('resize', function () { clearTimeout(draw.t); draw.t = setTimeout(draw, 120); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
-})();
-</script>
-<script defer src="js/site.js"></script>
+<!-- PROOF / TESTIMONIALS -->
+<section class="lp-sec" id="proof">
+  <div class="lp-wrap">
+    <div class="lp-center">
+      <span class="lp-kicker">Past clients</span>
+      <h2 class="lp-h2">What people say <em>about working with me.</em></h2><p class="lp-lead">Here are a few words from people I have helped.</p>
+    </div>
+    <div style="margin-top:22px;">
+      <div class="lp-tcard dark">
+        <div class="lp-tperson">
+          <img src="ashel.jpg" alt="Ashel Troncoso">
+          <div><p class="lp-tname">Ashel Troncoso</p><p class="lp-trole">Owner, ATI Insurance Group &middot; <a href="https://www.atsigroup.com" target="_blank" rel="noopener">atsigroup.com</a></p></div>
+        </div>
+        <div class="lp-tvideo-wide"><iframe src="https://www.youtube.com/embed/Unix2k2OLq0" title="Ashel T. testimonial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="lp-quote">"I was as skeptical as could be. I didn't trust AI and didn't think it would work, but Sam convinced me to give it a try and I'm so glad I did. He's built workflows that save me time every day, from reminders and organization to e-sign prep and PDFs. He's patient, he genuinely loves teaching it, and if you want someone who will actually teach you AI, he's your guy."</p>
+      </div>
+    </div>
+    <div style="margin-top:22px;">
+      <div class="lp-tcard">
+        <div class="lp-tperson">
+          <span class="lp-tinitials" aria-hidden="true">ZP</span>
+          <div><p class="lp-tname">Zack Petrocca</p><p class="lp-trole">Experienced Real Estate COO &middot; Co-Founder, Curio Studio</p></div>
+        </div>
+        <div class="lp-tvideo"><iframe src="https://www.youtube.com/embed/zQZFR67Blcg" title="Zack Petrocca testimonial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="lp-quote" style="margin-top:18px;">"Working with Sam fundamentally changed how I approach AI in my business. He didn't just hand me tools, he built systems I actually understood and could implement immediately."</p>
+        <p class="lp-quote" style="margin-top:12px;">"If you're a business owner serious about building with AI, Sam is the person you want in your corner."</p>
+        <p style="margin:12px 0 0;font-size:13px;"><a href="/testimonials">Read Zack's full testimonial &rarr;</a></p>
+      </div>
+    </div>
+    <div style="margin-top:22px;">
+      <div class="lp-tcard">
+        <div class="lp-tperson">
+          <img src="william-kanas.webp" alt="William S. Kanas, Esq.">
+          <div><p class="lp-tname">William S. Kanas, Esq.</p><p class="lp-trole">Sanford L. Pirotin, P.C. &middot; <a href="https://pirotinlaw.com" target="_blank" rel="noopener">pirotinlaw.com</a></p></div>
+        </div>
+        <p class="lp-quote">"Sam modernized our IT department a decade ago, and the work still keeps our office running at peak efficiency. He has now embraced AI, and once again our office is the beneficiary of his expertise."</p>
+      </div>
+    </div>
+    <div style="margin-top:22px;">
+      <div class="lp-tcard">
+        <div class="lp-tperson">
+          <img src="david-greaves.jpeg" alt="David Greaves">
+          <div><p class="lp-tname">David Greaves</p><p class="lp-trole">President, Uniondale Neighborhood Center, Inc. &middot; <a href="https://byrncenter.org" target="_blank" rel="noopener">byrncenter.org</a></p></div>
+        </div>
+        <p class="lp-quote">"Sam's approach made it stick because he didn't just set it up and leave. He made sure I understood the system well enough to run it myself, adapt it, and build on it. For a small nonprofit doing big community work, that changes everything."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OWN IT -->
+<section class="lp-sec alt">
+  <div class="lp-wrap lp-split">
+    <div>
+      <span class="lp-kicker">Why me</span>
+      <h2 class="lp-h2">Make your systems <em>easy to use.</em></h2>
+      <p class="lp-lead">Your team already follows up, sends quotes, and keeps customer work moving. I help make those jobs clear and easy to run.</p>
+      <div class="lp-pills"><span>Start small</span><span>Use your own words</span><span>Learn by doing</span><span>Your team stays in charge</span></div>
+    </div>
+    <div class="lp-steps">
+      <span class="lp-kicker">How it goes</span>
+      <ol>
+        <li>Book a short call.</li>
+        <li>Tell me what slows your team down.</li>
+        <li>I set up a simple system around the tools you use.</li>
+        <li>I show your team how to run it.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST TASK -->
+<section class="lp-sec alt"><div class="lp-wrap">
+<div class="lp-center"><span class="lp-kicker">A good place to start</span><h2 class="lp-h2">Fix <em>one real task.</em></h2><p class="lp-lead">Start with a job your team repeats. Keep it simple. Make sure everyone knows the next step.</p></div>
+<div class="lp-offers"><div class="lp-offer"><div class="num">1</div><h3>Pick one task</h3><p>Choose lead follow-up, reminders, scheduling, or another job your team repeats.</p></div><div class="lp-offer"><div class="num">2</div><h3>Set up the system</h3><p>I connect the tools and forms so the right information gets where it needs to go.</p></div><div class="lp-offer"><div class="num">3</div><h3>Make it easy to run</h3><p>Your team knows what to do next and can keep it going.</p></div></div>
+<p class="lp-lead" style="text-align:center"><a href="ai-consulting.html" style="text-decoration:underline;color:var(--purple)">See how I help small businesses set up useful systems &rarr;</a></p>
+</div></section>
+
+<!-- OFFERS -->
+<section class="lp-sec">
+  <div class="lp-wrap">
+    <div class="lp-center">
+      <span class="lp-kicker">What I do</span>
+      <h2 class="lp-h2">Set it up. <em>Learn it. Run it.</em></h2>
+      <p class="lp-lead" style="margin-left:auto;margin-right:auto;">I help small businesses set up useful tools and systems for everyday work.</p>
+    </div>
+    <div class="lp-offers">
+      <div class="lp-offer"><span class="step">First</span><div class="num">01</div><h3>Talk it through</h3><p>We talk about the job that takes up your team’s time.</p></div>
+      <div class="lp-offer"><span class="step">Then</span><div class="num">02</div><h3>Set up the tools</h3><p>I set up a simple system around the tools you already use.</p></div>
+      <div class="lp-offer"><span class="step">Next</span><div class="num">03</div><h3>Teach your team</h3><p>I show your people how to use it and keep it running.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:34px;"><a href="ai-consulting.html" class="lp-btn lp-btn-primary">Book a short call</a></div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="lp-sec">
+  <div class="lp-wrap">
+    <div class="lp-guarantee">
+      <div class="lp-gbadge">A simple start</div>
+      <h2 class="lp-h2">You do not need to become <em>a systems expert.</em></h2>
+      <p class="lp-glead">I help you set up systems for real business work. Your team gets clear steps they can use and change.</p>
+      <div class="lp-gpoints">
+        <span>&#10003; Plain language</span>
+        <span>&#10003; Real business tasks</span>
+        <span>&#10003; Your team runs the system</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF I BUILD -->
+<section class="lp-sec alt">
+  <div class="lp-wrap">
+    <div class="lp-center">
+      <span class="lp-kicker">More from me</span>
+      <h2 class="lp-h2">See what I am <em>working on.</em></h2>
+    </div>
+    <div class="lp-more">
+      <a href="crm.html" class="lp-mcard"><h3>ALE, a simple CRM example</h3><p>A look at a place where a business can keep leads, customer details, and follow-up in one spot.</p><span class="go">See ALE &rarr;</span></a>
+      <a href="framework/index.html" class="lp-mcard"><h3>The AI handbook</h3><p>A simple guide to using AI at work, with practical ideas and clear examples.</p><span class="go">Read the framework &rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="lp-sec">
+  <div class="lp-wrap">
+    <div class="lp-final">
+      <h2>Want your business to run more smoothly?</h2>
+      <p>Book a short call. Tell me what your team needs help keeping on track.</p>
+      <div class="lp-ctarow">
+        <a href="ai-consulting.html" class="lp-btn lp-btn-primary">Book a short call</a>
+        <a href="tel:+15167801385" class="lp-btn lp-btn-ghost">Call: (516) 780-1385</a>
+        <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener" class="lp-btn lp-btn-ghost">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.lp -->
+
+</main>
+<section class="resource-strip" aria-labelledby="youtube-resources"><div class="resource-strip-inner"><h2 id="youtube-resources">From my YouTube channels</h2><div class="resource-strip-links"><a href="/ghl"><h3>GHL snapshots and tips</h3><p>I am building free GHL snapshots and sharing practical GHL tips.</p></a><a href="/ai"><h3>AI for small businesses</h3><p>I am preparing a daily AI brief and playbooks for one useful business task at a time.</p></a></div></div></section>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="framework/index.html">Framework</a> · <a href="expertise/index.html">Expertise</a> · <a href="compare/index.html">Comparisons</a> · <a href="playbooks/index.html">Playbooks</a> · <a href="es/index.html">Español</a></p>
+  </div>
+</footer>
+
 <script>
 (function(){
   const bar = document.querySelector('nav.topbar');
   if (!bar || bar.dataset.navInit) return;
   bar.dataset.navInit = '1';
-  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
-  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
   const hamb = bar.querySelector('.hamburger');
   const links = bar.querySelector('.nav-links');
   const groups = Array.from(bar.querySelectorAll('.nav-group'));
-  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-  let best = null, bestLen = 0;
-  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
-    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
-  });
-  if (best) best.setAttribute('aria-current', 'page');
-  if (hamb && links) hamb.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = bar.classList.toggle('nav-open');
-    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  groups.forEach(function(group){
-    let openT = null, closeT = null;
-    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
-    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
-    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
-    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
     const trigger = group.querySelector('.nav-has-submenu');
-    if (trigger) trigger.addEventListener('click', function(e){
-      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
     });
   });
-  document.addEventListener('click', function(e){
-    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
   });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
   });
 })();
-</script>
-</body>
+</script></body>
 </html>

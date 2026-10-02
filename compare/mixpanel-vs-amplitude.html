@@ -10,8 +10,35 @@
 <meta property="og:title" content="Mixpanel vs Amplitude | Compare | Samuel Ochoa">
 <meta property="og:description" content="Mixpanel vs Amplitude in 2026: free tiers, event-based pricing, session replay, and experiments compared, with the questions I ask before choosing.">
 <meta property="og:site_name" content="Samuel Ochoa">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20260929">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=20260706">
+<style>
+.cmp-layout { max-width: 960px; margin: 0 auto; padding: 48px 32px; }
+.cmp-topic { display: inline-block; background: #f3f0ff; color: #4a00e0; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.cmp-title { font-size: 36px; font-weight: 800; margin: 0 0 8px 0; }
+.cmp-subtitle { font-size: 17px; color: #666; margin: 0 0 32px 0; }
+.cmp-summary { font-size: 17px; line-height: 1.7; margin-bottom: 32px; padding: 20px; background: #fafafa; border-radius: 8px; border-left: 4px solid #4a00e0; }
+.cmp-matrix { overflow-x: auto; }
+.cmp-matrix table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+.cmp-matrix th, .cmp-matrix td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e5e5ea; font-size: 14px; line-height: 1.5; }
+.cmp-matrix th { background: #fafafa; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+.cmp-verdict { background: #f3f0ff; border: 1px solid #e0d4ff; padding: 20px 24px; border-radius: 10px; margin: 32px 0; }
+.cmp-verdict h3 { margin-top: 0; color: #4a00e0; }
+.cmp-content h2 { font-size: 24px; margin: 32px 0 12px; }
+.cmp-content p, .cmp-content li { font-size: 16px; line-height: 1.7; }
+.cmp-index { max-width: 1100px; margin: 0 auto; padding: 48px 32px; }
+.cmp-filter { display: flex; gap: 8px; margin: 16px 0 24px; flex-wrap: wrap; }
+.cmp-chip { padding: 6px 14px; background: #fff; border: 1px solid #e5e5ea; color: #333; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; font-family: inherit; }
+.cmp-chip:hover { border-color: #4a00e0; color: #4a00e0; }
+.cmp-chip.active { background: #4a00e0; color: #fff; border-color: #4a00e0; }
+.cmp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.cmp-card { display: block; padding: 16px 18px; background: #fff; border: 1px solid #e5e5ea; border-radius: 8px; text-decoration: none; color: #333; }
+.cmp-card:hover { border-color: #4a00e0; }
+.cmp-card.hidden { display: none; }
+.cmp-card-title { font-weight: 600; font-size: 16px; color: #4a00e0; }
+.cmp-card-topic { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 2px 0 6px 0; }
+.cmp-card-summary { font-size: 13px; color: #666; line-height: 1.5; }
+</style>
 <link rel="icon" type="image/png" href="../logo.png">
 
 <script defer src="../js/sketch.js"></script>
@@ -27,7 +54,7 @@
 <meta name="twitter:title" content="Mixpanel vs Amplitude | Compare | Samuel Ochoa">
 <meta name="twitter:description" content="Mixpanel vs Amplitude in 2026: free tiers, event-based pricing, session replay, and experiments compared, with the questions I ask before choosing.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
-<meta name="theme-color" content="#f3ecdd">
+<meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Mixpanel vs Amplitude | Compare | Samuel Ochoa","description":"Mixpanel vs Amplitude in 2026: free tiers, event-based pricing, session replay, and experiments compared, with the questions I ask before choosing.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about.html"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/compare/mixpanel-vs-amplitude.html","image":"https://samuelochoa.com/sam-real.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelochoa.com/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://samuelochoa.com/compare/"},{"@type":"ListItem","position":3,"name":"Mixpanel Vs Amplitude","item":"https://samuelochoa.com/compare/mixpanel-vs-amplitude"}]}</script>
@@ -39,32 +66,29 @@
 })(window, document, "clarity", "script", "x9tyuivf47");
 </script>
 </head>
-<body><nav class="topbar" aria-label="Main"><div class="topbar-inner">
-<a href="../index.html" class="logo"><img class="brand-logo" src="../images/so-mark.png" alt="" width="33" height="42"><span class="brand-word">Samuel Ochoa<small>AI at work, checked</small></span></a>
+<body><nav class="topbar"><div class="topbar-inner">
+<a href="../index.html" class="logo"><img class="brand-logo" src="../logo.png" alt="Samuel Ochoa"></a>
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
-<a href="../learn/index.html" class="nav-link">Start here</a>
-<a href="../learn/owners/index.html" class="nav-link">Owners</a>
-<a href="../framework/index.html" class="nav-link">Builders</a>
+<a href="../index.html" class="nav-link">Home</a>
+<a href="../ai-consulting.html" class="nav-link">Work with me</a>
+<a href="../case-studies/index.html" class="nav-link">Case Studies</a>
 <div class="nav-group">
-<a href="../learn/library.html" class="nav-link nav-has-submenu">Library</a>
+<a href="../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
-<a href="../framework/index.html">The Framework <small>41</small></a>
-<a href="../expertise/index.html">Expertise libraries <small>486</small></a>
-<a href="../playbooks/index.html">Industry playbooks <small>240</small></a>
-<a href="../compare/index.html">Tool comparisons <small>77</small></a>
-<a href="../glossary/index.html">Glossary <small>111</small></a>
-<a href="../writing.html">Essays <small>20</small></a>
 <a href="../snapshots.html">GHL snapshots</a>
+<a href="../newsletter.html">Daily AI brief</a>
+<a href="../framework/index.html">Framework</a>
+<a href="../expertise/index.html">Expertise</a>
+<a href="../playbooks/index.html">Playbooks</a>
+<a href="../writing.html">Writing</a>
 </div></div>
 <a href="../about.html" class="nav-link">About</a>
-<a href="https://agentleadengine.com/" class="nav-link nav-quiet">Get help</a>
-<a href="#" class="nav-link nav-lang" data-lang-toggle>Español</a>
-<a href="../newsletter.html" class="nav-link nav-cta">Daily brief</a>
+<a href="../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="cmp-layout cmp-content">
-<a href="index.html" class="back-link">All comparisons</a>
-<span class="cmp-topic">Analytics</span>
+<a href="index.html" style="color:#4a00e0; text-decoration: none; font-size: 14px;">← All comparisons</a>
+<span class="cmp-topic" style="margin-top: 16px;">Analytics</span>
 <h1 class="cmp-title">Mixpanel vs Amplitude</h1>
 <p class="cmp-subtitle">Two mature product analytics platforms that now overlap on almost everything.</p>
 
@@ -110,55 +134,137 @@
 </ul>
 </div>
 </div>
-</div><footer class="site-footer"><div class="container">
-<div class="foot-grid">
-<div class="foot-brand"><img src="../images/so-mark.png" alt="" width="44" height="56"><div><strong>Samuel Ochoa</strong><p>A free library for learning AI at work. Plain English, dated, and checked by someone who sets these tools up for real small businesses.</p></div></div>
-<div><h4>Learn</h4><ul><li><a href="../learn/index.html">Start here</a></li><li><a href="../learn/owners/index.html">Owner track</a></li><li><a href="../framework/index.html">Builder track</a></li><li><a href="../newsletter.html">Daily AI brief</a></li></ul></div>
-<div><h4>Library</h4><ul><li><a href="../framework/index.html">Framework</a></li><li><a href="../expertise/index.html">Expertise</a></li><li><a href="../playbooks/index.html">Playbooks</a></li><li><a href="../compare/index.html">Comparisons</a></li><li><a href="../glossary/index.html">Glossary</a></li><li><a href="../writing.html">Essays</a></li></ul></div>
-<div><h4>Sam</h4><ul><li><a href="../about.html">About</a></li><li><a href="../testimonials.html">Testimonials</a></li><li><a href="../contact.html">Contact</a></li><li><a href="https://agentleadengine.com/">Get help setting it up</a></li><li><a href="https://www.linkedin.com/in/samuelochoa" rel="noopener">LinkedIn</a></li></ul></div>
-</div>
-<div class="foot-colophon"><span>&copy; 2026 Samuel Ochoa &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></span><span class="status">Library last checked 28 Sep 2026</span></div>
+</div><footer><div class="container">
+<p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></p>
 </div></footer><script>
 (function(){
   const bar = document.querySelector('nav.topbar');
   if (!bar || bar.dataset.navInit) return;
   bar.dataset.navInit = '1';
-  const OPEN_DELAY = 120, CLOSE_DELAY = 400;
-  const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
   const hamb = bar.querySelector('.hamburger');
   const links = bar.querySelector('.nav-links');
   const groups = Array.from(bar.querySelectorAll('.nav-group'));
-  const here = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-  let best = null, bestLen = 0;
-  bar.querySelectorAll('.nav-links > a:not([data-lang-toggle]), .nav-group > a').forEach(function(a){
-    const p = new URL(a.href, location.href).pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-    if (p !== '/' && here.indexOf(p) === 0 && p.length > bestLen) { best = a; bestLen = p.length; }
-  });
-  if (best) best.setAttribute('aria-current', 'page');
-  if (hamb && links) hamb.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = bar.classList.toggle('nav-open');
-    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  groups.forEach(function(group){
-    let openT = null, closeT = null;
-    const open = () => { clearTimeout(closeT); if (openT) return; openT = setTimeout(() => { groups.forEach(g => g !== group && g.classList.remove('is-open')); group.classList.add('is-open'); openT = null; }, OPEN_DELAY); };
-    const close = () => { clearTimeout(openT); openT = null; clearTimeout(closeT); closeT = setTimeout(() => group.classList.remove('is-open'), CLOSE_DELAY); };
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
-    group.addEventListener('focusin', () => { if (!isMobile()) { clearTimeout(closeT); group.classList.add('is-open'); } });
-    group.addEventListener('focusout', (e) => { if (!isMobile() && !group.contains(e.relatedTarget)) group.classList.remove('is-open'); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
     const trigger = group.querySelector('.nav-has-submenu');
-    if (trigger) trigger.addEventListener('click', function(e){
-      if (isMobile()) { e.preventDefault(); const was = group.classList.contains('is-open'); groups.forEach(g => g.classList.remove('is-open')); if (!was) group.classList.add('is-open'); }
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
     });
   });
-  document.addEventListener('click', function(e){
-    if (!bar.contains(e.target)) { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
   });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { bar.classList.remove('nav-open'); if (hamb) hamb.setAttribute('aria-expanded', 'false'); groups.forEach(g => g.classList.remove('is-open')); }
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
   });
 })();
-</script><script defer src="../js/site.js"></script>
-</body></html>
+</script></body></html>
