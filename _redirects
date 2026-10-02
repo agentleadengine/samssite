@@ -8,6 +8,11 @@
 /agent/thanks  /agent/thanks/index.html  200
 /agent/thanks/  /agent/thanks/index.html  200
 /agent/*  /agent/:splat  200
+/assistant  /assistant/index.html  200
+/assistant/  /assistant/index.html  200
+/assistant/thanks  /assistant/thanks/index.html  200
+/assistant/thanks/  /assistant/thanks/index.html  200
+/assistant/*  /assistant/:splat  200
 /styles.css  /styles.css  200
 /images/so-mark.png  /images/so-mark.png  200
 /images/silk-h.svg  /images/silk-h.svg  200

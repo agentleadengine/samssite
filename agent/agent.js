@@ -2,6 +2,8 @@
   'use strict';
   const CALENDLY_URL = 'https://calendly.com/agentleadengine/meet-with-sam';
   const AGENT_CARE_SEND_TO = 'AW-18240559803/R_epCO2X4I0dELu14_lD';
+  const introVideoUrl = document.body.dataset.introVideo;
+  const thanksUrl = document.body.dataset.thanksUrl;
   const booking = document.getElementById('booking');
   const calendar = document.getElementById('calendly-inline');
   let widgetStarted = false;
@@ -23,7 +25,7 @@
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', 'x9tyuivf47');
     const intro = document.querySelector('.agent-intro-video');
-    fetch('/video/sam-agent-intro.mp4', { method: 'HEAD' }).then(function (response) {
+    fetch(introVideoUrl, { method: 'HEAD' }).then(function (response) {
       if (response.ok) {
         intro.hidden = false;
         document.querySelector('.agent-intro-fallback').hidden = true;
@@ -70,7 +72,7 @@
     function finish() {
       if (redirected) return;
       redirected = true;
-      window.location.assign('/agent/thanks');
+      window.location.assign(thanksUrl);
     }
     gtag('event', 'conversion', {
       send_to: AGENT_CARE_SEND_TO,
