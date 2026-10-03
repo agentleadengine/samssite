@@ -17,6 +17,8 @@ async function checkStandard(page, path) {
   await page.goto(base + path, { waitUntil: 'domcontentloaded' });
   const copy = await visibleCopy(page);
   assert.match(copy, /\$400/, `${path}: standard price missing`);
+  for (const price of ['$149', '$249', '$399']) assert.ok(copy.includes(price), `${path}: ${price} missing`);
+  assert.doesNotMatch(copy, /DigitalOcean|\$24\b|\$10 to \$20|\$133\b|\$148\b|\$233\b|\$248\b|\$383\b|\$398\b|\$99\b|\$199\b|\$349\b/i, `${path}: old pricing or account copy remains`);
   assert.doesNotMatch(copy, /Free setup/i, `${path}: promo shown to a standard visitor`);
   return copy;
 }
@@ -55,7 +57,7 @@ async function main() {
       let copy = await visibleCopy(page);
       assert.ok(copy.includes(promoLine), `${path}: promo missing`);
       assert.doesNotMatch(copy, /\$400/, `${path}: standard price shown in promo mode`);
-      for (const cost of ['$99', '$199', '$349', '$24 to $29', '$10 to $20']) assert.ok(copy.includes(cost), `${path}: ${cost} missing`);
+      for (const price of ['$149', '$249', '$399']) assert.ok(copy.includes(price), `${path}: ${price} missing`);
       assert.equal(await page.evaluate(() => localStorage.getItem('ac_promo')), '1');
       await page.goto(base + path, { waitUntil: 'domcontentloaded' });
       copy = await visibleCopy(page);
