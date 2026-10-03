@@ -23,5 +23,12 @@
   "guard_resolution_time_guarantee": false,
   "revenue_guarantee": false,
   "sample_is_fictional": true,
-  "third_party_fees_separate": true
+  "third_party_fees_separate": true,
+  "agent_care": {
+    "setup_usd_one_time": 400,
+    "monthly_usd_all_in": {"Care": 149, "Managed": 249, "Full Service": 399},
+    "included": ["server", "AI", "backups"],
+    "included_costs_paid_by": "Sam",
+    "ads_only_free_setup_through": "2026-11-10"
+  }
 }
