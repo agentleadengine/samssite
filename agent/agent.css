@@ -46,12 +46,16 @@
 .agent-david p { margin: 0; color: var(--gray-600); font-size: 14px; }
 .agent-disclosure { margin: 16px 0 0; }
 .agent-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
+.agent-trust-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.agent-trust-grid .card { background: var(--white); border-color: var(--gray-200); padding: 24px; }
 .agent-pricing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .agent-pricing .card { background: var(--white); border-color: var(--gray-200); padding: 26px; }
 .agent-pricing .card p { margin: 12px 0; font-size: 15px; }
 .agent-pricing .agent-price { color: var(--primary-purple); font-size: 38px; font-weight: 900; line-height: 1.1; }
 .agent-price span { color: var(--gray-600); font-size: 15px; font-weight: 500; }
 .agent-pricing .agent-total { color: var(--gray-900); font-weight: 800; }
+.agent-perks { margin: 12px 0; padding-left: 20px; font-size: 15px; }
+.agent-perks li { margin: 6px 0; }
 .agent-guarantee { max-width: 850px; margin: 36px auto 0; padding: 30px; border: 1px solid var(--primary-purple); border-radius: 18px; background: var(--white); text-align: center; }
 .agent-guarantee h3 { color: var(--primary-purple); }
 .agent-guarantee p { margin: 0; color: var(--gray-600); font-size: 16px; }
@@ -81,7 +85,7 @@
   .agent-wrap { width: min(100% - 32px, 1120px); }
   .agent-top-cta { padding-inline: 16px; }
   .agent-section { padding-block: 54px; }
-  .agent-texts, .agent-ownership { grid-template-columns: 1fr; }
+  .agent-texts, .agent-ownership, .agent-trust-grid { grid-template-columns: 1fr; }
   .agent-actions .btn { width: 100%; }
   .agent-david { align-items: flex-start; flex-direction: column; }
   .agent-end { padding: 36px 20px; margin-block: 20px 54px; }
