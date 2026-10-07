@@ -9,26 +9,6 @@
   let widgetStarted = false;
   let booked = false;
 
-  const promoDeadline = new Date('2026-11-10T23:59:59-05:00').getTime();
-  const query = new URLSearchParams(window.location.search);
-  const fromAd = query.has('gclid') || query.has('gbraid') || query.has('wbraid') ||
-    (query.get('utm_medium')?.toLowerCase() === 'cpc' && query.get('utm_source')?.toLowerCase() === 'google');
-  let promo = false;
-  try {
-    if (Date.now() <= promoDeadline) {
-      promo = fromAd || window.localStorage.getItem('ac_promo') === '1';
-      if (fromAd) window.localStorage.setItem('ac_promo', '1');
-    } else {
-      window.localStorage.removeItem('ac_promo');
-    }
-  } catch (_) {
-    promo = Date.now() <= promoDeadline && fromAd;
-  }
-  if (promo) {
-    document.querySelectorAll('[data-price="standard"]').forEach(function (element) { element.hidden = true; });
-    document.querySelectorAll('[data-price="promo"]').forEach(function (element) { element.hidden = false; });
-  }
-
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
