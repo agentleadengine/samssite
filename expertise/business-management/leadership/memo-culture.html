@@ -44,16 +44,9 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../../index.html" class="nav-link">Home</a>
-<a href="/assistant/" class="nav-link">Work with me</a>
-<a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
-<div class="nav-group">
-<a href="../../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
-<div class="nav-submenu">
-<a href="../../../framework/index.html">Framework</a>
-<a href="../../../expertise/index.html">Expertise</a>
-<a href="../../../playbooks/index.html">Playbooks</a>
-<a href="../../../writing.html">Writing</a>
-</div></div>
+<a href="../../../agent/index.html" class="nav-link">Agent Care</a>
+<a href="../../../queva/index.html" class="nav-link">Queva</a>
+<a href="../../../work.html" class="nav-link">Working with me</a>
 <a href="../../../about.html" class="nav-link">About</a>
 <a href="../../../contact.html" class="nav-link">Contact</a>
 </div>
@@ -198,8 +191,8 @@
 </ul>
 </div>
 <div class="prev-next"><a href="../execution/slas-and-slos.html" class="prev"><div class="label">← Previous</div><div class="title">SLAs + SLOs</div></a><a href="radical-candor.html" class="next"><div class="label">Next →</div><div class="title">Radical candor</div></a></div></div></div><footer><div class="container">
-<p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="../../../expertise/index.html">Expertise</a>
-<a href="../../../playbooks/index.html">Playbooks</a></p>
+<p>&copy; 2026 Samuel Ochoa &middot; <a href="../../../testimonials.html">Testimonials</a> &middot; <a href="../../../framework/index.html">Library</a> &middot; <a href="../../../uses.html">Uses</a> &middot; <a href="../../../privacy.html">Privacy</a> &middot; <a href="../../../terms.html">Terms</a> &middot; <a href="../../../es/index.html">Español</a> &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></p>
+<p>Agent Care is run by my company, Agent Lead Engine LLC &middot; <a href="mailto:sam@samuelochoa.com">sam@samuelochoa.com</a></p>
 </div></footer><script>
 (function(){
   const bar = document.querySelector('nav.topbar');
@@ -246,6 +239,20 @@
       }, CLOSE_DELAY);
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
 
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
@@ -309,6 +316,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));

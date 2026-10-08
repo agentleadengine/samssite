@@ -4,26 +4,32 @@
 Replaces whatever <nav class="topbar">...</nav> block currently exists and the
 nav-init <script> block that was previously injected.
 
-Nav layout (consulting-first, one consistent menu on every page):
-    Home   Work with me   Case Studies   Resources v   About   Contact
-where Resources folds the whole knowledge base into one dropdown.
+Nav layout (2026-10-08 restructure, one consistent menu on every page):
+    Home   Agent Care   Queva   Working with me   About   Contact
+The library (framework, expertise, playbooks, ...) is reached from the footer.
+Also replaces the <footer>...</footer> block with the standard footer.
 """
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-# -----------------------------------------------------------------------------
-# Resources dropdown: the knowledge base, folded into a single simple menu.
-# Each entry is (label, href) pointing at that section's landing page.
-# -----------------------------------------------------------------------------
-RESOURCES = [
-    ("GHL snapshots", "snapshots.html"),
-    ("Daily AI brief", "newsletter.html"),
-    ("Framework", "framework/index.html"),
-    ("Expertise", "expertise/index.html"),
-    ("Playbooks", "playbooks/index.html"),
-    ("Writing", "writing.html"),
+NAV_ITEMS = [
+    ("Home", "index.html"),
+    ("Agent Care", "agent/index.html"),
+    ("Queva", "queva/index.html"),
+    ("Working with me", "work.html"),
+    ("About", "about.html"),
+    ("Contact", "contact.html"),
+]
+
+FOOTER_ITEMS = [
+    ("Testimonials", "testimonials.html"),
+    ("Library", "framework/index.html"),
+    ("Uses", "uses.html"),
+    ("Privacy", "privacy.html"),
+    ("Terms", "terms.html"),
+    ("Español", "es/index.html"),
 ]
 
 
@@ -39,25 +45,21 @@ def build_nav(R: str) -> str:
         f'<a href="{R}index.html" class="logo"><img class="brand-logo" src="{R}logo.png" alt="Samuel Ochoa"></a>',
         '<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>',
         '<div class="nav-links">',
-        f'<a href="{R}index.html" class="nav-link">Home</a>',
-        '<a href="/assistant/" class="nav-link">Work with me</a>',
-        f'<a href="{R}case-studies/index.html" class="nav-link">Case Studies</a>',
-        # Resources dropdown - knowledge base folded into one menu
-        '<div class="nav-group">',
-        f'<a href="{R}framework/index.html" class="nav-link nav-has-submenu">Resources</a>',
-        '<div class="nav-submenu">',
     ]
-    for label, href in RESOURCES:
-        lines.append(f'<a href="{R}{href}">{label}</a>')
-    lines.append('</div></div>')
-
-    # Simple links
-    lines.append(f'<a href="{R}about.html" class="nav-link">About</a>')
-    lines.append(f'<a href="{R}contact.html" class="nav-link">Contact</a>')
-
+    lines += [f'<a href="{R}{href}" class="nav-link">{label}</a>' for label, href in NAV_ITEMS]
     lines.append('</div>')  # nav-links
     lines.append('</div></nav>')
     return "\n".join(lines)
+
+
+def build_footer(R: str) -> str:
+    links = " &middot; ".join(f'<a href="{R}{href}">{label}</a>' for label, href in FOOTER_ITEMS)
+    return ('<footer><div class="container">\n'
+            f'<p>&copy; 2026 Samuel Ochoa &middot; {links} &middot; '
+            '<a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></p>\n'
+            '<p>Agent Care is run by my company, Agent Lead Engine LLC &middot; '
+            '<a href="mailto:sam@samuelochoa.com">sam@samuelochoa.com</a></p>\n'
+            '</div></footer>')
 
 
 NAV_SCRIPT = """<script>
@@ -196,6 +198,7 @@ NAV_SCRIPT = """<script>
 
 # Matches the full <nav class="topbar">...</nav> block, greedy across newlines.
 NAV_RE = re.compile(r'<nav\s+class="topbar">.*?</nav>', re.DOTALL | re.IGNORECASE)
+FOOTER_RE = re.compile(r'<footer\b.*?</footer>', re.DOTALL | re.IGNORECASE)
 
 # Matches the existing nav-init <script>...</script> block.
 # The script we previously injected contains the unique phrase "dataset.navInit".
@@ -206,14 +209,7 @@ replaced_script = 0
 scanned = 0
 
 for html in sorted(ROOT.rglob("*.html")):
-    # Keep the YouTube funnel rollout inside its approved file boundary.
     rel = html.relative_to(ROOT)
-    if rel.parts[0] in {"framework", "expertise", "playbooks"} and rel.as_posix() not in {
-        "framework/index.html", "expertise/index.html", "playbooks/index.html"
-    }:
-        continue
-    if rel.as_posix() in {"audit.html", "links.html", "thanks-ghl.html", "thanks-ai.html", "thanks-web.html", "gracias.html"}:
-        continue
     scanned += 1
     text = html.read_text(encoding="utf-8")
     orig = text
@@ -227,6 +223,8 @@ for html in sorted(ROOT.rglob("*.html")):
         text = NAV_RE.sub(lambda _m: new_nav, text, count=1)
         if text != orig:
             replaced_nav += 1
+
+    text = FOOTER_RE.sub(lambda _m: build_footer(R), text, count=1)
 
     # Replace any existing nav-init script.
     if SCRIPT_RE.search(text):
