@@ -5,7 +5,7 @@ from pathlib import Path
 from collections import defaultdict
 from urllib.parse import urldefrag
 
-ROOT = Path("/Users/ble/Desktop/sams site")
+ROOT = Path(__file__).resolve().parent
 
 HREF_RE = re.compile(r'href\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
 SRC_RE = re.compile(r'\bsrc\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
@@ -18,13 +18,35 @@ def is_external(link: str) -> bool:
     low = link.strip().lower()
     return low.startswith(EXTERNAL) or low == ""
 
+# Netlify redirect sources count as valid targets (retired pages 301 to new ones).
+REDIRECTS = set()
+for line in (ROOT / "_redirects").read_text().splitlines():
+    if line.strip() and not line.startswith("#"):
+        REDIRECTS.add(line.split()[0].rstrip("*"))
+
+
+class Target(type(Path())):
+    pass
+
+
 def resolve(page: Path, link: str) -> Path:
     link, _ = urldefrag(link)  # drop #fragment
     link = link.split("?", 1)[0]  # drop query
     if not link:
         return page
-    base = page.parent
-    target = (base / link).resolve()
+    if link.startswith("/"):
+        if any(link == s or (s.endswith("/") and link.startswith(s)) for s in REDIRECTS):
+            return page  # handled by _redirects
+        target = (ROOT / link.lstrip("/")).resolve()
+    else:
+        target = (page.parent / link).resolve()
+    # Netlify pretty URLs: /about -> about.html, /queva/ -> queva/index.html
+    if not target.exists():
+        for alt in (target.with_name(target.name + ".html"), target / "index.html"):
+            if alt.exists():
+                return alt
+    elif target.is_dir() and (target / "index.html").exists():
+        return target / "index.html"
     return target
 
 # Collect pages
@@ -44,7 +66,17 @@ emdash_pages = []
 duplicate_nav = []
 empty_pages = []
 
-BANNED = ["agent lead engine", "Yardi", "I run ", "my team", "currently running"]
+# 2026-10-08: the old rule "no Agent Lead Engine mentions" is retired (10-03
+# decision: this site may name and link to agentleadengine.com). The list
+# below is the restructure's retired-offer and jargon list. It is enforced on
+# the core pages; the 1,100-page library is reported, not enforced.
+BANNED = ["Yardi", "my team", "$497", "$249", "free setup", "plus about", "720 support minutes",
+          "provider funding", "leak check", "snapshot", "GHL", "cold call", "daily AI brief",
+          "DigitalOcean", "captainslog", "Assistant Home", "Group classes", "serial entrepreneur"]
+CORE = {"index.html", "agent/index.html", "queva/index.html", "work.html", "about.html", "contact.html",
+        "now.html", "links.html", "es/index.html", "terms.html", "privacy.html", "testimonials.html",
+        "uses.html", "404.html", "agent/thanks/index.html"}
+core_fail = []
 
 total_pages = 0
 total_links_checked = 0
@@ -83,15 +115,23 @@ for p in pages:
         # normal = 2 (check + set). more = duplicated script
         duplicate_script.append(p)
 
-    # Banned content
-    tl = text.lower()
+    # Banned content (visible text only, so the Clarity/gtag scripts do not count)
+    import re as _re
+    visible = _re.sub(r'(?s)<(script|style)\b.*?</\1>', '', text)
+    tl = visible.lower()
+    rel = p.relative_to(ROOT).as_posix()
     for phrase in BANNED:
-        if phrase.lower() in tl:
+        hit = phrase in visible if phrase.isupper() else phrase.lower() in tl
+        if hit:
             banned_content[phrase].append(p)
+            if rel in CORE:
+                core_fail.append(f"{rel}: banned phrase {phrase!r}")
 
     # Em-dashes (user hates them)
-    if '-' in text or '-' in text:
+    if '\u2014' in text or '\u2013' in text:
         emdash_pages.append(p)
+        if rel in CORE:
+            core_fail.append(f"{rel}: em or en dash")
 
     # Link checks
     for m in HREF_RE.finditer(text):
@@ -101,6 +141,8 @@ for p in pages:
         total_links_checked += 1
         target = resolve(p, link)
         if not target.exists():
+            if p.relative_to(ROOT).as_posix() in CORE:
+                core_fail.append(f"{p.relative_to(ROOT).as_posix()}: broken link {link}")
             broken_links[str(p.relative_to(ROOT))].append((link, str(target.relative_to(ROOT) if str(target).startswith(str(ROOT)) else target)))
 
     # Asset checks
@@ -193,5 +235,19 @@ for phrase in BANNED:
         for p in hits[:6]:
             print(f"  {p.relative_to(ROOT)}")
 
-print("\n=" * 35)
+# Sitemap entries must exist (directly or via a pretty URL) and not be redirected away.
+import re as _re
+sitemap_missing = []
+for loc in _re.findall(r"<loc>https://samuelochoa.com(.*?)</loc>", (ROOT / "sitemap.xml").read_text()):
+    path = loc or "/"
+    if path in REDIRECTS or not resolve(ROOT / "index.html", path).exists():
+        sitemap_missing.append(path)
+print(f"\nSitemap URLs missing or redirected: {len(sitemap_missing)} {sitemap_missing[:10]}")
+core_fail += [f"sitemap: {s}" for s in sitemap_missing]
+
+print("\n--- CORE PAGE GATE ---")
+for f in core_fail:
+    print("FAIL", f)
+print("CORE GATE:", "PASS" if not core_fail else f"FAIL ({len(core_fail)})")
 print("AUDIT COMPLETE")
+raise SystemExit(1 if core_fail else 0)
