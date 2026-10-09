@@ -75,3 +75,8 @@
 /case-studies /about 301!
 /case-studies/* /about 301!
 /book https://calendly.com/agentleadengine/meet-with-sam 301!
+# MAINTENANCE MODE (2026-10-09). To turn off: delete this block down to END MAINTENANCE.
+/maintenance.html  /maintenance.html  200
+/logo.png  /logo.png  200
+/*  /maintenance.html  302!
+# END MAINTENANCE
