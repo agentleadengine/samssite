@@ -21,6 +21,25 @@ def check():
     assert contract['offer_name'] == 'Managed AI'
     assert contract['status'] == 'current_offer'
     assert contract['contact_path'] == '/contact'
+    assert contract['audience'] == 'Real estate agents and small teams'
+    assert contract['primary_cta'] == 'Request a demo'
+    for name in ('index.html', 'ai-consulting.html', 'about.html', 'links.html',
+                 'ai.html', 'ghl.html', 'thanks-ai.html', 'thanks-ghl.html'):
+        page = read(name)
+        assert 'real estate' in text(page).lower(), name
+        ctas = re.findall(r'<a\b[^>]*href="([^"]+)"[^>]*>Request a demo(?: →)?</a>', page)
+        assert ctas and set(ctas) == {'/contact'}, name
+    for name in ('index.html', 'ai-consulting.html'):
+        page = read(name)
+        assert 'real estate' in text(re.search(r'<h1\b.*?</h1>', page, re.S)[0])
+        for phrase in ('Open-house follow-up', 'property facts you supply',
+                       'review before sending', 'review before publishing', 'to-do list and reminders'):
+            assert phrase in text(page), (name, phrase)
+    assert read('index.html').index('id="demo-examples"') < read('index.html').index('id="proof"')
+    assert 'Call, email or message me on LinkedIn' in read('contact.html')
+    assert 'subject=Real%20estate%20AI%20demo%20request' in read('contact.html')
+    assert 'agentes inmobiliarios y equipos pequeños' in read('es/index.html')
+    assert 'href="/contact">Solicitar una demo</a>' in read('es/index.html')
     support = contract['included_support']
     assert support['days'] == ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     assert (support['window_start'], support['window_end'], support['timezone']) == ('09:00', '21:00', 'America/New_York')

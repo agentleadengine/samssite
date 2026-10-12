@@ -1,7 +1,7 @@
 {
   "status": "current_offer",
   "offer_name": "Managed AI",
-  "positioning": "We run your AI for you.",
+  "positioning": "Your AI assistant for real estate. Set up and run for you.",
   "operator": "Samuel Ochoa",
   "system": "Queva OS",
   "system_description": "The system used to run and manage your AI assistant",
@@ -38,5 +38,7 @@
     "price_and_allowance_agreed_before_start": true,
     "beta_unlimited_days": 30,
     "monthly_limits_after_beta": true
-  }
+  },
+  "audience": "Real estate agents and small teams",
+  "primary_cta": "Request a demo"
 }

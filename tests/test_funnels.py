@@ -52,7 +52,7 @@ class FunnelTests(unittest.TestCase):
         self.assertIsNone(soup.find('nav'))
         self.assertIsNone(soup.find('footer'))
         self.assertEqual([x['href'] for x in soup.select('.lp-linkstack a')],
-                         ['/ghl', '/newsletter', '/book', '/ai-consulting', '/about'])
+                         ['/ghl', '/newsletter', '/contact', '/ai-consulting', '/about'])
         self.assertIsNotNone(soup.select_one('img[src="/sam-real.jpg"]'))
 
     def test_copy_and_metadata(self):
