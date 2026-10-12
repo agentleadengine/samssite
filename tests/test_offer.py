@@ -20,7 +20,7 @@ def text(markup):
 def check():
     contract = json.loads(read('offer-contract.json'))
     assert contract['offer_name'] == 'Managed AI'
-    assert contract['product'] == 'Showingday'
+    assert contract['product'] == 'QUEVA for Real Estate'
     assert contract['parent_company'] == contract['system_creator'] == 'Agent Lead Engine'
     assert contract['system'] == 'QUEVA OS'
     assert contract['operator'] == 'Samuel Ochoa'
@@ -41,20 +41,24 @@ def check():
     for name in ('index.html', 'ai-consulting.html'):
         page = read(name)
         assert 'real estate' in text(re.search(r'<h1\b.*?</h1>', page, re.S)[0])
-        assert 'Showingday' in text(re.search(r'<h1\b.*?</h1>', page, re.S)[0])
+        assert text(re.search(r'<h1\b.*?</h1>', page, re.S)[0]) == 'Your real estate AI assistant.'
+        assert 'Set up, managed, and supported for you.' in text(page)
+        assert 'QUEVA for Real Estate' in text(page)
+        assert all(phrase in text(page) for phrase in ('follow-ups', 'paperwork', 'routine admin'))
     for name in ('index.html', 'ai-consulting.html', 'contact.html', 'about.html', 'links.html', 'es/index.html'):
         page = read(name)
+        assert not re.search(r'showingday|showday|\bromy\b|\banya\b', page, re.I), name
         body = page.split('<body', 1)[1]
         description = re.search(r'<meta name="description" content="([^"]+)"', page)[1]
-        for phrase in ('Showingday', 'QUEVA OS', 'Agent Lead Engine'):
+        for phrase in ('QUEVA for Real Estate', 'QUEVA OS', 'Agent Lead Engine'):
             assert phrase in text(body) and phrase in description, (name, phrase)
     assert 'href="/#demo-examples"' in read('ai-consulting.html')
     assert read('index.html').index('id="demo-examples"') < read('index.html').index('id="proof"')
     home = BeautifulSoup(read('index.html'), 'html.parser')
     demos = home.select('#demo-examples article[data-sd-demo]')
     assert [demo['data-sd-demo'] for demo in demos] == ['followup', 'lease', 'money']
-    assert home.select_one('script[type="module"][src="/assets/showingday-demo.js"]')
-    assert home.select_one('link[rel="stylesheet"][href="/assets/showingday-demo.css"]')
+    assert home.select_one('script[type="module"][src="/assets/real-estate-demo.js"]')
+    assert home.select_one('link[rel="stylesheet"][href="/assets/real-estate-demo.css"]')
     for demo in demos:
         assert 'Interactive sample / fictional data' in demo.get_text()
         assert not demo.select('form, input, textarea, iframe'), demo['data-sd-demo']
@@ -165,7 +169,7 @@ def check():
                       'founding_audit_usd', 'Start a free 15-minute leak check',
                       'I now help small offices use ChatGPT or Claude'):
             assert stale not in page, (path, stale)
-    print('PASS: Showingday identity, three accessible sample embeds, unchanged commercial terms, daily support, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
+    print('PASS: QUEVA for Real Estate identity, three accessible sample embeds, unchanged commercial terms, daily support, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
 
 if __name__ == '__main__':
     check()

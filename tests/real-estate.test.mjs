@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { followups, leaseFacts, csvSamples, summarizeCsv, initDemo } from '../assets/showingday-demo.js';
+import { followups, leaseFacts, csvSamples, summarizeCsv, initDemo } from '../assets/real-estate-demo.js';
 
-test('Showingday samples calculate exact cents, require review, reset and never connect accounts', async () => {
+test('QUEVA for Real Estate samples calculate exact cents, require review, reset and never connect accounts', async () => {
   assert.deepEqual(summarizeCsv(csvSamples.complete), {
     current: { in: 220030, out: 140000, net: 80030 },
     prior: { in: 210000, out: 120001, net: 89999 }, change: -9969
@@ -12,7 +12,7 @@ test('Showingday samples calculate exact cents, require review, reset and never 
     current: { in: 220030, out: 140000, net: 80030 }, prior: null, change: null
   });
   for (const csv of [csvSamples.complete + '\nC1,2026-10-05,in,0.01', csvSamples.complete.replace('2200.20', '2200.2'), csvSamples.complete.replace(',in,', ',unknown,')]) assert.throws(() => summarizeCsv(csv));
-  const script = await readFile(new URL('../assets/showingday-demo.js', import.meta.url), 'utf8');
+  const script = await readFile(new URL('../assets/real-estate-demo.js', import.meta.url), 'utf8');
   assert.doesNotMatch(script, /fetch\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|https?:/);
   for (const type of ['followup', 'lease', 'money']) {
     // Minimal controls exercise the actual click handlers; browser acceptance is separate.
@@ -56,7 +56,7 @@ test('Showingday samples calculate exact cents, require review, reset and never 
   }
   for (const page of ['index.html']) {
     const html = await readFile(new URL('../' + page, import.meta.url), 'utf8');
-    assert.match(html, /type="module" src="\/assets\/showingday-demo.js"/);
+    assert.match(html, /type="module" src="\/assets\/real-estate-demo.js"/);
     assert.match(html, /Interactive sample \/ fictional data/);
     assert.match(html, /data-sd-output aria-live="polite"/);
     assert.match(html, /href="\/contact(?:\?lang=es)?"/);

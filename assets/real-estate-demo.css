@@ -1,4 +1,4 @@
-/* Portable Showingday workbench. All component styles stay inside .sd-demo. */
+/* Portable QUEVA for Real Estate workbench. All component styles stay inside .sd-demo. */
 .sd-demo { --sd-ink: #241d3b; --sd-teal: #076b70; --sd-line: #cadbd9; box-sizing: border-box; color: var(--sd-ink); background: #fff; border: 1px solid var(--sd-line); border-radius: 18px; overflow: hidden; font: 16px/1.6 "Inter", system-ui, sans-serif; text-align: left; }
 .sd-demo *, .sd-demo *::before, .sd-demo *::after { box-sizing: border-box; }
 .sd-demo [hidden] { display: none; }
