@@ -4,6 +4,11 @@
 /*  /maintenance.html  302!
 # END TEMPORARY MAINTENANCE
 
+# QUEVA for Real Estate canonical entry.
+/real-estate/ /real-estate 301!
+/real-estate.html /real-estate 301!
+/real-estate /real-estate.html 200
+
 # Managed AI: one current offer; contact Sam directly.
 /book /contact 302!
 /book/ /contact 302!
