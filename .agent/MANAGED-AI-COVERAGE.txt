@@ -1,0 +1,726 @@
+All 1734 HTML files scanned, including metadata and structured data.
+Pattern: \$\s*\d|\b(?:support|pricing|guarantee|refund|unlimited|24/7)\b|Follow Up Boss|Agent Care|calendar.app.google|calendly.com|(?:workflow|follow.up) audit|leak check|founding
+Matching pages by section: {'root': 5, 'case-studies': 1, 'compare': 76, 'demos': 137, 'es': 1, 'expertise': 382, 'framework': 13, 'glossary': 52, 'playbooks': 55}
+
+ai-consulting.html | Current service | $1, $3, pricing, support, unlimited
+case-studies/free-lead-engine.html | Genuine case study | $0, guarantee
+compare/ahrefs-vs-moz.html | Reference or demo | $1, $2, $3, $4, $7, $8, $9, pricing
+compare/ahrefs-vs-semrush.html | Reference or demo | $1, $2, $4, $5, $9, pricing
+compare/aider-vs-cursor.html | Reference or demo | $0, $2, $4, $6, pricing, support
+compare/apollo-vs-clay.html | Reference or demo | $0, $1, $4, $7, pricing, support, unlimited
+compare/apollo-vs-instantly.html | Reference or demo | $0, $1, $2, $3, $4, $5, $7, $9, pricing, unlimited
+compare/apollo-vs-zoominfo.html | Reference or demo | $0, $1, $2, $3, $4, $7, pricing, support, unlimited
+compare/asana-vs-clickup.html | Reference or demo | $1, $2, $3, $7, $9, pricing, unlimited
+compare/asana-vs-monday.html | Reference or demo | $0, $1, $2, $6, $9, pricing, unlimited
+compare/aws-vs-azure.html | Reference or demo | $0, $1, $2, pricing
+compare/aws-vs-gcp.html | Reference or demo | $0, $1, $2, $3, pricing
+compare/bge-vs-nomic.html | Reference or demo | support
+compare/calendly-vs-savvycal.html | Reference or demo | $1, $2, calendly.com, guarantee, pricing, unlimited
+compare/chroma-vs-pinecone.html | Reference or demo | $0, $1, $2, $3, $4, $5, pricing
+compare/claude-code-vs-cursor.html | Reference or demo | $0, $1, $2, $4, $6, pricing
+compare/claude-vs-gemini.html | Reference or demo | $0, $1, $2, $9, pricing
+compare/claude-vs-gpt4.html | Reference or demo | $0, $1, $2, $3, $4, $5, pricing
+compare/close-vs-hubspot.html | Reference or demo | $0, $1, $2, $3, $4, $5, $7, $9, pricing
+compare/cold-email-tool-vs-builtin-warming.html | Reference or demo | $1, $3, $4, $5, pricing, support, unlimited
+compare/convertkit-vs-beehiiv.html | Reference or demo | $0, $3, $4, $5, $6, $7, $9, pricing, unlimited
+compare/cypress-vs-playwright.html | Reference or demo | $2, $5, $6, pricing, support
+compare/datadog-vs-new-relic.html | Reference or demo | $0, $1, $2, $3, $4, $9, pricing, support, unlimited
+compare/figma-vs-canva.html | Reference or demo | $1, $2, $3, $5, $9, pricing, unlimited
+compare/figma-vs-sketch.html | Reference or demo | $1, $2, $3, $4, $5, $9, pricing, unlimited
+compare/ga4-vs-amplitude.html | Reference or demo | $1, $5, pricing, support, unlimited
+compare/gong-vs-chorus.html | Reference or demo | pricing
+compare/google-search-vs-pmax.html | Reference or demo | support
+compare/gpt4-vs-gemini.html | Reference or demo | $0, $1, $2, $3, $4, $9, pricing
+compare/grammarly-vs-hemingway.html | Reference or demo | $1, $2, $3, $8, pricing, support, unlimited
+compare/haiku-vs-4o-mini.html | Reference or demo | $0, $1, $2, $4, $5, pricing
+compare/hubspot-vs-salesforce.html | Reference or demo | $0, $1, $2, $3, $5, $7, $9, pricing, unlimited
+compare/instantly-vs-lemlist.html | Reference or demo | $1, $3, $4, $5, $6, $8, $9, pricing, unlimited
+compare/instantly-vs-smartlead.html | Reference or demo | $1, $3, $4, $5, $7, $9, pricing, unlimited
+compare/klaviyo-vs-mailchimp.html | Reference or demo | $0, $1, $2, $3, pricing
+compare/langchain-vs-llamaindex.html | Reference or demo | $1, $3, $5, pricing, support
+compare/langgraph-vs-crewai.html | Reference or demo | $1, $3, pricing
+compare/linkedin-vs-meta-b2b.html | Reference or demo | $1, $2, $5, $6, pricing, support
+compare/make-vs-n8n.html | Reference or demo | $1, $2, $3, pricing, unlimited
+compare/medium-vs-substack.html | Reference or demo | $0, $1, $5, $8, pricing, support
+compare/meta-vs-google-ads.html | Reference or demo | $0, $1, $2, $5, $7, $8, pricing, support
+compare/meta-vs-youtube.html | Reference or demo | $0, $1, $2, pricing, support
+compare/milvus-vs-pinecone.html | Reference or demo | $0, $1, $2, $4, $5, pricing
+compare/mixpanel-vs-amplitude.html | Reference or demo | $4, $8, pricing, support, unlimited
+compare/notion-ai-vs-chatgpt.html | Reference or demo | $1, $2, $8, pricing
+compare/notion-vs-linear.html | Reference or demo | $1, $2, $3, pricing, support, unlimited
+compare/notion-vs-obsidian.html | Reference or demo | $0, $1, $2, $4, $8, pricing
+compare/openai-embed-vs-cohere.html | Reference or demo | $0, $1, pricing
+compare/openai-embed-vs-voyage.html | Reference or demo | $0, pricing
+compare/pgvector-vs-pinecone.html | Reference or demo | $0, $1, $2, $4, $5, pricing
+compare/pinecone-vs-qdrant.html | Reference or demo | $0, $1, $2, $4, $5, pricing
+compare/pinecone-vs-weaviate.html | Reference or demo | $0, $1, $2, $4, $5, pricing, support
+compare/pipedrive-vs-hubspot.html | Reference or demo | $1, $2, $3, $4, $5, $7, $9, pricing, support
+compare/postgres-vs-mongodb.html | Reference or demo | $0, $1, $2, $3, $5, $8, pricing
+compare/posthog-vs-amplitude.html | Reference or demo | $0, pricing, unlimited
+compare/pytorch-vs-tensorflow.html | Reference or demo | $0, pricing, support
+compare/rag-vs-finetuning.html | Reference or demo | $1, $2, pricing, support
+compare/rag-vs-long-context.html | Reference or demo | $0, $1, $2, $4, $5, pricing
+compare/redis-vs-memcached.html | Reference or demo | $0, $1, $5, $9, pricing
+compare/salesloft-vs-outreach.html | Reference or demo | $1, $7, pricing
+compare/screaming-frog-vs-sitebulb.html | Reference or demo | $1, $4, $5, pricing, unlimited
+compare/sendgrid-vs-postmark.html | Reference or demo | $1, $5, $8, pricing, support, unlimited
+compare/shopify-vs-woocommerce.html | Reference or demo | $0, $1, $2, $3, $5, $7, pricing, unlimited
+compare/slack-vs-teams.html | Reference or demo | $0, $1, $2, $4, $7, $8, pricing, unlimited
+compare/snowflake-vs-bigquery.html | Reference or demo | $0, $2, $3, $4, $6, pricing
+compare/stripe-vs-paypal.html | Reference or demo | $0, $1, $2, $5, pricing
+compare/substack-vs-beehiiv.html | Reference or demo | $1, $2, $3, $4, $5, $8, $9, pricing, support, unlimited
+compare/supabase-vs-firebase.html | Reference or demo | $0, $2, $5, pricing, support
+compare/tailwind-vs-bootstrap.html | Reference or demo | $2, $9, pricing
+compare/telegram-vs-whatsapp.html | Reference or demo | $0, $3, $4, pricing, support, unlimited
+compare/tiktok-vs-meta.html | Reference or demo | $0, $1, $2
+compare/triple-whale-vs-northbeam.html | Reference or demo | $1, $2, $3, $5, pricing
+compare/triple-whale-vs-rockerbox.html | Reference or demo | $1, $2, $5, $8, pricing
+compare/vercel-vs-netlify.html | Reference or demo | $0, $1, $2, $8, pricing, support, unlimited
+compare/warmy-vs-mailwarm.html | Reference or demo | $0, $1, $4, $6, pricing, support
+compare/weaviate-vs-qdrant.html | Reference or demo | $0, $4, pricing, support
+compare/zapier-vs-make.html | Reference or demo | $1, $2, $3, $6, pricing
+compare/zoom-vs-google-meet.html | Reference or demo | $1, $2, $7, pricing, unlimited
+contact.html | Current service | $1, $3, support, unlimited
+crm.html | Historical prototype | support
+demos/antojitos-la-plaza/index.html | Reference or demo | $1, $3
+demos/antojitos-la-plaza/services.html | Reference or demo | $1, $3, $4, $5
+demos/barberia-el-clasico/index.html | Reference or demo | $3, $5
+demos/barberia-el-clasico/services.html | Reference or demo | $2, $3, $5
+demos/black-anchor-tattoo/services.html | Reference or demo | $1
+demos/blue-print-collective/index.html | Reference or demo | support
+demos/blue-print-collective/services.html | Reference or demo | support
+demos/blue-print-collective/work.html | Reference or demo | support
+demos/bright-night-emergency-electric/about.html | Reference or demo | 24/7
+demos/bright-night-emergency-electric/contact.html | Reference or demo | 24/7
+demos/bright-night-emergency-electric/index.html | Reference or demo | 24/7
+demos/bright-night-emergency-electric/services.html | Reference or demo | 24/7
+demos/bright-night-emergency-electric/work.html | Reference or demo | 24/7
+demos/brightside-cleaning/about.html | Reference or demo | pricing
+demos/brightside-cleaning/contact.html | Reference or demo | pricing
+demos/brightside-cleaning/index.html | Reference or demo | pricing
+demos/brightside-cleaning/services.html | Reference or demo | $1, $2, $3, $8, pricing
+demos/brightside-cleaning/work.html | Reference or demo | pricing
+demos/cafe-el-molino/services.html | Reference or demo | $1, $2, $3, $4, $5, $7, $8
+demos/canaletas-lluvia-limpia/index.html | Reference or demo | $1, $2, $4, $7
+demos/canaletas-lluvia-limpia/services.html | Reference or demo | $1, $2, $4, $7
+demos/cedar-stone-landscaping/index.html | Reference or demo | $2, $3, $4, $5
+demos/cedar-stone-landscaping/services.html | Reference or demo | $2, $3, $4, $5
+demos/clases-adelante/services.html | Reference or demo | $3, $4, $6, pricing
+demos/clases-do-re-mi/services.html | Reference or demo | $4
+demos/clearflow-gutters/index.html | Reference or demo | $1, $2, $4, $7
+demos/clearflow-gutters/services.html | Reference or demo | $1, $2, $4, $7, pricing
+demos/clearflow-septic-service/about.html | Reference or demo | 24/7
+demos/clearflow-septic-service/contact.html | Reference or demo | 24/7
+demos/clearflow-septic-service/index.html | Reference or demo | 24/7
+demos/clearflow-septic-service/services.html | Reference or demo | 24/7
+demos/clearflow-septic-service/work.html | Reference or demo | 24/7
+demos/clearwater-pool/about.html | Reference or demo | leak check
+demos/clearwater-pool/contact.html | Reference or demo | leak check
+demos/clearwater-pool/index.html | Reference or demo | $8, leak check
+demos/clearwater-pool/services.html | Reference or demo | $1, $3, $8, $9, leak check
+demos/clearwater-pool/work.html | Reference or demo | leak check
+demos/copper-coil-electric/contact.html | Reference or demo | $9
+demos/copper-coil-electric/services.html | Reference or demo | $9
+demos/crescendo-music/about.html | Reference or demo | $4
+demos/crescendo-music/index.html | Reference or demo | support
+demos/crescendo-music/services.html | Reference or demo | $4, support
+demos/crescendo-music/work.html | Reference or demo | support
+demos/detallado-autobrillo/index.html | Reference or demo | $1, $4, $9
+demos/detallado-autobrillo/services.html | Reference or demo | $1, $2, $3, $4, $9
+demos/driftwood-coffee/services.html | Reference or demo | $1, $2, $3, $4, $5
+demos/electrica-la-chispa/contact.html | Reference or demo | $9
+demos/electrica-la-chispa/services.html | Reference or demo | $9
+demos/electrodomesticos-el-tecnico/contact.html | Reference or demo | $8
+demos/electrodomesticos-el-tecnico/index.html | Reference or demo | $8
+demos/electrodomesticos-el-tecnico/services.html | Reference or demo | $8
+demos/ember-bun-food-truck/contact.html | Reference or demo | $1
+demos/ember-bun-food-truck/index.html | Reference or demo | $1, $9
+demos/ember-bun-food-truck/services.html | Reference or demo | $1, $5, $8, $9, pricing
+demos/escombros-el-camion/services.html | Reference or demo | $1, $2, $5, $9
+demos/estetica-canina-patitas/index.html | Reference or demo | $4, $6, $7
+demos/estetica-canina-patitas/services.html | Reference or demo | $1, $3, $4, $6, $7, $8
+demos/evergreen-estate-lawncare/contact.html | Reference or demo | pricing
+demos/evready-charger-install/services.html | Reference or demo | support
+demos/fade-district-barbershop/index.html | Reference or demo | $2, $3, $4, support
+demos/fade-district-barbershop/services.html | Reference or demo | $2, $3, $4, $5, pricing
+demos/fade-district-barbershop/work.html | Reference or demo | pricing
+demos/first-light-snow-removal/services.html | Reference or demo | pricing
+demos/fix-point-appliance/about.html | Reference or demo | $8
+demos/fix-point-appliance/contact.html | Reference or demo | $8
+demos/fix-point-appliance/index.html | Reference or demo | $8
+demos/fix-point-appliance/services.html | Reference or demo | $8
+demos/fotografia-luz-momento/index.html | Reference or demo | $1, $5
+demos/fotografia-luz-momento/services.html | Reference or demo | $1, $3, $4, $5
+demos/golden-crust-bakery/contact.html | Reference or demo | guarantee
+demos/harbor-point-realty/about.html | Reference or demo | pricing
+demos/harbor-point-realty/contact.html | Reference or demo | pricing
+demos/harbor-point-realty/index.html | Reference or demo | pricing
+demos/harbor-point-realty/services.html | Reference or demo | pricing
+demos/harbor-point-realty/work.html | Reference or demo | pricing
+demos/haul-away-junk/index.html | Reference or demo | pricing
+demos/haul-away-junk/services.html | Reference or demo | $1, $2, $5, $9, pricing
+demos/index.html | Reference or demo | $2, $9
+demos/ironclad-locksmith/index.html | Reference or demo | pricing
+demos/ironworks-training/services.html | Reference or demo | $1, $3, $8
+demos/kneaded-relief-massage/index.html | Reference or demo | $1, $9
+demos/kneaded-relief-massage/services.html | Reference or demo | $1, $2, $9
+demos/lavanderia-burbujas/index.html | Reference or demo | $1, $2, $3
+demos/lavanderia-burbujas/services.html | Reference or demo | $1, $2, $3, $4
+demos/maple-street-diner/services.html | Reference or demo | $1, $3, $4, $5, $6, $8, $9
+demos/mariscos-el-puerto/index.html | Reference or demo | $1, $2, $6
+demos/mariscos-el-puerto/services.html | Reference or demo | $1, $2, $6, $9
+demos/masajes-manos-sanas/index.html | Reference or demo | $1, $2
+demos/masajes-manos-sanas/services.html | Reference or demo | $1, $2, $9
+demos/meridian-line-architects/index.html | Reference or demo | support
+demos/mini-split-masters/about.html | Reference or demo | pricing
+demos/mirror-shine-detailing/services.html | Reference or demo | $1, $2, $3, $4, $9
+demos/mudanzas-el-camino/index.html | Reference or demo | $1, $2, $4, $8
+demos/mudanzas-el-camino/services.html | Reference or demo | $1, $2, $3, $4, $8
+demos/north-wind-hvac/about.html | Reference or demo | pricing
+demos/old-house-rewire-co/contact.html | Reference or demo | support
+demos/paleteria-el-sol/index.html | Reference or demo | $3, $4
+demos/paleteria-el-sol/services.html | Reference or demo | $3, $4, $6
+demos/panaderia-el-amanecer/index.html | Reference or demo | $1, $4, $5
+demos/panaderia-el-amanecer/services.html | Reference or demo | $0, $1, $2, $4, $5
+demos/piscinas-agua-clara/index.html | Reference or demo | $9
+demos/piscinas-agua-clara/services.html | Reference or demo | $1, $3, $9
+demos/pizzeria-la-piedra/services.html | Reference or demo | $1, $2, $3, $4, $5, $9
+demos/plomeria-el-faro/services.html | Reference or demo | $1
+demos/plomeria-familiar-hernandez/index.html | Reference or demo | 24/7
+demos/rapid-rooter-flatrate/index.html | Reference or demo | pricing
+demos/rapid-rooter-flatrate/services.html | Reference or demo | pricing
+demos/ridgeline-roofing/index.html | Reference or demo | pricing
+demos/rooter-brothers-plumbing/index.html | Reference or demo | 24/7
+demos/salon-bella-vida/index.html | Reference or demo | $1, $4, $9
+demos/salon-bella-vida/services.html | Reference or demo | $1, $2, $3, $4, $9
+demos/salt-line-seafood/index.html | Reference or demo | $1, $2, $3
+demos/salt-line-seafood/services.html | Reference or demo | $1, $2, $3, $5
+demos/shoreline-residential-design/about.html | Reference or demo | support
+demos/shoreline-residential-design/contact.html | Reference or demo | support
+demos/shoreline-residential-design/index.html | Reference or demo | $1, $4, support
+demos/shoreline-residential-design/services.html | Reference or demo | $1, $4, support
+demos/soapy-paw-grooming/index.html | Reference or demo | $4, $6, $7
+demos/soapy-paw-grooming/services.html | Reference or demo | $1, $3, $4, $6, $7, $8, pricing
+demos/soapy-paw-grooming/work.html | Reference or demo | $1, $3, $4, $6, $7
+demos/spark-and-steel-welding/index.html | Reference or demo | pricing
+demos/stillwater-photography/about.html | Reference or demo | pricing
+demos/stillwater-photography/contact.html | Reference or demo | pricing
+demos/stillwater-photography/index.html | Reference or demo | $3, $4, pricing
+demos/stillwater-photography/services.html | Reference or demo | $3, $4, $5, pricing
+demos/stillwater-photography/work.html | Reference or demo | pricing
+demos/stone-ember-pizza/contact.html | Reference or demo | $3
+demos/stone-ember-pizza/index.html | Reference or demo | $1, $3, $4
+demos/stone-ember-pizza/services.html | Reference or demo | $1, $2, $3, $4, $7, $8, $9
+demos/summit-tutoring/services.html | Reference or demo | $7
+demos/swift-drain-plumbing/contact.html | Reference or demo | $1
+demos/swift-drain-plumbing/index.html | Reference or demo | $1
+demos/swift-drain-plumbing/services.html | Reference or demo | $1, pricing
+demos/taqueria-la-esquina/services.html | Reference or demo | $1, $2, $3, $4, $5, $7
+demos/tatuajes-tinta-viva/contact.html | Reference or demo | $1
+demos/tatuajes-tinta-viva/services.html | Reference or demo | $1
+demos/toolbelt-and-level/contact.html | Reference or demo | pricing
+es/index.html | Current service | $1, $3
+expertise/agents/eval/regression.html | Reference or demo | $1, $2, support
+expertise/agents/eval/task-completion.html | Reference or demo | refund, support
+expertise/agents/eval/trajectory-eval.html | Reference or demo | support
+expertise/agents/eval/why-eval-agents.html | Reference or demo | support
+expertise/agents/foundations/agent-vs-workflow.html | Reference or demo | $0, support
+expertise/agents/foundations/architecture.html | Reference or demo | $0, $1, $5, refund, support
+expertise/agents/foundations/what-is-an-agent.html | Reference or demo | $2, $3, support
+expertise/agents/foundations/when-not-to-use.html | Reference or demo | $1, $2, $5, support
+expertise/agents/frameworks/autogen.html | Reference or demo | support
+expertise/agents/frameworks/claude-agent-sdk.html | Reference or demo | support
+expertise/agents/frameworks/crewai.html | Reference or demo | pricing, support
+expertise/agents/frameworks/index.html | Reference or demo | support
+expertise/agents/frameworks/langgraph.html | Reference or demo | support
+expertise/agents/frameworks/picking.html | Reference or demo | support
+expertise/agents/index.html | Reference or demo | support
+expertise/agents/loops/planning.html | Reference or demo | pricing, support
+expertise/agents/loops/react.html | Reference or demo | $0, $1, support
+expertise/agents/loops/reflection.html | Reference or demo | support
+expertise/agents/loops/self-correction.html | Reference or demo | support
+expertise/agents/loops/tool-use.html | Reference or demo | support
+expertise/agents/memory/episodic.html | Reference or demo | support
+expertise/agents/memory/long-term.html | Reference or demo | support
+expertise/agents/memory/memory-systems.html | Reference or demo | support
+expertise/agents/memory/procedural.html | Reference or demo | $2, support
+expertise/agents/memory/short-term.html | Reference or demo | support
+expertise/agents/multi/debate.html | Reference or demo | $5, support
+expertise/agents/multi/handoffs.html | Reference or demo | $0, support
+expertise/agents/multi/orchestrator-worker.html | Reference or demo | $5, support
+expertise/agents/multi/peer-agents.html | Reference or demo | support
+expertise/agents/multi/routing.html | Reference or demo | $0, refund, support
+expertise/agents/patterns/browser-agent.html | Reference or demo | $0, support
+expertise/agents/patterns/coding-agent.html | Reference or demo | support
+expertise/agents/patterns/customer-support.html | Reference or demo | refund, support
+expertise/agents/patterns/data-analyst.html | Reference or demo | $2, $4, support
+expertise/agents/patterns/email-agent.html | Reference or demo | pricing, support
+expertise/agents/patterns/index.html | Reference or demo | support
+expertise/agents/patterns/research-agent.html | Reference or demo | $0, pricing, support
+expertise/agents/prod/cost-control.html | Reference or demo | $0, $1, $4, $5, $9, support
+expertise/agents/prod/human-in-loop.html | Reference or demo | $5, refund, support
+expertise/agents/prod/latency.html | Reference or demo | support
+expertise/agents/prod/observability.html | Reference or demo | support
+expertise/agents/prod/safety.html | Reference or demo | $1, support
+expertise/agents/tools/error-handling.html | Reference or demo | support
+expertise/agents/tools/parallel-tools.html | Reference or demo | support
+expertise/agents/tools/tool-budgets.html | Reference or demo | $0, $5, support, unlimited
+expertise/agents/tools/tool-descriptions.html | Reference or demo | support
+expertise/agents/tools/tool-design.html | Reference or demo | support
+expertise/business-management/execution/automate-vs-hire.html | Reference or demo | pricing, refund
+expertise/business-management/execution/process-mapping.html | Reference or demo | pricing
+expertise/business-management/execution/slas-and-slos.html | Reference or demo | pricing, refund, support
+expertise/business-management/execution/vendor-management.html | Reference or demo | $1, pricing
+expertise/business-management/finance/cash-flow.html | Reference or demo | $0, $1, $2, $5, $8, pricing
+expertise/business-management/finance/index.html | Reference or demo | pricing
+expertise/business-management/finance/pnl-literacy.html | Reference or demo | $1, pricing
+expertise/business-management/finance/pricing.html | Reference or demo | $1, $2, $3, pricing
+expertise/business-management/finance/three-numbers.html | Reference or demo | pricing
+expertise/business-management/finance/unit-economics.html | Reference or demo | $1, pricing
+expertise/business-management/index.html | Reference or demo | pricing
+expertise/business-management/leadership/accountability.html | Reference or demo | pricing
+expertise/business-management/leadership/compensation.html | Reference or demo | pricing
+expertise/business-management/leadership/memo-culture.html | Reference or demo | $5, $7, pricing
+expertise/business-management/leadership/radical-candor.html | Reference or demo | pricing
+expertise/business-management/operating-systems/decision-logs.html | Reference or demo | $1, pricing
+expertise/business-management/operating-systems/designing-the-os.html | Reference or demo | pricing
+expertise/business-management/operating-systems/meetings.html | Reference or demo | pricing
+expertise/business-management/operating-systems/sops.html | Reference or demo | pricing
+expertise/business-management/operating-systems/weekly-business-review.html | Reference or demo | pricing
+expertise/business-management/people/firing-well.html | Reference or demo | pricing, support
+expertise/business-management/people/hiring-signal-vs-noise.html | Reference or demo | pricing
+expertise/business-management/people/onboarding.html | Reference or demo | pricing
+expertise/business-management/people/one-on-ones.html | Reference or demo | pricing
+expertise/business-management/people/performance-reviews.html | Reference or demo | pricing, support
+expertise/business-management/people/role-scorecard.html | Reference or demo | $1, $2, $5, pricing
+expertise/business-management/risk/data-and-ip.html | Reference or demo | pricing
+expertise/business-management/risk/insurance.html | Reference or demo | $1, $2, $5, pricing
+expertise/business-management/risk/risk-management.html | Reference or demo | pricing, support
+expertise/business-management/sales/churn-diagnostics.html | Reference or demo | $1, pricing, support
+expertise/business-management/sales/customer-success-ops.html | Reference or demo | $1, $2, $5, pricing, support
+expertise/business-management/sales/funnel-math.html | Reference or demo | $2, $5, pricing
+expertise/business-management/sales/index.html | Reference or demo | pricing
+expertise/business-management/sales/negotiation.html | Reference or demo | $1, $2, $5, pricing, unlimited
+expertise/business-management/sales/pipeline-design.html | Reference or demo | pricing
+expertise/business-management/strategy/decision-frameworks.html | Reference or demo | $0, $1, $2, $4, $6, guarantee, pricing, support
+expertise/business-management/strategy/index.html | Reference or demo | pricing
+expertise/business-management/strategy/okrs.html | Reference or demo | pricing
+expertise/business-management/strategy/planning-cadence.html | Reference or demo | pricing
+expertise/business-management/strategy/pre-mortems.html | Reference or demo | pricing, support
+expertise/business-management/strategy/what-to-kill.html | Reference or demo | $2, pricing
+expertise/cold-email/copy/first-lines.html | Reference or demo | $5
+expertise/cold-email/copy/personalization.html | Reference or demo | $0, $1, $5
+expertise/cold-email/copy/subject-lines.html | Reference or demo | guarantee
+expertise/cold-email/deliverability/dns.html | Reference or demo | support
+expertise/cold-email/deliverability/index.html | Reference or demo | support
+expertise/cold-email/deliverability/ip-reputation.html | Reference or demo | support
+expertise/cold-email/deliverability/monitoring.html | Reference or demo | support
+expertise/cold-email/deliverability/sending-domains.html | Reference or demo | $1, $2, $3, $5, $6, $8, support
+expertise/cold-email/deliverability/spam-triggers.html | Reference or demo | guarantee, support
+expertise/cold-email/deliverability/warming.html | Reference or demo | support
+expertise/cold-email/deliverability/why-it-matters.html | Reference or demo | support
+expertise/cold-email/foundations/legal.html | Reference or demo | $1, $5
+expertise/cold-email/foundations/what-is-cold-email.html | Reference or demo | $3
+expertise/cold-email/foundations/when-it-works.html | Reference or demo | $1, $3, $4, $5
+expertise/cold-email/infra/multi-inbox.html | Reference or demo | $1, $2, $3, $6, $9
+expertise/cold-email/infra/reply-management.html | Reference or demo | pricing
+expertise/cold-email/infra/sending-tools.html | Reference or demo | $1, $3, $4, $5, $6, pricing, support
+expertise/cold-email/infra/warming-tools.html | Reference or demo | $1, $2, $4, $5, $6, $7, pricing
+expertise/cold-email/lists/clay.html | Reference or demo | $1, $2, $3, pricing
+expertise/cold-email/lists/databases.html | Reference or demo | $1, $2, $4, $9, pricing
+expertise/cold-email/lists/icp.html | Reference or demo | $5
+expertise/cold-email/lists/intent-signals.html | Reference or demo | pricing
+expertise/cold-email/lists/verification.html | Reference or demo | $1, $5, $6, $7, $8
+expertise/cold-email/plays/agency.html | Reference or demo | $1, $2, $5
+expertise/cold-email/plays/b2b-saas.html | Reference or demo | $4
+expertise/cold-email/plays/founder-led.html | Reference or demo | $1
+expertise/cold-email/plays/recruiting.html | Reference or demo | $1, founding
+expertise/cold-email/plays/sdr-led.html | Reference or demo | $1, $3, $4, $7
+expertise/cold-email/sequences/cadence.html | Reference or demo | support
+expertise/cold-email/sequences/length.html | Reference or demo | $1, $3
+expertise/cro/conversion/checkout-optimization.html | Reference or demo | guarantee, pricing, support
+expertise/cro/conversion/friction-audit.html | Reference or demo | pricing
+expertise/cro/conversion/trust-signals.html | Reference or demo | $4, guarantee, pricing, refund
+expertise/cro/foundations/scope-and-strategy.html | Reference or demo | pricing
+expertise/cro/frameworks/ice.html | Reference or demo | pricing
+expertise/cro/pages/headlines-copy.html | Reference or demo | $1
+expertise/cro/pages/social-proof.html | Reference or demo | $4, pricing
+expertise/cro/testing/significance.html | Reference or demo | pricing
+expertise/cro/testing/what-to-test.html | Reference or demo | pricing
+expertise/cro/tools/google-optimize-alternatives.html | Reference or demo | $2, $5
+expertise/cro/tools/optimizely.html | Reference or demo | $2, pricing, support
+expertise/cro/tools/vwo.html | Reference or demo | $3, pricing, support
+expertise/direct-response/copy/body-copy.html | Reference or demo | $1, $4, guarantee, pricing
+expertise/direct-response/copy/bullets.html | Reference or demo | pricing
+expertise/direct-response/copy/ctas.html | Reference or demo | $2, guarantee, pricing
+expertise/direct-response/copy/formulas.html | Reference or demo | $0, guarantee, pricing, support
+expertise/direct-response/copy/headlines.html | Reference or demo | $1, $4, $5, pricing
+expertise/direct-response/copy/the-lead.html | Reference or demo | $9, pricing, refund
+expertise/direct-response/copy/the-stack.html | Reference or demo | guarantee, pricing
+expertise/direct-response/followup/direct-mail.html | Reference or demo | $0, $1, $2, $3, $5, $8, pricing
+expertise/direct-response/followup/email-sequences.html | Reference or demo | guarantee, pricing
+expertise/direct-response/followup/indoctrination.html | Reference or demo | $1, guarantee, pricing, support
+expertise/direct-response/followup/soap-opera.html | Reference or demo | pricing
+expertise/direct-response/foundations/four-horsemen.html | Reference or demo | $1, pricing
+expertise/direct-response/foundations/scientific-advertising.html | Reference or demo | $1, $2, pricing, refund
+expertise/direct-response/foundations/ten-rules.html | Reference or demo | pricing
+expertise/direct-response/foundations/what-is-direct-response.html | Reference or demo | pricing
+expertise/direct-response/index.html | Reference or demo | pricing
+expertise/direct-response/leads/cold-outreach.html | Reference or demo | pricing
+expertise/direct-response/leads/core-four.html | Reference or demo | $1, pricing
+expertise/direct-response/leads/lead-magnets.html | Reference or demo | $1, $3, $5, $8, pricing
+expertise/direct-response/leads/paid-ads.html | Reference or demo | $2, $5, pricing
+expertise/direct-response/leads/warm-outreach.html | Reference or demo | pricing
+expertise/direct-response/letters/halbert-letters.html | Reference or demo | $1, pricing
+expertise/direct-response/letters/long-form.html | Reference or demo | $1, $2, $5, pricing
+expertise/direct-response/letters/story-selling.html | Reference or demo | $1, $2, $4, $8, pricing, support
+expertise/direct-response/letters/structure.html | Reference or demo | $1, $4, guarantee, pricing
+expertise/direct-response/letters/vsls.html | Reference or demo | guarantee, pricing
+expertise/direct-response/market/awareness-stages.html | Reference or demo | pricing
+expertise/direct-response/market/dream-customer.html | Reference or demo | $1, pricing, support
+expertise/direct-response/market/market-selection.html | Reference or demo | pricing
+expertise/direct-response/market/sophistication.html | Reference or demo | $5, pricing
+expertise/direct-response/market/starving-crowd.html | Reference or demo | $0, pricing
+expertise/direct-response/offer/bonuses.html | Reference or demo | $1, $2, pricing
+expertise/direct-response/offer/grand-slam.html | Reference or demo | $1, $2, $3, $4, $5, $6, guarantee, pricing, refund
+expertise/direct-response/offer/guarantees.html | Reference or demo | $1, $3, $5, $8, $9, guarantee, pricing, refund
+expertise/direct-response/offer/index.html | Reference or demo | guarantee, pricing
+expertise/direct-response/offer/pricing-psychology.html | Reference or demo | $1, $4, $5, $8, $9, pricing
+expertise/direct-response/offer/urgency-scarcity.html | Reference or demo | $5, guarantee, pricing, unlimited
+expertise/direct-response/offer/value-equation.html | Reference or demo | pricing
+expertise/direct-response/scaling/high-ticket.html | Reference or demo | $1, $2, $5, guarantee, pricing, support
+expertise/direct-response/scaling/index.html | Reference or demo | $1, $5
+expertise/direct-response/scaling/info-products.html | Reference or demo | $1, $2, $5, $7, $9, pricing, refund, support
+expertise/direct-response/scaling/scale-winners.html | Reference or demo | $1, $5, pricing, support
+expertise/direct-response/scaling/value-ladder.html | Reference or demo | $1, $2, $4, $5, $7, $9, pricing
+expertise/direct-response/testing/controls.html | Reference or demo | $2, $4, pricing
+expertise/direct-response/testing/measurement.html | Reference or demo | $1, $3, $7, pricing
+expertise/direct-response/testing/scientific.html | Reference or demo | $1, $4, guarantee, pricing
+expertise/direct-response/testing/what-to-test.html | Reference or demo | guarantee, pricing
+expertise/email-marketing/automations/behavioral.html | Reference or demo | support
+expertise/email-marketing/automations/post-purchase.html | Reference or demo | support
+expertise/email-marketing/deliverability/spam-triggers.html | Reference or demo | guarantee
+expertise/email-marketing/foundations/kpis.html | Reference or demo | $0
+expertise/email-marketing/foundations/why-email.html | Reference or demo | $1, $2, $3
+expertise/email-marketing/list/exit-intent.html | Reference or demo | pricing
+expertise/email-marketing/list/lead-magnets.html | Reference or demo | $1, $3
+expertise/email-marketing/list/list-quality.html | Reference or demo | $0
+expertise/email-marketing/list/signup-forms.html | Reference or demo | support
+expertise/email-marketing/saas/churn-prevention.html | Reference or demo | support
+expertise/email-marketing/tools/convertkit.html | Reference or demo | pricing
+expertise/email-marketing/tools/klaviyo.html | Reference or demo | $1, pricing
+expertise/email-marketing/tools/mailchimp.html | Reference or demo | pricing
+expertise/growth-marketing/acq/channel-fit.html | Reference or demo | $1, $2, guarantee, pricing
+expertise/growth-marketing/acq/content-seo.html | Reference or demo | pricing
+expertise/growth-marketing/acq/paid-vs-organic.html | Reference or demo | pricing, support
+expertise/growth-marketing/acq/partnerships.html | Reference or demo | pricing
+expertise/growth-marketing/acq/product-led.html | Reference or demo | pricing
+expertise/growth-marketing/acq/viral-loops.html | Reference or demo | pricing
+expertise/growth-marketing/activation/aha-moment.html | Reference or demo | pricing
+expertise/growth-marketing/activation/early-wins.html | Reference or demo | pricing
+expertise/growth-marketing/activation/empty-states.html | Reference or demo | pricing
+expertise/growth-marketing/activation/onboarding-design.html | Reference or demo | pricing
+expertise/growth-marketing/activation/time-to-value.html | Reference or demo | pricing
+expertise/growth-marketing/analytics/attribution.html | Reference or demo | $1, pricing
+expertise/growth-marketing/analytics/cohorts.html | Reference or demo | pricing
+expertise/growth-marketing/analytics/event-tracking.html | Reference or demo | pricing
+expertise/growth-marketing/analytics/funnels.html | Reference or demo | pricing
+expertise/growth-marketing/analytics/north-star-dashboards.html | Reference or demo | pricing
+expertise/growth-marketing/experiments/ab-testing.html | Reference or demo | pricing
+expertise/growth-marketing/experiments/holdout-tests.html | Reference or demo | pricing
+expertise/growth-marketing/experiments/multivariate.html | Reference or demo | pricing
+expertise/growth-marketing/experiments/statistical-significance.html | Reference or demo | pricing
+expertise/growth-marketing/experiments/velocity.html | Reference or demo | pricing
+expertise/growth-marketing/foundations/growth-loops.html | Reference or demo | pricing
+expertise/growth-marketing/foundations/north-star-metric.html | Reference or demo | $1, pricing
+expertise/growth-marketing/foundations/retention-first.html | Reference or demo | pricing
+expertise/growth-marketing/foundations/what-is-growth.html | Reference or demo | pricing
+expertise/growth-marketing/index.html | Reference or demo | pricing
+expertise/growth-marketing/plays/b2b-plg.html | Reference or demo | pricing, support
+expertise/growth-marketing/plays/content-flywheel.html | Reference or demo | pricing
+expertise/growth-marketing/plays/dtc-growth.html | Reference or demo | pricing
+expertise/growth-marketing/plays/marketplace.html | Reference or demo | pricing
+expertise/growth-marketing/plays/saas-growth.html | Reference or demo | $0, $1, $2, $5, pricing
+expertise/growth-marketing/process/growth-models.html | Reference or demo | pricing
+expertise/growth-marketing/process/growth-team-structure.html | Reference or demo | $1, $2, $5, pricing
+expertise/growth-marketing/process/ice-scoring.html | Reference or demo | pricing
+expertise/growth-marketing/process/sprint-rhythm.html | Reference or demo | pricing
+expertise/growth-marketing/retention/churn-diagnostics.html | Reference or demo | pricing, support
+expertise/growth-marketing/retention/cohort-analysis.html | Reference or demo | pricing
+expertise/growth-marketing/retention/feature-adoption.html | Reference or demo | pricing
+expertise/growth-marketing/retention/habit-formation.html | Reference or demo | pricing
+expertise/growth-marketing/retention/re-engagement.html | Reference or demo | pricing
+expertise/growth-marketing/revenue/conversion-rate.html | Reference or demo | pricing
+expertise/growth-marketing/revenue/index.html | Reference or demo | pricing
+expertise/growth-marketing/revenue/ltv-expansion.html | Reference or demo | $0, $1, $2, $4, $8, pricing
+expertise/growth-marketing/revenue/pricing.html | Reference or demo | $1, $2, $4, $9, pricing, support
+expertise/growth-marketing/revenue/referrals.html | Reference or demo | $1, $3, $5, pricing
+expertise/growth-marketing/revenue/upsell-expansion.html | Reference or demo | pricing
+expertise/index.html | Reference or demo | pricing
+expertise/paid-ads/creative/ad-copy.html | Reference or demo | $4, $5, support
+expertise/paid-ads/creative/creative-fatigue.html | Reference or demo | support
+expertise/paid-ads/creative/creative-volume.html | Reference or demo | $1, $2, $5, support
+expertise/paid-ads/creative/hiring-creators.html | Reference or demo | $1, $2, $3, $4, $5, support
+expertise/paid-ads/creative/hook-patterns.html | Reference or demo | $1, $2, $4, $5, support
+expertise/paid-ads/creative/index.html | Reference or demo | support
+expertise/paid-ads/creative/landing-pages.html | Reference or demo | guarantee, support
+expertise/paid-ads/creative/ugc-vs-produced.html | Reference or demo | $5, support
+expertise/paid-ads/foundations/channel-fit.html | Reference or demo | guarantee, support
+expertise/paid-ads/foundations/how-paid-works.html | Reference or demo | $0, $2, $5, support
+expertise/paid-ads/foundations/index.html | Reference or demo | support
+expertise/paid-ads/foundations/unit-economics.html | Reference or demo | $2, $6, support
+expertise/paid-ads/foundations/when-to-run-paid.html | Reference or demo | $5, support
+expertise/paid-ads/google/bidding.html | Reference or demo | support
+expertise/paid-ads/google/index.html | Reference or demo | support
+expertise/paid-ads/google/keyword-research.html | Reference or demo | $1, $8, pricing, support
+expertise/paid-ads/google/match-types.html | Reference or demo | support
+expertise/paid-ads/google/overview.html | Reference or demo | $5, support
+expertise/paid-ads/google/pmax.html | Reference or demo | support
+expertise/paid-ads/google/quality-score.html | Reference or demo | $1, $3, support
+expertise/paid-ads/google/rsa-copy.html | Reference or demo | support
+expertise/paid-ads/google/search-vs-display.html | Reference or demo | $1, $5, support
+expertise/paid-ads/index.html | Reference or demo | support
+expertise/paid-ads/linkedin/ad-formats.html | Reference or demo | pricing
+expertise/paid-ads/linkedin/b2b-targeting.html | Reference or demo | $1, $2, $6
+expertise/paid-ads/linkedin/cost-reality.html | Reference or demo | $1, $2, $3, $5, $7, $8
+expertise/paid-ads/linkedin/index.html | Reference or demo | $5
+expertise/paid-ads/linkedin/lead-gen-forms.html | Reference or demo | $1, $2, $4, $6
+expertise/paid-ads/linkedin/overview.html | Reference or demo | $1, $3, $5, support
+expertise/paid-ads/measurement/dashboards.html | Reference or demo | $8, support
+expertise/paid-ads/measurement/incrementality.html | Reference or demo | support
+expertise/paid-ads/measurement/index.html | Reference or demo | support
+expertise/paid-ads/measurement/ltv-cac.html | Reference or demo | support
+expertise/paid-ads/measurement/mer-blended.html | Reference or demo | $1, $3, $5, support
+expertise/paid-ads/measurement/mmm.html | Reference or demo | $1, $5, support
+expertise/paid-ads/measurement/platform-attribution.html | Reference or demo | support
+expertise/paid-ads/measurement/why-attribution-broke.html | Reference or demo | support
+expertise/paid-ads/meta/account-structure.html | Reference or demo | $1
+expertise/paid-ads/meta/index.html | Reference or demo | $2
+expertise/paid-ads/meta/overview.html | Reference or demo | $5
+expertise/paid-ads/meta/retargeting.html | Reference or demo | support
+expertise/paid-ads/meta/scaling.html | Reference or demo | $1, $2
+expertise/paid-ads/tiktok/overview.html | Reference or demo | $1, $5
+expertise/paid-ads/tiktok/ugc-production.html | Reference or demo | $1, $2, $3, $5
+expertise/paid-ads/tiktok/when-tiktok-works.html | Reference or demo | $2, $5
+expertise/paid-ads/youtube/creative-patterns.html | Reference or demo | support
+expertise/paid-ads/youtube/formats.html | Reference or demo | support
+expertise/paid-ads/youtube/index.html | Reference or demo | support
+expertise/paid-ads/youtube/overview.html | Reference or demo | $1, support
+expertise/paid-ads/youtube/targeting.html | Reference or demo | support
+expertise/paid-ads/youtube/vs-meta.html | Reference or demo | support
+expertise/rag/advanced/adaptive-rag.html | Reference or demo | refund, support
+expertise/rag/advanced/agentic-rag.html | Reference or demo | refund, support
+expertise/rag/advanced/corrective-rag.html | Reference or demo | support
+expertise/rag/advanced/graph-rag.html | Reference or demo | $2, support
+expertise/rag/advanced/multi-hop.html | Reference or demo | refund, support
+expertise/rag/advanced/self-rag.html | Reference or demo | refund, support
+expertise/rag/cases/code-rag.html | Reference or demo | support
+expertise/rag/cases/customer-support.html | Reference or demo | support
+expertise/rag/cases/index.html | Reference or demo | support
+expertise/rag/cases/internal-kb.html | Reference or demo | support
+expertise/rag/cases/legal-compliance.html | Reference or demo | support
+expertise/rag/cases/multi-tenant.html | Reference or demo | pricing, support
+expertise/rag/chunking/chunking-code.html | Reference or demo | support
+expertise/rag/chunking/fixed-size.html | Reference or demo | support
+expertise/rag/chunking/recursive.html | Reference or demo | support
+expertise/rag/chunking/semantic.html | Reference or demo | support
+expertise/rag/chunking/structure-aware.html | Reference or demo | support
+expertise/rag/chunking/why-chunking.html | Reference or demo | refund, support
+expertise/rag/docs/ingestion-pipeline.html | Reference or demo | support
+expertise/rag/docs/metadata.html | Reference or demo | support
+expertise/rag/docs/ocr.html | Reference or demo | pricing, support
+expertise/rag/docs/parsing-html.html | Reference or demo | support
+expertise/rag/docs/parsing-pdfs.html | Reference or demo | $0, support
+expertise/rag/docs/tables-figures.html | Reference or demo | $1, $4, support
+expertise/rag/embeddings/closed-vs-open.html | Reference or demo | $1, pricing, support
+expertise/rag/embeddings/dimensions-cost.html | Reference or demo | support
+expertise/rag/embeddings/fine-tuning.html | Reference or demo | support
+expertise/rag/embeddings/picking-a-model.html | Reference or demo | $0, support
+expertise/rag/embeddings/what-are-embeddings.html | Reference or demo | pricing, support
+expertise/rag/eval/building-eval-datasets.html | Reference or demo | support
+expertise/rag/eval/generation-metrics.html | Reference or demo | $5, refund, support
+expertise/rag/eval/ragas-and-frameworks.html | Reference or demo | support
+expertise/rag/eval/retrieval-metrics.html | Reference or demo | support
+expertise/rag/eval/why-eval.html | Reference or demo | support
+expertise/rag/foundations/the-architecture.html | Reference or demo | support
+expertise/rag/foundations/what-is-rag.html | Reference or demo | support
+expertise/rag/foundations/when-not-to-use.html | Reference or demo | support
+expertise/rag/foundations/why-rag.html | Reference or demo | support
+expertise/rag/index.html | Reference or demo | support
+expertise/rag/prod/caching.html | Reference or demo | refund, support
+expertise/rag/prod/cost.html | Reference or demo | $0, $1, $3, $4, $5, pricing, support
+expertise/rag/prod/latency.html | Reference or demo | support
+expertise/rag/prod/observability.html | Reference or demo | support
+expertise/rag/prod/security.html | Reference or demo | support
+expertise/rag/retrieval/bm25-sparse.html | Reference or demo | support
+expertise/rag/retrieval/hybrid.html | Reference or demo | support
+expertise/rag/retrieval/hyde.html | Reference or demo | support
+expertise/rag/retrieval/multi-query.html | Reference or demo | support
+expertise/rag/retrieval/query-rewriting.html | Reference or demo | pricing, refund, support
+expertise/rag/retrieval/reranking.html | Reference or demo | support
+expertise/rag/retrieval/vector-search.html | Reference or demo | support
+expertise/rag/vectors/choosing-a-db.html | Reference or demo | $1, $3, $4, $5, support
+expertise/rag/vectors/cost-optimization.html | Reference or demo | $5, pricing, support
+expertise/rag/vectors/hybrid-search.html | Reference or demo | support
+expertise/rag/vectors/indexing-strategies.html | Reference or demo | support
+expertise/rag/vectors/metadata-filtering.html | Reference or demo | refund, support
+expertise/rag/vectors/overview.html | Reference or demo | pricing, support
+expertise/seo/advanced/ai-and-seo.html | Reference or demo | $1
+expertise/seo/analytics/attribution.html | Reference or demo | support
+expertise/seo/analytics/experimentation.html | Reference or demo | support
+expertise/seo/analytics/ga4.html | Reference or demo | support
+expertise/seo/analytics/index.html | Reference or demo | support
+expertise/seo/analytics/kpis.html | Reference or demo | support
+expertise/seo/analytics/log-analysis-tools.html | Reference or demo | $1, pricing, support, unlimited
+expertise/seo/analytics/rank-tracking.html | Reference or demo | support
+expertise/seo/analytics/reporting.html | Reference or demo | support
+expertise/seo/analytics/search-console.html | Reference or demo | support, unlimited
+expertise/seo/content/entity-seo.html | Reference or demo | founding
+expertise/seo/content/strategy.html | Reference or demo | pricing
+expertise/seo/content/topic-clusters.html | Reference or demo | support
+expertise/seo/ecommerce/faceted-navigation.html | Reference or demo | $1, unlimited
+expertise/seo/ecommerce/product-pages.html | Reference or demo | support
+expertise/seo/foundations/core-web-vitals.html | Reference or demo | guarantee
+expertise/seo/foundations/how-search-engines-work.html | Reference or demo | guarantee
+expertise/seo/international/content-strategy.html | Reference or demo | pricing
+expertise/seo/international/overview.html | Reference or demo | pricing
+expertise/seo/international/translation-vs-localization.html | Reference or demo | pricing
+expertise/seo/keywords/long-tail-vs-head.html | Reference or demo | $1
+expertise/seo/keywords/search-intent.html | Reference or demo | pricing
+expertise/seo/keywords/seed-and-expansion.html | Reference or demo | support
+expertise/seo/keywords/tools.html | Reference or demo | $2, $3
+expertise/seo/links/digital-pr.html | Reference or demo | $2, $5
+expertise/seo/local/citation-building.html | Reference or demo | $2, $6, $9, support
+expertise/seo/local/fundamentals.html | Reference or demo | support
+expertise/seo/local/google-business-profile.html | Reference or demo | support
+expertise/seo/local/index.html | Reference or demo | support
+expertise/seo/local/local-keywords.html | Reference or demo | support
+expertise/seo/local/local-link-building.html | Reference or demo | $5, support
+expertise/seo/local/multi-location.html | Reference or demo | support
+expertise/seo/local/nap-consistency.html | Reference or demo | support
+expertise/seo/local/reviews.html | Reference or demo | support
+expertise/seo/on-page/image-seo.html | Reference or demo | support
+expertise/seo/on-page/meta-descriptions.html | Reference or demo | pricing
+expertise/seo/technical/page-speed.html | Reference or demo | support
+framework/autonomous/headless.html | Reference or demo | $1
+framework/autonomous/safety.html | Reference or demo | $1
+framework/build/research-agent.html | Reference or demo | support
+framework/build/voice-agent.html | Reference or demo | support
+framework/claude/overview.html | Reference or demo | pricing, support
+framework/claude/prompting-for-agents.html | Reference or demo | $2
+framework/claude/tool-use.html | Reference or demo | pricing
+framework/claude-code/index.html | Reference or demo | support
+framework/mcp/clients.html | Reference or demo | support
+framework/mcp/what-is-mcp.html | Reference or demo | support
+framework/patterns/multi-agent.html | Reference or demo | support
+framework/patterns/prompt-caching.html | Reference or demo | $0, $3, pricing
+framework/the-autonomy-spectrum.html | Reference or demo | $1, 24/7, pricing, support, unlimited
+glossary/ae.html | Reference or demo | $2, $5, $7
+glossary/aida.html | Reference or demo | $2
+glossary/arr.html | Reference or demo | $2
+glossary/attribution.html | Reference or demo | $1, support
+glossary/bm25.html | Reference or demo | refund
+glossary/burn-rate.html | Reference or demo | $2, $3, $5
+glossary/cac.html | Reference or demo | $2, $5
+glossary/conversion-rate.html | Reference or demo | pricing
+glossary/cpa.html | Reference or demo | $2, $5, support
+glossary/cpc.html | Reference or demo | $0, $1, $2, $3, $4, support
+glossary/cpm.html | Reference or demo | $1, $2, $4, $5, support
+glossary/ctr.html | Reference or demo | support
+glossary/fine-tuning.html | Reference or demo | support
+glossary/forecast.html | Reference or demo | $1, $2
+glossary/google-business-profile.html | Reference or demo | support
+glossary/grounding.html | Reference or demo | support
+glossary/guarantee.html | Reference or demo | $5, guarantee
+glossary/hooks.html | Reference or demo | $5
+glossary/inbound.html | Reference or demo | pricing
+glossary/incrementality.html | Reference or demo | support
+glossary/index.html | Reference or demo | guarantee
+glossary/local-seo.html | Reference or demo | support
+glossary/lookalike.html | Reference or demo | support
+glossary/ltv-cac-ratio.html | Reference or demo | $1, $3, $5, $8
+glossary/ltv.html | Reference or demo | $1, $2, $3
+glossary/mer.html | Reference or demo | $2, $8, support
+glossary/mmm.html | Reference or demo | $1, $5, support
+glossary/mrr.html | Reference or demo | $1, $2, $5, $7
+glossary/nrr.html | Reference or demo | $1
+glossary/offer.html | Reference or demo | $4, guarantee
+glossary/okr.html | Reference or demo | $5
+glossary/ote.html | Reference or demo | $1, $2, $6, $9
+glossary/p-and-l.html | Reference or demo | $1, $2, $3, $5, $7
+glossary/pastor.html | Reference or demo | $1
+glossary/payback-period.html | Reference or demo | $1
+glossary/persona.html | Reference or demo | pricing
+glossary/pipeline.html | Reference or demo | $1, $3, $4, $5, $8, $9
+glossary/quota.html | Reference or demo | $1, $2, $7
+glossary/rag.html | Reference or demo | support
+glossary/react.html | Reference or demo | pricing
+glossary/retargeting.html | Reference or demo | pricing, support
+glossary/roas.html | Reference or demo | $1, $2, $3, $5, support
+glossary/runway.html | Reference or demo | $1, $2, $3
+glossary/sales-letter.html | Reference or demo | $1, guarantee
+glossary/scarcity.html | Reference or demo | unlimited
+glossary/sdr.html | Reference or demo | $1
+glossary/semantic-search.html | Reference or demo | support
+glossary/system-prompt.html | Reference or demo | support
+glossary/tool-use.html | Reference or demo | $1
+glossary/utm.html | Reference or demo | support
+glossary/value-equation.html | Reference or demo | $1, guarantee
+glossary/vsl.html | Reference or demo | $2, $5
+index.html | Current service | $1, $3, guarantee, pricing, support, unlimited
+playbooks/agency/module-01.html | Reference or demo | $1, $2
+playbooks/agency/module-02.html | Reference or demo | $1, $2, $5
+playbooks/agency/module-12.html | Reference or demo | $2
+playbooks/author/module-01.html | Reference or demo | $1, $2
+playbooks/author/module-02.html | Reference or demo | $2
+playbooks/author/module-12.html | Reference or demo | $2
+playbooks/chiropractor/module-01.html | Reference or demo | $1, $2
+playbooks/chiropractor/module-02.html | Reference or demo | $2
+playbooks/chiropractor/module-12.html | Reference or demo | $2
+playbooks/coach/module-01.html | Reference or demo | $1, $2
+playbooks/coach/module-02.html | Reference or demo | $2
+playbooks/coach/module-12.html | Reference or demo | $2
+playbooks/cpa/module-01.html | Reference or demo | $1, $2
+playbooks/cpa/module-02.html | Reference or demo | $2
+playbooks/cpa/module-12.html | Reference or demo | $2
+playbooks/dentist/module-01.html | Reference or demo | $1, $2
+playbooks/dentist/module-02.html | Reference or demo | $2
+playbooks/dentist/module-04.html | Reference or demo | pricing
+playbooks/dentist/module-12.html | Reference or demo | $2
+playbooks/ecommerce/module-01.html | Reference or demo | $1, $2
+playbooks/ecommerce/module-02.html | Reference or demo | $2
+playbooks/ecommerce/module-04.html | Reference or demo | $1
+playbooks/ecommerce/module-12.html | Reference or demo | $2
+playbooks/financial-advisor/module-01.html | Reference or demo | $1, $2
+playbooks/financial-advisor/module-02.html | Reference or demo | $2
+playbooks/financial-advisor/module-12.html | Reference or demo | $2
+playbooks/insurance/index.html | Reference or demo | $1
+playbooks/insurance/module-01.html | Reference or demo | $1, $2
+playbooks/insurance/module-02.html | Reference or demo | $1, $2, $4, guarantee
+playbooks/insurance/module-07.html | Reference or demo | guarantee
+playbooks/insurance/module-11.html | Reference or demo | $2
+playbooks/insurance/module-12.html | Reference or demo | $1, $2, $4
+playbooks/insurance/module-14.html | Reference or demo | support
+playbooks/insurance/module-15.html | Reference or demo | $1, pricing
+playbooks/insurance/prompt-library.html | Reference or demo | guarantee
+playbooks/mortgage/module-01.html | Reference or demo | $1, $2
+playbooks/mortgage/module-02.html | Reference or demo | $2
+playbooks/mortgage/module-12.html | Reference or demo | $2
+playbooks/personal-trainer/module-01.html | Reference or demo | $1, $2
+playbooks/personal-trainer/module-02.html | Reference or demo | $2
+playbooks/personal-trainer/module-12.html | Reference or demo | $2
+playbooks/podcaster/module-01.html | Reference or demo | $1, $2
+playbooks/podcaster/module-02.html | Reference or demo | $2
+playbooks/podcaster/module-12.html | Reference or demo | $2
+playbooks/real-estate/module-01.html | Reference or demo | $1, $2
+playbooks/real-estate/module-02.html | Reference or demo | $2
+playbooks/real-estate/module-12.html | Reference or demo | $2
+playbooks/restaurant/module-01.html | Reference or demo | $1, $2
+playbooks/restaurant/module-02.html | Reference or demo | $2
+playbooks/restaurant/module-12.html | Reference or demo | $2
+playbooks/restaurant/module-13.html | Reference or demo | pricing
+playbooks/saas/module-01.html | Reference or demo | $1, $2
+playbooks/saas/module-02.html | Reference or demo | $2
+playbooks/saas/module-06.html | Reference or demo | pricing
+playbooks/saas/module-12.html | Reference or demo | $2
+terms.html | Current service | $1, $3, pricing, support, unlimited

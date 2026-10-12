@@ -1,11 +1,17 @@
-# 2026-10-12: one offer on this site (Follow Up Boss for real estate teams, with Zack at Origin).
-# /book goes to the free call on Zack's calendar. Agent Care is parked, so its pages point home (302, easy to undo).
-/book https://calendar.app.google/mxZWNPV4nBFezjGt8 302!
+# Managed AI: one current offer; contact Sam directly.
+/book /contact 302!
+/book/ /contact 302!
+/book.html /contact 302!
 /agent / 302!
+/agent/thanks /contact 302!
+/agent/thanks/ /contact 302!
+/agent/thanks/index.html /contact 302!
 /agent/* / 302!
 /assistant / 302!
+/assistant/thanks /contact 302!
+/assistant/thanks/ /contact 302!
+/assistant/thanks/index.html /contact 302!
 /assistant/* / 302!
-# Retired older offers point home.
 /audit / 301!
 /audit/ / 301!
 /audit.html / 301!
@@ -24,9 +30,9 @@
 /websites / 301!
 /websites/ / 301!
 /websites.html / 301!
-/paginas-web / 301!
-/paginas-web/ / 301!
-/paginas-web.html / 301!
+/paginas-web /es/ 301!
+/paginas-web/ /es/ 301!
+/paginas-web.html /es/ 301!
 /sample-audit / 301!
 /sample-audit/ / 301!
 /sample-audit.html / 301!
@@ -55,3 +61,9 @@
 /demos/* / 301!
 /queva / 302!
 /queva/* / 302!
+/agent.html / 302!
+/assistant.html / 302!
+/queva.html / 302!
+/work /ai-consulting 301!
+/work/ /ai-consulting 301!
+/work.html /ai-consulting 301!

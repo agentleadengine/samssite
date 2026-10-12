@@ -52,7 +52,7 @@ class FunnelTests(unittest.TestCase):
         self.assertIsNone(soup.find('nav'))
         self.assertIsNone(soup.find('footer'))
         self.assertEqual([x['href'] for x in soup.select('.lp-linkstack a')],
-                         ['/ghl', '/newsletter', '/book', '/audit', '/about'])
+                         ['/ghl', '/newsletter', '/book', '/ai-consulting', '/about'])
         self.assertIsNotNone(soup.select_one('img[src="/sam-real.jpg"]'))
 
     def test_copy_and_metadata(self):
@@ -99,7 +99,7 @@ class FunnelTests(unittest.TestCase):
             self.assertNotIn('check your inbox', text.lower())
 
     def test_booking_single_target(self):
-        self.assertIn('/book https://calendly.com/agentleadengine/meet-with-sam 301!',
+        self.assertIn('/book /contact 302!',
                       (ROOT / '_redirects').read_text().splitlines())
         for slug in ('audit', 'contact', *NEW):
             soup = read(slug)

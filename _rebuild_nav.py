@@ -11,7 +11,7 @@ where Resources folds the whole knowledge base into one dropdown.
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/ale/samssite-work")
+ROOT = Path(__file__).resolve().parent
 
 # -----------------------------------------------------------------------------
 # Resources dropdown: the knowledge base, folded into a single simple menu.
