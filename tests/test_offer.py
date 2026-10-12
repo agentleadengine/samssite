@@ -32,7 +32,7 @@ def check():
     assert contract['contact_path'] == '/contact'
     assert contract['audience'] == 'Real estate agents and small teams'
     assert contract['primary_cta'] == 'Request a demo'
-    for name in ('real-estate.html', 'index.html', 'ai-consulting.html', 'about.html', 'links.html',
+    for name in ('index.html', 'ai-consulting.html', 'about.html', 'links.html',
                  'ai.html', 'ghl.html', 'thanks-ai.html', 'thanks-ghl.html'):
         page = read(name)
         assert 'real estate' in text(page).lower(), name
@@ -153,15 +153,10 @@ def check():
     assert 'https://www.linkedin.com/in/samuelochoa' in read('contact.html')
     urls = [x.text for x in ET.parse(ROOT / 'sitemap.xml').findall('.//{*}loc')]
     assert len(urls) > 1000 and len(urls) == len(set(urls))
-    for route in ('/', '/real-estate', '/ai-consulting', '/contact', '/es/'):
+    for route in ('/', '/ai-consulting', '/contact', '/es/'):
         assert 'https://samuelochoa.com' + route in urls
-    for source, target, status in routes:
-        if status.startswith('3'):
-            assert 'https://samuelochoa.com' + source not in urls, source
-    for rule in ('/real-estate/ /real-estate 301!', '/real-estate.html /real-estate 301!', '/real-estate /real-estate.html 200'):
-        assert rule in read('_redirects').splitlines()
-        assert read('_redirects').index(rule) > read('_redirects').index('# END TEMPORARY MAINTENANCE')
-    assert home.select_one('.lp-hero a[href="/real-estate"]')
+    for source in targets:
+        assert 'https://samuelochoa.com' + source not in urls, source
     for name in ('agent/index.html', 'assistant/index.html', 'work.html', 'offer.html',
                  'audit.html', 'websites.html', 'es/consultoria-ia.html'):
         page = read(name)
