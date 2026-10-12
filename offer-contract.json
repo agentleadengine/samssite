@@ -3,8 +3,8 @@
   "offer_name": "Managed AI",
   "positioning": "Your AI assistant for real estate. Set up and run for you.",
   "operator": "Samuel Ochoa",
-  "system": "Queva OS",
-  "system_description": "The system used to run and manage your AI assistant",
+  "system": "QUEVA OS",
+  "system_description": "Created by Agent Lead Engine; powers Showingday, set up and run by Samuel Ochoa",
   "contact_path": "/contact",
   "included_support": {
     "requests": "unlimited",
@@ -40,5 +40,8 @@
     "monthly_limits_after_beta": true
   },
   "audience": "Real estate agents and small teams",
-  "primary_cta": "Request a demo"
+  "primary_cta": "Request a demo",
+  "product": "Showingday",
+  "parent_company": "Agent Lead Engine",
+  "system_creator": "Agent Lead Engine"
 }

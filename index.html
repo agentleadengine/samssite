@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your AI assistant for real estate | Samuel Ochoa</title>
-<meta name="description" content="Managed AI for real estate agents and small teams. We set up and run your assistant using Queva OS. Request a demo with Sam.">
+<title>Showingday: AI for real estate | Samuel Ochoa</title>
+<meta name="description" content="Showingday, your real estate AI assistant powered by QUEVA OS, created by Agent Lead Engine. Sam sets it up and runs it. Try the interactive samples.">
 <meta name="author" content="Samuel Ochoa">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Your AI assistant for real estate | Samuel Ochoa">
-<meta property="og:description" content="Managed AI for real estate agents and small teams. We set up and run your assistant using Queva OS. Request a demo with Sam.">
+<meta property="og:title" content="Showingday: AI for real estate | Samuel Ochoa">
+<meta property="og:description" content="Showingday, your real estate AI assistant powered by QUEVA OS, created by Agent Lead Engine. Sam sets it up and runs it. Try the interactive samples.">
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20260706">
+<link rel="stylesheet" href="/assets/showingday-demo.css">
+<script type="module" src="/assets/showingday-demo.js"></script>
 <link rel="icon" type="image/png" href="logo.png">
 
 <script defer src="js/sketch.js"></script>
@@ -29,13 +31,13 @@
 <meta property="og:image:height" content="640">
 <meta property="og:image:alt" content="Samuel Ochoa">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Your AI assistant for real estate | Samuel Ochoa">
-<meta name="twitter:description" content="Managed AI for real estate agents and small teams. We set up and run your assistant using Queva OS. Request a demo with Sam.">
+<meta name="twitter:title" content="Showingday: AI for real estate | Samuel Ochoa">
+<meta name="twitter:description" content="Showingday, your real estate AI assistant powered by QUEVA OS, created by Agent Lead Engine. Sam sets it up and runs it. Try the interactive samples.">
 <meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Samuel Ochoa", "url": "https://samuelochoa.com/", "image": "https://samuelochoa.com/sam-real.jpg", "jobTitle": "Managed AI for real estate agents and small teams", "description": "Managed AI for real estate agents and small teams. We set up and run your assistant using Queva OS. Request a demo with Sam.", "knowsAbout": ["AI assistants", "Queva OS", "Small business systems"], "sameAs": ["https://www.linkedin.com/in/samuelochoa"]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Samuel Ochoa", "url": "https://samuelochoa.com/", "description": "Managed AI for real estate agents and small teams. We set up and run your assistant using Queva OS. Request a demo with Sam."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Samuel Ochoa", "url": "https://samuelochoa.com/", "image": "https://samuelochoa.com/sam-real.jpg", "jobTitle": "Managed AI for real estate agents and small teams", "description": "Showingday, your real estate AI assistant powered by QUEVA OS, created by Agent Lead Engine. Sam sets it up and runs it. Try the interactive samples.", "knowsAbout": ["AI assistants", "Showingday", "QUEVA OS", "Small business systems"], "sameAs": ["https://www.linkedin.com/in/samuelochoa"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Samuel Ochoa", "url": "https://samuelochoa.com/", "description": "Showingday, your real estate AI assistant powered by QUEVA OS, created by Agent Lead Engine. Sam sets it up and runs it. Try the interactive samples."}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18240559803"></script>
 <script>
@@ -64,6 +66,16 @@
 .lp-center{text-align:center;max-width:720px;margin:0 auto 40px;}
 .lp-sec{padding:60px 0;}
 .lp-sec.alt{background:var(--soft);}
+
+/* Match the shared samples to this site's existing purple palette. */
+.lp .sd-demo{--sd-ink:var(--ink);--sd-teal:var(--purple);--sd-line:var(--line);margin-top:24px;}
+.lp .sd-demo .sd-head{background:#eee6fc;}
+.lp .sd-demo .sd-input{background:var(--softer);}
+.lp .sd-demo .sd-sample{color:var(--purple);}
+.lp .sd-demo .sd-limit{color:var(--ink2);}
+.lp .sd-demo select{border-color:var(--muted);}
+.lp .sd-demo button:hover:not(:disabled){background:#4515b4;}
+.lp .sd-demo button[data-sd-action="reset"]:hover{background:#eee6fc;}
 
 /* HERO - light */
 .lp-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f6f2fe 100%);padding:56px 0 52px;border-bottom:1px solid var(--line);}
@@ -202,11 +214,11 @@ a.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
   <div class="lp-wrap lp-hgrid">
     <div>
       <span class="lp-badge"><img src="sam-real.jpg" alt="Samuel Ochoa"> Samuel Ochoa</span>
-      <h1 class="lp-h1">Your AI assistant <em>for real estate.</em></h1>
-      <p class="lp-hsub">Set up and run for you. We help real estate agents and small teams with routine work using Queva OS, the system we use to run your AI assistant. We maintain what we set up.</p>
+      <h1 class="lp-h1">Showingday, your AI assistant for real estate.</h1>
+      <p class="lp-hsub">Showingday helps real estate agents and small teams with routine work. Powered by QUEVA OS, created by Agent Lead Engine. I’m Sam: I set up and run your assistant, and maintain what we set up.</p>
       <div class="lp-ctarow">
         <a href="/contact" class="lp-btn lp-btn-primary">Request a demo</a>
-        <a href="#offer" class="lp-btn lp-btn-ghost">How it works</a>
+        <a href="#demo-examples" class="lp-btn lp-btn-ghost">Try Showingday</a>
         <a href="tel:+15167801385" class="lp-btn lp-btn-ghost">Call: (516) 780-1385</a>
       </div>
       <div class="lp-hguarantee">Monthly pricing and usage agreed before starting.</div>
@@ -228,7 +240,28 @@ a.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
 </div>
 
 
-<section class="lp-sec alt" id="demo-examples"><div class="lp-wrap"><div class="lp-center"><span class="lp-kicker">See it in a demo</span><h2 class="lp-h2">Routine real estate work, <em>with an assistant.</em></h2></div><div class="lp-offers"><div class="lp-offer"><h3>Open-house follow-up</h3><p>See a follow-up drafted from your open-house notes for you to review before sending.</p></div><div class="lp-offer"><h3>Listing copy</h3><p>See listing copy prepared from property facts you supply, ready for your review before publishing.</p></div><div class="lp-offer"><h3>Your daily plan</h3><p>See a to-do list and reminders organized for your day.</p></div></div></div></section>
+<section class="lp-sec alt" id="demo-examples"><div class="lp-wrap">
+<div class="lp-center"><h2 class="lp-h2">Try Showingday.</h2><p class="lp-lead">Three interactive samples with fictional data. Choose a sample, prepare the work and review it before simulated approval.</p></div>
+<article class="sd-demo" data-sd-demo="followup" lang="en">
+<div class="sd-head"><p class="sd-sample">Interactive sample / fictional data</p><h3>A thoughtful next message</h3><p>Start with what the person actually told you. Prepare a draft and a proposed CRM task and note.</p></div>
+<div class="sd-body"><div class="sd-input"><label>Choose a fictional context<select data-sd-choice><option value="0">Maya: after an open house</option><option value="1">Jordan: a buyer’s search</option><option value="2">Alex: preparing to sell</option></select></label><pre class="sd-source" data-sd-source></pre><p class="sd-limit">Follow Up Boss (FUB) and GoHighLevel (GHL) are workflow examples to confirm during setup. This sample is not connected to either CRM.</p><div class="sd-controls"><button type="button" data-sd-action="prepare">Prepare follow-up</button><button type="button" data-sd-action="reset">Reset sample</button></div></div>
+<div class="sd-result"><div class="sd-preview" data-sd-output aria-live="polite" aria-atomic="true">Your sample preview will appear here.</div><div class="sd-controls"><button type="button" data-sd-action="review" disabled>Review sample</button><button type="button" data-sd-action="approve" disabled>Approve sample action</button></div></div></div>
+<p class="sd-status" data-sd-status role="status" aria-live="polite" aria-atomic="true">Ready. Prepare the sample, then review it.</p><noscript><p class="sd-status">Enable JavaScript to try this interactive sample. No accounts are connected.</p></noscript>
+</article>
+<article class="sd-demo" data-sd-demo="lease" lang="en">
+<div class="sd-head"><p class="sd-sample">Interactive sample / fictional data</p><h3>Facts in. A template to review.</h3><p>Use supplied tenant and property facts to fill a simple owner-template preview.</p></div>
+<div class="sd-body"><div class="sd-input"><p><strong>Supplied sample facts</strong></p><pre class="sd-source" data-sd-source></pre><p class="sd-limit">Sample template; signing/delivery not included in this preview. No legal clauses, uploads or contracts are created.</p><div class="sd-controls"><button type="button" data-sd-action="prepare">Prepare template</button><button type="button" data-sd-action="reset">Reset sample</button></div></div>
+<div class="sd-result"><div class="sd-preview" data-sd-output aria-live="polite" aria-atomic="true">Your sample preview will appear here.</div><div class="sd-controls"><button type="button" data-sd-action="review" disabled>Review sample</button><button type="button" data-sd-action="approve" disabled>Approve sample action</button></div></div></div>
+<p class="sd-status" data-sd-status role="status" aria-live="polite" aria-atomic="true">Ready. Prepare the sample, then review it.</p><noscript><p class="sd-status">Enable JavaScript to try this interactive sample. No accounts are connected.</p></noscript>
+</article>
+<article class="sd-demo" data-sd-demo="money" lang="en">
+<div class="sd-head"><p class="sd-sample">Interactive sample / fictional data</p><h3>A weekly money check you can trace</h3><p>Beta preview under final validation. Read sample CSV rows, then compare only when the prior week is available.</p></div>
+<div class="sd-body"><div class="sd-input"><label>Choose a sample CSV dataset<select data-sd-choice><option value="complete">Current and prior week complete</option><option value="missing">Prior week missing</option></select></label><pre class="sd-source" data-sd-source></pre><p class="sd-limit">Not live bookkeeping or a direct QuickBooks connection. USD cash movement only, not revenue or profit. No account details.</p><div class="sd-controls"><button type="button" data-sd-action="prepare">Calculate sample</button><button type="button" data-sd-action="reset">Reset sample</button></div></div>
+<div class="sd-result"><div class="sd-preview" data-sd-output aria-live="polite" aria-atomic="true">Your sample preview will appear here.</div><div class="sd-controls"><button type="button" data-sd-action="review" disabled>Review sample</button><button type="button" data-sd-action="approve" disabled>Approve sample action</button></div></div></div>
+<p class="sd-status" data-sd-status role="status" aria-live="polite" aria-atomic="true">Ready. Prepare the sample, then review it.</p><noscript><p class="sd-status">Enable JavaScript to try this interactive sample. No accounts are connected.</p></noscript>
+</article>
+<p><a href="/contact" class="lp-btn lp-btn-primary">Request a demo</a></p>
+</div></section>
 
 <!-- PROOF / TESTIMONIALS -->
 <section class="lp-sec" id="proof"><div class="lp-wrap">
@@ -262,8 +295,8 @@ a.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
 </div></section>
 
 <!-- HOW IT WORKS -->
-<section class="lp-sec alt"><div class="lp-wrap lp-split"><div><span class="lp-kicker">Managed AI</span><h2 class="lp-h2">Your assistant, <em>managed by me.</em></h2><p class="lp-lead">Queva OS is the system I use to run and manage your AI assistant. We start by agreeing what you or your real estate team needs and what the setup will cover.</p></div><div class="lp-steps"><span class="lp-kicker">How it goes</span><ol><li>Request a demo of a routine real estate task.</li><li>Confirm the setup, available connections and access.</li><li>Agree monthly pricing and usage before starting.</li><li>We run your AI and support the setup.</li></ol></div></div></section>
-<section class="lp-sec" id="offer"><div class="lp-wrap"><div class="lp-center"><span class="lp-kicker">What to expect</span><h2 class="lp-h2">Clear support. <em>Clear scope.</em></h2></div><div class="lp-offers"><div class="lp-offer"><h3>Included support</h3><p>Unlimited support requests when something we set up breaks. Support is available every day, 9 AM to 9 PM Eastern Time. We respond within two support hours.</p></div><div class="lp-offer"><h3>Custom setup</h3><p>New or custom setup work is $125/hour, billed in 15-minute increments of $31.25. It is separate from included support for something we set up that breaks.</p></div><div class="lp-offer"><h3>Monthly usage</h3><p>Monthly limits only, with no rolling five-hour usage limits. We agree your monthly price and usage allowance before starting.</p></div></div></div></section><section class="lp-sec alt"><div class="lp-wrap"><div class="lp-guarantee"><div class="lp-gbadge">Beta usage</div><h2 class="lp-h2">No usage limits <em>for your first 30 days.</em></h2><p class="lp-glead">Beta users have no usage limits for the first 30 days. Monthly limits apply afterward. We agree your price before you start.</p></div></div></section><section class="lp-sec"><div class="lp-wrap"><div class="lp-center"><span class="lp-kicker">Who you work with</span><h2 class="lp-h2">Sam Ochoa, <em>the human behind it.</em></h2><p class="lp-lead">I have helped an insurance agency, a law office, a nonprofit and a contractor put technology to work. Now I run and manage AI assistants for real estate agents and small teams.</p><p><a href="/about">About Sam</a> · <a href="/ai-consulting">Service details</a> · <a href="/terms">Terms</a></p></div><div class="lp-final"><h2>See your real estate assistant in a demo.</h2><p>Tell me which routine real estate task you want to see. We will confirm the scope, monthly price and usage allowance before starting.</p><div class="lp-ctarow"><a href="/contact" class="lp-btn lp-btn-primary">Request a demo</a><a href="tel:+15167801385" class="lp-btn lp-btn-ghost">Call: (516) 780-1385</a><a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener" class="lp-btn lp-btn-ghost">Connect on LinkedIn</a></div></div></div></section>
+<section class="lp-sec alt"><div class="lp-wrap lp-split"><div><span class="lp-kicker">Managed AI</span><h2 class="lp-h2">Your assistant, <em>managed by me.</em></h2><p class="lp-lead"><a href="https://agentleadengine.com">Agent Lead Engine</a> creates QUEVA OS, which powers Showingday. I set up and run your assistant. We start by agreeing what you or your real estate team needs and what the setup will cover.</p></div><div class="lp-steps"><span class="lp-kicker">How it goes</span><ol><li>Request a demo of a routine real estate task.</li><li>Confirm the setup, available connections and access.</li><li>Agree monthly pricing and usage before starting.</li><li>We run your AI and support the setup.</li></ol></div></div></section>
+<section class="lp-sec" id="offer"><div class="lp-wrap"><div class="lp-center"><span class="lp-kicker">What to expect</span><h2 class="lp-h2">Clear support. <em>Clear scope.</em></h2></div><div class="lp-offers"><div class="lp-offer"><h3>Included support</h3><p>Unlimited support requests when something we set up breaks. Support is available every day, 9 AM to 9 PM Eastern Time. We respond within two support hours.</p></div><div class="lp-offer"><h3>Custom setup</h3><p>New or custom setup work is $125/hour, billed in 15-minute increments of $31.25. It is separate from included support for something we set up that breaks.</p></div><div class="lp-offer"><h3>Monthly usage</h3><p>Monthly limits only, with no rolling five-hour usage limits. We agree your monthly price and usage allowance before starting.</p></div></div></div></section><section class="lp-sec alt"><div class="lp-wrap"><div class="lp-guarantee"><div class="lp-gbadge">Beta usage</div><h2 class="lp-h2">No usage limits <em>for your first 30 days.</em></h2><p class="lp-glead">Beta users have no usage limits for the first 30 days. Monthly limits apply afterward. We agree your price before you start.</p></div></div></section><section class="lp-sec"><div class="lp-wrap"><div class="lp-center"><span class="lp-kicker">Who you work with</span><h2 class="lp-h2">Sam Ochoa, <em>the human behind it.</em></h2><p class="lp-lead">I have helped an insurance agency, a law office, a nonprofit and a contractor put technology to work. Now I set up and run Showingday for real estate agents and small teams.</p><p><a href="/about">About Sam</a> · <a href="/ai-consulting">Service details</a> · <a href="/terms">Terms</a></p></div><div class="lp-final"><h2>See Showingday with Sam.</h2><p>Tell me which routine real estate task you want to see. We will confirm the scope, monthly price and usage allowance before starting.</p><div class="lp-ctarow"><a href="/contact" class="lp-btn lp-btn-primary">Request a demo</a><a href="tel:+15167801385" class="lp-btn lp-btn-ghost">Call: (516) 780-1385</a><a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener" class="lp-btn lp-btn-ghost">Connect on LinkedIn</a></div></div></div></section>
 </main>
 
 </div><!-- /.lp -->

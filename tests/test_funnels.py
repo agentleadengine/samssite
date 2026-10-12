@@ -1,6 +1,6 @@
 """Static contracts for the YouTube capture pages and booking route."""
 from pathlib import Path
-from urllib.parse import urlsplit, unquote
+from urllib.parse import urlsplit, unquote, urljoin
 import re
 from html import unescape
 import unittest
@@ -52,7 +52,7 @@ class FunnelTests(unittest.TestCase):
         self.assertIsNone(soup.find('nav'))
         self.assertIsNone(soup.find('footer'))
         self.assertEqual([x['href'] for x in soup.select('.lp-linkstack a')],
-                         ['/ghl', '/newsletter', '/contact', '/ai-consulting', '/about'])
+                         ['/ghl', '/newsletter', '/contact', '/#demo-examples', '/ai-consulting', '/about'])
         self.assertIsNotNone(soup.select_one('img[src="/sam-real.jpg"]'))
 
     def test_copy_and_metadata(self):
@@ -131,7 +131,7 @@ class FunnelTests(unittest.TestCase):
                     self.assertEqual(a.get('href'), '/book', str(path))
 
     def test_internal_links_and_assets_resolve(self):
-        for slug in (*NEW, 'thanks-web', 'gracias'):
+        for slug in (*NEW, 'thanks-web', 'gracias', 'index', 'ai-consulting', 'contact', 'about', 'es/index'):
             soup = read(slug)
             for el in soup.select('[href], [src]'):
                 raw = el.get('href', el.get('src'))
@@ -145,9 +145,14 @@ class FunnelTests(unittest.TestCase):
                     if url.path == '/book':
                         self.assertIn('/book ', (ROOT / '_redirects').read_text())
                         continue
-                    path = ROOT / unquote(url.path.lstrip('/'))
+                    resolved = urlsplit(urljoin('/' + slug + '.html', raw))
+                    path = ROOT / unquote(resolved.path.lstrip('/'))
                     candidates = [path, path.with_suffix('.html'), path / 'index.html']
-                    self.assertTrue(any(p.is_file() for p in candidates), raw)
+                    target = next((p for p in candidates if p.is_file()), None)
+                    self.assertIsNotNone(target, raw)
+                    if resolved.fragment and target.suffix == '.html':
+                        document = BeautifulSoup(target.read_text(), 'html.parser')
+                        self.assertIsNotNone(document.find(id=unquote(resolved.fragment)), raw)
 
     def test_resource_strips(self):
         for name in ('index.html', 'framework/index.html', 'expertise/index.html',

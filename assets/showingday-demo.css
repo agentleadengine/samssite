@@ -1,0 +1,32 @@
+/* Portable Showingday workbench. All component styles stay inside .sd-demo. */
+.sd-demo { --sd-ink: #241d3b; --sd-teal: #076b70; --sd-line: #cadbd9; box-sizing: border-box; color: var(--sd-ink); background: #fff; border: 1px solid var(--sd-line); border-radius: 18px; overflow: hidden; font: 16px/1.6 "Inter", system-ui, sans-serif; text-align: left; }
+.sd-demo *, .sd-demo *::before, .sd-demo *::after { box-sizing: border-box; }
+.sd-demo [hidden] { display: none; }
+.sd-demo .sd-head { padding: 24px 28px; background: #d7eeeb; }
+.sd-demo .sd-sample { margin: 0 0 6px; font-size: 13px; font-weight: 650; color: #075257; }
+.sd-demo h3 { margin: 0; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; letter-spacing: -.025em; color: var(--sd-ink); }
+.sd-demo p { margin: 8px 0 0; max-width: 70ch; }
+.sd-demo .sd-body { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+.sd-demo .sd-input, .sd-demo .sd-result { padding: 28px; min-width: 0; }
+.sd-demo .sd-input { background: #f5faf9; border-right: 1px solid var(--sd-line); }
+.sd-demo label { display: grid; gap: 8px; font-weight: 650; }
+.sd-demo select { width: 100%; min-height: 48px; padding: 10px; font: inherit; color: var(--sd-ink); background: #fff; border: 1px solid #718b89; border-radius: 6px; }
+.sd-demo .sd-source, .sd-demo .sd-preview { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; margin: 18px 0 0; }
+.sd-demo .sd-source { font-size: 14px; }
+.sd-demo .sd-preview { min-height: 160px; margin-top: 0; }
+.sd-demo .sd-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.sd-demo button { appearance: none; min-height: 44px; border: 1px solid var(--sd-teal); border-radius: 7px; padding: 10px 15px; font: 600 14px/1.4 "Inter", system-ui, sans-serif; background: var(--sd-teal); color: #fff; cursor: pointer; }
+.sd-demo button:hover:not(:disabled) { background: #075257; }
+.sd-demo button[data-sd-action="reset"] { color: var(--sd-teal); background: #fff; }
+.sd-demo button[data-sd-action="reset"]:hover { background: #d7eeeb; }
+.sd-demo button:disabled { color: #5f6868; background: #eef1f0; border-color: #bdc6c5; cursor: default; }
+.sd-demo :is(button, select, a):focus-visible { outline: 3px solid #6200ff; outline-offset: 3px; }
+.sd-demo .sd-status { border-top: 1px solid var(--sd-line); padding: 16px 28px; margin: 0; min-height: 84px; font-size: 14px; font-weight: 550; }
+.sd-demo .sd-limit { font-size: 13px; color: #465957; margin-top: 16px; }
+.sd-demo a { color: var(--sd-teal); text-decoration: underline; }
+@media (max-width: 680px) {
+  .sd-demo .sd-body { grid-template-columns: minmax(0, 1fr); }
+  .sd-demo .sd-input { border-right: 0; border-bottom: 1px solid var(--sd-line); }
+  .sd-demo .sd-head, .sd-demo .sd-input, .sd-demo .sd-result, .sd-demo .sd-status { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .sd-demo, .sd-demo * { scroll-behavior: auto; animation: none; transition: none; } }

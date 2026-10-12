@@ -6,6 +6,7 @@ import json
 import re
 import subprocess
 import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'c9495c1d'
@@ -19,6 +20,14 @@ def text(markup):
 def check():
     contract = json.loads(read('offer-contract.json'))
     assert contract['offer_name'] == 'Managed AI'
+    assert contract['product'] == 'Showingday'
+    assert contract['parent_company'] == contract['system_creator'] == 'Agent Lead Engine'
+    assert contract['system'] == 'QUEVA OS'
+    assert contract['operator'] == 'Samuel Ochoa'
+    previous = json.loads(subprocess.check_output(
+        ['git', 'show', '9d739afb:offer-contract.json'], cwd=ROOT, text=True))
+    for key in ('included_support', 'custom_setup', 'usage'):
+        assert contract[key] == previous[key], key
     assert contract['status'] == 'current_offer'
     assert contract['contact_path'] == '/contact'
     assert contract['audience'] == 'Real estate agents and small teams'
@@ -32,10 +41,36 @@ def check():
     for name in ('index.html', 'ai-consulting.html'):
         page = read(name)
         assert 'real estate' in text(re.search(r'<h1\b.*?</h1>', page, re.S)[0])
-        for phrase in ('Open-house follow-up', 'property facts you supply',
-                       'review before sending', 'review before publishing', 'to-do list and reminders'):
-            assert phrase in text(page), (name, phrase)
+        assert 'Showingday' in text(re.search(r'<h1\b.*?</h1>', page, re.S)[0])
+    for name in ('index.html', 'ai-consulting.html', 'contact.html', 'about.html', 'links.html', 'es/index.html'):
+        page = read(name)
+        body = page.split('<body', 1)[1]
+        description = re.search(r'<meta name="description" content="([^"]+)"', page)[1]
+        for phrase in ('Showingday', 'QUEVA OS', 'Agent Lead Engine'):
+            assert phrase in text(body) and phrase in description, (name, phrase)
+    assert 'href="/#demo-examples"' in read('ai-consulting.html')
     assert read('index.html').index('id="demo-examples"') < read('index.html').index('id="proof"')
+    home = BeautifulSoup(read('index.html'), 'html.parser')
+    demos = home.select('#demo-examples article[data-sd-demo]')
+    assert [demo['data-sd-demo'] for demo in demos] == ['followup', 'lease', 'money']
+    assert home.select_one('script[type="module"][src="/assets/showingday-demo.js"]')
+    assert home.select_one('link[rel="stylesheet"][href="/assets/showingday-demo.css"]')
+    for demo in demos:
+        assert 'Interactive sample / fictional data' in demo.get_text()
+        assert not demo.select('form, input, textarea, iframe'), demo['data-sd-demo']
+        assert demo.select_one('[data-sd-output][aria-live="polite"]')
+        assert demo.select_one('[data-sd-status][role="status"]')
+        assert demo.select_one('noscript')
+        for action in ('prepare', 'review', 'approve', 'reset'):
+            button = demo.select_one(f'button[data-sd-action="{action}"]')
+            assert button and button['type'] == 'button'
+            assert button.has_attr('disabled') == (action in ('review', 'approve'))
+        for select in demo.select('select'):
+            assert select.find_parent('label')
+    assert 'This sample is not connected to either CRM.' in demos[0].get_text()
+    assert 'signing/delivery not included' in demos[1].get_text()
+    assert 'Beta preview under final validation' in demos[2].get_text()
+    assert [o['value'] for o in demos[2].select('option')] == ['complete', 'missing']
     assert 'Call, email or message me on LinkedIn' in read('contact.html')
     assert 'subject=Real%20estate%20AI%20demo%20request' in read('contact.html')
     assert 'agentes inmobiliarios y equipos pequeños' in read('es/index.html')
@@ -56,7 +91,8 @@ def check():
     core = ('index.html', 'ai-consulting.html', 'terms.html')
     for name in core:
         page = text(read(name))
-        for phrase in ('Queva OS', '9 AM to 9 PM Eastern Time', 'within two support hours',
+        assert 'queva os' in page.lower(), name
+        for phrase in ('9 AM to 9 PM Eastern Time', 'within two support hours',
                        '$125/hour', '15-minute', '$31.25',
                        'no rolling five-hour', 'first 30 days', 'Monthly limits apply afterward',
                        'We agree your price before you start.', 'before starting', 'Unlimited support requests'):
@@ -74,10 +110,13 @@ def check():
         assert 'Sam uses' not in intro
     for name in (*core, 'about.html', 'contact.html', 'links.html', 'es/index.html'):
         page = read(name)
+        # CRM names are allowed only in the explicitly disconnected fictional sample.
+        offer_copy = re.sub(r'<article class="sd-demo".*?</article>', '', page, flags=re.S)
+        assert 'Follow Up Boss' not in offer_copy, name
         assert len(re.findall(r'<main\b', page)) == page.count('</main>') == 1, name
         assert len(re.findall(r'<h1\b', page)) == 1, name
         assert 'rel="canonical"' in page and 'name="description"' in page, name
-        for stale in ('Follow Up Boss', 'at Origin', 'three weeks', '$99', '$199', '$349', '$400', 'calendar.app.google', 'calendly.com'):
+        for stale in ('at Origin', 'three weeks', '$99', '$199', '$349', '$400', 'calendar.app.google', 'calendly.com'):
             assert stale not in page, (name, stale)
         for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S):
             json.loads(raw)
@@ -126,7 +165,7 @@ def check():
                       'founding_audit_usd', 'Start a free 15-minute leak check',
                       'I now help small offices use ChatGPT or Claude'):
             assert stale not in page, (path, stale)
-    print('PASS: daily support, approved copy, current offer status, offer terms, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
+    print('PASS: Showingday identity, three accessible sample embeds, unchanged commercial terms, daily support, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
 
 if __name__ == '__main__':
     check()
