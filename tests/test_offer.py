@@ -19,8 +19,10 @@ def text(markup):
 def check():
     contract = json.loads(read('offer-contract.json'))
     assert contract['offer_name'] == 'Managed AI'
+    assert contract['status'] == 'current_offer'
     assert contract['contact_path'] == '/contact'
     support = contract['included_support']
+    assert support['days'] == ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     assert (support['window_start'], support['window_end'], support['timezone']) == ('09:00', '21:00', 'America/New_York')
     assert support['response_within_support_hours'] == 2 and not support['resolution_time_guarantee']
     assert support['requests'] == 'unlimited'
@@ -31,15 +33,26 @@ def check():
     assert usage['monthly_price_usd'] is None and usage['monthly_allowance'] is None
     assert usage['beta_unlimited_days'] == 30 and usage['monthly_limits_after_beta']
     assert usage['limit_period'] == 'monthly' and not usage['rolling_five_hour_limits']
-    assert not usage['beta_is_free_trial'] and usage['price_and_allowance_agreed_before_start']
+    assert 'beta_is_free_trial' not in usage and usage['price_and_allowance_agreed_before_start']
     core = ('index.html', 'ai-consulting.html', 'terms.html')
     for name in core:
         page = text(read(name))
         for phrase in ('Queva OS', '9 AM to 9 PM Eastern Time', 'within two support hours',
-                       'not a guaranteed fix time', '$125/hour', '15-minute', '$31.25',
+                       '$125/hour', '15-minute', '$31.25',
                        'no rolling five-hour', 'first 30 days', 'Monthly limits apply afterward',
-                       'not a free trial or a free month', 'before starting', 'Unlimited support requests'):
+                       'We agree your price before you start.', 'before starting', 'Unlimited support requests'):
             assert phrase in page, (name, phrase)
+    assert 'not a guaranteed fix time' in text(read('terms.html'))
+    for name in (*core, 'contact.html'):
+        page = text(read(name))
+        assert 'every day, 9 AM to 9 PM Eastern Time' in page, name
+        assert 'not a free trial or a free month' not in page, name
+        if name != 'terms.html':
+            assert 'not a guaranteed fix time' not in page, name
+    for name in ('index.html', 'ai-consulting.html'):
+        intro = re.search(r'<p class="(?:lp-hsub|intro)">(.*?)</p>', read(name), re.S)[1]
+        assert not text(intro).startswith('We run your AI for you.')
+        assert 'Sam uses' not in intro
     for name in (*core, 'about.html', 'contact.html', 'links.html', 'es/index.html'):
         page = read(name)
         assert len(re.findall(r'<main\b', page)) == page.count('</main>') == 1, name
@@ -50,9 +63,11 @@ def check():
         for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S):
             json.loads(raw)
     spanish = text(read('es/index.html'))
-    for phrase in ('9 AM a 9 PM', 'hora del Este', 'dos horas de soporte', '$125', '$31.25',
+    for phrase in ('todos los días, de 9 AM a 9 PM', 'hora del Este', 'dos horas de soporte', '$125', '$31.25',
                    '15 minutos', 'primeros 30 días', 'Después se aplican los límites mensuales'):
         assert phrase in spanish, phrase
+    assert 'prueba ni un mes gratis' not in spanish
+    assert 'Acordamos tu precio antes de empezar.' in spanish
     # Compare the actual quote and video markup to the approved base, not rewritten fixtures.
     for name, prefix in [('index.html', 'lp'), ('testimonials.html', 'tst')]:
         before = subprocess.check_output(['git', 'show', f'{BASE}:{name}'], cwd=ROOT, text=True)
@@ -63,7 +78,8 @@ def check():
             old = re.findall(pattern, before, re.S)
             assert old and old == re.findall(pattern, after, re.S), (name, pattern)
             if count: assert len(old) == count, (name, count)
-        assert 'not results from' in after, name
+        assert 'What clients say about working with Sam.' in after, name
+        assert 'not results from' not in after, name
     routes = [line.split() for line in read('_redirects').splitlines() if line and not line.startswith('#')]
     targets = {line[0]: line[1] for line in routes}
     for route in ('/book', '/book/', '/book.html'):
@@ -91,7 +107,7 @@ def check():
                       'founding_audit_usd', 'Start a free 15-minute leak check',
                       'I now help small offices use ChatGPT or Claude'):
             assert stale not in page, (path, stale)
-    print('PASS: offer terms, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
+    print('PASS: daily support, approved copy, current offer status, offer terms, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
 
 if __name__ == '__main__':
     check()

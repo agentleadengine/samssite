@@ -1,1 +1,5 @@
-PASS: offer terms, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan
+$ python3 tests/test_offer.py
+PASS: daily support, approved copy, current offer status, offer terms, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan
+exit 0
+$ git diff --check
+exit 0

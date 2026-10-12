@@ -1,5 +1,5 @@
 {
-  "status": "staged_for_coordinator_review",
+  "status": "current_offer",
   "offer_name": "Managed AI",
   "positioning": "We run your AI for you.",
   "operator": "Samuel Ochoa",
@@ -13,7 +13,16 @@
     "window_end": "21:00",
     "timezone": "America/New_York",
     "response_within_support_hours": 2,
-    "resolution_time_guarantee": false
+    "resolution_time_guarantee": false,
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ]
   },
   "custom_setup": {
     "hourly_usd": 125,
@@ -28,7 +37,6 @@
     "monthly_allowance": null,
     "price_and_allowance_agreed_before_start": true,
     "beta_unlimited_days": 30,
-    "monthly_limits_after_beta": true,
-    "beta_is_free_trial": false
+    "monthly_limits_after_beta": true
   }
 }
