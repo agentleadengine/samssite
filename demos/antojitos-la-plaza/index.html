@@ -1,0 +1,377 @@
+<!--
+THESIS: The truck is running right now, not "open sometime" — the trompo turns and the comal stays hot whether you flag it down on a corner or book it for two hundred guests, and the same plate goes out either way.
+OWN-WORLD: A market stall lit for dusk service — deep-purple sky, hot-pink signage glow, lime string-lights — with the trompo's cut rings and a papel-picado pennant string as the two shapes that repeat across every page.
+STORY: index proves the truck is real and running now → services prices what's actually on the window → work shows six parties it has already served → about tells who drives it and why it's called La Plaza → contact locks the date with one call.
+FIRST VIEWPORT: the service window at dusk, steam rising, a hand passing a taco through, one promise, tel + text CTA. No menu list yet, no scroll teaser.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antojitos La Plaza | Camión de antojitos en Long Island, NY</title>
+<meta name="description" content="Antojitos La Plaza es un camión de comida mexicana en Long Island, NY. Tacos al pastor, quesabirria, esquites y servicio para fiestas. Llame al (516) 555-0133.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-strip">Sitio de demostración</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="20" fill="#3B1350"/>
+        <ellipse cx="20" cy="20" rx="14" ry="14" fill="#FF2E7E"/>
+        <ellipse cx="20" cy="20" rx="9.3" ry="9.3" fill="#C7E62E"/>
+        <ellipse cx="20" cy="20" rx="4.6" ry="4.6" fill="#FFF7E8"/>
+      </svg>
+      <span class="brand-text">
+        <b>Antojitos La Plaza</b>
+        <i>Camión de antojitos</i>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html">Servicios</a>
+          <ul class="nav-sub">
+            <li><a href="services.html">Ver todos los servicios</a></li>
+            <li><a href="services.html#pastor">Tacos al pastor</a></li>
+            <li><a href="services.html#quesabirria">Quesabirria</a></li>
+            <li><a href="services.html#esquites">Esquites y elotes</a></li>
+            <li><a href="services.html#tamales">Tamales y atole</a></li>
+            <li><a href="services.html#aguas">Aguas frescas</a></li>
+            <li><a href="services.html#fiestas">Servicio para fiestas</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550133">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+      (516) 555-0133
+    </a>
+
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="index.html" aria-current="page">Inicio</a></li>
+    <li class="mob-has-sub">
+      <button class="mob-sub-toggle" type="button" aria-expanded="false" aria-controls="mob-sub-servicios">
+        Servicios
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="mob-sub" id="mob-sub-servicios">
+        <li><a href="services.html">Ver todos los servicios</a></li>
+        <li><a href="services.html#pastor">Tacos al pastor</a></li>
+        <li><a href="services.html#quesabirria">Quesabirria</a></li>
+        <li><a href="services.html#esquites">Esquites y elotes</a></li>
+        <li><a href="services.html#tamales">Tamales y atole</a></li>
+        <li><a href="services.html#aguas">Aguas frescas</a></li>
+        <li><a href="services.html#fiestas">Servicio para fiestas</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Trabajos</a></li>
+    <li><a href="about.html">Nosotros</a></li>
+    <li><a href="contact.html">Contacto</a></li>
+  </ul>
+  <a class="mob-tel" href="tel:+15165550133">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+    Llamar: (516) 555-0133
+  </a>
+</div>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1 class="reveal reveal-1">Se hace al momento.<br><span class="accent">Se sirve caliente.</span></h1>
+        <p class="sub reveal reveal-2">Trompo prendido, comal caliente, salsas hechas esa misma mañana. Búsquenos en la calle o llévese el camión completo a su fiesta.</p>
+        <div class="hero-cta reveal reveal-3">
+          <a class="btn btn--pink" href="tel:+15165550133">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+            Llamar: (516) 555-0133
+          </a>
+          <a class="link-cta btn--outline-light btn" href="contact.html#horario">
+            Ver dónde andamos hoy
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p class="hero-note reveal reveal-4">Contestamos mientras cocinamos — pregunte por la ubicación del día.</p>
+      </div>
+
+      <div class="hero-art reveal reveal-2" aria-hidden="true">
+        <svg viewBox="0 0 400 400" role="img" aria-label="La ventanilla del camión al atardecer, con luces de feria, vapor subiendo y una mano entregando un taco">
+          <defs>
+            <linearGradient id="winglow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#170620"/>
+              <stop offset="55%" stop-color="#3B1350"/>
+              <stop offset="100%" stop-color="#D30E63"/>
+            </linearGradient>
+            <filter id="softblur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4.2"/></filter>
+          </defs>
+
+          <path d="M40,100 Q200,126 360,100" fill="none" stroke="#170620" stroke-width="2" opacity=".45"/>
+          <circle cx="70" cy="105" r="10" fill="#FF2E7E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="70" cy="105" r="4.4" fill="#FF2E7E" class="bulb"/>
+          <circle cx="118" cy="116" r="10" fill="#C7E62E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="118" cy="116" r="4.4" fill="#C7E62E" class="bulb b2"/>
+          <circle cx="166" cy="122" r="10" fill="#FF2E7E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="166" cy="122" r="4.4" fill="#FF2E7E" class="bulb b3"/>
+          <circle cx="234" cy="122" r="10" fill="#C7E62E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="234" cy="122" r="4.4" fill="#C7E62E" class="bulb b4"/>
+          <circle cx="282" cy="116" r="10" fill="#FF2E7E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="282" cy="116" r="4.4" fill="#FF2E7E" class="bulb b5"/>
+          <circle cx="330" cy="105" r="10" fill="#C7E62E" opacity=".4" filter="url(#softblur)"/>
+          <circle cx="330" cy="105" r="4.4" fill="#C7E62E" class="bulb"/>
+
+          <rect x="66" y="140" width="268" height="188" rx="26" fill="#FFF7E8"/>
+          <rect x="90" y="164" width="220" height="120" rx="16" fill="url(#winglow)"/>
+          <rect x="66" y="318" width="268" height="10" fill="#C7E62E"/>
+
+          <g class="steam">
+            <path d="M150,220 Q158,196 148,178 Q140,162 150,144" stroke="#FFF7E8" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+            <path d="M197,224 Q207,198 196,180 Q187,160 199,142" stroke="#FFF7E8" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+            <path d="M244,220 Q252,196 242,178 Q234,160 246,144" stroke="#FFF7E8" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+          </g>
+
+          <g transform="rotate(-16 205 268)">
+            <rect x="165" y="254" width="98" height="27" rx="13.5" fill="#170620"/>
+          </g>
+          <path d="M244,240 Q276,222 306,242 Q292,266 260,264 Q242,256 244,240 Z" fill="#FFEED2"/>
+          <circle cx="266" cy="244" r="3.6" fill="#FF2E7E"/>
+          <circle cx="280" cy="240" r="3.6" fill="#7C9E12"/>
+          <circle cx="274" cy="252" r="3" fill="#D30E63"/>
+
+          <ellipse cx="200" cy="362" rx="150" ry="12" fill="#170620" opacity=".3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee on-lime" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Tacos al pastor<i class="dot"></i></span><span>Quesabirria<i class="dot"></i></span><span>Esquites<i class="dot"></i></span><span>Aguas frescas<i class="dot"></i></span><span>Servicio para fiestas<i class="dot"></i></span><span>Salsa de la casa<i class="dot"></i></span>
+      <span>Tacos al pastor<i class="dot"></i></span><span>Quesabirria<i class="dot"></i></span><span>Esquites<i class="dot"></i></span><span>Aguas frescas<i class="dot"></i></span><span>Servicio para fiestas<i class="dot"></i></span><span>Salsa de la casa<i class="dot"></i></span>
+    </div>
+  </div>
+
+  <section class="on-cream">
+    <div class="wrap grid-2-tight">
+      <div>
+        <div class="sec-head">
+          <h2>El trompo no descansa.</h2>
+          <p>Nada se corta hasta que usted lo pide. La carne se marina un día entero, pero la rebanada que le toca sale del trompo en el momento — no de una charola esperando bajo una lámpara.</p>
+        </div>
+        <p class="prose" style="color:var(--ink-muted)">Lo mismo pasa con el resto del menú: el comal se mantiene caliente toda la jornada y las salsas se muelen esa misma mañana. Es la diferencia entre un plato que se sirve y uno que se prepara.</p>
+        <a class="link-cta" href="services.html" style="margin-top:22px;color:var(--lumbre-700)">
+          Ver el menú completo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="work-scene" aria-hidden="true">
+        <svg viewBox="0 0 360 300" role="img" aria-label="El trompo de pastor con una rebanada recién cortada cayendo sobre una tortilla">
+          <rect x="176" y="26" width="8" height="210" rx="4" fill="#170620"/>
+          <circle cx="180" cy="40" r="15" fill="#C7E62E"/>
+          <polygon points="180,18 173,30 187,30" fill="#7C9E12"/>
+          <ellipse cx="180" cy="62" rx="30" ry="13" fill="#FF2E7E"/>
+          <ellipse cx="180" cy="82" rx="33.5" ry="13" fill="#D30E63"/>
+          <ellipse cx="180" cy="102" rx="37" ry="13" fill="#FF2E7E"/>
+          <ellipse cx="180" cy="122" rx="40.5" ry="13" fill="#D30E63"/>
+          <ellipse cx="180" cy="142" rx="44" ry="13" fill="#FF2E7E"/>
+          <ellipse cx="180" cy="162" rx="47.5" ry="13" fill="#D30E63"/>
+          <ellipse cx="180" cy="182" rx="51" ry="13" fill="#FF2E7E"/>
+          <ellipse cx="180" cy="202" rx="54.5" ry="13" fill="#D30E63"/>
+          <ellipse cx="180" cy="222" rx="58" ry="13" fill="#FF2E7E"/>
+          <polygon points="296,140 330,120 336,129 306,151" fill="#FFF7E8" stroke="#170620" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="270" cy="192" rx="10" ry="5" fill="#D30E63" transform="rotate(-20 270 192)"/>
+          <ellipse cx="250" cy="220" rx="9" ry="4.5" fill="#D30E63" transform="rotate(-15 250 220)"/>
+          <ellipse cx="196" cy="258" rx="72" ry="16" fill="#FFF7E8"/>
+          <circle cx="176" cy="256" r="3" fill="#7C9E12"/>
+          <circle cx="208" cy="260" r="3" fill="#7C9E12"/>
+          <circle cx="192" cy="252" r="2.5" fill="#FFD9E9"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Lo que sale de la ventanilla</h2>
+        <p>Tres cosas del menú, para empezar.</p>
+      </div>
+      <div class="menu-rows">
+        <div class="menu-row">
+          <div class="menu-row-top">
+            <div class="menu-row-icon" style="background:var(--noche-700)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--esquite)" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><ellipse cx="12" cy="8" rx="4" ry="2.2"/><ellipse cx="12" cy="13" rx="5.5" ry="2.4"/><ellipse cx="12" cy="18" rx="6.5" ry="2.4"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Tacos al pastor</h3>
+                <span class="price">Desde $3.50</span>
+              </div>
+              <p>Carne marinada, cortada del trompo al momento, con piña, cebolla y cilantro.</p>
+            </div>
+          </div>
+          <a class="link-cta" href="services.html#pastor" style="color:var(--esquite)">Ver detalle <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top">
+            <div class="menu-row-icon" style="background:var(--noche-700)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--esquite)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14l-1.4 7.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 11Z"/><path d="M9 4c0 1-1.2 1-1.2 2S9 7 9 8M13.5 4c0 1-1.2 1-1.2 2s1.2 1 1.2 2"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Quesabirria con consomé</h3>
+                <span class="price">Desde $12</span>
+              </div>
+              <p>Tortilla pasada por la grasa de la birria, queso derretido y su vasito de consomé.</p>
+            </div>
+          </div>
+          <a class="link-cta" href="services.html#quesabirria" style="color:var(--esquite)">Ver detalle <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="menu-row" style="border-bottom:0">
+          <div class="menu-row-top">
+            <div class="menu-row-icon" style="background:var(--noche-700)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--esquite)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16l9-10 9 10"/><path d="M6.5 16V12M17.5 16V12M12 16V9"/><path d="M3 16h18"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Servicio para fiestas</h3>
+                <span class="price">Desde $1,100</span>
+              </div>
+              <p>Llevamos el camión, el trompo y el menú recortado a bautizos, quince y cumpleaños.</p>
+            </div>
+          </div>
+          <a class="link-cta" href="services.html#fiestas" style="color:var(--esquite)">Ver detalle <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Por qué llamar a este camión</h2>
+      </div>
+      <div class="whyus">
+        <div class="whyus-item">
+          <h3>Nada espera bajo lámpara</h3>
+          <p>Se cocina cuando usted lo pide, no antes. Lo que no se vende ese día no se recalienta al siguiente.</p>
+        </div>
+        <div class="whyus-item">
+          <h3>El camión llega a usted</h3>
+          <p>De día cerca de obras y negocios, de noche en lotes y canchas, y donde haga falta para su fiesta.</p>
+        </div>
+        <div class="whyus-item">
+          <h3>Precio cerrado antes de que diga que sí</h3>
+          <p>Para eventos le damos el número exacto por mensaje, según sus invitados. Sin sorpresas al final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-pink">
+    <div class="wrap cta-close">
+      <h2>¿Le damos fecha?</h2>
+      <p>Llame y hablamos del menú para su fiesta, o pregunte dónde para el camión hoy.</p>
+      <div class="btns">
+        <a class="btn btn--dark" href="tel:+15165550133">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+          Llamar: (516) 555-0133
+        </a>
+        <a class="btn btn--outline-light" href="contact.html">Ir a contacto</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Antojitos La Plaza</b>
+        Camión de antojitos mexicanos en Long Island, NY.
+      </div>
+      <nav aria-label="Pie de página">
+        <ul class="foot-links">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="tel:+15165550133">(516) 555-0133</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disclose">Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+    <p class="legal">Antojitos La Plaza es un negocio ficticio mostrado como demostración. Nada en esta página es una oferta real y el número de teléfono no está en servicio.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Ubicación de hoy<b>(516) 555-0133</b></div>
+  <a href="tel:+15165550133">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+    Llamar
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger = document.querySelector('.hamburger');
+  var panel = document.getElementById('mobile-nav');
+  function closePanel(){ burger.setAttribute('aria-expanded','false'); panel.classList.remove('is-open'); }
+  function openPanel(){ burger.setAttribute('aria-expanded','true'); panel.classList.add('is-open'); }
+  if(burger && panel){
+    burger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      open ? closePanel() : openPanel();
+    });
+    document.addEventListener('click', function(e){
+      if(panel.classList.contains('is-open') && !panel.contains(e.target) && e.target !== burger){ closePanel(); }
+    });
+  }
+  var subToggles = document.querySelectorAll('.mob-sub-toggle');
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var list = document.getElementById(btn.getAttribute('aria-controls'));
+      if(list){ list.classList.toggle('is-open', !expanded); }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closePanel();
+      subToggles.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var list = document.getElementById(btn.getAttribute('aria-controls'));
+        if(list) list.classList.remove('is-open');
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios y menú | Antojitos La Plaza</title>
+<meta name="description" content="El menú de Antojitos La Plaza: tacos al pastor, quesabirria, esquites, tamales, aguas frescas y servicio para fiestas en Long Island, NY. Precios y detalles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-strip">Sitio de demostración</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="20" fill="#3B1350"/>
+        <ellipse cx="20" cy="20" rx="14" ry="14" fill="#FF2E7E"/>
+        <ellipse cx="20" cy="20" rx="9.3" ry="9.3" fill="#C7E62E"/>
+        <ellipse cx="20" cy="20" rx="4.6" ry="4.6" fill="#FFF7E8"/>
+      </svg>
+      <span class="brand-text">
+        <b>Antojitos La Plaza</b>
+        <i>Camión de antojitos</i>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" aria-current="page">Servicios</a>
+          <ul class="nav-sub">
+            <li><a href="services.html">Ver todos los servicios</a></li>
+            <li><a href="services.html#pastor">Tacos al pastor</a></li>
+            <li><a href="services.html#quesabirria">Quesabirria</a></li>
+            <li><a href="services.html#esquites">Esquites y elotes</a></li>
+            <li><a href="services.html#tamales">Tamales y atole</a></li>
+            <li><a href="services.html#aguas">Aguas frescas</a></li>
+            <li><a href="services.html#fiestas">Servicio para fiestas</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550133">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+      (516) 555-0133
+    </a>
+
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li class="mob-has-sub">
+      <button class="mob-sub-toggle" type="button" aria-expanded="true" aria-controls="mob-sub-servicios">
+        Servicios
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="mob-sub is-open" id="mob-sub-servicios">
+        <li><a href="services.html" aria-current="page">Ver todos los servicios</a></li>
+        <li><a href="services.html#pastor">Tacos al pastor</a></li>
+        <li><a href="services.html#quesabirria">Quesabirria</a></li>
+        <li><a href="services.html#esquites">Esquites y elotes</a></li>
+        <li><a href="services.html#tamales">Tamales y atole</a></li>
+        <li><a href="services.html#aguas">Aguas frescas</a></li>
+        <li><a href="services.html#fiestas">Servicio para fiestas</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Trabajos</a></li>
+    <li><a href="about.html">Nosotros</a></li>
+    <li><a href="contact.html">Contacto</a></li>
+  </ul>
+  <a class="mob-tel" href="tel:+15165550133">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+    Llamar: (516) 555-0133
+  </a>
+</div>
+
+<main>
+
+  <section class="page-intro on-cream">
+    <div class="wrap">
+      <h1 class="reveal reveal-1">Seis cosas. Todas hechas al momento.</h1>
+      <p class="sub reveal reveal-2">Menú corto a propósito, para que la fila avance y nada se quede esperando bajo una lámpara caliente. Esto es lo que sale de la ventanilla todos los días — y lo que armamos cuando el camión va a su fiesta.</p>
+    </div>
+  </section>
+
+  <section class="on-paper" style="padding-top:44px">
+    <div class="wrap">
+      <div class="menu-rows">
+
+        <article class="menu-row" id="pastor">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D30E63" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><ellipse cx="12" cy="8" rx="4" ry="2.2"/><ellipse cx="12" cy="13" rx="5.5" ry="2.4"/><ellipse cx="12" cy="18" rx="6.5" ry="2.4"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Tacos al pastor</h3>
+                <span class="price">Desde $3.50 por taco</span>
+              </div>
+              <p>Carne marinada, cortada del trompo al momento y servida en tortilla de maíz con piña, cebolla y cilantro. Pida la salsa aparte si la prefiere suave.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Cada día que el camión está en la calle
+            </span>
+            <span class="tags"><span class="tag tag--on-light">Del trompo</span><span class="tag tag--pink">El más pedido</span></span>
+          </div>
+        </article>
+
+        <article class="menu-row" id="quesabirria">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D30E63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14l-1.4 7.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 11Z"/><path d="M9 4c0 1-1.2 1-1.2 2S9 7 9 8M13.5 4c0 1-1.2 1-1.2 2s1.2 1 1.2 2"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Quesabirria con consomé</h3>
+                <span class="price">Desde $12 el platillo</span>
+              </div>
+              <p>Tortilla pasada por la grasa de la birria, queso derretido por dentro y su vasito de consomé para remojar. Se sirve caliente — no le dé tiempo de enfriarse.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Cada día que el camión está en la calle
+            </span>
+            <span class="tags"><span class="tag tag--on-light">Res</span></span>
+          </div>
+        </article>
+
+        <article class="menu-row" id="esquites">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D30E63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12l-1.6 10.5a1.6 1.6 0 0 1-1.6 1.5H9.2a1.6 1.6 0 0 1-1.6-1.5L6 9Z"/><path d="M6 9c0-3 2.7-5.5 6-5.5S18 6 18 9"/><path d="M9 12v6M12 12v6M15 12v6"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Esquites y elotes</h3>
+                <span class="price">Desde $5 el vaso</span>
+              </div>
+              <p>Elote desgranado en vaso con mayonesa, queso, limón y chile en polvo. También se lo damos en la mazorca si prefiere comerlo caminando.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Cada día que el camión está en la calle
+            </span>
+            <span class="tags"><span class="tag tag--on-light">Vegetariano</span></span>
+          </div>
+        </article>
+
+        <article class="menu-row" id="tamales">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D30E63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12c0-3 2-5.5 7.5-5.5S19.5 9 19.5 12s-2 5.5-7.5 5.5S4.5 15 4.5 12Z"/><path d="M9 7.2v9.6M15 7.2v9.6"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Tamales y atole</h3>
+                <span class="price">Desde $3 el tamal</span>
+              </div>
+              <p>Tamales de rajas con queso, de puerco en salsa roja y de dulce, con su atole caliente. Salen desde temprano y se acaban rápido.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Sábados y domingos, mientras haya
+            </span>
+            <span class="tags"><span class="tag tag--on-light">Fin de semana</span></span>
+          </div>
+        </article>
+
+        <article class="menu-row" id="aguas">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D30E63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10l-1.2 10.3a2 2 0 0 1-2 1.7h-3.6a2 2 0 0 1-2-1.7L7 8Z"/><path d="M9 11.5c.6.6 1.4.6 2 0s1.4-.6 2 0 1.4.6 2 0"/><path d="M15 8V3.5M13.3 3.5h3.4"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Aguas frescas del día</h3>
+                <span class="price">Desde $4 el vaso</span>
+              </div>
+              <p>Horchata, jamaica y la fruta que se vea mejor esa mañana. Se preparan temprano, sin polvos ni concentrados.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Cada día que el camión está en la calle
+            </span>
+            <span class="tags"><span class="tag tag--on-light">Recién hechas</span></span>
+          </div>
+        </article>
+
+        <article class="menu-row menu-row--feature" id="fiestas">
+          <div class="menu-row-top">
+            <div class="menu-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C7E62E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16l9-10 9 10"/><path d="M6.5 16V12M17.5 16V12M12 16V9"/><path d="M3 16h18"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="menu-row-head">
+                <h3>Servicio para fiestas</h3>
+                <span class="price">Desde $1,100 por dos horas</span>
+              </div>
+              <p>Bautizos, quinceañeras, cumpleaños y comidas de obra. Llevamos el camión, el trompo y el personal, con un menú recortado para que todos coman rápido.</p>
+            </div>
+          </div>
+          <div class="menu-row-meta">
+            <span class="when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+              Aparte su fecha con una llamada
+            </span>
+            <span class="tags"><span class="tag tag--on-dark">Eventos</span><span class="tag tag--on-dark">A domicilio</span></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="on-lime">
+    <div class="wrap">
+      <p class="prose" style="font-size:1.1rem;font-weight:600;max-width:70ch">Los tacos empiezan en <strong>$3.50</strong> y los platillos en <strong>$12</strong>. El servicio para fiestas empieza en <strong>$1,100</strong> por dos horas de servicio. Llámenos con su número de invitados y le damos el precio exacto — sin sorpresas al final.</p>
+    </div>
+  </section>
+
+  <section class="on-pink">
+    <div class="wrap cta-close">
+      <h2>¿Cuadramos el menú?</h2>
+      <p>Llame y arme su pedido, para la calle o para su próxima fiesta.</p>
+      <div class="btns">
+        <a class="btn btn--dark" href="tel:+15165550133">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+          Llamar: (516) 555-0133
+        </a>
+        <a class="btn btn--outline-light" href="work.html">Ver fiestas que hemos armado</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Antojitos La Plaza</b>
+        Camión de antojitos mexicanos en Long Island, NY.
+      </div>
+      <nav aria-label="Pie de página">
+        <ul class="foot-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html" aria-current="page">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="tel:+15165550133">(516) 555-0133</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disclose">Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+    <p class="legal">Antojitos La Plaza es un negocio ficticio mostrado como demostración. Nada en esta página es una oferta real y el número de teléfono no está en servicio.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Ubicación de hoy<b>(516) 555-0133</b></div>
+  <a href="tel:+15165550133">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c.7 0 1.3.4 1.6 1l1 2a2 2 0 0 1-.4 2.3L8 10c1 2.4 2.6 4 5 5l1.2-1.2a2 2 0 0 1 2.3-.4l2 1c.6.3 1 .9 1 1.6v1.7c0 1.2-1 2.1-2.2 2C10 19.2 4.8 14 3.8 6.7c-.1-1.2.8-2.2 2-2.2H7Z"/></svg>
+    Llamar
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger = document.querySelector('.hamburger');
+  var panel = document.getElementById('mobile-nav');
+  function closePanel(){ burger.setAttribute('aria-expanded','false'); panel.classList.remove('is-open'); }
+  function openPanel(){ burger.setAttribute('aria-expanded','true'); panel.classList.add('is-open'); }
+  if(burger && panel){
+    burger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      open ? closePanel() : openPanel();
+    });
+    document.addEventListener('click', function(e){
+      if(panel.classList.contains('is-open') && !panel.contains(e.target) && e.target !== burger){ closePanel(); }
+    });
+  }
+  var subToggles = document.querySelectorAll('.mob-sub-toggle');
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var list = document.getElementById(btn.getAttribute('aria-controls'));
+      if(list){ list.classList.toggle('is-open', !expanded); }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closePanel();
+      subToggles.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var list = document.getElementById(btn.getAttribute('aria-controls'));
+        if(list) list.classList.remove('is-open');
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

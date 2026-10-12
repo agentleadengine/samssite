@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Four Seasons Climate Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M14 3 L14 25" stroke="#D4531E"/>
+        <path d="M14 3 L10 8 M14 3 L18 8" stroke="#D4531E"/>
+        <path d="M14 25 L10 20 M14 25 L18 20" stroke="#2B7A9E"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#1A1A1E"/>
+      </svg>
+      Four Seasons Climate Co.
+    </a>
+    <div class="header-phone"><a href="tel:6315550125">(631) 555-0125</a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-nav" aria-label="Primary">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="sub-trigger">Services
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5 L6 8 L9 5"/></svg>
+          </a>
+          <div class="sub-menu">
+            <a href="services.html#ac-installation">AC Installation</a>
+            <a href="services.html#furnace-repair">Furnace Repair</a>
+            <a href="services.html#ductless-mini-splits">Ductless Mini-Splits</a>
+            <a href="services.html#seasonal-maintenance">Seasonal Maintenance Plans</a>
+            <a href="services.html#air-quality">Air Quality and Filtration</a>
+          </div>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="section-title">Call or text us</h1>
+      <a href="tel:6315550125" class="contact-phone-big">(631) 555-0125</a>
+      <p style="margin:0 auto 0.5rem;color:var(--ink-soft);">We answer fast. If it is an emergency — no heat in January, no AC in a heat wave — say so and we will prioritize your call.</p>
+      <p><a href="sms:6315550125" class="btn btn-cool">Text us</a></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:1rem;">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Hours</h2>
+          <ul class="hours-table">
+            <li><span>Monday – Friday</span><span>7:00 AM – 7:00 PM</span></li>
+            <li><span>Saturday</span><span>8:00 AM – 5:00 PM</span></li>
+            <li><span>Sunday</span><span>Emergency calls only</span></li>
+          </ul>
+
+          <h2 style="font-size:1.3rem;margin-top:2rem;margin-bottom:0.8rem;">Service area</h2>
+          <p style="color:var(--ink-soft);">Long Island, NY. Call to confirm we cover your town.</p>
+        </div>
+
+        <div class="contact-form">
+          <h3>Tell us what is going on</h3>
+          <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:1.2rem;">Sample form — this is a demo site, so the form does not send anything. Call or text (631) 555-0125 to reach us.</p>
+
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Jane Smith">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" placeholder="Your phone number">
+          </div>
+          <div class="form-field">
+            <label for="service">What do you need?</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option>AC installation</option>
+              <option>Furnace repair</option>
+              <option>Ductless mini-splits</option>
+              <option>Seasonal maintenance</option>
+              <option>Air quality and filtration</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Describe the problem</label>
+            <textarea id="message" rows="4" placeholder="Tell us what is happening — what system, what symptoms, how long it has been going on."></textarea>
+          </div>
+          <button type="button" class="btn btn-primary">Send message</button>
+          <p class="form-caption">Sample form — this is a demonstration website.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--cream);padding-top:1rem;">
+    <div class="container">
+      <h2 class="section-title" style="font-size:1.6rem;text-align:center;">Questions we hear a lot</h2>
+      <div class="faq-section">
+        <div class="faq-item">
+          <h3>How fast can you come out?</h3>
+          <p>For heating emergencies in winter and AC failures in a heat wave, we aim for same-day. For installations and non-emergency repairs, usually within 1-2 days. Call and we will give you a real time estimate.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Should I repair or replace my old AC?</h3>
+          <p>If your AC is over 12-15 years old and needs a major repair, replacement usually makes more sense — new systems are significantly more efficient and you avoid paying for a fix that buys you one more season. We will give you both numbers and let you decide.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer maintenance plans?</h3>
+          <p>Yes. Our seasonal plan includes a spring cooling check and a fall heating check, priority scheduling, and discounted repair rates. It pays for itself if you ever need a mid-season visit. See the <a href="services.html#seasonal-maintenance" style="color:var(--ember);font-weight:600;">maintenance plan page</a> for details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <h2>Call now — (631) 555-0125</h2>
+    <p>The fastest way to get help is a phone call. We will figure out what you need and schedule the visit.</p>
+    <a href="tel:6315550125" class="btn">Call now</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">Four Seasons Climate Co.</div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="credit">Demo website built by Samuel Ochoa — samuelochoa.com/websites</p>
+      <p class="disclaimer">Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-call-bar">
+  <a href="tel:6315550125">Call (631) 555-0125</a>
+</div>
+
+<script>
+  var toggle = document.querySelector('.nav-toggle');
+  var navList = document.getElementById('nav-list');
+  toggle.addEventListener('click', function() {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', !expanded);
+    navList.classList.toggle('open', !expanded);
+  });
+  navList.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && !e.target.parentElement.classList.contains('has-sub')) {
+      toggle.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('open');
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      toggle.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

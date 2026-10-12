@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios — Construcción Buenavista | Sitio de demostración</title>
+<meta name="description" content="Los seis servicios de Construcción Buenavista: cocinas, baños, ampliaciones y sótanos, concreto, techos y drywall. Qué incluye cada uno y cuándo lo necesita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-menu" viewBox="0 0 40 40"><path d="M6 12h28M6 20h28M6 28h28"/></symbol>
+<symbol id="i-close" viewBox="0 0 40 40"><path d="M10 10l20 20M30 10 10 30"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 40 40"><path d="M9 15l11 11 11-11"/></symbol>
+<symbol id="i-phone" viewBox="0 0 40 40"><path d="M8 7c0-1.1.9-2 2-2h4.2c.9 0 1.7.6 1.9 1.5l1.3 5.2c.2.8-.1 1.6-.7 2.1l-3 2.4c2.2 4.6 6 8.4 10.6 10.6l2.4-3c.5-.6 1.3-.9 2.1-.7l5.2 1.3c.9.2 1.5 1 1.5 1.9V30c0 1.1-.9 2-2 2C17.6 32 8 22.4 8 10V7Z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 40 40"><path d="M6 20h26M23 10l9 10-9 10"/></symbol>
+<symbol id="i-cocina" viewBox="0 0 40 40"><rect x="6" y="16" width="28" height="18" rx="1"/><path d="M6 16V9h28v7"/><line x1="20" y1="16" x2="20" y2="34"/><circle cx="13" cy="25" r="1.6" fill="currentColor" stroke="none"/><circle cx="27" cy="25" r="1.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-bano" viewBox="0 0 40 40"><path d="M9 9h9a6 6 0 0 1 6 6"/><circle cx="24" cy="15" r="3"/><path d="M17 24v3M23 24v3M29 22v3M14 30v2M20 32v2M26 30v2"/></symbol>
+<symbol id="i-ampliacion" viewBox="0 0 40 40"><path d="M6 20 16 12l10 8"/><rect x="9" y="20" width="14" height="14"/><path d="M23 26h9v8h-9z"/><path d="M23 30h9"/></symbol>
+<symbol id="i-concreto" viewBox="0 0 40 40"><rect x="6" y="14" width="28" height="18"/><path d="M6 23h28M15 14v18M25 14v18"/><path d="M28 8l4 4-9 9-4-1 1-4 8-8z"/></symbol>
+<symbol id="i-techo" viewBox="0 0 40 40"><path d="M4 20 20 8l16 12"/><path d="M9 20v3M14 20v3M19 20v3M24 20v3M29 20v3"/><path d="M6 26h28v3H6z"/></symbol>
+<symbol id="i-drywall" viewBox="0 0 40 40"><rect x="6" y="10" width="20" height="22"/><path d="M27 12l6-4M33 8a2 2 0 1 1 3 3l-7 7-4-1 1-4 7-7z"/></symbol>
+</defs>
+</svg>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="demo-ribbon">Sitio de demostración</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <span class="mark"><b>CB</b></span>
+      <span class="word">
+        <span class="nm">Construcción Buenavista</span>
+        <span class="sub">Remodelación y obra</span>
+      </span>
+    </a>
+    <div class="hdr-actions">
+      <a class="hdr-tel" href="tel:+15165550105">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span>(516) 555-0105</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="primary" id="primary-nav" aria-label="Principal">
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-sub">
+          <div class="sub-row">
+            <a href="services.html" class="current" aria-current="page">Servicios</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub" aria-label="Mostrar servicios">
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </button>
+          </div>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#cocinas">Remodelación de cocinas</a></li>
+            <li><a href="services.html#banos">Baños completos</a></li>
+            <li><a href="services.html#ampliaciones">Ampliaciones y sótanos</a></li>
+            <li><a href="services.html#concreto">Concreto y aceras</a></li>
+            <li><a href="services.html#techos">Techos y canaletas</a></li>
+            <li><a href="services.html#drywall">Drywall, molduras y pintura</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <div class="chalk" aria-hidden="true">
+        <svg viewBox="0 0 200 34"><line class="chalk-line" x1="2" y1="30" x2="150" y2="6"/><circle class="chalk-peg" cx="2" cy="30" r="5" fill="#b97300"/><circle class="chalk-peg" cx="150" cy="6" r="5" fill="#b97300"/></svg>
+      </div>
+      <div class="sec-head" style="margin-bottom:0">
+        <h1 style="font-size:clamp(2.1rem,7vw,3.6rem);color:var(--navy)">Servicios de construcción y remodelación</h1>
+        <p>Trabajamos casa por casa. Si el proyecto no es para nosotros, se lo decimos de una vez y le recomendamos a quién llamar. Cada servicio incluye el presupuesto por escrito antes de empezar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="serv-list">
+
+        <article class="serv-panel" id="cocinas">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-cocina"></use></svg></span>
+            <span class="tag">3 a 5 semanas típicas</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Remodelación de cocinas</h3>
+            <p>Gabinetes nuevos, tope de cuarzo o granito, plomería y tomacorrientes movidos donde los necesite, piso y pintura. Coordinamos al plomero y al electricista bajo un solo contrato, para que usted no ande llamando a cinco personas.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando la cocina ya no rinde para cómo cocina hoy, falta espacio de guardado, el tope está dañado o quiere abrir la cocina hacia el comedor.</p>
+          </div>
+        </article>
+
+        <article class="serv-panel alt" id="banos">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-bano"></use></svg></span>
+            <span class="tag">2 a 3 semanas típicas</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Baños completos</h3>
+            <p>Cambio de bañera a ducha, azulejo de piso a techo, mueble de lavamanos, extractor y ventilación nueva. Impermeabilizamos bien detrás del azulejo, que es donde después aparecen los problemas.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando el baño tiene humedad, azulejo viejo o simplemente ya no es práctico para quien lo usa a diario.</p>
+          </div>
+        </article>
+
+        <article class="serv-panel" id="ampliaciones">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-ampliacion"></use></svg></span>
+            <span class="tag">Con permisos incluidos</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Ampliaciones y sótanos</h3>
+            <p>Cuarto extra, family room o sótano terminado. Sacamos los permisos con el municipio y dejamos la estructura, el aislamiento y el drywall listos para inspección.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando la casa se quedó chica y mudarse no es la opción, o el sótano solo se usa para guardar cosas.</p>
+          </div>
+        </article>
+
+        <article class="serv-panel alt" id="concreto">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-concreto"></use></svg></span>
+            <span class="tag">Trabajo exterior</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Concreto y aceras</h3>
+            <p>Entradas de carro, aceras, escalones y patios. Preparamos la base como se debe, ponemos malla y dejamos las juntas de control para que no se raje en el primer invierno.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando el concreto actual ya tiene grietas grandes, se hunde en una esquina o necesita una entrada nueva desde cero.</p>
+          </div>
+        </article>
+
+        <article class="serv-panel" id="techos">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-techo"></use></svg></span>
+            <span class="tag">Revisión sin costo</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Techos y canaletas</h3>
+            <p>Techo de shingle nuevo, reparación de goteras y canaletas con protector de hojas. Revisamos el plywood antes de cubrir, porque tapar madera podrida no arregla nada.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando ve manchas en el cielorraso, faltan tejas después de una tormenta o las canaletas se desbordan cada vez que llueve.</p>
+          </div>
+        </article>
+
+        <article class="serv-panel alt" id="drywall">
+          <div class="serv-swatch">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-drywall"></use></svg></span>
+            <span class="tag">Ideal para arreglos rápidos</span>
+          </div>
+          <div class="serv-copy">
+            <h3>Drywall, molduras y pintura</h3>
+            <p>Paredes nuevas, reparación de huecos y grietas, molduras y pintura interior. Cubrimos pisos y muebles y le devolvemos el cuarto limpio al terminar el día.</p>
+            <p class="when"><b>Cuándo lo necesita:</b> cuando necesita arreglar algo puntual (una grieta, un hueco, una pared) sin abrir un proyecto grande.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>No ve su proyecto en la lista</h2>
+      <p>Descríbanoslo por teléfono. Si no es nuestro oficio, se lo decimos de una vez y le recomendamos a quién llamar.</p>
+      <div class="hero-cta">
+        <a class="btn btn-navy" href="tel:+15165550105">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          <span>Llamar al (516) 555-0105</span>
+        </a>
+        <a class="btn btn-line" href="contact.html"><span>Escribir el formulario</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <span class="mark"><b>CB</b></span>
+        <b class="nm">Construcción Buenavista</b>
+      </a>
+      <nav aria-label="Pie de página">
+        <ul class="foot-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="tel:+15165550105">(516) 555-0105</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="aviso">
+      Construcción Buenavista &middot; Long Island, NY &middot; <a href="tel:+15165550105">(516) 555-0105</a><br>
+      <strong>Sitio de demostración creado por Samuel Ochoa &mdash; <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></strong><br>
+      Negocio ficticio mostrado como demostración. Nada de lo que aparece aquí representa a una empresa real, a precios reales ni a clientes reales.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+15165550105">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Llamar ahora<span class="s">(516) 555-0105</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var header = document.querySelector('header.site');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); hamburger.setAttribute('aria-label','Abrir menú'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      hamburger.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

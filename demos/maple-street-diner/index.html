@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--
+  DIRECTION CONTRACT
+  THESIS: Eggs done any style, a cup that never runs dry, and pie in the case by the register —
+    the only pitch is a stool with your name on it.
+  OWN-WORLD: A chrome-trimmed lunch counter under a cherry-red awning. Cherry is Committed across
+    full-bleed fields (the hero, the CTA, the specials band); butter-cream carries the paper — menu
+    stock, card surfaces, page ground; brushed chrome runs the hardware — the double-rule sign frame,
+    the checkerboard trim, the dark-steel closing bands. The marks that repeat: a chrome-framed cream
+    placemat for anything boxed, a checkerboard strip top and bottom, dot-leader menu rows with
+    prices set in cherry, and a bold rounded block-letter face for anything that reads like it's
+    painted on the window.
+  STORY: The grill goes on before six. The pot gets dumped and remade every half hour whether it's
+    empty or not. The blue plate special goes up on the board at eleven and it's gone when it's gone.
+  FIRST VIEWPORT: Full-bleed cherry field, a chrome counter-rail scene beneath the fold — stools, a
+    steaming mug, a plate of eggs, a pie dome — one headline in block-letter signage type, a call CTA
+    and a text CTA down into the menu.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maple Street Diner — Breakfast All Day &amp; Blue Plate Specials, Long Island NY</title>
+<meta name="description" content="Maple Street Diner: breakfast served all day, blue plate specials on the board, and a full pie case. Counter and booths, call-ahead takeout, Long Island, NY. Call (516) 555-0102. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">Demo Site</div>
+
+<div class="utility"><div class="wrap"><span>Long Island, NY &middot; Breakfast Served All Day</span></div></div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Maple Street Diner, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="chromeRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="var(--chrome-1)"/>
+            <stop offset=".5" stop-color="var(--chrome-3)"/>
+            <stop offset="1" stop-color="var(--chrome-4)"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="var(--cherry)"/>
+        <circle cx="20" cy="20" r="18" fill="none" stroke="url(#chromeRing)" stroke-width="2.2"/>
+        <path d="M13 17h11a2 2 0 0 1 2 2c0 3-2.2 5-5 5h-5c-2.8 0-5-2-5-5a2 2 0 0 1 2-2z" fill="var(--cream)"/>
+        <path d="M25.5 19c2.3 0 2.3 4-.3 4.4" fill="none" stroke="var(--cream)" stroke-width="1.6" stroke-linecap="round"/>
+        <g stroke="var(--cream)" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+          <path d="M15.5 14.5c.6-1.4-.5-2 0-3.4"/>
+          <path d="M18.5 14.5c.6-1.4-.5-2 0-3.4"/>
+        </g>
+        <g stroke="var(--cream)" stroke-width="1" stroke-linecap="round">
+          <path d="M28 8.6v1.6M28 12v1.6M25.4 11h1.6M29 11h1.6"/>
+        </g>
+      </svg>
+      <span class="brand">Maple Street<small>Diner &amp; Counter</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550102">(516) 555-0102</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Primary">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menu</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Show menu categories">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#breakfast">Breakfast</a></li>
+          <li><a href="services.html#griddle">The Griddle &amp; Counter</a></li>
+          <li><a href="services.html#dinner-plates">Dinner Plates</a></li>
+          <li><a href="services.html#specials">Blue Plate Specials</a></li>
+          <li><a href="services.html#sides-fountain">Sides &amp; Fountain</a></li>
+          <li><a href="services.html#pie-case">Pie Case</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Off the Griddle</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550102">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Call (516) 555-0102
+    </a>
+  </nav>
+</header>
+<div class="checker"></div>
+
+<main id="main">
+
+  <section class="hero band-cherry on-cherry" id="top">
+    <div class="wrap hgrid">
+      <div class="reveal">
+        <h1>Eggs any style.<br>Coffee that never runs dry.</h1>
+        <p class="lead">A counter and a dozen booths on Long Island, NY. Short-order cooking, a blue plate special chalked up at eleven, and pie in the case by the register. Call ahead and we'll have it bagged and hot when you walk in.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550102">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Call (516) 555-0102
+          </a>
+          <a class="btn-line on-dark" href="services.html">
+            See the menu
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal reveal-2">
+        <div class="rail-glint" aria-hidden="true"></div>
+        <svg viewBox="0 0 460 340" role="img" aria-label="Illustration of a chrome diner counter: three stools with cherry-red vinyl seats, a mug of coffee with steam rising, a plate of two eggs and toast, and a pie under a chrome dome">
+          <defs>
+            <linearGradient id="counterChrome" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--chrome-1)"/>
+              <stop offset=".32" stop-color="var(--chrome-2)"/>
+              <stop offset=".52" stop-color="var(--chrome-4)"/>
+              <stop offset="1" stop-color="var(--chrome-2)"/>
+            </linearGradient>
+            <radialGradient id="heroGlow" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="var(--cream)" stop-opacity=".22"/>
+              <stop offset="100%" stop-color="var(--cream)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <circle cx="250" cy="140" r="150" fill="url(#heroGlow)"/>
+
+          <!-- counter -->
+          <rect x="0" y="206" width="460" height="134" fill="url(#counterChrome)"/>
+          <rect x="0" y="202" width="460" height="6" fill="var(--cream)"/>
+
+          <!-- stools -->
+          <g>
+            <rect x="81" y="212" width="8" height="128" fill="var(--chrome-4)"/>
+            <ellipse cx="85" cy="200" rx="32" ry="12" fill="var(--cherry-deep)"/>
+            <ellipse cx="85" cy="195" rx="32" ry="12" fill="var(--cherry)"/>
+          </g>
+          <g>
+            <rect x="226" y="212" width="8" height="128" fill="var(--chrome-4)"/>
+            <ellipse cx="230" cy="200" rx="32" ry="12" fill="var(--cherry-deep)"/>
+            <ellipse cx="230" cy="195" rx="32" ry="12" fill="var(--cherry)"/>
+          </g>
+          <g>
+            <rect x="371" y="212" width="8" height="128" fill="var(--chrome-4)"/>
+            <ellipse cx="375" cy="200" rx="32" ry="12" fill="var(--cherry-deep)"/>
+            <ellipse cx="375" cy="195" rx="32" ry="12" fill="var(--cherry)"/>
+          </g>
+
+          <!-- eggs plate -->
+          <g>
+            <ellipse cx="150" cy="204" rx="56" ry="13" fill="var(--cherry-deep)" opacity=".3"/>
+            <ellipse cx="150" cy="192" rx="56" ry="15" fill="var(--cream)"/>
+            <ellipse cx="150" cy="188" rx="45" ry="11" fill="var(--cream-2)"/>
+            <path d="M104 186 L124 168 L128 186 Z" fill="var(--cream-2)" stroke="var(--chrome-3)" stroke-width="1"/>
+            <ellipse cx="132" cy="180" rx="17" ry="9" fill="var(--paper)"/>
+            <circle cx="132" cy="178" r="5" fill="#F2B231"/>
+            <ellipse cx="172" cy="180" rx="17" ry="9" fill="var(--paper)"/>
+            <circle cx="172" cy="178" r="5" fill="#F2B231"/>
+          </g>
+
+          <!-- mug -->
+          <g>
+            <ellipse cx="250" cy="204" rx="38" ry="9" fill="var(--cherry-deep)" opacity=".3"/>
+            <path d="M212 116 h72 l-4 82 a10 10 0 0 1-10 9 h-44 a10 10 0 0 1-10-9 z" fill="var(--paper)"/>
+            <rect x="208" y="108" width="80" height="12" rx="6" fill="var(--cream-2)"/>
+            <ellipse cx="248" cy="120" rx="34" ry="6" fill="#4B2A18"/>
+            <path d="M286 130c22 2 22 32 0 38" fill="none" stroke="var(--paper)" stroke-width="9" stroke-linecap="round"/>
+            <rect x="220" y="150" width="56" height="9" rx="4" fill="var(--cherry)"/>
+            <g class="steam" stroke="var(--cream)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".75">
+              <path d="M234 108c-7-13 7-17 1-31"/>
+              <path d="M248 108c-7-14 7-18 1-32"/>
+              <path d="M262 108c-7-13 7-17 1-31"/>
+            </g>
+          </g>
+
+          <!-- pie dome -->
+          <g>
+            <ellipse cx="365" cy="206" rx="44" ry="9" fill="var(--chrome-5)" opacity=".35"/>
+            <rect x="341" y="196" width="48" height="12" rx="3" fill="var(--chrome-4)"/>
+            <ellipse cx="365" cy="196" rx="46" ry="12" fill="var(--cream-2)"/>
+            <path d="M321 196 a44 30 0 0 1 88 0 a44 82 0 0 1-88 0z" fill="var(--chrome-1)" opacity=".55" stroke="var(--chrome-3)" stroke-width="1.4"/>
+            <path d="M330 196 a35 24 0 0 1 70 0" fill="none" stroke="var(--cherry-bright)" stroke-width="4" opacity=".55"/>
+            <rect x="357" y="112" width="16" height="10" rx="5" fill="var(--chrome-3)"/>
+            <circle cx="365" cy="108" r="5" fill="var(--chrome-4)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight band-steel on-steel">
+    <div class="wrap quiet-grid">
+      <div class="quiet-art">
+        <svg viewBox="0 0 480 320" role="img" aria-label="Illustration of a chrome order wheel with ticket slips clipped to it, and a coffee pot pouring into a mug beside it">
+          <defs>
+            <radialGradient id="wheelDisc" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="var(--chrome-2)"/>
+              <stop offset="60%" stop-color="var(--chrome-3)"/>
+              <stop offset="100%" stop-color="var(--chrome-4)"/>
+            </radialGradient>
+            <radialGradient id="potGlow" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="var(--cherry-glow)" stop-opacity=".28"/>
+              <stop offset="100%" stop-color="var(--cherry-glow)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <ellipse cx="150" cy="270" rx="60" ry="10" fill="#101416" opacity=".5"/>
+          <rect x="146" y="140" width="8" height="130" fill="var(--chrome-3)"/>
+          <circle cx="150" cy="118" r="60" fill="url(#wheelDisc)" stroke="var(--chrome-2)" stroke-width="2.5"/>
+          <circle cx="150" cy="118" r="45" fill="none" stroke="var(--chrome-1)" stroke-width="1.3" stroke-dasharray="3 7" opacity=".5"/>
+          <circle cx="150" cy="118" r="8" fill="var(--chrome-5)"/>
+
+          <g transform="rotate(-58 150 118)">
+            <g transform="translate(150 32)">
+              <rect x="-17" y="-11" width="34" height="23" rx="2" fill="var(--paper)" stroke="var(--chrome-3)" stroke-width="1"/>
+              <line x1="-11" y1="-3" x2="11" y2="-3" stroke="var(--sand)" stroke-width="1.4"/>
+              <line x1="-11" y1="3" x2="6" y2="3" stroke="var(--sand)" stroke-width="1.4"/>
+            </g>
+          </g>
+          <g transform="rotate(-15 150 118)">
+            <g transform="translate(150 32)">
+              <rect x="-17" y="-11" width="34" height="23" rx="2" fill="var(--paper)" stroke="var(--chrome-3)" stroke-width="1"/>
+              <line x1="-11" y1="-3" x2="11" y2="-3" stroke="var(--sand)" stroke-width="1.4"/>
+              <line x1="-11" y1="3" x2="6" y2="3" stroke="var(--sand)" stroke-width="1.4"/>
+            </g>
+          </g>
+          <g transform="rotate(28 150 118)">
+            <g transform="translate(150 32)">
+              <rect x="-17" y="-11" width="34" height="23" rx="2" fill="var(--paper)" stroke="var(--chrome-3)" stroke-width="1"/>
+              <line x1="-11" y1="-3" x2="11" y2="-3" stroke="var(--sand)" stroke-width="1.4"/>
+              <line x1="-11" y1="3" x2="6" y2="3" stroke="var(--sand)" stroke-width="1.4"/>
+            </g>
+          </g>
+          <g transform="rotate(68 150 118)">
+            <g transform="translate(150 32)">
+              <rect x="-17" y="-11" width="34" height="23" rx="2" fill="var(--paper)" stroke="var(--chrome-3)" stroke-width="1"/>
+              <line x1="-11" y1="-3" x2="11" y2="-3" stroke="var(--sand)" stroke-width="1.4"/>
+              <line x1="-11" y1="3" x2="6" y2="3" stroke="var(--sand)" stroke-width="1.4"/>
+            </g>
+          </g>
+
+          <circle cx="365" cy="150" r="72" fill="url(#potGlow)"/>
+
+          <!-- coffee pot -->
+          <path d="M330 100 h50 l-6 78 a8 8 0 0 1-8 7 h-22 a8 8 0 0 1-8-7 z" fill="var(--chrome-1)" stroke="var(--chrome-3)" stroke-width="1.6"/>
+          <path d="M334 130 h42 l-4 46 h-34 z" fill="#6B3B1E"/>
+          <path d="M378 112c16 1 16 26 0 30" fill="none" stroke="var(--chrome-4)" stroke-width="7" stroke-linecap="round"/>
+          <path d="M330 108 l-14-6" stroke="var(--chrome-4)" stroke-width="5" stroke-linecap="round"/>
+          <rect x="338" y="92" width="34" height="10" rx="4" fill="var(--chrome-3)"/>
+
+          <path d="M316 104c-10 14-14 30-10 48" stroke="#8A4A22" stroke-width="3" fill="none" stroke-linecap="round" opacity=".85"/>
+
+          <!-- mug -->
+          <ellipse cx="298" cy="196" rx="26" ry="6" fill="#101416" opacity=".35"/>
+          <path d="M276 160 h44 l-3 34 a6 6 0 0 1-6 5 h-26 a6 6 0 0 1-6-5 z" fill="var(--paper)"/>
+          <ellipse cx="298" cy="160" rx="22" ry="4.5" fill="#4B2A18"/>
+          <path d="M320 166c11 1 11 17 0 20" fill="none" stroke="var(--paper)" stroke-width="5.5" stroke-linecap="round"/>
+          <g stroke="var(--cream-dim)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".7">
+            <path d="M290 158c-5-10 6-13 1-24"/>
+            <path d="M300 158c-5-11 6-14 1-25"/>
+          </g>
+        </svg>
+      </div>
+      <div class="quiet-copy">
+        <h2>Since six this morning</h2>
+        <p class="measure" style="color:var(--cream-dim)">The grill goes on before the sun's up. The pot gets dumped and made fresh every half hour whether it's empty or not, so nobody's drinking yesterday's coffee by accident. By eleven the blue plate special is chalked up on the board — one dish, cooked in a big batch, gone when it's gone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser band-cream">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What's on the counter</h2>
+      </div>
+      <div>
+        <a class="menu-row" href="services.html#breakfast">
+          <span class="name">Breakfast</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="menu-row" href="services.html#specials">
+          <span class="name">Blue Plate Specials</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="menu-row" href="services.html#pie-case">
+          <span class="name">Pie Case</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-paper">
+    <div class="wrap why-grid">
+      <div>
+        <h2>Three ways to eat</h2>
+        <p class="measure">Same kitchen, same prices, no service fee for calling ahead.</p>
+      </div>
+      <ul class="fact-list">
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M4 18h20M6 18v6M22 18v6M9 6h10v9H9z"/></svg>
+          </span>
+          <div>
+            <strong>At the counter</strong>
+            <span>Fourteen stools and a dozen booths. If the counter's full, give your name at the register and grab a coffee while you wait.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="7" y="4" width="14" height="20" rx="2.5"/><circle cx="14" cy="20.5" r="1"/><path d="M10 9h8M10 13h8"/></svg>
+          </span>
+          <div>
+            <strong>Call ahead, take it home</strong>
+            <span>Tell us what you want and roughly when you're coming. Most orders are ready in about fifteen minutes.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="11" width="22" height="11" rx="2"/><path d="M9 11V8h10v3M8 22v2M20 22v2"/></svg>
+          </span>
+          <div>
+            <strong>Trays for the office</strong>
+            <span>Sandwich platters, breakfast trays with a box of coffee, or a full pan of the day's special. Give us a day's notice and a head count.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="closing band-cherry on-cherry section-tight">
+    <div class="wrap closing-grid">
+      <div>
+        <h2>Hungry yet?</h2>
+        <p class="measure" style="color:var(--cream-soft)">Call ahead or just walk in — the counter's rarely full for long.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550102">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Call (516) 555-0102
+          </a>
+          <a class="btn-line on-dark" href="contact.html">
+            Hours &amp; directions
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <ul class="hours-mini">
+          <li><span class="d">Monday – Friday</span><span class="h">6:00am – 9:00pm</span></li>
+          <li><span class="d">Saturday</span><span class="h">6:00am – 10:00pm</span></li>
+          <li><span class="d">Sunday</span><span class="h">7:00am – 8:00pm</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="checker cherry-line"></div>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Maple Street Diner</div>
+        <p>Breakfast all day, blue plate specials, and the pie case on Long Island, NY.</p>
+        <p><a href="tel:+15165550102">(516) 555-0102</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="work.html">Off the Griddle</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15165550102">Call (516) 555-0102</a></li>
+          <li><a href="sms:+15165550102">Send a text</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550102">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Call (516) 555-0102
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

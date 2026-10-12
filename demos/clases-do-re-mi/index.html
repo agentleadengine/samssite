@@ -1,0 +1,416 @@
+<!--
+  THESIS: la música se aprende tocando canciones reales desde la primera
+  clase, no memorizando ejercicios sueltos primero y canciones "algún día."
+  OWN-WORLD: una sala de ensayo a la hora dorada — pentagrama y teclado
+  bajo una lámpara cálida contra el azul medianoche; el rojo marca la acción.
+  STORY: de una llamada corta a un horario fijo semanal, hasta la primera
+  canción tocada de memoria con las dos manos.
+  FIRST VIEWPORT: el marco dorado enmarca la escena del piano y el
+  pentagrama sobre azul medianoche; título y las dos llamadas a la acción
+  se ven completos, sin desplazar la página.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clases de Música Do Re Mi | Long Island, NY</title>
+<meta name="description" content="Clases privadas de piano, guitarra, canto, violín y batería en Long Island, NY. Para niños y adultos, en español o inglés. Primera clase para conocernos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500;600;700;800;900&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html" aria-label="Do Re Mi, Clases de Música — inicio">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#ffc23c"/>
+        <rect x="16.4" y="9" width="13.2" height="3" rx="1.2" fill="#e14328"/>
+        <rect x="16.4" y="10" width="2.2" height="16.5" fill="#161a3d"/>
+        <rect x="27.4" y="9" width="2.2" height="14.5" fill="#161a3d"/>
+        <ellipse cx="13" cy="26" rx="4.2" ry="3.2" transform="rotate(-18 13 26)" fill="#161a3d"/>
+        <ellipse cx="24" cy="23" rx="4.2" ry="3.2" transform="rotate(-18 24 23)" fill="#161a3d"/>
+      </svg>
+      <span class="brand-name">Do Re Mi<small>Clases de Música</small></span>
+    </a>
+
+    <nav class="site-nav" aria-label="Principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <ul class="nav-list" id="site-nav-list">
+        <li><a href="index.html" class="is-active" aria-current="page">Inicio</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Servicios
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5.5L8 11l5-5.5z"/></svg>
+          </button>
+          <ul class="sub-list" id="services-sub">
+            <li><a href="services.html#piano">Piano</a></li>
+            <li><a href="services.html#guitarra">Guitarra</a></li>
+            <li><a href="services.html#canto">Canto</a></li>
+            <li><a href="services.html#violin">Violín</a></li>
+            <li><a href="services.html#bateria">Batería</a></li>
+            <li><a href="services.html#teoria">Teoría y lectura</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Proyectos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn-call-header" href="tel:+15165550187">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      (516) 555-0187
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-frame grain">
+        <div class="hero-grid">
+
+          <div class="hero-scene rise r1">
+            <svg viewBox="0 0 520 460" role="img" aria-label="Ilustración de un pentagrama con notas sobre un teclado, iluminados por una lámpara cálida">
+              <defs>
+                <radialGradient id="heroGlow" cx="50%" cy="12%" r="62%">
+                  <stop offset="0%" stop-color="#ffc23c" stop-opacity=".55"/>
+                  <stop offset="55%" stop-color="#ffc23c" stop-opacity=".14"/>
+                  <stop offset="100%" stop-color="#ffc23c" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="pianoGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#2e3778"/>
+                  <stop offset="1" stop-color="#0c0e24"/>
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="260" cy="60" rx="300" ry="220" fill="url(#heroGlow)"/>
+
+              <g stroke="#3d4386" stroke-width="1.6">
+                <line x1="55" y1="140" x2="465" y2="140"/>
+                <line x1="55" y1="157" x2="465" y2="157"/>
+                <line x1="55" y1="174" x2="465" y2="174"/>
+                <line x1="55" y1="191" x2="465" y2="191"/>
+                <line x1="55" y1="208" x2="465" y2="208"/>
+              </g>
+
+              <g fill="#ffc23c">
+                <rect x="108" y="108" width="93.2" height="5" rx="2"/>
+                <ellipse cx="100" cy="191" rx="11" ry="7.5" transform="rotate(-18 100 191)"/>
+                <rect x="108" y="112" width="3.2" height="79"/>
+                <ellipse cx="190" cy="157" rx="11" ry="7.5" transform="rotate(-18 190 157)"/>
+                <rect x="198" y="112" width="3.2" height="45"/>
+              </g>
+              <g fill="#e14328">
+                <ellipse cx="300" cy="208" rx="11" ry="7.5" transform="rotate(-18 300 208)"/>
+                <rect x="308" y="150" width="3.2" height="58"/>
+                <path d="M311 150 q17 5 16 18 q-6 -9 -16 -8 z"/>
+                <ellipse cx="400" cy="157" rx="11" ry="7.5" transform="rotate(-18 400 157)"/>
+                <rect x="408" y="104" width="3.2" height="53"/>
+                <path d="M411 104 q17 5 16 18 q-6 -9 -16 -8 z"/>
+              </g>
+
+              <rect x="40" y="260" width="440" height="150" rx="14" fill="url(#pianoGrad)"/>
+              <g fill="#faf3e2">
+                <rect x="52" y="272" width="40" height="118" rx="4"/>
+                <rect x="94" y="272" width="40" height="118" rx="4"/>
+                <rect x="136" y="272" width="40" height="118" rx="4"/>
+                <rect x="178" y="272" width="40" height="118" rx="4"/>
+                <rect x="262" y="272" width="40" height="118" rx="4"/>
+                <rect x="304" y="272" width="40" height="118" rx="4"/>
+                <rect x="346" y="272" width="40" height="118" rx="4"/>
+                <rect x="388" y="272" width="40" height="118" rx="4"/>
+                <rect x="430" y="272" width="40" height="118" rx="4"/>
+              </g>
+              <rect x="220" y="272" width="40" height="118" rx="4" fill="#ffc23c"/>
+              <g fill="#161a3d">
+                <rect x="81" y="272" width="24" height="76" rx="3"/>
+                <rect x="123" y="272" width="24" height="76" rx="3"/>
+                <rect x="207" y="272" width="24" height="76" rx="3"/>
+                <rect x="249" y="272" width="24" height="76" rx="3"/>
+                <rect x="291" y="272" width="24" height="76" rx="3"/>
+                <rect x="375" y="272" width="24" height="76" rx="3"/>
+                <rect x="417" y="272" width="24" height="76" rx="3"/>
+              </g>
+
+              <line x1="260" y1="0" x2="260" y2="46" stroke="#ffc23c" stroke-width="3"/>
+              <path d="M240 46 L280 46 L272 72 L248 72 Z" fill="#ffc23c"/>
+              <rect x="246" y="70" width="28" height="4" rx="2" fill="#e14328"/>
+            </svg>
+          </div>
+
+          <div class="hero-copy">
+            <h1 class="rise r2">La música se aprende <em>tocando</em></h1>
+            <p class="rise r3">Clases privadas de piano, guitarra, canto, violín y batería en Long Island, para niños y adultos, en español o en inglés.</p>
+            <div class="btn-row rise r4">
+              <a class="btn btn-primary" href="tel:+15165550187">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+                Llamar (516) 555-0187
+              </a>
+              <a class="btn btn-ghost-dark" href="contact.html">Preguntar por horarios</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SERVICES TEASER ================= -->
+  <section class="teaser">
+    <div class="wrap">
+      <div class="teaser-grid">
+
+        <div class="teaser-card on-paper">
+          <div class="icon-badge badge-navy">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <rect x="2" y="8" width="28" height="16" rx="3" fill="#161a3d"/>
+              <g fill="#faf3e2"><rect x="5" y="11" width="5" height="10" rx="1"/><rect x="11" y="11" width="5" height="10" rx="1"/>
+              <rect x="17" y="11" width="5" height="10" rx="1"/><rect x="23" y="11" width="5" height="10" rx="1"/></g>
+              <g fill="#e14328"><rect x="9" y="11" width="3" height="6"/><rect x="21" y="11" width="3" height="6"/></g>
+            </svg>
+          </div>
+          <h3>Piano</h3>
+          <p>De la posición de las manos a canciones completas, trabajando piezas que el estudiante realmente quiere tocar.</p>
+          <a class="link-more" href="services.html#piano">Ver detalles
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h9.2L8 3.8 9.4 2.4 15 8l-5.6 5.6L8 12.2 11.2 9H2z"/></svg>
+          </a>
+        </div>
+
+        <div class="teaser-card on-paper">
+          <div class="icon-badge badge-red">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <ellipse cx="14" cy="21" rx="10" ry="9" fill="#e14328"/>
+              <circle cx="14" cy="21" r="4" fill="#161a3d"/>
+              <rect x="18" y="4" width="4" height="14" rx="1.5" fill="#161a3d" transform="rotate(20 20 11)"/>
+              <rect x="22" y="2" width="6" height="5" rx="1.5" fill="#ffc23c" transform="rotate(20 25 4)"/>
+            </svg>
+          </div>
+          <h3>Guitarra</h3>
+          <p>Acústica o eléctrica. Acordes y ritmo desde la primera semana para acompañar una canción entera.</p>
+          <a class="link-more" href="services.html#guitarra">Ver detalles
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h9.2L8 3.8 9.4 2.4 15 8l-5.6 5.6L8 12.2 11.2 9H2z"/></svg>
+          </a>
+        </div>
+
+        <div class="teaser-card on-paper">
+          <div class="icon-badge badge-gold">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <rect x="12" y="4" width="8" height="14" rx="4" fill="#161a3d"/>
+              <path d="M6 14a8 8 0 0 0 16 0h-2.4a5.6 5.6 0 0 1-11.2 0z" fill="#e14328"/>
+              <rect x="14.5" y="23" width="3" height="6" fill="#161a3d"/>
+              <rect x="9" y="28" width="14" height="3" rx="1.5" fill="#ffc23c"/>
+            </svg>
+          </div>
+          <h3>Canto</h3>
+          <p>Respiración, afinación y proyección, con un repertorio corto siempre listo para cantar.</p>
+          <a class="link-more" href="services.html#canto">Ver detalles
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h9.2L8 3.8 9.4 2.4 15 8l-5.6 5.6L8 12.2 11.2 9H2z"/></svg>
+          </a>
+        </div>
+
+      </div>
+      <div class="teaser-foot">
+        <a class="btn btn-ghost-light" href="services.html">Ver los seis instrumentos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED VIGNETTE ================= -->
+  <section class="feature on-dark">
+    <div class="wrap feature-grid">
+      <div>
+        <h2>Ocho semanas: de encontrar el Do central a tocar de memoria</h2>
+        <p class="meta-line">Piano · Proyecto de muestra</p>
+        <p>Un estudiante nuevo empieza ubicando las notas en el teclado y separando las manos. Para la cuarta semana ya toca acordes simples; para la octava, una canción completa, con las dos manos juntas, sin mirar la partitura.</p>
+        <a class="link-more" href="work.html">Ver más proyectos de estudiantes
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h9.2L8 3.8 9.4 2.4 15 8l-5.6 5.6L8 12.2 11.2 9H2z"/></svg>
+        </a>
+      </div>
+      <div>
+        <svg viewBox="0 0 300 220" role="img" aria-label="Teclas de piano con una tecla resaltada y notas flotando encima">
+          <defs>
+            <linearGradient id="pianoGradSmall" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2e3778"/><stop offset="1" stop-color="#0c0e24"/>
+            </linearGradient>
+          </defs>
+          <g fill="#ffc23c">
+            <ellipse cx="108" cy="34" rx="7" ry="5" transform="rotate(-18 108 34)"/>
+            <rect x="114" y="10" width="2.4" height="26"/>
+          </g>
+          <g fill="#e14328">
+            <ellipse cx="185" cy="24" rx="7" ry="5" transform="rotate(-18 185 24)"/>
+            <rect x="191" y="4" width="2.4" height="22"/>
+            <path d="M193 4 q11 3 10 11 q-4 -6 -10 -5 z"/>
+          </g>
+          <rect x="20" y="60" width="260" height="120" rx="10" fill="url(#pianoGradSmall)"/>
+          <g fill="#faf3e2">
+            <rect x="31" y="70" width="38" height="100" rx="4"/>
+            <rect x="71" y="70" width="38" height="100" rx="4"/>
+            <rect x="151" y="70" width="38" height="100" rx="4"/>
+            <rect x="191" y="70" width="38" height="100" rx="4"/>
+            <rect x="231" y="70" width="38" height="100" rx="4"/>
+          </g>
+          <rect x="111" y="70" width="38" height="100" rx="4" fill="#ffc23c"/>
+          <g fill="#161a3d">
+            <rect x="59" y="70" width="22" height="64" rx="3"/>
+            <rect x="99" y="70" width="22" height="64" rx="3"/>
+            <rect x="179" y="70" width="22" height="64" rx="3"/>
+            <rect x="219" y="70" width="22" height="64" rx="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section class="whyus on-dark">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Así son las clases</h2>
+        <p>Cuatro cosas que se notan desde la primera semana.</p>
+      </div>
+      <ul class="whyus-list">
+        <li class="whyus-item">
+          <svg viewBox="0 0 24 24" fill="#ffc23c" aria-hidden="true"><ellipse cx="7" cy="18" rx="4" ry="3" transform="rotate(-20 7 18)"/><rect x="10.3" y="4" width="2" height="15"/><path d="M12.3 4c4 .6 5.7 3.4 5.7 6.4-1.6-2.6-3.8-3-5.7-2.6z"/></svg>
+          <p><strong>Canciones reales, no solo ejercicios. </strong>Cada estudiante elige una canción que quiere tocar y la clase se construye alrededor de esa meta.</p>
+        </li>
+        <li class="whyus-item">
+          <svg viewBox="0 0 24 24" fill="#ffc23c" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 4.2 2.4-1 1.7-5.2-3V6h2v6.4z"/></svg>
+          <p><strong>El mismo horario cada semana. </strong>Un día y una hora fijos, para que la clase entre en la rutina de la familia y no se pierda.</p>
+        </li>
+        <li class="whyus-item">
+          <svg viewBox="0 0 24 24" fill="#ffc23c" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.5 14.5-4-4 1.4-1.4 2.6 2.6 6.1-6.1 1.4 1.4-7.5 7.5z"/></svg>
+          <p><strong>Primera clase para conocernos. </strong>Una clase completa antes de decidir, sin compromiso de continuar si no encaja.</p>
+        </li>
+        <li class="whyus-item">
+          <svg viewBox="0 0 24 24" fill="#ffc23c" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4.4 3.3A1 1 0 0 1 3 19.5V5a1 1 0 0 1 1-1z"/></svg>
+          <p><strong>Español o inglés. </strong>La clase se da en el idioma en el que el estudiante se sienta más cómodo.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING CTA ================= -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Las tardes se llenan primero este trimestre</h2>
+      <p>Una llamada corta es la forma más rápida de saber qué horarios quedan libres.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+15165550187">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Llamar (516) 555-0187
+        </a>
+        <a class="btn btn-ghost-light" href="contact.html">Escribir un mensaje</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Do Re Mi</p>
+        <p style="margin-top:.6rem;max-width:26ch">Clases privadas de música en Long Island, NY. En español e inglés.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Proyectos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Instrumentos</h4>
+        <ul>
+          <li><a href="services.html#piano">Piano</a></li>
+          <li><a href="services.html#guitarra">Guitarra</a></li>
+          <li><a href="services.html#violin">Violín</a></li>
+          <li><a href="services.html#bateria">Batería</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550187">(516) 555-0187</a></li>
+          <li><a href="contact.html">Ver horario y FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p class="footer-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+15165550187">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+    Llamar (516) 555-0187
+  </a>
+</div>
+
+<script>
+(function(){
+  var navToggle = document.querySelector('.nav-toggle');
+  var siteNav = document.querySelector('.site-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var hasSub = document.querySelector('.has-sub');
+
+  function closeNav(){
+    if(!siteNav) return;
+    siteNav.classList.remove('is-open');
+    if(navToggle) navToggle.setAttribute('aria-expanded','false');
+  }
+  function closeSub(){
+    if(!hasSub) return;
+    hasSub.classList.remove('is-open');
+    if(subToggle) subToggle.setAttribute('aria-expanded','false');
+  }
+  if(navToggle && siteNav){
+    navToggle.addEventListener('click', function(){
+      var open = siteNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(!open) closeSub();
+    });
+  }
+  if(subToggle && hasSub){
+    subToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = hasSub.classList.toggle('is-open');
+      subToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeSub(); closeNav(); }
+  });
+  document.addEventListener('click', function(e){
+    if(hasSub && !hasSub.contains(e.target)) closeSub();
+    if(siteNav && navToggle && !siteNav.contains(e.target) && !navToggle.contains(e.target) && window.innerWidth < 900){
+      closeNav();
+    }
+  });
+  document.querySelectorAll('.nav-list a').forEach(function(a){
+    a.addEventListener('click', function(){ closeNav(); closeSub(); });
+  });
+})();
+</script>
+
+</body>
+</html>

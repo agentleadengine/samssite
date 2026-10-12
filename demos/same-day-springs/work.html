@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Work — Same-Day Springs | Demo Site</title>
+<meta name="description" content="Six sample projects illustrating the kind of garage door work Same-Day Springs does: spring and cable repair, off-track resets, door and opener installs, and tune-ups. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 32 24"><path d="M2 12H6L11 5 16 19 21 5 26 19 30 12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.8-1.9 1.8c.9 2.4 2.7 4.2 5.1 5.1l1.8-1.9L20 14v3c0 .9-.8 1.6-1.6 1.5C11.6 17.6 6.4 12.4 5.5 5.6 5.4 4.8 6.1 4 7 4Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L5 19.5V16H4V5Z"/><path d="M8 9h8M8 12.3h5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 6.5"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h14M14 6l6 6-6 6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-6 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v4.8l3.6 2.1"/></symbol>
+<symbol id="i-coil" viewBox="0 0 24 24"><path d="M12 2V5L7 7.5 17 10 7 12.5 17 15 7 17.5 12 19V22"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3H20M4 14.6H20"/></symbol>
+<symbol id="i-opener" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="6" rx="1"/><path d="M11 7H21"/><rect x="16" y="5.5" width="4" height="3" rx=".6"/><path d="M18 8.5V13.5"/></symbol>
+<symbol id="i-tune" viewBox="0 0 24 24"><path d="M14.7 3.3a4.1 4.1 0 0 0-5.6 5l-5.3 5.3a2 2 0 0 0 0 2.8l.8.8a2 2 0 0 0 2.8 0l5.3-5.3a4.1 4.1 0 0 0 5-5.6l-3 3-2-2Z"/></symbol>
+<symbol id="i-track" viewBox="0 0 24 24"><path d="M8 3v8L14.5 15.3V21"/><circle cx="17.3" cy="17.6" r="2.7"/><path d="M8 11 3.8 13.6"/></symbol>
+<symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 15.8V9.6a1 1 0 0 1 1-1H14L18.5 13v2.8"/><path d="M2.5 15.8h1.6M18.5 15.8H21a.5.5 0 0 0 .5-.5v-2.7L18 8.6"/><circle cx="7.3" cy="17.3" r="2"/><circle cx="16.9" cy="17.3" r="2"/><path d="M9.3 17.3h5.4"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="topbar">
+  <div class="bar-top">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+      <span class="word"><b>Same-Day</b><span>Springs</span></span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-callblock">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="nav-sms" href="sms:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+          Text us instead
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#new-door">New door installation</a></li>
+            <li><a href="services.html#spring-cable">Spring &amp; cable repair</a></li>
+            <li><a href="services.html#opener">Opener install &amp; repair</a></li>
+            <li><a href="services.html#tune-up">Annual tune-up</a></li>
+            <li><a href="services.html#off-track">Emergency off-track service</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="current" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="tel-pill" href="tel:+16315550112">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span>(631) 555-0112</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad">
+      <div class="head">
+        <h2>Six calls, drawn the way we'd walk you through them</h2>
+        <p>No stock photography and no real customers' homes here. These are sample projects showing the kind of repair each call turns into.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="gallery">
+
+        <article class="vignette feat">
+          <div class="art">
+            <svg viewBox="0 0 900 450" role="img" aria-label="Illustration of a torsion spring mid-repair: a winding bar inserted at the working end of a partly wound coil, with tools laid out below on the header wall.">
+              <rect width="900" height="450" fill="#151109"/>
+              <rect x="0" y="18" width="900" height="52" fill="#211a10"/>
+              <rect x="190" y="52" width="520" height="14" rx="7" fill="#0c0904"/>
+              <rect x="172" y="43" width="24" height="32" rx="3" fill="#0c0904"/>
+              <path d="M250 59H268L284 40 300 78 316 40 332 78 348 40 364 78 380 59H400" fill="none" stroke="#f6c400" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+              <g transform="translate(400,59) rotate(22)">
+                <rect x="-5" y="0" width="10" height="150" rx="4" fill="#f3ecda"/>
+                <rect x="-40" y="140" width="80" height="12" rx="6" fill="#f3ecda"/>
+              </g>
+              <rect x="140" y="366" width="620" height="10" rx="5" fill="#211a10"/>
+              <path d="M170 364 208 320" stroke="#8a7d5e" stroke-width="7" stroke-linecap="round"/>
+              <rect x="240" y="338" width="62" height="26" rx="3" fill="#0c0904"/>
+              <rect x="322" y="344" width="46" height="20" rx="3" fill="#0c0904"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>A snapped spring, replaced the same afternoon</h3>
+            <p>Torsion spring let go around noon. The van was on-site by three, and the door was back on its opener before four.</p>
+            <a class="lk" href="services.html#spring-cable">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a cable drum with an old frayed cable on one side and a clean new cable installed on the other.">
+              <rect width="640" height="480" fill="#151109"/>
+              <circle cx="230" cy="90" r="42" fill="#211a10"/>
+              <circle cx="230" cy="90" r="9" fill="#0c0904"/>
+              <path d="M196 120 186 190 206 230 176 290 196 350 181 430" fill="none" stroke="#5b5346" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M188 170 178 166M204 220 216 224M182 270 170 268M192 330 204 334" stroke="#8a7d5e" stroke-width="2" stroke-linecap="round"/>
+              <path d="M264 120 260 430" fill="none" stroke="#f6c400" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Two frayed cables, replaced as a pair</h3>
+            <p>One cable had already let go. The other was close behind, so both came off the drums and got replaced together.</p>
+            <a class="lk" href="services.html#spring-cable">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a garage door track with a roller correctly re-seated at a point where the track had been bent, a faint ghost line showing the old bend.">
+              <rect width="640" height="480" fill="#151109"/>
+              <path d="M280 30 300 150 260 190 316 440" fill="none" stroke="#4a4030" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>
+              <path d="M280 30 276 170 320 205 316 440" fill="none" stroke="#cbbfa3" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="300" cy="205" r="17" fill="#f6c400" stroke="#151109" stroke-width="3"/>
+              <path d="M356 158c15 8 19 21 10 36" fill="none" stroke="#ffdd66" stroke-width="3" stroke-linecap="round"/>
+              <path d="M364 199 369 210 356 207" fill="#ffdd66"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Door reset after jumping the track</h3>
+            <p>A bent section gets straightened or swapped, then the roller gets guided back into the channel before anything's tested.</p>
+            <a class="lk" href="services.html#off-track">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of two garage doors side by side: a worn, dented old door on the left and a crisp new insulated steel door with a corner peeled back to show the foam core on the right.">
+              <rect width="640" height="480" fill="#151109"/>
+              <rect x="90" y="80" width="180" height="320" rx="4" fill="#211a10" stroke="#4a4030" stroke-width="3"/>
+              <ellipse cx="150" cy="180" rx="14" ry="8" fill="#0c0904" opacity=".6"/>
+              <ellipse cx="205" cy="260" rx="10" ry="6" fill="#0c0904" opacity=".6"/>
+              <path d="M90 160H270M90 240H270M90 320H270" stroke="#4a4030" stroke-width="2"/>
+              <rect x="370" y="80" width="180" height="320" rx="4" fill="#211a10" stroke="#f6c400" stroke-width="3"/>
+              <path d="M370 160H550M370 240H550M370 320H550" stroke="rgba(243,236,218,.2)" stroke-width="2"/>
+              <path d="M520 80 550 80 550 112Z" fill="#ffdd66" opacity=".3"/>
+              <path d="M526 90 543 90M526 99 543 99" stroke="#ffdd66" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>An old wood door swapped for insulated steel</h3>
+            <p>Same opening, new door: steel panels, a foam core, and hardware sized to the new weight instead of the old door's leftovers.</p>
+            <a class="lk" href="services.html#new-door">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of an opener rail with a segmented chain-drive section on the left transitioning to a smooth belt-drive section on the right.">
+              <rect width="640" height="480" fill="#151109"/>
+              <path d="M60 66H580M60 82H580" stroke="rgba(243,236,218,.08)" stroke-width="2"/>
+              <rect x="90" y="110" width="150" height="96" rx="8" fill="#211a10" stroke="#4a4030" stroke-width="2"/>
+              <path d="M240 156H370" stroke="#5b5346" stroke-width="9" stroke-dasharray="15 9" stroke-linecap="butt"/>
+              <path d="M370 156H540" stroke="#f6c400" stroke-width="9" stroke-linecap="round"/>
+              <rect x="522" y="140" width="34" height="30" rx="4" fill="#0c0904"/>
+              <path d="M539 170V210" stroke="#0c0904" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Chain-drive opener swapped for belt-drive</h3>
+            <p>Same rail, quieter motor. The chain came off entirely and a belt-drive unit went up in its place.</p>
+            <a class="lk" href="services.html#opener">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Illustration of a door hinge and roller being lubricated, a wrench angled toward a hardware bolt, with a couple of small oil droplets shown at the hinge.">
+              <rect width="640" height="480" fill="#151109"/>
+              <rect x="262" y="130" width="18" height="220" rx="4" fill="#211a10"/>
+              <rect x="222" y="200" width="60" height="22" rx="4" fill="#0c0904"/>
+              <rect x="280" y="200" width="60" height="22" rx="4" fill="#0c0904"/>
+              <circle cx="280" cy="211" r="7" fill="#4a4030"/>
+              <g transform="translate(380,300) rotate(-18) scale(2.3)">
+                <path d="M14.7 3.3a4.1 4.1 0 0 0-5.6 5l-5.3 5.3a2 2 0 0 0 0 2.8l.8.8a2 2 0 0 0 2.8 0l5.3-5.3a4.1 4.1 0 0 0 5-5.6l-3 3-2-2Z" fill="#cbbfa3"/>
+              </g>
+              <path d="M252 250c0 9-6 15-6 15s-6-6-6-15a6 6 0 0 1 12 0Z" fill="#ffdd66" opacity=".85"/>
+              <path d="M292 270c0 7-5 12-5 12s-5-5-5-12a5 5 0 0 1 10 0Z" fill="#ffdd66" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="cap">
+            <span class="tag">Sample project</span>
+            <h3>Annual tune-up before the first cold snap</h3>
+            <p>Rollers and hinges lubricated, hardware torqued back down, spring tension checked while the weather still allowed for it.</p>
+            <a class="lk" href="services.html#tune-up">See this service<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Yours could be the next one on this list</h2>
+      <p>Call and tell us what the door's doing. Most repairs happen the same visit.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550112">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0112
+        </a>
+        <a class="btn btn-out" href="about.html">How we work</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+          <b>Same-Day Springs</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+16315550112">(631) 555-0112</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Same-Day Springs &middot; Serving Long Island, NY &middot; <a href="tel:+16315550112">(631) 555-0112</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call now<span class="s">(631) 555-0112</span></span>
+  </a>
+  <a class="cb-text" href="sms:+16315550112">
+    <svg class="icon" aria-hidden="true"><use href="#i-sms"></use></svg>
+    <span>Text</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var bar = document.querySelector('.topbar');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(bar && !bar.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabajos — Techos Hermanos Vega</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Sen:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-ribbon">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Techos Hermanos <span>Vega</span></a>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li>
+          <a href="services.html">Servicios</a>
+          <ul class="submenu">
+            <li><a href="services.html#reemplazo">Reemplazo completo de techo</a></li>
+            <li><a href="services.html#fugas">Reparación de fugas</a></li>
+            <li><a href="services.html#tormentas">Inspección de daños por tormenta</a></li>
+            <li><a href="services.html#canalones">Integración de canalones</a></li>
+            <li><a href="services.html#planos">Sistemas de techo plano</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="active">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-phone"><a href="tel:+16315550134">(631) 555-0134</a></div>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li>
+      <button aria-expanded="false" aria-controls="mobileSubmenu">Servicios</button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="services.html#reemplazo">Reemplazo completo de techo</a></li>
+        <li><a href="services.html#fugas">Reparación de fugas</a></li>
+        <li><a href="services.html#tormentas">Inspección de daños por tormenta</a></li>
+        <li><a href="services.html#canalones">Integración de canalones</a></li>
+        <li><a href="services.html#planos">Sistemas de techo plano</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html" class="active">Trabajos</a></li>
+    <li><a href="about.html">Nosotros</a></li>
+    <li><a href="contact.html">Contacto</a></li>
+    <li><a href="tel:+16315550134" style="color: var(--teja); font-size: 22px;">(631) 555-0134</a></li>
+  </ul>
+</div>
+
+<main>
+  <div class="page-header">
+    <h1>Trabajos</h1>
+    <p>Ejemplos del tipo de proyectos que realizamos. Cada caso es distinto; el estándar es el mismo.</p>
+  </div>
+
+  <div class="work-gallery">
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Casa con techo de tejas rojas nuevas, dos vertientes">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#F5EDE0"/>
+          <!-- Sky band -->
+          <rect width="400" height="120" fill="#E8DCC8"/>
+          <!-- House body -->
+          <rect x="80" y="150" width="240" height="130" fill="#6B6663"/>
+          <!-- Roof -->
+          <polygon points="60,150 200,60 340,150" fill="#9E2B25"/>
+          <!-- Tile lines -->
+          <line x1="80" y1="140" x2="320" y2="140" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="95" y1="125" x2="305" y2="125" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="110" y1="110" x2="290" y2="110" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="125" y1="95" x2="275" y2="95" stroke="#6E1D18" stroke-width="2"/>
+          <!-- Ridge -->
+          <rect x="190" y="56" width="20" height="8" fill="#5A1812"/>
+          <!-- Door -->
+          <rect x="180" y="210" width="40" height="70" fill="#3A3735"/>
+          <!-- Windows -->
+          <rect x="110" y="180" width="40" height="40" fill="#F5EDE0" opacity="0.7"/>
+          <rect x="250" y="180" width="40" height="40" fill="#F5EDE0" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Reemplazo residencial — techo de dos vertientes</h3>
+        <p>Retiro de tejas asfálticas al final de su vida útil. Instalación de membrana, barrera de hielo y tejas nuevas. Durabilidad estimada: 25 años.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Sección de techo con reparación de fuga, mostrando área sellada">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#3A3735"/>
+          <!-- Roof plane -->
+          <polygon points="0,300 0,160 400,120 400,300" fill="#6E1D18"/>
+          <!-- Tile rows -->
+          <g stroke="#5A1812" stroke-width="1.5">
+            <line x1="0" y1="180" x2="400" y2="145"/>
+            <line x1="0" y1="200" x2="400" y2="170"/>
+            <line x1="0" y1="220" x2="400" y2="195"/>
+            <line x1="0" y1="240" x2="400" y2="220"/>
+            <line x1="0" y1="260" x2="400" y2="245"/>
+            <line x1="0" y1="280" x2="400" y2="270"/>
+          </g>
+          <!-- Repaired patch -->
+          <polygon points="140,190 260,170 260,230 140,250" fill="#9E2B25" opacity="0.95"/>
+          <polygon points="140,190 260,170 260,230 140,250" fill="none" stroke="#C4392F" stroke-width="2"/>
+          <!-- Seal indicator -->
+          <circle cx="200" cy="210" r="18" fill="none" stroke="#F5EDE0" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Reparación de fuga — área localizada</h3>
+        <p>Fuga persistente alrededor de una penetración de ventilación. Detección del origen, reemplazo de cuatro tejas y sellado completo. Problema resuelto en una visita.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Techo plano visto desde arriba con membrana gris y drenaje">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#6B6663"/>
+          <!-- Membrane surface -->
+          <rect x="30" y="30" width="340" height="240" fill="#8A8580" rx="2"/>
+          <!-- Seam lines -->
+          <line x1="30" y1="90" x2="370" y2="90" stroke="#5A5752" stroke-width="1.5"/>
+          <line x1="30" y1="150" x2="370" y2="150" stroke="#5A5752" stroke-width="1.5"/>
+          <line x1="30" y1="210" x2="370" y2="210" stroke="#5A5752" stroke-width="1.5"/>
+          <!-- Drain -->
+          <circle cx="200" cy="250" r="20" fill="#3A3735"/>
+          <circle cx="200" cy="250" r="12" fill="#1E1C1A"/>
+          <line x1="185" y1="250" x2="215" y2="250" stroke="#6B6663" stroke-width="2"/>
+          <line x1="200" y1="235" x2="200" y2="265" stroke="#6B6663" stroke-width="2"/>
+          <!-- Flashing edge -->
+          <rect x="30" y="30" width="340" height="6" fill="#9E2B25" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Sistema de techo plano — membrana TPO</h3>
+        <p>Reemplazo de membrana en techo plano comercial. Drenaje existente en mal estado reemplazado. Instalación de TPO blanco reflectante con sellado de juntas por soldadura en caliente.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Techo con canalones nuevos de aluminio integrados al borde">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#E8DCC8"/>
+          <!-- Roof edge -->
+          <polygon points="0,0 400,0 400,120 0,180" fill="#9E2B25"/>
+          <!-- Tile lines -->
+          <line x1="0" y1="40" x2="400" y2="20" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="0" y1="80" x2="400" y2="60" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="0" y1="120" x2="400" y2="100" stroke="#6E1D18" stroke-width="2"/>
+          <line x1="0" y1="160" x2="400" y2="140" stroke="#6E1D18" stroke-width="2"/>
+          <!-- Gutter -->
+          <rect x="0" y="175" width="400" height="18" rx="4" fill="#B5AFAA"/>
+          <rect x="0" y="175" width="400" height="4" fill="#D5CFC8"/>
+          <!-- Downspout -->
+          <rect x="370" y="193" width="14" height="80" fill="#B5AFAA"/>
+          <rect x="368" y="271" width="18" height="8" fill="#B5AFAA" rx="2"/>
+          <!-- Fascia -->
+          <rect x="0" y="180" width="400" height="12" fill="#3A3735"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Integración de canalones — borde completo</h3>
+        <p>Reemplazo de canalones viejos de vinilo por aluminio continuo sin juntas. Pendiente ajustada para drenaje hacia dos bajantes. Rejillas contra hojas instaladas en toda la línea.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Techo con daños post-tormenta, tejas desplazadas y faltantes">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#6B6663"/>
+          <!-- Roof -->
+          <polygon points="0,300 0,140 200,50 400,140 400,300" fill="#6E1D18"/>
+          <!-- Damaged tiles - gaps -->
+          <rect x="80" y="160" width="50" height="20" fill="#3A3735"/>
+          <rect x="200" y="145" width="40" height="18" fill="#3A3735"/>
+          <rect x="280" y="170" width="55" height="22" fill="#3A3735"/>
+          <!-- Displaced tile -->
+          <polygon points="150,180 190,175 195,195 155,200" fill="#9E2B25" transform="rotate(8 172 187)"/>
+          <!-- Cracked tile -->
+          <line x1="50" y1="200" x2="120" y2="220" stroke="#1E1C1A" stroke-width="2"/>
+          <line x1="120" y1="220" x2="100" y2="210" stroke="#1E1C1A" stroke-width="2"/>
+          <!-- Ridge damage -->
+          <rect x="190" y="48" width="20" height="6" fill="#5A1812"/>
+          <rect x="210" y="48" width="15" height="6" fill="#3A3735" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Reparación post-tormenta — viento y granizo</h3>
+        <p>Inspección después de tormenta con vientos fuertes. Doce tejas desplazadas, tres faltantes, dos fisuras. Reemplazo de área afectada y verificación de membrana inferior.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-visual" role="img" aria-label="Techo de teja con recubrimiento reflectante aplicado">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="400" height="300" fill="#3A3735"/>
+          <!-- Roof -->
+          <polygon points="0,300 0,160 200,70 400,160 400,300" fill="#9E2B25"/>
+          <!-- Reflective coating left half -->
+          <polygon points="0,300 0,160 200,70 200,300" fill="#C4392F" opacity="0.5"/>
+          <!-- Divider line -->
+          <line x1="200" y1="70" x2="200" y2="300" stroke="#F5EDE0" stroke-width="2" opacity="0.4"/>
+          <!-- Shine effect on treated side -->
+          <polygon points="0,160 200,70 200,75 0,165" fill="rgba(245,237,224,0.12)"/>
+          <!-- Sun -->
+          <circle cx="320" cy="50" r="20" fill="#F5EDE0" opacity="0.2"/>
+          <circle cx="320" cy="50" r="12" fill="#F5EDE0" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="work-info">
+        <span class="work-label">Proyecto de muestra</span>
+        <h3>Recubrimiento reflectante — techo existente</h3>
+        <p>Aplicación de recubrimiento elastomérico sobre techo de teja en buen estado estructural. Reduce temperatura interior hasta 8°C en verano. Extiende vida útil de la superficie.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="closing-cta">
+    <h2>¿Tiene un proyecto en mente?</h2>
+    <p>Cuéntenos qué necesita. Le damos una evaluación honesta.</p>
+    <a href="tel:+16315550134" class="btn-primary">Llame al (631) 555-0134</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <ul class="footer-nav">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="work.html">Trabajos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <div class="footer-credit">
+      Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a><br>
+      Negocio ficticio mostrado como demostración.
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+16315550134">(631) 555-0134</a>
+</div>
+
+<script>
+(function() {
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var subBtn = mobileNav.querySelector('button[aria-controls="mobileSubmenu"]');
+  var subMenu = document.getElementById('mobileSubmenu');
+
+  hamburger.addEventListener('click', function() {
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !open);
+    mobileNav.classList.toggle('open', !open);
+  });
+
+  subBtn.addEventListener('click', function() {
+    var open = subBtn.getAttribute('aria-expanded') === 'true';
+    subBtn.setAttribute('aria-expanded', !open);
+    subMenu.classList.toggle('open', !open);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    }
+  });
+
+  mobileNav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    }
+  });
+})();
+</script>
+</body>
+</html>

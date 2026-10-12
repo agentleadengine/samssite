@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios de pintura | Pintura Nueva Vida</title>
+<meta name="description" content="Los seis trabajos de Pintura Nueva Vida: interior, exterior, gabinetes de cocina, molduras, resane de drywall y terrazas de madera. Qué incluye cada uno y cuándo pedirlo.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Bitter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="cinta-demo">Sitio de demostración</div>
+
+<header class="encabezado">
+  <div class="encabezado-fila envoltura">
+    <a class="marca" href="index.html">
+      <svg class="marca-simbolo" viewBox="0 0 34 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <rect x="9.5" y="2" width="9" height="24" rx="3" fill="#1F6E4C" transform="rotate(-13 14 14)"/>
+        <rect x="12.5" y="2" width="9" height="24" rx="3" fill="#A83B1B"/>
+        <rect x="15.5" y="2" width="9" height="24" rx="3" fill="#21407D" transform="rotate(13 20 14)"/>
+      </svg>
+      <span class="marca-texto">
+        <span class="marca-nombre">Pintura Nueva Vida</span>
+        <span class="marca-lugar">Long Island, NY</span>
+      </span>
+    </a>
+
+    <nav class="nav-principal" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li>
+          <details class="submenu-servicios">
+            <summary class="nav-link activa" aria-current="page">Servicios
+              <svg class="icono-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <ul class="submenu-lista">
+              <li><a href="services.html#interior">Pintura interior</a></li>
+              <li><a href="services.html#exterior">Pintura exterior</a></li>
+              <li><a href="services.html#gabinetes">Gabinetes de cocina</a></li>
+              <li><a href="services.html#molduras">Molduras, puertas y marcos</a></li>
+              <li><a href="services.html#resane">Resane de drywall y grietas</a></li>
+              <li><a href="services.html#terrazas">Terrazas y cercas de madera</a></li>
+              <li><a href="services.html" class="ver-todo">Ver todos los servicios</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="work.html" class="nav-link">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="encabezado-cta">
+      <a class="encabezado-tel" href="tel:+15165550127">(516) 555-0127</a>
+      <a class="boton boton--sm" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar
+      </a>
+    </div>
+
+    <button id="boton-menu" class="boton-menu" type="button" aria-expanded="false" aria-controls="panel-movil">
+      <svg class="icono icono-abrir" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      <svg class="icono icono-cerrar" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      <span class="visually-hidden">Abrir menú</span>
+    </button>
+
+    <div id="panel-movil" class="panel-movil">
+      <nav aria-label="Móvil">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="submenu-servicios-movil">
+              <summary aria-current="page">Servicios
+                <svg class="icono-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <ul>
+                <li><a href="services.html#interior">Pintura interior</a></li>
+                <li><a href="services.html#exterior">Pintura exterior</a></li>
+                <li><a href="services.html#gabinetes">Gabinetes de cocina</a></li>
+                <li><a href="services.html#molduras">Molduras, puertas y marcos</a></li>
+                <li><a href="services.html#resane">Resane de drywall y grietas</a></li>
+                <li><a href="services.html#terrazas">Terrazas y cercas de madera</a></li>
+                <li><a href="services.html" class="ver-todo">Ver todos los servicios</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="boton boton--ancho panel-movil-llamar" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar al (516) 555-0127
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="envoltura seccion" style="padding-bottom:20px">
+    <div class="intro-seccion" style="max-width:64ch">
+      <h1 class="anim-hero-item" style="animation-delay:.05s;font-size:clamp(2rem,5.6vw,3.1rem)">Seis trabajos, explicados uno por uno.</h1>
+      <p class="anim-hero-item" style="animation-delay:.17s;margin-top:16px;color:var(--tinta-70);font-size:17px;max-width:58ch">Sin listas de precios genéricas: cada servicio dice qué incluye y cuándo conviene pedirlo. Si no está aquí, probablemente no lo hacemos — no tocamos techos ni pisos, y por eso el trabajo de pintura sale bien hecho.</p>
+    </div>
+  </section>
+
+  <section class="envoltura seccion" style="padding-top:16px">
+    <div class="servicios-grid">
+
+      <article class="ficha-tarjeta" id="interior">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#1F6E4C"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Pintura interior</h2>
+          <p>Paredes, techos, pasillos y clósets. Movemos lo que se puede mover y cubrimos el resto; las placas de los interruptores se quitan en vez de encintarlas. Los huecos de clavos y golpes se resanan y se sellan antes de abrir el color, y siempre van dos manos completas.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando el blanco ya amarilleó, hay marcas de manos cerca de las puertas, o va a vender o rentar la casa y necesita que se vea cuidada.</p>
+        </div>
+      </article>
+
+      <article class="ficha-tarjeta" id="exterior">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#A83B1B"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Pintura exterior</h2>
+          <p>Lavado a presión, raspado y lijado de todo lo que ya está levantado o descascarado. La madera descubierta lleva sellador y las juntas llevan sellador elástico antes del color. Trabajamos según el clima para que la pintura cure como debe, no como convenga al calendario.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando la pintura se raja o se levanta en placas, la madera se ve gris al tacto, o hace más de una temporada que no se revisa la fachada.</p>
+        </div>
+      </article>
+
+      <article class="ficha-tarjeta" id="gabinetes">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#21407D"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Gabinetes de cocina</h2>
+          <p>Desmontamos las puertas y las marcamos una por una para que vuelvan a su lugar exacto. Se desengrasan, se lijan y se aplica un esmalte de gabinete que endurece de verdad, no pintura de pared disfrazada de esmalte.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando las puertas quedan pegajosas al abrirlas, el color ya no combina con la encimera, o cambiar los gabinetes completos no está en el presupuesto este año.</p>
+        </div>
+      </article>
+
+      <article class="ficha-tarjeta" id="molduras">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#1F6E4C"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Molduras, puertas y marcos</h2>
+          <p>Líneas de sellador derechas, juntas resanadas al ras y lijado entre manos. La moldura queda lisa al tacto y no muestra la marca de la brocha con la luz de lado del pasillo.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando los marcos tienen golpes de mudanza, las puertas tienen capas de pintura vieja acumulada, o el blanco de la moldura ya no es el mismo blanco de antes.</p>
+        </div>
+      </article>
+
+      <article class="ficha-tarjeta" id="resane">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#A83B1B"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Resane de drywall y grietas</h2>
+          <p>Grietas de asentamiento, esquinas golpeadas y manchas de agua. Se cortan, se encintan, se emparejan y se sellan con bloqueador para que la mancha no vuelva a salir por encima de la pintura nueva.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando aparece una grieta fina cerca de una puerta o ventana, hay una mancha amarilla en el techo, o un golpe dejó un hueco en la esquina de la pared.</p>
+        </div>
+      </article>
+
+      <article class="ficha-tarjeta" id="terrazas">
+        <svg class="ficha-icono" width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="28" height="40" rx="8" fill="#FBF8F1" stroke="#D3C6A6" stroke-width="1.4"/>
+          <circle cx="15" cy="8.5" r="2" fill="none" stroke="#D3C6A6" stroke-width="1.2"/>
+          <rect x="5" y="13" width="20" height="18" rx="3" fill="#21407D"/>
+          <rect x="5" y="34" width="12" height="4" rx="2" fill="#D3C6A6"/>
+        </svg>
+        <div>
+          <h2>Terrazas y cercas de madera</h2>
+          <p>Lavamos, dejamos secar bien y aplicamos el tinte con brocha sobre la tabla, no solo con rociador. Esa es la parte que decide cómo se ve la terraza al final del verano, y no a la semana de terminada.</p>
+          <span class="etq-cuando">Cuándo lo necesita</span>
+          <p class="cuando-texto">Cuando la madera se ve gris o astillada, el agua ya no perla sobre la tabla, o quiere la terraza lista antes de que empiece la temporada de usarla.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="franja-color es-azul">
+    <div class="envoltura">
+      <h2>Incluido en todo trabajo.</h2>
+      <p style="margin-top:14px;max-width:58ch">Lo que casi nadie pregunta en la visita, y después extraña si no lo tuvo.</p>
+      <div class="incluido-grid" style="margin-top:28px">
+        <div class="lista-regla">
+          <div><h3>El color, anotado</h3><p>Marca, línea, acabado y código quedan escritos en el presupuesto, y se los dejamos al final. Un retoque en tres años queda igual.</p></div>
+          <div><h3>Limpieza cada noche</h3><p>Camino libre a la cocina y al baño todas las noches que estemos en la casa. Herramientas guardadas, plástico doblado.</p></div>
+          <div><h3>Le decimos lo que vemos</h3><p>Si el techo necesita bloqueador o hay que cambiar una tabla del exterior, se lo decimos en el presupuesto, no el segundo día como cobro extra.</p></div>
+        </div>
+        <div class="lista-regla">
+          <div><h3>Producto de bajo olor</h3><p>Adentro usamos pintura y sellador de bajo olor. Si una superficie pide un sellador de aceite, se lo decimos antes y planeamos la ventilación con usted.</p></div>
+          <div><h3>El mismo equipo</h3><p>Quien cotiza el trabajo es quien lo hace. No entregamos su casa a otra cuadrilla a la mitad.</p></div>
+          <div><h3>Pintura para retoques</h3><p>Dejamos un galón de cada color, marcado con el nombre del cuarto, bien cerrado y guardado donde usted diga.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="envoltura cta-cierre-simple">
+    <h2>¿Cuál de los seis necesita su casa?</h2>
+    <p>Díganos qué cuartos o qué lado de la casa, y le decimos el precio en la misma visita.</p>
+    <div class="acciones">
+      <a class="boton" href="tel:+15165550127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar al (516) 555-0127
+      </a>
+      <a class="boton boton--linea" href="contact.html">Pedir presupuesto por escrito</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie-arriba">
+      <div>
+        <div class="pie-marca">
+          <svg class="marca-simbolo" viewBox="0 0 34 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect x="9.5" y="2" width="9" height="24" rx="3" fill="#1F6E4C" transform="rotate(-13 14 14)"/>
+            <rect x="12.5" y="2" width="9" height="24" rx="3" fill="#A83B1B"/>
+            <rect x="15.5" y="2" width="9" height="24" rx="3" fill="#21407D" transform="rotate(13 20 14)"/>
+          </svg>
+          <span class="marca-texto">
+            <span class="marca-nombre">Pintura Nueva Vida</span>
+            <span class="marca-lugar">Pintura interior y exterior · Long Island, NY</span>
+          </span>
+        </div>
+        <a class="pie-tel" href="tel:+15165550127">(516) 555-0127</a>
+      </div>
+      <nav class="pie-enlaces" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="services.html">Servicios</a>
+        <a href="work.html">Trabajos</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+    </div>
+    <p class="pie-legal">
+      <strong><a href="https://samuelochoa.com/paginas-web">Sitio de demostración creado por Samuel Ochoa — samuelochoa.com/paginas-web</a></strong><br>
+      Negocio ficticio mostrado como demostración. El teléfono que aparece es un número reservado que solo se usa para demostraciones.
+    </p>
+  </div>
+</footer>
+
+<div class="barra-llamada">
+  <div class="txt">Presupuesto sin costo<b>Pintura Nueva Vida</b></div>
+  <a class="ir" href="tel:+15165550127">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Llamar
+  </a>
+</div>
+
+<script>
+(function(){
+  var boton = document.getElementById('boton-menu');
+  var panel = document.getElementById('panel-movil');
+  if(!boton || !panel) return;
+  function cerrar(){ boton.setAttribute('aria-expanded','false'); panel.classList.remove('abierto'); }
+  function abrir(){ boton.setAttribute('aria-expanded','true'); panel.classList.add('abierto'); }
+  boton.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(boton.getAttribute('aria-expanded') === 'true'){ cerrar(); } else { abrir(); }
+  });
+  document.addEventListener('click', function(e){
+    if(boton.getAttribute('aria-expanded') === 'true' && !panel.contains(e.target) && e.target !== boton){ cerrar(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && boton.getAttribute('aria-expanded') === 'true'){ cerrar(); boton.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>

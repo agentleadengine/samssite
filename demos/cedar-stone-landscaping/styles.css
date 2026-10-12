@@ -1,0 +1,509 @@
+/* ============================================================
+   Cedar & Stone Landscaping — shared stylesheet
+   Moss + limestone, coursed-stone seams, Arvo/Karla.
+   ============================================================ */
+
+:root{
+  /* moss — dominant field */
+  --moss-950:#0F2016;
+  --moss-800:#1D3B29;
+  --moss-700:#234531;
+  --moss-600:#2C5A3E;
+  --moss-500:#396E4C;
+
+  /* limestone — paper surface */
+  --limestone-50:#FAF6EC;
+  --limestone-100:#F2EAD7;
+  --limestone-300:#E2D4B7;
+  --limestone-500:#C6B38E;
+
+  /* cedar — material accent, used in illustration */
+  --cedar-600:#9C6438;
+  --cedar-700:#7C4E2A;
+
+  /* ochre — the one accent that moves */
+  --ochre-500:#C6841A;
+  --ochre-600:#AD710F;
+  --ochre-ink:#8A5710;   /* darkened for text/links on light bg, contrast-checked */
+
+  /* ink */
+  --ink-900:#16211A;
+  --ink-600:#4B5C50;
+  --btn-ink:#201405;
+
+  /* text on moss */
+  --on-moss-1:#F5F1E4;
+  --on-moss-2:#C9D8C5;
+
+  --radius-sm:4px;
+  --radius-md:8px;
+  --radius-lg:12px;
+
+  --shadow-sm:0 10px 22px -16px rgba(15,32,22,.4);
+  --shadow-md:0 24px 46px -26px rgba(15,32,22,.5);
+
+  --ease-out-exp:cubic-bezier(.16,1,.3,1);
+  --header-h-utility:34px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%}
+body{overflow-x:hidden}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+body{
+  font-family:'Karla',system-ui,-apple-system,sans-serif;
+  color:var(--ink-900);
+  background:var(--limestone-50);
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:70px; /* room for mobile call bar */
+}
+@media (min-width:960px){ body{ font-size:17.5px; padding-bottom:0; } }
+
+h1,h2,h3,.slab{
+  font-family:'Arvo',Georgia,serif;
+  font-weight:700;
+  letter-spacing:-.01em;
+  line-height:1.14;
+  margin:0;
+}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+a{color:inherit; text-decoration:none}
+img,svg{max-width:100%; display:block}
+ul{margin:0; padding:0}
+button{font-family:inherit}
+
+.wrap{width:100%; max-width:1160px; margin:0 auto; padding:0 20px}
+@media (min-width:720px){ .wrap{padding:0 32px} }
+
+main{display:block}
+
+.measure{max-width:38em} /* ~ 68ch at body size */
+
+:focus-visible{
+  outline:3px solid var(--ochre-500);
+  outline-offset:2px;
+  border-radius:2px;
+}
+
+/* ---------------------------------------------------------
+   Demo ribbon — fixed, constant small size at every width so
+   the safe-zone reserved in the header never has to guess.
+   --------------------------------------------------------- */
+.demo-ribbon{
+  position:fixed; top:0; right:0; z-index:9999;
+  background:var(--ink-900); color:var(--limestone-50);
+  font-family:'Karla',sans-serif; font-weight:700;
+  font-size:11px; letter-spacing:.15em; text-transform:uppercase;
+  padding:9px 14px 9px 16px;
+  border-bottom-left-radius:10px;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+
+/* ---------------------------------------------------------
+   Header — sticky as one unit (utility strip + main row) so
+   the ribbon only ever floats over the thin utility strip,
+   never over the phone button / hamburger in the row below.
+   --------------------------------------------------------- */
+.site-header{position:sticky; top:0; z-index:400; background:var(--moss-800)}
+
+.utility{
+  background:var(--moss-950); color:var(--on-moss-2);
+  font-size:12px; letter-spacing:.04em;
+  min-height:var(--header-h-utility);
+  display:flex; align-items:center;
+}
+.utility .wrap{display:flex; align-items:center; min-height:var(--header-h-utility); padding-right:150px}
+.utility span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+.main-row{background:var(--moss-800); border-bottom:1px solid rgba(245,241,228,.08)}
+.main-row-in{display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:68px; padding-top:10px; padding-bottom:10px; position:relative}
+
+.brand{display:flex; align-items:center; gap:11px}
+.brand .mark{width:36px; height:36px; flex:0 0 36px}
+.brand-text{font-family:'Arvo',serif; font-weight:700; font-size:19px; line-height:1.05; letter-spacing:-.015em; color:var(--on-moss-1)}
+.brand-text .amp{color:var(--ochre-500); font-style:italic; padding:0 1px}
+.brand-text small{display:block; font-family:'Karla',sans-serif; font-weight:600; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--on-moss-2); margin-top:4px}
+
+/* nav */
+.nav{display:none}
+.nav.nav-open{
+  display:block; position:absolute; top:100%; left:0; right:0;
+  background:var(--moss-800); border-top:1px solid rgba(245,241,228,.1);
+  box-shadow:var(--shadow-md);
+  max-height:calc(100vh - 102px); overflow-y:auto;
+}
+.nav ul{list-style:none; display:flex; flex-direction:column}
+.nav > ul{padding:6px 20px 18px}
+.nav a{display:block; padding:13px 4px; font-weight:600; color:var(--on-moss-1); font-size:16px; border-bottom:1px solid rgba(245,241,228,.08)}
+.nav > ul > li:last-child > a{border-bottom:0}
+.nav a.active{color:var(--ochre-500)}
+.submenu.active summary{color:var(--ochre-500)}
+
+.submenu{position:relative}
+.submenu summary{
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+  padding:13px 4px; font-weight:600; color:var(--on-moss-1); font-size:16px;
+  cursor:pointer; list-style:none; border-bottom:1px solid rgba(245,241,228,.08);
+}
+.submenu summary::-webkit-details-marker{display:none}
+.submenu .chev{width:12px; height:12px; flex:0 0 12px; transition:transform .2s var(--ease-out-exp)}
+.submenu[open] .chev{transform:rotate(180deg)}
+.submenu > ul{padding:2px 4px 10px 14px}
+.submenu > ul a{font-weight:500; font-size:15px; padding:10px 4px; border-bottom:0; color:var(--on-moss-2)}
+.submenu > ul li:first-child a{color:var(--ochre-500); font-weight:700}
+
+.head-actions{display:flex; align-items:center; gap:10px}
+.head-phone{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(245,241,228,.08); border:1px solid rgba(245,241,228,.2);
+  color:var(--on-moss-1); font-weight:700; font-size:14.5px;
+  padding:9px 12px; border-radius:var(--radius-sm);
+}
+.head-phone svg{flex:0 0 16px; width:16px; height:16px}
+.head-phone .num{white-space:nowrap}
+
+.hamburger{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:42px; height:42px; border-radius:var(--radius-sm);
+  background:rgba(245,241,228,.08); border:1px solid rgba(245,241,228,.2);
+  color:var(--on-moss-1); cursor:pointer; flex:0 0 42px;
+}
+.hamburger svg{width:19px; height:19px}
+.hamburger .icon-close{display:none}
+.hamburger[aria-expanded="true"] .icon-open{display:none}
+.hamburger[aria-expanded="true"] .icon-close{display:block}
+
+@media (min-width:960px){
+  .utility .wrap{padding-right:20px}
+  .head-phone .num{display:inline}
+  .hamburger{display:none}
+  .nav{display:block}
+  .nav > ul{
+    flex-direction:row; align-items:center; gap:2px; padding:0;
+  }
+  .nav a{border-bottom:0; padding:9px 14px; border-radius:var(--radius-sm)}
+  .nav a:hover, .nav a:focus-visible{background:rgba(245,241,228,.08)}
+  .nav a.active{background:rgba(198,132,26,.14)}
+
+  .submenu summary{padding:9px 14px; border-bottom:0; border-radius:var(--radius-sm)}
+  .submenu summary:hover, .submenu:focus-within summary{background:rgba(245,241,228,.08)}
+  .submenu > ul{
+    display:block; /* override UA display:none on closed <details> */
+    position:absolute; top:calc(100% + 6px); left:0; min-width:250px;
+    background:var(--limestone-50); border:1px solid var(--limestone-300);
+    border-radius:var(--radius-md); box-shadow:var(--shadow-md);
+    padding:8px; margin:0;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transform:translateY(-6px);
+    transition:opacity .18s var(--ease-out-exp), transform .18s var(--ease-out-exp), visibility .18s;
+  }
+  .submenu:hover > ul, .submenu:focus-within > ul, .submenu[open] > ul{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0);
+  }
+  .submenu > ul a{color:var(--ink-900); padding:9px 10px; border-radius:var(--radius-sm)}
+  .submenu > ul a:hover, .submenu > ul a:focus-visible{background:var(--limestone-100)}
+  .submenu > ul li:first-child a{color:var(--ochre-ink)}
+}
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-weight:700; font-size:16px; text-decoration:none; cursor:pointer;
+  border-radius:var(--radius-sm); border:2px solid transparent;
+  padding:14px 22px; line-height:1.1; transition:transform .15s var(--ease-out-exp), background-color .15s;
+}
+.btn svg{flex:0 0 18px; width:18px; height:18px}
+.btn-primary{background:var(--ochre-500); color:var(--btn-ink); border-color:var(--ochre-500)}
+.btn-primary:hover{background:var(--ochre-600); border-color:var(--ochre-600)}
+.btn-primary:active{transform:translateY(1px)}
+.btn-ghost-onmoss{border-color:rgba(245,241,228,.35); color:var(--on-moss-1)}
+.btn-ghost-onmoss:hover{background:rgba(245,241,228,.08); border-color:rgba(245,241,228,.55)}
+.btn-ghost-onlight{border-color:var(--limestone-500); color:var(--ink-900)}
+.btn-ghost-onlight:hover{background:var(--limestone-100)}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px}
+
+/* ---------------------------------------------------------
+   Coursed-stone seam — the site's signature divider, used
+   between page bands and as a card cap instead of a border.
+   --------------------------------------------------------- */
+.seam{display:block; width:100%; height:34px}
+.card-cap{display:block; width:100%; height:14px; border-top-left-radius:var(--radius-lg); border-top-right-radius:var(--radius-lg); overflow:hidden}
+
+/* ---------------------------------------------------------
+   Sections
+   --------------------------------------------------------- */
+section{padding:64px 0}
+@media (min-width:960px){ section{padding:96px 0} }
+.band-moss{background:var(--moss-800); color:var(--on-moss-1)}
+.band-moss-2{background:var(--moss-600); color:var(--on-moss-1)}
+.band-paper{background:var(--limestone-50)}
+.band-white{background:#FFFDF7}
+
+.sec-head{max-width:40em; margin-bottom:34px}
+.sec-head h1, .sec-head h2{font-size:clamp(1.7rem,4.4vw,2.5rem)}
+.band-moss .sec-head h1, .band-moss .sec-head h2,
+.band-moss-2 .sec-head h1, .band-moss-2 .sec-head h2{color:var(--on-moss-1)}
+.sec-head p{margin-top:14px; font-size:16.5px; color:var(--ink-600)}
+.band-moss .sec-head p, .band-moss-2 .sec-head p{color:var(--on-moss-2)}
+@media (min-width:960px){ .sec-head{margin-bottom:46px} }
+
+.page-close{padding-top:6px}
+
+/* ---------------------------------------------------------
+   Hero (index)
+   --------------------------------------------------------- */
+.hero{background:var(--moss-800); color:var(--on-moss-1); padding:44px 0 0; overflow:hidden}
+.hero-grid{display:grid; gap:34px; padding-bottom:38px}
+.hero h1{font-size:clamp(2.2rem,7vw,3.6rem); color:var(--on-moss-1); letter-spacing:-.025em}
+.hero h1 .mark-word{color:var(--ochre-500)}
+.hero-lede{font-size:17.5px; color:var(--on-moss-2); max-width:32em; margin-top:18px}
+
+.reveal-item{opacity:1; transform:none}
+@media (prefers-reduced-motion: no-preference){
+  .reveal-item{
+    opacity:0; transform:translateY(16px);
+    animation:reveal-up .7s var(--ease-out-exp) forwards;
+    animation-delay:var(--rd, 0s);
+  }
+}
+@keyframes reveal-up{ to{opacity:1; transform:translateY(0)} }
+
+.price-card{
+  background:var(--limestone-50); color:var(--ink-900);
+  border-radius:var(--radius-lg); overflow:hidden;
+  box-shadow:var(--shadow-md);
+}
+.price-card-in{padding:24px 24px 26px}
+.price-card h2{font-size:22px; margin-bottom:8px}
+.price-card > .price-card-in > p{font-size:14.5px; color:var(--ink-600)}
+.pricelist{list-style:none; margin:18px 0 0; padding:0; border-top:1px solid var(--limestone-300)}
+.pricelist li{display:flex; align-items:baseline; gap:8px; padding:12px 0; border-bottom:1px solid var(--limestone-300); font-size:15px}
+.pricelist .item{font-weight:700}
+.pricelist .dots{flex:1 1 auto; border-bottom:1px dotted var(--limestone-500); transform:translateY(-4px); min-width:12px}
+.pricelist .price{font-family:'Arvo',serif; font-weight:700; white-space:nowrap; color:var(--ochre-ink)}
+.fineprint{font-size:12.5px; color:var(--ink-600); margin:16px 0 0; line-height:1.55}
+
+.hero-scene{width:100%; height:auto; margin-top:8px}
+
+@media (min-width:720px){
+  .main-row-in{min-height:72px}
+}
+@media (min-width:960px){
+  .hero-grid{grid-template-columns:1.12fr .88fr; gap:56px; align-items:start; padding:26px 0 56px}
+  .price-card{position:relative; top:8px}
+}
+
+/* ---------------------------------------------------------
+   Proof-of-work vignette (index)
+   --------------------------------------------------------- */
+.proof{display:grid; gap:28px; align-items:center}
+.proof-scene{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm)}
+.proof-cap{font-size:13px; color:var(--ink-600); margin-top:10px; letter-spacing:.02em}
+.proof-cap b{color:var(--ink-900); font-weight:700}
+@media (min-width:860px){ .proof{grid-template-columns:1.05fr .95fr; gap:44px} }
+
+/* ---------------------------------------------------------
+   Services teaser (index) — a divided list, not a card grid
+   --------------------------------------------------------- */
+.svc-list{border-top:1px solid var(--limestone-300)}
+.svc-row{display:flex; align-items:flex-start; gap:18px; padding:24px 0; border-bottom:1px solid var(--limestone-300)}
+.svc-row .ico{flex:0 0 44px; width:44px; height:44px; color:var(--ochre-ink)}
+.svc-row .body{flex:1 1 auto; min-width:0}
+.svc-row h3{font-size:19px; margin-bottom:6px}
+.svc-row p{font-size:15px; color:var(--ink-600); max-width:52ch}
+.svc-row .go{
+  display:inline-flex; align-items:center; gap:6px; margin-top:10px;
+  font-weight:700; font-size:14px; color:var(--ochre-ink);
+}
+.svc-row .go svg{width:13px; height:13px; transition:transform .15s var(--ease-out-exp)}
+.svc-row .go:hover svg{transform:translateX(3px)}
+.svc-list-foot{margin-top:26px}
+
+/* ---------------------------------------------------------
+   Why-us strip — plain triptych, no cards, no metrics
+   --------------------------------------------------------- */
+.why-strip{display:grid; gap:30px}
+.why-item{padding-top:18px; border-top:2px solid rgba(245,241,228,.28)}
+.why-item h3{font-size:18px; color:var(--on-moss-1); margin-bottom:8px}
+.why-item p{font-size:15px; color:var(--on-moss-2); max-width:34ch}
+@media (min-width:760px){ .why-strip{grid-template-columns:repeat(3,1fr); gap:36px} }
+
+/* ---------------------------------------------------------
+   Closing CTA block
+   --------------------------------------------------------- */
+.closing{background:var(--moss-950); color:var(--on-moss-1)}
+.closing-in{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:26px}
+.closing h2{font-size:clamp(1.6rem,4vw,2.15rem); max-width:16em}
+.closing p{color:var(--on-moss-2); margin-top:10px; max-width:32ch}
+
+/* ---------------------------------------------------------
+   Services page — alternating real sections
+   --------------------------------------------------------- */
+.svc-section{padding:46px 0; border-bottom:1px solid var(--limestone-300)}
+.svc-section:last-of-type{border-bottom:0}
+.svc-section-in{display:grid; gap:26px; align-items:start}
+.svc-figure{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm)}
+.svc-section h2{font-size:clamp(1.4rem,3.4vw,1.9rem)}
+.svc-meta{display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:16px}
+.svc-meta .grp{min-width:0}
+.svc-meta .lbl{font-size:11px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-600); margin-bottom:5px}
+.svc-meta .val{font-size:15px; color:var(--ink-900); max-width:46ch}
+.svc-price{
+  display:inline-block; margin-top:16px; font-family:'Arvo',serif; font-weight:700;
+  font-size:17px; color:var(--ochre-ink); background:var(--limestone-100);
+  border-radius:var(--radius-sm); padding:8px 14px;
+}
+.svc-price-note{font-size:13.5px; color:var(--ink-600); margin-top:14px; font-style:italic}
+@media (min-width:840px){
+  .svc-section-in{grid-template-columns:.92fr 1.08fr; gap:44px}
+  .svc-section-in.flip{direction:rtl}
+  .svc-section-in.flip > *{direction:ltr}
+}
+
+/* ---------------------------------------------------------
+   Work gallery
+   --------------------------------------------------------- */
+.gallery{display:grid; gap:22px; grid-template-columns:1fr}
+.gal-item{background:var(--limestone-50); color:var(--ink-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm)}
+.gal-figure{background:var(--moss-800)}
+.gal-body{padding:18px 20px 20px}
+.gal-tag{
+  display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ochre-ink); background:var(--limestone-100); padding:4px 9px; border-radius:3px; margin-bottom:10px;
+}
+.gal-body h3{font-size:18px; margin-bottom:8px}
+.gal-body p{font-size:14.5px; color:var(--ink-600)}
+.gal-item.featured{grid-column:1 / -1}
+.gal-item.featured .gal-inner{display:grid}
+@media (min-width:640px){ .gallery{grid-template-columns:1fr 1fr} }
+@media (min-width:640px){
+  .gal-item.featured .gal-inner{grid-template-columns:1.2fr 1fr; align-items:stretch}
+  .gal-item.featured .gal-figure{height:100%}
+}
+@media (min-width:980px){ .gallery{grid-template-columns:repeat(3,1fr)} }
+
+/* ---------------------------------------------------------
+   About page
+   --------------------------------------------------------- */
+.story p{font-size:17px; color:var(--ink-900); max-width:38em}
+.story p + p{margin-top:1.1em}
+.about-scene{margin-top:8px; border-radius:var(--radius-lg); overflow:hidden}
+
+.steps{display:grid; gap:26px; counter-reset:step; margin-top:6px}
+.step{padding-left:52px; position:relative}
+.step:before{
+  counter-increment:step; content:counter(step);
+  position:absolute; left:0; top:-2px;
+  width:38px; height:38px; border-radius:50%;
+  background:var(--ochre-500); color:var(--btn-ink);
+  font-family:'Arvo',serif; font-weight:700; font-size:17px;
+  display:flex; align-items:center; justify-content:center;
+}
+.step h3{font-size:17.5px; margin-bottom:5px; color:var(--ink-900)}
+.step p{color:var(--ink-600); font-size:15px; max-width:36ch}
+@media (min-width:720px){ .steps{grid-template-columns:1fr 1fr; gap:30px 36px} }
+
+.area-grid{display:grid; gap:24px}
+.panel{background:var(--limestone-50); color:var(--ink-900); border:1px solid var(--limestone-300); border-radius:var(--radius-lg); padding:26px 24px}
+.panel h3{font-size:19px; margin-bottom:12px}
+.panel > p{font-size:15px; color:var(--ink-600)}
+.towns{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px}
+.towns li{background:var(--limestone-100); border:1px solid var(--limestone-300); border-radius:3px; padding:7px 12px; font-size:13.5px; font-weight:600}
+.hours-list{list-style:none; margin:0; padding:0}
+.hours-list li{display:flex; align-items:baseline; gap:8px; padding:10px 0; border-bottom:1px dashed var(--limestone-500); font-size:15px}
+.hours-list li:last-child{border-bottom:0}
+.hours-list .d{font-weight:700}
+.hours-list .dots{flex:1 1 auto; border-bottom:1px dotted var(--limestone-500); transform:translateY(-4px); min-width:10px}
+.hours-list .t{white-space:nowrap; color:var(--ink-600)}
+
+/* ---------------------------------------------------------
+   Contact page
+   --------------------------------------------------------- */
+.contact-grid{display:grid; gap:26px}
+.callbox{
+  background:rgba(245,241,228,.06); border:1px solid rgba(245,241,228,.18);
+  border-radius:var(--radius-lg); padding:28px 24px;
+}
+.callbox .lbl{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--on-moss-2); font-weight:700}
+.callbox .num{
+  font-family:'Arvo',serif; font-weight:700; font-size:clamp(2rem,7.4vw,2.7rem);
+  color:var(--on-moss-1); display:block; margin:10px 0 6px; letter-spacing:-.02em;
+}
+.callbox p{color:var(--on-moss-2); font-size:15px}
+.contact-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.contact-hours{margin-top:22px; padding-top:20px; border-top:1px solid rgba(245,241,228,.16)}
+.contact-hours .hours-list .t{color:var(--on-moss-2)}
+.contact-hours .hours-list li{border-bottom:1px dashed rgba(245,241,228,.2)}
+.contact-hours .hours-list .dots{border-bottom:1px dotted rgba(245,241,228,.25)}
+
+.sample-form{background:var(--limestone-50); color:var(--ink-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md)}
+.sample-form-in{padding:26px 24px}
+.sample-form h3{font-size:20px; margin-bottom:6px}
+.sample-form > .sample-form-in > p{font-size:14.5px; color:var(--ink-600)}
+.field{margin-top:16px}
+.field label{display:block; font-size:12.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-600); margin-bottom:6px}
+.field input, .field select, .field textarea{
+  width:100%; font-family:inherit; font-size:16px; color:var(--ink-900);
+  background:#fff; border:1px solid var(--limestone-500); border-radius:var(--radius-sm);
+  padding:11px 12px;
+}
+.field input:hover, .field select:hover, .field textarea:hover{border-color:var(--moss-500)}
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible{border-color:var(--moss-600)}
+.field textarea{min-height:100px; resize:vertical}
+.form-submit{
+  width:100%; margin-top:20px; background:var(--moss-800); color:var(--on-moss-1);
+  border:0; border-radius:var(--radius-sm); padding:15px; font-weight:700; font-size:16px; cursor:pointer;
+  transition:background-color .15s;
+}
+.form-submit:hover{background:var(--moss-700)}
+.sample-note{text-align:center; font-size:12.5px; color:var(--ink-600); margin:12px 0 0; letter-spacing:.03em}
+
+.faq{margin-top:8px}
+.faq-item{border-top:1px solid var(--limestone-300); padding:20px 0}
+.faq-item:last-child{padding-bottom:0}
+.faq-item h3{font-size:16.5px; display:flex; gap:12px; align-items:flex-start}
+.faq-item .q-ico{flex:0 0 20px; width:20px; height:20px; color:var(--ochre-ink); margin-top:1px}
+.faq-item p{font-size:15px; color:var(--ink-600); margin-top:10px; padding-left:32px}
+
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:.92fr 1.08fr; align-items:start}
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+footer{background:var(--moss-950); color:#93A895; padding:44px 0 34px; font-size:14px}
+.foot-top{display:grid; gap:28px}
+.foot-brand{font-family:'Arvo',serif; font-weight:700; font-size:19px; color:var(--limestone-50); margin-bottom:8px}
+.foot-tag{max-width:32ch; color:#93A895}
+.foot-nav{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px 20px}
+.foot-nav a{color:var(--on-moss-2); font-weight:600}
+.foot-nav a:hover{color:var(--limestone-50)}
+.foot-contact a{color:var(--limestone-50); font-weight:700}
+.disclosure{margin-top:26px; padding-top:18px; border-top:1px solid rgba(245,241,228,.12); font-size:12.5px; color:#7C9280}
+.disclosure a{color:var(--on-moss-2); text-decoration:underline}
+.disclosure p{margin:0 0 6px}
+@media (min-width:720px){ .foot-top{grid-template-columns:1.3fr 1fr 1fr} }
+
+/* ---------------------------------------------------------
+   Sticky mobile call bar
+   --------------------------------------------------------- */
+.callbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:900;
+  display:flex; background:var(--ochre-500);
+  box-shadow:0 -6px 20px rgba(0,0,0,.24);
+}
+.callbar a{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:16px 12px; color:var(--btn-ink); font-weight:700; font-size:16.5px;
+}
+.callbar svg{flex:0 0 19px; width:19px; height:19px}
+@media (min-width:960px){ .callbar{display:none} }

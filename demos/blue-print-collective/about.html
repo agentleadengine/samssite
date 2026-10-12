@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Blueprint Collective</title>
+<meta name="description" content="How Blueprint Collective works: a small, collaborative architecture studio on Long Island, NY, built around showing clients the drawings as they happen.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" class="icon-sprite">
+  <symbol id="ic-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><line x1="10.2" y1="18" x2="13.8" y2="18"/></symbol>
+  <symbol id="ic-sms" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4.5 3.5V15H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="13" y2="12"/></symbol>
+  <symbol id="ic-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13 7 18 12 13 17"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><line x1="12" y1="13" x2="12" y2="20"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="12 5 14.2 12 12 19 9.8 12"/><line x1="12" y1="3" x2="12" y2="5"/></symbol>
+</svg>
+
+<div class="demo-ribbon">DEMO SITE <span class="rb-extra">: fictional business, shown for demonstration</span></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <svg class="icon brand-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-compass"/></svg>
+      <span class="brand-name">Blueprint Collective</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" aria-expanded="false" aria-controls="services-sub" aria-label="Show services menu">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-chevron"/></svg>
+          </button>
+          <ul class="submenu" id="services-sub">
+            <li><a href="services.html#custom-home-design">Custom Home Design</a></li>
+            <li><a href="services.html#additions-renovations">Additions &amp; Renovations</a></li>
+            <li><a href="services.html#permit-drawings">Permit Drawings</a></li>
+            <li><a href="services.html#concept-visualization">3D Concept Visualization</a></li>
+            <li><a href="services.html#feasibility-studies">Site Feasibility Studies</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html" class="is-active" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="phone-pill" href="tel:+16315550117">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+      <span>(631) 555-0117</span>
+    </a>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <div class="wrap">
+    <a class="mobile-phone" href="tel:+16315550117">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+      (631) 555-0117
+    </a>
+    <a href="index.html">Home</a>
+    <div class="mobile-services">
+      <button class="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-panel">
+        Services
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-chevron"/></svg>
+      </button>
+      <div class="mobile-services-panel" id="mobile-services-panel">
+        <ul>
+          <li><a href="services.html#custom-home-design">Custom Home Design</a></li>
+          <li><a href="services.html#additions-renovations">Additions &amp; Renovations</a></li>
+          <li><a href="services.html#permit-drawings">Permit Drawings</a></li>
+          <li><a href="services.html#concept-visualization">3D Concept Visualization</a></li>
+          <li><a href="services.html#feasibility-studies">Site Feasibility Studies</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="work.html">Work</a>
+    <a href="about.html" class="is-active" aria-current="page">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="about-hero on-field grid-tex">
+    <div class="wrap">
+      <h1>How the studio works</h1>
+      <p class="lede">The short version: you're part of making the drawings, not waiting to see them.</p>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="wrap">
+      <div class="prose">
+        <p>Priya started Blueprint Collective after working at firms where clients found out what their house would look like at one big meeting, months into the project. That always felt backwards. The people paying for the design should be part of making it, <span class="mark-circle">not waiting for a reveal<svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M6 32 C 2 14 40 4 100 4 C 165 4 198 12 194 30 C 190 46 150 54 100 54 C 45 54 10 48 6 32 Z"/></svg></span>.</p>
+        <p>So the studio works differently. You're in the drawing file as it develops, not just at milestones. Redlines and sketches go up as they happen. Check-ins are short and frequent instead of one long meeting a month. And if a drawing note uses a word you don't recognize, that's on us to explain, not on you to look up.</p>
+        <p>That's the whole approach, really: a small studio that would rather show you a rough sketch today than a polished one in three weeks. It makes for more conversations along the way, and fewer surprises at the end.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-meta">
+    <div class="wrap">
+      <dl class="meta-grid">
+        <div class="meta-item">
+          <dt>Service area</dt>
+          <dd>Homeowners across Long Island's North and South Shores, from first sketch through permit-ready drawings.</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Hours</dt>
+          <dd>Monday–Friday, 9am–5pm. Evening calls by request for anyone who can't get away during the workday.</dd>
+        </div>
+        <div class="meta-item">
+          <dt>How to start</dt>
+          <dd>A phone call. See <a class="link-inline" href="contact.html">Contact</a> for what that first conversation actually covers.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing on-field">
+    <div class="wrap">
+      <h2>Ready to talk it through?</h2>
+      <p>No pitch meeting, no slideshow. Just a conversation about your project and your lot.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+16315550117">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+          Call (631) 555-0117
+        </a>
+        <a class="btn-text" href="contact.html">
+          Send project details
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<a class="callbar" href="tel:+16315550117">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-phone"/></svg>
+  Call now: (631) 555-0117
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-compass"/></svg>
+        Blueprint Collective
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-legal">
+      <p>Demo website built by Samuel Ochoa — samuelochoa.com/websites</p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  function closeMobile(){
+    mobileNav.setAttribute('data-open','false');
+    hamburger.setAttribute('aria-expanded','false');
+    setTimeout(function(){ mobileNav.hidden = true; }, 280);
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){ mobileNav.setAttribute('data-open','true'); });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobile); });
+
+  var msToggle = document.querySelector('.mobile-services-toggle');
+  var msPanel = document.getElementById('mobile-services-panel');
+  msToggle.addEventListener('click', function(){
+    var open = msToggle.getAttribute('aria-expanded') === 'true';
+    msToggle.setAttribute('aria-expanded', String(!open));
+    msPanel.setAttribute('data-open', String(!open));
+  });
+
+  var subToggle = document.querySelector('.sub-toggle');
+  if(subToggle){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.has-sub')){ subToggle.setAttribute('aria-expanded','false'); }
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(hamburger.getAttribute('aria-expanded') === 'true'){ closeMobile(); }
+      if(subToggle) subToggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

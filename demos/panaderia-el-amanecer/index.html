@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--
+  DIRECTION CONTRACT
+  THESIS: The oven never really stops — trays keep coming out from five in the morning to close,
+    so "recién horneado" is true at every hour, not only at dawn.
+  OWN-WORLD: A butter-yellow morning that owns the page — sunrise fields carry most of the surface,
+    deep cocoa ink structures the type and the header/footer shell, and rosa mexicano marks only
+    what's worth reaching for: the call button, the price tags, one word in the headline. Rounded,
+    hand-piped display lettering and softly blurred cocoa shadows read like warm bread, not a poster.
+  STORY: The case at mid-morning, still filling → the oven room and its four daily tandas → the six
+    things on the counter → the custom orders it built its name on → the shop's daily rhythm behind
+    it → one call locks in a pastel or a charola.
+  FIRST VIEWPORT: A full-bleed butter-yellow field holds an oversized rounded headline, a short
+    promise, a call CTA plus a text link into the menu, and an authored SVG of the display case
+    mid-morning with steam still rising off a fresh tray — the trade is visible before any scroll.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panadería El Amanecer | Pan dulce y pasteles en Long Island, NY</title>
+<meta name="description" content="Panadería El Amanecer: pan dulce horneado en tandas todo el día, bolillo, pasteles por encargo y charolas para eventos en Long Island, NY. Sitio de demostración. Llame al (516) 555-0111.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Panadería El Amanecer, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--cacao-950)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--manteca-500)" stroke-width="1.3" opacity=".5"/>
+        <path d="M8 26h28" stroke="var(--crema-dim)" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+        <path d="M10.5 25.2a11.5 11.5 0 0 1 23 0Z" fill="var(--manteca-500)"/>
+        <g stroke="var(--manteca-500)" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+          <path d="M22 8.5v3.4"/>
+          <path d="M13.6 12l2.2 2.2"/>
+          <path d="M30.4 12l-2.2 2.2"/>
+        </g>
+        <circle cx="22" cy="25.6" r="3" fill="var(--rosa-500)"/>
+      </svg>
+      <span class="brand">El Amanecer<small>Panadería · Long Island</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      (516) 555-0111
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#pan-dulce">Pan dulce del día</a></li>
+          <li><a href="services.html#bolillo">Bolillo y telera</a></li>
+          <li><a href="services.html#pasteles">Pasteles por encargo</a></li>
+          <li><a href="services.html#cafe">Café y bebidas</a></li>
+          <li><a href="services.html#temporada">Rosca y pan de temporada</a></li>
+          <li><a href="services.html#charolas">Charolas para eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Encargos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      Llamar (516) 555-0111
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">Pan caliente,<br><span class="accent">no solo al amanecer</span></h1>
+      <p class="lead reveal reveal-2">Sacamos tandas nuevas de pan dulce y bolillo cuatro veces al día, así que la concha de las cuatro de la tarde sale tan fresca como la de la mañana. Pasteles por encargo, charolas para eventos y café de olla, todo horneado aquí mismo.</p>
+      <div class="cta-row reveal reveal-2">
+        <a class="btn" href="tel:+15165550111">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+          Llamar (516) 555-0111
+        </a>
+        <a class="btn-line" href="services.html">
+          Ver el menú
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="nota reveal reveal-2">Pasteles por encargo con 48 horas de anticipación</p>
+
+      <div class="hero-art reveal reveal-3">
+        <svg viewBox="0 0 520 340" role="img" aria-label="Ilustración de la vitrina de la panadería a media mañana, con charolas de pan dulce, un pastel, una bolsa para llevar y vapor subiendo de una concha recién salida">
+          <defs>
+            <radialGradient id="glowAm" cx="72%" cy="16%" r="60%">
+              <stop offset="0%" stop-color="#FFE7B8" stop-opacity=".9"/>
+              <stop offset="55%" stop-color="var(--manteca-500)" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="var(--manteca-500)" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="caseGlassAm" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFF9EC"/>
+              <stop offset="100%" stop-color="#FDEAC0"/>
+            </linearGradient>
+          </defs>
+
+          <circle class="glint-a" cx="412" cy="66" r="120" fill="url(#glowAm)"/>
+          <ellipse cx="260" cy="320" rx="220" ry="14" fill="var(--cacao-950)" opacity=".08"/>
+
+          <!-- case body -->
+          <rect x="46" y="46" width="428" height="248" rx="22" fill="url(#caseGlassAm)" stroke="var(--cacao-950)" stroke-width="3.4"/>
+          <path d="M46 68a22 22 0 0 1 22-22h384a22 22 0 0 1 22 22v18H46Z" fill="var(--rosa-500)"/>
+          <rect x="46" y="82" width="428" height="6" fill="var(--cacao-950)" opacity=".14"/>
+          <path d="M52 158h416M52 224h416" stroke="var(--cacao-950)" stroke-width="3" opacity=".45"/>
+
+          <!-- shelf 1: conchas -->
+          <g>
+            <ellipse cx="128" cy="126" rx="38" ry="26" fill="var(--manteca-600)"/>
+            <path d="M96 122a32 22 0 0 1 64 0" fill="#FFF3D2" opacity=".92"/>
+            <path d="M110 104v20M128 100v24M146 104v20" stroke="#B9760F" stroke-width="3"/>
+
+            <ellipse cx="228" cy="128" rx="36" ry="25" fill="var(--rosa-500)"/>
+            <path d="M197 124a30 21 0 0 1 60 0" fill="var(--rosa-100)" opacity=".92"/>
+            <path d="M211 107v19M228 103v23M245 107v19" stroke="var(--rosa-600)" stroke-width="3"/>
+
+            <ellipse cx="326" cy="126" rx="38" ry="26" fill="var(--cacao-700)"/>
+            <path d="M294 122a32 22 0 0 1 64 0" fill="#C9986B" opacity=".9"/>
+            <path d="M308 104v20M326 100v24M344 104v20" stroke="var(--cacao-900)" stroke-width="3"/>
+          </g>
+
+          <g class="steam-wisp" stroke="var(--cacao-700)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".55">
+            <path d="M118 96c-8-12 7-16 0-30"/>
+          </g>
+          <g class="steam-wisp" stroke="var(--cacao-700)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".5">
+            <path d="M228 92c-8-13 7-17 0-31"/>
+          </g>
+
+          <!-- shelf 2: bolillos + cuernitos -->
+          <g fill="var(--manteca-600)">
+            <ellipse cx="118" cy="190" rx="46" ry="16"/>
+            <ellipse cx="216" cy="190" rx="46" ry="16"/>
+          </g>
+          <path d="M78 186h80M176 186h80" stroke="var(--cacao-900)" stroke-width="2.6" opacity=".5" stroke-linecap="round"/>
+          <path d="M300 202c8-22 40-28 56-10-15 4-20 13-22 20-13 2-28-3-34-10Z" fill="var(--manteca-500)"/>
+          <path d="M370 202c8-22 40-28 56-10-15 4-20 13-22 20-13 2-28-3-34-10Z" fill="var(--manteca-500)"/>
+
+          <!-- shelf 3: pastel + bolsa para llevar -->
+          <g>
+            <circle cx="128" cy="258" r="30" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="3"/>
+            <circle cx="128" cy="258" r="30" fill="none" stroke="var(--rosa-500)" stroke-width="5" stroke-dasharray="1 9.4" stroke-linecap="round"/>
+            <circle cx="128" cy="258" r="15" fill="var(--rosa-100)"/>
+          </g>
+          <g>
+            <path d="M232 240h56l7 42a6 6 0 0 1-6 7h-58a6 6 0 0 1-6-7Z" fill="#E7C68C" stroke="var(--cacao-950)" stroke-width="2.6"/>
+            <path d="M232 240l4-10h48l4 10Z" fill="var(--cacao-700)"/>
+            <circle cx="260" cy="266" r="10" fill="var(--rosa-500)"/>
+            <path d="M255 266l3.4 4L267 260" stroke="var(--crema)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- hanging "hoy" tag -->
+          <g transform="rotate(9 420 96)">
+            <path d="M404 82h34v22a3 3 0 0 1-3 3h-28a3 3 0 0 1-3-3Z" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="2.2"/>
+            <circle cx="421" cy="90" r="2.4" fill="var(--cacao-950)"/>
+            <text x="421" y="102" text-anchor="middle" font-family="Lilita One, sans-serif" font-size="11" fill="var(--rosa-600)">HOY</text>
+          </g>
+          <path d="M418 70c2 4 1 9-2 12" stroke="var(--cacao-700)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+          <g class="glint-b" fill="var(--crema)" opacity=".8">
+            <path d="M90 60l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/>
+          </g>
+          <g class="glint-c" fill="var(--crema)" opacity=".7">
+            <path d="M380 58l1.6 5 5 1.6-5 1.6-1.6 5-1.6-5-5-1.6 5-1.6Z"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap ticket">
+    <div class="ticket-in">
+      <div class="ticket-item">
+        <div class="k">Horneado</div>
+        <div class="v">Cuatro tandas al día</div>
+        <div class="n">5 a.m., 7:30 a.m., mediodía y 4 p.m.</div>
+      </div>
+      <div class="ticket-item">
+        <div class="k">Pedidos</div>
+        <div class="v">Por teléfono</div>
+        <div class="n">Pasteles y charolas, con anticipación.</div>
+      </div>
+      <div class="ticket-item">
+        <div class="k">Zona</div>
+        <div class="v">Long Island, NY</div>
+        <div class="n">Mostrador abierto los siete días.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band-light spotlight-section">
+    <div class="wrap spotlight-grid">
+      <div class="spotlight-art">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración del frente de un horno encendido, con dos charolas de pan visibles tras la ventana">
+          <defs>
+            <radialGradient id="ovenGlow" cx="50%" cy="45%" r="70%">
+              <stop offset="0%" stop-color="#FFE3A0"/>
+              <stop offset="60%" stop-color="var(--manteca-600)"/>
+              <stop offset="100%" stop-color="var(--cacao-800)"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="200" cy="270" rx="150" ry="14" fill="var(--cacao-950)" opacity=".08"/>
+          <rect x="60" y="26" width="280" height="240" rx="20" fill="var(--cacao-800)" stroke="var(--cacao-950)" stroke-width="3"/>
+          <rect x="84" y="52" width="232" height="150" rx="12" fill="var(--cacao-950)"/>
+          <rect x="94" y="62" width="212" height="130" rx="8" fill="url(#ovenGlow)"/>
+          <g opacity=".92">
+            <ellipse cx="150" cy="98" rx="26" ry="14" fill="var(--manteca-600)"/>
+            <ellipse cx="220" cy="98" rx="26" ry="14" fill="var(--rosa-500)"/>
+            <rect x="110" y="118" width="180" height="7" rx="3.5" fill="var(--cacao-900)" opacity=".55"/>
+            <ellipse cx="150" cy="160" rx="26" ry="14" fill="var(--cacao-700)"/>
+            <ellipse cx="220" cy="160" rx="26" ry="14" fill="var(--manteca-600)"/>
+          </g>
+          <g class="steam-wisp" stroke="var(--manteca-500)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55">
+            <path d="M150 84c-7-11 6-14 0-26"/>
+          </g>
+          <g class="steam-wisp" stroke="var(--manteca-500)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".5">
+            <path d="M220 84c-7-12 6-15 0-27"/>
+          </g>
+          <rect x="84" y="216" width="232" height="26" rx="8" fill="var(--cacao-900)"/>
+          <circle cx="112" cy="229" r="7" fill="var(--rosa-500)"/>
+          <circle cx="140" cy="229" r="7" fill="var(--manteca-500)"/>
+          <rect x="168" y="223" width="110" height="12" rx="6" fill="var(--cacao-700)"/>
+          <rect x="150" y="8" width="100" height="16" rx="8" fill="var(--manteca-500)"/>
+        </svg>
+      </div>
+      <div>
+        <h2>El horno no para en todo el día</h2>
+        <p class="measure">Desde las cinco de la mañana hasta la tarde, salen tandas nuevas de la cocina. Por eso el pan que se lleva a las cuatro huele igual de fresco que el de la madrugada.</p>
+        <ol class="batch-list">
+          <li>
+            <span class="time">5 a.m.</span>
+            <div>
+              <h3>Primera tanda</h3>
+              <p>Bolillo, telera y las primeras conchas, para quien sale temprano al trabajo.</p>
+            </div>
+          </li>
+          <li>
+            <span class="time">7:30 a.m.</span>
+            <div>
+              <h3>Pan dulce completo</h3>
+              <p>Sale el resto del surtido — orejas, cuernitos, empanadas y besos — y se prende la olla del café.</p>
+            </div>
+          </li>
+          <li>
+            <span class="time">12 p.m.</span>
+            <div>
+              <h3>Bolillo del mediodía</h3>
+              <p>Segunda hornada de bolillo y telera, lista para las tortas de la comida.</p>
+            </div>
+          </li>
+          <li>
+            <span class="time">4 p.m.</span>
+            <div>
+              <h3>Tanda de la tarde</h3>
+              <p>Conchas y pan dulce recién salidos para la merienda; los pasteles encargados también quedan listos a esta hora.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-manteca section-tight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Del mostrador al menú completo</h2>
+      </div>
+      <div class="tray-board">
+        <a class="tray-row" href="services.html#pan-dulce">
+          <span class="ico">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 22a11 8 0 0 1 22 0"/><path d="M10 14v8M16 12v10M22 14v8"/></svg>
+          </span>
+          <span class="body">
+            <h3>Pan dulce del día</h3>
+            <p>Conchas, orejas, cuernitos y empanadas en tandas frescas toda la mañana y otra vez por la tarde.</p>
+          </span>
+          <span class="tag">Desde $1.50</span>
+        </a>
+        <a class="tray-row alt" href="services.html#pasteles">
+          <span class="ico">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24h20L16 6Z"/><path d="M11 24l5-13 5 13"/></svg>
+          </span>
+          <span class="body">
+            <h3>Pasteles por encargo</h3>
+            <p>Tres leches, chocolate, mocha y fresas con crema, con el nombre y la dedicatoria que usted pida.</p>
+          </span>
+          <span class="tag">Desde $45</span>
+        </a>
+        <a class="tray-row" href="services.html#charolas">
+          <span class="ico">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="12" width="24" height="11" rx="3"/><path d="M4 17H1M31 17h-3"/></svg>
+          </span>
+          <span class="body">
+            <h3>Charolas para eventos</h3>
+            <p>Charola surtida de pan dulce para juntas, bautizos y reuniones, ya armada y lista para llevar.</p>
+          </span>
+          <span class="tag">Desde $52</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-light why-section">
+    <div class="wrap why-grid">
+      <div>
+        <h2>Tres cosas que cuidamos</h2>
+        <p class="measure">No prometemos nada que no hagamos todos los días detrás del mostrador.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="5" y="6" width="18" height="4" rx="1.5"/><rect x="5" y="13" width="18" height="4" rx="1.5"/><rect x="5" y="20" width="18" height="4" rx="1.5"/></svg>
+          </span>
+          <div>
+            <strong>Horneado en tandas todo el día</strong>
+            <span>Nunca es pan de una sola hornada fría; sale fresco varias veces, de la mañana a la tarde.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M6 6h9l11 11-9 9L6 15Z"/><circle cx="11" cy="11" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <div>
+            <strong>Pasteles con dedicatoria</strong>
+            <span>Escribimos el nombre y el mensaje que usted quiera, con 48 horas de anticipación.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="10" width="20" height="10" rx="3"/><path d="M4 14H1M27 14h-3"/></svg>
+          </span>
+          <div>
+            <strong>Charolas armadas el mismo día</strong>
+            <span>Para bautizos, juntas y reuniones; solo díganos cuántas personas y nosotros armamos la mezcla.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="dock-rule on-dark" viewBox="0 0 400 8" preserveAspectRatio="none" aria-hidden="true">
+      <circle cx="10" cy="4" r="2.6"/><circle cx="34" cy="4" r="2.6"/><circle cx="58" cy="4" r="2.6"/><circle cx="82" cy="4" r="2.6"/><circle cx="106" cy="4" r="2.6"/><circle cx="130" cy="4" r="2.6"/><circle cx="154" cy="4" r="2.6"/><circle cx="178" cy="4" r="2.6"/><circle cx="202" cy="4" r="2.6"/><circle cx="226" cy="4" r="2.6"/><circle cx="250" cy="4" r="2.6"/><circle cx="274" cy="4" r="2.6"/><circle cx="298" cy="4" r="2.6"/><circle cx="322" cy="4" r="2.6"/><circle cx="346" cy="4" r="2.6"/><circle cx="370" cy="4" r="2.6"/><circle cx="394" cy="4" r="2.6"/>
+    </svg>
+    <div class="wrap closing-grid">
+      <div>
+        <h2>¿Le apartamos algo?</h2>
+        <p class="measure" style="color:rgba(255,251,242,.82)">Llame y le decimos si su pastel favorito alcanza para el sábado, o pase directo por su pan del día.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550111">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+            Llamar (516) 555-0111
+          </a>
+          <a class="btn-line on-dark" href="services.html">
+            Ver el menú
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <ul class="hours-mini">
+          <li><span class="d">Lunes a viernes</span><span class="h">5 a.m. – 8 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="h">5 a.m. – 9 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="h">6 a.m. – 6 p.m.</span></li>
+          <li><span class="d">Pedidos por teléfono</span><span class="h">Hasta las 6 p.m.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">El Amanecer</div>
+        <p>Pan dulce, bolillo y pasteles horneados en tandas, todo el día, en Long Island, NY.</p>
+        <p><a href="tel:+15165550111">(516) 555-0111</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Menú</a></li>
+          <li><a href="work.html">Encargos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550111">Llamar (516) 555-0111</a></li>
+          <li><a href="sms:+15165550111">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550111">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+  Llamar (516) 555-0111
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

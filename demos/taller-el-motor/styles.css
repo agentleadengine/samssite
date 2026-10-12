@@ -1,0 +1,517 @@
+/* =========================================================================
+   TALLER MECÁNICO EL MOTOR — shared stylesheet
+   -------------------------------------------------------------------------
+   Color strategy: FULL PALETTE, four named roles at page scale.
+     plate   — gunmetal ground (dominant surface, the shop floor/bay)
+     orange  — racing-orange signal (the needle, the action, the mark)
+     ticket  — pale work-order paper (closing bands, the printed estimate)
+     steel   — tin/chrome text tint used on dark plate surfaces
+   Grammar: every claim in this site is drawn as an analog gauge — a track,
+   a redline arc, a swept needle. Diagnose first, explain the number, then
+   ask permission. "Medido, no adivinado."
+   Faces: Racing Sans One (condensed motorsport display, one weight, used
+          big) + Chivo (utilitarian grotesk for body copy and UI, several
+          weights). Two families, no more.
+   ========================================================================= */
+
+*,*::before,*::after{ box-sizing:border-box }
+html,body{ margin:0; padding:0; max-width:100% }
+body{ overflow-x:hidden }
+@media (prefers-reduced-motion: no-preference){ html{ scroll-behavior:smooth } }
+
+:root{
+  --plate-0:#0c0e10;
+  --plate:#121417;
+  --plate-2:#1b1e23;
+  --plate-3:#262a31;
+  --seam:rgba(255,255,255,.09);
+
+  --steel:#c9cdd3;
+  --steel-dim:#9198a1;
+  --steel-faint:#7d848d;
+
+  --orange:#ff5b1e;
+  --orange-2:#ff8f5a;
+  --orange-deep:#9c3410;
+  --on-orange:#1a0800;
+
+  --ticket:#f2ede2;
+  --ticket-ink:#17191c;
+  --ticket-dim:#6b6459;
+  --ticket-seam:#ddd5c5;
+
+  --ribbon-h:30px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+body{
+  background:var(--plate);
+  color:var(--steel);
+  font-family:'Chivo',system-ui,-apple-system,sans-serif;
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  padding-top:var(--ribbon-h);
+  padding-bottom:76px;
+}
+@media (min-width:900px){ body{ padding-bottom:0 } }
+
+h1,h2,h3{
+  font-family:'Racing Sans One',sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:-.005em;
+  line-height:.96;
+  margin:0;
+  text-wrap:balance;
+}
+h1{ font-size:clamp(2.75rem,8.6vw,5.6rem) }
+h2{ font-size:clamp(2rem,5.4vw,3.3rem) }
+h3{ font-size:clamp(1.22rem,3vw,1.5rem); letter-spacing:0 }
+h1 .accent,h2 .accent{ color:var(--orange-2) }
+
+p{ color:inherit; margin:0 0 16px }
+a{ color:inherit }
+img,svg{ max-width:100% }
+button{ font:inherit }
+strong{ font-weight:700 }
+
+.wrap{ width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(20px,4.4vw,48px) }
+.section{ padding:58px 0 }
+@media (min-width:900px){ .section{ padding:96px 0 } }
+.section-tight{ padding:44px 0 }
+.measure{ max-width:68ch }
+.lede{ max-width:54ch; color:var(--steel-dim); font-size:1.08rem; margin:16px 0 0 }
+
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--orange-2); outline-offset:3px; border-radius:1px;
+}
+
+/* -------------------------------------------------------------------------
+   DEMO RIBBON — fixed full-width strip above everything; header starts
+   below it, so it can never overlap the header at any width.
+   ------------------------------------------------------------------------- */
+.demo-ribbon{
+  position:fixed; top:0; left:0; right:0; height:var(--ribbon-h); z-index:300;
+  background:var(--orange); color:var(--on-orange);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Chivo',sans-serif; font-weight:800; font-size:11px;
+  letter-spacing:.15em; text-transform:uppercase;
+}
+
+/* -------------------------------------------------------------------------
+   HEADER / NAV — flat plate, no glass/blur (this world keeps its chrome
+   minimal and literal, not frosted).
+   ------------------------------------------------------------------------- */
+.site-header{
+  position:sticky; top:var(--ribbon-h); z-index:150;
+  background:var(--plate-0);
+  border-bottom:1px solid var(--plate-3);
+}
+.bar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0 }
+
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--steel) }
+.brand-mark{ width:34px; height:34px; flex:0 0 34px }
+.brand-name{ font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:20px; line-height:1; text-transform:uppercase; color:#fff }
+.brand-name small{ display:block; font-family:'Chivo',sans-serif; font-weight:600; font-size:9px; letter-spacing:.16em; color:var(--steel-faint); text-transform:uppercase; margin-top:6px }
+
+.nav{ display:none }
+.head-phone{ display:none }
+@media (min-width:900px){
+  .nav{ display:block }
+  .head-phone{
+    display:inline-flex; align-items:center; gap:8px; font-family:'Racing Sans One',sans-serif;
+    font-weight:400; font-size:20px; color:var(--orange-2); text-decoration:none;
+  }
+  .head-phone:hover{ color:#fff }
+  .head-phone svg{ width:16px; height:16px; flex:none }
+  .hamburger{ display:none }
+}
+.nav ul{ display:flex; align-items:center; gap:26px; list-style:none; margin:0; padding:0 }
+.nav .has-sub{ position:relative; display:flex; align-items:center; gap:2px }
+.nav-link{
+  text-decoration:none; color:var(--steel-dim); font-weight:600; font-size:.95rem;
+  padding:6px 1px; border-bottom:2px solid transparent; transition:color .15s ease,border-color .15s ease;
+}
+.nav-link:hover{ color:var(--steel) }
+.nav-link.is-active{ color:#fff; border-color:var(--orange) }
+
+.sub-caret{
+  display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px;
+  background:none; border:0; color:var(--steel-dim); cursor:pointer; padding:0;
+}
+.sub-caret:hover{ color:var(--orange-2) }
+.sub-caret svg{ width:10px; height:7px; transition:transform .18s var(--ease) }
+.has-sub.is-open .sub-caret svg,.has-sub:focus-within .sub-caret svg{ transform:rotate(180deg) }
+
+.submenu{
+  position:absolute; top:100%; left:-14px; margin:12px 0 0; padding:7px; min-width:236px;
+  list-style:none; background:var(--plate-2); border:1px solid var(--plate-3);
+  box-shadow:0 18px 34px -14px rgba(0,0,0,.65);
+  opacity:0; pointer-events:none; transform:translateY(-6px);
+  transition:opacity .16s ease,transform .16s ease; z-index:5;
+}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.is-open .submenu{
+  opacity:1; pointer-events:auto; transform:translateY(0);
+}
+.submenu li a{ display:block; padding:9px 11px; text-decoration:none; color:var(--steel-dim); font-size:.87rem; font-weight:500 }
+.submenu li a:hover{ background:var(--plate-3); color:#fff }
+
+.head-actions{ display:flex; align-items:center; gap:16px }
+.hamburger{
+  width:40px; height:40px; display:inline-flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:5px; background:none; border:1.5px solid var(--plate-3); cursor:pointer;
+}
+.hamburger span{ display:block; width:19px; height:2px; background:var(--steel); transition:transform .2s var(--ease),opacity .2s ease }
+.hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg) }
+.hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0 }
+.hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg) }
+
+.mobile-nav{
+  position:fixed; inset:0; z-index:140; background:var(--plate-0);
+  padding:100px clamp(22px,7vw,34px) 32px; overflow-y:auto;
+  opacity:0; transform:translateY(-10px); transition:opacity .2s ease,transform .2s var(--ease);
+}
+.mobile-nav[hidden]{ display:none }
+.mobile-nav.is-open{ opacity:1; transform:translateY(0) }
+.mobile-nav > ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column }
+.mobile-nav > ul > li{ border-bottom:1px solid var(--plate-3) }
+.mobile-nav > ul > li > a{
+  display:block; padding:17px 2px; text-decoration:none; color:#fff;
+  font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:1.55rem; text-transform:uppercase;
+}
+.mobile-nav > ul > li > a.is-active{ color:var(--orange-2) }
+.m-row{ display:flex; align-items:center; justify-content:space-between }
+.m-row a{ padding:17px 2px; text-decoration:none; color:#fff; flex:1; font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:1.55rem; text-transform:uppercase }
+.sub-caret-m{ width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; background:none; border:0; color:var(--steel-dim); cursor:pointer }
+.sub-caret-m svg{ width:13px; height:9px; transition:transform .18s var(--ease) }
+.has-sub-m.is-open .sub-caret-m svg{ transform:rotate(180deg) }
+.submenu-m{ list-style:none; margin:0; padding:0; max-height:0; overflow:hidden; transition:max-height .22s var(--ease) }
+.has-sub-m.is-open .submenu-m{ max-height:340px }
+.submenu-m li a{ display:block; padding:11px 2px 11px 14px; text-decoration:none; color:var(--steel-dim); font-size:1rem }
+.submenu-m li a:hover{ color:var(--orange-2) }
+.m-phone{
+  display:flex; align-items:center; justify-content:center; gap:10px; margin-top:26px; padding:16px;
+  background:var(--orange); color:var(--on-orange); text-decoration:none; text-align:center;
+  font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:1.2rem; text-transform:uppercase;
+}
+@media (min-width:900px){ .mobile-nav{ display:none !important } }
+
+/* -------------------------------------------------------------------------
+   MOBILE CALL BAR
+   ------------------------------------------------------------------------- */
+.call-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:120;
+  background:var(--orange); color:var(--on-orange); text-decoration:none;
+  display:flex; align-items:center; justify-content:center; gap:9px; padding:16px;
+  font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:19px; text-transform:uppercase;
+  box-shadow:0 -10px 24px -8px rgba(0,0,0,.6);
+}
+.call-bar svg{ width:18px; height:18px }
+@media (min-width:900px){ .call-bar{ display:none } }
+
+/* -------------------------------------------------------------------------
+   BUTTONS / LINKS
+   ------------------------------------------------------------------------- */
+.btns{ display:flex; flex-direction:column; gap:12px }
+@media (min-width:560px){ .btns{ flex-direction:row; align-items:center; flex-wrap:wrap } }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  padding:16px 26px; border:1.5px solid transparent;
+  font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:1.15rem;
+  text-transform:uppercase; text-decoration:none; cursor:pointer;
+  transition:transform .16s var(--ease),box-shadow .16s ease,background-color .16s ease,color .16s ease,border-color .16s ease;
+}
+.btn-primary{ background:var(--orange); color:var(--on-orange); box-shadow:0 14px 26px -12px rgba(255,91,30,.55) }
+.btn-primary:hover{ background:var(--orange-2); transform:translateY(-2px); box-shadow:0 18px 30px -12px rgba(255,91,30,.7) }
+.btn-primary:active{ transform:translateY(0) }
+.btn-on-ticket{ background:var(--ticket-ink); color:var(--ticket) }
+.btn-on-ticket:hover{ background:var(--orange); color:var(--on-orange); transform:translateY(-2px) }
+.btn[disabled]{ opacity:.5; cursor:not-allowed; transform:none !important }
+.btn svg{ width:16px; height:16px }
+.btn-block{ width:100% }
+
+.text-cta{
+  display:inline-flex; align-items:center; gap:7px; color:var(--orange-2); text-decoration:none;
+  font-weight:700; border-bottom:1.5px solid transparent; padding-bottom:2px;
+  transition:border-color .15s ease;
+}
+.text-cta:hover{ border-color:currentColor }
+.text-cta svg{ width:14px; height:14px; transition:transform .16s var(--ease) }
+.text-cta:hover svg{ transform:translateX(3px) }
+.band-ticket .text-cta{ color:var(--orange-deep) }
+
+/* -------------------------------------------------------------------------
+   COLOR BANDS (page-scale regions — the "full palette" commitment)
+   ------------------------------------------------------------------------- */
+.band-plate-2{ background:var(--plate-2) }
+.band-ticket{ background:var(--ticket); color:var(--ticket-ink) }
+.band-ticket .dim{ color:var(--ticket-dim) }
+.dim{ color:var(--steel-dim) }
+
+.divider-beam{ height:2px; margin:0; border:0; background:linear-gradient(90deg,transparent,var(--orange) 18%,var(--orange) 82%,transparent) }
+
+/* -------------------------------------------------------------------------
+   GAUGE SYSTEM — the shared drawn-icon grammar. One consistent stroke
+   language reused at three sizes across every page.
+   ------------------------------------------------------------------------- */
+.gauge{ display:block; width:100%; height:auto }
+.g-track{ fill:none; stroke:var(--plate-3); stroke-linecap:round }
+.g-redline{ fill:none; stroke:var(--orange); stroke-linecap:round; opacity:.9 }
+.g-redline-glow{ fill:none; stroke:var(--orange); stroke-linecap:round; opacity:.55; filter:blur(5px) }
+.g-tick-major{ stroke:var(--steel-dim); stroke-linecap:round }
+.g-tick-minor{ stroke:var(--plate-3); stroke-linecap:round }
+.g-hub{ fill:var(--plate-2); stroke:var(--orange) }
+.g-needle{ stroke:var(--orange-2); stroke-linecap:round }
+.g-needle-ghost{ stroke:var(--steel-faint); stroke-linecap:round; stroke-dasharray:2 5; opacity:.8 }
+.g-plate-bg{ fill:var(--plate-2) }
+.g-bolt{ fill:var(--plate-3) }
+
+/* size modifiers — one stroke language, scaled per instance */
+.gauge--hero .g-track,.gauge--hero .g-redline,.gauge--hero .g-redline-glow{ stroke-width:9 }
+.gauge--hero .g-tick-major{ stroke-width:2.6 }
+.gauge--hero .g-tick-minor{ stroke-width:2.2 }
+.gauge--hero .g-needle{ stroke-width:4.5 }
+.gauge--hero .g-hub{ stroke-width:3 }
+
+.gauge--icon .g-track,.gauge--icon .g-redline{ stroke-width:4.5 }
+.gauge--icon .g-tick-major{ stroke-width:1.8 }
+.gauge--icon .g-tick-minor{ stroke-width:1.5 }
+.gauge--icon .g-needle,.gauge--icon .g-needle-ghost{ stroke-width:2.4 }
+.gauge--icon .g-hub{ stroke-width:1.8 }
+
+.gauge--step .g-track{ stroke-width:2.4 }
+.gauge--step .g-needle{ stroke-width:1.8 }
+.gauge--step .g-hub{ stroke-width:1.4 }
+
+.gauge--mark .g-track,.gauge--mark .g-redline{ stroke-width:1.8 }
+.gauge--mark .g-needle{ stroke-width:1.4 }
+.gauge--mark .g-hub{ stroke-width:1.1 }
+
+.needle-hero{ transform-box:view-box; transform-origin:140px 150px }
+@media (prefers-reduced-motion:no-preference){
+  .needle-hero{ animation:needle-sweep 1.3s var(--ease) both; animation-delay:.2s }
+  @keyframes needle-sweep{ from{ transform:rotate(-92deg) } to{ transform:rotate(0deg) } }
+}
+.needle-icon{ transform-box:view-box; transform-origin:70px 64px }
+
+.gauge-tag{
+  display:inline-flex; align-items:center; gap:8px; background:var(--orange); color:var(--on-orange);
+  font-family:'Chivo',sans-serif; font-weight:800; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+  padding:8px 14px; margin-top:18px;
+}
+.gauge-tag svg{ width:13px; height:13px; flex:none }
+
+/* -------------------------------------------------------------------------
+   HERO
+   ------------------------------------------------------------------------- */
+.hero{ padding:40px 0 0 }
+.hero-grid{ display:grid; gap:34px; align-items:center }
+@media (min-width:960px){ .hero-grid{ grid-template-columns:1.08fr 1fr; gap:40px } }
+.hero h1{ margin-bottom:18px }
+.hero-actions{ margin-top:24px }
+.hero-scene-wrap{ position:relative; max-width:360px; margin:0 auto }
+@media (min-width:960px){ .hero-scene-wrap{ max-width:none } }
+
+/* -------------------------------------------------------------------------
+   FILMSTRIP (proof-of-work vignette on index)
+   ------------------------------------------------------------------------- */
+.filmstrip{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--plate-3); border:1px solid var(--plate-3); margin-top:30px }
+@media (min-width:760px){ .filmstrip{ grid-template-columns:repeat(3,1fr) } }
+.frame{ background:var(--plate-2); padding:24px 22px 28px }
+.frame .g-wrap{ max-width:150px; margin:0 auto 14px }
+.frame-label{ font-family:'Chivo',sans-serif; font-weight:800; font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--orange-2); margin:0 0 8px }
+.frame p{ margin:0; color:var(--steel-dim); font-size:.94rem }
+
+/* -------------------------------------------------------------------------
+   SERVICES TEASER (index) — asymmetric grid
+   ------------------------------------------------------------------------- */
+.teaser-grid{ display:grid; grid-template-columns:1fr; gap:14px; margin-top:30px }
+@media (min-width:760px){
+  .teaser-grid{ grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,auto) }
+  .teaser-grid .teaser:nth-child(1){ grid-column:1/3; grid-row:1/3 }
+  .teaser-grid .teaser:nth-child(2){ grid-column:3/4; grid-row:1/2 }
+  .teaser-grid .teaser:nth-child(3){ grid-column:3/4; grid-row:2/3 }
+}
+.teaser{
+  background:var(--plate-2); border:1px solid var(--seam); padding:24px 22px;
+  display:flex; flex-direction:column; gap:9px; text-decoration:none; color:var(--steel);
+  transition:border-color .16s ease,transform .16s var(--ease);
+}
+.teaser:hover{ border-color:var(--orange-2); transform:translateY(-3px) }
+.teaser h3{ margin:0 }
+.teaser p{ margin:0; color:var(--steel-dim); font-size:.94rem; max-width:36ch }
+.teaser .text-cta{ margin-top:auto; padding-top:10px }
+
+/* -------------------------------------------------------------------------
+   METHOD / STEP TRACK (why-us, index) — sequence shown by needle position,
+   not by a numbered kicker label.
+   ------------------------------------------------------------------------- */
+.method-track{ position:relative; display:grid; grid-template-columns:1fr; gap:38px; margin-top:48px }
+@media (min-width:840px){
+  .method-track{ grid-template-columns:repeat(3,1fr); gap:34px; padding-top:4px }
+  .method-track::before{ content:""; position:absolute; left:38px; right:38px; top:35px; height:2px; background:linear-gradient(90deg,var(--plate-3),var(--orange) 50%,var(--plate-3)) }
+}
+.step{ display:flex; flex-direction:column; gap:14px }
+.step .g-wrap{ width:70px; height:70px; position:relative; z-index:1 }
+.step h3{ margin:0 0 8px }
+.step p{ margin:0; color:var(--steel-dim); max-width:38ch }
+
+/* -------------------------------------------------------------------------
+   SERVICE ROWS (services.html)
+   ------------------------------------------------------------------------- */
+.svc-row{ display:grid; grid-template-columns:1fr; gap:22px; padding:38px 0; border-top:1px solid var(--plate-3) }
+.svc-row:last-child{ border-bottom:1px solid var(--plate-3) }
+@media (min-width:840px){ .svc-row{ grid-template-columns:160px 1fr; gap:40px; align-items:start } }
+.svc-row .g-wrap{ width:100%; max-width:160px }
+.svc-head{ margin-bottom:10px }
+.svc-row p{ margin:0 0 10px; color:var(--steel-dim); max-width:68ch }
+.svc-when{ font-size:.92rem; color:var(--steel-faint) }
+.svc-when strong{ color:var(--steel-dim); font-weight:700 }
+.svc-row.is-featured{
+  background:var(--orange); color:var(--on-orange); border-top-color:transparent;
+  width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;
+  padding:38px clamp(20px,4.4vw,48px);
+}
+.svc-row.is-featured .g-track{ stroke:rgba(26,8,0,.35) }
+.svc-row.is-featured .g-redline{ stroke:var(--on-orange); opacity:.55 }
+.svc-row.is-featured .g-tick-major{ stroke:rgba(26,8,0,.55) }
+.svc-row.is-featured .g-tick-minor{ stroke:rgba(26,8,0,.3) }
+.svc-row.is-featured .g-hub{ fill:var(--orange-2); stroke:var(--on-orange) }
+.svc-row.is-featured .g-needle{ stroke:var(--on-orange) }
+.svc-row.is-featured .g-plate-bg{ fill:rgba(26,8,0,.12) }
+.svc-row.is-featured .g-bolt{ fill:rgba(26,8,0,.3) }
+.svc-row.is-featured p{ color:rgba(26,8,0,.86) } /* 5.4:1+ on --orange, verified */
+.svc-row.is-featured .svc-when{ color:rgba(26,8,0,.86) }
+.svc-row.is-featured .svc-when strong{ color:var(--on-orange) }
+.svc-row.is-featured + .svc-row{ border-top-color:transparent }
+
+.intro-beam{ height:2px; width:120px; margin-top:20px; background:linear-gradient(90deg,var(--orange),var(--orange-2)); transform-origin:left; transform:scaleX(1) }
+@media (prefers-reduced-motion: no-preference){
+  .intro-beam{ animation:grow-in .9s var(--ease) both; animation-delay:.1s }
+  @keyframes grow-in{ from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
+}
+
+/* -------------------------------------------------------------------------
+   WORK GALLERY (work.html)
+   ------------------------------------------------------------------------- */
+.gallery-grid{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:30px }
+@media (min-width:720px){ .gallery-grid{ grid-template-columns:repeat(6,1fr) } }
+.vignette{ background:var(--plate-2); border:1px solid var(--seam); padding:0; overflow:hidden; display:flex; flex-direction:column }
+.vignette .v-scene{ width:100%; height:auto; display:block }
+.vignette .v-body{ padding:20px 22px 24px }
+.vignette .v-tag{ display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; color:var(--orange-2); border:1px solid rgba(255,143,90,.4); padding:5px 10px; margin-top:12px }
+.vignette h3{ font-size:clamp(1.12rem,2.3vw,1.35rem); margin:0 0 8px; text-transform:none; letter-spacing:0 }
+.vignette p{ margin:0; color:var(--steel-dim); font-size:.93rem }
+.vignette .v-legend{ display:flex; gap:16px; margin-top:12px; font-size:.78rem; color:var(--steel-dim) }
+.vignette .v-legend span{ display:inline-flex; align-items:center; gap:6px }
+.vignette .v-legend i{ width:14px; height:2px; display:inline-block; background:var(--steel-faint) }
+.vignette .v-legend .after i{ background:var(--orange-2) }
+
+/* -------------------------------------------------------------------------
+   ABOUT — clipboard/work-order scene, tags, hours
+   ------------------------------------------------------------------------- */
+.ab-hero{ display:grid; gap:30px; align-items:center }
+@media (min-width:840px){ .ab-hero{ grid-template-columns:1.2fr .8fr; gap:38px } }
+.clip-scene{ max-width:230px; margin:0 auto; display:block }
+@media (prefers-reduced-motion: no-preference){
+  .clip-line{ stroke-dasharray:60; stroke-dashoffset:60; animation:write-in .7s var(--ease) both }
+  .clip-line:nth-child(2){ animation-delay:.55s }
+  .clip-line:nth-child(3){ animation-delay:.85s }
+  .clip-line:nth-child(4){ animation-delay:1.15s }
+  @keyframes write-in{ to{ stroke-dashoffset:0 } }
+}
+.story p{ margin:0 0 20px }
+.story p:last-child{ margin-bottom:0 }
+.info-grid{ display:grid; gap:30px }
+@media (min-width:760px){ .info-grid{ grid-template-columns:1.1fr 1fr } }
+.info-panel{ background:var(--plate-2); border:1px solid var(--plate-3); padding:30px clamp(22px,4vw,42px) }
+.info-panel h3{ margin-bottom:12px }
+
+.tags{ display:flex; flex-wrap:wrap; gap:9px; margin:16px 0 0; padding:0; list-style:none }
+.tags li{ border:1.5px solid var(--plate-3); color:var(--steel-dim); padding:8px 14px; font-weight:700; font-size:.72rem; letter-spacing:.07em; text-transform:uppercase }
+.band-ticket .tags li{ border-color:var(--ticket-seam); color:var(--ticket-dim) }
+
+.hours{ list-style:none; margin:16px 0 0; padding:0; max-width:420px }
+.hours li{ display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--plate-3); font-size:.98rem }
+.hours li strong{ font-family:'Racing Sans One',sans-serif; font-weight:400; letter-spacing:0; font-size:1.05rem }
+.band-ticket .hours li{ border-color:var(--ticket-seam) }
+.note-line{ margin-top:16px; font-size:.92rem; color:var(--steel-dim); max-width:44ch }
+.band-ticket .note-line{ color:var(--ticket-dim) }
+
+/* -------------------------------------------------------------------------
+   CONTACT — big phone focus-in, sample form styled as a work order
+   ------------------------------------------------------------------------- */
+.tel-focus{
+  font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:clamp(2.5rem,9.4vw,4.2rem);
+  color:var(--orange-2); text-decoration:none; display:inline-flex; align-items:center; gap:14px;
+  line-height:1; margin:6px 0 16px; font-variant-numeric:tabular-nums;
+}
+.tel-focus:hover{ color:#fff }
+.tel-focus .g-wrap{ width:46px; height:46px; flex:none }
+@media (prefers-reduced-motion: no-preference){
+  .tel-focus{ animation:focus-in 1s var(--ease) both }
+  @keyframes focus-in{ from{ opacity:0; filter:blur(7px) } to{ opacity:1; filter:blur(0) } }
+}
+.sms-link{ display:inline-flex; align-items:center; gap:8px; color:var(--steel-dim); text-decoration:none; font-weight:600 }
+.sms-link:hover{ color:var(--orange-2) }
+.sms-link svg{ width:18px; height:18px }
+.hours-row{ display:flex; flex-wrap:wrap; gap:32px; align-items:flex-start }
+.hours-row .hours{ flex:1 1 260px }
+.hours-row .aside{ flex:1 1 220px; max-width:38ch }
+
+.sample-form{ display:grid; gap:18px; margin-top:28px; max-width:560px; background:var(--ticket); color:var(--ticket-ink); padding:clamp(22px,4vw,34px); border-top:6px solid var(--orange) }
+.field label{ display:block; font-weight:800; font-size:.68rem; letter-spacing:.11em; text-transform:uppercase; color:var(--ticket-dim); margin-bottom:7px }
+.field input,.field select,.field textarea{
+  width:100%; padding:13px 15px; background:#fff; border:1.5px solid var(--ticket-seam);
+  color:var(--ticket-ink); font:inherit; font-size:1rem; appearance:none;
+}
+.field textarea{ resize:vertical; min-height:106px }
+.field input::placeholder,.field textarea::placeholder{ color:#9c9284 }
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none; border-color:var(--orange); box-shadow:0 0 0 3px rgba(255,91,30,.22);
+}
+.form-note{ font-size:.82rem; color:var(--ticket-dim); margin-top:2px }
+
+/* -------------------------------------------------------------------------
+   FAQ (native <details>/<summary>)
+   ------------------------------------------------------------------------- */
+.faq{ margin-top:20px; border-top:1px solid var(--plate-3) }
+.faq details{ border-bottom:1px solid var(--plate-3); padding:18px 0 }
+.faq summary{
+  cursor:pointer; font-family:'Racing Sans One',sans-serif; font-weight:400; font-size:1.24rem;
+  list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; text-transform:uppercase;
+}
+.faq summary::-webkit-details-marker{ display:none }
+.faq summary .plus{ flex:0 0 auto; width:16px; height:16px; color:var(--orange-2); transition:transform .2s var(--ease) }
+.faq details[open] summary .plus{ transform:rotate(45deg) }
+.faq details p{ margin:12px 0 0; color:var(--steel-dim); max-width:66ch }
+
+/* -------------------------------------------------------------------------
+   CTA BAND (closes every page)
+   ------------------------------------------------------------------------- */
+.cta-band{ padding:60px 0 74px }
+.cta-band p{ margin:0 0 24px; max-width:52ch; opacity:.9 }
+.cta-band .btns{ margin-top:2px }
+
+/* -------------------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------------------- */
+.site-footer{ background:var(--plate-0); border-top:1px solid var(--plate-3); padding:42px 0 32px }
+.foot-top{ display:flex; flex-direction:column; gap:22px; padding-bottom:24px; border-bottom:1px solid var(--plate-3) }
+@media (min-width:700px){ .foot-top{ flex-direction:row; align-items:center; justify-content:space-between } }
+.foot-brand{ display:flex; align-items:center; gap:10px; color:var(--steel) }
+.foot-brand .brand-mark{ width:30px; height:30px; flex:0 0 30px }
+.foot-brand .brand-name{ font-size:18px }
+.foot-nav ul{ display:flex; flex-wrap:wrap; gap:6px 22px; list-style:none; margin:0; padding:0 }
+.foot-nav a{ text-decoration:none; color:var(--steel-dim); font-size:.92rem; font-weight:600 }
+.foot-nav a:hover{ color:var(--orange-2) }
+.foot-meta{ padding-top:20px }
+.foot-meta p{ margin:0 0 9px; font-size:.9rem; color:var(--steel-dim) }
+.foot-phone a{ color:var(--orange-2); text-decoration:none; font-weight:700 }
+.foot-credit a{ color:var(--steel-dim); text-decoration:underline; text-underline-offset:2px }
+.foot-credit a:hover{ color:var(--orange-2) }
+.foot-disclaimer{ color:var(--steel-faint) !important; font-size:.82rem !important; border-top:1px solid var(--plate-3); padding-top:13px; margin-top:13px !important }

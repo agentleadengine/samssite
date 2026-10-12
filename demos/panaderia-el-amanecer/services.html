@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menú — Panadería El Amanecer</title>
+<meta name="description" content="Todo lo que hornea Panadería El Amanecer: pan dulce, bolillo, pasteles por encargo, café de olla, pan de temporada y charolas para eventos. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Panadería El Amanecer, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--cacao-950)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--manteca-500)" stroke-width="1.3" opacity=".5"/>
+        <path d="M8 26h28" stroke="var(--crema-dim)" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+        <path d="M10.5 25.2a11.5 11.5 0 0 1 23 0Z" fill="var(--manteca-500)"/>
+        <g stroke="var(--manteca-500)" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+          <path d="M22 8.5v3.4"/>
+          <path d="M13.6 12l2.2 2.2"/>
+          <path d="M30.4 12l-2.2 2.2"/>
+        </g>
+        <circle cx="22" cy="25.6" r="3" fill="var(--rosa-500)"/>
+      </svg>
+      <span class="brand">El Amanecer<small>Panadería · Long Island</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      (516) 555-0111
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html" aria-current="page">Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#pan-dulce">Pan dulce del día</a></li>
+          <li><a href="services.html#bolillo">Bolillo y telera</a></li>
+          <li><a href="services.html#pasteles">Pasteles por encargo</a></li>
+          <li><a href="services.html#cafe">Café y bebidas</a></li>
+          <li><a href="services.html#temporada">Rosca y pan de temporada</a></li>
+          <li><a href="services.html#charolas">Charolas para eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Encargos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      Llamar (516) 555-0111
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-manteca">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <h1>Todo lo que horneamos</h1>
+        <p class="lead measure">La charola y las pinzas están a la entrada para el pan del día. Lo que se pide con tiempo — pasteles, charolas y pan de temporada — se aparta por teléfono.</p>
+      </div>
+      <svg class="intro-accent reveal reveal-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de un rodillo de amasar sobre la mesa con un poco de harina">
+        <ellipse cx="80" cy="120" rx="56" ry="9" fill="var(--cacao-950)" opacity=".1"/>
+        <rect x="30" y="94" width="100" height="18" rx="9" fill="var(--manteca-600)" stroke="var(--cacao-950)" stroke-width="2.4"/>
+        <rect x="18" y="98" width="14" height="10" rx="5" fill="var(--cacao-700)" stroke="var(--cacao-950)" stroke-width="2"/>
+        <rect x="128" y="98" width="14" height="10" rx="5" fill="var(--cacao-700)" stroke="var(--cacao-950)" stroke-width="2"/>
+        <g fill="var(--crema)" opacity=".85">
+          <circle cx="60" cy="128" r="2.2"/><circle cx="76" cy="132" r="2"/><circle cx="94" cy="127" r="2.4"/><circle cx="110" cy="131" r="2"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap">
+
+      <article class="menu-section" id="pan-dulce">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 22a11 8 0 0 1 22 0"/><path d="M10 14v8M16 12v10M22 14v8"/></svg></span>
+          <h2>Pan dulce del día</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Conchas de vainilla, chocolate y fresa, orejas, cuernitos, empanadas de piña y calabaza, besos y niño envuelto.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>No hace falta llamar. Salen tandas nuevas por la mañana y otra vez por la tarde; se sirve directo del mostrador con charola y pinzas.</p>
+          </div>
+        </div>
+        <span class="menu-price">Desde $1.50 la pieza</span>
+      </article>
+
+      <article class="menu-section" id="bolillo">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="17" rx="13" ry="7"/><path d="M5 16h22"/></svg></span>
+          <h2>Bolillo y telera</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Bolillo crujiente por fuera y suave por dentro, telera para tortas, y pan de caja rebanado.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Sale del horno tres veces al día, así que casi siempre lo encuentra caliente. Tampoco requiere aviso previo.</p>
+          </div>
+        </div>
+        <span class="menu-price">Desde $0.85 la pieza</span>
+      </article>
+
+      <article class="menu-section" id="pasteles">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24h20L16 6Z"/><path d="M11 24l5-13 5 13"/></svg></span>
+          <h2>Pasteles por encargo</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Tres leches, chocolate, mocha y fresas con crema, con el nombre y la dedicatoria que usted pida.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Con 48 horas de anticipación. Al llamar, díganos el sabor, la dedicatoria y para cuántas personas es.</p>
+          </div>
+        </div>
+        <span class="menu-price">Media plancha desde $45</span>
+      </article>
+
+      <article class="menu-section" id="cafe">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 14h13v7a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6Z"/><path d="M21 16h2a3 3 0 0 1 0 6h-2"/><path d="M13 9c0 1.6-1.6 1.6-1.6 3.2M18 9c0 1.6-1.6 1.6-1.6 3.2"/></svg></span>
+          <h2>Café y bebidas</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Café de olla con canela y piloncillo, café americano, atole de vainilla y champurrado en temporada de frío.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Para llevar o para sentarse un momento en las mesas de la entrada. Directo del mostrador, sin espera.</p>
+          </div>
+        </div>
+        <span class="menu-price">Desde $2.25</span>
+      </article>
+
+      <article class="menu-section" id="temporada">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4.5"/></svg></span>
+          <h2>Rosca y pan de temporada</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Rosca de Reyes en enero, pan de muerto a finales de octubre y buñuelos en diciembre.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>La lista de apartados abre con dos semanas de anticipación, porque se acaban rápido cada temporada.</p>
+          </div>
+        </div>
+        <span class="menu-price">Por temporada</span>
+      </article>
+
+      <article class="menu-section" id="charolas">
+        <div class="menu-head">
+          <span class="ico"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="12" width="24" height="11" rx="3"/><path d="M4 17H1M31 17h-3"/></svg></span>
+          <h2>Charolas para eventos</h2>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Qué incluye</span>
+            <p>Charola surtida de pan dulce para juntas, bautizos y reuniones, envuelta y lista para llevar.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Díganos cuántas personas son y nosotros armamos la mezcla; un día de anticipación es suficiente.</p>
+          </div>
+        </div>
+        <span class="menu-price">Charola de 40 piezas desde $52</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="dock-rule on-dark" viewBox="0 0 400 8" preserveAspectRatio="none" aria-hidden="true">
+      <circle cx="10" cy="4" r="2.6"/><circle cx="34" cy="4" r="2.6"/><circle cx="58" cy="4" r="2.6"/><circle cx="82" cy="4" r="2.6"/><circle cx="106" cy="4" r="2.6"/><circle cx="130" cy="4" r="2.6"/><circle cx="154" cy="4" r="2.6"/><circle cx="178" cy="4" r="2.6"/><circle cx="202" cy="4" r="2.6"/><circle cx="226" cy="4" r="2.6"/><circle cx="250" cy="4" r="2.6"/><circle cx="274" cy="4" r="2.6"/><circle cx="298" cy="4" r="2.6"/><circle cx="322" cy="4" r="2.6"/><circle cx="346" cy="4" r="2.6"/><circle cx="370" cy="4" r="2.6"/><circle cx="394" cy="4" r="2.6"/>
+    </svg>
+    <div class="wrap">
+      <h2>¿Ya sabe qué va a pedir?</h2>
+      <p class="measure" style="color:rgba(255,251,242,.82)">Llame y le confirmamos precio y hora de recoger, o revise ejemplos de encargos más grandes.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550111">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+          Llamar (516) 555-0111
+        </a>
+        <a class="btn-line on-dark" href="work.html">
+          Ver encargos de muestra
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">El Amanecer</div>
+        <p>Pan dulce, bolillo y pasteles horneados en tandas, todo el día, en Long Island, NY.</p>
+        <p><a href="tel:+15165550111">(516) 555-0111</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Menú</a></li>
+          <li><a href="work.html">Encargos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550111">Llamar (516) 555-0111</a></li>
+          <li><a href="sms:+15165550111">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550111">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+  Llamar (516) 555-0111
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

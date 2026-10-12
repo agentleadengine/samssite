@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedar & Slate Roofworks — Roofing Craft on Long Island</title>
+<meta name="description" content="Premium roofing on Long Island, NY — full roof replacement, leak repair, storm damage inspection, gutter integration, and flat roof systems.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+THESIS: A roof is a material decision before it is a service — show cedar and slate as the language of craft.
+OWN-WORLD: Cedar warmth against slate cool, copper as the flash that joins them. No generic roofing blues.
+STORY: A roofer who reads the material before the weather, and the weather before the invoice.
+FIRST VIEWPORT: An assembled roof cross-section in CSS/SVG — cedar shake, slate tile, copper valley — labeled like a materials board.
+-->
+
+<div class="demo-ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <a href="index.html" class="brand">Cedar <span>&amp;</span> Slate Roofworks</a>
+  <a href="tel:+16315550132" class="header-phone">(631) 555-0132</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="site-nav" id="primary-nav">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="has-submenu">
+      <a href="services.html">Services</a>
+      <ul class="submenu">
+        <li><a href="services.html#replacement">Full Roof Replacement</a></li>
+        <li><a href="services.html#leak-repair">Leak Repair</a></li>
+        <li><a href="services.html#storm">Storm Damage Inspection</a></li>
+        <li><a href="services.html#gutters">Gutter Integration</a></li>
+        <li><a href="services.html#flat">Flat Roof Systems</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- ─── Hero: material cross-section ─── -->
+  <section class="section field-slate" style="padding-top: 5rem; padding-bottom: 4rem;">
+    <div class="container" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center;">
+      <div class="hero-entrance">
+        <h1>The roof is the most material decision your house will ever make.</h1>
+        <p style="font-size: 1.15rem; max-width: 50ch;">Cedar &amp; Slate Roofworks installs and repairs roofs on Long Island with attention to the materials themselves — how cedar weathers, how slate holds, how copper flashings tie the layers together.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="contact.html" class="btn btn--copper">Request an estimate</a>
+          <a href="tel:+16315550132" class="text-cta" style="color: var(--copper-light);">Or call (631) 555-0132</a>
+        </div>
+      </div>
+      <div class="hero-entrance-delay">
+        <!-- CSS/SVG roof cross-section -->
+        <svg viewBox="0 0 400 320" role="img" aria-label="Roof cross-section showing cedar shake, slate tile, and copper valley layers" style="width:100%; border-radius: var(--radius); box-shadow: var(--shadow-deep);">
+          <rect x="0" y="0" width="400" height="320" fill="#1a2e38"/>
+          <!-- Sky gap -->
+          <rect x="0" y="0" width="400" height="28" fill="#243b47"/>
+          <!-- Copper drip edge -->
+          <rect x="30" y="28" width="340" height="6" fill="#c17840"/>
+          <!-- Cedar shake row 1 -->
+          <g>
+            <rect x="30" y="34" width="340" height="20" fill="#b67d5a"/>
+            <rect x="30" y="34" width="340" height="2" fill="#8f5f42" opacity="0.5"/>
+          </g>
+          <!-- Cedar shake row 2 (staggered) -->
+          <g>
+            <rect x="30" y="54" width="340" height="20" fill="#a8714f"/>
+            <line x1="60" y1="54" x2="60" y2="74" stroke="#8f5f42" stroke-width="1" opacity="0.4"/>
+            <line x1="130" y1="54" x2="130" y2="74" stroke="#8f5f42" stroke-width="1" opacity="0.4"/>
+            <line x1="200" y1="54" x2="200" y2="74" stroke="#8f5f42" stroke-width="1" opacity="0.4"/>
+            <line x1="270" y1="54" x2="270" y2="74" stroke="#8f5f42" stroke-width="1" opacity="0.4"/>
+            <line x1="340" y1="54" x2="340" y2="74" stroke="#8f5f42" stroke-width="1" opacity="0.4"/>
+          </g>
+          <!-- Copper valley -->
+          <rect x="30" y="74" width="340" height="5" fill="#d4925a"/>
+          <!-- Slate row 1 -->
+          <g>
+            <rect x="30" y="79" width="340" height="22" fill="#3a5f72"/>
+            <line x1="95" y1="79" x2="95" y2="101" stroke="#2d4a5c" stroke-width="1.5"/>
+            <line x1="160" y1="79" x2="160" y2="101" stroke="#2d4a5c" stroke-width="1.5"/>
+            <line x1="225" y1="79" x2="225" y2="101" stroke="#2d4a5c" stroke-width="1.5"/>
+            <line x1="290" y1="79" x2="290" y2="101" stroke="#2d4a5c" stroke-width="1.5"/>
+          </g>
+          <!-- Slate row 2 (offset) -->
+          <g>
+            <rect x="30" y="101" width="340" height="22" fill="#2d4a5c"/>
+            <line x1="62" y1="101" x2="62" y2="123" stroke="#1a2e38" stroke-width="1.5"/>
+            <line x1="127" y1="101" x2="127" y2="123" stroke="#1a2e38" stroke-width="1.5"/>
+            <line x1="192" y1="101" x2="192" y2="123" stroke="#1a2e38" stroke-width="1.5"/>
+            <line x1="257" y1="101" x2="257" y2="123" stroke="#1a2e38" stroke-width="1.5"/>
+            <line x1="322" y1="101" x2="322" y2="123" stroke="#1a2e38" stroke-width="1.5"/>
+          </g>
+          <!-- Underlayment -->
+          <rect x="30" y="123" width="340" height="8" fill="#4a4a4a"/>
+          <!-- Decking -->
+          <rect x="30" y="131" width="340" height="16" fill="#5c4a3a"/>
+          <line x1="80" y1="131" x2="80" y2="147" stroke="#4a3a2a" stroke-width="1"/>
+          <line x1="160" y1="131" x2="160" y2="147" stroke="#4a3a2a" stroke-width="1"/>
+          <line x1="240" y1="131" x2="240" y2="147" stroke="#4a3a2a" stroke-width="1"/>
+          <line x1="320" y1="131" x2="320" y2="147" stroke="#4a3a2a" stroke-width="1"/>
+          <!-- Labels -->
+          <text x="380" y="48" fill="#d4925a" font-family="Archivo, sans-serif" font-size="9" text-anchor="end">CEDAR SHAKE</text>
+          <text x="380" y="95" fill="#6a8fa3" font-family="Archivo, sans-serif" font-size="9" text-anchor="end">SLATE TILE</text>
+          <text x="380" y="78" fill="#d4925a" font-family="Archivo, sans-serif" font-size="8" text-anchor="end">COPPER VALLEY</text>
+          <text x="380" y="142" fill="#8a7868" font-family="Archivo, sans-serif" font-size="8" text-anchor="end">DECKING</text>
+          <!-- Attic space -->
+          <rect x="30" y="147" width="340" height="140" fill="#1a2e38"/>
+          <text x="200" y="220" fill="#3a5f72" font-family="Archivo, sans-serif" font-size="11" text-anchor="middle" opacity="0.5">— material cross-section —</text>
+        </svg>
+        <p class="scene-label" style="color: rgba(232,226,216,0.6);">Sample roof assembly — cedar, slate, copper, decking</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Proof-of-work vignette ─── -->
+  <section class="section field-cream">
+    <div class="container">
+      <h2>Every roof tells a story about its materials.</h2>
+      <p>Some roofs are built to last thirty years. Others are built to look like they will. The difference is in the underlayment, the flashing detail, the fastener pattern, and whether anyone read the manufacturer's spec sheet before nailing. We read it.</p>
+      <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <svg class="scene" viewBox="0 0 300 180" role="img" aria-label="Illustration of a slate roof with copper flashing detail at a valley junction" style="background: var(--slate-deep);">
+            <!-- Slate field -->
+            <rect x="0" y="0" width="300" height="180" fill="#2d4a5c"/>
+            <!-- Slate tiles pattern -->
+            <g opacity="0.9">
+              <rect x="0" y="10" width="300" height="18" fill="#3a5f72"/>
+              <rect x="0" y="28" width="300" height="18" fill="#345670"/>
+              <rect x="0" y="46" width="300" height="18" fill="#3a5f72"/>
+              <rect x="0" y="64" width="300" height="18" fill="#2d4a5c"/>
+              <rect x="0" y="82" width="300" height="18" fill="#3a5f72"/>
+              <rect x="0" y="100" width="300" height="18" fill="#345670"/>
+              <rect x="0" y="118" width="300" height="18" fill="#3a5f72"/>
+              <rect x="0" y="136" width="300" height="18" fill="#2d4a5c"/>
+            </g>
+            <!-- Tile seams -->
+            <g stroke="#1a2e38" stroke-width="1" opacity="0.6">
+              <line x1="50" y1="10" x2="50" y2="28"/><line x1="110" y1="10" x2="110" y2="28"/><line x1="170" y1="10" x2="170" y2="28"/><line x1="230" y1="10" x2="230" y2="28"/>
+              <line x1="80" y1="28" x2="80" y2="46"/><line x1="140" y1="28" x2="140" y2="46"/><line x1="200" y1="28" x2="200" y2="46"/><line x1="260" y1="28" x2="260" y2="46"/>
+              <line x1="50" y1="46" x2="50" y2="64"/><line x1="110" y1="46" x2="110" y2="64"/><line x1="170" y1="46" x2="170" y2="64"/><line x1="230" y1="46" x2="230" y2="64"/>
+            </g>
+            <!-- Copper valley -->
+            <path d="M 120 0 L 150 180 L 180 0 Z" fill="#c17840" opacity="0.85"/>
+            <path d="M 125 0 L 150 180 L 175 0 Z" fill="#d4925a" opacity="0.5"/>
+            <!-- Shadow under valley -->
+            <path d="M 120 0 L 150 180 L 120 0 Z" fill="#1a2e38" opacity="0.15"/>
+          </svg>
+          <p class="scene-label">Sample project — slate field with copper valley detail</p>
+        </div>
+        <div>
+          <svg class="scene" viewBox="0 0 300 180" role="img" aria-label="Illustration of a cedar shake roof with staggered courses and natural color variation" style="background: var(--cedar);">
+            <!-- Cedar field -->
+            <rect x="0" y="0" width="300" height="180" fill="#b67d5a"/>
+            <!-- Shake courses -->
+            <g>
+              <rect x="0" y="10" width="300" height="20" fill="#c89a78"/>
+              <rect x="0" y="30" width="300" height="20" fill="#b67d5a"/>
+              <rect x="0" y="50" width="300" height="20" fill="#a8714f"/>
+              <rect x="0" y="70" width="300" height="20" fill="#c89a78"/>
+              <rect x="0" y="90" width="300" height="20" fill="#b67d5a"/>
+              <rect x="0" y="110" width="300" height="20" fill="#a8714f"/>
+              <rect x="0" y="130" width="300" height="20" fill="#c89a78"/>
+              <rect x="0" y="150" width="300" height="20" fill="#b67d5a"/>
+            </g>
+            <!-- Staggered seams -->
+            <g stroke="#8f5f42" stroke-width="1" opacity="0.4">
+              <line x1="55" y1="10" x2="55" y2="30"/><line x1="125" y1="10" x2="125" y2="30"/><line x1="195" y1="10" x2="195" y2="30"/><line x1="265" y1="10" x2="265" y2="30"/>
+              <line x1="90" y1="30" x2="90" y2="50"/><line x1="160" y1="30" x2="160" y2="50"/><line x1="230" y1="30" x2="230" y2="50"/>
+              <line x1="55" y1="50" x2="55" y2="70"/><line x1="125" y1="50" x2="125" y2="70"/><line x1="195" y1="50" x2="195" y2="70"/><line x1="265" y1="50" x2="265" y2="70"/>
+              <line x1="90" y1="70" x2="90" y2="90"/><line x1="160" y1="70" x2="160" y2="90"/><line x1="230" y1="70" x2="230" y2="90"/>
+              <line x1="55" y1="90" x2="55" y2="110"/><line x1="125" y1="90" x2="125" y2="110"/><line x1="195" y1="90" x2="195" y2="110"/><line x1="265" y1="90" x2="265" y2="110"/>
+            </g>
+            <!-- Copper drip edge -->
+            <rect x="0" y="0" width="300" height="5" fill="#c17840"/>
+          </svg>
+          <p class="scene-label">Sample project — cedar shake with natural course variation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services teaser ─── -->
+  <section class="section field-cream-dark">
+    <div class="container">
+      <h2>What we do.</h2>
+      <p>Five roofing services, each handled with the same material-first approach. No subcontracted rush jobs, no mystery underlayment.</p>
+      <div class="svc-teaser">
+        <a href="services.html#replacement">
+          <h3>Full Roof Replacement</h3>
+          <p>Tear-off, deck inspection, and new installation — cedar, slate, asphalt, or flat.</p>
+        </a>
+        <a href="services.html#leak-repair">
+          <h3>Leak Repair</h3>
+          <p>Source-traced leak diagnosis and targeted repair, not a bucket of tar.</p>
+        </a>
+        <a href="services.html#storm">
+          <h3>Storm Damage Inspection</h3>
+          <p>Post-storm assessment with documented findings for your records.</p>
+        </a>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <a href="services.html" class="text-cta">See all five services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why-us strip ─── -->
+  <section class="section field-slate">
+    <div class="container">
+      <h2>How we work.</h2>
+      <div class="why-strip">
+        <div>
+          <h3 style="color: var(--copper-light);">Materials first</h3>
+          <p>We start with what's on the roof and what should be. Cedar, slate, membrane, metal — each has a correct installation, and we install it correctly.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--copper-light);">Documented inspection</h3>
+          <p>Every roof gets a written condition report before we recommend anything. You see what we see, including the parts that are fine.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--copper-light);">Clean site, clean install</h3>
+          <p>Magnetic nail sweeps, tarps over landscaping, and a dumpster hauled away when the job is done. Your property looks like we were never there — except the roof is new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Closing CTA ─── -->
+  <section class="section cta-close field-cream">
+    <div class="container">
+      <h2>Tell us what's on your roof.</h2>
+      <p>We'll come look at it, write down what we find, and tell you honestly whether it needs replacing or just a repair.</p>
+      <div>
+        <a href="contact.html" class="btn btn--copper">Request an estimate</a>
+        <a href="tel:+16315550132" class="btn btn--outline-slate">Call (631) 555-0132</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>Cedar &amp; Slate Roofworks</h4>
+      <p style="font-size: 0.9rem; color: rgba(232,226,216,0.7);">Premium roofing on Long Island, NY. Material craftsmanship for residential and commercial roofs.</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#replacement">Roof Replacement</a></li>
+        <li><a href="services.html#leak-repair">Leak Repair</a></li>
+        <li><a href="services.html#storm">Storm Inspection</a></li>
+        <li><a href="services.html#gutters">Gutter Integration</a></li>
+        <li><a href="services.html#flat">Flat Roof Systems</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-credit">
+    Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a>
+    <span class="footer-disclaimer">Fictional business shown for demonstration.</span>
+  </div>
+</footer>
+
+<!-- ─── Mobile call bar ─── -->
+<div class="call-bar">
+  <a href="tel:+16315550132">Call (631) 555-0132</a>
+</div>
+
+<!-- ─── Nav toggle script ─── -->
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('primary-nav');
+  if (!toggle || !nav) return;
+  toggle.addEventListener('click', function() {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+    }
+  });
+  // Close on link tap (mobile)
+  nav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && window.innerWidth <= 768) {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+    }
+  });
+})();
+</script>
+</body>
+</html>

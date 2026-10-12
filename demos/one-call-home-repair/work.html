@@ -1,0 +1,326 @@
+<!-- One Call Home Repair — work.html — shared world/direction contract defined in index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Work | One Call Home Repair | Long Island, NY | Demo Site</title>
+<meta name="description" content="A look at the range of jobs One Call Home Repair handles in one visit: small repairs, furniture assembly, TV mounting, window fixes, and a full punch list. Illustrated sample scenes, not real customer photos. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-board" viewBox="0 0 24 24"><rect x="2.6" y="3.2" width="18.8" height="17.6" rx="2.2"/><path d="M6.2 8.4h8.4M6.2 12.2h11.6M6.2 16h7.4"/><circle cx="18.3" cy="6.6" r="1.3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3.2l1.6 4-2.1 1.7a13.6 13.6 0 0 0 6.6 6.6l1.7-2.1 4 1.6v3.2c0 1-.8 1.7-1.8 1.6C10.3 19 5 13.7 3.9 5.3c-.1-1 .6-1.8 1.6-1.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9.5L5 19v-3.5H4v-10Z"/><path d="M7.5 9.5h9M7.5 12.5h5.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4.5 4.5L19 8"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h10v9H3z"/><path d="M13 11h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 1-5.1 5.1L4 17l3 3 5.6-5.6a4 4 0 0 1 5.1-5.1l-2.4 2.4-2-2 2.4-2.4Z"/></symbol>
+<symbol id="i-assembly" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="9.5" height="15" rx="1.2"/><circle cx="18" cy="8.6" r="2.7"/><path d="M18 6.1v5M15.5 8.6h5"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.4"/><path d="M9 20h6M12 16v4"/><path d="M7 8.4h4M7 11.2h6"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="4.5" y="3" width="9.5" height="18" rx="1"/><circle cx="11.6" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M17 6.5v11M20 6.5v11"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="17" rx="1.6"/><rect x="8.5" y="2.5" width="7" height="3.2" rx="1"/><path d="M8.2 10.5h7.6M8.2 14h7.6M8.2 17.5h5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.4A7 7 0 0 0 5 9.6C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-board"></use></svg>
+      <span class="brand-word"><b>One Call</b><span>Home Repair</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#repairs">Small Repairs</a></li>
+            <li><a href="services.html#assembly">Furniture Assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; Shelf Mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; Window Fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-List Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+16315550107">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span class="num">(631) 555-0107</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#repairs">Small Repairs</a></li>
+          <li><a href="services.html#assembly">Furniture Assembly</a></li>
+          <li><a href="services.html#mounting">TV &amp; Shelf Mounting</a></li>
+          <li><a href="services.html#doors-windows">Door &amp; Window Fixes</a></li>
+          <li><a href="services.html#punch-list">Punch-List Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+16315550107">Call (631) 555-0107</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-open is-work">
+    <div class="wrap page-open-in">
+      <h1>A few things that came off the board.</h1>
+      <p class="sub">Five sample jobs, illustrated the way we&rsquo;d log them. Not real customer photos, just a look at the kind of thing that gets called in.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sr-only">Sample projects</h2>
+      <div class="gallery">
+
+        <article class="vignette">
+          <div class="scene-stage">
+            <div class="scene scene-faucet" aria-hidden="true">
+              <div class="body"></div>
+              <div class="spout"></div>
+              <div class="handle"></div>
+              <div class="drop"></div>
+            </div>
+          </div>
+          <div class="vignette-body">
+            <h3>Kitchen Faucet, Cartridge Swapped</h3>
+            <p>Steady drip at the cold side from a worn cartridge. Swapped, tested, and the drip is gone.</p>
+            <div class="tophead">
+              <span class="flag-chip is-sample">Sample project</span>
+              <span class="flag-chip is-cleared">Cleared</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="scene-stage">
+            <div class="scene scene-assembly" aria-hidden="true">
+              <div class="frame"></div>
+              <div class="drawer d1"></div>
+              <div class="drawer d2"></div>
+              <div class="drawer d3"></div>
+              <div class="pull p1"></div>
+              <div class="pull p2"></div>
+              <div class="pull p3"></div>
+              <div class="key"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg></div>
+            </div>
+          </div>
+          <div class="vignette-body">
+            <h3>Bedroom Dresser, Assembled &amp; Leveled</h3>
+            <p>Six-drawer dresser, flat-pack. Built with a torque driver so the glides stay true, then shimmed level against the wall.</p>
+            <div class="tophead">
+              <span class="flag-chip is-sample">Sample project</span>
+              <span class="flag-chip is-cleared">Cleared</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette feat">
+          <div class="scene-stage is-list">
+            <div class="checklist">
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Drywall patch, hallway</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Bedroom door, re-hung</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Running toilet, fixed</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Bathroom mirror, mounted</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Closet shelving, built</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Cabinet door, aligned</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Outlet cover, replaced</p></div>
+              <div class="check-row"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Window screen, reset</p></div>
+            </div>
+          </div>
+          <div class="vignette-body">
+            <h3>Move-Out Punch List, Eight Lines, One Visit</h3>
+            <p>Every line called in the same morning: patched drywall, a re-hung door, a running toilet, a mounted mirror, and four smaller fixes besides. Whole list cleared before the new tenants walked through.</p>
+            <div class="tophead">
+              <span class="flag-chip is-sample">Sample project</span>
+              <span class="flag-chip is-cleared">Cleared</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="scene-stage">
+            <div class="scene scene-tv" aria-hidden="true">
+              <div class="screen"></div>
+              <div class="bracket"></div>
+              <div class="wire"></div>
+              <div class="plate"></div>
+            </div>
+          </div>
+          <div class="vignette-body">
+            <h3>Living Room TV, Mounted on Studs</h3>
+            <p>55-inch TV on a tilting mount, anchored into studs. Power and HDMI run down inside the wall, so nothing hangs off the back.</p>
+            <div class="tophead">
+              <span class="flag-chip is-sample">Sample project</span>
+              <span class="flag-chip is-cleared">Cleared</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="scene-stage">
+            <div class="scene scene-window" aria-hidden="true">
+              <div class="frame"></div>
+              <div class="vbar"></div>
+              <div class="hbar"></div>
+              <div class="pane tl"></div>
+              <div class="pane tr"></div>
+              <div class="pane bl"></div>
+              <div class="pane br"></div>
+              <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </div>
+          </div>
+          <div class="vignette-body">
+            <h3>Bedroom Window, Balance Replaced</h3>
+            <p>Sash wouldn&rsquo;t hold itself up, propped with a paint can for a season. New balance, and it glides and holds on its own now.</p>
+            <div class="tophead">
+              <span class="flag-chip is-sample">Sample project</span>
+              <span class="flag-chip is-cleared">Cleared</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Got a list that looks like this?</h2>
+      <p>Call and read it to us, or leave it on the contact page. Either way, it goes on the board.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+16315550107">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0107
+        </a>
+        <a class="btn btn-outline" href="contact.html">Leave your list instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="footer-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-board"></use></svg>
+        <b>One Call Home Repair</b>
+      </a>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:+16315550107">(631) 555-0107</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="footer-meta">
+      One Call Home Repair &middot; Serving Long Island, NY &middot; <a href="tel:+16315550107">(631) 555-0107</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+16315550107">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    (631) 555-0107
+  </a>
+</div>
+
+<script>
+(function(){
+  function qa(sel,ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); }
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeAllSubs(){
+    qa('.nav-sub-toggle').forEach(function(btn){ btn.setAttribute('aria-expanded','false'); });
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.hidden = true; }
+    closeAllSubs();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.hidden = open;
+      if(open){ closeAllSubs(); }
+    });
+  }
+  qa('.nav-sub-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      closeAllSubs();
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    qa('.has-sub').forEach(function(li){
+      if(!li.contains(e.target)){
+        var btn = li.querySelector('.nav-sub-toggle');
+        if(btn) btn.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

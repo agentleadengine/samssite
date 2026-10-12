@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos — Detallado AutoBrillo</title>
+<meta name="description" content="Proyectos de muestra de Detallado AutoBrillo: corrección de pintura, recubrimiento cerámico, restauración de faros, interior completo y más, en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Big+Shoulders+Display:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  @media (min-width:720px){
+    .gallery-grid .vignette:nth-child(1){ grid-column:span 4; }
+    .gallery-grid .vignette:nth-child(2){ grid-column:span 2; }
+    .gallery-grid .vignette:nth-child(3){ grid-column:span 2; }
+    .gallery-grid .vignette:nth-child(4){ grid-column:span 2; }
+    .gallery-grid .vignette:nth-child(5){ grid-column:span 2; }
+    .gallery-grid .vignette:nth-child(6){ grid-column:span 6; }
+  }
+  .vignette:first-child .v-scene{ clip-path:inset(0 0 0 0); }
+  @media (prefers-reduced-motion: no-preference){
+    .vignette:first-child .v-scene{ animation:wipe-in 1.1s var(--ease-out) both; animation-delay:.15s; }
+    @keyframes wipe-in{ from{ clip-path:inset(0 100% 0 0) } to{ clip-path:inset(0 0 0 0) } }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon" role="note">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="AutoBrillo — inicio">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+        <defs><linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+        <circle cx="20" cy="20" r="18" fill="url(#markGrad)" stroke="#272b35" stroke-width="1"/>
+        <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">AutoBrillo<small>Detallado automotriz</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="nav-link">Servicios</a>
+          <button type="button" class="sub-caret" aria-expanded="false" aria-controls="sub-servicios">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+          <ul class="submenu" id="sub-servicios">
+            <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+            <li><a href="services.html#interior">Interior completo</a></li>
+            <li><a href="services.html#pulido">Pulido de pintura</a></li>
+            <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+            <li><a href="services.html#faros">Restauración de faros</a></li>
+            <li><a href="services.html#venta">Preparación para venta</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="nav-link is-active" aria-current="page">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+15165550189">(516) 555-0189</a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub-m">
+        <div class="m-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-caret-m" aria-expanded="false" aria-controls="sub-servicios-m">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+        </div>
+        <ul class="submenu-m" id="sub-servicios-m">
+          <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+          <li><a href="services.html#interior">Interior completo</a></li>
+          <li><a href="services.html#pulido">Pulido de pintura</a></li>
+          <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+          <li><a href="services.html#faros">Restauración de faros</a></li>
+          <li><a href="services.html#venta">Preparación para venta</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" class="is-active" aria-current="page">Trabajos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="m-phone" href="tel:+15165550189">Llamar (516) 555-0189</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <h1>TRABAJOS</h1>
+      <p class="lede">Seis autos, el mismo método. Todo lo que ve aquí son proyectos de muestra para enseñar cómo trabajamos: ningún auto ni cliente de esta página es real.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="gallery-grid">
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Panel de sedán oscuro dividido: remolinos a la izquierda, reflejo limpio de dos etapas a la derecha">
+            <defs>
+              <linearGradient id="w1base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20232c"/><stop offset="1" stop-color="#08090b"/></linearGradient>
+              <linearGradient id="w1glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7dff" stop-opacity="0"/><stop offset=".5" stop-color="#7db4ff" stop-opacity=".9"/><stop offset="1" stop-color="#2f7dff" stop-opacity="0"/></linearGradient>
+              <clipPath id="w1left"><rect x="0" y="0" width="190" height="220"/></clipPath>
+            </defs>
+            <rect width="400" height="220" fill="url(#w1base)"/>
+            <path d="M0 150 Q200 118 400 150" stroke="#31353f" stroke-width="2" fill="none" opacity=".7"/>
+            <g clip-path="url(#w1left)" stroke="#565c68" stroke-width="1" fill="none" opacity=".5">
+              <circle cx="60" cy="110" r="90"/><circle cx="90" cy="80" r="60"/><circle cx="40" cy="140" r="110"/>
+            </g>
+            <line x1="210" y1="76" x2="380" y2="84" stroke="url(#w1glow)" stroke-width="5"/>
+            <line x1="210" y1="104" x2="380" y2="112" stroke="url(#w1glow)" stroke-width="2.5" opacity=".6"/>
+          </svg>
+          <div class="v-body">
+            <h3>Sedán oscuro — corrección de pintura en dos etapas</h3>
+            <p>Remolinos y marcas de lavado corregidos panel por panel, revisados bajo luz directa antes de pasar a la segunda etapa.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Superficie curva con gotas perladas, mostrando el recubrimiento cerámico de una camioneta">
+            <defs><linearGradient id="w2base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#161a22"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+            <rect width="400" height="220" fill="url(#w2base)"/>
+            <path d="M0 160 Q200 116 400 160" stroke="#3d4552" stroke-width="1.5" fill="none" opacity=".7"/>
+            <g fill="#dfeaff" opacity=".85">
+              <ellipse cx="60" cy="128" rx="11" ry="8"/><ellipse cx="100" cy="110" rx="7" ry="6"/><ellipse cx="140" cy="132" rx="13" ry="9"/>
+              <ellipse cx="184" cy="108" rx="8" ry="7"/><ellipse cx="226" cy="130" rx="11" ry="8"/><ellipse cx="268" cy="112" rx="6" ry="5"/>
+              <ellipse cx="308" cy="128" rx="10" ry="7"/><ellipse cx="346" cy="114" rx="7" ry="6"/>
+            </g>
+            <g fill="#7db4ff" opacity=".5">
+              <ellipse cx="60" cy="125" rx="4" ry="2.5"/><ellipse cx="140" cy="129" rx="5" ry="3"/><ellipse cx="226" cy="127" rx="4" ry="2.5"/><ellipse cx="308" cy="125" rx="4" ry="2.5"/>
+            </g>
+          </svg>
+          <div class="v-body">
+            <h3>Camioneta plateada — recubrimiento cerámico multianual</h3>
+            <p>Descontaminación completa y luego un recubrimiento de varios años, para que el agua siga perlando meses después.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Comparación de dos faros: uno opaco y amarillento, otro transparente y restaurado">
+            <defs>
+              <linearGradient id="w3hazy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a6a3a"/><stop offset="1" stop-color="#3a331d"/></linearGradient>
+              <linearGradient id="w3clear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9edf3"/><stop offset="1" stop-color="#7db4ff"/></linearGradient>
+              <linearGradient id="w3base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2029"/><stop offset="1" stop-color="#08090b"/></linearGradient>
+            </defs>
+            <rect width="400" height="220" fill="url(#w3base)"/>
+            <path d="M60 172 Q60 60 140 60 L172 60 Q198 60 198 96 L198 176 Q198 192 180 192 L92 192 Q60 192 60 172 Z" fill="url(#w3hazy)" opacity=".85"/>
+            <path d="M212 172 Q212 60 292 60 L324 60 Q350 60 350 96 L350 176 Q350 192 332 192 L244 192 Q212 192 212 172 Z" fill="url(#w3clear)" opacity=".92"/>
+            <g stroke="#fff" stroke-width="2" opacity=".7" stroke-linecap="round">
+              <line x1="240" y1="86" x2="264" y2="72"/><line x1="252" y1="104" x2="284" y2="92"/>
+            </g>
+          </svg>
+          <div class="v-body">
+            <h3>Faros restaurados — de opacos a transparentes</h3>
+            <p>Lijado, pulido y sellado en una tarde. El cambio se nota más manejando de noche que de día.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Dos asientos detallados por dentro, con líneas de costura limpias">
+            <defs><linearGradient id="w4base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23262f"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+            <rect width="400" height="220" fill="url(#w4base)"/>
+            <path d="M110 190 L110 90 Q110 56 148 56 L182 56 Q220 56 220 90 L220 190 Z" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <path d="M240 190 L240 100 Q240 70 270 70 L296 70 Q326 70 326 100 L326 190 Z" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <g stroke="#7db4ff" stroke-width="1.6" opacity=".6" stroke-dasharray="2 6">
+              <line x1="126" y1="76" x2="126" y2="182"/><line x1="165" y1="66" x2="165" y2="182"/><line x1="204" y1="76" x2="204" y2="182"/>
+              <line x1="254" y1="86" x2="254" y2="182"/><line x1="283" y1="80" x2="283" y2="182"/><line x1="312" y1="86" x2="312" y2="182"/>
+            </g>
+          </svg>
+          <div class="v-body">
+            <h3>SUV — interior completo y tratamiento de olores</h3>
+            <p>Extracción profunda en alfombras y asientos, más un tratamiento dirigido a la fuente del olor, no un aromatizante encima.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Tres vehículos de flotilla alineados, listos después de un lavado programado">
+            <defs><linearGradient id="w5base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+            <rect width="400" height="220" fill="url(#w5base)"/>
+            <rect x="34" y="96" width="94" height="56" rx="10" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <rect x="153" y="96" width="94" height="56" rx="10" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <rect x="272" y="96" width="94" height="56" rx="10" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <line x1="34" y1="122" x2="128" y2="122" stroke="#7db4ff" stroke-width="2" opacity=".5"/>
+            <line x1="153" y1="122" x2="247" y2="122" stroke="#7db4ff" stroke-width="2" opacity=".5"/>
+            <line x1="272" y1="122" x2="366" y2="122" stroke="#7db4ff" stroke-width="2" opacity=".5"/>
+            <path d="M20 176 Q100 164 180 176 T340 176" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+          </svg>
+          <div class="v-body">
+            <h3>Vehículo de flotilla — lavado de mantenimiento programado</h3>
+            <p>Tres unidades, mismo día, mismo estándar. Así se ve un contrato de lavado semanal para una flotilla pequeña.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <svg class="v-scene" viewBox="0 0 400 220" role="img" aria-label="Panel de auto brillante junto a una etiqueta colgante y un destello de cámara, listo para publicarse en venta">
+            <defs><linearGradient id="w6base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20232c"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+            <rect width="400" height="220" fill="url(#w6base)"/>
+            <rect x="22" y="30" width="230" height="160" rx="14" fill="#14161c" stroke="#272b35" stroke-width="1.5"/>
+            <line x1="46" y1="90" x2="228" y2="98" stroke="#8fb8ff" stroke-width="3" opacity=".6"/>
+            <line x1="46" y1="114" x2="228" y2="122" stroke="#8fb8ff" stroke-width="2" opacity=".4"/>
+            <circle cx="322" cy="70" r="10" fill="#e9edf3"/>
+            <g stroke="#e9edf3" stroke-width="2" stroke-linecap="round" opacity=".8">
+              <line x1="322" y1="40" x2="322" y2="52"/><line x1="292" y1="70" x2="304" y2="70"/><line x1="340" y1="70" x2="352" y2="70"/>
+              <line x1="300" y1="48" x2="308" y2="56"/><line x1="344" y1="48" x2="336" y2="56"/>
+              <line x1="300" y1="92" x2="308" y2="84"/><line x1="344" y1="92" x2="336" y2="84"/>
+            </g>
+            <line x1="322" y1="118" x2="322" y2="144" stroke="#565c68" stroke-width="1.5"/>
+            <rect x="298" y="144" width="48" height="34" rx="4" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+            <circle cx="322" cy="152" r="3" fill="#0a0b0e" stroke="#565c68" stroke-width="1"/>
+          </svg>
+          <div class="v-body">
+            <h3>Auto para venta — preparación integral antes de listarlo</h3>
+            <p>Pulido exterior, motor limpio e interior como nuevo antes de tomar las fotos, no después de publicarlas.</p>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-beam">
+
+  <section class="cta-band band-reveal">
+    <div class="wrap">
+      <h2>SU AUTO PUEDE<br>SER EL SIGUIENTE.</h2>
+      <p>Cuéntenos qué tiene y lo revisamos con la misma luz que ve en estos ejemplos.</p>
+      <div class="btns">
+        <a class="btn btn-on-reveal" href="tel:+15165550189">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Llamar (516) 555-0189
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html" aria-label="AutoBrillo — inicio">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+          <defs><linearGradient id="markGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+          <circle cx="20" cy="20" r="18" fill="url(#markGradFoot)" stroke="#272b35" stroke-width="1"/>
+          <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">AutoBrillo</span>
+      </a>
+      <nav class="foot-nav" aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-phone"><a href="tel:+15165550189">(516) 555-0189</a> · Detallado a domicilio y en taller, Long Island, NY. Atendemos en español y en inglés.</p>
+      <p class="foot-credit">Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a>.</p>
+      <p class="foot-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550189">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  Llamar (516) 555-0189
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    mobileNav.classList.remove('is-open');
+    window.setTimeout(function(){ mobileNav.hidden = true; }, 200);
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ mobileNav.classList.add('is-open'); });
+    });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+
+  var carets = header.querySelectorAll('.sub-caret, .sub-caret-m');
+  carets.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var li = btn.closest('.has-sub, .has-sub-m');
+      if(li){ li.classList.toggle('is-open', !expanded); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(!mobileNav.hidden){ closeMobile(); hamburger.focus(); }
+      carets.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var li = btn.closest('.has-sub, .has-sub-m');
+        if(li) li.classList.remove('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!mobileNav.hidden && !mobileNav.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)){
+      closeMobile();
+    }
+    document.querySelectorAll('.has-sub.is-open, .has-sub-m.is-open').forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove('is-open');
+        var b = li.querySelector('.sub-caret, .sub-caret-m');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMobile(); });
+  });
+})();
+</script>
+
+</body>
+</html>

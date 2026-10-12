@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos de muestra | Piscinas Agua Clara</title>
+<meta name="description" content="Una muestra de visitas típicas de la ruta semanal: recuperación de agua verde, apertura de temporada, reparación de bomba, detección de fugas y limpieza de celda de sal. Sitio de demostración.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="demo-ribbon">
+  <span><b>Sitio de demostración</b></span>
+  <span class="rb-r">Negocio ficticio &middot; solo para demostración de diseño</span>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de Piscinas Agua Clara">
+        <rect width="40" height="40" rx="10" style="fill:var(--turq-800)"/>
+        <line x1="9" y1="13" x2="31" y2="13" stroke="#ffffff" stroke-width="1.6" opacity=".32"/>
+        <circle cx="12" cy="13" r="2.8" style="fill:var(--turq-300)"/>
+        <circle cx="20" cy="13" r="2.8" style="fill:var(--coral-400)"/>
+        <circle cx="28" cy="13" r="2.8" style="fill:var(--turq-300)"/>
+        <path d="M6 25c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3" fill="none" style="stroke:var(--turq-300)" stroke-width="2.2" stroke-linecap="round" opacity=".6"/>
+        <path d="M6 30c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity=".3"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Piscinas</span>
+        <span class="brand-tag">Agua Clara</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Abrir menú</span>
+      <svg class="i-burger" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Servicios
+            <svg class="chevron" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="sub-menu" id="services-sub">
+            <li><a href="services.html#mantenimiento-semanal">Mantenimiento semanal</a></li>
+            <li><a href="services.html#apertura-cierre">Apertura y cierre de temporada</a></li>
+            <li><a href="services.html#bomba-filtro">Reparación de bomba y filtro</a></li>
+            <li><a href="services.html#agua-verde">Recuperación de agua verde</a></li>
+            <li><a href="services.html#sistemas-sal">Sistemas de sal</a></li>
+            <li><a href="services.html#fugas-equipo">Fugas y cambio de equipo</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="header-call" href="tel:+15165550143">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3.2l1.5 3.8-2 1.6a11.4 11.4 0 0 0 5.2 5.2l1.6-2 3.8 1.5V16.5a1.7 1.7 0 0 1-1.9 1.7A15.8 15.8 0 0 1 4.3 4.9 1.7 1.7 0 0 1 6 3Z"/></svg>
+      (516) 555-0143
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero deep-field">
+    <svg class="ripple-field" viewBox="0 0 600 600" aria-hidden="true" style="top:-32%;right:-20%;width:46vw">
+      <circle cx="300" cy="300" r="90" stroke-width="2"></circle>
+      <circle cx="300" cy="300" r="170" stroke-width="1.6" opacity=".55"></circle>
+      <circle cx="300" cy="300" r="250" stroke-width="1.4" opacity=".3"></circle>
+    </svg>
+    <div class="wrap page-hero-copy">
+      <h1>Proyectos de muestra de la temporada</h1>
+      <p class="lead">Una muestra de visitas típicas de la ruta: desde un rescate de agua verde hasta el trabajo más silencioso de un sello de bomba que solo necesitaba cambio.</p>
+    </div>
+  </section>
+
+  <div class="mosaic-band" aria-hidden="true"></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gallery">
+
+        <article class="g-item g-item--feature">
+          <div class="g-media">
+            <span class="g-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 520 340" role="img" aria-label="Vista aérea ilustrada de una piscina ovalada: verde turbia en la mitad izquierda, transparente y turquesa en la mitad derecha, separadas por una cadena de flotadores.">
+              <defs>
+                <clipPath id="poolClip"><ellipse cx="260" cy="170" rx="205" ry="110"/></clipPath>
+                <linearGradient id="murk2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#6B7A46"/><stop offset="1" stop-color="#414D28"/>
+                </linearGradient>
+                <linearGradient id="clear2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#3FC2B7"/><stop offset="1" stop-color="#0A4642"/>
+                </linearGradient>
+              </defs>
+              <rect width="520" height="340" style="fill:var(--turq-100)"/>
+              <ellipse cx="260" cy="170" rx="230" ry="130" style="fill:var(--turq-50)"/>
+              <ellipse cx="260" cy="170" rx="230" ry="130" fill="none" style="stroke:var(--turq-500)" stroke-width="3"/>
+              <g clip-path="url(#poolClip)">
+                <rect x="55" y="60" width="205" height="220" fill="url(#murk2)"/>
+                <rect x="260" y="60" width="205" height="220" fill="url(#clear2)"/>
+                <g opacity=".5">
+                  <ellipse cx="120" cy="120" rx="10" ry="5" fill="#7C8A4C"/>
+                  <ellipse cx="160" cy="200" rx="12" ry="5" fill="#6E7C42"/>
+                  <ellipse cx="100" cy="230" rx="9" ry="4" fill="#7C8A4C"/>
+                </g>
+                <path d="M280,130c14 0 14-6 28-6s14 6 28 6 14-6 28-6 14 6 28 6 14-6 28-6" fill="none" stroke="#ffffff" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+                <path d="M280,175c14 0 14-6 28-6s14 6 28 6 14-6 28-6 14 6 28 6 14-6 28-6" fill="none" stroke="#ffffff" stroke-width="2" opacity=".25" stroke-linecap="round"/>
+              </g>
+              <line x1="260" y1="62" x2="260" y2="278" stroke="#ffffff" stroke-width="2.4" opacity=".6"/>
+              <circle cx="260" cy="112" r="6" style="fill:var(--turq-300)"/>
+              <circle cx="260" cy="170" r="6" style="fill:var(--coral-400)"/>
+              <circle cx="260" cy="228" r="6" style="fill:var(--turq-300)"/>
+              <circle cx="392" cy="150" r="22" fill="none" style="stroke:var(--coral-500)" stroke-width="6" opacity=".9"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h2 class="g-title">Recuperación de agua verde tras una tormenta</h2>
+            <p class="g-desc">Una piscina sin visita durante tres semanas de calor de agosto se puso completamente verde; el escalón del fondo no se veía. Cuatro días seguidos de choque de cloro, filtrado diario y aspirado a mano regresaron el drenaje principal a la vista antes del fin de semana siguiente.</p>
+          </div>
+        </article>
+
+        <article class="g-item">
+          <div class="g-media">
+            <span class="g-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 260" role="img" aria-label="Ilustración de una cubierta de piscina enrollada con agua clara y ondulante, y un sol arriba.">
+              <rect width="400" height="260" style="fill:var(--turq-50)"/>
+              <rect x="0" y="0" width="400" height="14" style="fill:var(--turq-500)"/>
+              <rect y="10" width="400" height="4" style="fill:var(--turq-800)"/>
+              <circle cx="346" cy="46" r="19" style="fill:var(--coral-300)"/>
+              <rect x="24" y="40" width="148" height="180" rx="8" style="fill:var(--turq-700)" opacity=".85"/>
+              <g style="stroke:var(--turq-900)" stroke-width="1.3" opacity=".5">
+                <line x1="24" y1="70" x2="172" y2="70"/><line x1="24" y1="100" x2="172" y2="100"/>
+                <line x1="24" y1="130" x2="172" y2="130"/><line x1="24" y1="160" x2="172" y2="160"/>
+                <line x1="24" y1="190" x2="172" y2="190"/>
+              </g>
+              <rect x="166" y="34" width="16" height="192" rx="8" style="fill:var(--turq-800)"/>
+              <path d="M188,90c12 0 12-7 24-7s12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7" fill="none" style="stroke:var(--turq-400)" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+              <path d="M188,130c12 0 12-7 24-7s12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7" fill="none" stroke="#ffffff" stroke-width="2" opacity=".3" stroke-linecap="round"/>
+              <path d="M188,170c12 0 12-7 24-7s12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7 12 7 24 7 12-7 24-7" fill="none" stroke="#ffffff" stroke-width="2" opacity=".18" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h2 class="g-title">Apertura de temporada, piscina enterrada</h2>
+            <p class="g-desc">Cubierta retirada y lavada, equipo vuelto a armar tras el invierno, agua llenada y equilibrada, y sistema corriendo hasta que aclaró — lista para el primer fin de semana cálido.</p>
+          </div>
+        </article>
+
+        <article class="g-item">
+          <div class="g-media">
+            <span class="g-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 260" role="img" aria-label="Ilustración de una bomba de piscina con un sello nuevo junto a un empaque de unión.">
+              <rect width="400" height="260" style="fill:var(--turq-50)"/>
+              <g transform="translate(60,58)">
+                <rect width="130" height="144" rx="14" style="fill:var(--turq-800)"/>
+                <circle cx="65" cy="80" r="34" style="fill:var(--turq-700)"/>
+                <circle cx="65" cy="80" r="34" fill="none" style="stroke:var(--turq-300)" stroke-width="2.4"/>
+                <line x1="65" y1="80" x2="65" y2="58" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                <line x1="65" y1="80" x2="83" y2="80" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <g transform="translate(230,92)">
+                <path d="M0,0c6 10 6 18 0 26-6-8-6-16 0-26Z" style="fill:var(--coral-500)"/>
+                <path d="M0,40c6 10 6 18 0 26-6-8-6-16 0-26Z" style="fill:var(--coral-300)" opacity=".8"/>
+              </g>
+              <g transform="translate(270,62)">
+                <rect width="90" height="140" rx="12" style="fill:var(--turq-100)"/>
+                <rect width="90" height="140" rx="12" fill="none" style="stroke:var(--turq-500)" stroke-width="2"/>
+                <line x1="45" y1="20" x2="45" y2="120" style="stroke:var(--turq-400)" stroke-width="2" stroke-dasharray="4 6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h2 class="g-title">Sello de bomba reemplazado</h2>
+            <p class="g-desc">Un motor que zumbaba pero no arrancaba resultó ser un sello atascado, no un motor muerto. Sello nuevo, empaque de unión nuevo, de vuelta en línea en la misma visita.</p>
+          </div>
+        </article>
+
+        <article class="g-item">
+          <div class="g-media">
+            <span class="g-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 260" role="img" aria-label="Ilustración de una lupa siguiendo un rastro de tinte hasta el nicho de la luz de la piscina.">
+              <rect width="400" height="260" style="fill:var(--turq-50)"/>
+              <rect x="40" y="120" width="200" height="24" rx="12" style="fill:var(--turq-500)"/>
+              <circle cx="190" cy="132" r="14" style="fill:var(--turq-800)"/>
+              <path d="M190,146c5 8 5 13 0 19-5-6-5-11 0-19Z" style="fill:var(--coral-500)"/>
+              <path d="M190,148c-4 22-16 42-34 58" fill="none" style="stroke:var(--coral-500)" stroke-width="2" stroke-dasharray="3 6" opacity=".75"/>
+              <circle cx="230" cy="120" r="46" fill="none" style="stroke:var(--turq-800)" stroke-width="8"/>
+              <line x1="262" y1="152" x2="300" y2="190" style="stroke:var(--turq-800)" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h2 class="g-title">Fuga localizada en el nicho de luz</h2>
+            <p class="g-desc">Se perdía cerca de pulgada y media por semana sin grieta visible. Una prueba de tinte en el nicho de la luz encontró una separación mínima en el accesorio, resuelta antes de que se volviera una reparación mayor.</p>
+          </div>
+        </article>
+
+        <article class="g-item">
+          <div class="g-media">
+            <span class="g-tag">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 260" role="img" aria-label="Ilustración de una celda de sal con sarro a la izquierda y placas limpias a la derecha.">
+              <rect width="400" height="260" style="fill:var(--turq-50)"/>
+              <g transform="translate(70,50)">
+                <rect width="90" height="160" rx="12" style="fill:var(--turq-800)" opacity=".45"/>
+                <g style="stroke:#B8C48A" stroke-width="2" opacity=".85">
+                  <line x1="18" y1="20" x2="18" y2="140"/><line x1="36" y1="20" x2="36" y2="140"/>
+                  <line x1="54" y1="20" x2="54" y2="140"/><line x1="72" y1="20" x2="72" y2="140"/>
+                </g>
+                <g style="fill:#B8C48A" opacity=".8">
+                  <circle cx="18" cy="60" r="3"/><circle cx="36" cy="90" r="3"/><circle cx="54" cy="50" r="3"/><circle cx="72" cy="100" r="3"/>
+                </g>
+              </g>
+              <g transform="translate(230,50)">
+                <rect width="90" height="160" rx="12" style="fill:var(--turq-800)"/>
+                <g style="stroke:var(--turq-300)" stroke-width="2" opacity=".85">
+                  <line x1="18" y1="20" x2="18" y2="140"/><line x1="36" y1="20" x2="36" y2="140"/>
+                  <line x1="54" y1="20" x2="54" y2="140"/><line x1="72" y1="20" x2="72" y2="140"/>
+                </g>
+                <path d="M45 66l8 14-8 14-8-14z" style="fill:var(--coral-500)"/>
+              </g>
+              <line x1="200" y1="30" x2="200" y2="230" style="stroke:var(--line-strong)" stroke-width="2" stroke-dasharray="3 8"/>
+            </svg>
+          </div>
+          <div class="g-body">
+            <h2 class="g-title">Limpieza de celda de sal</h2>
+            <p class="g-desc">El sarro acumulado en las placas ahogaba la producción de la celda, así que la lectura de cloro seguía bajando aunque el sistema estuviera corriendo. Un remojo y una limpieza placa por placa la regresaron a su nivel normal.</p>
+          </div>
+        </article>
+
+      </div>
+      <p class="proof-caption">Todas las escenas de esta página son ilustraciones creadas para esta demostración, no fotografías de clientes reales.</p>
+    </div>
+  </section>
+
+  <div class="float-chain" aria-hidden="true"></div>
+
+  <section class="cta-close deep-field">
+    <div class="wrap">
+      <div class="cta-copy">
+        <h2>¿Su piscina se parece a alguno de estos casos?</h2>
+        <p class="lead">Cuéntenos qué está pasando y se lo decimos claro por teléfono, sin adivinar el precio a distancia.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+15165550143">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3.2l1.5 3.8-2 1.6a11.4 11.4 0 0 0 5.2 5.2l1.6-2 3.8 1.5V16.5a1.7 1.7 0 0 1-1.9 1.7A15.8 15.8 0 0 1 4.3 4.9 1.7 1.7 0 0 1 6 3Z"/></svg>
+          Llamar (516) 555-0143
+        </a>
+        <a class="btn btn-on-dark" href="services.html">Ver todos los servicios</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="mosaic-band" aria-hidden="true"></div>
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <p class="fn">Piscinas Agua Clara</p>
+      <p>Mantenimiento semanal, apertura y cierre de temporada, reparación de equipo y recuperación de agua verde.</p>
+      <a class="footer-tel" href="tel:+15165550143">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3.2l1.5 3.8-2 1.6a11.4 11.4 0 0 0 5.2 5.2l1.6-2 3.8 1.5V16.5a1.7 1.7 0 0 1-1.9 1.7A15.8 15.8 0 0 1 4.3 4.9 1.7 1.7 0 0 1 6 3Z"/></svg>
+        (516) 555-0143
+      </a>
+    </div>
+    <nav class="footer-col" aria-label="Sitio">
+      <h4>En este sitio</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="work.html" aria-current="page">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h4>Horario</h4>
+      <ul>
+        <li>Lunes a viernes &middot; 7:00 a.m. a 5:00 p.m.</li>
+        <li>Sábado &middot; 7:00 a.m. a 1:00 p.m.</li>
+        <li>Domingo &middot; cerrado</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa &mdash; samuelochoa.com/paginas-web</a><br>
+    Piscinas Agua Clara es un negocio ficticio mostrado como demostración. El nombre, el teléfono y los precios de este sitio son solo ejemplos.
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+15165550143">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3.2l1.5 3.8-2 1.6a11.4 11.4 0 0 0 5.2 5.2l1.6-2 3.8 1.5V16.5a1.7 1.7 0 0 1-1.9 1.7A15.8 15.8 0 0 1 4.3 4.9 1.7 1.7 0 0 1 6 3Z"/></svg>
+    Llamar (516) 555-0143
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.site-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subLi = subToggle ? subToggle.closest('.has-sub') : null;
+
+  function closeSub(){
+    if(!subToggle) return;
+    subToggle.setAttribute('aria-expanded','false');
+    if(subLi) subLi.classList.remove('is-open');
+  }
+  function closeNav(){
+    if(!nav || !toggle) return;
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    closeSub();
+  }
+  function openNav(){
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      if(open){ closeNav(); } else { openNav(); }
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ if(window.innerWidth < 900){ closeNav(); } });
+    });
+  }
+  if(subToggle){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      if(subLi) subLi.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeNav(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!nav || !e.target.closest) return;
+    if(!e.target.closest('.site-header')){ closeNav(); }
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth >= 900){ closeNav(); }
+  });
+})();
+</script>
+
+</body>
+</html>

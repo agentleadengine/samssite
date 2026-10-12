@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Toolbelt &amp; Level | Demo Site</title>
+<meta name="description" content="What Toolbelt &amp; Level fixes: small repairs, furniture assembly, TV and shelf mounting, doors and windows, and full punch-list projects. What's included and when you need it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-level" viewBox="0 0 32 16"><rect x="1" y="1" width="30" height="14" rx="2.5"/><circle cx="16" cy="8" r="4.3"/><circle cx="16" cy="8" r="1.3" fill="currentColor" stroke="none"/><path d="M8 1v14M24 1v14"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3.2l1.3 3.8-2 1.7a12.4 12.4 0 0 0 6 6l1.7-2 3.8 1.3V18c0 1.1-.9 2-2 1.9C11.5 19.4 4.6 12.5 4.1 5.9 4 4.9 5 4 7 4Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-4.3 3.3c-.5.4-1.2 0-1.2-.6V17H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="M7.5 9.5h9M7.5 12.5h6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="M7.5 12.4l3 3 6-6.6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="i-hammer" viewBox="0 0 24 24"><path d="M13.4 4.6a1.9 1.9 0 0 1 2.7 0l3.3 3.3a1.9 1.9 0 0 1 0 2.7l-2 2-6-6 2-2Z"/><path d="M15.6 10.6 6.3 19.9a1.9 1.9 0 0 1-2.7 0v0a1.9 1.9 0 0 1 0-2.7l9.3-9.3"/></symbol>
+<symbol id="i-screw" viewBox="0 0 24 24"><circle cx="9.5" cy="9.5" r="6"/><path d="M9.5 5.3v8.4M5.3 9.5h8.4M6.7 6.7l5.6 5.6M12.3 6.7l-5.6 5.6"/><path d="M14.7 14.7l6 6"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="2.5" y="4" width="14" height="10.5" rx="1.3"/><path d="M6.5 18h6M9.5 14.5v3.5"/><path d="M18.3 7.5h3.4M20 5.7v3.6"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="6" y="3" width="11" height="18" rx="1"/><circle cx="14.3" cy="12" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.3"/><path d="M12 4v16M4 12h16"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="1.5"/><rect x="9" y="2.4" width="6" height="3" rx="1"/><path d="M8.3 10.6l2 2 4.2-4.6M8.3 16.2h6.4"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-tag">Demo Site</div>
+
+<header class="site-head">
+  <div class="head-in">
+    <div class="head-bar">
+      <div class="head-row1">
+        <a class="brandmark" href="index.html">
+          <svg class="ic" aria-hidden="true"><use href="#i-level"></use></svg>
+          <span class="wd"><b>Toolbelt &amp; Level</b><span>Long Island, NY</span></span>
+        </a>
+        <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+          <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+          <span class="lbl">Menu</span>
+        </button>
+      </div>
+
+      <a class="phone-pill" href="tel:+16315550106">
+        <span style="display:flex;align-items:center;gap:10px"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>(631) 555-0106</span>
+        <span class="go">Call</span>
+      </a>
+
+      <nav class="navmain" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-sub">
+            <button class="sub-toggle current" type="button" aria-expanded="false" aria-controls="services-sub">
+              Services
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </button>
+            <ul class="sub-panel" id="services-sub">
+              <li><a href="services.html#small-repairs">Small repairs</a></li>
+              <li><a href="services.html#assembly">Furniture assembly</a></li>
+              <li><a href="services.html#mounting">TV &amp; shelf mounting</a></li>
+              <li><a href="services.html#doors-windows">Doors &amp; windows</a></li>
+              <li><a href="services.html#punch-list">Punch-list projects</a></li>
+            </ul>
+          </li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad svc-intro">
+      <div class="head rise">
+        <h2>Five things, done right</h2>
+        <p>No job too small to get checked with a level, and no list too long to walk end to end. What&rsquo;s included and when you actually need it &ndash; not a vague &ldquo;we do it all.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="small-repairs">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-hammer"></use></svg></span>
+            <h2>Small repairs</h2>
+          </div>
+          <div class="svc-body">
+            <p>The stuff that&rsquo;s minor until it&rsquo;s been on the list for six months. Drywall dings and nail pops, loose door hinges, sticking cabinet doors, caulk lines gone gray, a trim board that finally came loose. One visit clears most of a normal list.</p>
+            <p>If a repair turns out to need a permit or a licensed trade, we&rsquo;ll say so on the spot and point you to who to call, instead of taking a swing at it anyway.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <p>Patch and paint touch-up, hardware swaps, hinge adjustment, caulking, minor trim work.</p>
+          <span class="lbl">When you need it</span>
+          <p>Before one small repair turns into three, or ahead of a showing, move-in, or inspection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="assembly">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-screw"></use></svg></span>
+            <h2>Furniture assembly</h2>
+          </div>
+          <div class="svc-body">
+            <p>Flat-pack furniture built square, leveled, and anchored to the wall where tipping is a real risk &ndash; dressers, bookshelves, wardrobes. Every panel checked before the last screw goes in, not after.</p>
+            <p>We break down and haul the boxes when we&rsquo;re done. If a piece arrives with a warped panel or missing hardware, you&rsquo;ll hear it from us before assembly starts, not halfway through.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <p>Assembly, wall anchoring for tip-prone pieces, leveling, packaging removal.</p>
+          <span class="lbl">When you need it</span>
+          <p>New furniture that&rsquo;s been sitting in the box, or a piece wobbly enough you don&rsquo;t trust it around kids or pets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="mounting">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg></span>
+            <h2>TV &amp; shelf mounting</h2>
+          </div>
+          <div class="svc-body">
+            <p>Mounted into the stud, checked level side to side, cable run tucked so the wall doesn&rsquo;t look like a server room. Floating shelves get the same treatment &ndash; rated for what you&rsquo;re actually putting on them.</p>
+            <p>We test the mount with real weight before we leave. If the studs don&rsquo;t line up where you want the TV and the wall needs a backer board, we&rsquo;ll say so and price it straight.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <p>Bracket mounting, in-wall or surface cable management, floating shelf install, weight testing.</p>
+          <span class="lbl">When you need it</span>
+          <p>A TV that&rsquo;s been leaning on the dresser since you moved in, or shelves that need to actually hold books.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="doors-windows">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+            <h2>Doors &amp; windows</h2>
+          </div>
+          <div class="svc-body">
+            <p>Doors that stick in the summer, hinges that scream, deadbolts that don&rsquo;t line up, windows that won&rsquo;t stay up on their own anymore. Most of it is planing, adjusting, or a hardware swap &ndash; not a full replacement.</p>
+            <p>Screens and storm windows get a look while we&rsquo;re there if you want a second set of eyes, even if that wasn&rsquo;t on the original list.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <p>Planing and rehanging, hinge and lock adjustment, deadbolt and handle swaps, sash and balance repair.</p>
+          <span class="lbl">When you need it</span>
+          <p>A door that&rsquo;s stuck since the weather turned, or a window that needs two hands to hold up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="punch-list">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg></span>
+            <h2>Punch-list projects</h2>
+          </div>
+          <div class="svc-body">
+            <p>The list that&rsquo;s been sitting since you moved in, or the one your agent handed you before closing. We take the whole thing in one visit where we can, and tell you upfront which items need a second trip for parts.</p>
+            <p>You get a walk-through at the end. Every item gets pointed at and confirmed, not just a text that says &ldquo;all set.&rdquo;</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <p>Multi-item repair lists, move-in and move-out lists, pre-listing touch-ups.</p>
+          <span class="lbl">When you need it</span>
+          <p>Before a closing, a new tenant, or just the day you decide the list has won long enough.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cta-band">
+    <div class="pad">
+      <h2>Not sure which of these your list needs?</h2>
+      <p>Call and describe it, or text a couple of photos. Most lists are a mix of two or three of these &ndash; that&rsquo;s normal, and it&rsquo;s still one visit.</p>
+      <div class="hero-cta">
+        <a class="btn btn-brass" href="tel:+16315550106">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0106
+        </a>
+        <a class="btn btn-line-lt" href="work.html">See finished work</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pad">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg>
+        <b>Toolbelt &amp; Level</b>
+      </a>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="tel:+16315550106">(631) 555-0106</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disc">
+      Toolbelt &amp; Level &middot; Serving Long Island, NY &middot; <a href="tel:+16315550106">(631) 555-0106</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+16315550106">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Toolbelt &amp; Level<span class="s">(631) 555-0106</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var head = document.querySelector('.site-head');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(head && !head.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

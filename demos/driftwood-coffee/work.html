@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind the Roast | Driftwood Coffee Roasters</title>
+<meta name="description" content="A look at how the coffee gets made at Driftwood Coffee Roasters, from green beans through the back door to the cup at the counter. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bevan&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">Demo Site</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Driftwood Coffee Roasters, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="9" fill="var(--espresso-2)" stroke="var(--rust)" stroke-width="2"/>
+        <rect x="10" y="17" width="20" height="13" rx="3" fill="none" stroke="var(--oat)" stroke-width="2"/>
+        <circle cx="20" cy="23.5" r="4.4" fill="none" stroke="var(--rust-bright)" stroke-width="2"/>
+        <path d="M15.5 13c1-3-1-4 0-7M21.5 13c1-3-1-4 0-7" stroke="var(--oat)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".85"/>
+      </svg>
+      <span class="brand">Driftwood<small>Coffee Roasters</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550170">(516) 555-0170</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menu</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Show menu categories">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#espresso">Espresso Bar</a></li>
+          <li><a href="services.html#brewed">Brewed &amp; Cold</a></li>
+          <li><a href="services.html#notcoffee">Not Coffee</a></li>
+          <li><a href="services.html#case">From the Case</a></li>
+          <li><a href="services.html#beans">Beans To Go</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Behind the Roast</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="contact.html">Visit</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550170">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Call (516) 555-0170
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-intro band-oat">
+    <div class="wrap">
+      <h1>Behind the Roast</h1>
+      <p class="lead measure">A look at how the coffee actually gets made, from the back door to the cup at the counter. Illustrated for this demo, not a real photo shoot.</p>
+    </div>
+  </section>
+
+  <section class="section-tight band-oat">
+    <div class="wrap">
+      <div class="gallery">
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="stamp on-dark">Sample Project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a burlap sack of green coffee with beans spilling near its base">
+              <ellipse cx="170" cy="272" rx="95" ry="10" fill="var(--espresso-2)" opacity=".6"/>
+              <path d="M140 95 L170 55 L200 95 Z" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <rect x="155" y="80" width="30" height="14" rx="6" fill="var(--rust)"/>
+              <ellipse cx="170" cy="180" rx="78" ry="90" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.5"/>
+              <g stroke="var(--rule-dark-2)" stroke-width="1" opacity=".55">
+                <path d="M108 130 L232 150"/>
+                <path d="M100 165 L240 185"/>
+                <path d="M104 200 L236 218"/>
+              </g>
+              <g fill="var(--rust-bright)">
+                <ellipse cx="236" cy="238" rx="9" ry="6" transform="rotate(-12 236 238)"/>
+                <ellipse cx="256" cy="252" rx="9" ry="6" transform="rotate(16 256 252)"/>
+                <ellipse cx="270" cy="232" rx="8" ry="5.5" transform="rotate(-6 270 232)"/>
+                <ellipse cx="248" cy="264" rx="8" ry="5.5" transform="rotate(22 248 264)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Through the Back Door</h2>
+            <p>Green coffee comes in by the sack, not the pallet, so we can switch to something better the moment it shows up.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="stamp on-dark">Sample Project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a coffee bag with an ink-stamp ring reading roasted today, and a stamping tool poised above it">
+              <ellipse cx="156" cy="245" rx="60" ry="9" fill="var(--espresso-2)" opacity=".6"/>
+              <rect x="110" y="90" width="92" height="150" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <rect x="110" y="90" width="92" height="18" fill="var(--espresso-2)"/>
+              <circle cx="156" cy="175" r="34" fill="none" stroke="var(--rust-bright)" stroke-width="3" stroke-dasharray="4 3" opacity=".9"/>
+              <text x="156" y="171" text-anchor="middle" font-family="Bevan, Georgia, serif" font-size="12" letter-spacing="1" fill="var(--rust-bright)">ROASTED</text>
+              <text x="156" y="187" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="9" letter-spacing="2" fill="var(--rust-bright)">TODAY</text>
+              <g transform="rotate(18 240 75)">
+                <rect x="230" y="40" width="20" height="55" rx="8" fill="var(--espresso-2)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+                <rect x="222" y="88" width="36" height="22" rx="5" fill="var(--rust)"/>
+              </g>
+              <g stroke="var(--rust-bright)" stroke-width="2" stroke-linecap="round" opacity=".7">
+                <path d="M223 122 l-8 9"/>
+                <path d="M240 126 l0 12"/>
+                <path d="M257 122 l8 9"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Stamped, Not Guessed</h2>
+            <p>Every bag gets today's date before it goes on the shelf — not a best-by guess pulled off a chart.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="stamp on-dark">Sample Project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a portafilter pulling two streams of espresso into a small cup with crema on a saucer">
+              <ellipse cx="180" cy="250" rx="72" ry="9" fill="var(--espresso-2)" opacity=".6"/>
+              <rect x="150" y="60" width="80" height="16" rx="8" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <rect x="155" y="76" width="46" height="34" rx="14" fill="var(--espresso-2)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <rect x="168" y="108" width="5" height="14" rx="2" fill="var(--espresso-3)"/>
+              <rect x="188" y="108" width="5" height="14" rx="2" fill="var(--espresso-3)"/>
+              <path class="pour-stream" d="M170 122 C168 148 172 172 176 194" stroke="var(--rust-bright)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path class="pour-stream" d="M190 122 C192 148 186 172 182 194" stroke="var(--rust-bright)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <ellipse cx="180" cy="248" rx="46" ry="8" fill="var(--espresso-2)"/>
+              <path d="M152 198 H208 L202 228 A8 8 0 0 1 194 236 H166 A8 8 0 0 1 158 228 Z" fill="var(--oat)"/>
+              <ellipse cx="180" cy="204" rx="26" ry="6" fill="var(--rust-deep)"/>
+              <ellipse cx="180" cy="203" rx="17" ry="3.4" fill="var(--oat-2)" opacity=".8"/>
+              <path d="M206 210h5a10 10 0 0 1 0 20h-3" fill="none" stroke="var(--oat)" stroke-width="5" stroke-linecap="round"/>
+              <g class="steam" stroke="var(--oat)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".6">
+                <path d="M172 194c-5-10 6-13 1-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Pulled to Order</h2>
+            <p>Espresso gets dialed in every morning and checked again after lunch. If a shot's off, we pull it again.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="stamp on-dark">Sample Project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a retail coffee bag beside a grinder, with a scoop of fresh grounds between them">
+              <ellipse cx="170" cy="242" rx="110" ry="10" fill="var(--espresso-2)" opacity=".5"/>
+              <rect x="70" y="120" width="70" height="110" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <rect x="70" y="120" width="70" height="16" fill="var(--espresso-2)"/>
+              <rect x="83" y="150" width="44" height="30" rx="3" fill="var(--rust)"/>
+              <ellipse cx="165" cy="222" rx="16" ry="8" fill="var(--rust)"/>
+              <rect x="178" y="216" width="22" height="7" rx="3.5" fill="var(--rust)" transform="rotate(-14 189 219)"/>
+              <rect x="200" y="150" width="60" height="75" rx="8" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <path d="M205 150 L255 150 L240 110 L220 110 Z" fill="var(--espresso-2)" stroke="var(--rule-dark-2)" stroke-width="1.3"/>
+              <circle cx="230" cy="200" r="12" fill="var(--espresso-2)" stroke="var(--rust-bright)" stroke-width="2"/>
+              <line x1="230" y1="200" x2="236" y2="192" stroke="var(--rust-bright)" stroke-width="2" stroke-linecap="round"/>
+              <g fill="var(--rust-bright)">
+                <ellipse cx="222" cy="122" rx="4" ry="2.8" transform="rotate(-12 222 122)"/>
+                <ellipse cx="233" cy="117" rx="4" ry="2.8" transform="rotate(10 233 117)"/>
+                <ellipse cx="244" cy="123" rx="4" ry="2.8" transform="rotate(-18 244 123)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Ground and Bagged</h2>
+            <p>Retail bags get ground fresh at the counter, free, right before they go home with you.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="stamp on-dark">Sample Project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a wooden crate packed with wholesale coffee bags, with a dashed delivery route above it">
+              <path d="M40 40 C 100 20 180 60 240 30 C 280 15 320 35 360 25" stroke="var(--rule-dark-2)" stroke-width="2" fill="none" stroke-dasharray="2 8" stroke-linecap="round" opacity=".75"/>
+              <g fill="var(--rust-bright)">
+                <circle cx="100" cy="28" r="4"/>
+                <circle cx="240" cy="32" r="4"/>
+                <circle cx="355" cy="26" r="4"/>
+              </g>
+              <ellipse cx="200" cy="245" rx="120" ry="10" fill="var(--espresso-2)" opacity=".5"/>
+              <rect x="108" y="118" width="34" height="45" fill="var(--espresso-2)"/>
+              <rect x="108" y="118" width="34" height="10" fill="var(--rust)"/>
+              <rect x="150" y="108" width="34" height="55" fill="var(--espresso-2)"/>
+              <rect x="150" y="108" width="34" height="10" fill="var(--rust)"/>
+              <rect x="192" y="122" width="34" height="41" fill="var(--espresso-2)"/>
+              <rect x="192" y="122" width="34" height="10" fill="var(--rust)"/>
+              <rect x="234" y="112" width="34" height="51" fill="var(--espresso-2)"/>
+              <rect x="234" y="112" width="34" height="10" fill="var(--rust)"/>
+              <rect x="90" y="150" width="220" height="90" rx="6" fill="var(--espresso-3)" stroke="var(--rule-dark-2)" stroke-width="1.5"/>
+              <rect x="88" y="142" width="12" height="102" rx="2" fill="var(--espresso-2)"/>
+              <rect x="300" y="142" width="12" height="102" rx="2" fill="var(--espresso-2)"/>
+              <rect x="90" y="174" width="220" height="4" fill="var(--rule-dark-2)"/>
+              <rect x="90" y="196" width="220" height="4" fill="var(--rule-dark-2)"/>
+              <rect x="90" y="218" width="220" height="4" fill="var(--rule-dark-2)"/>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>The Wednesday Route</h2>
+            <p>Wholesale bags packed and dropped off at offices and restaurants across Nassau and western Suffolk, every Wednesday morning.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-espresso on-dark section-tight">
+    <div class="wrap closing-grid">
+      <div>
+        <h2>Want it delivered instead?</h2>
+        <p class="measure" style="color:var(--cream-dim)">Call about a standing wholesale order for the office, or ask what the pour-over bar is running today.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550170">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Call (516) 555-0170
+          </a>
+          <a class="btn-line" href="services.html">
+            See the board
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Driftwood Coffee Roasters</div>
+        <p>Small-batch roasting &amp; a full espresso bar on Long Island, NY.</p>
+        <p><a href="tel:+15165550170">(516) 555-0170</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="work.html">Behind the Roast</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15165550170">Call (516) 555-0170</a></li>
+          <li><a href="sms:+15165550170">Send a text</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550170">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Call (516) 555-0170
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!--
+  DIRECTION CONTRACT — Eléctrica La Chispa
+  THESIS: El precio queda firmado y sellado antes de tocar un solo cable — nunca una sorpresa en la factura.
+  OWN-WORLD: Un taller color carbón donde el papel amarillo chispa es el material que manda. La orden de trabajo es el objeto central, y el sello circular del rayo certifica cada promesa del sitio: el precio, el trabajo terminado, la cita.
+  STORY: la portada abre con la orden a punto de sellarse -> una viñeta de prueba muestra lo que pasa detrás de la pared antes de cerrarla -> tres servicios se leen como líneas de la orden que apuntan a la lista completa -> la franja de por qué nosotros repite las tres promesas en carbón -> el cierre muestra la orden ya sellada, lista para llamar.
+  FIRST VIEWPORT: un fondo amarillo chispa a toda vista, la orden de trabajo como tarjeta carbón protagonista con el titular escrito encima, el sello del rayo cayendo sobre el papel — llamada y CTA de texto antes de cualquier scroll.
+-->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eléctrica La Chispa — Electricista en Long Island, NY | Sitio de demostración</title>
+<meta name="description" content="Eléctrica La Chispa: cambio de panel, cargadores para carro eléctrico, iluminación y reparaciones en Long Island, NY. El precio se lo damos por escrito antes de empezar. Sitio de demostración — (516) 555-0151.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1H10l-4.2 3.4a.5.5 0 0 1-.8-.4V16H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/><path d="M7.5 9.5h9M7.5 12.5h5.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M8 12.3l2.6 2.6L16.4 9"/></symbol>
+<symbol id="i-seal" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="22" cy="22" r="15.6" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.6 2.8" opacity=".75"/><path d="M24.5 6 L13 25 h7.5 L18 38 L31 20 h-7.6 z" fill="currentColor"/></symbol>
+<symbol id="i-panel" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8.5 8v2.6M11.5 8v2.6M14.5 8v2.6M8.5 13.4v2.6M11.5 13.4v2.6M14.5 13.4v2.6"/></symbol>
+<symbol id="i-ev" viewBox="0 0 24 24"><rect x="7" y="9" width="10" height="9.5" rx="2"/><path d="M10 9V4.2M14 9V4.2M12 18.5V21.5"/></symbol>
+<symbol id="i-diag" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16.5" rx="1.6"/><path d="M9 4.3v-.8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v.8"/><path d="M9 11.3l2 2 4-4.3M9 16.3h6"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18.3h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.4 10.9c.6.4.9 1.1.9 1.9v.2h5v-.2c0-.8.3-1.5.9-1.9A6 6 0 0 0 12 3Z"/></symbol>
+<symbol id="i-outlet" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2.5"/><path d="M9.3 9.2v3M14.7 9.2v3"/><circle cx="12" cy="15.4" r="1.3"/></symbol>
+<symbol id="i-genset" viewBox="0 0 24 24"><rect x="4" y="9.5" width="12" height="8.5" rx="1.5"/><circle cx="10" cy="13.7" r="2"/><path d="M16 12.2h2a2 2 0 0 1 2 2v.6a2 2 0 0 1-2 2h-1"/><path d="M13 18v2.3"/></symbol>
+</defs>
+</svg>
+
+<div class="ribbon">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="rail">
+  <div class="rail-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-seal"/></svg>
+      <span>
+        <span class="brand-name">Eléctrica <em>La Chispa</em></span>
+        <span class="brand-tag">Electricista</span>
+      </span>
+    </a>
+    <button class="hburg" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menú">
+      <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+
+  <div class="rail-panel-wrap">
+    <div class="rail-panel" id="site-nav">
+      <div class="rail-panel-in">
+        <a class="rail-tel" href="tel:+15165550151">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          (516) 555-0151
+        </a>
+
+        <div class="rail-hours">
+          <p class="rail-h4">Horario</p>
+          <table>
+            <tr><td>Lun–jue</td><td>7:30&nbsp;am–6:00&nbsp;pm</td></tr>
+            <tr><td>Viernes</td><td>7:30&nbsp;am–5:00&nbsp;pm</td></tr>
+            <tr><td>Sábado</td><td>8:00&nbsp;am–2:00&nbsp;pm</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+        </div>
+
+        <nav class="rail-nav" aria-label="Principal">
+          <a href="index.html" aria-current="page">Inicio</a>
+          <details class="svc-drop">
+            <summary>Servicios <svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="svc-panel">
+              <a href="services.html#cambio-panel">Cambio de panel eléctrico</a>
+              <a href="services.html#cargador-ev">Cargador para carro eléctrico</a>
+              <a href="services.html#reparacion-diagnostico">Reparación y diagnóstico</a>
+              <a href="services.html#iluminacion">Iluminación</a>
+              <a href="services.html#tomacorrientes-circuitos">Tomacorrientes y circuitos</a>
+              <a href="services.html#generador-picos">Generador y protección contra picos</a>
+              <a class="svc-all" href="services.html">Ver todos los servicios <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+          <a href="work.html">Trabajos</a>
+          <a href="about.html">Nosotros</a>
+          <a href="contact.html">Contacto</a>
+        </nav>
+
+        <div class="rail-area"><b>Zona de servicio</b><br>Long Island, NY</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<main>
+
+  <!-- ===== hero ===== -->
+  <section class="hero on-chispa">
+    <div class="wrap hero-in">
+      <div class="ticket">
+        <h1>El precio va <em>por escrito</em> antes de tocar un solo cable.</h1>
+        <p class="lede">Cambio de panel, cargador para carro eléctrico, iluminación y ese breaker que se bota cada vez que prende el aire. Cuéntenos qué pasa por teléfono y se lo sellamos antes de tocar nada.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+15165550151">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            Llamar (516) 555-0151
+          </a>
+          <a class="btn btn-ghost" href="services.html">Ver servicios</a>
+        </div>
+        <div class="facts">
+          <span><b>Le atendemos</b> en español</span>
+          <span><b>Precio fijo</b> por escrito</span>
+          <span><b>Long Island,</b> NY</span>
+        </div>
+      </div>
+      <svg class="hero-seal" aria-hidden="true"><use href="#i-seal"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== proof vignette ===== -->
+  <section class="proof">
+    <div class="wrap proof-in">
+      <div class="proof-text">
+        <h2>Lo que desaparece detrás de una pared primero pasa por su teléfono.</h2>
+        <p class="lede">Cualquier cable o caja que va a quedar tapada se etiqueta y se fotografía antes de cerrar. Le llega el mensaje con la foto el mismo día, no una promesa de que ahí quedó bien.</p>
+        <p class="measure" style="margin-top:16px">Si encontramos algo más una vez abierta la pared, paramos y se lo preguntamos antes de seguir.</p>
+      </div>
+      <div class="proof-scene">
+        <svg viewBox="0 0 320 220" role="img" aria-label="Ilustración de una pared abierta con una caja eléctrica instalada y etiquetada entre dos vigas, y un teléfono confirmando que la foto ya se envió antes de cerrar">
+          <rect x="24" y="12" width="20" height="196" fill="#ece4cd" stroke="#17181a" stroke-width="1.5"/>
+          <rect x="276" y="12" width="20" height="196" fill="#ece4cd" stroke="#17181a" stroke-width="1.5"/>
+          <path d="M118 208 C122 165 128 145 145 130" fill="none" stroke="#17181a" stroke-width="4.5" stroke-linecap="round"/>
+          <rect x="132" y="60" width="58" height="70" rx="4" fill="#f7f4ea" stroke="#17181a" stroke-width="2"/>
+          <circle cx="145" cy="70" r="2.2" fill="#17181a"/>
+          <circle cx="177" cy="70" r="2.2" fill="#17181a"/>
+          <rect x="140" y="82" width="42" height="3" fill="#ece4cd"/>
+          <rect x="140" y="90" width="42" height="3" fill="#ece4cd"/>
+          <rect x="140" y="98" width="30" height="3" fill="#ece4cd"/>
+          <g transform="rotate(-4 205 60)">
+            <rect x="174" y="48" width="68" height="25" rx="2" fill="#ffc800"/>
+            <text x="208" y="65" font-family="Rajdhani, sans-serif" font-size="10.5" font-weight="700" fill="#1c1b17" text-anchor="middle" letter-spacing="0.5">COCINA · GFCI</text>
+          </g>
+          <g transform="translate(224 132)">
+            <rect x="0" y="0" width="56" height="64" rx="8" fill="#17181a"/>
+            <rect x="7" y="8" width="42" height="44" rx="2" fill="#fffdf6"/>
+            <path d="M17 30l7 8 14-17" fill="none" stroke="#e0a800" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="58" r="2" fill="#fffdf6"/>
+          </g>
+          <text x="224" y="210" font-family="Rajdhani, sans-serif" font-size="9.5" font-weight="700" fill="#5b5646" letter-spacing=".07em">FOTO ENVIADA</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== services teaser ===== -->
+  <section class="svc-teaser">
+    <div class="wrap">
+      <h2>Lo que más nos piden</h2>
+      <p class="lede">Si está conectado a un breaker de su casa, seguramente está en esta lista. Y si no aparece, llame igual — se lo decimos con franqueza si es trabajo para nosotros.</p>
+      <ul class="teaser-list">
+        <li>
+          <a href="services.html#cambio-panel">
+            <span class="t-tag">PANEL&#8209;200</span>
+            <span class="t-name">Cambio de panel eléctrico</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#cargador-ev">
+            <span class="t-tag">EV&#8209;NIVEL2</span>
+            <span class="t-name">Cargador para carro eléctrico</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#reparacion-diagnostico">
+            <span class="t-tag">DIAG&#8209;01</span>
+            <span class="t-name">Reparación y diagnóstico</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="teaser-foot"><a class="link" href="services.html">Ver los 6 servicios <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ===== why-us ===== -->
+  <section class="why on-carbon">
+    <div class="wrap">
+      <h2>Lo que no cambia en ningún trabajo</h2>
+      <ul class="why-list">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>
+          <div>
+            <h3>El precio, sellado antes de tocar nada</h3>
+            <p>Un precio fijo por escrito, antes de abrir el panel. Si encontramos algo más, paramos y se lo preguntamos — no se lo explicamos después, en la factura.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+          <div>
+            <h3>Trabajo limpio, pared como estaba</h3>
+            <p>Cobertores, aspiramos el polvo y dejamos los cortes listos para resanar. Lo que queda detrás de una pared se le manda por foto antes de cerrarla.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          <div>
+            <h3>Habla con quien hace el trabajo</h3>
+            <p>Contesta la persona que hace el trabajo, no un centro de llamadas leyendo un guion. Describa el problema y probablemente ya sepamos la causa antes de salir.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== close cta ===== -->
+  <section class="close-cta on-chispa">
+    <div class="wrap close-in">
+      <div>
+        <h2>Cuéntenos qué está pasando</h2>
+        <p class="lede">La mayoría de las veces ya sabemos la causa probable antes de salir para su casa. Llame, o escríbanos la versión corta.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+15165550151">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            Llamar (516) 555-0151
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Escríbanos</a>
+        </div>
+      </div>
+      <svg viewBox="0 0 260 170" role="img" aria-label="Ilustración de la orden de trabajo ya sellada con la palabra HECHO">
+        <rect x="20" y="14" width="190" height="140" rx="6" fill="#17181a"/>
+        <rect x="36" y="34" width="140" height="10" fill="#ffe27a" opacity=".85"/>
+        <rect x="36" y="54" width="120" height="7" fill="#45484f"/>
+        <rect x="36" y="70" width="140" height="7" fill="#45484f"/>
+        <rect x="36" y="86" width="90" height="7" fill="#45484f"/>
+        <g transform="rotate(-9 148 108)">
+          <circle cx="148" cy="108" r="32" fill="none" stroke="#ffc800" stroke-width="3.5"/>
+          <circle cx="148" cy="108" r="25" fill="none" stroke="#ffc800" stroke-width="1" stroke-dasharray="1.4 2.6" opacity=".7"/>
+          <text x="148" y="114" font-family="Rajdhani, sans-serif" font-size="15" font-weight="700" fill="#ffc800" text-anchor="middle" letter-spacing=".04em">HECHO</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Eléctrica <em>La Chispa</em></div>
+    <p class="foot-tag">Cambio de panel, cargadores para carro eléctrico, iluminación y reparaciones. Servicio en Long Island, NY.</p>
+    <p class="foot-tel"><a href="tel:+15165550151">(516) 555-0151</a> &nbsp;·&nbsp; Lun a vie 7:30am–6pm, sáb 8am–2pm</p>
+    <nav class="foot-links" aria-label="Pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="services.html">Servicios</a>
+      <a href="work.html">Trabajos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <div class="foot-disclose">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<a class="callbar" href="tel:+15165550151">
+  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+  Llamar (516) 555-0151
+</a>
+
+<script>
+(function(){
+  var rail = document.querySelector('.rail');
+  var btn = document.querySelector('.hburg');
+  if(!rail || !btn) return;
+  function closeMenu(focusBtn){
+    rail.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    if(focusBtn) btn.focus();
+  }
+  function openMenu(){
+    rail.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  btn.addEventListener('click', function(){
+    rail.classList.contains('is-open') ? closeMenu(false) : openMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(rail.classList.contains('is-open')) closeMenu(true);
+      document.querySelectorAll('details[open]').forEach(function(d){ d.removeAttribute('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(rail.classList.contains('is-open') && !rail.contains(e.target)){
+      closeMenu(false);
+    }
+  });
+  rail.querySelectorAll('.rail-nav > a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+})();
+</script>
+
+</body>
+</html>

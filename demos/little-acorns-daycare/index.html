@@ -1,0 +1,374 @@
+<!--
+THESIS: A small daycare parents can actually see into: groups sized honestly by age (smallest where it matters most, the infant room), teachers who stay, and a photo of your kid before your coffee's cold.
+OWN-WORLD: Full palette committed to page scale (deep sage, sunshine gold, coral) as whole-section fields, not accents on white; rounded shapes, hand-placed overlapping notes, and a drawn daily-rhythm line running through the site like a hallway.
+STORY: Follow one day at Little Acorns from drop-off to pickup, then room by room by age, closing on an invitation to walk the rooms yourself.
+FIRST VIEWPORT: A framed morning-yard scene under one clear promise, the phone number as the primary act and "see the rooms" as the quiet second door.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Acorns Daycare | Home Away From Home on Long Island</title>
+<meta name="description" content="Little Acorns Daycare offers full-day and part-day care for infants through Pre-K on Long Island, NY. Small groups sized honestly by age, teachers who stay, and daily photo updates.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-index">
+<div class="demo-ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="16" fill="#dbe9d2"/>
+        <path d="M9.5 15.2c0 5 3.1 8.6 6.5 8.6s6.5-3.6 6.5-8.6c0-1-.7-1.6-1.6-1.6H11.1c-.9 0-1.6.6-1.6 1.6z" fill="#c47a45"/>
+        <rect x="9" y="11.2" width="14" height="4.2" rx="2.1" fill="#436b3d"/>
+        <rect x="14.6" y="7.2" width="2.8" height="4.6" rx="1.4" fill="#436b3d"/>
+      </svg>
+      <span class="brand-text"><strong>Little Acorns</strong><small>Daycare &amp; Preschool</small></span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-submenu">
+          <a href="services.html">Services</a>
+          <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-label="Show services menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul id="services-submenu" class="submenu">
+            <li><a href="services.html#infant">Infant Room</a></li>
+            <li><a href="services.html#toddler">Toddler Room</a></li>
+            <li><a href="services.html#preschool">Preschool</a></li>
+            <li><a href="services.html#prek">Pre-K</a></li>
+            <li><a href="services.html#before-after">Before &amp; After Care</a></li>
+            <li><a href="services.html#summer">Summer Weeks</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Moments</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-scrim"></div>
+
+    <a class="header-phone" href="tel:15165550120"><small>Call us</small><strong>(516) 555-0120</strong></a>
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero wrap">
+    <div class="hero-frame">
+      <div class="hero-copy">
+        <h1>A small, sunny place to grow up</h1>
+        <p class="lede">Full-day and part-day care for infants through Pre-K on Long Island, NY. Groups sized honestly by age, teachers who stick around, and a photo of your kid's morning before your coffee's cold.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-coral" href="tel:15165550120">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a11.5 11.5 0 0 1-6-6l2-2z"/></svg>
+            Call (516) 555-0120
+          </a>
+          <a class="btn btn-ghost-dark" href="services.html">See the six rooms</a>
+        </div>
+        <p class="hero-note">Now enrolling for fall, across Long Island, NY.</p>
+      </div>
+      <div class="hero-scene">
+        <svg viewBox="0 0 420 260" role="img" aria-label="Illustration of the daycare yard: a tree, a small playhouse, and three children playing in the grass under a bright sun">
+          <defs>
+            <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fdf1da"/>
+              <stop offset="1" stop-color="#eef4e9"/>
+            </linearGradient>
+            <linearGradient id="hgrass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#96b789"/>
+              <stop offset="1" stop-color="#5c8552"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="260" fill="url(#hsky)"/>
+          <circle cx="358" cy="46" r="26" fill="#f0b23e" opacity=".9"/>
+          <g stroke="#f0b23e" stroke-width="3" stroke-linecap="round" opacity=".7">
+            <path d="M358 8v10"/><path d="M396 46h-10"/><path d="M386 18l-7 7"/><path d="M330 18l7 7"/>
+          </g>
+          <ellipse cx="70" cy="42" rx="28" ry="14" fill="#fff" opacity=".85"/>
+          <ellipse cx="96" cy="48" rx="19" ry="11" fill="#fff" opacity=".85"/>
+          <path d="M0 186 Q90 160 200 182 T420 172 L420 260 L0 260Z" fill="url(#hgrass)"/>
+          <rect x="70" y="128" width="12" height="58" rx="6" fill="#a9713f"/>
+          <circle cx="76" cy="118" r="34" fill="#436b3d"/>
+          <circle cx="50" cy="134" r="23" fill="#5c8552"/>
+          <circle cx="102" cy="134" r="21" fill="#33512f"/>
+          <rect x="230" y="132" width="86" height="54" rx="8" fill="#fff"/>
+          <path d="M224 134 L273 100 L322 134 Z" fill="#b9472c"/>
+          <rect x="262" y="154" width="24" height="32" rx="5" fill="#f0b23e"/>
+          <rect x="238" y="142" width="16" height="16" rx="4" fill="#dbe9d2"/>
+          <rect x="292" y="142" width="16" height="16" rx="4" fill="#dbe9d2"/>
+          <g><circle cx="150" cy="168" r="9" fill="#f3d3b6"/><path d="M141 178a9 10 0 0 1 18 0v14a3 3 0 0 1-3 3h-12a3 3 0 0 1-3-3z" fill="#b9472c"/><path d="M143 163a9 6 0 0 1 14 0" fill="#3d2a1c"/></g>
+          <g><circle cx="182" cy="176" r="8" fill="#e0b189"/><path d="M174 185a8 9 0 0 1 16 0v11a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3z" fill="#436b3d"/><circle cx="182" cy="169" r="7" fill="#1e2a1b"/></g>
+          <g><circle cx="207" cy="180" r="7" fill="#f6dcc2"/><path d="M200 188a7 8 0 0 1 14 0v9a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 200 197z" fill="#f0b23e"/><path d="M201 175a7 5 0 0 1 12 0" fill="#8a5a2b"/></g>
+          <circle cx="345" cy="196" r="9" fill="#e07048" opacity=".85"/>
+          <circle cx="40" cy="200" r="7" fill="#f0b23e" opacity=".85"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-wrap">
+    <div class="notes">
+      <div class="note note-a">
+        <h3>Open 7:00 am to 6:00 pm</h3>
+        <p>Monday through Friday, year round. Pickup any time before close.</p>
+      </div>
+      <div class="note note-b">
+        <h3>Group size grows with age</h3>
+        <p>Six little ones and two teachers in the infant room. More room, literally, as kids get older.</p>
+      </div>
+      <div class="note note-c">
+        <h3>A photo most afternoons</h3>
+        <p>Sent straight to your phone. No app to download.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap rhythm-section" aria-labelledby="rhythm-h">
+    <div class="rhythm">
+      <div class="section-head">
+        <h2 id="rhythm-h">A day here, start to finish</h2>
+        <p>Predictable enough to feel safe, loose enough to be fun.</p>
+      </div>
+      <div class="rhythm-track">
+        <div class="rhythm-stop">
+          <div class="rhythm-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15h16" stroke="#33512f" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M7 15a5 5 0 0 1 10 0" fill="#f0b23e"/><g stroke="#c98a1c" stroke-width="1.6" stroke-linecap="round"><path d="M12 6v2"/><path d="M6.5 9.5l1.4 1.4"/><path d="M17.5 9.5l-1.4 1.4"/></g></svg>
+          </div>
+          <h3>Arrival &amp; breakfast</h3>
+          <span class="rhythm-time">7:00 am</span>
+          <p>Doors open at 7. Hot breakfast is out until 8:30, hand-off right at the door.</p>
+        </div>
+        <div class="rhythm-stop">
+          <div class="rhythm-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.1" fill="#b9472c"/><circle cx="18" cy="10" r="2.1" fill="#436b3d"/><circle cx="15.5" cy="17" r="2.1" fill="#c98a1c"/><circle cx="8.5" cy="17" r="2.1" fill="#436b3d"/><circle cx="6" cy="10" r="2.1" fill="#b9472c"/></svg>
+          </div>
+          <h3>Morning circle</h3>
+          <span class="rhythm-time">9:00 am</span>
+          <p>Songs, weather, who's here today, then small groups break off to work.</p>
+        </div>
+        <div class="rhythm-stop">
+          <div class="rhythm-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="6.5" fill="#fff" stroke="#c98a1c" stroke-width="1.6"/><circle cx="12" cy="13" r="3" fill="#f0b23e"/><path d="M12 3v4" stroke="#436b3d" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Outside &amp; lunch</h3>
+          <span class="rhythm-time">11:30 am</span>
+          <p>Yard time, then a family-style meal made in our own kitchen.</p>
+        </div>
+        <div class="rhythm-stop">
+          <div class="rhythm-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5a7 7 0 1 0 5 11 6 6 0 0 1-5-11z" fill="#33512f"/><rect x="5" y="15" width="9" height="5" rx="2.5" fill="#f4c467"/></svg>
+          </div>
+          <h3>Rest &amp; pickup</h3>
+          <span class="rhythm-time">2:00 pm</span>
+          <p>Quiet rest, a snack, one more turn outside, then pickup any time until 6.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="teaser-h">
+    <div class="section-head">
+      <h2 id="teaser-h">Every room, one small hallway</h2>
+      <p>Children move rooms when they're ready, not on their birthday.</p>
+    </div>
+    <div class="teaser-grid">
+      <a class="teaser-panel teaser-sage" href="services.html#infant">
+        <h3>Infant &amp; Toddler</h3>
+        <p>6 weeks to 2.5 years. Small rooms, steady routines, a lot of being held.</p>
+        <span class="teaser-arrow">See these rooms
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="teaser-panel teaser-sun" href="services.html#preschool">
+        <h3>Preschool &amp; Pre-K</h3>
+        <p>2.5 to 5 years. Letters and numbers inside real projects, not worksheets.</p>
+        <span class="teaser-arrow">See these rooms
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="teaser-panel teaser-coral" href="services.html#before-after">
+        <h3>Before, After &amp; Summer</h3>
+        <p>Flexible care around the school day, and all summer long.</p>
+        <span class="teaser-arrow">See these rooms
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="why-h">
+    <div class="why-grid">
+      <div>
+        <div class="section-head">
+          <h2 id="why-h">The small stuff, done right</h2>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#33512f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10.5" r=".8" fill="#33512f" stroke="none"/><circle cx="15" cy="10.5" r=".8" fill="#33512f" stroke="none"/><path d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg>
+            </div>
+            <div>
+              <h3>You always talk to a person</h3>
+              <p>Call during the day and a teacher or the director picks up. No phone tree, no ticket number.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#33512f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v4a5 5 0 0 1-5 5h-4a5 5 0 0 1-5-5v-4z"/><path d="M4 11h16"/><path d="M6 11c0-1.5.5-2.5 1.3-3.3M18 11c0-1.5-.5-2.5-1.3-3.3"/></svg>
+            </div>
+            <div>
+              <h3>Meals are cooked here</h3>
+              <p>Breakfast, lunch, and two snacks made in our own kitchen. Menus posted a week ahead, allergies handled in writing.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#33512f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="3.3"/><circle cx="15.5" cy="9.5" r="3.3"/><path d="M4.6 11.8C4.6 16 12 20 12 20s7.4-4 7.4-8.2"/></svg>
+            </div>
+            <div>
+              <h3>Teachers who stay</h3>
+              <p>We pay above the going rate on purpose, because the person who knows your child should still be here next fall.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#33512f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 3.5H6A2.5 2.5 0 0 0 3.5 6v6.5L13 22l8-8-9.5-9.5z"/><circle cx="8.2" cy="8.2" r="1.2" fill="#33512f" stroke="none"/></svg>
+            </div>
+            <div>
+              <h3>One flat weekly rate</h3>
+              <p>Meals, supplies, and diapers included in the price. No surprise fees mid-year.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday - Friday</td><td>7:00 am - 6:00 pm</td></tr>
+          <tr><td>Saturday &amp; Sunday</td><td>Closed</td></tr>
+          <tr><td>Tours</td><td>Weekdays, 9:30 &amp; 1:30</td></tr>
+          <tr><td>Holiday closures</td><td>Posted each January</td></tr>
+        </table>
+        <h3 style="margin-top:22px">Ways to enroll</h3>
+        <ul class="area-list">
+          <li>Full-day</li><li>Part-day</li><li>Before &amp; after care</li><li>Summer weeks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="cta-h">
+    <div class="closing-cta">
+      <h2 id="cta-h">Tours are twenty minutes, and you can bring your child</h2>
+      <p>Walk the rooms while they're running. That's the only honest way to pick a daycare.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-cream" href="tel:15165550120">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a11.5 11.5 0 0 1-6-6l2-2z"/></svg>
+          Call (516) 555-0120
+        </a>
+        <a class="btn btn-ghost-dark" href="contact.html">Send a sample inquiry</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Little Acorns Daycare</h4>
+        <p>A small daycare and preschool serving families across Long Island, NY. Infants through Pre-K, full-day and part-day.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:15165550120">(516) 555-0120</a><br>Mon-Fri, 7:00 am - 6:00 pm<br>Long Island, NY</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Moments</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-disclose">
+      <p>Demo website built by Samuel Ochoa - <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:15165550120">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a11.5 11.5 0 0 1-6-6l2-2z"/></svg>
+  Call (516) 555-0120
+</a>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var nav = document.getElementById('site-nav');
+  var subToggle = document.querySelector('.submenu-toggle');
+  var submenu = document.getElementById('services-submenu');
+
+  function closeNav(){
+    if(!hamburger || !nav) return;
+    hamburger.setAttribute('aria-expanded','false');
+    nav.classList.remove('is-open');
+  }
+  function closeSubmenu(){
+    if(!subToggle || !submenu) return;
+    subToggle.setAttribute('aria-expanded','false');
+    submenu.classList.remove('is-open');
+  }
+
+  if(hamburger && nav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+      if(open) closeSubmenu();
+    });
+  }
+
+  if(subToggle && submenu){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      submenu.classList.toggle('is-open', !open);
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeSubmenu();
+      closeNav();
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(subToggle && submenu && !subToggle.contains(e.target) && !submenu.contains(e.target)){
+      closeSubmenu();
+    }
+    if(hamburger && nav && !nav.contains(e.target) && !hamburger.contains(e.target)){
+      closeNav();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Taller Mecánico El Motor</title>
+<meta name="description" content="Por qué Taller Mecánico El Motor mide antes de decirle qué hace falta. Zona de servicio y horario en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Chivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .clip-line{ fill:none; stroke:var(--steel-dim); stroke-width:3.4; stroke-linecap:round }
+</style>
+</head>
+<body>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M7.8 3.6c.7 0 1.3.4 1.6 1.1l.9 2.3c.3.6.1 1.4-.4 1.9l-1.6 1.5c1.1 2.5 3 4.4 5.5 5.5l1.5-1.6c.5-.5 1.2-.6 1.9-.4l2.3.9c.7.3 1.1.9 1.1 1.6v2.3c0 1.1-.9 1.9-1.9 1.8C10.9 20 4 13.1 3.5 5.5 3.4 4.5 4.3 3.6 5.4 3.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="icon-chevron" viewBox="0 0 12 8"><path d="M1.2 1.4L6 6.2L10.8 1.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 16 10"><path d="M1 5H14M9.5 1L14 5L9.5 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="demo-ribbon" role="note">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="El Motor — inicio">
+      <svg class="brand-mark gauge gauge--mark" viewBox="0 0 40 40" role="img" aria-label="Marca de El Motor: un manómetro con la aguja en la zona naranja">
+        <rect class="g-plate-bg" x="1" y="1" width="38" height="38" rx="6"/>
+        <path class="g-track" d="M 7.9 30.0 A 14 14 0 1 1 32.1 30.0"/>
+        <path class="g-redline" d="M 31.5 15.0 A 14 14 0 0 1 32.1 30.0"/>
+        <line class="g-needle" x1="17.2" y1="23.4" x2="29.9" y2="21.6"/>
+        <circle class="g-hub" cx="20" cy="23" r="2.6"/>
+      </svg>
+      <span class="brand-name">El Motor<small>Taller mecánico</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="nav-link">Servicios</a>
+          <button type="button" class="sub-caret" aria-expanded="false" aria-controls="sub-servicios">
+            <svg class="icon" style="width:10px;height:7px" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+          <ul class="submenu" id="sub-servicios">
+            <li><a href="services.html#escaner">Diagnóstico por escáner</a></li>
+            <li><a href="services.html#frenos">Frenos</a></li>
+            <li><a href="services.html#afinacion">Afinación y aceite</a></li>
+            <li><a href="services.html#suspension">Suspensión y dirección</a></li>
+            <li><a href="services.html#aire">Aire acondicionado</a></li>
+            <li><a href="services.html#electrico">Batería y sistema eléctrico</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="nav-link">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link is-active" aria-current="page">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+15165550119">
+        <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+        (516) 555-0119
+      </a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub-m">
+        <div class="m-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-caret-m" aria-expanded="false" aria-controls="sub-servicios-m">
+            <svg class="icon" style="width:13px;height:9px" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+        </div>
+        <ul class="submenu-m" id="sub-servicios-m">
+          <li><a href="services.html#escaner">Diagnóstico por escáner</a></li>
+          <li><a href="services.html#frenos">Frenos</a></li>
+          <li><a href="services.html#afinacion">Afinación y aceite</a></li>
+          <li><a href="services.html#suspension">Suspensión y dirección</a></li>
+          <li><a href="services.html#aire">Aire acondicionado</a></li>
+          <li><a href="services.html#electrico">Batería y sistema eléctrico</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Trabajos</a></li>
+      <li><a href="about.html" class="is-active" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="m-phone" href="tel:+15165550119">Llamar (516) 555-0119</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap ab-hero">
+      <h1>UN CARRO NO ESTÁ<br>LISTO HASTA QUE<br><span class="accent">SE LE EXPLICA.</span></h1>
+      <svg class="clip-scene" viewBox="0 0 220 260" role="img" aria-label="Una tablilla con una orden de trabajo: líneas escritas a mano y una marca de aprobado al final">
+        <rect x="10" y="18" width="200" height="230" rx="10" fill="var(--plate-2)" stroke="var(--plate-3)" stroke-width="1.5"/>
+        <rect x="70" y="4" width="80" height="26" rx="6" fill="var(--orange)"/>
+        <rect x="90" y="11" width="40" height="7" rx="3" fill="var(--on-orange)" opacity=".5"/>
+        <g>
+          <line class="clip-line" x1="34" y1="72" x2="184" y2="72"/>
+          <line class="clip-line" x1="34" y1="98" x2="158" y2="98"/>
+          <line class="clip-line" x1="34" y1="124" x2="174" y2="124"/>
+          <line class="clip-line" x1="34" y1="150" x2="140" y2="150"/>
+        </g>
+        <line x1="34" y1="188" x2="184" y2="188" stroke="var(--plate-3)" stroke-width="1.5"/>
+        <circle cx="48" cy="215" r="15" fill="none" stroke="var(--orange)" stroke-width="3"/>
+        <polyline points="41,215 46,221 56,207" fill="none" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap story measure">
+      <p>El Motor nació de una idea simple: a un carro no se le cambia nada hasta que el dueño entiende por qué. Manny empezó este taller cansado de ver la misma escena en otros lados: alguien entra nervioso, sale con una factura larga y ninguna explicación de qué de verdad tenía el carro.</p>
+      <p>Por eso aquí primero se mide. Un escáner, un calibrador, un multímetro, lo que haga falta, antes de decir una palabra sobre el precio. Si el carro solo necesita una cosa chica, se lo decimos, aunque la reparación grande se hubiera cobrado más.</p>
+      <p>Atendemos el carro de diario, la camioneta del trabajo y el primer carro del muchacho que acaba de sacar la licencia. Trabajamos con marcas japonesas, americanas y coreanas, en español y en inglés, para conductores de todo Long Island.</p>
+    </div>
+  </section>
+
+  <section class="section band-plate-2">
+    <div class="wrap">
+      <h2>ZONA DE SERVICIO<br>Y HORARIO</h2>
+      <div class="info-grid" style="margin-top:26px">
+        <div class="info-panel">
+          <h3>Dónde atendemos</h3>
+          <p class="dim" style="margin:0">Conductores de Long Island, NY: el carro de diario, la camioneta del trabajo, el primer carro de un hijo que acaba de sacar la licencia.</p>
+          <ul class="tags">
+            <li>Long Island, NY</li><li>Condado de Nassau</li><li>Condado de Suffolk</li><li>Costa Norte</li><li>Costa Sur</li>
+          </ul>
+        </div>
+        <div class="info-panel">
+          <h3>Horario</h3>
+          <ul class="hours">
+            <li><span>Lunes a viernes</span><strong>8:00 a.m. – 6:00 p.m.</strong></li>
+            <li><span>Sábado</span><strong>8:00 a.m. – 2:00 p.m.</strong></li>
+            <li><span>Domingo</span><strong>Cerrado</strong></li>
+          </ul>
+          <p class="note-line">Si sale a trabajar temprano, deje la llave en el buzón de la puerta del taller con su nombre, la placa y un número donde localizarlo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-beam">
+
+  <section class="cta-band band-ticket">
+    <div class="wrap">
+      <h2>HÁBLENOS<br>DE SU CARRO.</h2>
+      <p>Cuéntenos qué le pasa, o si prefiere dejarlo antes de que abramos.</p>
+      <div class="btns">
+        <a class="btn btn-on-ticket" href="tel:+15165550119">
+          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+          Llamar (516) 555-0119
+        </a>
+        <a class="text-cta" href="contact.html">Ver el formulario de contacto
+          <svg class="icon" style="width:14px;height:14px" aria-hidden="true"><use href="#icon-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html" aria-label="El Motor — inicio">
+        <svg class="brand-mark gauge gauge--mark" viewBox="0 0 40 40" role="img" aria-label="Marca de El Motor">
+          <rect class="g-plate-bg" x="1" y="1" width="38" height="38" rx="6"/>
+          <path class="g-track" d="M 7.9 30.0 A 14 14 0 1 1 32.1 30.0"/>
+          <path class="g-redline" d="M 31.5 15.0 A 14 14 0 0 1 32.1 30.0"/>
+          <line class="g-needle" x1="17.2" y1="23.4" x2="29.9" y2="21.6"/>
+          <circle class="g-hub" cx="20" cy="23" r="2.6"/>
+        </svg>
+        <span class="brand-name">El Motor</span>
+      </a>
+      <nav class="foot-nav" aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-phone"><a href="tel:+15165550119">(516) 555-0119</a> · Long Island, NY. Atendemos en español y en inglés.</p>
+      <p class="foot-credit">Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a>.</p>
+      <p class="foot-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550119">
+  <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+  Llamar (516) 555-0119
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    mobileNav.classList.remove('is-open');
+    window.setTimeout(function(){ mobileNav.hidden = true; }, 200);
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ mobileNav.classList.add('is-open'); });
+    });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+
+  var carets = header.querySelectorAll('.sub-caret, .sub-caret-m');
+  carets.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var li = btn.closest('.has-sub, .has-sub-m');
+      if(li){ li.classList.toggle('is-open', !expanded); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(!mobileNav.hidden){ closeMobile(); hamburger.focus(); }
+      carets.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var li = btn.closest('.has-sub, .has-sub-m');
+        if(li) li.classList.remove('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!mobileNav.hidden && !mobileNav.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)){
+      closeMobile();
+    }
+    document.querySelectorAll('.has-sub.is-open, .has-sub-m.is-open').forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove('is-open');
+        var b = li.querySelector('.sub-caret, .sub-caret-m');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMobile(); });
+  });
+})();
+</script>
+
+</body>
+</html>

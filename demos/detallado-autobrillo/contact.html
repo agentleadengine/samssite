@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Detallado AutoBrillo</title>
+<meta name="description" content="Llame o escriba a Detallado AutoBrillo, Long Island, NY. Horario, formulario de muestra y respuestas a las preguntas más comunes sobre detallado automotriz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Big+Shoulders+Display:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tel-grande{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:clamp(2.4rem,9vw,4rem); color:var(--volt-2); text-decoration:none; display:inline-block; line-height:1; letter-spacing:-.01em; opacity:1; filter:blur(0); }
+  .tel-grande:hover{ color:var(--chrome) }
+  @media (prefers-reduced-motion: no-preference){
+    .tel-grande{ animation:lamp-on 1s var(--ease-out) both }
+    @keyframes lamp-on{ from{ opacity:0; filter:blur(6px) } to{ opacity:1; filter:blur(0) } }
+  }
+  .sms-link{ display:inline-flex; align-items:center; gap:8px; margin-top:20px; color:var(--chrome-dim); text-decoration:none; font-weight:600 }
+  .sms-link:hover{ color:var(--volt-2) }
+  .sms-link svg{ width:18px; height:18px }
+  .hours-row{ display:flex; flex-wrap:wrap; gap:32px; align-items:flex-start }
+  .hours-row .hours{ flex:1 1 260px }
+  .hours-row .aside{ flex:1 1 220px; max-width:38ch }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon" role="note">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="AutoBrillo — inicio">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+        <defs><linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+        <circle cx="20" cy="20" r="18" fill="url(#markGrad)" stroke="#272b35" stroke-width="1"/>
+        <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">AutoBrillo<small>Detallado automotriz</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="nav-link">Servicios</a>
+          <button type="button" class="sub-caret" aria-expanded="false" aria-controls="sub-servicios">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+          <ul class="submenu" id="sub-servicios">
+            <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+            <li><a href="services.html#interior">Interior completo</a></li>
+            <li><a href="services.html#pulido">Pulido de pintura</a></li>
+            <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+            <li><a href="services.html#faros">Restauración de faros</a></li>
+            <li><a href="services.html#venta">Preparación para venta</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="nav-link">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link is-active" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+15165550189">(516) 555-0189</a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub-m">
+        <div class="m-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-caret-m" aria-expanded="false" aria-controls="sub-servicios-m">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+        </div>
+        <ul class="submenu-m" id="sub-servicios-m">
+          <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+          <li><a href="services.html#interior">Interior completo</a></li>
+          <li><a href="services.html#pulido">Pulido de pintura</a></li>
+          <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+          <li><a href="services.html#faros">Restauración de faros</a></li>
+          <li><a href="services.html#venta">Preparación para venta</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Trabajos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html" class="is-active" aria-current="page">Contacto</a></li>
+    </ul>
+    <a class="m-phone" href="tel:+15165550189">Llamar (516) 555-0189</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <h1>HABLEMOS</h1>
+      <p class="lede">Lo más rápido es una llamada. Cuéntenos qué auto tiene, cómo está y si prefiere que vayamos hasta usted.</p>
+      <a class="tel-grande" href="tel:+15165550189">(516) 555-0189</a><br>
+      <a class="sms-link" href="sms:+15165550189">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5.5h16a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1H9l-4.4 3.3A.6.6 0 0 1 3.6 19.8V17H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        O envíe un mensaje de texto al mismo número
+      </a>
+    </div>
+  </section>
+
+  <section class="section-tight band-bay-2">
+    <div class="wrap hours-row">
+      <ul class="hours">
+        <li><span>Lunes a viernes</span><strong>8:00 a.m. – 6:00 p.m.</strong></li>
+        <li><span>Sábado</span><strong>8:00 a.m. – 4:00 p.m.</strong></li>
+        <li><span>Domingo</span><strong>Con cita</strong></li>
+        <li><span>Entrega del auto</span><strong>Desde las 7:30 a.m.</strong></li>
+      </ul>
+      <div class="aside">
+        <p class="dim" style="margin:0 0 12px">En primavera y otoño la agenda se llena con una o dos semanas de anticipación.</p>
+        <a class="text-cta" href="about.html">¿Prefiere que vayamos a su casa? Vea el área de servicio
+          <svg viewBox="0 0 16 10" aria-hidden="true" focusable="false"><path d="M1 5h13M9 1l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-reveal">
+    <div class="wrap">
+      <h2>ENVÍE LOS DATOS<br>DE SU AUTO.</h2>
+      <p class="dim" style="max-width:52ch">Con esto adelantamos la llamada. No sustituye revisar el auto en persona.</p>
+      <form class="sample-form">
+        <div class="field">
+          <label for="n">Nombre</label>
+          <input id="n" name="n" type="text" placeholder="Su nombre" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="t">Teléfono</label>
+          <input id="t" name="t" type="tel" placeholder="(555) 555-0100" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="v">Vehículo</label>
+          <input id="v" name="v" type="text" placeholder="Año, marca y modelo" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="s">Qué necesita</label>
+          <select id="s" name="s">
+            <option>Lavado de mantenimiento</option>
+            <option>Interior completo</option>
+            <option>Pulido de pintura</option>
+            <option>Recubrimiento cerámico</option>
+            <option>Restauración de faros</option>
+            <option>Preparación para venta</option>
+            <option>Todavía no estoy seguro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m">Detalles</label>
+          <textarea id="m" name="m" rows="4" placeholder="Estado del auto, dónde está estacionado, qué días le funcionan"></textarea>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary btn-block">Enviar solicitud</button>
+          <p class="form-note">Formulario de muestra: no envía información todavía. Para una respuesta real, llame o escriba al (516) 555-0189.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <h2>PREGUNTAS<br>FRECUENTES</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Van a mi casa o tengo que llevar el auto al taller?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>Depende del trabajo. Para lavados e interiores solemos ir a su casa, siempre que haya una entrada o un espacio donde podamos abrir las puertas; nosotros llevamos agua y electricidad. Los trabajos grandes, como el pulido de varias etapas o el recubrimiento cerámico, se hacen en el taller.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda un recubrimiento cerámico?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>El recubrimiento en sí se aplica en unas horas, pero el auto se queda a curar de un día para otro antes de que se pueda mojar. Si primero necesita corrección de pintura, cuente uno o dos días más.</p>
+        </details>
+        <details>
+          <summary>¿El recubrimiento cerámico quita los rayones?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>No. El recubrimiento protege y facilita el lavado, pero no corrige nada por sí solo. Los rayones y remolinos se quitan antes, con pulido, y el recubrimiento se aplica después, sobre pintura ya corregida.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-beam">
+
+  <section class="cta-band band-reveal">
+    <div class="wrap">
+      <h2>TODAVÍA MÁS RÁPIDO<br>POR TELÉFONO.</h2>
+      <p>Llame ahora y cuéntenos qué auto tiene. Sin compromiso.</p>
+      <div class="btns">
+        <a class="btn btn-on-reveal" href="tel:+15165550189">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Llamar (516) 555-0189
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html" aria-label="AutoBrillo — inicio">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+          <defs><linearGradient id="markGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+          <circle cx="20" cy="20" r="18" fill="url(#markGradFoot)" stroke="#272b35" stroke-width="1"/>
+          <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">AutoBrillo</span>
+      </a>
+      <nav class="foot-nav" aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-phone"><a href="tel:+15165550189">(516) 555-0189</a> · Detallado a domicilio y en taller, Long Island, NY. Atendemos en español y en inglés.</p>
+      <p class="foot-credit">Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a>.</p>
+      <p class="foot-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550189">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  Llamar (516) 555-0189
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    mobileNav.classList.remove('is-open');
+    window.setTimeout(function(){ mobileNav.hidden = true; }, 200);
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ mobileNav.classList.add('is-open'); });
+    });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+
+  var carets = header.querySelectorAll('.sub-caret, .sub-caret-m');
+  carets.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var li = btn.closest('.has-sub, .has-sub-m');
+      if(li){ li.classList.toggle('is-open', !expanded); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(!mobileNav.hidden){ closeMobile(); hamburger.focus(); }
+      carets.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var li = btn.closest('.has-sub, .has-sub-m');
+        if(li) li.classList.remove('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!mobileNav.hidden && !mobileNav.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)){
+      closeMobile();
+    }
+    document.querySelectorAll('.has-sub.is-open, .has-sub-m.is-open').forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove('is-open');
+        var b = li.querySelector('.sub-caret, .sub-caret-m');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMobile(); });
+  });
+})();
+</script>
+
+</body>
+</html>

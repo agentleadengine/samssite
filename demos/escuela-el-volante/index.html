@@ -1,0 +1,297 @@
+<!--
+THESIS: Learning to drive in your second language is stressful by default; El Volante removes the stress by teaching at your own pace, in Spanish, in a car built with a second brake.
+OWN-WORLD: the calm two-lane road at golden hour. Verde siga (the green of "go") grounds every surface; asfalto (road grey) carries the weight of type and the dark passages; amarillo appears only as the painted lane line, never as a field of color.
+STORY: the hero states the promise over an open road, a parallel-parking-style vignette proves the instructor's method in one concrete scene, three classes preview the full program, a short list explains what riding with El Volante is actually like, one closing call ends the page.
+FIRST VIEWPORT: full-bleed verde-deep with the road opening up beneath the headline as the dashed centerline draws in, not a small centered badge-logo. The road itself is the hero.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escuela de Manejo El Volante | Clases de manejo en español, Long Island NY</title>
+<meta name="description" content="Escuela de manejo en Long Island, NY. Clases privadas para principiantes, práctica en carretera y preparación para el examen. Instrucción en español, auto con doble control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark icon" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4"/>
+        <circle cx="24" cy="24" r="5.4"/>
+        <path d="M24 5.6v13M9.2 32.6L20 26.3M38.8 32.6L28 26.3"/>
+      </svg>
+      <span class="brand-name">El Volante<span class="brand-sub">Escuela de Manejo</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="nav-panel">
+        <span class="hamburger-bars"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
+          <li class="has-submenu">
+            <button class="nav-link submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-clases">
+              Clases
+              <svg class="submenu-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="submenu" id="submenu-clases">
+              <li><a href="services.html#primeras-clases">Primeras clases</a></li>
+              <li><a href="services.html#practica-carretera">Práctica en carretera</a></li>
+              <li><a href="services.html#preparacion-examen">Preparación para el examen</a></li>
+              <li><a href="services.html#curso-5-horas">Curso de 5 horas</a></li>
+              <li><a href="services.html#estacionamiento-maniobras">Estacionamiento y maniobras</a></li>
+              <li><a href="services.html#repaso-conductores">Repaso para conductores</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="work.html">Rutas de práctica</a></li>
+          <li><a class="nav-link" href="about.html">Nosotros</a></li>
+          <li><a class="nav-link" href="contact.html">Contacto</a></li>
+        </ul>
+        <a class="nav-phone" href="tel:+15165550185">Llamar (516) 555-0185</a>
+      </div>
+    </nav>
+    <a class="header-phone" href="tel:+15165550185">(516) 555-0185</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-copy">
+      <h1>Aprenda a manejar <span class="accent">con calma</span> y con confianza</h1>
+      <p class="lead">Clases privadas en Long Island con un instructor que le explica todo en español, a su propio ritmo.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="tel:+15165550185">Llamar (516) 555-0185</a>
+        <a class="btn btn--text" href="contact.html">
+          Pedir informes
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <p class="hero-note">Vehículo con doble control · Lo recogemos en su casa o en su trabajo</p>
+    </div>
+    <div class="hero-scene" aria-hidden="true">
+      <svg viewBox="0 0 1600 500" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <filter id="hero-glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="34"/>
+          </filter>
+        </defs>
+        <circle class="glow" cx="800" cy="185" r="150" fill="#ffc63d" opacity="0.30" filter="url(#hero-glow)"/>
+        <polygon points="0,500 260,500 740,180 0,180" fill="#0f3320"/>
+        <polygon points="1600,500 1340,500 860,180 1600,180" fill="#0f3320"/>
+        <polygon points="260,500 740,180 860,180 1340,500" fill="#23272a"/>
+        <line class="edge-line" x1="260" y1="500" x2="740" y2="180" stroke="#fffdf9" stroke-width="4" opacity="0.5" stroke-linecap="round"/>
+        <line class="edge-line" x1="1340" y1="500" x2="860" y2="180" stroke="#fffdf9" stroke-width="4" opacity="0.5" stroke-linecap="round"/>
+        <rect class="dash" x="770" y="455" width="60" height="40" rx="4" fill="#ffc63d"/>
+        <rect class="dash" x="778" y="395" width="44" height="32" rx="3" fill="#ffc63d"/>
+        <rect class="dash" x="784" y="345" width="32" height="25" rx="3" fill="#ffc63d"/>
+        <rect class="dash" x="789" y="305" width="22" height="19" rx="2" fill="#ffc63d"/>
+        <rect class="dash" x="792" y="272" width="16" height="14" rx="2" fill="#ffc63d"/>
+        <rect class="dash" x="795" y="246" width="10" height="10" rx="2" fill="#ffc63d"/>
+        <g opacity="0.68">
+          <rect x="146" y="447" width="6" height="34" fill="#0a2418"/>
+          <rect x="134" y="429" width="28" height="18" rx="2" fill="#14793a"/>
+          <rect x="1448" y="440" width="6" height="34" fill="#0a2418"/>
+          <rect x="1436" y="422" width="28" height="18" rx="2" fill="#14793a"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section section--blanco">
+    <div class="wrap">
+      <div class="vignette-block">
+        <div class="vignette-frame">
+          <svg viewBox="0 0 640 460" role="img" aria-labelledby="vig-title">
+            <title id="vig-title">Un auto avanza por un estacionamiento vacío siguiendo una curva de práctica marcada con línea punteada.</title>
+            <rect x="30" y="70" width="580" height="360" rx="20" fill="#23272a"/>
+            <g stroke="#3a4045" stroke-width="3" opacity="0.6">
+              <line x1="58" y1="404" x2="100" y2="362"/>
+              <line x1="80" y1="404" x2="122" y2="362"/>
+              <line x1="102" y1="404" x2="144" y2="362"/>
+            </g>
+            <path d="M130,362 C130,270 250,270 250,190 C250,120 380,120 468,150" fill="none" stroke="#ffc63d" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 26"/>
+            <path d="M458,138 L490,152 L464,174" fill="none" stroke="#ffc63d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(408,118) rotate(16)">
+              <rect x="-34" y="-16" width="68" height="32" rx="10" fill="#14793a"/>
+              <rect x="-20" y="-27" width="40" height="18" rx="7" fill="#14793a"/>
+              <rect x="-14" y="-24" width="13" height="11" rx="2" fill="#e9f5ec"/>
+              <rect x="3" y="-24" width="13" height="11" rx="2" fill="#e9f5ec"/>
+              <circle cx="-20" cy="16" r="7" fill="#101314"/>
+              <circle cx="20" cy="16" r="7" fill="#101314"/>
+            </g>
+          </svg>
+        </div>
+        <div class="vignette-copy">
+          <h2>Así es una clase de estacionamiento</h2>
+          <p class="prose">El instructor le muestra el ángulo una vez. Después usted repite el mismo movimiento, despacio, hasta que le sale solo, sin que nadie le grite ni le tome el tiempo.</p>
+          <p class="prose" style="margin-top:10px">Empezamos siempre en un lugar sin tráfico. La calle llega después, cuando usted ya se siente listo para ella.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--crema">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <h2>Un plan para cada conductor</h2>
+        <p class="prose" style="margin-left:auto;margin-right:auto">Usted elige cuántas horas necesita. Si nunca ha manejado, empezamos desde cero.</p>
+      </div>
+      <div class="teaser-grid">
+
+        <a class="teaser-item" href="services.html#primeras-clases">
+          <span class="teaser-icon"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="24" r="9"/><path d="M23 24h19M35 24v7M41 24v5"/></svg></span>
+          <h3>Primeras clases</h3>
+          <p>Para quien nunca se ha puesto detrás del volante. Empezamos en un estacionamiento tranquilo, sin tráfico.</p>
+          <span class="teaser-link">Ver la clase
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="teaser-item" href="services.html#practica-carretera">
+          <span class="teaser-icon"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40C8 28 20 28 20 20S32 12 40 8"/><path d="M12 34l2 2M22 24l2 2M32 14l2 2"/></svg></span>
+          <h3>Práctica en carretera</h3>
+          <p>Avenidas, entradas de la parkway, cambios de carril y manejo con lluvia, en las rutas que usted usa todos los días.</p>
+          <span class="teaser-link">Ver la clase
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="teaser-item" href="services.html#preparacion-examen">
+          <span class="teaser-icon"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="9" width="24" height="32" rx="3"/><path d="M18 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><path d="M17 25l5 5 10-11"/></svg></span>
+          <h3>Preparación para el examen</h3>
+          <p>El recorrido del examen paso por paso: paralelo, vuelta en tres puntos, señales y paradas completas.</p>
+          <span class="teaser-link">Ver la clase
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+      <p class="teaser-more">
+        <a class="btn btn--text" href="services.html">
+          Ver las seis clases
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--blanco">
+    <div class="wrap">
+      <div class="why-wrap">
+        <h2>Cómo es aprender aquí</h2>
+        <ul class="why-list">
+          <li>
+            <span class="icon-badge"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 13a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H21l-7 6v-6h-1a5 5 0 0 1-5-5z"/><circle cx="18" cy="20" r="1.6" fill="currentColor" stroke="none"/><circle cx="24" cy="20" r="1.6" fill="currentColor" stroke="none"/><circle cx="30" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+            <p>Le explicamos todo en español, sin traducir a medias.</p>
+          </li>
+          <li>
+            <span class="icon-badge"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6.5 17-15 21-8.5-4-15-11-15-21V11z"/><path d="M17 24l5 5 10-11"/></svg></span>
+            <p>El auto tiene doble control, así que un error no es un susto.</p>
+          </li>
+          <li>
+            <span class="icon-badge"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 43S10 29 10 19a14 14 0 1 1 28 0c0 10-14 24-14 24z"/><path d="M17 21l7-6 7 6M19 20v8h10v-8"/></svg></span>
+            <p>Lo recogemos en su casa o en su trabajo; usted no tiene que buscar cómo llegar.</p>
+          </li>
+          <li>
+            <span class="icon-badge"><svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="30" rx="4"/><path d="M7 19h34M15 6v8M33 6v8"/><circle cx="24" cy="29" r="4"/></svg></span>
+            <p>Usted decide cuántas horas necesita. No hay un paquete único para todos.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--verde">
+    <div class="wrap cta-block">
+      <h2>Cuando esté listo, llámenos</h2>
+      <p>Sin compromiso. Conversamos unos minutos y armamos un plan que tenga sentido para usted.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="tel:+15165550185">Llamar (516) 555-0185</a>
+        <a class="btn btn--ghost-dark" href="contact.html">Escribir un mensaje</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Escuela de Manejo El Volante</p>
+        <p class="footer-brand-sub">Long Island, NY · <a href="tel:+15165550185">(516) 555-0185</a></p>
+        <p class="footer-brand-sub">Clases en español e inglés</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="footer-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Clases</a></li>
+          <li><a href="work.html">Rutas de práctica</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a></p>
+      <p class="disc">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a class="call-primary" href="tel:+15165550185">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 2a12 12 0 0 0 6 6l2-2.5 5 2v3a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+    Llamar
+  </a>
+  <a class="call-secondary" href="sms:+15165550185">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 4V5z"/></svg>
+    Mensaje
+  </a>
+</div>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var panel = document.getElementById('nav-panel');
+  var submenuToggle = header.querySelector('.submenu-toggle');
+  var submenu = document.getElementById('submenu-clases');
+
+  function closePanel(){ hamburger.setAttribute('aria-expanded','false'); panel.classList.remove('is-open'); }
+  function openPanel(){ hamburger.setAttribute('aria-expanded','true'); panel.classList.add('is-open'); }
+  hamburger.addEventListener('click', function(){
+    (hamburger.getAttribute('aria-expanded') === 'true') ? closePanel() : openPanel();
+  });
+
+  function closeSubmenu(){ submenuToggle.setAttribute('aria-expanded','false'); submenu.classList.remove('is-open'); }
+  function openSubmenu(){ submenuToggle.setAttribute('aria-expanded','true'); submenu.classList.add('is-open'); }
+  submenuToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    (submenuToggle.getAttribute('aria-expanded') === 'true') ? closeSubmenu() : openSubmenu();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(submenuToggle.getAttribute('aria-expanded') === 'true'){ closeSubmenu(); submenuToggle.focus(); }
+      else if(hamburger.getAttribute('aria-expanded') === 'true'){ closePanel(); hamburger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!header.contains(e.target)){ closeSubmenu(); closePanel(); }
+    else if(!e.target.closest('.has-submenu')){ closeSubmenu(); }
+  });
+})();
+</script>
+</body>
+</html>

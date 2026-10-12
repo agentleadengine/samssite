@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Menú — Taquería La Esquina</title>
+<meta name="description" content="La carta completa de Taquería La Esquina: tacos, quesabirria, tortas, guacamole y bebidas de la casa. Precios de muestra. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Chango&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cinta">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap barra-top">
+    <a class="marca-link" href="index.html" aria-label="Taquería La Esquina, inicio">
+      <svg class="marca" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--chile)"/>
+        <path d="M8 24a14 14 0 0128 0z" fill="var(--maiz)"/>
+        <path d="M11 24a11 11 0 0122 0z" fill="var(--masa)"/>
+        <circle cx="17" cy="21" r="2" fill="var(--verde)"/>
+        <circle cx="22" cy="19.4" r="2" fill="var(--verde)"/>
+        <circle cx="27" cy="21" r="2" fill="var(--verde)"/>
+        <rect x="8" y="24" width="28" height="3.4" rx="1.7" fill="var(--carbon)"/>
+      </svg>
+      <span class="nombre">Taquería La Esquina<small>Tacos y antojitos</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550101">(516) 555-0101</a>
+
+    <button type="button" class="hamburguesa" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icono icono-abrir" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icono icono-cerrar" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="con-sub">
+        <div class="fila-nav">
+          <a href="services.html" aria-current="page">El Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="panel-sub" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul id="panel-sub" hidden>
+          <li><a href="services.html#tacos">Tacos</a></li>
+          <li><a href="services.html#plancha">De la Plancha</a></li>
+          <li><a href="services.html#mesa">Para la Mesa</a></li>
+          <li><a href="services.html#bebidas">Bebidas</a></li>
+          <li><a href="services.html#finde">Fin de Semana</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">De la Cocina</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="tel-movil" href="tel:+15165550101">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" stroke="var(--masa)"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0101
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="intro-pagina banda-masa">
+    <div class="wrap intro-grid">
+      <div class="revela">
+        <h1>El menú</h1>
+        <p class="lede medida">Cocina abierta, para llevar o para comer aquí. La tortilla de maíz se prensa a mano y el trompo se corta cuando entra su orden, no antes.</p>
+      </div>
+      <svg class="intro-arte revela revela-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de un chile y una mazorca de maíz cruzados">
+        <g transform="rotate(-16 62 92)">
+          <path d="M60 38c17 0 25 21 19 45-5 19-21 29-19 10-10 13-23 4-17-13 6-17 3-42 17-42z" fill="var(--chile-3)"/>
+          <path d="M56 38c0-9 4-15 10-17" stroke="var(--verde)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </g>
+        <g transform="translate(80,52) rotate(13)">
+          <rect x="0" y="0" width="32" height="82" rx="16" fill="var(--maiz)"/>
+          <path d="M4 13h24M2 28h28M2 43h28M2 58h28M4 71h24" stroke="var(--pastor-2)" stroke-width="2.2" opacity=".3"/>
+          <path d="M6 -2c-6-9-2-19 6-23M26 -2c6-9 2-19-6-23" stroke="var(--verde)" stroke-width="5" stroke-linecap="round" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <svg class="picado" viewBox="0 0 1200 20" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="var(--chile-2)">
+      <polygon points="0,0 80,0 40,20"/><polygon points="160,0 240,0 200,20"/>
+      <polygon points="320,0 400,0 360,20"/><polygon points="480,0 560,0 520,20"/>
+      <polygon points="640,0 720,0 680,20"/><polygon points="800,0 880,0 840,20"/>
+      <polygon points="960,0 1040,0 1000,20"/><polygon points="1120,0 1200,0 1160,20"/>
+    </g>
+    <g fill="var(--verde)">
+      <polygon points="80,0 160,0 120,20"/><polygon points="240,0 320,0 280,20"/>
+      <polygon points="400,0 480,0 440,20"/><polygon points="560,0 640,0 600,20"/>
+      <polygon points="720,0 800,0 760,20"/><polygon points="880,0 960,0 920,20"/>
+      <polygon points="1040,0 1120,0 1080,20"/>
+    </g>
+  </svg>
+
+  <section class="banda-masa2">
+    <div class="wrap">
+      <div class="pizarra">
+        <div class="pizarra-cols">
+          <div class="col">
+
+            <div class="categoria" id="tacos">
+              <div class="categoria-cabeza"><h2>Tacos</h2></div>
+              <p class="categoria-nota">Tortilla de maíz hecha a mano. Van con cebolla, cilantro y limón; también hay de harina si prefiere.</p>
+
+              <div class="fila"><span class="nombre">Al pastor</span><span class="puntos"></span><span class="precio">$3.75</span><span class="desc">Del trompo, con su pedazo de piña.</span></div>
+              <div class="fila"><span class="nombre">Carne asada</span><span class="puntos"></span><span class="precio">$4.00</span><span class="desc">Res picada al momento sobre la plancha.</span></div>
+              <div class="fila"><span class="nombre">Suadero</span><span class="puntos"></span><span class="precio">$3.75</span><span class="desc">Suave por dentro, doradito por fuera.</span></div>
+              <div class="fila"><span class="nombre">Carnitas</span><span class="puntos"></span><span class="precio">$3.75</span><span class="desc">Maciza, surtida o buche; usted dice.</span></div>
+              <div class="fila"><span class="nombre">Chorizo</span><span class="puntos"></span><span class="precio">$3.50</span><span class="desc">Hecho en casa, con papa si gusta.</span></div>
+              <div class="fila"><span class="nombre">Pollo adobado</span><span class="puntos"></span><span class="precio">$3.50</span><span class="desc">Marinado en chile guajillo desde la noche anterior.</span></div>
+              <div class="fila"><span class="nombre">Nopal con queso</span><span class="puntos"></span><span class="precio">$3.25</span><span class="desc">Sin carne, y de todos modos bien servido.</span></div>
+            </div>
+
+            <div class="categoria" id="plancha">
+              <div class="categoria-cabeza"><h2>De la Plancha</h2></div>
+              <p class="categoria-nota">Platos para compartir o para comer solo, hechos al momento en la plancha.</p>
+
+              <div class="fila"><span class="nombre">Quesabirria (3 piezas)</span><span class="puntos"></span><span class="precio">$12.50</span><span class="desc">Con su consomé aparte para remojar.</span></div>
+              <div class="fila"><span class="nombre">Gringa de pastor</span><span class="puntos"></span><span class="precio">$7.00</span><span class="desc">Tortilla de harina, queso derretido y piña.</span></div>
+              <div class="fila"><span class="nombre">Alambre para dos</span><span class="puntos"></span><span class="precio">$16.50</span><span class="desc">Res, tocino, pimiento y queso, con tortillas aparte.</span></div>
+              <div class="fila"><span class="nombre">Torta de milanesa</span><span class="puntos"></span><span class="precio">$11.00</span><span class="desc">En telera, con aguacate, frijol y chipotle.</span></div>
+              <div class="fila"><span class="nombre">Quesadilla de queso</span><span class="puntos"></span><span class="precio">$5.50</span><span class="desc">Agréguele el guisado que quiera por $2.00.</span></div>
+            </div>
+
+          </div>
+
+          <div class="col">
+
+            <div class="categoria" id="mesa">
+              <div class="categoria-cabeza"><h2>Para la Mesa</h2></div>
+              <p class="categoria-nota">Para acompañar o para compartir mientras espera su orden.</p>
+
+              <div class="fila"><span class="nombre">Guacamole con totopos</span><span class="puntos"></span><span class="precio">$7.50</span><span class="desc">Se muele en el molcajete cuando lo pide.</span></div>
+              <div class="fila"><span class="nombre">Elote preparado</span><span class="puntos"></span><span class="precio">$4.50</span><span class="desc">Mayonesa, queso, chile y limón; en vaso o en palito.</span></div>
+              <div class="fila"><span class="nombre">Frijoles charros</span><span class="puntos"></span><span class="precio">$5.00</span><span class="desc">Con tocino, chorizo y cilantro.</span></div>
+              <div class="fila"><span class="nombre">Arroz y frijoles refritos</span><span class="puntos"></span><span class="precio">$4.50</span><span class="desc">La orden alcanza para acompañar dos platos.</span></div>
+              <div class="fila"><span class="nombre">Orden de salsas</span><span class="puntos"></span><span class="precio">$2.00</span><span class="desc">Roja tatemada, verde cruda y una de habanero que sí pica.</span></div>
+            </div>
+
+            <div class="categoria" id="bebidas">
+              <div class="categoria-cabeza"><h2>Bebidas</h2></div>
+
+              <div class="fila"><span class="nombre">Agua de horchata</span><span class="puntos"></span><span class="precio">$3.50</span><span class="desc">Hecha en casa cada mañana, con canela.</span></div>
+              <div class="fila"><span class="nombre">Agua de jamaica</span><span class="puntos"></span><span class="precio">$3.50</span><span class="desc">Poca azúcar, bien fría.</span></div>
+              <div class="fila"><span class="nombre">Refresco mexicano en vidrio</span><span class="puntos"></span><span class="precio">$3.25</span><span class="desc">Cola, manzana o toronja.</span></div>
+              <div class="fila"><span class="nombre">Café de olla</span><span class="puntos"></span><span class="precio">$2.75</span><span class="desc">Con piloncillo y canela; sábado y domingo.</span></div>
+            </div>
+
+            <div class="categoria" id="finde">
+              <div class="categoria-cabeza"><h2>Fin de Semana</h2>
+                <ul class="chips" style="margin-top:0"><li>Sáb y dom</li></ul>
+              </div>
+
+              <div class="fila"><span class="nombre">Menudo</span><span class="puntos"></span><span class="precio">$13.00</span><span class="desc">Se acaba temprano; le recomendamos llamar antes.</span></div>
+              <div class="fila"><span class="nombre">Tamales de la casa</span><span class="puntos"></span><span class="precio">$3.25</span><span class="desc">Verde, rojo o de rajas con queso.</span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="pizarra-nota">Precios de muestra. Avísenos de cualquier alergia al momento de ordenar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="banda-chile cierre">
+    <div class="wrap">
+      <h2>¿Ya sabe qué se le antoja?</h2>
+      <p class="medida silenciado-rojo">Llámenos y se lo dejamos listo, o pase directo al mostrador.</p>
+      <div class="fila-cta">
+        <a class="btn" href="tel:+15165550101">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+          Llamar (516) 555-0101
+        </a>
+        <a class="btn-linea" href="contact.html">
+          Ir a contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pie-grid">
+      <div class="pie-col">
+        <div class="pie-marca">Taquería La Esquina</div>
+        <p>Tacos, antojitos y bebidas de la casa en Long Island, NY.</p>
+        <p><a href="tel:+15165550101">(516) 555-0101</a></p>
+      </div>
+      <div class="pie-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">El Menú</a></li>
+          <li><a href="work.html">De la Cocina</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="pie-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550101">Llamar (516) 555-0101</a></li>
+          <li><a href="sms:+15165550101">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="barra-llamada" href="tel:+15165550101">
+  <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" stroke="var(--masa)"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0101
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('panel-sub');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!--
+  DIRECTION CONTRACT — Bright Night Emergency Electric
+  THESIS: When the power drops at 2am, Bright Night is the one that actually picks up — a real electrician moving toward your house, not a voicemail promising a callback.
+  OWN-WORLD: A blackout-black house cut by one high-vis yellow flashlight beam; the beam is the site's recurring diagram, sweeping across breaker rows, chargers, and fixtures everywhere proof is shown; hazard-tape stripes — the same yellow, laid diagonally on black — mark the header's edge and frame every closing call to action, like tape at a live panel.
+  STORY: total dark first -> the beam clicks on and finds the headline and the phone number already inside it -> the proof section explains why the beam matters at all, because you can't fix a dead panel by feel -> three services read like what the beam lights up next -> the why-us band flips to solid hazard yellow, plain and certain in daylight -> the close puts the phone number back inside one more beam, alone in the dark.
+  FIRST VIEWPORT: full-bleed blackout black, a single soft-edged yellow beam sweeping in from the top corner and brightening on load, the headline and both CTAs already sitting inside the light before any scroll.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bright Night Emergency Electric — 24/7 Electrician, Long Island NY | Demo Site</title>
+<meta name="description" content="Bright Night Emergency Electric answers day or night for power outages, sparking panels, and anything urgent — plus panel upgrades, EV chargers, and lighting on Long Island, NY. Demo site — (631) 555-0123.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1H10l-4.2 3.4a.5.5 0 0 1-.8-.4V16H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/><path d="M7.5 9.5h9M7.5 12.5h5.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+<symbol id="i-triangle" viewBox="0 0 24 24"><path d="M12 3.4 21.6 20.2H2.4L12 3.4Z"/><path d="M12 9.8v4.4"/><circle cx="12" cy="17.2" r="1" style="fill:currentColor;stroke:none"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9.5 18.5h5M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.45 1 1.15 1 1.9v.2h5v-.2c0-.75.4-1.45 1-1.9A6 6 0 0 0 12 3Z"/></symbol>
+</defs>
+</svg>
+
+<div class="ribbon">DEMO SITE</div>
+
+<header class="head">
+  <div class="head-bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="15" y="24" width="10" height="14" rx="2.5" fill="currentColor"/>
+        <rect x="13" y="22.3" width="14" height="2.6" rx="1" fill="currentColor"/>
+        <rect x="11" y="11" width="18" height="11.5" rx="3" fill="currentColor"/>
+        <g class="beam-ray">
+          <circle cx="20" cy="10.5" r="2.7" style="fill:currentColor;stroke:none"/>
+          <path d="M12.3 5.8 8.8 2.3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M20 4.2V.3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M27.7 5.8 31.2 2.3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span>
+        <span class="brand-name">Bright Night</span>
+        <span class="brand-tag">Emergency Electric</span>
+      </span>
+    </a>
+    <button class="hburg" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+
+    <div class="head-panel-wrap">
+      <div class="head-panel" id="site-nav">
+        <div class="head-panel-in">
+          <a class="head-tel" href="tel:+16315550123">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            (631) 555-0123
+          </a>
+          <a class="head-sms" href="sms:+16315550123">
+            <svg class="icon" aria-hidden="true"><use href="#i-sms"/></svg>
+            Text us instead
+          </a>
+
+          <div class="head-hours"><b>Emergency line:</b> 24 hours, every day<br><b>Scheduled visits:</b> Mon&ndash;Sat, 7am&ndash;7pm</div>
+
+          <nav class="head-nav" aria-label="Primary">
+            <a href="index.html" aria-current="page">Home</a>
+            <details class="svc-drop">
+              <summary>Services <svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="svc-panel">
+                <a href="services.html#troubleshooting-repair"><span class="tag-em">24/7</span> Troubleshooting &amp; repair</a>
+                <a href="services.html#panel-upgrades">Panel upgrades</a>
+                <a href="services.html#ev-charger-install">EV charger installation</a>
+                <a href="services.html#lighting-design">Lighting design &amp; install</a>
+                <a href="services.html#generator-hookups">Generator hookups</a>
+                <a class="svc-all" href="services.html">All services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </details>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="head-area"><b>Service area</b><br>Long Island, NY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="hazard-edge" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ===== hero ===== -->
+  <section class="hero">
+    <svg class="hero-beam" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="heroGlow" cx="10%" cy="0%" r="80%">
+          <stop offset="0%" stop-color="#fff6c8" stop-opacity=".5"/>
+          <stop offset="42%" stop-color="#ffd400" stop-opacity=".16"/>
+          <stop offset="100%" stop-color="#ffd400" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="heroCone" x1="0%" y1="0%" x2="85%" y2="75%">
+          <stop offset="0%" stop-color="#fff6c8" stop-opacity=".38"/>
+          <stop offset="100%" stop-color="#ffd400" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="720" fill="url(#heroGlow)"/>
+      <polygon points="-60,-60 560,-60 820,560 60,720" fill="url(#heroCone)"/>
+      <g fill="#fff6c8">
+        <circle cx="300" cy="160" r="2.4" opacity=".55"/>
+        <circle cx="430" cy="270" r="1.8" opacity=".4"/>
+        <circle cx="220" cy="360" r="2.1" opacity=".45"/>
+        <circle cx="520" cy="420" r="1.6" opacity=".35"/>
+        <circle cx="360" cy="500" r="2" opacity=".4"/>
+        <circle cx="150" cy="230" r="1.5" opacity=".3"/>
+      </g>
+    </svg>
+    <div class="wrap hero-in">
+      <h1>The power&rsquo;s out. <em>We&rsquo;re already on our way.</em></h1>
+      <p class="lede">Bright Night answers the emergency line day or night &mdash; a person, not a voicemail. Panel upgrades, EV chargers, and lighting get booked like normal work; anything actually urgent gets a truck moving tonight.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+16315550123">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          Call (631) 555-0123
+        </a>
+        <a class="btn btn-ghost" href="sms:+16315550123">
+          <svg class="icon" aria-hidden="true"><use href="#i-sms"/></svg>
+          Text us instead
+        </a>
+      </div>
+      <div class="facts">
+        <span><b>24/7</b> emergency line</span>
+        <span><b>Long Island,</b> NY</span>
+        <span><b>Scheduled work</b> &mdash; most within days</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== proof vignette ===== -->
+  <section class="proof">
+    <div class="wrap proof-in">
+      <div class="proof-text">
+        <h2>Every emergency call starts the same way: find the panel in the dark.</h2>
+        <p class="lede">No power means no porch light, no hallway light, nothing to work by. Every truck carries real work lights, because a dead panel doesn&rsquo;t get diagnosed by feel.</p>
+        <p class="measure" style="margin-top:16px;color:var(--onblack-300)">We&rsquo;re inside the box within minutes of pulling up &mdash; not still looking for the breaker.</p>
+      </div>
+      <div class="proof-scene" role="img" aria-label="An electrical panel, half in shadow and half lit by a flashlight beam, its breakers only visible on the lit side">
+        <svg viewBox="0 0 300 200">
+          <defs>
+            <radialGradient id="proofBeam" cx="78%" cy="18%" r="75%">
+              <stop offset="0%" stop-color="#fff6c8" stop-opacity=".5"/>
+              <stop offset="55%" stop-color="#ffd400" stop-opacity=".14"/>
+              <stop offset="100%" stop-color="#ffd400" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect x="18" y="12" width="264" height="176" rx="6" fill="#151518" stroke="#242429" stroke-width="2"/>
+          <rect x="36" y="30" width="228" height="10" rx="2" fill="#242429"/>
+          <!-- unlit left breakers -->
+          <g fill="#242429">
+            <rect x="40" y="58" width="52" height="16" rx="2"/><rect x="98" y="58" width="52" height="16" rx="2"/>
+            <rect x="40" y="82" width="52" height="16" rx="2"/><rect x="98" y="82" width="52" height="16" rx="2"/>
+          </g>
+          <!-- lit right breakers -->
+          <g fill="#ffd400">
+            <rect x="164" y="58" width="52" height="16" rx="2"/><rect x="222" y="58" width="52" height="16" rx="2"/>
+            <rect x="164" y="82" width="52" height="16" rx="2"/><rect x="222" y="82" width="52" height="16" rx="2"/>
+          </g>
+          <rect x="40" y="114" width="100" height="4" rx="2" fill="#242429"/>
+          <rect x="40" y="126" width="70" height="4" rx="2" fill="#242429"/>
+          <rect x="164" y="114" width="112" height="4" rx="2" fill="#3a3410"/>
+          <rect x="164" y="126" width="80" height="4" rx="2" fill="#3a3410"/>
+          <rect width="300" height="200" fill="url(#proofBeam)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== services teaser ===== -->
+  <section class="svc-teaser">
+    <div class="wrap">
+      <h2>One emergency, four scheduled, same phone number</h2>
+      <p class="lede">Describe what&rsquo;s happening and you&rsquo;ll know within the call which kind it is.</p>
+      <ul class="teaser-list">
+        <li>
+          <a href="services.html#troubleshooting-repair">
+            <span class="t-tag em">EMERGENCY</span>
+            <span class="t-name">Troubleshooting &amp; repair</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#panel-upgrades">
+            <span class="t-tag sc">SCHEDULED</span>
+            <span class="t-name">Panel upgrades</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#ev-charger-install">
+            <span class="t-tag sc">SCHEDULED</span>
+            <span class="t-name">EV charger installation</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="teaser-foot"><a class="link" href="services.html">See all 5 services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ===== why-us ===== -->
+  <section class="why on-yellow">
+    <div class="wrap">
+      <h2>What doesn&rsquo;t change, day or night</h2>
+      <ul class="why-list">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          <div>
+            <h3>A person answers</h3>
+            <p>Every call, any hour, gets someone asking what&rsquo;s going on &mdash; not a menu, not a message.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-triangle"/></svg>
+          <div>
+            <h3>You get the truth about how fast</h3>
+            <p>A true emergency gets a truck moving now. Anything that can wait gets said honestly, not dressed up as urgent when it isn&rsquo;t.</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg>
+          <div>
+            <h3>The fix outlasts the callout</h3>
+            <p>If tonight&rsquo;s repair is really an old panel giving out, that&rsquo;s a daylight conversation &mdash; not a sales pitch at 2am.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== close cta ===== -->
+  <section class="close-cta">
+    <div class="wrap close-in">
+      <div>
+        <h2>Something feel wrong right now?</h2>
+        <p class="lede">Call. Tell us what&rsquo;s happening. You&rsquo;ll know inside the first minute whether it&rsquo;s a truck-tonight problem or a book-it-tomorrow one.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+16315550123">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            Call (631) 555-0123
+          </a>
+          <a class="btn btn-ghost" href="services.html">See all services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Bright Night <em>Emergency Electric</em></div>
+    <p class="foot-tag">Panel upgrades, EV chargers, lighting, and generator hookups &mdash; plus a real person on the emergency line, day or night. Serving Long Island, NY.</p>
+    <p class="foot-tel"><a href="tel:+16315550123">(631) 555-0123</a> &nbsp;&middot;&nbsp; Emergency line answered 24/7</p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="foot-disclose">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+16315550123">
+  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+  Call (631) 555-0123
+</a>
+
+<script>
+(function(){
+  var head = document.querySelector('.head');
+  var btn = document.querySelector('.hburg');
+  if(!head || !btn) return;
+  function closeMenu(focusBtn){
+    head.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    if(focusBtn) btn.focus();
+  }
+  function openMenu(){
+    head.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  btn.addEventListener('click', function(){
+    head.classList.contains('is-open') ? closeMenu(false) : openMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(head.classList.contains('is-open')) closeMenu(true);
+      document.querySelectorAll('details[open]').forEach(function(d){
+        if(!d.classList.contains('is-current')) d.removeAttribute('open');
+      });
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(head.classList.contains('is-open') && !head.contains(e.target)){
+      closeMenu(false);
+    }
+  });
+  head.querySelectorAll('.head-nav > a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+})();
+</script>
+
+</body>
+</html>

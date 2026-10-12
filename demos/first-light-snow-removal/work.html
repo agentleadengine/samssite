@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Direction contract: see index.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Work | First Light Snow Removal</title>
+<meta name="description" content="Sample driveway, walkway and storm-callout scenes from First Light Snow Removal, Long Island, NY. Illustrated project vignettes, not real client photos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;600;700&family=Six+Caps&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><clipPath id="fl-clip"><rect width="40" height="40" rx="10"/></clipPath></defs>
+        <g clip-path="url(#fl-clip)">
+          <rect width="40" height="40" fill="#0B1626"/>
+          <path d="M40 0 L40 24 L16 0 Z" fill="#F2F5F8"/>
+          <circle cx="27" cy="12" r="6.5" fill="#FF6A1A" opacity=".22"/>
+          <circle cx="27" cy="12" r="3.2" fill="#FF6A1A"/>
+        </g>
+      </svg>
+      <span class="brand-name">First Light<em>Snow Removal</em></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#driveway-plowing">Driveway Plowing</a></li>
+            <li><a href="services.html#walkway-clearing">Walkway Clearing</a></li>
+            <li><a href="services.html#salting-ice-control">Salting &amp; Ice Control</a></li>
+            <li><a href="services.html#seasonal-contracts">Seasonal Contracts</a></li>
+            <li><a href="services.html#storm-callouts">Storm Callouts</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+16315550165">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5A2 2 0 0 1 3.3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L7.4 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.2-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(631) 555-0165</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#driveway-plowing">Driveway Plowing</a></li>
+          <li><a href="services.html#walkway-clearing">Walkway Clearing</a></li>
+          <li><a href="services.html#salting-ice-control">Salting &amp; Ice Control</a></li>
+          <li><a href="services.html#seasonal-contracts">Seasonal Contracts</a></li>
+          <li><a href="services.html#storm-callouts">Storm Callouts</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+16315550165">Call (631) 555-0165</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-sweep center">
+    <div class="page-sweep-glow" aria-hidden="true"></div>
+    <div class="page-sweep-snow" aria-hidden="true"></div>
+    <div class="page-sweep-beacon" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="page-intro">
+        <h1>Sample work</h1>
+        <p class="lede center">Five scenes that show the range of a normal week, from one driveway to a storm callout at midnight. Illustrated compositions, not real client photos or addresses.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <!-- 1: driveway curb to curb -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg viewBox="0 0 220 150" role="img" aria-label="An overhead view of a driveway cleared down the middle, a car parked untouched to one side and a mailbox clear at the curb">
+              <rect width="220" height="150" fill="#E7ECF1"/>
+              <rect x="60" y="10" width="100" height="130" rx="6" fill="#142238"/>
+              <rect x="20" y="60" width="30" height="18" rx="3" fill="none" stroke="#4B5E75" stroke-width="2"/>
+              <circle cx="27" cy="80" r="4" fill="none" stroke="#4B5E75" stroke-width="2"/>
+              <circle cx="43" cy="80" r="4" fill="none" stroke="#4B5E75" stroke-width="2"/>
+              <rect x="178" y="118" width="14" height="10" rx="2" fill="#4B5E75"/>
+              <line x1="185" y1="128" x2="185" y2="140" stroke="#4B5E75" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A driveway, curb to curb <span class="tag tag-storm">Plowing</span></h2>
+            <p>One clean pass down the middle, snow banked wide enough that the car doors still open and the mailbox stays clear at the curb.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: walkway and steps -->
+      <article class="work-item reverse">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg viewBox="0 0 220 150" role="img" aria-label="Three steps leading up to a front door with a lit window, small salt crystals scattered across the steps">
+              <rect width="220" height="150" fill="#142238"/>
+              <rect x="70" y="110" width="80" height="16" rx="2" fill="#F2F5F8"/>
+              <rect x="80" y="94" width="60" height="16" rx="2" fill="#F2F5F8"/>
+              <rect x="90" y="78" width="40" height="16" rx="2" fill="#F2F5F8"/>
+              <rect x="95" y="30" width="30" height="48" rx="2" fill="#0B1626" stroke="#93A6BD" stroke-width="2"/>
+              <rect x="102" y="40" width="16" height="14" rx="1" fill="#FF6A1A" opacity=".85"/>
+              <g fill="#93A6BD">
+                <circle cx="85" cy="118" r="1.6"/><circle cx="110" cy="120" r="1.6"/>
+                <circle cx="95" cy="102" r="1.6"/><circle cx="120" cy="100" r="1.6"/>
+                <circle cx="100" cy="86" r="1.6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>Front walk and steps, salted <span class="tag tag-storm">Walkway</span></h2>
+            <p>Steps and walkway cleared by hand, salt down before the porch light's had time to matter.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: shared driveway -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg viewBox="0 0 220 150" role="img" aria-label="Two driveways side by side, both cleared evenly, meeting a shared cleared street at the bottom">
+              <rect width="220" height="150" fill="#E7ECF1"/>
+              <rect x="35" y="15" width="55" height="20" rx="3" fill="#142238"/>
+              <rect x="130" y="15" width="55" height="20" rx="3" fill="#142238"/>
+              <rect x="35" y="35" width="55" height="90" fill="#142238"/>
+              <rect x="130" y="35" width="55" height="90" fill="#142238"/>
+              <rect x="15" y="125" width="190" height="16" fill="#0E1C30"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A shared driveway, two households <span class="tag tag-storm">Plowing</span></h2>
+            <p>Two households sharing one driveway means clearing it even on both sides, not just wherever the truck happens to fit.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: storm callout, midnight -->
+      <article class="work-item reverse">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg viewBox="0 0 220 150" role="img" aria-label="A truck with an angled plow blade pushing through snow on a dark road at night, a moon overhead">
+              <rect width="220" height="150" fill="#0B1626"/>
+              <circle cx="190" cy="25" r="10" fill="#F2F5F8" opacity=".9"/>
+              <rect x="10" y="90" width="200" height="50" fill="#0E1C30"/>
+              <g fill="#F2F5F8" opacity=".55">
+                <circle cx="130" cy="100" r="3"/><circle cx="155" cy="115" r="2.4"/>
+                <circle cx="175" cy="98" r="2.8"/><circle cx="190" cy="120" r="2.2"/>
+                <circle cx="140" cy="128" r="2.6"/><circle cx="200" cy="105" r="2"/>
+              </g>
+              <path d="M50 122 L38 108 L44 100 L58 114 Z" fill="#93A6BD"/>
+              <rect x="58" y="96" width="46" height="22" rx="4" fill="#1C2E48"/>
+              <rect x="94" y="86" width="16" height="14" rx="3" fill="#1C2E48"/>
+              <circle cx="70" cy="120" r="6" fill="#0B1626"/>
+              <circle cx="96" cy="120" r="6" fill="#0B1626"/>
+              <circle cx="46" cy="106" r="5" fill="#FF6A1A" opacity=".3"/>
+              <circle cx="46" cy="106" r="2.6" fill="#FF6A1A"/>
+              <g stroke="#93A6BD" stroke-width="2" stroke-linecap="round" opacity=".35">
+                <line x1="112" y1="100" x2="126" y2="100"/><line x1="112" y1="108" x2="130" y2="108"/><line x1="112" y1="116" x2="124" y2="116"/>
+              </g>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>A storm callout, one bad night <span class="tag tag-onetime">Callout</span></h2>
+            <p>Called at midnight, first pass by 3 a.m., a second pass after the storm let up. No contract, just the one bad night handled.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: seasonal contract, first storm -->
+      <article class="work-item">
+        <div class="work-in">
+          <div class="work-scene">
+            <svg viewBox="0 0 220 150" role="img" aria-label="A cleared driveway with a small signed contract card in the corner and a snowflake accent marking the first storm">
+              <rect width="220" height="150" fill="#E7ECF1"/>
+              <rect x="60" y="20" width="100" height="110" rx="6" fill="#142238"/>
+              <g stroke="#93A6BD" stroke-width="1.6" stroke-linecap="round" opacity=".7" transform="translate(28,26)">
+                <line x1="0" y1="-10" x2="0" y2="10"/>
+                <line x1="-8.7" y1="-5" x2="8.7" y2="5"/>
+                <line x1="8.7" y1="-5" x2="-8.7" y2="5"/>
+              </g>
+              <rect x="150" y="95" width="46" height="34" rx="4" fill="#F2F5F8" stroke="#93A6BD" stroke-width="1.5"/>
+              <line x1="158" y1="105" x2="188" y2="105" stroke="#4B5E75" stroke-width="1.5"/>
+              <line x1="158" y1="112" x2="182" y2="112" stroke="#4B5E75" stroke-width="1.5"/>
+              <line x1="158" y1="119" x2="186" y2="119" stroke="#4B5E75" stroke-width="1.5"/>
+              <path d="M160 122l4 4 8-8" stroke="#FF6A1A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="work-copy">
+            <span class="sample-tag">Sample project</span>
+            <h2>First storm of a new contract <span class="tag tag-season">Seasonal</span></h2>
+            <p>Signed in November, the first storm hit in December. The route already had the address before the first flake did.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Have a driveway that needs a look?</h2>
+      <p class="measure-center">Same crew every time, whether it's one storm or the whole season.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+16315550165">Call (631) 555-0165</a>
+        <a class="btn btn-ghost" href="services.html">See the services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><clipPath id="fl-clip-f"><rect width="40" height="40" rx="10"/></clipPath></defs>
+        <g clip-path="url(#fl-clip-f)">
+          <rect width="40" height="40" fill="#0B1626"/>
+          <path d="M40 0 L40 24 L16 0 Z" fill="#F2F5F8"/>
+          <circle cx="27" cy="12" r="3.2" fill="#FF6A1A"/>
+        </g>
+      </svg>
+      <span>First Light Snow Removal</span>
+    </div>
+    <p class="footer-line">Driveways, walkways &amp; seasonal contracts &middot; Long Island, NY &middot; <a href="tel:+16315550165">(631) 555-0165</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa - <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a class="cb-call" href="tel:+16315550165">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5A2 2 0 0 1 3.3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L7.4 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.2-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2z"/></svg>
+    Call Now
+  </a>
+  <a class="cb-text" href="sms:+16315550165">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8 8.4 8.4 0 0 1-3.2-.6L4 20l1.3-4.2A7.9 7.9 0 0 1 4 12z"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+    Text Us
+  </a>
+</div>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

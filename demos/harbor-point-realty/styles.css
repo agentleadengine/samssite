@@ -1,0 +1,410 @@
+/* ==========================================================================
+   Harbor Point Realty — shared stylesheet
+   World: a harbormaster's chart table. Deep-navy chart ground, brass
+   instrument lines, ledger rules. See index.html for the direction contract.
+   ========================================================================== */
+
+/* ---- tokens (palette family kept from the original demo, extended) ---- */
+:root{
+  --ink:#0E2438;
+  --ink-2:#1C3A56;
+  --ink-3:#24466A;
+  --linen:#F3EFE5;
+  --linen-2:#EAE0C7;
+  --paper:#FCFAF6;
+  --brass:#A8823E;
+  --brass-deep:#7A5D28;
+  --brass-soft:#D9C393;
+  --rule:#DED7C7;
+  --rule-onink:rgba(217,195,147,.28);
+  --muted:#5A6B7B;
+  --muted-onink:#AFBECC;
+  --shadow:0 14px 30px -18px rgba(14,36,56,.32);
+  --shadow-sm:0 6px 16px -10px rgba(14,36,56,.28);
+  --ribbon-h:34px;
+  --callbar-h:62px;
+}
+
+/* ---- reset ---- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Schibsted Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.65;overflow-x:hidden;
+  padding-top:var(--ribbon-h);padding-bottom:var(--callbar-h);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+@media(min-width:860px){body{padding-bottom:0}}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Frank Ruhl Libre',Georgia,serif;font-weight:700;line-height:1.14;margin:0;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+input,select,textarea{font:inherit}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+@media(min-width:600px){.wrap{padding:0 32px}}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible{outline-offset:3px}
+
+/* ---- motion base: visible by default, animated only when allowed ---- */
+.mo{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  @keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .mo{opacity:0;transform:translateY(20px);animation:riseIn .9s cubic-bezier(.16,1,.3,1) both}
+  .mo-rule{transform:scaleX(0);transform-origin:left;animation:growX .8s cubic-bezier(.16,1,.3,1) both}
+  .mo-rule-v{transform:scaleY(0);transform-origin:top;animation:growY 1.1s cubic-bezier(.16,1,.3,1) both}
+}
+
+/* ==========================================================================
+   Demo ribbon + skip link
+   ========================================================================== */
+.skip-link{position:fixed;top:-100px;left:12px;z-index:900;background:var(--ink);color:var(--linen);padding:10px 16px;border-radius:3px;font-size:14px;font-weight:600}
+.skip-link:focus{top:calc(var(--ribbon-h) + 10px)}
+
+.ribbon{
+  position:fixed;top:0;left:0;z-index:500;
+  background:var(--ink);color:var(--linen);
+  font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;line-height:1;
+  padding:11px 15px;border-right:2px solid var(--brass);
+  border-bottom-right-radius:3px;
+}
+
+/* ==========================================================================
+   Header / nav
+   ========================================================================== */
+.hdr{
+  position:sticky;top:var(--ribbon-h);z-index:200;
+  background:var(--paper);border-bottom:1px solid var(--rule);
+}
+.hdr-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{display:block;text-decoration:none;flex-shrink:0}
+.brand .mark{font-family:'Frank Ruhl Libre',serif;font-size:19px;font-weight:700;letter-spacing:-.01em;display:block;color:var(--ink)}
+.brand .sub{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-deep);font-weight:600;margin-top:3px}
+
+.nav{display:none}
+.nav-item{position:relative;display:flex;align-items:center}
+.nav a.top-link{font-size:14px;letter-spacing:.01em;color:var(--muted);padding:8px 2px;border-bottom:1px solid transparent;font-weight:500}
+.nav a.top-link:hover{color:var(--ink);border-bottom-color:var(--brass)}
+.nav a.top-link.active{color:var(--ink);border-bottom-color:var(--brass-deep)}
+.sub-toggle{display:inline-flex;align-items:center;padding:8px 4px 8px 2px;color:var(--muted)}
+.sub-toggle:hover{color:var(--ink)}
+.sub-toggle svg{width:11px;height:11px;margin-left:2px;transition:transform .2s ease}
+.nav-item.open .sub-toggle svg{transform:rotate(180deg)}
+.submenu{
+  position:absolute;top:100%;left:0;min-width:246px;margin-top:6px;
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;
+  box-shadow:var(--shadow);padding:8px;display:none;z-index:210;
+}
+.nav-item.open .submenu{display:block}
+.submenu a{display:block;padding:10px 12px;font-size:14px;color:var(--ink-2);border-radius:3px}
+.submenu a:hover{background:var(--linen);color:var(--ink)}
+
+.hdr-tel{text-align:right;flex-shrink:0;display:none}
+.hdr-tel .lbl{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hdr-tel .num{display:block;font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:700;white-space:nowrap;color:var(--ink)}
+.hdr-tel:hover .num{color:var(--brass-deep)}
+
+.hamburger{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;gap:5px;flex-shrink:0;border-radius:3px}
+.hamburger .bar{width:21px;height:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
+.hamburger[aria-expanded="true"] .bar1{transform:translateY(7px) rotate(45deg)}
+.hamburger[aria-expanded="true"] .bar2{opacity:0}
+.hamburger[aria-expanded="true"] .bar3{transform:translateY(-7px) rotate(-45deg)}
+
+@media(min-width:860px){
+  .hdr-row{padding:20px 0}
+  .nav{display:flex;gap:26px;align-items:center}
+  .hdr-tel{display:block}
+  .hdr-tel .num{font-size:18px}
+  .hamburger{display:none}
+}
+
+/* mobile menu panel */
+.mobile-menu{
+  position:absolute;top:100%;left:0;right:0;background:var(--paper);
+  border-bottom:1px solid var(--rule);box-shadow:var(--shadow);
+  max-height:calc(100vh - var(--ribbon-h) - 70px);overflow-y:auto;
+}
+.mobile-menu[hidden]{display:none}
+.mm-list{padding:8px 0}
+.mm-row{border-bottom:1px solid var(--rule)}
+.mm-row:last-child{border-bottom:0}
+.mm-link{display:block;padding:16px 22px;font-size:16px;font-weight:600;color:var(--ink)}
+.mm-item-flex{display:flex;align-items:stretch}
+.mm-item-flex .mm-link{flex:1}
+.mm-acc-btn{width:52px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.mm-acc-btn svg{width:13px;height:13px;transition:transform .2s ease}
+.mm-row.open .mm-acc-btn svg{transform:rotate(180deg)}
+.mm-acc-panel{display:none;background:var(--linen);padding:2px 0 10px}
+.mm-row.open .mm-acc-panel{display:block}
+.mm-acc-panel a{display:block;padding:11px 22px 11px 40px;font-size:14.5px;color:var(--ink-2)}
+.mm-tel{display:flex;align-items:center;gap:10px;padding:18px 22px;background:var(--ink);color:var(--linen);font-family:'Frank Ruhl Libre',serif;font-size:17px;font-weight:700}
+.mm-tel svg{width:17px;height:17px;flex-shrink:0}
+@media(min-width:860px){.mobile-menu{display:none!important}}
+
+/* ==========================================================================
+   Buttons + links
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 25px;font-size:15px;font-weight:600;letter-spacing:.01em;
+  border-radius:3px;border:1px solid transparent;white-space:nowrap;
+}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+.btn-brass{background:var(--brass-deep);color:var(--linen);border-color:var(--brass-deep)}
+.btn-brass:hover{background:#63491E;border-color:#63491E}
+.btn-ink{background:var(--ink);color:var(--linen);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-line:hover{border-color:var(--brass-deep);color:var(--ink)}
+.btn-line-onink{background:transparent;color:var(--linen);border-color:var(--rule-onink)}
+.btn-line-onink:hover{border-color:var(--brass-soft)}
+@media(max-width:519px){.cta-row{flex-direction:column}.cta-row .btn{width:100%}}
+
+.text-link{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:2px}
+.text-link:hover{border-bottom-color:var(--brass-deep);color:var(--brass-deep)}
+.text-link.onink{color:var(--linen);border-bottom-color:var(--rule-onink)}
+.text-link.onink:hover{border-bottom-color:var(--brass-soft);color:var(--brass-soft)}
+.text-link svg{width:13px;height:13px}
+
+/* ==========================================================================
+   Section scaffolding
+   ========================================================================== */
+.sec{padding:4.5rem 0}
+.sec-linen{background:var(--linen)}
+.sec-ink{background:var(--ink);color:var(--linen);position:relative;overflow:hidden}
+.sec-ink::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(217,195,147,.06) 0 1px,transparent 1px 56px),
+    repeating-linear-gradient(90deg,rgba(217,195,147,.06) 0 1px,transparent 1px 56px);
+}
+.sec-ink .wrap,.sec-ink .band-inner{position:relative;z-index:1}
+.sec-brass{background:var(--brass-deep);color:var(--linen)}
+@media(min-width:860px){.sec{padding:6.5rem 0}}
+
+.sec-head h1{font-size:clamp(2.1rem,4.6vw,3.1rem);max-width:19ch}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.55rem);max-width:20ch}
+.sec-head p.lede{margin-top:16px;color:var(--muted);max-width:62ch;font-size:1.05rem}
+.sec-ink .sec-head p.lede{color:var(--muted-onink)}
+.sec-brass .sec-head p.lede{color:var(--linen)}
+
+/* page-intro band (compact ink hero on subpages) */
+.intro-band{padding:3.6rem 0 3.2rem}
+@media(min-width:860px){.intro-band{padding:5rem 0 4.2rem}}
+.intro-band h1{color:var(--linen)}
+.intro-band .lede{color:var(--muted-onink);margin-top:16px;max-width:58ch;font-size:1.05rem}
+
+/* ==========================================================================
+   Hero (index)
+   ========================================================================== */
+.hero{padding:2.6rem 0 3.6rem;position:relative}
+.hero-grid{display:grid;gap:2.6rem}
+.hero h1{color:var(--linen);font-size:clamp(2.3rem,7vw,3.6rem);max-width:15ch}
+.hero h1 .accent{display:inline;font-weight:300;color:var(--brass-soft)}
+.hero .lede{margin-top:20px;font-size:1.1rem;color:var(--muted-onink);max-width:50ch}
+.hero .cta-row{margin-top:28px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:30px;padding-top:18px;border-top:1px solid var(--rule-onink);font-size:13px;color:var(--muted-onink);letter-spacing:.01em}
+.hero-facts span{display:inline-flex;align-items:center;gap:8px}
+.hero-facts .dot{width:5px;height:5px;background:var(--brass);border-radius:50%;flex-shrink:0}
+
+.chart-frame{border:1px solid var(--rule-onink);padding:10px;background:rgba(255,255,255,.02);border-radius:4px}
+.chart-frame svg{width:100%;height:auto}
+.chart-cap{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-top:14px;font-size:12.5px;color:var(--muted-onink)}
+.chart-cap b{font-weight:700;color:var(--brass-soft);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.chart-cap span{flex:1 1 240px}
+
+@media(min-width:900px){
+  .hero{padding:4.2rem 0 4.8rem}
+  .hero-grid{grid-template-columns:1fr 1fr;align-items:center;gap:3.4rem}
+}
+
+/* ==========================================================================
+   Proof-of-work vignette (index)
+   ========================================================================== */
+.proof-grid{display:grid;gap:2.2rem}
+.proof-copy p{margin-top:16px;color:var(--muted);max-width:52ch;font-size:1.02rem}
+.proof-card{background:var(--linen-2);border:1px solid var(--rule);border-radius:6px;padding:22px 22px 18px}
+.proof-card svg{width:100%;height:auto}
+.proof-legend{display:flex;gap:18px;margin-top:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.proof-legend span{display:inline-flex;align-items:center;gap:6px}
+.proof-legend i{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+@media(min-width:860px){.proof-grid{grid-template-columns:1fr 1.1fr;align-items:center;gap:4rem}}
+
+/* ==========================================================================
+   Services teaser (index)
+   ========================================================================== */
+.teaser-list{border-top:1px solid var(--rule)}
+.teaser-item{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.teaser-item h3{font-size:1.2rem;font-weight:700;flex:1 1 220px}
+.teaser-item p{color:var(--muted);font-size:.98rem;flex:2 1 320px}
+.teaser-item .go{flex-shrink:0}
+@media(min-width:700px){.teaser-item{flex-wrap:nowrap}}
+
+/* ==========================================================================
+   Why-us strip (index, ink band)
+   ========================================================================== */
+.why-strip{display:grid;gap:1px;background:var(--rule-onink);border:1px solid var(--rule-onink);border-radius:4px;overflow:hidden}
+.why-item{background:var(--ink);padding:24px 22px;display:flex;align-items:flex-start;gap:14px}
+.why-item svg{width:20px;height:20px;flex-shrink:0;color:var(--brass-soft);margin-top:2px}
+.why-item p{font-size:.98rem;color:var(--linen);font-weight:500}
+@media(min-width:700px){.why-strip{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.why-strip{grid-template-columns:repeat(4,1fr)}}
+
+/* ==========================================================================
+   Closing CTA band (brass, every page)
+   ========================================================================== */
+.cta-band{padding:3.6rem 0}
+.cta-band-inner{display:flex;flex-direction:column;gap:22px}
+.cta-band h2{color:var(--linen);font-size:clamp(1.7rem,3.6vw,2.5rem);max-width:16ch}
+.cta-band p{color:var(--linen);margin-top:10px;font-size:1.02rem;max-width:44ch}
+.cta-band .cta-row{margin-top:4px}
+@media(min-width:760px){
+  .cta-band{padding:4.6rem 0}
+  .cta-band-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:2.6rem}
+}
+
+/* ==========================================================================
+   Services page — ledger rows
+   ========================================================================== */
+.svc-list{position:relative;border-top:1px solid var(--rule);padding-left:0}
+.svc-list::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--brass);display:none}
+.svc-row{display:grid;grid-template-columns:52px 1fr;gap:6px 18px;padding:30px 0;border-bottom:1px solid var(--rule)}
+.svc-row .icon{width:44px;height:44px;border:1px solid var(--rule);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper)}
+.svc-row .icon svg{width:20px;height:20px;color:var(--ink)}
+.svc-row h2{grid-column:2;font-size:1.4rem}
+.svc-row .body{grid-column:2}
+.svc-row .body p{margin-top:10px;color:var(--muted);font-size:1rem;max-width:68ch}
+.svc-row .when{margin-top:12px;font-size:.9rem;color:var(--brass-deep);font-weight:600}
+.svc-row .incl{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:14px}
+.svc-row .incl li{font-size:.82rem;color:var(--ink-2);border:1px solid var(--rule);padding:6px 12px;border-radius:20px;background:var(--paper)}
+@media(min-width:760px){
+  .svc-list{padding-left:26px}
+  .svc-list::before{display:block}
+  .svc-row{grid-template-columns:64px 1fr;padding:38px 0}
+  .svc-row .icon{width:52px;height:52px}
+  .svc-row .icon svg{width:23px;height:23px}
+  .svc-row h2{font-size:1.65rem}
+}
+
+.interstitial{padding:3rem 0;text-align:left}
+.interstitial p{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.3rem,3vw,1.85rem);font-weight:500;color:var(--linen);max-width:24ch;line-height:1.3}
+.interstitial p span{color:var(--brass-soft)}
+
+/* ==========================================================================
+   Work page — gallery
+   ========================================================================== */
+.gallery{display:grid;gap:2.4rem}
+.vg{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--paper)}
+.vg-art{background:var(--linen-2);padding:18px}
+.vg-art svg{width:100%;height:auto}
+.vg-body{padding:20px 22px 24px}
+.vg-body h3{font-size:1.15rem;font-weight:700}
+.vg-place{font-size:.85rem;color:var(--muted);margin-top:2px;font-weight:500}
+.vg-body p{margin-top:10px;color:var(--muted);font-size:.96rem}
+.vg-sample{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:10px;width:100%}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(2,1fr);gap:2.8rem}}
+
+/* ==========================================================================
+   About page
+   ========================================================================== */
+.story p{margin-top:18px;color:var(--ink-2);font-size:1.06rem;max-width:66ch;line-height:1.72}
+.story p:first-child{margin-top:0}
+
+.process-ledger{position:relative;margin-top:8px;border-top:1px solid var(--rule-onink)}
+.pl-line{position:absolute;left:4px;top:0;bottom:0;width:1px;background:var(--brass)}
+.pl-row{display:grid;grid-template-columns:30px 1fr;gap:4px 16px;padding:22px 0;border-bottom:1px solid var(--rule-onink);position:relative}
+.pl-row .pt{width:9px;height:9px;border-radius:50%;background:var(--brass);margin-top:7px}
+.pl-row h3{grid-column:2;font-size:1.1rem;color:var(--linen)}
+.pl-row p{grid-column:2;margin-top:8px;color:var(--muted-onink);font-size:.96rem;max-width:56ch}
+@media(min-width:700px){
+  .pl-row{grid-template-columns:30px 200px 1fr;align-items:baseline}
+  .pl-row h3{grid-column:2;margin-top:0}
+  .pl-row p{grid-column:3;margin-top:0}
+}
+
+.split{display:grid;gap:2.6rem}
+.panel h3{font-size:1.25rem;font-weight:700;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.area-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.area-list li{font-size:13.5px;color:var(--ink-2);border:1px solid var(--rule);padding:7px 14px;border-radius:20px;background:var(--linen-2)}
+.hours{margin-top:20px;width:100%;border-collapse:collapse;font-size:.98rem}
+.hours th,.hours td{text-align:left;padding:12px 0;border-bottom:1px solid var(--rule);font-weight:400}
+.hours th{color:var(--muted);font-weight:500}
+.hours td{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+.note{margin-top:18px;font-size:.9rem;color:var(--muted);max-width:52ch}
+@media(min-width:860px){.split{grid-template-columns:1.05fr 1fr;gap:4.4rem}}
+
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+.contact-top{display:grid;gap:2.4rem}
+.big-tel{display:inline-block;font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,7vw,3.1rem);font-weight:700;letter-spacing:-.01em;margin-top:10px;position:relative}
+.big-tel .u{display:block;height:3px;background:var(--brass);margin-top:10px;max-width:100%}
+.big-tel:hover{color:var(--brass-deep)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.detail-list{margin-top:28px}
+.detail-list .detail{padding:14px 0;border-top:1px solid var(--rule);font-size:.98rem;color:var(--muted);max-width:56ch}
+.detail-list .detail b{display:block;color:var(--ink);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+@media(min-width:860px){.contact-top{grid-template-columns:1.05fr 1fr;gap:4rem;align-items:start}}
+
+form.sample-form{background:var(--linen-2);border:1px solid var(--rule);padding:24px;border-radius:6px}
+.field{margin-bottom:16px}
+.field:last-of-type{margin-bottom:0}
+label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:7px}
+input,select,textarea{
+  width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);
+  padding:12px 13px;border:1px solid var(--rule);background:var(--paper);border-radius:3px;
+}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brass-deep);outline-offset:1px;border-color:var(--brass-deep)}
+textarea{min-height:104px;resize:vertical}
+.submit-btn{width:100%;margin-top:6px}
+.sample-cap{margin-top:12px;font-size:11.5px;color:var(--muted);text-align:center;letter-spacing:.05em;text-transform:uppercase}
+
+.faq{margin-top:8px;border-top:1px solid var(--rule)}
+.faq-item{padding:22px 0;border-bottom:1px solid var(--rule)}
+.faq-item h3{font-size:1.05rem;font-weight:700;color:var(--ink)}
+.faq-item p{margin-top:9px;color:var(--muted);font-size:.98rem;max-width:68ch}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.ftr{background:var(--ink);color:var(--muted-onink);padding:3.2rem 0 2.4rem;font-size:14px}
+.ftr-grid{display:grid;gap:1.8rem;padding-bottom:26px;border-bottom:1px solid var(--rule-onink)}
+.ftr .mark{font-family:'Frank Ruhl Libre',serif;font-size:19px;color:var(--linen);font-weight:700}
+.ftr-brand p{margin-top:8px}
+.ftr-nav{display:flex;flex-wrap:wrap;gap:14px 20px}
+.ftr-nav a{color:var(--brass-soft)}
+.ftr-nav a:hover{text-decoration:underline}
+.ftr-contact a{color:var(--linen);font-weight:600;font-size:15px}
+.ftr-contact p{margin-top:8px}
+.disclose{margin-top:22px;font-size:12.5px;color:#8CA0B2;line-height:1.7;max-width:74ch}
+.disclose a{color:var(--brass-soft);font-weight:600}
+.disclose a:hover{text-decoration:underline}
+@media(min-width:700px){.ftr-grid{grid-template-columns:1.2fr 1fr 1fr}}
+
+/* ==========================================================================
+   Sticky mobile call bar
+   ========================================================================== */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:300;background:var(--ink);border-top:1px solid var(--brass);display:flex;height:var(--callbar-h)}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:14.5px;font-weight:700;letter-spacing:.01em}
+.callbar a.cb-call{background:var(--brass-deep);color:var(--linen)}
+.callbar a.cb-text{color:var(--linen);flex:.8}
+.callbar svg{width:16px;height:16px;flex-shrink:0}
+@media(min-width:860px){.callbar{display:none}}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+.center-copy{max-width:640px}
+
+/* anchor targets (services submenu links) clear the sticky ribbon + header */
+.svc-row[id]{scroll-margin-top:calc(var(--ribbon-h) + 96px)}
+@media(min-width:860px){.svc-row[id]{scroll-margin-top:calc(var(--ribbon-h) + 84px)}}

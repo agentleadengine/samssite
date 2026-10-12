@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Carta — Mariscos El Puerto</title>
+<meta name="description" content="La carta de Mariscos El Puerto: cócteles de mariscos, caldos y sopas, pescado entero, tostadas y ceviches, a la parrilla, y charolas para la familia. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Mariscos El Puerto, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--mar-900)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--marea)" stroke-width="1.4" opacity=".55"/>
+        <path d="M8 26c3-4.4 7-4.4 10 0s7 4.4 10 0" fill="none" stroke="var(--espuma)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M8 19.5c3-4.2 7-4.2 10 0s7 4.2 10 0" fill="none" stroke="var(--marea)" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+        <circle cx="23" cy="12.5" r="3.6" fill="var(--coral)"/>
+      </svg>
+      <span class="brand">Mariscos El Puerto<small>Marisquería</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550175">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z" fill="#fff"/></svg>
+      (516) 555-0175
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html" aria-current="page">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#cocteles">Cócteles de mariscos</a></li>
+          <li><a href="services.html#caldos">Caldos y sopas</a></li>
+          <li><a href="services.html#pescado">Pescado entero</a></li>
+          <li><a href="services.html#tostadas">Tostadas y ceviches</a></li>
+          <li><a href="services.html#parrilla">A la parrilla</a></li>
+          <li><a href="services.html#familia">Para la familia</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Escenas</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550175">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+      Llamar (516) 555-0175
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-dark on-dark">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <h1>La Carta</h1>
+        <p class="lead measure" style="color:rgba(251,246,236,.84)">Seis formas de pedir en El Puerto, desde un cóctel frío hasta una charola grande para toda la familia. La carta cambia un poco según lo que llegó esa mañana.</p>
+      </div>
+      <svg class="intro-accent reveal reveal-2" viewBox="0 0 160 180" role="img" aria-label="Ilustración de una etiqueta colgante que dice fresco hoy">
+        <circle cx="100" cy="20" r="4" fill="var(--espuma)"/>
+        <path d="M100 24q-6 20-17 32" fill="none" stroke="var(--espuma)" stroke-width="2" opacity=".8"/>
+        <rect x="38" y="58" width="92" height="102" rx="12" fill="var(--mar-800)" stroke="var(--espuma)" stroke-width="2"/>
+        <circle cx="84" cy="74" r="6" fill="none" stroke="var(--espuma)" stroke-width="2"/>
+        <text x="84" y="118" text-anchor="middle" font-family="Catamaran, sans-serif" font-weight="800" font-size="15" letter-spacing="1.5" fill="var(--coral)">FRESCO</text>
+        <text x="84" y="140" text-anchor="middle" font-family="Catamaran, sans-serif" font-weight="800" font-size="15" letter-spacing="1.5" fill="var(--espuma)">HOY</text>
+        <g transform="translate(112 128)">
+          <path d="M0 6c5-8 15-8 20 0-5 3-15 3-20 0Z" fill="var(--marea)"/>
+          <path d="M20 6l6-4v8Z" fill="var(--marea)"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap">
+
+      <div class="menu-section" id="cocteles">
+        <div class="menu-head">
+          <h2>Cócteles de mariscos</h2>
+          <span class="menu-from">Desde $16</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Camarón, pulpo o mixto, servidos en vaso con jugo de tomate de la casa, cebolla morada, cilantro y aguacate. Bien fríos, con galletas saladas aparte.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Para una tarde de calor o para abrir una reunión antes del plato fuerte.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Cóctel de camarón</span><span class="tag">$16</span></div>
+            <p class="item-desc">Camarón cocido en el jugo de tomate de la casa, con cebolla morada, cilantro y aguacate.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Cóctel de pulpo</span><span class="tag">$18</span></div>
+            <p class="item-desc">Pulpo cocido a fuego lento, en el mismo jugo, con un toque extra de limón.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Cóctel mixto</span><span class="tag">$19</span></div>
+            <p class="item-desc">Camarón y pulpo juntos. El más pedido de la carta.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Vaso grande, para compartir</span><span class="tag alt">$27</span></div>
+            <p class="item-desc">Mixto doble en vaso grande, pensado para dos personas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" id="caldos">
+        <div class="menu-head">
+          <h2>Caldos y sopas</h2>
+          <span class="menu-from">Desde $14</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Caldo de camarón, sopa de mariscos y consomé del día. Bien calientes, con limón, chile en polvo y tortillas o pan según prefiera.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Para una mañana fría o cuando quiere algo caliente y de cuchara.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Caldo de camarón</span><span class="tag">$15</span></div>
+            <p class="item-desc">Con limón, chile en polvo y tortillas o pan según prefiera.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Sopa de mariscos</span><span class="tag">$17</span></div>
+            <p class="item-desc">Mezcla de pescado, camarón y almeja en un caldo bien sazonado.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Consomé del día</span><span class="tag alt">$14</span></div>
+            <p class="item-desc">Cambia según lo que llegó esa mañana. Pregunte cuál hay al llamar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" id="pescado">
+        <div class="menu-head">
+          <h2>Pescado entero</h2>
+          <span class="menu-from">Desde $24</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Mojarra o robalo, frito o a la plancha, con arroz, ensalada y la salsa de la casa. Abierto o entero, como usted lo pida.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Para una cena que se siente especial, entre semana o el fin de semana.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Mojarra frita, entera</span><span class="tag">$24</span></div>
+            <p class="item-desc">Con arroz, ensalada y la salsa de la casa. Abierta o entera, como la pida.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Mojarra a la plancha</span><span class="tag">$24</span></div>
+            <p class="item-desc">Misma preparación, sin freír. Con arroz y ensalada.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Robalo entero</span><span class="tag alt">$29</span></div>
+            <p class="item-desc">Frito o a la plancha, según lo que haya llegado esa mañana.</p>
+          </div>
+        </div>
+        <p class="menu-note">El pescado disponible cambia con la compra del día. Pregunte al llamar cuál hay.</p>
+      </div>
+
+      <div class="menu-section" id="tostadas">
+        <div class="menu-head">
+          <h2>Tostadas y ceviches</h2>
+          <span class="menu-from">Desde $9</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Ceviche de pescado curado en limón con pepino y jitomate, tostadas de camarón y de pulpo. Se preparan al momento.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Para picar entre varios o para una comida ligera.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Ceviche de pescado</span><span class="tag">$14</span></div>
+            <p class="item-desc">Curado en limón, con pepino y jitomate. Se sirve con tostadas aparte.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Tostada de camarón</span><span class="tag">$9</span></div>
+            <p class="item-desc">Se preparan al momento, así que se sirven frescas.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Tostada de pulpo</span><span class="tag alt">$11</span></div>
+            <p class="item-desc">Pulpo cocido a fuego lento sobre tostada crujiente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" id="parrilla">
+        <div class="menu-head">
+          <h2>A la parrilla</h2>
+          <span class="menu-from">Desde $22</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Camarones al mojo de ajo, brochetas mixtas y filete a la diabla, con arroz blanco y verduras asadas.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Cuando quiere algo directo del fuego. Le ajustamos el picante como lo prefiera.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Camarones al mojo de ajo</span><span class="tag">$22</span></div>
+            <p class="item-desc">Con arroz blanco y verduras asadas.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Brocheta mixta</span><span class="tag">$25</span></div>
+            <p class="item-desc">Camarón, pescado y verduras en la misma brocheta.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Filete a la diabla</span><span class="tag alt">$23</span></div>
+            <p class="item-desc">Picante ajustable. Dígale a quien conteste qué tan picante lo quiere.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" id="familia">
+        <div class="menu-head">
+          <h2>Para la familia</h2>
+          <span class="menu-from">Desde $60</span>
+        </div>
+        <div class="menu-meta">
+          <div>
+            <span class="lbl">Lo que incluye</span>
+            <p>Charolas grandes de mariscos surtidos para llevar a casa o a una reunión.</p>
+          </div>
+          <div>
+            <span class="lbl">Cuándo pedirlo</span>
+            <p>Cumpleaños, bautizos o cualquier reunión familiar. Avísenos con un día de anticipación.</p>
+          </div>
+        </div>
+        <div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Charola chica — rinde 4 a 5</span><span class="tag">$60</span></div>
+            <p class="item-desc">Surtido de cócteles, tostadas y pescado, pensado para una mesa chica.</p>
+          </div>
+          <div class="catch-row">
+            <div class="catch-row-top"><span class="item-name">Charola grande — rinde 8 a 10</span><span class="tag alt">$95</span></div>
+            <p class="item-desc">La misma variedad, en cantidad para una reunión completa.</p>
+          </div>
+        </div>
+        <p class="menu-note">Con un día de anticipación le decimos exactamente cuánto rinde cada tamaño según los invitados.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="wave-rule on-dark" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 C 20 1 30 13 50 7 C 70 1 80 13 100 7 C 120 1 130 13 150 7 C 170 1 180 13 200 7 C 220 1 230 13 250 7 C 270 1 280 13 300 7 C 320 1 330 13 350 7 C 370 1 380 13 400 7"/></svg>
+    <div class="wrap">
+      <h2>¿Ya sabe qué va a pedir?</h2>
+      <p class="measure" style="color:rgba(251,246,236,.82)">Llame y le contesta alguien de la cocina. Para charolas grandes, mejor con un día de anticipación.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550175">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+          Llamar (516) 555-0175
+        </a>
+        <a class="btn-line" href="contact.html">
+          Ver formulario de contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Mariscos El Puerto</div>
+        <p>Cócteles, caldos, ceviches y pescado entero, preparados cuando usted llama.</p>
+        <p><a href="tel:+15165550175">(516) 555-0175</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Escenas</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550175">Llamar (516) 555-0175</a></li>
+          <li><a href="sms:+15165550175">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550175">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+  Llamar (516) 555-0175
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

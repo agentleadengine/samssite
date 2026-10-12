@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Comfort Club — Heating &amp; Cooling on Long Island</title>
+<meta name="description" content="The Comfort Club — membership-style heating and cooling service on Long Island, NY. AC installation, furnace repair, ductless mini-splits, seasonal maintenance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- THESIS: Your home's comfort runs on a membership, not a panic call.
+     OWN-WORLD: Plush burgundy club lounge meets HVAC precision — gold dial, warm leather tones, thermostat as the hero object.
+     STORY: A thermostat set to the perfect temperature is the promise; the membership card is the proof.
+     FIRST VIEWPORT: Deep burgundy stage, a circular thermostat dial rendered in SVG with a gold needle settling into the comfort zone, flanked by a headline about year-round comfort and a membership-forward CTA. -->
+
+<div class="demo-ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">The Comfort Club</a>
+    <nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li class="nav-item-has-children">
+          <button class="nav-link nav-services-toggle" aria-expanded="false" aria-controls="servicesSubmenu">Services</button>
+          <ul class="services-submenu" id="servicesSubmenu">
+            <li><a href="services.html#ac-installation">AC Installation</a></li>
+            <li><a href="services.html#furnace-repair">Furnace Repair</a></li>
+            <li><a href="services.html#ductless-mini-splits">Ductless Mini-Splits</a></li>
+            <li><a href="services.html#seasonal-maintenance">Seasonal Maintenance Plans</a></li>
+            <li><a href="services.html#air-quality">Air Quality &amp; Filtration</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="work.html">Work</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="header-phone" href="tel:+16315550127">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (631) 555-0127
+    </a>
+    <button class="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" style="padding-top:calc(var(--header-h) + 80px); padding-bottom:80px;">
+    <div class="hero-grid">
+      <div class="hero-entrance">
+        <h1>Comfort is a<br>membership,<br>not a panic call.</h1>
+        <hr class="divider-rule">
+        <p class="lead">Heating and cooling on Long Island, handled before the first shiver or the first sweat. Join the club for priority seasonal service, flat-rate tune-ups, and a technician who already knows your system.</p>
+        <div class="cta-group" style="margin-top:28px;">
+          <a class="btn btn-gold" href="contact.html">Join the Club</a>
+          <a class="btn btn-outline" href="services.html">See the Services</a>
+        </div>
+        <p style="margin-top:20px;"><a class="text-cta" href="contact.html">Or call us at (631) 555-0127 &rarr;</a></p>
+      </div>
+      <div class="thermostat-wrap hero-entrance-delay">
+        <svg class="thermostat-svg" viewBox="0 0 320 320" role="img" aria-label="Thermostat dial set to 72 degrees">
+          <circle cx="160" cy="170" r="140" fill="#3D0F1C" stroke="#C9A961" stroke-width="3"/>
+          <circle cx="160" cy="170" r="118" fill="none" stroke="rgba(201,169,97,0.15)" stroke-width="1"/>
+          <!-- Tick marks -->
+          <g stroke="#C9A961" stroke-width="2" stroke-linecap="round">
+            <line x1="160" y1="48" x2="160" y2="62"/>
+            <line x1="98" y1="76" x2="106" y2="86" transform="rotate(-45 160 170)"/>
+            <line x1="62" y1="138" x2="76" y2="140" transform="rotate(-90 160 170)"/>
+            <line x1="98" y1="264" x2="106" y2="254" transform="rotate(-135 160 170)"/>
+            <line x1="160" y1="292" x2="160" y2="278" transform="rotate(180 160 170)"/>
+            <line x1="222" y1="264" x2="214" y2="254" transform="rotate(135 160 170)"/>
+            <line x1="258" y1="138" x2="244" y2="140" transform="rotate(90 160 170)"/>
+            <line x1="222" y1="76" x2="214" y2="86" transform="rotate(45 160 170)"/>
+          </g>
+          <!-- Temperature labels -->
+          <text x="160" y="80" text-anchor="middle" fill="#DDB87A" font-family="Marcellus, serif" font-size="16">90</text>
+          <text x="74" y="178" text-anchor="middle" fill="#DDB87A" font-family="Marcellus, serif" font-size="16">60</text>
+          <text x="246" y="178" text-anchor="middle" fill="#DDB87A" font-family="Marcellus, serif" font-size="16">80</text>
+          <text x="160" y="262" text-anchor="middle" fill="#DDB87A" font-family="Marcellus, serif" font-size="16">50</text>
+          <!-- Center display -->
+          <circle cx="160" cy="170" r="50" fill="#5C1A2B" stroke="#C9A961" stroke-width="1.5"/>
+          <text x="160" y="168" text-anchor="middle" fill="#DDB87A" font-family="Marcellus, serif" font-size="32">72&deg;</text>
+          <text x="160" y="190" text-anchor="middle" fill="#D4BFAE" font-family="Hanken Grotesk, sans-serif" font-size="10" letter-spacing="2">COMFORT</text>
+          <!-- Needle -->
+          <g class="thermostat-needle">
+            <line x1="160" y1="170" x2="160" y2="96" stroke="#C9A961" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="160" cy="170" r="6" fill="#C9A961"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof vignette -->
+  <section class="proof-section">
+    <div class="container">
+      <div class="proof-scene">
+        <svg width="180" height="180" viewBox="0 0 180 180" aria-hidden="true" flex-shrink:0>
+          <rect x="20" y="30" width="140" height="120" rx="6" fill="#E8D9C2" stroke="#C9A961" stroke-width="2"/>
+          <rect x="35" y="45" width="110" height="40" rx="4" fill="#5C1A2B"/>
+          <circle cx="55" cy="65" r="6" fill="#C9A961"/>
+          <rect x="75" y="58" width="55" height="14" rx="3" fill="#7A2D3F"/>
+          <rect x="35" y="100" width="50" height="40" rx="4" fill="#F5EDE0" stroke="#C9A961" stroke-width="1"/>
+          <rect x="95" y="100" width="50" height="40" rx="4" fill="#F5EDE0" stroke="#C9A961" stroke-width="1"/>
+          <line x1="60" y1="110" x2="60" y2="130" stroke="#5C1A2B" stroke-width="2"/>
+          <line x1="120" y1="110" x2="120" y2="130" stroke="#5C1A2B" stroke-width="2"/>
+          <!-- Air flow lines -->
+          <path d="M 50 160 Q 90 170 130 160" stroke="#C9A961" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M 50 168 Q 90 178 130 168" stroke="#C9A961" stroke-width="1.5" fill="none" opacity="0.3"/>
+        </svg>
+        <div class="proof-text">
+          <h2>The system that runs quietly is the one that was tuned.</h2>
+          <hr class="divider-rule">
+          <p class="lead">Most HVAC calls happen at the worst possible moment — the first cold night, the humidest afternoon. The Comfort Club flips that script. Members get two seasonal tune-ups, priority dispatch, and a technician who keeps notes on every unit in the house. You stop calling in a panic. You start calling ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services teaser -->
+  <section class="services-teaser">
+    <div class="container">
+      <h2>What we handle</h2>
+      <hr class="divider-rule">
+      <p class="lead" style="color:var(--ink-on-burgundy-soft); margin-bottom:40px;">Five core services, one club membership. Full details on the services page.</p>
+      <ul class="service-teaser-list">
+        <li>
+          <a href="services.html#ac-installation">
+            <h3>AC Installation</h3>
+            <p>New central air or a system swap, sized right for your home and installed clean.</p>
+            <span class="learn-more">Learn more &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#furnace-repair">
+            <h3>Furnace Repair</h3>
+            <p>Heat out? We diagnose fast and fix the actual problem, not just the symptom.</p>
+            <span class="learn-more">Learn more &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html#ductless-mini-splits">
+            <h3>Ductless Mini-Splits</h3>
+            <p>Targeted comfort for additions, garages, and rooms that never feel right.</p>
+            <span class="learn-more">Learn more &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Why-us strip -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <h2>Why members stay</h2>
+          <hr class="divider-rule">
+          <p>The Comfort Club isn't a discount club. It's a maintenance relationship. You pay one flat seasonal rate and get two full system tune-ups, priority booking ahead of weather events, and a technician who knows your equipment history by heart.</p>
+          <p>When something does break — and every system eventually does — you're not a stranger calling a dispatcher. You're a member, and you go to the front of the line.</p>
+          <div class="cta-group" style="margin-top:24px;">
+            <a class="btn btn-dark" href="contact.html">Become a Member</a>
+          </div>
+        </div>
+        <div class="membership-card">
+          <div class="membership-card-name">Comfort Club&trade; Membership</div>
+          <hr class="divider-rule">
+          <div class="membership-card-lines">
+            <div class="line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Two seasonal system tune-ups included
+            </div>
+            <div class="line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Priority dispatch — members go first
+            </div>
+            <div class="line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              No after-hours surcharge for members
+            </div>
+            <div class="line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              System history on file — no re-explaining
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="closing-cta">
+    <div class="container">
+      <h2>Ready to stop dreading the thermostat?</h2>
+      <p class="lead">Call (631) 555-0127 or reach out today. We'll walk you through how the membership works for your home.</p>
+      <div class="cta-group" style="justify-content:center;">
+        <a class="btn btn-gold" href="contact.html">Get in Touch</a>
+        <a class="text-cta" href="tel:+16315550127">(631) 555-0127</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <span class="footer-brand">The Comfort Club</span>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+16315550127">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (631) 555-0127
+  </a>
+</div>
+
+<script>
+(function(){
+  var ham = document.querySelector('.hamburger');
+  var menu = document.getElementById('navMenu');
+  var overlay = document.getElementById('navOverlay');
+  var subToggle = document.querySelector('.nav-services-toggle');
+  var subMenu = document.getElementById('servicesSubmenu');
+
+  function closeNav() {
+    ham.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    if (subToggle) subToggle.setAttribute('aria-expanded', 'false');
+    if (subMenu) subMenu.classList.remove('open');
+  }
+
+  ham.addEventListener('click', function() {
+    var expanded = ham.getAttribute('aria-expanded') === 'true';
+    ham.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+
+  overlay.addEventListener('click', closeNav);
+
+  if (subToggle) {
+    subToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var expanded = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', !expanded);
+      if (window.innerWidth <= 860) {
+        subMenu.classList.toggle('open');
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeNav();
+  });
+})();
+</script>
+</body>
+</html>

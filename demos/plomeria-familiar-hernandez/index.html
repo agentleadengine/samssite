@@ -1,0 +1,335 @@
+<!--
+THESIS: A tiled-and-copper barrio plumbing shop replaces the red-siren "24/7 emergency" template; the promise is calm, careful work explained in Spanish, not urgency.
+OWN-WORLD: Glazed verde-azulejo tile fields (grid grout texture, full palette of green/copper/cal-blanca) + stamped-copper pipe fittings as buttons, dividers and icon badges; Bricolage Grotesque display over Karla text.
+STORY: A neighbor sees the trade demonstrated first, believes this plomero is careful and speaks their language, and calls or texts the number that follows down the page.
+FIRST VIEWPORT: Full-bleed tiled verde-azulejo hero. Thesis headline, one-line promise and hours sit left; a copper valve-and-droplet scene sits right. A light call button and a copper text link anchor the bottom.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plomería La Familiar — El plomero de confianza de su barrio</title>
+<meta name="description" content="Plomería La Familiar: reparaciones de drenajes, calentadores de agua, fugas, llaves y líneas de alcantarillado, explicadas en español. Atendemos en Long Island.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="demo-ribbon" role="note">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <path class="line-art" d="M14 8v12a8 8 0 0 0 8 8h10" style="stroke-width:5;"/>
+        <circle cx="14" cy="8" r="4.5" fill="currentColor" stroke="none"/>
+        <circle cx="32" cy="28" r="4.5" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="brand__name">Plomería <strong>La Familiar</strong></span>
+    </a>
+
+    <a class="header-phone" href="tel:+16315550104" aria-label="Llamar al (631) 555-0104">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path class="line-art" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>
+      </svg>
+      <span class="header-phone__text">(631) 555-0104</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <svg class="icon nav-toggle__icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <g class="line-art"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></g>
+      </svg>
+      <svg class="icon nav-toggle__icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <g class="line-art"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></g>
+      </svg>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="services.html">Servicios</a>
+          <details class="submenu-details">
+            <summary aria-label="Mostrar lista de servicios">
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline class="line-art" points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <ul class="submenu">
+              <li><a href="services.html#destape-drenajes">Destape de Drenajes</a></li>
+              <li><a href="services.html#calentadores-agua">Calentadores de Agua</a></li>
+              <li><a href="services.html#deteccion-fugas">Detección y Reparación de Fugas</a></li>
+              <li><a href="services.html#instalacion-accesorios">Llaves y Accesorios</a></li>
+              <li><a href="services.html#lineas-alcantarillado">Líneas de Alcantarillado</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="work.html">Trabajos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero on-verde tile-field">
+    <div class="container hero__grid">
+      <div>
+        <h1 class="fs-display">El plomero de confianza de su barrio</h1>
+        <p class="hero__lead fs-lead">Reparaciones explicadas con calma, en español, desde la primera llamada hasta la última conexión.</p>
+        <div class="hero__actions">
+          <a class="btn btn--light btn--lg" href="tel:+16315550104">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="line-art" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Llamar ahora
+          </a>
+          <a class="text-link" href="services.html" style="color: var(--blanco-cal)">
+            Ver los servicios
+            <svg class="icon" viewBox="0 0 24 24" style="width:1em;height:1em" aria-hidden="true" focusable="false"><path class="line-art" d="M9 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p class="hero__hours muted" style="margin-top: var(--sp-4)">(631) 555-0104 · Lun–vie 8:00 a. m.–6:00 p. m. · Sáb 9:00 a. m.–2:00 p. m.</p>
+      </div>
+
+      <div class="hero__scene" aria-hidden="true">
+        <svg viewBox="0 0 300 360" style="--valve-origin:180px 140px">
+          <g class="line-art" style="stroke:rgba(250,247,241,0.12);">
+            <line x1="0" y1="80" x2="300" y2="80"/>
+            <line x1="0" y1="180" x2="300" y2="180"/>
+            <line x1="0" y1="280" x2="300" y2="280"/>
+            <line x1="75" y1="0" x2="75" y2="360"/>
+            <line x1="225" y1="0" x2="225" y2="360"/>
+          </g>
+          <line class="line-art" x1="180" y1="18" x2="180" y2="110" style="stroke:var(--cobre-500); stroke-width:10;"/>
+          <line class="line-art" x1="180" y1="172" x2="180" y2="255" style="stroke:var(--cobre-500); stroke-width:10;"/>
+          <line class="line-art" x1="180" y1="255" x2="240" y2="255" style="stroke:var(--cobre-500); stroke-width:10;"/>
+          <circle cx="180" cy="255" r="8" fill="var(--cobre-500)" stroke="none"/>
+          <circle cx="240" cy="255" r="9" fill="none" stroke="var(--cobre-300)" stroke-width="5"/>
+          <circle cx="180" cy="140" r="32" fill="var(--verde-800)" stroke="var(--cobre-500)" stroke-width="5"/>
+          <g class="valve-handle" style="transform-origin: 180px 140px;">
+            <rect x="152" y="134" width="56" height="12" rx="6" fill="var(--cobre-300)" stroke="none"/>
+          </g>
+          <path class="droplet" d="M112 56c0 13-11 21-11 34a11 11 0 0 0 22 0c0-13-11-21-11-34Z" fill="var(--on-verde-muted)" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="container proof__grid">
+      <div class="proof__scene" aria-hidden="true">
+        <svg viewBox="0 0 300 240">
+          <g class="line-art" style="stroke:rgba(250,247,241,0.14);">
+            <line x1="0" y1="60" x2="300" y2="60"/>
+            <line x1="0" y1="180" x2="300" y2="180"/>
+            <line x1="100" y1="0" x2="100" y2="240"/>
+            <line x1="200" y1="0" x2="200" y2="240"/>
+          </g>
+          <line class="line-art" x1="20" y1="120" x2="280" y2="120" style="stroke:var(--cobre-500); stroke-width:9;"/>
+          <rect x="128" y="103" width="44" height="34" rx="6" fill="var(--cobre-300)" stroke="none"/>
+          <line x1="141" y1="103" x2="141" y2="137" stroke="var(--verde-800)" stroke-width="2.5"/>
+          <line x1="159" y1="103" x2="159" y2="137" stroke="var(--verde-800)" stroke-width="2.5"/>
+          <g class="line-art" style="stroke:var(--blanco-cal);" transform="translate(150,60) rotate(35)">
+            <rect x="-8" y="-6" width="86" height="14" rx="7"/>
+            <circle cx="88" cy="1" r="17" fill="none" stroke-width="8"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="fs-h2">Una conexión bien hecha no debería notarse</h2>
+        <p class="measure" style="margin-top: var(--sp-3)">Cambiamos el acople, revisamos la presión y probamos la línea antes de irnos. Nada de retoques a medias ni fugas escondidas detrás de la pared.</p>
+        <span class="caption">Ilustración de una reparación típica, no una foto real.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser on-verde-tint">
+    <div class="container">
+      <div class="teaser__head">
+        <div>
+          <h2 class="fs-h2">Lo que reparamos</h2>
+          <p class="muted" style="margin-top: 0.5em">Del drenaje que no baja a la línea principal. Estos son los problemas que más vemos en el barrio.</p>
+        </div>
+        <a class="text-link" href="services.html" style="color: var(--verde-700)">
+          Ver todos los servicios
+          <svg class="icon" viewBox="0 0 24 24" style="width:1em;height:1em" aria-hidden="true" focusable="false"><path class="line-art" d="M9 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="teaser__list" style="margin-top: var(--sp-5)">
+        <a class="teaser__item" href="services.html#destape-drenajes">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g class="line-art">
+                <circle cx="12" cy="7.2" r="4.2"/>
+                <line x1="12" y1="3" x2="12" y2="4.9"/>
+                <line x1="12" y1="9.5" x2="12" y2="11.4"/>
+                <line x1="7.9" y1="7.2" x2="9.8" y2="7.2"/>
+                <line x1="14.2" y1="7.2" x2="16.1" y2="7.2"/>
+                <path d="M12 13.5c2.2 0 2.2 2 0 2s-2.2 2 0 2 2.2 2 0 2"/>
+              </g>
+            </svg>
+          </span>
+          <h3>Destape de Drenajes</h3>
+          <p>Cocina, baño o patio: liberamos el bloqueo sin dañar la tubería.</p>
+          <span class="text-link">Ver detalles</span>
+        </a>
+
+        <a class="teaser__item" href="services.html#calentadores-agua">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g class="line-art">
+                <rect x="7" y="4" width="10" height="16" rx="4"/>
+                <line x1="9" y1="2" x2="9" y2="4"/>
+                <line x1="15" y1="2" x2="15" y2="4"/>
+                <circle cx="12" cy="13" r="2.4"/>
+                <line x1="12" y1="13" x2="13.3" y2="11.8"/>
+              </g>
+            </svg>
+          </span>
+          <h3>Calentadores de Agua</h3>
+          <p>Reparación e instalación, de tanque o sin tanque.</p>
+          <span class="text-link">Ver detalles</span>
+        </a>
+
+        <a class="teaser__item" href="services.html#deteccion-fugas">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g class="line-art">
+                <path d="M3.5 9h9"/>
+                <path d="M3.5 9c0-2.2 1.8-3.5 3.6-3.5"/>
+                <circle cx="16.3" cy="13.6" r="4"/>
+                <line x1="19.3" y1="16.6" x2="21.5" y2="18.8"/>
+              </g>
+            </svg>
+          </span>
+          <h3>Detección de Fugas</h3>
+          <p>Localizamos la fuga exacta, sin romper de más.</p>
+          <span class="text-link">Ver detalles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <h2 class="fs-h2">Por qué las familias del barrio nos llaman</h2>
+      <div class="why__list">
+        <div class="why__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g class="line-art"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.6-.32-3.7-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/></g>
+          </svg>
+          <div>
+            <h3>Hablamos su idioma</h3>
+            <p>La comunicación es clara, sin tecnicismos ni prisa.</p>
+          </div>
+        </div>
+        <div class="why__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g class="line-art"><circle cx="12" cy="12" r="9"/><polyline points="12 7.5 12 12 15.2 14"/></g>
+          </svg>
+          <div>
+            <h3>Le explicamos antes de empezar</h3>
+            <p>Usted sabe qué vamos a hacer y por qué, antes de tocar una tubería.</p>
+          </div>
+        </div>
+        <div class="why__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g class="line-art"><path d="M12 20.5s-7-4.2-7-9.8a4.7 4.7 0 0 1 7-4.1 4.7 4.7 0 0 1 7 4.1c0 5.6-7 9.8-7 9.8Z"/></g>
+          </svg>
+          <div>
+            <h3>Cuidamos su casa como la nuestra</h3>
+            <p>Protegemos pisos y paredes, y dejamos todo limpio al terminar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-cta on-verde tile-field">
+    <div class="container">
+      <h2 class="fs-h2">¿Un problema de plomería? Hablemos.</h2>
+      <p class="closing-cta__phone">(631) 555-0104</p>
+      <div class="closing-cta__actions">
+        <a class="btn btn--light btn--lg" href="tel:+16315550104">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="line-art" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Llamar ahora
+        </a>
+        <a class="btn btn--outline-light btn--lg" href="sms:+16315550104">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="line-art" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+          Enviar mensaje de texto
+        </a>
+      </div>
+      <p class="closing-cta__hours">Lun–vie 8:00 a. m.–6:00 p. m. · Sáb 9:00 a. m.–2:00 p. m.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="call-bar">
+  <a class="call-bar__call" href="tel:+16315550104">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="line-art" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    Llamar ahora
+  </a>
+  <a class="call-bar__sms" href="sms:+16315550104">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="line-art" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+    Mensaje
+  </a>
+</div>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__name">Plomería <strong>La Familiar</strong></span>
+      <p>(631) 555-0104</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Enlaces del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="services.html">Servicios</a>
+      <a href="work.html">Trabajos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <div class="site-footer__legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web" target="_blank" rel="noopener noreferrer">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    var closeNav = function () {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+    };
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) closeNav();
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.matchMedia('(max-width: 767px)').matches) closeNav();
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

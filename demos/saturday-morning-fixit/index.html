@@ -1,0 +1,363 @@
+<!--
+  DIRECTION CONTRACT — Saturday Morning Fix-It
+  THESIS: Book a Saturday morning, hand over the list, and it's cleared before lunch — one visit, one honest window, none of the dollar-a-minute clock-watching a handyman call usually comes with.
+  OWN-WORLD: A sunlit garage workbench on a Saturday morning — the field is spent in full sunny yellow, slate grounds the tools and the type underneath it, and a single paper clipboard checklist, wire clip and all, is the object the whole site keeps returning to: it stands in for the list, the promise, and the proof at once.
+  STORY: hero opens on the clipboard settling onto the bench as the first box gets checked, the morning about to start -> a proof vignette walks an actual Saturday hour by hour, knock to truck-packed -> three services hang off the list like the next boxes waiting to be checked -> a why-us band restates the promise in the same checklist grammar -> the close asks for the next Saturday morning, phone number right there to claim it.
+  FIRST VIEWPORT: a full sunny-yellow field, the slate header rail down the left at desktop width (across the top on mobile), the clipboard mid-settle with its first checkmark drawing itself in, headline plus call and text CTAs before any scroll.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saturday Morning Fix-It — Handyman, Long Island NY | Demo Site</title>
+<meta name="description" content="Saturday Morning Fix-It books one home per morning for small repairs, furniture assembly, TV and shelf mounting, door and window fixes, and punch-list projects. Long Island, NY. Demo site — (631) 555-0105.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M7.8 12.4l3 3 5.8-6.2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.7-2.1 1.6a11.4 11.4 0 0 0 5.6 5.6l1.6-2.1 3.7 1.3V17.5c0 1.1-.9 2-2 1.9C10.9 19 5 13.1 4.6 6.1 4.5 5 5.4 4 7 4Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.2a3.8 3.8 0 0 0-5.1 4.9L4.3 16.2a1.7 1.7 0 0 0 2.4 2.4l5.1-5.1a3.8 3.8 0 0 0 4.9-5.1l-2.6 2.6-2-2 2.4-2.8Z"/></symbol>
+<symbol id="i-hexkey" viewBox="0 0 24 24"><path d="M12 3.2L19.1 7.3L19.1 15.5L12 19.6L4.9 15.5L4.9 7.3Z"/><circle cx="12" cy="11.4" r="3.2"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="9" rx="1.2"/><path d="M6.5 17.5h6M9.5 14v3.5"/><path d="M18.4 7.6h3.3M20 6v3.2"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo site</div>
+
+<header class="rail" id="site-rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <span class="word"><b>Saturday Morning Fix-It</b><span>Long Island, NY</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+16315550105">
+      <span style="display:flex;align-items:center;gap:10px"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>(631) 555-0105</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="current" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#small-repairs">Small repairs</a></li>
+            <li><a href="services.html#assembly">Furniture assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; shelf mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; window fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-list projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk">
+        <b>Hours</b>
+        Mon&ndash;Fri 7am&ndash;6pm<br>Sat 7am&ndash;2pm &middot; Sun closed
+      </div>
+      <div class="blk">
+        <b>Serving</b>
+        Long Island, NY
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+<main>
+
+  <!-- ===== hero ===== -->
+  <section class="hero">
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="pad hero-in">
+      <div class="hero-copy">
+        <h1>Give us a morning. Get your list back, checked off.</h1>
+        <p class="sub">Small repairs, furniture assembly, TV and shelf mounting, door and window fixes, the punch list you keep meaning to get to &mdash; book one morning and it&rsquo;s handled before lunch.</p>
+        <div class="hero-cta">
+          <a class="btn btn-fill" href="tel:+16315550105">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+            Call (631) 555-0105
+          </a>
+          <a class="btn btn-text" href="services.html">
+            See what&rsquo;s included
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+        <p class="hero-note">
+          <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+          Morning bookings, Mon&ndash;Sat &middot; <a href="sms:+16315550105">prefer to text?</a>
+        </p>
+      </div>
+      <div class="hero-art">
+        <div class="clipboard-wrap">
+          <svg class="clipboard" viewBox="0 0 240 300" role="img" aria-label="A clipboard checklist for the morning, with the first box just getting checked off and three more still waiting">
+            <rect x="88" y="0" width="64" height="27" rx="9" fill="var(--slate-900)"/>
+            <rect x="10" y="19" width="220" height="271" rx="16" fill="var(--white)" stroke="var(--slate-900)" stroke-width="3"/>
+            <text x="120" y="52" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="var(--ink-soft)">TODAY&#8217;S LIST</text>
+            <line x1="34" y1="65" x2="206" y2="65" stroke="var(--paper-line)" stroke-width="2"/>
+            <rect x="34" y="85" width="23" height="23" rx="5" fill="var(--paper)" stroke="var(--slate-900)" stroke-width="2.5"/>
+            <path class="draw" d="M39.5 97l4.5 4.5 9-10.5" fill="none" stroke="var(--sun-dk)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="68" y="92" width="150" height="8" rx="4" fill="var(--paper-line)"/>
+            <rect x="34" y="131" width="23" height="23" rx="5" fill="none" stroke="var(--paper-line-strong)" stroke-width="2.5"/>
+            <rect x="68" y="138" width="120" height="8" rx="4" fill="var(--paper-line)"/>
+            <rect x="34" y="177" width="23" height="23" rx="5" fill="none" stroke="var(--paper-line-strong)" stroke-width="2.5"/>
+            <rect x="68" y="184" width="132" height="8" rx="4" fill="var(--paper-line)"/>
+            <rect x="34" y="223" width="23" height="23" rx="5" fill="none" stroke="var(--paper-line-strong)" stroke-width="2.5"/>
+            <rect x="68" y="230" width="98" height="8" rx="4" fill="var(--paper-line)"/>
+            <g transform="translate(146,258) rotate(34)">
+              <rect x="0" y="0" width="15" height="7" rx="3" fill="var(--paper-line-strong)"/>
+              <rect x="14" y="0" width="52" height="7" fill="var(--sun-dk)"/>
+              <path d="M66 0 L78 3.5 L66 7Z" fill="var(--slate-900)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== proof vignette: the Saturday timeline ===== -->
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2>Here&rsquo;s what a Saturday actually looks like</h2>
+        <p>One home, one morning, one list. This is the shape of it, start to finish.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-row">
+          <span class="t">7:45 AM</span>
+          <div>
+            <h3>We knock, you walk us through the list</h3>
+            <p>Whatever you texted or called in gets confirmed in person before anything comes off the truck.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <span class="t">8:00 AM</span>
+          <div>
+            <h3>First item comes off the list</h3>
+            <p>We start at the top and work down. Watch, work from home, or head out &mdash; your call.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <span class="t">10:30 AM</span>
+          <div>
+            <h3>Anything we find gets flagged, not added quietly</h3>
+            <p>If something bigger turns up mid-list, we stop and tell you before it becomes part of the morning.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <span class="t">Before noon</span>
+          <div>
+            <h3>Truck&rsquo;s packed, list is checked, we&rsquo;re out</h3>
+            <p>One morning, start to finish. No second visit to schedule around.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== services teaser ===== -->
+  <section class="band">
+    <div class="pad">
+      <div class="head">
+        <h2>Three things people call us for most</h2>
+        <p>The full list of five &ndash; what&rsquo;s included and when you need it &ndash; lives on the services page.</p>
+      </div>
+      <div class="list-card">
+        <a class="list-row" href="services.html#small-repairs">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+          <span>
+            <h3>Small repairs</h3>
+            <p>The stuff that&rsquo;s minor until it&rsquo;s on the list five times &ndash; loose hinges, sticking drawers, drywall dings.</p>
+          </span>
+          <svg class="icon go" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+        <a class="list-row" href="services.html#assembly">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-hexkey"></use></svg></span>
+          <span>
+            <h3>Furniture assembly</h3>
+            <p>Flat-pack boxes turned into furniture that doesn&rsquo;t wobble, same morning it arrives.</p>
+          </span>
+          <svg class="icon go" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+        <a class="list-row" href="services.html#mounting">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg></span>
+          <span>
+            <h3>TV &amp; shelf mounting</h3>
+            <p>Into the stud, checked level, cords tucked out of sight.</p>
+          </span>
+          <svg class="icon go" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+      </div>
+      <a class="teaser-more" href="services.html">
+        See all five services
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== why-us ===== -->
+  <section class="band why">
+    <div class="pad">
+      <div class="head on-dark">
+        <h2>Why Saturday morning works</h2>
+      </div>
+      <div class="check-list on-dark">
+        <div class="check-item">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <div>
+            <h3>One morning, not a window</h3>
+            <p>You get an actual time, not a four-hour guess. We show up when we say.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <div>
+            <h3>The whole list, one visit</h3>
+            <p>Small stuff adds up. Bring the whole list and we clear what we can in the morning we&rsquo;ve got.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <div>
+            <h3>Nothing added once we&rsquo;re there</h3>
+            <p>If something changes once we&rsquo;re inside a wall, we stop and tell you before it becomes part of the job.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          <div>
+            <h3>Out before your afternoon starts</h3>
+            <p>We work mornings on purpose. You get the rest of your Saturday back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== close cta ===== -->
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Got a Saturday open?</h2>
+      <p>Call and read us the list, or text it over &ndash; either way, you&rsquo;ll have a morning on the calendar, not a maybe.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550105">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0105
+        </a>
+        <a class="btn btn-text" href="contact.html">
+          Get in touch
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pad">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <b>Saturday Morning Fix-It</b>
+      </a>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="tel:+16315550105">(631) 555-0105</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disc">
+      Saturday Morning Fix-It &middot; Serving Long Island, NY &middot; <a href="tel:+16315550105">(631) 555-0105</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+16315550105">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Saturday Morning Fix-It<span class="s">(631) 555-0105</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(focusBtn){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+    if(focusBtn && hamburger){ hamburger.focus(); }
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(true); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeMenu(false); }
+  });
+})();
+</script>
+
+</body>
+</html>

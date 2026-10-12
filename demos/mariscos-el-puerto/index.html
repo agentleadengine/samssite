@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--
+  DIRECTION CONTRACT
+  THESIS: Nothing on the plate was cooked before you called — the catch comes off the boat at
+    dawn, and your order is the reason the fire gets lit.
+  OWN-WORLD: A harbor at first light — deep navy water and sky, a coral sunrise line low on the
+    horizon, a warm ivory "market paper" ground for reading passages, and one recurring tide-line
+    rule marking the turn into each page's close. Crate tags and hanging tickets stand in for
+    prices and labels.
+  STORY: The boat ties up and the ice crate comes off the dock → the plancha only fires once the
+    phone rings → six ways to order it → the family behind the counter and the streets they cover
+    → one call locks in the time.
+  FIRST VIEWPORT: A full-bleed dawn-harbor scene — a boat at the dock mid-unload, gulls, a coral
+    sunrise glow — sits behind the headline, lede, and a call + "ver la carta" pair, so the trade
+    is visible before any scroll.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mariscos El Puerto | Marisquería en Long Island, NY</title>
+<meta name="description" content="Mariscos El Puerto: cócteles, caldos, ceviches, pescado entero y charolas para llevar o para comer aquí en Long Island, NY. Sitio de demostración. Llame al (516) 555-0175.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Mariscos El Puerto, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--mar-900)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--marea)" stroke-width="1.4" opacity=".55"/>
+        <path d="M8 26c3-4.4 7-4.4 10 0s7 4.4 10 0" fill="none" stroke="var(--espuma)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M8 19.5c3-4.2 7-4.2 10 0s7 4.2 10 0" fill="none" stroke="var(--marea)" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+        <circle cx="23" cy="12.5" r="3.6" fill="var(--coral)"/>
+      </svg>
+      <span class="brand">Mariscos El Puerto<small>Marisquería</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550175">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z" fill="#fff"/></svg>
+      (516) 555-0175
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#cocteles">Cócteles de mariscos</a></li>
+          <li><a href="services.html#caldos">Caldos y sopas</a></li>
+          <li><a href="services.html#pescado">Pescado entero</a></li>
+          <li><a href="services.html#tostadas">Tostadas y ceviches</a></li>
+          <li><a href="services.html#parrilla">A la parrilla</a></li>
+          <li><a href="services.html#familia">Para la familia</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Escenas</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550175">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+      Llamar (516) 555-0175
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">Del puerto <br><em>a su mesa</em></h1>
+      <p class="lead reveal reveal-2">Compramos el marisco cada mañana y su plato empieza cuando usted llama, no antes. Cócteles, caldos, ceviches, pescado entero y charolas, para comer aquí o para llevar.</p>
+      <div class="cta-row reveal reveal-2">
+        <a class="btn" href="tel:+15165550175">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+          Llamar (516) 555-0175
+        </a>
+        <a class="btn-line" href="services.html">
+          Ver la carta
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-art reveal reveal-3">
+        <svg viewBox="0 0 560 320" role="img" aria-label="Ilustración de un bote atracado en el muelle al amanecer, con una caja de hielo a medio descargar y gaviotas en el cielo">
+          <defs>
+            <radialGradient id="sol" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#FF8A63"/>
+              <stop offset="55%" stop-color="#FF6A45" stop-opacity=".55"/>
+              <stop offset="100%" stop-color="#FF6A45" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#153D60"/>
+              <stop offset="100%" stop-color="#0D2C48"/>
+            </linearGradient>
+          </defs>
+
+          <circle class="glint-a" cx="430" cy="128" r="100" fill="url(#sol)"/>
+
+          <g class="glint-b" stroke="#FBF6EC" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".8">
+            <path d="M78 46c4-5 10-5 14 0"/>
+          </g>
+          <g class="glint-c" stroke="#FBF6EC" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".7">
+            <path d="M240 30c4-5 10-5 14 0"/>
+          </g>
+          <g class="glint-a" stroke="#FBF6EC" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".75">
+            <path d="M480 58c4-5 10-5 14 0"/>
+          </g>
+
+          <path d="M0 172h560v148H0Z" fill="url(#agua)"/>
+          <g stroke="#2FA6A0" stroke-width="1.4" opacity=".28" stroke-linecap="round">
+            <path d="M20 210h90M150 210h60M250 210h140M420 210h120"/>
+            <path d="M40 240h70M140 240h110M290 240h100M420 240h100"/>
+            <path d="M10 270h120M170 270h90M300 270h80M420 270h110"/>
+          </g>
+
+          <rect x="30" y="150" width="500" height="24" rx="3" fill="var(--mar-700)" stroke="var(--mar-950)" stroke-width="2"/>
+          <g stroke="var(--mar-950)" stroke-width="1.4" opacity=".5">
+            <path d="M70 150v24M110 150v24M150 150v24M190 150v24M230 150v24M270 150v24M310 150v24M350 150v24M390 150v24M430 150v24M470 150v24"/>
+          </g>
+          <rect x="30" y="150" width="500" height="4" fill="var(--espuma)" opacity=".18"/>
+
+          <g stroke="var(--mar-950)" stroke-width="9" stroke-linecap="round">
+            <path d="M60 174v58"/>
+            <path d="M180 174v66"/>
+            <path d="M320 174v58"/>
+            <path d="M460 174v66"/>
+            <path d="M500 174v58"/>
+          </g>
+
+          <g class="boat-bob">
+            <path d="M62 152c0-14 24-16 60-16s58 4 66 16c-10 18-34 26-63 26s-55-8-63-26Z" fill="var(--coral)" stroke="var(--coral-hover)" stroke-width="2"/>
+            <rect x="96" y="104" width="52" height="34" rx="5" fill="var(--espuma)" stroke="var(--mar-950)" stroke-width="2"/>
+            <rect x="102" y="112" width="16" height="14" rx="2" fill="var(--marea)" opacity=".6"/>
+            <line x1="122" y1="104" x2="122" y2="72" stroke="var(--mar-950)" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M122 72 122 84 138 78Z" fill="var(--marea)"/>
+            <circle cx="80" cy="146" r="5" fill="var(--espuma)" opacity=".85"/>
+            <circle cx="150" cy="148" r="4" fill="var(--espuma)" opacity=".7"/>
+          </g>
+
+          <g>
+            <rect x="352" y="120" width="56" height="32" rx="3" fill="var(--espuma-2)" stroke="var(--mar-950)" stroke-width="2"/>
+            <path d="M352 120l10-10h36l10 10Z" fill="var(--mar-700)" stroke="var(--mar-950)" stroke-width="2"/>
+            <g fill="var(--coral)" stroke="var(--coral-hover)" stroke-width="1.2">
+              <ellipse cx="372" cy="136" rx="11" ry="6" transform="rotate(-12 372 136)"/>
+              <ellipse cx="390" cy="139" rx="10" ry="5.6" transform="rotate(10 390 139)"/>
+            </g>
+            <g fill="var(--espuma)" stroke="var(--marea)" stroke-width="1" opacity=".9">
+              <rect x="360" y="126" width="7" height="7" transform="rotate(18 363 130)"/>
+              <rect x="396" y="128" width="6" height="6" transform="rotate(-14 399 131)"/>
+            </g>
+          </g>
+          <rect x="424" y="128" width="52" height="24" rx="3" fill="var(--mar-700)" stroke="var(--mar-950)" stroke-width="2"/>
+          <rect x="298" y="132" width="46" height="20" rx="3" fill="var(--mar-700)" stroke="var(--mar-950)" stroke-width="2"/>
+
+          <g fill="none" stroke="var(--espuma-2)" stroke-width="2" opacity=".55">
+            <circle cx="46" cy="166" r="12"/>
+            <circle cx="46" cy="166" r="8"/>
+            <circle cx="46" cy="166" r="4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap manifest">
+    <div class="manifest-in">
+      <div class="manifest-item">
+        <div class="k">Cocina</div>
+        <div class="v">Martes a domingo</div>
+        <div class="n">Lunes cerrado. Última orden 30 minutos antes de cerrar.</div>
+      </div>
+      <div class="manifest-item">
+        <div class="k">Pedidos</div>
+        <div class="v">Por teléfono</div>
+        <div class="n">Para comer aquí o para llevar. Le decimos el tiempo al tomar su orden.</div>
+      </div>
+      <div class="manifest-item">
+        <div class="k">Zona</div>
+        <div class="v">Long Island, NY</div>
+        <div class="n">Charolas grandes con un día de anticipación.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band-light spotlight-section">
+    <div class="wrap spotlight-grid">
+      <div class="spotlight-art">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de un pescado entero y una brocheta de camarón sobre la plancha, con flama y humo subiendo">
+          <ellipse cx="200" cy="252" rx="150" ry="14" fill="var(--mar-950)" opacity=".08"/>
+          <rect x="108" y="208" width="8" height="42" rx="3" fill="var(--mar-800)"/>
+          <rect x="284" y="208" width="8" height="42" rx="3" fill="var(--mar-800)"/>
+          <g fill="var(--coral)">
+            <path d="M150 246c-10-10-6-22 2-28-2 10 4 12 6 6 4 8 2 18-8 22Z"/>
+          </g>
+          <g fill="var(--coral-hover)">
+            <path d="M200 250c-11-11-7-24 2-30-2 11 4 13 7 6 4 9 2 20-9 24Z"/>
+          </g>
+          <g fill="var(--coral)">
+            <path d="M250 246c-10-10-6-22 2-28-2 10 4 12 6 6 4 8 2 18-8 22Z"/>
+          </g>
+          <rect x="90" y="158" width="220" height="52" rx="10" fill="var(--mar-800)" stroke="var(--mar-950)" stroke-width="2.4"/>
+          <rect x="100" y="164" width="200" height="10" rx="5" fill="var(--mar-700)" opacity=".7"/>
+          <g stroke="var(--mar-950)" stroke-width="1.2" opacity=".4">
+            <path d="M110 190h190M110 200h190"/>
+          </g>
+          <g>
+            <path d="M118 190c0-11 20-18 42-18s40 7 40 18c-8 12-24 17-40 17s-34-5-42-17Z" fill="var(--coral)" stroke="var(--coral-hover)" stroke-width="2"/>
+            <path d="M200 172l18-9v18Z" fill="var(--coral-hover)"/>
+            <circle cx="132" cy="184" r="2.6" fill="var(--mar-950)"/>
+            <g stroke="var(--mar-950)" stroke-width="1.6" opacity=".5">
+              <path d="M144 176l8 16M158 174l9 18M172 173l9 19M186 174l8 17"/>
+            </g>
+          </g>
+          <g transform="translate(228 172)">
+            <line x1="0" y1="6" x2="66" y2="6" stroke="var(--mar-950)" stroke-width="2.4" stroke-linecap="round"/>
+            <g fill="var(--coral-hover)" stroke="var(--coral)" stroke-width="1">
+              <ellipse cx="12" cy="6" rx="9" ry="5.6" transform="rotate(-10 12 6)"/>
+              <ellipse cx="32" cy="6" rx="9" ry="5.6" transform="rotate(8 32 6)"/>
+              <ellipse cx="52" cy="6" rx="9" ry="5.6" transform="rotate(-6 52 6)"/>
+            </g>
+          </g>
+          <g stroke="var(--tinta-suave)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".55">
+            <path d="M150 156c-7-13 8-17 1-30"/>
+          </g>
+          <g stroke="var(--tinta-suave)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".5">
+            <path d="M200 152c-7-14 8-18 1-32"/>
+          </g>
+          <g stroke="var(--tinta-suave)" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".45">
+            <path d="M258 156c-7-13 8-17 1-30"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2>El fuego se enciende cuando cuelga el teléfono</h2>
+        <p class="measure">Nada está en la plancha antes de tiempo. Camarón, pescado y brochetas se ponen a fuego cuando su orden entra a la cocina, así que el tiempo que le damos por teléfono es el tiempo real que va a esperar, no una promesa apurada.</p>
+        <a class="btn-line on-light" href="about.html">
+          Cómo trabajamos
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-light-2 section-tight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Vea la carta completa</h2>
+      </div>
+      <div class="catch-board">
+        <a class="catch-board-row" href="services.html#cocteles">
+          <span>
+            <span class="name">Cócteles de mariscos</span>
+            <span class="desc">Camarón, pulpo o mixto, con el jugo de tomate de la casa.</span>
+          </span>
+          <span class="go">Desde $16 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="catch-board-row" href="services.html#pescado">
+          <span>
+            <span class="name">Pescado entero</span>
+            <span class="desc">Mojarra o robalo, frito o a la plancha, como usted lo pida.</span>
+          </span>
+          <span class="go">Desde $24 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="catch-board-row" href="services.html#familia">
+          <span>
+            <span class="name">Para la familia</span>
+            <span class="desc">Charolas grandes para llevar a casa o a una reunión.</span>
+          </span>
+          <span class="go">Desde $60 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-light process-section">
+    <div class="wrap process-grid">
+      <div>
+        <h2>Tres cosas que cuidamos</h2>
+        <p class="measure">No hay atajos entre el puerto y su mesa. Así es como se arma cada orden, todos los días.</p>
+      </div>
+      <ul class="process-list">
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M4 13c3-6 8-9 10-9s7 3 10 9c-3 5-7 8-10 8s-7-3-10-8Z"/><circle cx="14" cy="13" r="2.4" fill="currentColor" stroke="none"/><path d="M4 13c1.4 1 2.8 1 4 0M24 13c-1.4 1-2.8 1-4 0"/></svg>
+          </span>
+          <div>
+            <strong>Compra del día</strong>
+            <span>El marisco y el pescado llegan por la mañana, y la carta se arma con lo que llegó. Si algo se acaba, se lo decimos de frente al llamar.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 4v3M8 6l1.6 2.4M20 6l-1.6 2.4"/><path d="M6 24c0-7 3.6-11 8-11s8 4 8 11Z"/><path d="M6 24h16"/></svg>
+          </span>
+          <div>
+            <strong>Nada espera bajo el calor</strong>
+            <span>Su plato empieza cuando cuelga el teléfono. Le damos un tiempo real porque ahí es cuando se prende la plancha, no antes.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M9 11h10l-1.4 12a2 2 0 0 1-2 1.8h-3.2a2 2 0 0 1-2-1.8Z"/><path d="M9 11c0-4 2.2-7 5-7s5 3 5 7"/><path d="M6 11h16"/></svg>
+          </span>
+          <div>
+            <strong>Salsas de la casa</strong>
+            <span>El caldo, las salsas y el jugo de los cócteles se preparan aquí mismo cada mañana, con receta de casa.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="wave-rule on-dark" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 C 20 1 30 13 50 7 C 70 1 80 13 100 7 C 120 1 130 13 150 7 C 170 1 180 13 200 7 C 220 1 230 13 250 7 C 270 1 280 13 300 7 C 320 1 330 13 350 7 C 370 1 380 13 400 7"/></svg>
+    <div class="wrap closing-grid">
+      <div>
+        <h2>¿Le apartamos su orden?</h2>
+        <p class="measure" style="color:rgba(251,246,236,.82)">Llame y le decimos el tiempo exacto en ese momento. Para charolas grandes, mejor con un día de anticipación.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550175">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+            Llamar (516) 555-0175
+          </a>
+          <a class="btn-line" href="services.html">
+            Ir a la carta
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <ul class="hours-mini">
+          <li><span class="d">Martes a jueves</span><span class="h">11 a.m. – 9 p.m.</span></li>
+          <li><span class="d">Viernes</span><span class="h">11 a.m. – 10 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="h">10 a.m. – 10 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="h">10 a.m. – 8 p.m.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Mariscos El Puerto</div>
+        <p>Cócteles, caldos, ceviches y pescado entero, preparados cuando usted llama.</p>
+        <p><a href="tel:+15165550175">(516) 555-0175</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Escenas</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550175">Llamar (516) 555-0175</a></li>
+          <li><a href="sms:+15165550175">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550175">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--tinta)"><path d="M9 3.5h2.2l1.4 3.7-2.1 1.8a10.4 10.4 0 0 0 4.6 4.6l1.8-2.1 3.7 1.4V15c0 1.1-.9 2-2 1.9A14.6 14.6 0 0 1 5.1 5.6c-.1-1.1.8-2 1.9-2Z"/></svg>
+  Llamar (516) 555-0175
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Off the Griddle — A Few Plates | Maple Street Diner</title>
+<meta name="description" content="A few of the plates that come off the Maple Street Diner griddle most days, illustrated for this demo. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">Demo Site</div>
+
+<div class="utility"><div class="wrap"><span>Long Island, NY &middot; Breakfast Served All Day</span></div></div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Maple Street Diner, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="chromeRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="var(--chrome-1)"/>
+            <stop offset=".5" stop-color="var(--chrome-3)"/>
+            <stop offset="1" stop-color="var(--chrome-4)"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="var(--cherry)"/>
+        <circle cx="20" cy="20" r="18" fill="none" stroke="url(#chromeRing)" stroke-width="2.2"/>
+        <path d="M13 17h11a2 2 0 0 1 2 2c0 3-2.2 5-5 5h-5c-2.8 0-5-2-5-5a2 2 0 0 1 2-2z" fill="var(--cream)"/>
+        <path d="M25.5 19c2.3 0 2.3 4-.3 4.4" fill="none" stroke="var(--cream)" stroke-width="1.6" stroke-linecap="round"/>
+        <g stroke="var(--cream)" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+          <path d="M15.5 14.5c.6-1.4-.5-2 0-3.4"/>
+          <path d="M18.5 14.5c.6-1.4-.5-2 0-3.4"/>
+        </g>
+        <g stroke="var(--cream)" stroke-width="1" stroke-linecap="round">
+          <path d="M28 8.6v1.6M28 12v1.6M25.4 11h1.6M29 11h1.6"/>
+        </g>
+      </svg>
+      <span class="brand">Maple Street<small>Diner &amp; Counter</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550102">(516) 555-0102</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menu</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Show menu categories">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#breakfast">Breakfast</a></li>
+          <li><a href="services.html#griddle">The Griddle &amp; Counter</a></li>
+          <li><a href="services.html#dinner-plates">Dinner Plates</a></li>
+          <li><a href="services.html#specials">Blue Plate Specials</a></li>
+          <li><a href="services.html#sides-fountain">Sides &amp; Fountain</a></li>
+          <li><a href="services.html#pie-case">Pie Case</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Off the Griddle</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550102">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Call (516) 555-0102
+    </a>
+  </nav>
+</header>
+<div class="checker"></div>
+
+<main id="main">
+
+  <section class="page-intro band-cream">
+    <div class="wrap">
+      <h1>Off the Griddle</h1>
+      <p class="lead measure">A few of the plates that come off this kitchen most days. Illustrated for this demo, not a photo shoot.</p>
+    </div>
+  </section>
+
+  <section class="section-tight band-cream">
+    <div class="wrap">
+      <div class="gallery">
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a Western omelette plate with peppers and onion, a side of home fries, and toast">
+              <ellipse cx="200" cy="225" rx="128" ry="35" fill="var(--cream)"/>
+              <ellipse cx="200" cy="217" rx="103" ry="27" fill="var(--cream-2)"/>
+              <path d="M60 178 L104 150 L112 202 L64 206 Z" fill="var(--cream-2)" stroke="var(--chrome-3)" stroke-width="1.2"/>
+              <path d="M100 200 Q92 152 162 148 Q234 144 236 190 Q238 216 178 213 Q118 211 100 200 Z" fill="#F6D978"/>
+              <path d="M122 176 Q172 165 222 180" stroke="#D9B84F" stroke-width="3" fill="none" opacity=".7"/>
+              <g fill="#7FA05A"><rect x="140" y="168" width="10" height="5" rx="2" transform="rotate(-18 145 170)"/><rect x="188" y="182" width="10" height="5" rx="2" transform="rotate(12 193 184)"/><rect x="160" y="196" width="9" height="5" rx="2" transform="rotate(-6 165 198)"/></g>
+              <g fill="#C0503A"><rect x="165" y="172" width="9" height="5" rx="2" transform="rotate(20 170 174)"/><rect x="205" y="190" width="9" height="5" rx="2" transform="rotate(-14 210 192)"/></g>
+              <g fill="#F1E3BE"><rect x="150" y="188" width="8" height="5" rx="2" transform="rotate(8 154 190)"/><rect x="182" y="168" width="8" height="5" rx="2" transform="rotate(-10 186 170)"/></g>
+              <g fill="#C98A3E" stroke="#8A5A22" stroke-width=".6">
+                <rect x="262" y="186" width="14" height="11" rx="2" transform="rotate(-8 269 191)"/>
+                <rect x="278" y="196" width="14" height="11" rx="2" transform="rotate(10 285 201)"/>
+                <rect x="252" y="200" width="14" height="11" rx="2" transform="rotate(4 259 205)"/>
+                <rect x="272" y="208" width="14" height="11" rx="2" transform="rotate(-12 279 213)"/>
+                <rect x="294" y="205" width="14" height="11" rx="2" transform="rotate(16 301 210)"/>
+              </g>
+              <g fill="#5C7A44" opacity=".8"><circle cx="140" cy="220" r="1.6"/><circle cx="150" cy="223" r="1.6"/><circle cx="132" cy="224" r="1.6"/></g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Western Omelette Plate</h2>
+            <p>Ham, pepper, onion folded in, with home fries and toast alongside.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a diner burger with lettuce, tomato and onion, and a side of fries in a paper boat">
+              <ellipse cx="180" cy="228" rx="118" ry="32" fill="var(--cream)"/>
+              <path d="M110 200 Q110 178 165 176 Q220 174 220 198 Z" fill="#E0AE64"/>
+              <g fill="var(--cream)"><circle cx="140" cy="187" r="2.4"/><circle cx="160" cy="182" r="2.4"/><circle cx="182" cy="185" r="2.4"/><circle cx="200" cy="191" r="2.4"/></g>
+              <path d="M104 200 h122 v7 q-61 10 -122 0 z" fill="#7FA05A"/>
+              <rect x="106" y="205" width="118" height="10" rx="3" fill="#5A3420"/>
+              <path d="M110 214 h110 v6 q-55 9 -110 0 z" fill="#E8B23A"/>
+              <ellipse cx="165" cy="222" rx="26" ry="8" fill="#C0503A"/>
+              <ellipse cx="165" cy="222" rx="15" ry="4.5" fill="#E0857A" opacity=".7"/>
+              <path d="M104 226 Q165 244 226 226 L222 240 Q165 256 108 240 Z" fill="#D9A354"/>
+              <path d="M104 226 h122 v6 q-61 8 -122 0 z" fill="#EFC77E"/>
+              <path d="M300 200 L336 200 L328 250 L292 250 Z" fill="var(--cream-2)" stroke="var(--chrome-3)" stroke-width="1.2"/>
+              <g fill="#D9A354">
+                <rect x="298" y="188" width="7" height="34" rx="3" transform="rotate(-8 301 205)"/>
+                <rect x="308" y="184" width="7" height="38" rx="3" transform="rotate(4 311 203)"/>
+                <rect x="318" y="188" width="7" height="34" rx="3" transform="rotate(-4 321 205)"/>
+                <rect x="326" y="192" width="7" height="30" rx="3" transform="rotate(10 329 207)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>The Diner Burger</h2>
+            <p>Quarter pound, lettuce, tomato, onion, and a side of fries.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of Monday's blue plate special: Yankee pot roast with buttered noodles on a plate with a blue-grey rim">
+              <ellipse cx="200" cy="228" rx="130" ry="33" fill="var(--chrome-2)"/>
+              <ellipse cx="200" cy="222" rx="112" ry="27" fill="var(--cream)"/>
+              <path d="M200 195 L200 249" stroke="var(--chrome-3)" stroke-width="1.4" opacity=".6"/>
+              <path d="M132 200 Q200 218 268 200" stroke="var(--chrome-3)" stroke-width="1.4" fill="none" opacity=".6"/>
+              <ellipse cx="150" cy="220" rx="46" ry="16" fill="#4A2E18" opacity=".55"/>
+              <path d="M112 214 Q150 198 190 212 Q198 222 168 228 Q120 232 112 214 Z" fill="#6B4226"/>
+              <path d="M130 210 Q152 204 174 212" stroke="#8A5E3C" stroke-width="2.5" fill="none" opacity=".7"/>
+              <g stroke="var(--cream-2)" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9">
+                <path d="M222 206 q10 8 0 16 q-10 8 0 16"/>
+                <path d="M238 202 q10 8 0 16 q-10 8 0 16 q-10 8 0 16"/>
+                <path d="M254 208 q10 8 0 16 q-10 8 0 16"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Monday's Blue Plate: Pot Roast</h2>
+            <p>Yankee pot roast with buttered noodles — one of six specials that rotate through the week.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a black and white fountain shake in a tall glass with a cherry on top, a straw, and the metal mixing tin beside it">
+              <ellipse cx="200" cy="256" rx="120" ry="14" fill="#101416" opacity=".3"/>
+              <path d="M148 108 L252 108 L236 240 L164 240 Z" fill="var(--paper)" opacity=".92"/>
+              <g clip-path="url(#glassClip)">
+                <path d="M155 130 L245 150 L240 175 L150 158 Z" fill="#4B2A18"/>
+                <path d="M152 180 L243 197 L238 220 L157 205 Z" fill="#4B2A18"/>
+              </g>
+              <path d="M148 108 L252 108 L249 122 L151 122 Z" fill="var(--cream-2)"/>
+              <path d="M170 108 Q200 84 230 108 Q220 96 200 96 Q180 96 170 108Z" fill="var(--paper)"/>
+              <circle cx="200" cy="90" r="8" fill="var(--cherry)"/>
+              <path d="M200 82 q4-8 10-9" stroke="#5C7A44" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <rect x="205" y="70" width="7" height="70" rx="3.5" fill="var(--cherry-bright)" transform="rotate(14 208 105)"/>
+              <path d="M300 150 L332 150 L322 224 L308 224 Z" fill="url(#tinChrome)" stroke="var(--chrome-4)" stroke-width="1.4"/>
+              <ellipse cx="316" cy="150" rx="16" ry="5" fill="var(--chrome-1)"/>
+              <ellipse cx="316" cy="152" rx="13" ry="4" fill="#4B2A18"/>
+              <defs>
+                <clipPath id="glassClip"><path d="M148 108 L252 108 L236 240 L164 240 Z"/></clipPath>
+                <linearGradient id="tinChrome" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="var(--chrome-2)"/><stop offset=".5" stop-color="var(--chrome-4)"/><stop offset="1" stop-color="var(--chrome-2)"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Black and White Shake</h2>
+            <p>Mixed on the spindle, with the extra in the tin on the side.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a slice of coconut cream pie with a golden crust and toasted coconut on top">
+              <ellipse cx="200" cy="228" rx="120" ry="30" fill="var(--cream)"/>
+              <ellipse cx="200" cy="222" rx="98" ry="23" fill="var(--cream-2)"/>
+              <path d="M140 224 L200 168 L260 224 Z" fill="#C98A3E"/>
+              <path d="M148 220 L200 178 L252 220 Z" fill="#F6E9C9"/>
+              <path d="M158 214 Q200 192 242 214 Q244 200 200 196 Q156 200 158 214Z" fill="var(--paper)"/>
+              <path d="M170 208 Q200 198 230 208" stroke="var(--cream-2)" stroke-width="2" fill="none" opacity=".8"/>
+              <g stroke="var(--cream-2)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".9">
+                <path d="M178 200 q4-5 8 0"/>
+                <path d="M194 196 q4-5 8 0"/>
+                <path d="M210 199 q4-5 8 0"/>
+                <path d="M188 206 q4-5 8 0"/>
+                <path d="M206 208 q4-5 8 0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Coconut Cream Pie</h2>
+            <p>From the case by the register, cut fresh when you order.</p>
+          </div>
+        </article>
+
+        <article class="vg">
+          <div class="scene-frame">
+            <div class="vg-tag"><span class="tag">Sample project</span></div>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of a mug of coffee with steam beside a slice of apple pie topped with a scoop of ice cream">
+              <ellipse cx="130" cy="248" rx="46" ry="10" fill="#101416" opacity=".3"/>
+              <path d="M92 160 h76 l-4 84 a9 9 0 0 1-9 8 h-50 a9 9 0 0 1-9-8 z" fill="var(--paper)"/>
+              <rect x="88" y="150" width="84" height="13" rx="6.5" fill="var(--cream-2)"/>
+              <ellipse cx="130" cy="163" rx="36" ry="7" fill="#4B2A18"/>
+              <path d="M168 172c23 2 23 34 0 40" fill="none" stroke="var(--paper)" stroke-width="9" stroke-linecap="round"/>
+              <rect x="102" y="204" width="56" height="9" rx="4" fill="var(--cherry)"/>
+              <g stroke="var(--sand)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55">
+                <path d="M112 150c-7-14 7-18 1-32"/>
+                <path d="M130 150c-7-15 7-19 1-33"/>
+                <path d="M148 150c-7-14 7-18 1-32"/>
+              </g>
+              <ellipse cx="280" cy="244" rx="86" ry="22" fill="var(--cream)"/>
+              <path d="M232 236 L280 178 L328 236 Z" fill="#C98A3E"/>
+              <path d="M240 232 L280 188 L320 232 Z" fill="#D97A3A"/>
+              <path d="M252 218 Q280 208 308 218" stroke="#8A4A22" stroke-width="2.2" fill="none" opacity=".6"/>
+              <circle cx="280" cy="196" r="20" fill="var(--paper)"/>
+              <circle cx="280" cy="192" r="20" fill="#FFFDF8"/>
+              <path d="M264 188 q16-14 32 0" stroke="var(--cream-2)" stroke-width="2" fill="none" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="vg-body">
+            <h2>Bottomless Coffee &amp; Apple Pie</h2>
+            <p>A la mode for a dollar fifty more — the classic way to close out a counter visit.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-cherry on-cherry section-tight">
+    <div class="wrap closing-grid">
+      <div>
+        <h2>Come taste it yourself</h2>
+        <p class="measure" style="color:var(--cream-soft)">Call ahead or just grab a stool — the grill's always going.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550102">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Call (516) 555-0102
+          </a>
+          <a class="btn-line on-dark" href="services.html">
+            See the full menu
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="checker cherry-line"></div>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Maple Street Diner</div>
+        <p>Breakfast all day, blue plate specials, and the pie case on Long Island, NY.</p>
+        <p><a href="tel:+15165550102">(516) 555-0102</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="work.html">Off the Griddle</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15165550102">Call (516) 555-0102</a></li>
+          <li><a href="sms:+15165550102">Send a text</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Demo website built by Samuel Ochoa — <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550102">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Call (516) 555-0102
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

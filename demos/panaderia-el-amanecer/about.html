@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Panadería El Amanecer</title>
+<meta name="description" content="Cómo funciona Panadería El Amanecer: pan horneado en tandas todo el día, pedidos por teléfono para pasteles y charolas, servicio en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Panadería El Amanecer, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--cacao-950)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--manteca-500)" stroke-width="1.3" opacity=".5"/>
+        <path d="M8 26h28" stroke="var(--crema-dim)" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+        <path d="M10.5 25.2a11.5 11.5 0 0 1 23 0Z" fill="var(--manteca-500)"/>
+        <g stroke="var(--manteca-500)" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+          <path d="M22 8.5v3.4"/>
+          <path d="M13.6 12l2.2 2.2"/>
+          <path d="M30.4 12l-2.2 2.2"/>
+        </g>
+        <circle cx="22" cy="25.6" r="3" fill="var(--rosa-500)"/>
+      </svg>
+      <span class="brand">El Amanecer<small>Panadería · Long Island</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      (516) 555-0111
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#pan-dulce">Pan dulce del día</a></li>
+          <li><a href="services.html#bolillo">Bolillo y telera</a></li>
+          <li><a href="services.html#pasteles">Pasteles por encargo</a></li>
+          <li><a href="services.html#cafe">Café y bebidas</a></li>
+          <li><a href="services.html#temporada">Rosca y pan de temporada</a></li>
+          <li><a href="services.html#charolas">Charolas para eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Encargos</a></li>
+      <li><a href="about.html" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      Llamar (516) 555-0111
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-light">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <h1>Se hornea antes de que salga el sol</h1>
+        <p class="lead measure">Y no se detiene ahí. Así es como trabajamos, panadería por dentro.</p>
+      </div>
+      <svg class="intro-accent reveal reveal-2" viewBox="0 0 160 160" role="img" aria-label="Ilustración de un pan bolillo recién horneado con vapor subiendo">
+        <ellipse cx="80" cy="120" rx="52" ry="10" fill="var(--cacao-950)" opacity=".1"/>
+        <ellipse cx="80" cy="98" rx="48" ry="26" fill="var(--manteca-600)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+        <path d="M40 92h80" stroke="var(--cacao-900)" stroke-width="2.4" opacity=".5" stroke-linecap="round"/>
+        <g class="steam-wisp" stroke="var(--cacao-700)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55">
+          <path d="M64 68c-6-11 6-14 0-26"/>
+        </g>
+        <g class="steam-wisp" stroke="var(--cacao-700)" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".5">
+          <path d="M96 68c-6-12 6-15 0-27"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band-manteca section-tight">
+    <div class="wrap about-grid">
+      <div class="story">
+        <p class="measure-wide">El Amanecer se abrió con una idea sencilla: el pan no debería enfriarse antes de que alguien lo compre. En lugar de hornear todo de madrugada y dejarlo en el mostrador el resto del día, aquí se hornea en tandas — la primera antes de que amanezca y la última ya entrada la tarde.</p>
+        <p class="measure-wide">Eso significa que quien llega a las cuatro de la tarde encuentra conchas tan calientes como quien llega a las cinco de la mañana. El pastel se sigue haciendo por encargo, con el sabor y la dedicatoria que cada quien pide, y las charolas para fiestas se arman el mismo día que se necesitan, no con semanas de espera.</p>
+        <p class="measure-wide">Atendemos en el mostrador con charola y pinzas para el pan del día, y por teléfono para pasteles, charolas y pan de temporada. El servicio es en Long Island, NY, para quien quiera pasar o para coordinar un pedido más grande.</p>
+      </div>
+      <div class="hours-box">
+        <h3>Horario</h3>
+        <ul class="hours-list">
+          <li><span class="d">Lunes a viernes</span><span class="leader"></span><span class="h">5 a.m. – 8 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="leader"></span><span class="h">5 a.m. – 9 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="leader"></span><span class="h">6 a.m. – 6 p.m.</span></li>
+        </ul>
+        <p style="margin-top:14px;font-size:.88rem;color:var(--cacao-700)">Los pedidos por teléfono se reciben hasta las 6:00 p.m.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="dock-rule on-dark" viewBox="0 0 400 8" preserveAspectRatio="none" aria-hidden="true">
+      <circle cx="10" cy="4" r="2.6"/><circle cx="34" cy="4" r="2.6"/><circle cx="58" cy="4" r="2.6"/><circle cx="82" cy="4" r="2.6"/><circle cx="106" cy="4" r="2.6"/><circle cx="130" cy="4" r="2.6"/><circle cx="154" cy="4" r="2.6"/><circle cx="178" cy="4" r="2.6"/><circle cx="202" cy="4" r="2.6"/><circle cx="226" cy="4" r="2.6"/><circle cx="250" cy="4" r="2.6"/><circle cx="274" cy="4" r="2.6"/><circle cx="298" cy="4" r="2.6"/><circle cx="322" cy="4" r="2.6"/><circle cx="346" cy="4" r="2.6"/><circle cx="370" cy="4" r="2.6"/><circle cx="394" cy="4" r="2.6"/>
+    </svg>
+    <div class="wrap">
+      <h2>¿Quiere encargar algo?</h2>
+      <p class="measure" style="color:rgba(255,251,242,.82)">Llámenos o revise las preguntas frecuentes en la página de contacto.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550111">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+          Llamar (516) 555-0111
+        </a>
+        <a class="btn-line on-dark" href="contact.html">
+          Ir a contacto
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">El Amanecer</div>
+        <p>Pan dulce, bolillo y pasteles horneados en tandas, todo el día, en Long Island, NY.</p>
+        <p><a href="tel:+15165550111">(516) 555-0111</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Menú</a></li>
+          <li><a href="work.html">Encargos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550111">Llamar (516) 555-0111</a></li>
+          <li><a href="sms:+15165550111">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550111">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+  Llamar (516) 555-0111
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

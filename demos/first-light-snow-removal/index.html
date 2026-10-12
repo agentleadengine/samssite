@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  THESIS: The whole block is still dark and asleep when First Light finishes a driveway, so the only proof anyone needs is the clean line where plowed pavement meets the snow nobody touched yet.
+  OWN-WORLD: One diagonal seam, the plow's own edge, is the site's single recurring shape: pale untouched snow on one side, cleared pavement on the other, a small ember of dawn-orange riding the line where they meet. It reappears as the hero's sweep, as the corner of every inner-page header, and as the beacon dot on the brand mark itself.
+  STORY: You sleep through the storm. First Light doesn't. Driveway, walkway, salt down, all before first light actually breaks, so a seasonal contract means you stop checking the forecast and start checking your phone for the one text that says it's done.
+  FIRST VIEWPORT: Full-bleed pre-dawn navy. A wide diagonal sweep animates once on load, pale snow retreating to reveal cleared pavement beneath with a small plow truck riding the seam, resting at roughly 55/45 snow-to-clear.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Light Snow Removal | Long Island Driveway &amp; Walkway Plowing</title>
+<meta name="description" content="First Light Snow Removal plows driveways, clears walkways, and handles salting, storm callouts and seasonal contracts across Long Island, NY. Cleared before you're up. Call (631) 555-0165.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;600;700&family=Six+Caps&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><clipPath id="fl-clip"><rect width="40" height="40" rx="10"/></clipPath></defs>
+        <g clip-path="url(#fl-clip)">
+          <rect width="40" height="40" fill="#0B1626"/>
+          <path d="M40 0 L40 24 L16 0 Z" fill="#F2F5F8"/>
+          <circle cx="27" cy="12" r="6.5" fill="#FF6A1A" opacity=".22"/>
+          <circle cx="27" cy="12" r="3.2" fill="#FF6A1A"/>
+        </g>
+      </svg>
+      <span class="brand-name">First Light<em>Snow Removal</em></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#driveway-plowing">Driveway Plowing</a></li>
+            <li><a href="services.html#walkway-clearing">Walkway Clearing</a></li>
+            <li><a href="services.html#salting-ice-control">Salting &amp; Ice Control</a></li>
+            <li><a href="services.html#seasonal-contracts">Seasonal Contracts</a></li>
+            <li><a href="services.html#storm-callouts">Storm Callouts</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+16315550165">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5A2 2 0 0 1 3.3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L7.4 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.2-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(631) 555-0165</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#driveway-plowing">Driveway Plowing</a></li>
+          <li><a href="services.html#walkway-clearing">Walkway Clearing</a></li>
+          <li><a href="services.html#salting-ice-control">Salting &amp; Ice Control</a></li>
+          <li><a href="services.html#seasonal-contracts">Seasonal Contracts</a></li>
+          <li><a href="services.html#storm-callouts">Storm Callouts</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+16315550165">Call (631) 555-0165</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="hero-in">
+      <div class="hero-copy">
+        <h1>Your street's still dark. <span class="ac">Your driveway's already done.</span></h1>
+        <p class="sub">First Light plows, clears and salts while the block is asleep, so the only proof you need is the clean line at the end of your driveway. Driveways, walkways, and the properties that can't wait for a callback.</p>
+        <div class="cta">
+          <div class="btn-row">
+            <a class="btn btn-primary" href="tel:+16315550165">Call (631) 555-0165</a>
+            <a class="btn btn-secondary" href="sms:+16315550165">Text (631) 555-0165</a>
+          </div>
+          <a class="textlink on-dark" href="services.html">
+            See every service
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <svg class="hero-scene" viewBox="0 0 960 540" role="img" aria-label="An illustrated pre-dawn street: a plow has swept a diagonal line through the snow, clearing the pavement while the houses along the block sit dark and asleep, one small truck riding the edge of the cut.">
+        <defs>
+          <filter id="fl-glow" x="-20%" y="-100%" width="140%" height="300%">
+            <feGaussianBlur stdDeviation="26"/>
+          </filter>
+        </defs>
+
+        <rect width="960" height="540" fill="#0B1626"/>
+        <ellipse cx="480" cy="330" rx="560" ry="90" fill="#FF6A1A" opacity=".16" filter="url(#fl-glow)"/>
+
+        <g fill="#F2F5F8">
+          <circle cx="60" cy="60" r="1.4" opacity=".8"/>
+          <circle cx="140" cy="110" r="1" opacity=".5"/>
+          <circle cx="230" cy="50" r="1.6" opacity=".7"/>
+          <circle cx="340" cy="130" r="1" opacity=".45"/>
+          <circle cx="610" cy="70" r="1.3" opacity=".6"/>
+          <circle cx="740" cy="120" r="1" opacity=".5"/>
+          <circle cx="830" cy="55" r="1.5" opacity=".75"/>
+          <circle cx="900" cy="140" r="1" opacity=".4"/>
+        </g>
+
+        <g class="clear-layer">
+          <rect x="0" y="330" width="960" height="210" fill="#0E1C30"/>
+          <g fill="#142238">
+            <rect x="40" y="300" width="90" height="40"/>
+            <path d="M40 300 L85 268 L130 300 Z"/>
+            <rect x="150" y="292" width="70" height="48"/>
+            <path d="M150 292 L185 262 L220 292 Z"/>
+            <rect x="770" y="296" width="80" height="44"/>
+            <path d="M770 296 L810 264 L850 296 Z"/>
+            <rect x="860" y="304" width="66" height="36"/>
+            <path d="M860 304 L893 276 L926 304 Z"/>
+          </g>
+          <g fill="#FF6A1A" opacity=".85">
+            <rect x="60" y="314" width="12" height="12" rx="1"/>
+            <rect x="792" y="312" width="12" height="12" rx="1"/>
+          </g>
+          <path d="M600 540C660 470 720 410 780 340" fill="none" stroke="#1C2E48" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+          <path d="M680 540C730 460 780 400 840 340" fill="none" stroke="#1C2E48" stroke-width="10" stroke-linecap="round" opacity=".4"/>
+          <line x1="860" y1="420" x2="860" y2="460" stroke="#4B5E75" stroke-width="3" stroke-linecap="round"/>
+          <rect x="848" y="404" width="26" height="18" rx="5" fill="none" stroke="#4B5E75" stroke-width="3"/>
+        </g>
+
+        <g class="snow-layer">
+          <polygon points="-400,300 1400,300 1260,540 -400,540" fill="#F2F5F8"/>
+          <g fill="#0B1626" opacity=".07">
+            <circle cx="120" cy="360" r="5"/>
+            <circle cx="260" cy="420" r="4"/>
+            <circle cx="400" cy="380" r="6"/>
+            <circle cx="900" cy="340" r="5"/>
+            <circle cx="970" cy="400" r="4"/>
+            <circle cx="1050" cy="460" r="6"/>
+            <circle cx="880" cy="500" r="4"/>
+            <circle cx="1150" cy="370" r="5"/>
+            <circle cx="1220" cy="440" r="4"/>
+            <circle cx="1000" cy="510" r="5"/>
+            <circle cx="1280" cy="390" r="4"/>
+          </g>
+          <g transform="translate(1330,420)">
+            <g fill="#F2F5F8" opacity=".9">
+              <circle cx="-46" cy="-24" r="2.4"/>
+              <circle cx="-56" cy="-16" r="1.8"/>
+              <circle cx="-40" cy="-32" r="1.6"/>
+            </g>
+            <path d="M-46 4 L-30 -10 L-24 -2 L-38 12 Z" fill="#93A6BD"/>
+            <rect x="-30" y="-16" width="48" height="22" rx="4" fill="#1C2E48"/>
+            <rect x="6" y="-27" width="16" height="14" rx="3" fill="#1C2E48"/>
+            <circle cx="-16" cy="9" r="6" fill="#0B1626"/>
+            <circle cx="16" cy="9" r="6" fill="#0B1626"/>
+            <circle cx="-34" cy="-8" r="5" fill="#FF6A1A" opacity=".3"/>
+            <circle cx="-34" cy="-8" r="2.6" fill="#FF6A1A"/>
+          </g>
+        </g>
+      </svg>
+
+      <p class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        Serving Long Island, NY. Seasonal contracts and one-off storm callouts, same crew either way.
+      </p>
+    </div>
+  </header>
+
+  <!-- proof of work -->
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <div class="proof-copy">
+        <h2>This is what four a.m. looks like</h2>
+        <p class="measure">Most mornings, nobody sees it happen. The plow comes through while the street is quiet, clears the driveway curb to curb, and salts the walkway on the way out. By the time you're pouring coffee, the only sign we were there is a clean line where the snow used to be.</p>
+        <div class="callout"><b>Same route, same order,</b> every storm, so a driveway isn't waiting behind whichever job happened to come in last.</div>
+      </div>
+      <div class="proof-scene">
+        <svg viewBox="0 0 400 300" role="img" aria-label="A close view of the plow blade's edge, pale undisturbed snow on the left and dark cleared pavement on the right, a small orange light marking where the blade is cutting through.">
+          <rect width="400" height="300" fill="#0B1626"/>
+          <polygon points="0,0 400,0 400,300 260,300" fill="#F2F5F8"/>
+          <g fill="#0B1626" opacity=".06">
+            <circle cx="70" cy="70" r="7"/><circle cx="150" cy="130" r="9"/><circle cx="60" cy="190" r="6"/>
+            <circle cx="180" cy="60" r="6"/><circle cx="120" cy="240" r="8"/><circle cx="220" cy="180" r="7"/>
+          </g>
+          <path d="M260 300 L400 0" stroke="#FF6A1A" stroke-width="3" opacity=".8"/>
+          <circle cx="330" cy="150" r="16" fill="#FF6A1A" opacity=".2"/>
+          <circle cx="330" cy="150" r="6" fill="#FF6A1A"/>
+          <g stroke="#4B5E75" stroke-width="6" stroke-linecap="round" opacity=".8">
+            <path d="M300 220 L360 160"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- services teaser: the route -->
+  <section style="background:var(--snow-100)">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>The route</h2>
+        <p class="lede center">Three of the five services people call for most. The full list, including storm callouts and walkway clearing, is one tap away.</p>
+      </div>
+
+      <div class="route">
+        <div class="route-row">
+          <a href="services.html#driveway-plowing">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18c1.6-3.2 5-5 9-5s7.4 1.8 9 5"/><path d="M12 13V7"/><path d="M8 7h8"/></svg>
+            </span>
+            <span class="route-body">
+              <h3>Driveway Plowing</h3>
+              <p>Curb to curb, one clean pass, snow banked to the sides instead of blocking the mailbox.</p>
+            </span>
+            <span class="route-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="route-row">
+          <a href="services.html#salting-ice-control">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4l2 3.5V19a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6.5L10 3z"/><line x1="8.6" y1="7" x2="15.4" y2="7"/><circle cx="6" cy="12" r=".9" fill="currentColor" stroke="none"/><circle cx="5" cy="16" r=".9" fill="currentColor" stroke="none"/><circle cx="7.4" cy="19.4" r=".9" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="route-body">
+              <h3>Salting &amp; Ice Control</h3>
+              <p>Down before the ice sets, not after someone slips on the walkway.</p>
+            </span>
+            <span class="route-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="route-row">
+          <a href="services.html#seasonal-contracts">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.4"/><line x1="3.5" y1="10" x2="20.5" y2="10"/><line x1="8" y1="3" x2="8" y2="6.4"/><line x1="16" y1="3" x2="16" y2="6.4"/><path d="M8.6 15a3.2 3.2 0 0 1 5.6-2.1M15.4 15a3.2 3.2 0 0 1-5.6 2.1"/></svg>
+            </span>
+            <span class="route-body">
+              <h3>Seasonal Contracts</h3>
+              <p>Sign once. Stop checking the forecast every time the sky looks grey.</p>
+            </span>
+            <span class="route-arrow">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="route-foot">
+          <a class="textlink" href="services.html">
+            See all five services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- why us -->
+  <section class="checklist-section">
+    <div class="wrap">
+      <div class="section-head center on-dark">
+        <h2>Why the same driveways call us every year</h2>
+        <p class="lede center">Nothing here is a promise about the weather. It's just how the route runs.</p>
+      </div>
+
+      <ul class="checklist">
+        <li>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg></span>
+          <span>
+            <p>One crew, one route, the same order every storm.</p>
+            <span>A driveway near the start of the route isn't chosen at random, it stays there.</span>
+          </span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg></span>
+          <span>
+            <p>Cleared before school buses run, not after.</p>
+            <span>Storm routes start overnight on purpose.</span>
+          </span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg></span>
+          <span>
+            <p>Text if you need something different that day.</p>
+            <span>A real person on the route answers, not a call center.</span>
+          </span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg></span>
+          <span>
+            <p>No teaser rate that doubles in January.</p>
+            <span>The seasonal price is the seasonal price.</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- closing cta -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Get on the route before the first storm</h2>
+      <p class="measure-center">Seasonal spots fill up before the snow does. Call or text and we'll get you on the list.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+16315550165">Call (631) 555-0165</a>
+        <a class="btn btn-ghost" href="sms:+16315550165">Text instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><clipPath id="fl-clip-f"><rect width="40" height="40" rx="10"/></clipPath></defs>
+        <g clip-path="url(#fl-clip-f)">
+          <rect width="40" height="40" fill="#0B1626"/>
+          <path d="M40 0 L40 24 L16 0 Z" fill="#F2F5F8"/>
+          <circle cx="27" cy="12" r="3.2" fill="#FF6A1A"/>
+        </g>
+      </svg>
+      <span>First Light Snow Removal</span>
+    </div>
+    <p class="footer-line">Driveways, walkways &amp; seasonal contracts &middot; Long Island, NY &middot; <a href="tel:+16315550165">(631) 555-0165</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa - <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a class="cb-call" href="tel:+16315550165">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5A2 2 0 0 1 3.3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L7.4 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.2-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2z"/></svg>
+    Call Now
+  </a>
+  <a class="cb-text" href="sms:+16315550165">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8 8.4 8.4 0 0 1-3.2-.6L4 20l1.3-4.2A7.9 7.9 0 0 1 4 12z"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+    Text Us
+  </a>
+</div>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!--
+  DIRECCIÓN
+  TESIS: comprar, vender o rentar en Long Island explicado en español y sin apuros — un solo acompañamiento, de la llamada a las llaves.
+  MUNDO PROPIO: un atardecer de olivo profundo y oro sobre marfil. La "gallery minimal" del original llevada a escala de página — dos bandas de olivo comprometido (apertura y cierre) enmarcan un cuerpo de marfil silencioso con reglas finas, sin kickers ni tarjetas iguales. Alegreya (serif cálida, para "explicar") + Karla (sans humanista, para el trámite).
+  HISTORIA: de la llamada a las llaves — la portada promete calma, un recorrido de precio prueba el proceso, tres caminos (vender / comprar / rentar) reparten hacia servicios.html, y el cierre reduce todo a una llamada de quince minutos.
+  PRIMER VIEWPORT: titular + promesa de una línea + botón de llamada y enlace a servicios, sobre el horizonte de olivo con una casa de ventana encendida — la promesa se entiende sin desplazar la página.
+-->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bienes Raíces Casa Nueva | Compra, venta y renta en Long Island, NY</title>
+<meta name="description" content="Bienes Raíces Casa Nueva acompaña a familias de Long Island en la compra, venta y renta de su casa, en español y sin apuros. Llame al (516) 555-0159.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="demo-bar">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 44 44" role="img" aria-label="Emblema de Casa Nueva">
+        <circle cx="22" cy="22" r="20.5" fill="none" stroke="#B08D3C" stroke-width="1.3"/>
+        <path d="M22 11 L33.5 21 H30 V32 H14 V21 H10.5 Z" fill="none" stroke="#3E4A2B" stroke-width="1.7" stroke-linejoin="round"/>
+        <rect x="19" y="24.5" width="6" height="7.5" fill="#B08D3C"/>
+      </svg>
+      <span class="brand-name">Casa Nueva<b>Bienes Raíces</b></span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Principal">
+      <a href="index.html" class="active" aria-current="page">Inicio</a>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Servicios</a>
+        <div class="nav-sub">
+          <a href="services.html#venta">Venta de su propiedad</a>
+          <a href="services.html#compra">Compra de casa</a>
+          <a href="services.html#renta">Renta y mudanza</a>
+          <a href="services.html#preparacion">Preparación antes de publicar</a>
+          <a href="services.html#recorrido">Recorrido de precio</a>
+          <a href="services.html#espanol">Acompañamiento en español</a>
+        </div>
+      </div>
+      <a href="work.html">Proyectos</a>
+      <a href="about.html">Nosotros</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+
+    <a class="header-tel" href="tel:+15165550159">
+      <span class="et">Llame hoy</span>
+      <span class="num">(516) 555-0159</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="wrap">
+      <nav aria-label="Principal">
+      <a href="index.html" class="mnav-top active" aria-current="page">Inicio</a>
+      <div class="mnav-row">
+        <a href="services.html" class="mnav-link">Servicios</a>
+        <button class="mobile-sub-toggle" type="button" aria-expanded="false" aria-controls="mobile-sub-servicios" aria-label="Mostrar la lista de servicios">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="mobile-sub" id="mobile-sub-servicios" hidden>
+        <a href="services.html#venta">Venta de su propiedad</a>
+        <a href="services.html#compra">Compra de casa</a>
+        <a href="services.html#renta">Renta y mudanza</a>
+        <a href="services.html#preparacion">Preparación antes de publicar</a>
+        <a href="services.html#recorrido">Recorrido de precio</a>
+        <a href="services.html#espanol">Acompañamiento en español</a>
+      </div>
+      <a href="work.html" class="mnav-top">Proyectos</a>
+      <a href="about.html" class="mnav-top">Nosotros</a>
+      <a href="contact.html" class="mnav-top">Contacto</a>
+      </nav>
+      <a class="mobile-call" href="tel:+15165550159">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+        Llamar (516) 555-0159
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="band band--hero">
+    <div class="band-scene">
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustración de un vecindario de Long Island al atardecer, con olivo y una casa de ventana encendida">
+        <defs>
+          <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#141A0E"/>
+            <stop offset="58%" stop-color="#1E2513"/>
+            <stop offset="80%" stop-color="#4A4526"/>
+            <stop offset="94%" stop-color="#B99E5C"/>
+            <stop offset="100%" stop-color="#E7CE94"/>
+          </linearGradient>
+          <linearGradient id="groundGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2C2A18"/>
+            <stop offset="100%" stop-color="#141A0E"/>
+          </linearGradient>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E7CE94" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#E7CE94" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="topScrim" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0F1209" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#0F1209" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="700" fill="url(#skyGradient)"/>
+        <circle cx="1100" cy="474" r="150" fill="url(#sunGlow)"/>
+        <circle cx="1100" cy="474" r="58" fill="#E7CE94"/>
+        <rect y="486" width="1440" height="214" fill="url(#groundGradient)"/>
+        <path class="draw-line" d="M0 486 H1440" fill="none" stroke="#DCC182" stroke-width="2" opacity=".65"/>
+        <g opacity=".92">
+          <rect x="117" y="420" width="9" height="66" fill="#20250F"/>
+          <circle cx="121" cy="392" r="46" fill="#232A16"/>
+          <circle cx="79" cy="408" r="30" fill="#262E1A"/>
+          <circle cx="159" cy="410" r="28" fill="#1E2412"/>
+        </g>
+        <polygon points="248,486 248,432 316,396 384,432 384,486" fill="#1B2110"/>
+        <polygon points="404,486 404,448 444,424 484,448 484,486" fill="#20260F"/>
+        <g>
+          <polygon points="900,486 900,406 1012,346 1124,406 1124,486" fill="#171C0C"/>
+          <rect x="1056" y="422" width="30" height="64" fill="#0F130A"/>
+          <rect x="946" y="408" width="26" height="24" fill="#3C4426" opacity=".8"/>
+          <rect x="1048" y="408" width="26" height="24" fill="#E7CE94" opacity=".9"/>
+        </g>
+        <polygon points="1152,486 1152,440 1202,412 1252,440 1252,486" fill="#191F0D"/>
+        <rect width="1440" height="360" fill="url(#topScrim)"/>
+      </svg>
+    </div>
+    <div class="wrap band-content">
+      <h1 class="eyebrow-free-h1 reveal" style="--rd:.02s">Su casa, explicada en su idioma y sin apuros.</h1>
+      <p class="band-lead reveal" style="--rd:.12s">En Casa Nueva acompañamos a familias de Long Island durante todo el camino: el recorrido de la propiedad, el rango de precio, las visitas y la firma. Lo atendemos en español de principio a fin.</p>
+      <div class="btn-row reveal" style="--rd:.22s;margin-top:30px">
+        <a class="btn btn--gold" href="tel:+15165550159">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+          Llamar (516) 555-0159
+        </a>
+        <a class="btn btn--outline-ink" href="services.html">Ver los servicios</a>
+      </div>
+      <ul class="micro-list reveal" style="--rd:.32s">
+        <li><span class="dot"></span>Visitas también por la tarde</li>
+        <li><span class="dot"></span>Resumen de precio por escrito</li>
+        <li><span class="dot"></span>Sin compromiso de firmar</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="stack-lg">
+        <div class="heading-group heading-group--tight">
+          <h2>Así se ve un recorrido de precio.</h2>
+          <p>Una hora en la propiedad y ventas recientes de la cuadra. Al final, un resumen que se queda con usted — no una promesa verbal que se olvida camino a casa.</p>
+        </div>
+        <div class="vignette-scene">
+          <svg viewBox="0 0 900 460" role="img" aria-label="Ilustración de dos personas revisando un resumen de precio por escrito en una mesa, junto a una ventana">
+            <defs>
+              <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F1E7CC"/>
+                <stop offset="100%" stop-color="#E7D6A2"/>
+              </linearGradient>
+            </defs>
+            <rect width="900" height="460" fill="url(#roomGrad)"/>
+            <rect x="60" y="60" width="230" height="230" fill="none" stroke="#B08D3C" stroke-width="2" opacity=".55"/>
+            <rect x="60" y="60" width="230" height="230" fill="#3E4A2B" opacity=".08"/>
+            <line x1="175" y1="60" x2="175" y2="290" stroke="#B08D3C" stroke-width="1.5" opacity=".4"/>
+            <line x1="60" y1="175" x2="290" y2="175" stroke="#B08D3C" stroke-width="1.5" opacity=".4"/>
+            <line x1="560" y1="0" x2="560" y2="118" stroke="#3E4A2B" stroke-width="2"/>
+            <path d="M525 118 h70 l-14 46 h-42 Z" fill="#3E4A2B"/>
+            <ellipse cx="560" cy="168" rx="90" ry="46" fill="#E7CE94" opacity=".28"/>
+            <rect x="360" y="330" width="360" height="14" rx="3" fill="#3E4A2B"/>
+            <rect x="392" y="344" width="10" height="70" fill="#3E4A2B"/>
+            <rect x="638" y="344" width="10" height="70" fill="#3E4A2B"/>
+            <rect x="470" y="300" width="120" height="86" rx="2" fill="#FBF7EC" stroke="#B08D3C" stroke-width="1.5"/>
+            <line x1="486" y1="322" x2="574" y2="322" stroke="#B08D3C" stroke-width="2"/>
+            <line x1="486" y1="338" x2="560" y2="338" stroke="#C9AE71" stroke-width="2"/>
+            <line x1="486" y1="352" x2="566" y2="352" stroke="#C9AE71" stroke-width="2"/>
+            <line x1="486" y1="366" x2="540" y2="366" stroke="#C9AE71" stroke-width="2"/>
+            <g fill="#3E4A2B">
+              <circle cx="450" cy="238" r="26"/>
+              <path d="M400 330 q4 -66 50 -66 q46 0 50 66 Z"/>
+            </g>
+            <g fill="#1E2617">
+              <circle cx="640" cy="238" r="26"/>
+              <path d="M590 330 q4 -66 50 -66 q46 0 50 66 Z"/>
+            </g>
+            <line x1="60" y1="392" x2="840" y2="392" stroke="#B08D3C" stroke-width="1.5" opacity=".5"/>
+          </svg>
+        </div>
+        <p class="measure caption">Recorrido de precio: una hora en la propiedad, ventas recientes de la zona y un resumen por escrito que usted se lleva a casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="heading-group">
+        <h2>Tres caminos, un mismo acompañamiento.</h2>
+        <p>Cada caso empieza con una llamada y un recorrido. Lo que sigue depende de si usted está vendiendo, comprando o buscando dónde rentar.</p>
+      </div>
+      <div class="teaser-list">
+        <a class="teaser-link" href="services.html#venta">
+          <span class="teaser-main">
+            <h3>Vender su casa</h3>
+            <p>Desde la lista de preparación hasta revisar cada oferta con usted.</p>
+          </span>
+          <span class="teaser-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+        <a class="teaser-link" href="services.html#compra">
+          <span class="teaser-main">
+            <h3>Comprar su próxima casa</h3>
+            <p>Visitas organizadas según su horario y su distrito escolar.</p>
+          </span>
+          <span class="teaser-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+        <a class="teaser-link" href="services.html#renta">
+          <span class="teaser-main">
+            <h3>Rentar o mudarse</h3>
+            <p>Contratos y reglas del edificio, explicados antes de firmar.</p>
+          </span>
+          <span class="teaser-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="heading-group">
+        <h2>Lo que puede esperar desde la primera llamada.</h2>
+      </div>
+      <ul class="micro-list micro-list--body">
+        <li><span class="dot"></span>Visitas también por la tarde y los sábados</li>
+        <li><span class="dot"></span>Un resumen de precio por escrito, no solo de palabra</li>
+        <li><span class="dot"></span>Sin compromiso de firmar en la primera reunión</li>
+        <li><span class="dot"></span>Mensajes fuera de horario, devueltos a la mañana siguiente</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band--close">
+    <div class="wrap close-inner">
+      <div>
+        <h2>Empecemos con una llamada de quince minutos.</h2>
+        <p class="band-lead">Cuéntenos qué tiene, a dónde quiere llegar y para cuándo lo necesita.</p>
+      </div>
+      <div class="cta-stack">
+        <a class="band-tel" href="tel:+15165550159">(516) 555-0159</a>
+        <a class="btn btn--outline-ink" href="contact.html">Escribir un mensaje</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Casa Nueva</p>
+        <p class="footer-tag">Bienes Raíces · Compra, venta y renta en Long Island, NY, atendido en español.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Mapa del sitio</h4>
+        <nav class="footer-nav" aria-label="Pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="services.html">Servicios</a>
+          <a href="work.html">Proyectos</a>
+          <a href="about.html">Nosotros</a>
+          <a href="contact.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a class="footer-tel" href="tel:+15165550159">(516) 555-0159</a>
+        <p class="footer-hours">Lun–Jue 9–7 · Vie 9–5:30 · Sáb 9–5 · Dom con cita</p>
+      </div>
+    </div>
+    <p class="footer-legal">
+      <span class="credit">Sitio de demostración creado por Samuel Ochoa</span> — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a><br>
+      Bienes Raíces Casa Nueva es un negocio ficticio creado para mostrar un ejemplo de diseño web. El nombre, el teléfono y los datos de esta página son solo de ejemplo.
+    </p>
+    <p class="footer-license">Lic. de Bienes Raíces del Estado de NY #000000 (número de licencia de muestra)</p>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+15165550159">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+    Llamar (516) 555-0159
+  </a>
+</div>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  if(!toggle || !menu) return;
+
+  function closeMenu(focusToggle){
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded','false');
+    if(focusToggle) toggle.focus();
+  }
+  function openMenu(){
+    menu.hidden = false;
+    toggle.setAttribute('aria-expanded','true');
+  }
+  toggle.addEventListener('click', function(){
+    if(toggle.getAttribute('aria-expanded') === 'true'){ closeMenu(false); } else { openMenu(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+      closeMenu(true);
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(toggle.getAttribute('aria-expanded') === 'true' && !menu.contains(e.target) && !toggle.contains(e.target)){
+      closeMenu(false);
+    }
+  });
+  Array.prototype.forEach.call(menu.querySelectorAll('a'), function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+
+  var subToggle = document.querySelector('.mobile-sub-toggle');
+  var sub = document.getElementById('mobile-sub-servicios');
+  if(subToggle && sub){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      sub.hidden = open;
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

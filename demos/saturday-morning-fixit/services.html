@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Saturday Morning Fix-It | Demo Site</title>
+<meta name="description" content="What Saturday Morning Fix-It handles in one morning: small repairs, furniture assembly, TV and shelf mounting, door and window fixes, and punch-list projects. What's included and when you need it.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M7.8 12.4l3 3 5.8-6.2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.7-2.1 1.6a11.4 11.4 0 0 0 5.6 5.6l1.6-2.1 3.7 1.3V17.5c0 1.1-.9 2-2 1.9C10.9 19 5 13.1 4.6 6.1 4.5 5 5.4 4 7 4Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.2a3.8 3.8 0 0 0-5.1 4.9L4.3 16.2a1.7 1.7 0 0 0 2.4 2.4l5.1-5.1a3.8 3.8 0 0 0 4.9-5.1l-2.6 2.6-2-2 2.4-2.8Z"/></symbol>
+<symbol id="i-hexkey" viewBox="0 0 24 24"><path d="M12 3.2L19.1 7.3L19.1 15.5L12 19.6L4.9 15.5L4.9 7.3Z"/><circle cx="12" cy="11.4" r="3.2"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="9" rx="1.2"/><path d="M6.5 17.5h6M9.5 14v3.5"/><path d="M18.4 7.6h3.3M20 6v3.2"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="6" y="3" width="11" height="18" rx="1"/><circle cx="14.3" cy="12" r="1" style="fill:currentColor;stroke:none"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2.3" width="6" height="3" rx="1"/><path d="M8.3 11.2l1.8 1.8L14 8.8M8.3 16.2h7"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo site</div>
+
+<header class="rail" id="site-rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <span class="word"><b>Saturday Morning Fix-It</b><span>Long Island, NY</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+16315550105">
+      <span style="display:flex;align-items:center;gap:10px"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>(631) 555-0105</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle current" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#small-repairs">Small repairs</a></li>
+            <li><a href="services.html#assembly">Furniture assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; shelf mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; window fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-list projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk">
+        <b>Hours</b>
+        Mon&ndash;Fri 7am&ndash;6pm<br>Sat 7am&ndash;2pm &middot; Sun closed
+      </div>
+      <div class="blk">
+        <b>Serving</b>
+        Long Island, NY
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+<main>
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad svc-intro">
+      <h1>What we fix in a morning</h1>
+      <p style="color:var(--ink-soft);margin-top:14px;max-width:58ch;font-size:16.5px">Five kinds of jobs, one visit each. If it&rsquo;s not on here, call and ask &ndash; if it&rsquo;s not ours, we&rsquo;ll say so straight.</p>
+    </div>
+  </section>
+
+  <section class="svc" id="small-repairs">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+            <h2>Small repairs</h2>
+          </div>
+          <div class="svc-body">
+            <p>The stuff that&rsquo;s minor until it&rsquo;s been on the list for two months &ndash; a hinge that catches, a drawer that sticks, a crack in the drywall from the last time a door swung too hard. None of it&rsquo;s a big job on its own. Together, it&rsquo;s usually most of a morning.</p>
+            <p>If something turns out to need a permit or a licensed trade, we say so on the spot and point you toward who to call, instead of taking a swing at it anyway.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <div class="check-list tight">
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Doors, hinges &amp; handles that stick or sag</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Drywall dings, nail holes &amp; small cracks</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Loose trim, baseboards &amp; caulk lines</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Squeaky, sticking &amp; misaligned drawers</p></div>
+          </div>
+          <div class="when">
+            <b>When you need this</b>
+            <p>When you&rsquo;ve got a running list of little stuff that never feels worth its own service call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="assembly">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-hexkey"></use></svg></span>
+            <h2>Furniture assembly</h2>
+          </div>
+          <div class="svc-body">
+            <p>Flat-pack furniture built square, level, and anchored to the wall where tipping is a real risk &ndash; dressers, bookshelves, bed frames, wardrobes. We follow the real instructions, not the ones that came in the box, and check every joint before the last screw goes in.</p>
+            <p>Boxes and packaging leave with us. If a piece shows up with a warped panel or missing hardware, you&rsquo;ll hear it before assembly starts, not halfway through.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <div class="check-list tight">
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Flat-pack furniture, any brand</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Bed frames, dressers &amp; bookshelves</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Wall anchoring for tip-prone pieces</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Packaging hauled out with us</p></div>
+          </div>
+          <div class="when">
+            <b>When you need this</b>
+            <p>Same morning, straight out of the box &ndash; or after it&rsquo;s sat in the garage a while. Either way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="mounting">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg></span>
+            <h2>TV &amp; shelf mounting</h2>
+          </div>
+          <div class="svc-body">
+            <p>Mounted into the stud, set level with an actual level, and the cords run somewhere you don&rsquo;t have to look at. Floating shelves get the same treatment &ndash; rated for what you&rsquo;re actually putting on them, not just a candle.</p>
+            <p>We test every mount with real weight before we leave. If the studs don&rsquo;t line up where you want the TV, we&rsquo;ll say so and price a backer board straight, before anything&rsquo;s on the wall.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <div class="check-list tight">
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>TV mounting, any size, into the stud</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Floating &amp; bracket shelving</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Cord concealment &amp; cable management</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Curtain rods, mirrors &amp; wall art</p></div>
+          </div>
+          <div class="when">
+            <b>When you need this</b>
+            <p>Before it goes another weekend propped against the wall.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="doors-windows">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+            <h2>Door &amp; window fixes</h2>
+          </div>
+          <div class="svc-body">
+            <p>A door that catches on the frame, a window that won&rsquo;t stay up on its own, a lock that&rsquo;s started fighting the deadbolt &ndash; usually a hinge, a strike plate, or a track that&rsquo;s out of line, not a whole new door or window.</p>
+            <p>Screens and weatherstripping get a look while we&rsquo;re there too, if you want a second set of eyes on them, even if that wasn&rsquo;t on the original list.</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <div class="check-list tight">
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Doors that stick, sag, or won&rsquo;t latch</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Windows that stick or won&rsquo;t stay open</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Weatherstripping &amp; draft fixes</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Lock &amp; handle adjustment</p></div>
+          </div>
+          <div class="when">
+            <b>When you need this</b>
+            <p>Once you&rsquo;ve stopped noticing it&rsquo;s broken and started just living with it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="punch-list">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg></span>
+            <h2>Punch-list projects</h2>
+          </div>
+          <div class="svc-body">
+            <p>The list you&rsquo;ve been adding to since spring. Send it over, we walk it with you when we arrive, and we work down it in order. Whatever fits in the morning gets done; whatever&rsquo;s bigger than a morning, we say so before we start.</p>
+            <p>You get a walkthrough at the end &ndash; every item pointed at and confirmed, not just a text that says &ldquo;all set.&rdquo;</p>
+          </div>
+        </div>
+        <div class="svc-side">
+          <span class="lbl">What&rsquo;s included</span>
+          <div class="check-list tight">
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>One list, worked top to bottom</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>A walkthrough before anything starts</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>Honest word on what&rsquo;s bigger than a morning</p></div>
+            <div class="check-item"><span class="mk"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><p>A finished-list walkthrough before we leave</p></div>
+          </div>
+          <div class="when">
+            <b>When you need this</b>
+            <p>When the list is longer than any one thing on it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Ready to put a date on it?</h2>
+      <p>Call with the list, or send it through the contact page &ndash; either way you&rsquo;ll get an actual morning, not a maybe.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550105">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0105
+        </a>
+        <a class="btn btn-text" href="contact.html">
+          Go to contact
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pad">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <b>Saturday Morning Fix-It</b>
+      </a>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="tel:+16315550105">(631) 555-0105</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disc">
+      Saturday Morning Fix-It &middot; Serving Long Island, NY &middot; <a href="tel:+16315550105">(631) 555-0105</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+16315550105">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Saturday Morning Fix-It<span class="s">(631) 555-0105</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(focusBtn){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+    if(focusBtn && hamburger){ hamburger.focus(); }
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(true); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeMenu(false); }
+  });
+})();
+</script>
+
+</body>
+</html>

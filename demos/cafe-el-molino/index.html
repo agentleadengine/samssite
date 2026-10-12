@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--
+  DIRECTION CONTRACT
+  THESIS: The everyday coffee, roasted a few feet from where you drink it — no rush, no pretension.
+  OWN-WORLD: A dark-roast menu-board world: deep roast-brown fields with terracotta glow, a hand-set
+    display serif for headlines, dot-leader typographic rows standing in for a chalk menu board,
+    warm cream sections for breathing room between dark passages.
+  STORY: Green bean to cup across the scroll — the roaster mid-batch, the bag stamped with this
+    week's roast date, the three services worth a special trip, why the cup tastes different.
+  FIRST VIEWPORT: Full-bleed dark roast background, an authored SVG scene of the roaster mid-batch
+    with beans tumbling and steam drifting off the cooling tray, one headline, a call CTA and a
+    "ver la carta" text CTA.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café El Molino — Cafetería de barrio en Long Island, NY</title>
+<meta name="description" content="Café El Molino: café tostado en casa, panadería y desayunos en Long Island, NY. Sitio de demostración. Llame al (516) 555-0171.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Yeseva+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Café El Molino, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--tueste)"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--terracota)" stroke-width="2.2"/>
+        <path d="M22 9v26M9 22h26" stroke="var(--crema)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="4.5" fill="var(--terracota)"/>
+      </svg>
+      <span class="brand">Café El Molino<small>Cafetería de barrio</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550171">(516) 555-0171</a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">La Carta</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías de la carta">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#barra">Barra de espresso</a></li>
+          <li><a href="services.html#casa">Café de la casa</a></li>
+          <li><a href="services.html#pan">Panadería para acompañar</a></li>
+          <li><a href="services.html#bebidas">Bebidas sin café</a></li>
+          <li><a href="services.html#mayoreo">Café al mayoreo</a></li>
+          <li><a href="services.html#oficina">Pedidos para oficina</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Momentos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550171">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+      Llamar (516) 555-0171
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero band-dark on-dark" id="inicio">
+    <div class="wrap hgrid">
+      <div class="reveal">
+        <h1>El café del barrio, tostado esta semana.</h1>
+        <p class="lead">Tostamos en tandas pequeñas, aquí mismo, y preparamos su café al momento: cortado, con leche, de olla o frío. Venga por la mañana y quédese el tiempo que quiera.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550171">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Llamar (516) 555-0171
+          </a>
+          <a class="btn-line" href="services.html">
+            Ver la carta
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-art reveal reveal-2">
+        <svg class="scene" viewBox="0 0 440 340" role="img" aria-label="Ilustración de una tostadora de café en plena tanda, con grano cayendo a la bandeja de enfriado y vapor subiendo">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="var(--terracota-2)"/>
+              <stop offset="100%" stop-color="var(--terracota)" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="drum" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--tueste-3)"/>
+              <stop offset="100%" stop-color="var(--tueste-2)"/>
+            </linearGradient>
+          </defs>
+          <rect x="128" y="252" width="11" height="48" rx="3" fill="var(--tueste-3)"/>
+          <rect x="304" y="252" width="11" height="48" rx="3" fill="var(--tueste-3)"/>
+          <rect x="96" y="128" width="252" height="128" rx="18" fill="url(#drum)" stroke="var(--tueste-3)" stroke-width="2"/>
+          <path d="M158 128 L182 84 L262 84 L286 128 Z" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+          <rect x="196" y="64" width="52" height="22" rx="4" fill="var(--tueste-2)" stroke="var(--tueste-3)" stroke-width="2"/>
+          <circle class="glow-pulse" cx="222" cy="194" r="50" fill="url(#glow)"/>
+          <circle cx="222" cy="194" r="50" fill="none" stroke="var(--terracota-2)" stroke-width="3"/>
+          <circle cx="222" cy="194" r="37" fill="none" stroke="var(--crema)" stroke-width="1.3" stroke-dasharray="3 7" opacity=".45"/>
+          <g fill="var(--tueste)">
+            <ellipse cx="206" cy="182" rx="7.5" ry="5" transform="rotate(-18 206 182)"/>
+            <ellipse cx="235" cy="190" rx="7.5" ry="5" transform="rotate(24 235 190)"/>
+            <ellipse cx="216" cy="209" rx="7.5" ry="5" transform="rotate(6 216 209)"/>
+            <ellipse cx="240" cy="170" rx="6.5" ry="4.4" transform="rotate(-32 240 170)"/>
+          </g>
+          <circle cx="322" cy="158" r="13" fill="var(--tueste-3)" stroke="var(--crema-2)" stroke-width="1.6"/>
+          <line x1="322" y1="158" x2="329" y2="149" stroke="var(--terracota-2)" stroke-width="2" stroke-linecap="round"/>
+          <rect x="78" y="266" width="128" height="17" rx="8.5" fill="var(--tueste-3)"/>
+          <g fill="var(--terracota-2)">
+            <ellipse cx="101" cy="273" rx="6.5" ry="4" transform="rotate(-14 101 273)"/>
+            <ellipse cx="123" cy="277" rx="6.5" ry="4" transform="rotate(10 123 277)"/>
+            <ellipse cx="147" cy="271" rx="6.5" ry="4" transform="rotate(-6 147 271)"/>
+            <ellipse cx="171" cy="276" rx="6.5" ry="4" transform="rotate(16 171 276)"/>
+          </g>
+          <g class="steam" stroke="var(--crema)" stroke-width="3.2" fill="none" stroke-linecap="round" opacity=".7">
+            <path d="M104 264c-7-15 9-19 2-34"/>
+            <path d="M136 264c-7-16 9-20 2-36"/>
+            <path d="M168 264c-7-14 9-18 2-32"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiet band-light">
+    <div class="wrap quiet-grid">
+      <div class="quiet-art">
+        <svg viewBox="0 0 200 220" role="img" aria-label="Ilustración de una bolsa de café sellada, marcada como tostada esta semana">
+          <path d="M52 72h96l-8 128a16 16 0 0 1-16 14H76a16 16 0 0 1-16-14Z" fill="var(--crema-2)" stroke="var(--tueste-3)" stroke-width="2.2"/>
+          <path d="M52 72c0-24 20-38 48-38s48 14 48 38" fill="none" stroke="var(--tueste-3)" stroke-width="3"/>
+          <rect x="66" y="70" width="68" height="14" fill="var(--tueste)"/>
+          <rect x="68" y="106" width="64" height="46" rx="5" fill="none" stroke="var(--terracota)" stroke-width="2" stroke-dasharray="2 5"/>
+          <text x="100" y="126" text-anchor="middle" font-family="Karla, sans-serif" font-weight="800" font-size="10.5" letter-spacing="1.4" fill="var(--terracota-deep)">TOSTADO</text>
+          <text x="100" y="141" text-anchor="middle" font-family="Karla, sans-serif" font-weight="700" font-size="9.5" letter-spacing="1" fill="var(--terracota-deep)">ESTA SEMANA</text>
+        </svg>
+      </div>
+      <div>
+        <h2>Fecha de tueste, no de caducidad</h2>
+        <p class="measure">Cada bolsa lleva el día exacto en que se tostó el café que contiene. Tostamos los martes, jueves y sábados por la mañana, en tandas de unas doce libras. Si compra el mismo día, todavía se siente el tueste desde la puerta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser band-light-2">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Vea la carta completa</h2>
+      </div>
+      <div>
+        <a class="menu-row" href="services.html#barra">
+          <span class="name">Barra de espresso</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="menu-row" href="services.html#pan">
+          <span class="name">Panadería para acompañar</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="menu-row" href="services.html#mayoreo">
+          <span class="name">Café al mayoreo</span>
+          <span class="leader"></span>
+          <span class="arrow"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why band-light">
+    <div class="wrap why-grid">
+      <div>
+        <h2>Por qué sabe distinto</h2>
+        <p class="measure">No hay ningún secreto. Compramos café verde en poca cantidad, lo tostamos aquí y lo usamos mientras todavía sabe bien.</p>
+      </div>
+      <ul class="fact-list">
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="5" y="9" width="18" height="12" rx="3"/><circle cx="14" cy="15" r="4"/><path d="M9 9V6h10v3"/></svg>
+          </span>
+          <div>
+            <strong>Lotes pequeños</strong>
+            <span>Unas doce libras por tanda, tres mañanas a la semana. Se siente desde la banqueta.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><rect x="5" y="7" width="18" height="16" rx="2.5"/><path d="M5 12h18M9 4v5M19 4v5"/><path d="M10.5 17.3l2 2 4.5-4.5"/></svg>
+          </span>
+          <div>
+            <strong>Fecha de tueste marcada</strong>
+            <span>Cada bolsa dice el día exacto en que se tostó, no una fecha de caducidad genérica.</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="15" r="9"/><path d="M14 15l4.2-4.2"/><circle cx="14" cy="15" r="1.3" fill="currentColor" stroke="none"/><path d="M14 4.5v2M23.5 15h-2M4.5 15h2"/></svg>
+          </span>
+          <div>
+            <strong>Ajuste diario de la máquina</strong>
+            <span>Calibramos el espresso cada mañana y otra vez después de la comida. Si una carga sale mal, la repetimos.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <div class="wrap closing-grid">
+      <div>
+        <h2>¿Le preparamos algo?</h2>
+        <p class="measure" style="color:rgba(250,241,224,.82)">Llame para pedidos grandes, café por jarra para una reunión o bolsas al mayoreo. Le contesta alguien del mostrador, no un sistema automático.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+15165550171">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+            Llamar (516) 555-0171
+          </a>
+          <a class="btn-line" href="contact.html">
+            Ir a contacto
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <ul class="hours-mini">
+          <li><span class="d">Lunes a viernes</span><span class="h">6:30 a.m. – 4 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="h">7 a.m. – 5 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="h">7:30 a.m. – 3 p.m.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Café El Molino</div>
+        <p>Café tostado en casa, panadería y desayunos en Long Island, NY.</p>
+        <p><a href="tel:+15165550171">(516) 555-0171</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">La Carta</a></li>
+          <li><a href="work.html">Momentos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550171">Llamar (516) 555-0171</a></li>
+          <li><a href="sms:+15165550171">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550171">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff"><path d="M8 4h2.4l1.3 3.6-2 1.7a10.6 10.6 0 0 0 5 5l1.7-2L19.9 14v2.6a1.7 1.7 0 0 1-1.9 1.7A14.8 14.8 0 0 1 6.3 5.9 1.7 1.7 0 0 1 8 4Z"/></svg>
+  Llamar (516) 555-0171
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

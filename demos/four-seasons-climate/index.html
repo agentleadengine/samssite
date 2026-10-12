@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+THESIS: Year-round comfort is not one thing — it is a battle between two seasons, and we own both.
+OWN-WORLD: Ember orange vs glacier blue split identity. Two temperature halves meet at a seam. No generic HVAC blue-and-white.
+STORY: A house moves from freezing January to sweltering July; the same hands keep it livable through both.
+FIRST VIEWPORT: The screen splits hot left, cold right — the thesis is visible before you read a word.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Four Seasons Climate Co. — Heating & Air Conditioning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon">DEMO SITE</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M14 3 L14 25" stroke="#D4531E"/>
+        <path d="M14 3 L10 8 M14 3 L18 8" stroke="#D4531E"/>
+        <path d="M14 25 L10 20 M14 25 L18 20" stroke="#2B7A9E"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#1A1A1E"/>
+      </svg>
+      Four Seasons Climate Co.
+    </a>
+    <div class="header-phone"><a href="tel:6315550125">(631) 555-0125</a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-nav" aria-label="Primary">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="sub-trigger">Services
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5 L6 8 L9 5"/></svg>
+          </a>
+          <div class="sub-menu">
+            <a href="services.html#ac-installation">AC Installation</a>
+            <a href="services.html#furnace-repair">Furnace Repair</a>
+            <a href="services.html#ductless-mini-splits">Ductless Mini-Splits</a>
+            <a href="services.html#seasonal-maintenance">Seasonal Maintenance Plans</a>
+            <a href="services.html#air-quality">Air Quality and Filtration</a>
+          </div>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO: split hot/cold thesis -->
+  <section class="hero">
+    <div class="hero-split">
+      <div class="hero-hot">
+        <div class="hero-content">
+          <svg class="hero-temp-svg" viewBox="0 0 120 120" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="60" cy="70" r="28" stroke="rgba(255,255,255,0.3)" />
+            <path d="M60 42 L60 98" stroke="rgba(255,255,255,0.3)" />
+            <path d="M48 55 Q60 50 72 55" />
+            <path d="M48 65 Q60 60 72 65" />
+            <path d="M48 75 Q60 70 72 75" />
+            <path d="M60 42 L60 25 L55 20 M60 25 L65 20" />
+          </svg>
+          <h1>When the heat won't quit</h1>
+          <p>AC installation and repair that brings the temperature back to livable.</p>
+          <div class="hero-cta-group">
+            <a href="services.html#ac-installation" class="btn btn-outline">Cooling services</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-cold">
+        <div class="hero-content">
+          <svg class="hero-temp-svg" viewBox="0 0 120 120" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M60 10 L60 110" />
+            <path d="M60 10 L52 22 M60 10 L68 22" />
+            <path d="M60 110 L52 98 M60 110 L68 98" />
+            <path d="M15 60 L105 60" />
+            <path d="M15 60 L27 52 M15 60 L27 68" />
+            <path d="M105 60 L93 52 M105 60 L93 68" />
+            <path d="M28 28 L92 92 M28 92 L92 28" />
+            <path d="M28 28 L38 34 M28 28 L34 38" />
+            <path d="M92 92 L82 86 M92 92 L86 82" />
+            <path d="M92 28 L82 34 M92 28 L86 38" />
+            <path d="M28 92 L38 86 M28 92 L34 82" />
+          </svg>
+          <h1>When the cold settles in</h1>
+          <p>Furnace repair and heating that keeps every room warm through January.</p>
+          <div class="hero-cta-group">
+            <a href="services.html#furnace-repair" class="btn btn-outline">Heating services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-overlay-inner">
+        <h2>One company. Two seasons. Zero uncomfortable days.</h2>
+        <p>Four Seasons Climate Co. handles heating and air conditioning for homes across Long Island — installation, repair, maintenance, and air quality. Call us at <a href="tel:6315550125" style="color:var(--ember-glow);font-weight:700;">(631) 555-0125</a> or text to get started.</p>
+        <div class="hero-cta-group" style="margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn-primary">Get a quote</a>
+          <a href="services.html" class="btn btn-outline">See all services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF VIGNETTE -->
+  <section class="section">
+    <div class="container">
+      <div class="proof-vignette">
+        <div class="proof-visual">
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <rect x="40" y="60" width="120" height="90" rx="4" stroke="#fff" stroke-width="2" opacity="0.4"/>
+            <rect x="40" y="60" width="120" height="90" rx="4" fill="rgba(255,255,255,0.05)"/>
+            <path d="M100 60 L100 150" stroke="#fff" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"/>
+            <circle cx="65" cy="100" r="12" fill="none" stroke="#F2A65A" stroke-width="2"/>
+            <path d="M65 93 L65 107 M59 100 L71 100" stroke="#F2A65A" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="135" cy="110" r="12" fill="none" stroke="#A8D8E8" stroke-width="2"/>
+            <path d="M135 103 L135 117 M129 110 L141 110" stroke="#A8D8E8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M80 60 Q75 45 80 30" stroke="#F2A65A" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M120 60 Q125 75 120 90" stroke="#A8D8E8" stroke-width="2" fill="none" opacity="0.6"/>
+            <text x="100" y="180" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-family="sans-serif">Zoned comfort — sample diagram</text>
+          </svg>
+        </div>
+        <div class="proof-text">
+          <h3>The house that needed both</h3>
+          <p>A split-level home with a sun-baked second floor and a drafty ground level. The upstairs AC struggled through August; the downstairs furnace gave out in February. We installed a ductless mini-split upstairs for targeted cooling and repaired the furnace downstairs — one call, two seasons handled.</p>
+          <a href="work.html" class="btn-text">See more sample projects &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <h2 class="section-title">What we do</h2>
+      <p class="section-intro">Five core services covering the full heating and cooling cycle.</p>
+      <div class="services-teaser">
+        <div class="service-teaser-card">
+          <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#D4531E" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <rect x="8" y="12" width="24" height="18" rx="3"/>
+            <path d="M8 18 L32 18"/>
+            <circle cx="14" cy="24" r="2"/>
+            <circle cx="26" cy="24" r="2"/>
+            <path d="M20 30 L20 36 M17 36 L23 36"/>
+          </svg>
+          <h3>AC Installation</h3>
+          <p>New systems sized right for your home, installed clean with minimal disruption.</p>
+          <a href="services.html#ac-installation" class="btn-text">Learn more &rarr;</a>
+        </div>
+        <div class="service-teaser-card">
+          <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#2B7A9E" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M20 6 L20 14 M16 10 L24 10"/>
+            <rect x="10" y="14" width="20" height="20" rx="3"/>
+            <path d="M14 20 L26 20 M14 26 L26 26 M14 30 L22 30"/>
+            <path d="M8 22 L10 22 M30 22 L32 22"/>
+          </svg>
+          <h3>Furnace Repair</h3>
+          <p>Fast diagnostics and honest fixes when your heat stops working on the coldest night.</p>
+          <a href="services.html#furnace-repair" class="btn-text">Learn more &rarr;</a>
+        </div>
+        <div class="service-teaser-card">
+          <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#D4531E" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <rect x="14" y="6" width="12" height="28" rx="2"/>
+            <path d="M14 12 L26 12 M14 18 L26 18 M14 24 L26 24 M14 30 L26 30"/>
+            <path d="M20 6 L20 2 M18 4 L22 4"/>
+          </svg>
+          <h3>Ductless Mini-Splits</h3>
+          <p>Targeted comfort for rooms that need their own climate zone — no ductwork required.</p>
+          <a href="services.html#ductless-mini-splits" class="btn-text">Learn more &rarr;</a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="services.html" class="btn btn-primary">View all services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY-US STRIP -->
+  <section class="why-strip">
+    <div class="why-strip-inner">
+      <div class="why-item">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none" stroke="#F2A65A" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 4 L18 22 M12 16 L18 22 L24 16"/>
+          <path d="M6 28 L30 28" stroke="rgba(242,166,90,0.5)"/>
+          <path d="M8 32 L28 32" stroke="rgba(242,166,90,0.3)"/>
+        </svg>
+        <h3>Both seasons, one call</h3>
+        <p>The same crew that installs your AC in June is the one repairing your furnace in December. One relationship, year-round.</p>
+      </div>
+      <div class="why-item">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none" stroke="#A8D8E8" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="18" cy="18" r="14"/>
+          <path d="M18 10 L18 18 L24 22"/>
+        </svg>
+        <h3>Same-day response</h3>
+        <p>When the heat goes out at midnight or the AC dies in a heat wave, we move fast. Call and we will be there.</p>
+      </div>
+      <div class="why-item">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none" stroke="#F2A65A" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 18 L12 24 L24 12"/>
+          <path d="M6 28 L30 28" stroke="rgba(242,166,90,0.4)"/>
+        </svg>
+        <h3>Honest assessments</h3>
+        <p>If a repair will get you through the season, we say so. If it is time to replace, we tell you why — no pressure, no upsell.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="cta-block">
+    <h2>Ready to get comfortable?</h2>
+    <p>Call us at (631) 555-0125 or text to schedule a visit. We will figure out what your home needs and get it done.</p>
+    <a href="contact.html" class="btn">Contact us</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">Four Seasons Climate Co.</div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="credit">Demo website built by Samuel Ochoa — samuelochoa.com/websites</p>
+      <p class="disclaimer">Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-call-bar">
+  <a href="tel:6315550125">Call (631) 555-0125</a>
+</div>
+
+<script>
+  var toggle = document.querySelector('.nav-toggle');
+  var navList = document.getElementById('nav-list');
+  toggle.addEventListener('click', function() {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', !expanded);
+    navList.classList.toggle('open', !expanded);
+  });
+  navList.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && !e.target.parentElement.classList.contains('has-sub')) {
+      toggle.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('open');
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      toggle.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

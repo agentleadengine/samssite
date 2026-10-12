@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos de muestra | Salón Bella Vida</title>
+<meta name="description" content="Escenas ilustradas de trabajos típicos de Salón Bella Vida: color, corte, keratina, uñas, cejas y looks de quinceañera en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-strip">Sitio de demostración</div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="18" y="27" width="4" height="10" rx="2" fill="#8A6526"/>
+        <circle cx="20" cy="16" r="14" fill="#B68A3F"/>
+        <circle cx="20" cy="16" r="10.6" fill="#E3B2A4"/>
+        <circle cx="20" cy="16" r="10.6" fill="none" stroke="#FBF4EE" stroke-width="1" opacity=".55"/>
+      </svg>
+      <span class="brand-text">
+        <b>Salón Bella Vida</b>
+        <i>Belleza · Long Island, NY</i>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html">Servicios</a>
+          <ul class="nav-sub">
+            <li><a href="services.html">Ver todos los servicios</a></li>
+            <li><a href="services.html#color">Color y balayage</a></li>
+            <li><a href="services.html#corte">Corte y peinado</a></li>
+            <li><a href="services.html#keratina">Keratina y tratamientos</a></li>
+            <li><a href="services.html#unas">Uñas y pedicura</a></li>
+            <li><a href="services.html#cejas">Cejas y pestañas</a></li>
+            <li><a href="services.html#novias">Novias y quinceañeras</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Trabajo</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-tel" href="tel:+15165550109">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c.8 0 1.5.5 1.8 1.2l.9 2.1a2 2 0 0 1-.5 2.2L8 10.7c1 2.3 2.8 4.1 5.1 5.1l1.2-1.2a2 2 0 0 1 2.2-.5l2.1.9A2 2 0 0 1 20 17V19a2 2 0 0 1-2.2 2C9.8 20.4 3.6 14.2 3 6.2 2.9 5 3.8 4 5 4h2Z"/></svg>
+      (516) 555-0109
+    </a>
+
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" inert>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li class="mob-has-sub">
+      <button class="mob-sub-toggle" type="button" aria-expanded="false" aria-controls="mob-sub-servicios">
+        Servicios
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="mob-sub" id="mob-sub-servicios">
+        <li><a href="services.html">Ver todos los servicios</a></li>
+        <li><a href="services.html#color">Color y balayage</a></li>
+        <li><a href="services.html#corte">Corte y peinado</a></li>
+        <li><a href="services.html#keratina">Keratina y tratamientos</a></li>
+        <li><a href="services.html#unas">Uñas y pedicura</a></li>
+        <li><a href="services.html#cejas">Cejas y pestañas</a></li>
+        <li><a href="services.html#novias">Novias y quinceañeras</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html" aria-current="page">Trabajo</a></li>
+    <li><a href="about.html">Nosotros</a></li>
+    <li><a href="contact.html">Contacto</a></li>
+  </ul>
+  <a class="mob-tel" href="tel:+15165550109">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c.8 0 1.5.5 1.8 1.2l.9 2.1a2 2 0 0 1-.5 2.2L8 10.7c1 2.3 2.8 4.1 5.1 5.1l1.2-1.2a2 2 0 0 1 2.2-.5l2.1.9A2 2 0 0 1 20 17V19a2 2 0 0 1-2.2 2C9.8 20.4 3.6 14.2 3 6.2 2.9 5 3.8 4 5 4h2Z"/></svg>
+    Llamar: (516) 555-0109
+  </a>
+</div>
+
+<main>
+
+  <section class="page-intro on-dark">
+    <div class="wrap">
+      <h1 class="reveal reveal-1">Proyectos de muestra.</h1>
+      <p class="sub reveal reveal-2">Estas son escenas ilustradas de servicios típicos, en la misma gama de color que usa el salón. No son fotos de clientas reales; el trato y el cuidado son los que usted recibiría.</p>
+    </div>
+  </section>
+
+  <section class="on-paper">
+    <div class="wrap">
+      <div class="work-list">
+
+        <article class="work-item">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de mechones ondulados en degradado, de raíz oscura a puntas doradas, mostrando un balayage cálido">
+              <path d="M110 20 Q100 90 120 150 Q135 190 120 220" stroke="#3C2718" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M150 16 Q140 86 158 148 Q172 188 158 222" stroke="#8A6526" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M190 20 Q182 90 198 150 Q210 190 198 220" stroke="#B68A3F" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M228 24 Q222 92 236 152 Q246 190 236 218" stroke="#E9D3A3" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <ellipse cx="170" cy="228" rx="120" ry="9" fill="#F6E2D9"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Balayage cálido</h3>
+            <p>Retoque de raíz y mechas en tonos cálidos, con la transición suave que deja una buena prueba de mecha antes de aclarar.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="work-item rev">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de una silueta de corte bob a la altura de la barbilla junto a unas tijeras">
+              <path d="M160 26c-50 0-84 42-84 96 0 32 12 58 26 74h116c14-16 26-42 26-74 0-54-34-96-84-96Z" fill="#EFCFC2"/>
+              <path d="M76 122c0 32 12 58 26 74M244 122c0 32-12 58-26 74" stroke="#523522" stroke-width="2.4" fill="none" opacity=".5"/>
+              <ellipse cx="160" cy="210" rx="90" ry="10" fill="#F6E2D9"/>
+              <circle cx="248" cy="64" r="8" fill="none" stroke="#B68A3F" stroke-width="3"/>
+              <circle cx="248" cy="88" r="8" fill="none" stroke="#B68A3F" stroke-width="3"/>
+              <line x1="255" y1="70" x2="284" y2="44" stroke="#B68A3F" stroke-width="3" stroke-linecap="round"/>
+              <line x1="255" y1="82" x2="284" y2="108" stroke="#B68A3F" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Corte bob a la altura de la barbilla</h3>
+            <p>Corte con línea limpia, pensado para que el peinado de todos los días le tome menos tiempo frente al espejo.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de líneas onduladas a la izquierda volviéndose lisas a la derecha, mostrando el efecto de un tratamiento de keratina">
+              <path d="M40 60 Q60 90 40 120 Q20 150 40 180" stroke="#8A6526" stroke-width="8" stroke-linecap="round" fill="none" opacity=".7"/>
+              <path d="M80 55 Q100 88 80 118 Q60 150 80 182" stroke="#B68A3F" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8"/>
+              <path d="M130 50 L130 190" stroke="#C67F6C" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <path d="M175 50 L175 190" stroke="#B68A3F" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <path d="M220 50 L220 190" stroke="#8A6526" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <path d="M265 50 L265 190" stroke="#3C2718" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <ellipse cx="170" cy="204" rx="140" ry="9" fill="#F6E2D9"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Keratina lisa y con brillo</h3>
+            <p>De un cabello con volumen difícil de controlar a un acabado liso, con la hidratación profunda incluida en el servicio.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="work-item rev">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de cinco uñas en forma de almendra, en tonos rosados y dorados, como muestra de una manicura">
+              <path d="M60 200c0-46 10-90 30-90s30 44 30 90Z" fill="#EFCFC2"/>
+              <path d="M110 210c0-52 11-100 33-100s33 48 33 100Z" fill="#C67F6C"/>
+              <path d="M163 214c0-56 12-108 36-108s36 52 36 108Z" fill="#B68A3F"/>
+              <path d="M220 210c0-52 11-100 33-100s33 48 33 100Z" fill="#8A6526"/>
+              <path d="M270 200c0-46 10-90 30-90s30 44 30 90Z" fill="#A6614F"/>
+              <ellipse cx="180" cy="222" rx="150" ry="8" fill="#F6E2D9"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Manicura en tonos tierra</h3>
+            <p>Manicura en gel con una paleta de rosados y dorados, a juego con la temporada y fácil de combinar.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de un arco de ceja laminada con pestañas en abanico debajo">
+              <path d="M40 140c30-60 90-88 130-88s100 28 130 88" stroke="#523522" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M40 140c30-60 90-88 130-88s100 28 130 88" stroke="#B68A3F" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round" fill="none"/>
+              <g stroke="#3C2718" stroke-width="3" stroke-linecap="round">
+                <line x1="90" y1="176" x2="80" y2="196"/>
+                <line x1="120" y1="188" x2="114" y2="210"/>
+                <line x1="152" y1="192" x2="152" y2="216"/>
+                <line x1="184" y1="188" x2="190" y2="210"/>
+                <line x1="214" y1="176" x2="224" y2="196"/>
+              </g>
+              <ellipse cx="160" cy="222" rx="130" ry="8" fill="#F6E2D9"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Cejas laminadas y pestañas a juego</h3>
+            <p>Diseño de cejas con laminado para que se mantengan peinadas, más pestañas pelo a pelo para un efecto natural.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="work-item rev">
+          <div class="work-frame frame">
+            <svg viewBox="0 0 320 240" role="img" aria-label="Ilustración de un peinado alto con un pequeño arco de tiara y flores prendidas, para un look de quinceañera">
+              <path d="M160 40c-44 0-70 34-70 72 0 30 12 54 26 70h88c14-16 26-40 26-70 0-38-26-72-70-72Z" fill="#EFCFC2"/>
+              <path d="M120 30a70 34 0 0 1 80 0" stroke="#B68A3F" stroke-width="3" fill="none"/>
+              <circle cx="120" cy="30" r="4" fill="#B68A3F"/>
+              <circle cx="200" cy="30" r="4" fill="#B68A3F"/>
+              <circle cx="105" cy="70" r="8" fill="#C67F6C"/>
+              <circle cx="118" cy="58" r="5" fill="#E9D3A3"/>
+              <circle cx="215" cy="66" r="7" fill="#C67F6C"/>
+              <ellipse cx="160" cy="200" rx="86" ry="10" fill="#F6E2D9"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <h3>Look de quinceañera</h3>
+            <p>Peinado alto con flores prendidas y maquillaje para el día del evento, con prueba previa incluida en el paquete.</p>
+            <span class="chip-sample">Proyecto de muestra</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="on-rose">
+    <div class="wrap cta-close">
+      <h2>¿Quiere un resultado parecido?</h2>
+      <p>Cuéntenos qué tiene en mente. Le decimos con honestidad qué se puede lograr y en cuántas visitas.</p>
+      <div class="btns">
+        <a class="btn btn-solid" href="tel:+15165550109">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c.8 0 1.5.5 1.8 1.2l.9 2.1a2 2 0 0 1-.5 2.2L8 10.7c1 2.3 2.8 4.1 5.1 5.1l1.2-1.2a2 2 0 0 1 2.2-.5l2.1.9A2 2 0 0 1 20 17V19a2 2 0 0 1-2.2 2C9.8 20.4 3.6 14.2 3 6.2 2.9 5 3.8 4 5 4h2Z"/></svg>
+          Llamar (516) 555-0109
+        </a>
+        <a class="btn btn-line" href="services.html">Ver servicios y precios</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Salón Bella Vida</b>
+        Salón de belleza con cita previa en Long Island, NY. Atención en español e inglés.
+      </div>
+      <nav aria-label="Pie de página">
+        <ul class="foot-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html" aria-current="page">Trabajo</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="tel:+15165550109">(516) 555-0109</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disclose">Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+    <p class="legal">Salón Bella Vida es un negocio ficticio mostrado como demostración. El teléfono y los precios son solo ejemplos.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <div class="cb-note">Reserve su cita<b>(516) 555-0109</b></div>
+  <a href="tel:+15165550109">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c.8 0 1.5.5 1.8 1.2l.9 2.1a2 2 0 0 1-.5 2.2L8 10.7c1 2.3 2.8 4.1 5.1 5.1l1.2-1.2a2 2 0 0 1 2.2-.5l2.1.9A2 2 0 0 1 20 17V19a2 2 0 0 1-2.2 2C9.8 20.4 3.6 14.2 3 6.2 2.9 5 3.8 4 5 4h2Z"/></svg>
+    Llamar
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger = document.querySelector('.hamburger');
+  var panel = document.getElementById('mobile-nav');
+  function closePanel(){
+    if(!burger || !panel) return;
+    burger.setAttribute('aria-expanded','false');
+    panel.classList.remove('is-open');
+    panel.setAttribute('inert','');
+  }
+  function openPanel(){
+    if(!burger || !panel) return;
+    burger.setAttribute('aria-expanded','true');
+    panel.removeAttribute('inert');
+    panel.classList.add('is-open');
+  }
+  if(burger && panel){
+    burger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      open ? closePanel() : openPanel();
+    });
+    document.addEventListener('click', function(e){
+      if(panel.classList.contains('is-open') && !panel.contains(e.target) && e.target !== burger){ closePanel(); }
+    });
+  }
+  var subToggles = document.querySelectorAll('.mob-sub-toggle');
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var list = document.getElementById(btn.getAttribute('aria-controls'));
+      if(list){ list.classList.toggle('is-open', !expanded); }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closePanel();
+      subToggles.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var list = document.getElementById(btn.getAttribute('aria-controls'));
+        if(list) list.classList.remove('is-open');
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

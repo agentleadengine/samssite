@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Panadería El Amanecer</title>
+<meta name="description" content="Llame o escriba a Panadería El Amanecer: (516) 555-0111. Horario, formulario de muestra y preguntas frecuentes. Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Panadería El Amanecer, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--cacao-950)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--manteca-500)" stroke-width="1.3" opacity=".5"/>
+        <path d="M8 26h28" stroke="var(--crema-dim)" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+        <path d="M10.5 25.2a11.5 11.5 0 0 1 23 0Z" fill="var(--manteca-500)"/>
+        <g stroke="var(--manteca-500)" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+          <path d="M22 8.5v3.4"/>
+          <path d="M13.6 12l2.2 2.2"/>
+          <path d="M30.4 12l-2.2 2.2"/>
+        </g>
+        <circle cx="22" cy="25.6" r="3" fill="var(--rosa-500)"/>
+      </svg>
+      <span class="brand">El Amanecer<small>Panadería · Long Island</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      (516) 555-0111
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#pan-dulce">Pan dulce del día</a></li>
+          <li><a href="services.html#bolillo">Bolillo y telera</a></li>
+          <li><a href="services.html#pasteles">Pasteles por encargo</a></li>
+          <li><a href="services.html#cafe">Café y bebidas</a></li>
+          <li><a href="services.html#temporada">Rosca y pan de temporada</a></li>
+          <li><a href="services.html#charolas">Charolas para eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Encargos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html" aria-current="page">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      Llamar (516) 555-0111
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-dark on-dark">
+    <div class="wrap reveal">
+      <h1>Llámenos o mande un mensaje</h1>
+      <p class="lead measure" style="color:rgba(255,251,242,.84)">Lo más rápido siempre es el teléfono. Si prefiere, use el formulario y le confirmamos por teléfono el precio y la hora de recoger.</p>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap contact-grid">
+
+      <div class="call-box">
+        <span class="lbl">Lo más rápido</span>
+        <a class="big-tel" href="tel:+15165550111">(516) 555-0111</a>
+        <p>Contestamos desde temprano. Si estamos atendiendo el mostrador, deje su recado con la fecha del pedido y le regresamos la llamada.</p>
+
+        <div class="contact-links">
+          <a class="contact-link-row" href="tel:+15165550111">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+            Llamar (516) 555-0111
+          </a>
+          <a class="contact-link-row" href="sms:+15165550111">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="var(--crema)"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4.2 3.4V16H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg>
+            Enviar mensaje de texto
+          </a>
+        </div>
+
+        <ul class="hours-mini" style="margin-top:1.5rem">
+          <li><span class="d">Lunes a viernes</span><span class="h">5 a.m. – 8 p.m.</span></li>
+          <li><span class="d">Sábado</span><span class="h">5 a.m. – 9 p.m.</span></li>
+          <li><span class="d">Domingo</span><span class="h">6 a.m. – 6 p.m.</span></li>
+          <li><span class="d">Pedidos por teléfono</span><span class="h">Hasta las 6 p.m.</span></li>
+        </ul>
+      </div>
+
+      <form class="sample-form">
+        <label for="n">Nombre</label>
+        <input id="n" type="text" placeholder="Nombre y apellido">
+        <label for="t">Teléfono</label>
+        <input id="t" type="tel" placeholder="Número donde podamos llamarle">
+        <label for="tipo">¿Qué desea encargar?</label>
+        <select id="tipo">
+          <option>Pastel de tres leches</option>
+          <option>Pastel de chocolate o mocha</option>
+          <option>Pastel de fresas con crema</option>
+          <option>Charola surtida de pan dulce</option>
+          <option>Rosca o pan de temporada</option>
+          <option>Otro</option>
+        </select>
+        <label for="f">¿Para qué día?</label>
+        <input id="f" type="text" placeholder="Sábado 20, por la mañana">
+        <label for="m">Detalles del pedido</label>
+        <textarea id="m" rows="4" placeholder="Para cuántas personas, qué dedicatoria lleva, si prefiere relleno de durazno o fresa."></textarea>
+        <button type="button">Enviar pedido</button>
+        <p class="form-caption">Formulario de muestra</p>
+      </form>
+
+    </div>
+  </section>
+
+  <section class="band-manteca section-tight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq measure-wide">
+        <details>
+          <summary>
+            ¿Con cuánto tiempo debo encargar mi pastel?
+            <span class="plus"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-a">Con 48 horas basta para la mayoría de los pasteles. Para charolas de pan dulce, un día de anticipación es suficiente.</p>
+        </details>
+        <details>
+          <summary>
+            ¿Necesito llamar para comprar pan dulce del día?
+            <span class="plus"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-a">No. Pase directo al mostrador, agarre lo que guste con la charola y las pinzas, y ahí se le cobra por pieza.</p>
+        </details>
+        <details>
+          <summary>
+            ¿Hasta qué hora puedo llamar para hacer un pedido?
+            <span class="plus"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-a">Los pedidos por teléfono se reciben hasta las 6:00 p.m. Fuera de ese horario, puede dejar su recado y le regresamos la llamada.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="dock-rule on-dark" viewBox="0 0 400 8" preserveAspectRatio="none" aria-hidden="true">
+      <circle cx="10" cy="4" r="2.6"/><circle cx="34" cy="4" r="2.6"/><circle cx="58" cy="4" r="2.6"/><circle cx="82" cy="4" r="2.6"/><circle cx="106" cy="4" r="2.6"/><circle cx="130" cy="4" r="2.6"/><circle cx="154" cy="4" r="2.6"/><circle cx="178" cy="4" r="2.6"/><circle cx="202" cy="4" r="2.6"/><circle cx="226" cy="4" r="2.6"/><circle cx="250" cy="4" r="2.6"/><circle cx="274" cy="4" r="2.6"/><circle cx="298" cy="4" r="2.6"/><circle cx="322" cy="4" r="2.6"/><circle cx="346" cy="4" r="2.6"/><circle cx="370" cy="4" r="2.6"/><circle cx="394" cy="4" r="2.6"/>
+    </svg>
+    <div class="wrap">
+      <h2>Le esperamos</h2>
+      <p class="measure" style="color:rgba(255,251,242,.82)">Llame, escriba o pase por el mostrador, lo que le quede mejor.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550111">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+          Llamar (516) 555-0111
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">El Amanecer</div>
+        <p>Pan dulce, bolillo y pasteles horneados en tandas, todo el día, en Long Island, NY.</p>
+        <p><a href="tel:+15165550111">(516) 555-0111</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Menú</a></li>
+          <li><a href="work.html">Encargos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550111">Llamar (516) 555-0111</a></li>
+          <li><a href="sms:+15165550111">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550111">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+  Llamar (516) 555-0111
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

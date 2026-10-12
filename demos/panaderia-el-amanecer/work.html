@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encargos — Panadería El Amanecer</title>
+<meta name="description" content="Seis ideas de encargos típicos de Panadería El Amanecer: pasteles de XV años, charolas para bautizo, rosca de Reyes, pan de muerto y más. Ilustraciones propias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Sitio de demostración</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Panadería El Amanecer, inicio">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--cacao-950)"/>
+        <circle cx="22" cy="22" r="19.2" fill="none" stroke="var(--manteca-500)" stroke-width="1.3" opacity=".5"/>
+        <path d="M8 26h28" stroke="var(--crema-dim)" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+        <path d="M10.5 25.2a11.5 11.5 0 0 1 23 0Z" fill="var(--manteca-500)"/>
+        <g stroke="var(--manteca-500)" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+          <path d="M22 8.5v3.4"/>
+          <path d="M13.6 12l2.2 2.2"/>
+          <path d="M30.4 12l-2.2 2.2"/>
+        </g>
+        <circle cx="22" cy="25.6" r="3" fill="var(--rosa-500)"/>
+      </svg>
+      <span class="brand">El Amanecer<small>Panadería · Long Island</small></span>
+    </a>
+
+    <a class="tel-header" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      (516) 555-0111
+    </a>
+
+    <button type="button" class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-panel" id="nav-panel" hidden aria-label="Principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub">
+        <div class="row">
+          <a href="services.html">Menú</a>
+          <button type="button" class="sub-toggle" id="sub-toggle" aria-expanded="false" aria-controls="sub-panel" aria-label="Mostrar categorías del menú">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <ul class="submenu" id="sub-panel" hidden>
+          <li><a href="services.html#pan-dulce">Pan dulce del día</a></li>
+          <li><a href="services.html#bolillo">Bolillo y telera</a></li>
+          <li><a href="services.html#pasteles">Pasteles por encargo</a></li>
+          <li><a href="services.html#cafe">Café y bebidas</a></li>
+          <li><a href="services.html#temporada">Rosca y pan de temporada</a></li>
+          <li><a href="services.html#charolas">Charolas para eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Encargos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="mobile-tel" href="tel:+15165550111">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+      Llamar (516) 555-0111
+    </a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro band-manteca">
+    <div class="wrap reveal">
+      <h1>Seis ideas de lo que armamos</h1>
+      <p class="lead measure">Cuando alguien llama con una fecha, esto es lo típico que sale de la cocina. Son ilustraciones propias, no fotos de pedidos reales ni de clientes.</p>
+    </div>
+  </section>
+
+  <section class="band-light section-tight">
+    <div class="wrap">
+      <div class="showcase">
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de un pastel de tres leches redondo, decorado con rosetones de crema y una cinta que dice 15, para una fiesta de quince años">
+              <ellipse cx="200" cy="250" rx="120" ry="14" fill="var(--cacao-950)" opacity=".08"/>
+              <rect x="90" y="150" width="220" height="80" rx="10" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+              <path d="M90 168c8 6 12 6 20 0s12-6 20 0 12 6 20 0 12-6 20 0 12 6 20 0 12-6 20 0 12 6 20 0 12-6 20 0 12 6 20 0" fill="none" stroke="var(--manteca-100)" stroke-width="10" opacity=".85"/>
+              <ellipse cx="200" cy="150" rx="110" ry="20" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+              <g fill="var(--rosa-500)">
+                <ellipse cx="140" cy="146" rx="16" ry="9" transform="rotate(-10 140 146)"/>
+                <ellipse cx="200" cy="140" rx="16" ry="9"/>
+                <ellipse cx="260" cy="146" rx="16" ry="9" transform="rotate(10 260 146)"/>
+              </g>
+              <g fill="var(--rosa-600)" opacity=".85">
+                <circle cx="140" cy="146" r="4"/><circle cx="200" cy="140" r="4"/><circle cx="260" cy="146" r="4"/>
+              </g>
+              <g transform="rotate(-6 200 100)">
+                <rect x="168" y="86" width="64" height="26" rx="4" fill="var(--cacao-950)"/>
+                <text x="200" y="104" text-anchor="middle" font-family="Lilita One, sans-serif" font-size="16" fill="var(--manteca-500)">15</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Pastel de tres leches para unos XV años</h3>
+            <p>Empapado con la leche de siempre y decorado con rosetones, listo para cortar frente a los invitados.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una charola ovalada con pan dulce surtido y un listón alrededor, para un bautizo">
+              <ellipse cx="200" cy="240" rx="140" ry="14" fill="var(--cacao-950)" opacity=".08"/>
+              <ellipse cx="200" cy="200" rx="140" ry="46" fill="var(--manteca-100)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+              <ellipse cx="200" cy="200" rx="116" ry="34" fill="none" stroke="var(--cacao-950)" stroke-width="1.4" opacity=".3"/>
+              <g fill="var(--manteca-600)">
+                <ellipse cx="130" cy="188" rx="24" ry="16"/>
+                <ellipse cx="200" cy="182" rx="24" ry="16"/>
+                <ellipse cx="270" cy="188" rx="24" ry="16"/>
+              </g>
+              <g fill="var(--rosa-500)" opacity=".92">
+                <ellipse cx="165" cy="196" rx="20" ry="13"/>
+                <ellipse cx="235" cy="196" rx="20" ry="13"/>
+              </g>
+              <path d="M96 178c30-16 178-16 208 0" fill="none" stroke="var(--rosa-600)" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+              <path d="M92 176l-10-8 4 12-10 2 12 6-2 12 8-10 10 8-4-12 10-2-12-6 2-12Z" fill="var(--manteca-500)" opacity=".9"/>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Charola de pan dulce para un bautizo</h3>
+            <p>Conchas, cuernitos y besos surtidos en una sola charola, envuelta con listón para la mesa de dulces.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una rosca de Reyes decorada con tiras de fruta cristalizada sobre una tabla de madera">
+              <ellipse cx="200" cy="248" rx="130" ry="12" fill="var(--cacao-950)" opacity=".08"/>
+              <rect x="70" y="220" width="260" height="14" rx="6" fill="var(--cacao-700)"/>
+              <ellipse cx="200" cy="180" rx="110" ry="60" fill="var(--manteca-600)" stroke="var(--cacao-950)" stroke-width="3"/>
+              <ellipse cx="200" cy="180" rx="50" ry="26" fill="var(--crema)"/>
+              <g stroke="var(--cacao-900)" stroke-width="2" opacity=".4" fill="none">
+                <path d="M130 160c10-8 18-8 24 0M250 160c10-8 18-8 24 0M150 210c10 6 20 6 30 0M230 210c10 6 20 6 30 0"/>
+              </g>
+              <g fill="var(--rosa-500)">
+                <rect x="120" y="140" width="14" height="46" rx="6" transform="rotate(-18 127 163)"/>
+                <rect x="260" y="140" width="14" height="46" rx="6" transform="rotate(18 267 163)"/>
+              </g>
+              <rect x="190" y="126" width="14" height="46" rx="6" fill="var(--cacao-700)"/>
+              <g fill="var(--manteca-500)" opacity=".9">
+                <rect x="155" y="200" width="14" height="40" rx="6" transform="rotate(-12 162 220)"/>
+                <rect x="225" y="200" width="14" height="40" rx="6" transform="rotate(12 232 220)"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Rosca de Reyes para una oficina</h3>
+            <p>Rosca grande con fruta cristalizada, pensada para compartir entre todo el equipo la mañana del seis de enero.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de un pastel de cumpleaños infantil con chispas de colores y velas encendidas">
+              <ellipse cx="200" cy="250" rx="110" ry="12" fill="var(--cacao-950)" opacity=".08"/>
+              <rect x="110" y="176" width="180" height="64" rx="10" fill="var(--rosa-100)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+              <rect x="122" y="146" width="156" height="42" rx="10" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="2.6"/>
+              <g fill="var(--rosa-500)">
+                <circle cx="140" cy="160" r="3.4"/><circle cx="160" cy="168" r="3"/><circle cx="182" cy="158" r="3.6"/>
+                <circle cx="205" cy="170" r="3"/><circle cx="228" cy="160" r="3.4"/><circle cx="250" cy="168" r="3"/><circle cx="266" cy="158" r="3.4"/>
+              </g>
+              <g fill="var(--manteca-500)">
+                <circle cx="150" cy="150" r="3"/><circle cx="172" cy="176" r="3"/><circle cx="196" cy="150" r="3"/>
+                <circle cx="218" cy="176" r="3"/><circle cx="240" cy="150" r="3"/><circle cx="260" cy="176" r="3"/>
+              </g>
+              <g>
+                <rect x="150" y="120" width="7" height="26" fill="var(--manteca-600)"/>
+                <rect x="196" y="112" width="7" height="34" fill="var(--rosa-500)"/>
+                <rect x="242" y="120" width="7" height="26" fill="var(--manteca-600)"/>
+                <path d="M153.5 120c-5-6-1-10 0-14 1 4 5 8 0 14Z" fill="var(--rosa-600)"/>
+                <path d="M199.5 112c-5-6-1-10 0-14 1 4 5 8 0 14Z" fill="var(--rosa-600)"/>
+                <path d="M245.5 120c-5-6-1-10 0-14 1 4 5 8 0 14Z" fill="var(--rosa-600)"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Pastel de cumpleaños infantil</h3>
+            <p>Colores vivos, chispas por todos lados y las velas que hagan falta, del tamaño que pida la fiesta.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de un pan de muerto redondo con tiras cruzadas y azúcar espolvoreada, sobre un plato">
+              <ellipse cx="200" cy="242" rx="110" ry="12" fill="var(--cacao-950)" opacity=".08"/>
+              <ellipse cx="200" cy="210" rx="120" ry="18" fill="var(--crema)" stroke="var(--cacao-950)" stroke-width="2.4"/>
+              <ellipse cx="200" cy="170" rx="92" ry="56" fill="var(--manteca-600)" stroke="var(--cacao-950)" stroke-width="3"/>
+              <g stroke="var(--cacao-900)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85">
+                <path d="M140 128c10 30 10 56 0 84"/>
+                <path d="M260 128c-10 30-10 56 0 84"/>
+                <path d="M136 172h128"/>
+              </g>
+              <circle cx="200" cy="170" r="13" fill="var(--cacao-900)"/>
+              <g fill="var(--crema)" opacity=".85">
+                <circle cx="164" cy="140" r="2.4"/><circle cx="180" cy="126" r="2"/><circle cx="220" cy="126" r="2.4"/>
+                <circle cx="236" cy="140" r="2"/><circle cx="150" cy="164" r="2.2"/><circle cx="250" cy="164" r="2.2"/>
+                <circle cx="170" cy="198" r="2"/><circle cx="230" cy="198" r="2.2"/><circle cx="200" cy="204" r="2"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Pan de muerto para un negocio local</h3>
+            <p>La cruz de "huesitos" de siempre y azúcar por encima, horneado para un altar de oficina a finales de octubre.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scene-card">
+          <div class="scene-stage">
+            <span class="scene-label">Proyecto de muestra</span>
+            <svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de una torre de tres charolas con pan dulce surtido, para una mesa de despedida">
+              <ellipse cx="200" cy="256" rx="120" ry="12" fill="var(--cacao-950)" opacity=".08"/>
+              <line x1="200" y1="60" x2="200" y2="240" stroke="var(--cacao-700)" stroke-width="6" stroke-linecap="round"/>
+              <g>
+                <ellipse cx="200" cy="230" rx="118" ry="18" fill="var(--manteca-100)" stroke="var(--cacao-950)" stroke-width="2.4"/>
+                <ellipse cx="150" cy="224" rx="18" ry="11" fill="var(--manteca-600)"/>
+                <ellipse cx="250" cy="224" rx="18" ry="11" fill="var(--manteca-600)"/>
+                <ellipse cx="200" cy="220" rx="18" ry="11" fill="var(--rosa-500)"/>
+              </g>
+              <g>
+                <ellipse cx="200" cy="158" rx="86" ry="15" fill="var(--manteca-100)" stroke="var(--cacao-950)" stroke-width="2.4"/>
+                <ellipse cx="164" cy="152" rx="14" ry="9" fill="var(--rosa-500)"/>
+                <ellipse cx="236" cy="152" rx="14" ry="9" fill="var(--cacao-700)"/>
+              </g>
+              <g>
+                <ellipse cx="200" cy="96" rx="54" ry="12" fill="var(--manteca-100)" stroke="var(--cacao-950)" stroke-width="2.4"/>
+                <ellipse cx="200" cy="90" rx="15" ry="9" fill="var(--manteca-600)"/>
+              </g>
+              <circle cx="200" cy="54" r="7" fill="var(--rosa-600)"/>
+            </svg>
+          </div>
+          <figcaption class="scene-info">
+            <h3>Torre de pan dulce para una despedida</h3>
+            <p>Charolas apiladas en niveles con lo más pedido del mostrador, para una mesa que se sirve sola.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="closing band-dark on-dark">
+    <svg class="dock-rule on-dark" viewBox="0 0 400 8" preserveAspectRatio="none" aria-hidden="true">
+      <circle cx="10" cy="4" r="2.6"/><circle cx="34" cy="4" r="2.6"/><circle cx="58" cy="4" r="2.6"/><circle cx="82" cy="4" r="2.6"/><circle cx="106" cy="4" r="2.6"/><circle cx="130" cy="4" r="2.6"/><circle cx="154" cy="4" r="2.6"/><circle cx="178" cy="4" r="2.6"/><circle cx="202" cy="4" r="2.6"/><circle cx="226" cy="4" r="2.6"/><circle cx="250" cy="4" r="2.6"/><circle cx="274" cy="4" r="2.6"/><circle cx="298" cy="4" r="2.6"/><circle cx="322" cy="4" r="2.6"/><circle cx="346" cy="4" r="2.6"/><circle cx="370" cy="4" r="2.6"/><circle cx="394" cy="4" r="2.6"/>
+    </svg>
+    <div class="wrap">
+      <h2>¿Quiere algo parecido?</h2>
+      <p class="measure" style="color:rgba(255,251,242,.82)">Las ilustraciones dan una idea. Lo mejor sigue siendo llamar y platicar el pedido con nosotros.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+15165550111">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+          Llamar (516) 555-0111
+        </a>
+        <a class="btn-line on-dark" href="about.html">
+          Conocer la panadería
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">El Amanecer</div>
+        <p>Pan dulce, bolillo y pasteles horneados en tandas, todo el día, en Long Island, NY.</p>
+        <p><a href="tel:+15165550111">(516) 555-0111</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Menú</a></li>
+          <li><a href="work.html">Encargos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+15165550111">Llamar (516) 555-0111</a></li>
+          <li><a href="sms:+15165550111">Enviar mensaje de texto</a></li>
+          <li>Long Island, NY</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Sitio de demostración creado por Samuel Ochoa — <a href="https://samuelochoa.com/paginas-web">samuelochoa.com/paginas-web</a></p>
+      <p>Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550111">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="var(--crema)"><path d="M7 3h3l1.6 4.2-2.3 1.8a11 11 0 0 0 5.7 5.7l1.8-2.3L21.4 14v3a2 2 0 0 1-2.2 2C11.8 18.4 5.6 12.2 5 4.8A2 2 0 0 1 7 3Z"/></svg>
+  Llamar (516) 555-0111
+</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  var subToggle = document.getElementById('sub-toggle');
+  var subPanel = document.getElementById('sub-panel');
+
+  function setOpen(btn, panelEl, open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panelEl.hidden = !open;
+  }
+
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(burger, panel, open);
+    if(!open){ setOpen(subToggle, subPanel, false); }
+  });
+
+  subToggle.addEventListener('click', function(){
+    var open = subToggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(subToggle, subPanel, open);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(subToggle.getAttribute('aria-expanded') === 'true'){ setOpen(subToggle, subPanel, false); subToggle.focus(); }
+      else if(burger.getAttribute('aria-expanded') === 'true'){ setOpen(burger, panel, false); burger.focus(); }
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!subPanel.hidden && !subPanel.contains(e.target) && e.target !== subToggle && !subToggle.contains(e.target)){
+      setOpen(subToggle, subPanel, false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

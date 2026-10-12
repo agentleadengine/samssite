@@ -1,0 +1,345 @@
+<!--
+  THESIS: A shop that puts the price in your hand before it puts a wrench on your car, and shows you proof of the work after.
+  OWN-WORLD: Asphalt-black service bay under caution-yellow shop lighting. Anton stencil numerals and a hazard-stripe band run through every page like real bay signage; Barlow reads like text off a work order. Flat bold color panels, minimal chrome, no photography.
+  STORY: Walk in worried about the bill. Get the number in writing first. See how the job actually goes. Leave with the keys and no surprise line items.
+  FIRST VIEWPORT: Headline "Price first. Then we wrench." over a two-tone hero: dark copy block on asphalt, a caution-yellow band below holding a silhouette scene of a car on the two-post lift. Phone CTA plus a text "ask for an estimate" CTA, no scroll required to get the promise.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Torque Auto Repair | Long Island Mechanic Shop</title>
+<meta name="description" content="Torque Auto Repair — diagnostics, brakes, suspension, A/C and maintenance for Long Island drivers. Written price before any work starts. Call (516) 555-0116.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ribbon">Demo Site</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">TOR<em>Q</em>UE</span>
+      <span class="brand-sub">Auto Repair</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="has-submenu">
+          <button type="button" class="submenu-toggle" data-toggle aria-expanded="false" aria-controls="services-menu-desktop">
+            Services
+            <svg class="chev" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul id="services-menu-desktop" class="submenu" hidden>
+            <li><a href="services.html#diagnostics">Diagnostics</a></li>
+            <li><a href="services.html#brakes">Brakes</a></li>
+            <li><a href="services.html#oil-maintenance">Oil &amp; Maintenance</a></li>
+            <li><a href="services.html#suspension-steering">Suspension &amp; Steering</a></li>
+            <li><a href="services.html#ac-heat">A/C &amp; Heat</a></li>
+            <li><a href="services.html#tires-alignment">Tires &amp; Alignment</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="tel-btn" href="tel:+15165550116">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 3.5h2.8l1 3-1.8 1.4a9 9 0 0 0 4.6 4.6l1.4-1.8 3 1v2.8a1 1 0 0 1-1.1 1A13 13 0 0 1 3.5 4.6a1 1 0 0 1 1-1.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <span class="num">(516) 555-0116</span>
+      </a>
+      <button type="button" class="nav-toggle" data-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li class="has-submenu">
+        <button type="button" class="submenu-toggle" data-toggle aria-expanded="false" aria-controls="services-menu-mobile">
+          Services
+          <svg class="chev" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul id="services-menu-mobile" hidden>
+          <li><a href="services.html#diagnostics">Diagnostics</a></li>
+          <li><a href="services.html#brakes">Brakes</a></li>
+          <li><a href="services.html#oil-maintenance">Oil &amp; Maintenance</a></li>
+          <li><a href="services.html#suspension-steering">Suspension &amp; Steering</a></li>
+          <li><a href="services.html#ac-heat">A/C &amp; Heat</a></li>
+          <li><a href="services.html#tires-alignment">Tires &amp; Alignment</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="hazard" role="presentation" aria-hidden="true"></div>
+
+<main id="main">
+
+  <section class="hero band band-ink">
+    <div class="wrap hero-copy">
+      <h1 class="enter-item" style="--d:0">Price first.<br><span class="y">Then we wrench.</span></h1>
+      <p class="lede enter-item" style="--d:1">Diagnostics, brakes, suspension and everything in between. We tell you what's actually wrong, what it costs, and what can wait.</p>
+      <div class="cluster enter-item" style="--d:2">
+        <a class="btn btn-primary" href="tel:+15165550116">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 3.5h2.8l1 3-1.8 1.4a9 9 0 0 0 4.6 4.6l1.4-1.8 3 1v2.8a1 1 0 0 1-1.1 1A13 13 0 0 1 3.5 4.6a1 1 0 0 1 1-1.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          Call (516) 555-0116
+        </a>
+        <a class="btn btn-outline" href="contact.html#estimate">Ask for an estimate</a>
+      </div>
+      <p class="note enter-item" style="--d:3">Drop off before 9 and most jobs go out the same day. Walk-ins welcome for a quick look.</p>
+    </div>
+    <div class="hero-scene">
+      <svg viewBox="0 0 1200 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration of a car raised on a two-post lift in the service bay, set against a caution-yellow backdrop">
+        <defs>
+          <pattern id="tq-floor-hazard" width="34" height="34" patternTransform="rotate(135)" patternUnits="userSpaceOnUse">
+            <rect width="17" height="34" fill="#0a0a0c"/>
+          </pattern>
+        </defs>
+        <g fill="#0a0a0c" opacity=".13">
+          <rect x="46" y="24" width="130" height="104"/>
+          <rect x="196" y="24" width="130" height="104"/>
+          <rect x="874" y="24" width="130" height="104"/>
+          <rect x="1024" y="24" width="130" height="104"/>
+        </g>
+        <g fill="#0a0a0c">
+          <rect x="54" y="214" width="150" height="80"/>
+          <rect x="54" y="214" width="150" height="11"/>
+        </g>
+        <g fill="#1c1b14">
+          <rect x="68" y="236" width="122" height="11"/>
+          <rect x="68" y="258" width="122" height="11"/>
+        </g>
+        <g fill="#0a0a0c">
+          <rect x="430" y="70" width="24" height="214"/>
+          <rect x="744" y="70" width="24" height="214"/>
+          <rect x="430" y="152" width="88" height="13"/>
+          <rect x="682" y="152" width="88" height="13"/>
+        </g>
+        <polygon points="466,156 522,106 694,106 760,156 760,190 466,190" fill="#0a0a0c"/>
+        <polygon points="536,114 688,114 722,150 536,150" fill="#201f18" opacity=".6"/>
+        <rect x="466" y="156" width="294" height="7" fill="#000000" opacity=".35"/>
+        <circle cx="528" cy="192" r="28" fill="#0a0a0c"/>
+        <circle cx="528" cy="192" r="10" fill="#1c1b14"/>
+        <circle cx="706" cy="192" r="28" fill="#0a0a0c"/>
+        <circle cx="706" cy="192" r="10" fill="#1c1b14"/>
+        <rect x="0" y="300" width="1200" height="4" fill="#0a0a0c" opacity=".5"/>
+        <rect x="0" y="322" width="1200" height="18" fill="url(#tq-floor-hazard)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="band band-ink-alt pad">
+    <div class="wrap">
+      <div class="head">
+        <h2>We show you the part, not just the bill.</h2>
+        <p class="muted">Worn parts get set aside so you can see them. Here's the kind of thing that means &mdash; a rotor at the end of its life next to a new one.</p>
+      </div>
+      <figure class="scene-figure">
+        <div class="scene-card">
+          <svg viewBox="0 0 900 380" role="img" aria-label="Illustration comparing a worn brake rotor and a new brake rotor side by side">
+            <line x1="450" y1="30" x2="450" y2="350" stroke="#333339" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+            <circle cx="255" cy="190" r="128" fill="none" stroke="#5c5748" stroke-width="10"/>
+            <circle cx="255" cy="190" r="46" fill="#17171a" stroke="#5c5748" stroke-width="6"/>
+            <g stroke="#3a382e" stroke-width="3" stroke-linecap="round">
+              <line x1="180" y1="140" x2="230" y2="120"/>
+              <line x1="300" y1="255" x2="345" y2="275"/>
+              <line x1="160" y1="220" x2="200" y2="245"/>
+              <line x1="320" y1="120" x2="290" y2="95"/>
+            </g>
+            <circle cx="645" cy="190" r="128" fill="none" stroke="#ffd200" stroke-width="10"/>
+            <circle cx="645" cy="190" r="46" fill="#171712" stroke="#ffd200" stroke-width="6"/>
+            <g stroke="#171712" stroke-width="4" stroke-linecap="round" opacity=".85">
+              <line x1="645" y1="76" x2="645" y2="96"/>
+              <line x1="645" y1="284" x2="645" y2="304"/>
+              <line x1="531" y1="190" x2="551" y2="190"/>
+              <line x1="739" y1="190" x2="759" y2="190"/>
+              <line x1="565" y1="110" x2="580" y2="122"/>
+              <line x1="725" y1="110" x2="710" y2="122"/>
+              <line x1="565" y1="270" x2="580" y2="258"/>
+              <line x1="725" y1="270" x2="710" y2="258"/>
+            </g>
+            <path d="M550 105a128 128 0 0 1 168 20" fill="none" stroke="#fff1b3" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+          </svg>
+        </div>
+        <figcaption class="scene-tag">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="2" y="5" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 5l1.5-2h3L13 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          Sample project &mdash; illustrated, not a real repair
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band band-yellow pad">
+    <div class="wrap">
+      <div class="head">
+        <h2>Nothing on the bill you didn't hear about first.</h2>
+        <p>Four things that don't change from job to job, whether it's an oil change or a full brake job.</p>
+      </div>
+      <ul class="promise-list">
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Written price before any work starts
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Old parts held for you to see, if you want them
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Photos of what we actually found
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          No upsell pitch when you call
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-ink pad">
+    <div class="wrap">
+      <div class="head">
+        <h2>Three things we're asked about most.</h2>
+        <p class="muted">The full list is on the services page.</p>
+      </div>
+      <div class="teaser-grid">
+        <a class="teaser band band-ink-alt" href="services.html#diagnostics">
+          <span class="teaser-name">Diagnostics</span>
+          <p>A check engine light points at a system, not a part. We test before we replace anything.</p>
+          <span class="text-link">See the service <svg aria-hidden="true" viewBox="0 0 14 14"><path d="M1 7h12M8 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="teaser band band-yellow" href="services.html#brakes">
+          <span class="teaser-name">Brakes</span>
+          <p>Pads, rotors, calipers, fluid. We measure and show you the numbers before we recommend anything.</p>
+          <span class="text-link">See the service <svg aria-hidden="true" viewBox="0 0 14 14"><path d="M1 7h12M8 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="teaser band band-paper" href="services.html#ac-heat">
+          <span class="teaser-name">A/C &amp; Heat</span>
+          <p>Leak test first, recharge second. Topping off a system that leaks just buys you one hot week.</p>
+          <span class="text-link">See the service <svg aria-hidden="true" viewBox="0 0 14 14"><path d="M1 7h12M8 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-ink-alt pad close-cta">
+    <div class="wrap">
+      <div class="head">
+        <h2>Get a straight answer.</h2>
+        <p class="muted">If we're under a car, leave your name, the vehicle, and what it's doing. Same-day callback.</p>
+      </div>
+      <a class="bigtel" href="tel:+15165550116">(516) 555-0116</a>
+      <div class="cluster" style="margin-top:.6rem">
+        <a class="btn btn-primary" href="tel:+15165550116">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 3.5h2.8l1 3-1.8 1.4a9 9 0 0 0 4.6 4.6l1.4-1.8 3 1v2.8a1 1 0 0 1-1.1 1A13 13 0 0 1 3.5 4.6a1 1 0 0 1 1-1.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          Call the shop
+        </a>
+        <a class="btn btn-outline" href="contact.html#estimate">Ask for an estimate</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer band band-ink">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px">
+          <span class="brand-mark">TOR<em>Q</em>UE</span>
+          <span class="brand-sub">Auto Repair</span>
+        </a>
+        <p>Straightforward repair work for Long Island, NY. Diagnose it, price it, fix it, hand back the keys.</p>
+      </div>
+      <div class="foot-nav">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15165550116">(516) 555-0116</a></li>
+          <li>Long Island, NY</li>
+          <li>Mon&ndash;Fri 7:30 AM&ndash;6:00 PM</li>
+          <li>Sat 8:00 AM&ndash;2:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclose">
+      <p>Demo website built by <a href="https://samuelochoa.com/websites">Samuel Ochoa</a> &mdash; samuelochoa.com/websites</p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15165550116">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 3.5h2.8l1 3-1.8 1.4a9 9 0 0 0 4.6 4.6l1.4-1.8 3 1v2.8a1 1 0 0 1-1.1 1A13 13 0 0 1 3.5 4.6a1 1 0 0 1 1-1.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  Call (516) 555-0116
+</a>
+
+<script>
+(function(){
+  function wire(btn){
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if(!panel) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.hidden = open;
+    });
+  }
+  var toggles = document.querySelectorAll('[data-toggle]');
+  toggles.forEach(wire);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    toggles.forEach(function(btn){
+      if(btn.getAttribute('aria-expanded') === 'true'){
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        btn.setAttribute('aria-expanded','false');
+        if(panel) panel.hidden = true;
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    toggles.forEach(function(btn){
+      if(btn.getAttribute('aria-expanded') !== 'true') return;
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if(panel && !panel.contains(e.target) && !btn.contains(e.target)){
+        btn.setAttribute('aria-expanded','false');
+        panel.hidden = true;
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

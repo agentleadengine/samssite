@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Work | Soot &amp; Brick Chimney Co.</title>
+<meta name="description" content="Five sample chimney projects from Soot &amp; Brick: a liner swap, a crown rebuild, an annual sweep, a repointing job, and a pre-sale inspection. Demonstration only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="ember" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+        <circle cx="18" cy="18" r="17" fill="#1c1310"/>
+        <ellipse cx="18" cy="26.5" rx="8" ry="5" fill="#dd9a3f" opacity=".9"/>
+        <rect x="14.5" y="9" width="7" height="15" fill="#9c3c28"/>
+        <rect x="12.5" y="7.4" width="11" height="2.6" fill="#f3e9d7"/>
+      </svg>
+      <span class="brand-name">Soot &amp; Brick<br>Chimney Co.</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#sweeping">Chimney sweeping</a></li>
+            <li><a href="services.html#inspections">Inspections</a></li>
+            <li><a href="services.html#cap-crown">Cap &amp; crown repair</a></li>
+            <li><a href="services.html#liners">Liner installs</a></li>
+            <li><a href="services.html#masonry">Masonry touch-ups</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+16315550161">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(631) 555-0161</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#sweeping">Chimney sweeping</a></li>
+          <li><a href="services.html#inspections">Inspections</a></li>
+          <li><a href="services.html#cap-crown">Cap &amp; crown repair</a></li>
+          <li><a href="services.html#liners">Liner installs</a></li>
+          <li><a href="services.html#masonry">Masonry touch-ups</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+16315550161">Call (631) 555-0161</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-intro wrap">
+    <h1>A few jobs, start to finish</h1>
+    <p class="sub">Five sample projects drawn up the way we'd sketch them on the tailgate: the house, what was wrong, what we did about it. Every scene here is illustrated, not photographed, and every project is a stand-in for the kind of work we actually do.</p>
+  </div>
+
+  <div class="coursing coursing-bar" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="work-grid">
+
+      <article class="work-card">
+        <div class="work-card-in">
+          <div class="work-card-scene">
+            <svg viewBox="0 0 260 220" role="img" aria-label="Illustration of a flexible liner being fed down a flue and connected at the base">
+              <defs>
+                <linearGradient id="stone1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#cdbfa2"/>
+                  <stop offset="100%" stop-color="#e9dcc0"/>
+                </linearGradient>
+              </defs>
+              <rect x="70" y="14" width="120" height="190" fill="url(#stone1)"/>
+              <rect x="70" y="14" width="120" height="8" fill="#1c1310"/>
+              <path d="M130 26 C162 46,100 66,130 86 C162 106,100 126,130 146 C160 165,112 180,124 194" fill="none" stroke="#9c3c28" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M130 26 C162 46,100 66,130 86 C162 106,100 126,130 146 C160 165,112 180,124 194" fill="none" stroke="#7c2e1f" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 13" opacity=".7"/>
+              <rect x="104" y="192" width="44" height="18" fill="#1c1310"/>
+            </svg>
+          </div>
+          <div class="work-card-body">
+            <span class="sample-tag chamfer-sm">Sample project</span>
+            <h3>Cape-style two-story &middot; oil-to-gas conversion</h3>
+            <p>The old clay tile liner had cracked in three spots once the flue temperature changed with the new appliance. We fit and insulated a stainless liner sized for the gas insert, then tested the draft before we packed up.</p>
+            <a class="svc-tag" href="services.html#liners">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+              Liner installs
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-in">
+          <div class="work-card-scene">
+            <svg viewBox="0 0 260 220" role="img" aria-label="Illustration comparing a cracked, stained chimney crown to a rebuilt crown with a new cap">
+              <rect x="20" y="0" width="220" height="220" fill="#e9dcc0"/>
+              <g>
+                <path d="M30 60 L120 40 L120 200 L30 200 Z" fill="#cdbfa2"/>
+                <path d="M35 62 L60 90 L48 100 L70 130 L55 138 L78 170" fill="none" stroke="#1c1310" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M42 60 L42 200 M60 200 L54 60" stroke="#8a7a63" stroke-width="1.6" opacity=".7"/>
+              </g>
+              <line x1="130" y1="30" x2="130" y2="210" stroke="#9c3c28" stroke-width="6" stroke-linecap="round"/>
+              <g>
+                <path d="M140 58 L230 58 L222 76 L148 76 Z" fill="#f3e9d7" stroke="#7c2e1f" stroke-width="2"/>
+                <rect x="158" y="76" width="6" height="4" fill="#1c1310"/>
+                <rect x="182" y="76" width="6" height="4" fill="#1c1310"/>
+                <rect x="206" y="76" width="6" height="4" fill="#1c1310"/>
+                <line x1="152" y1="82" x2="152" y2="115" stroke="#1c1310" stroke-width="2.2"/>
+                <line x1="218" y1="82" x2="218" y2="115" stroke="#1c1310" stroke-width="2.2"/>
+                <line x1="152" y1="115" x2="218" y2="115" stroke="#1c1310" stroke-width="2.2"/>
+                <rect x="170" y="118" width="30" height="82" fill="#cdbfa2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="work-card-body">
+            <span class="sample-tag chamfer-sm">Sample project</span>
+            <h3>1920s brick colonial &middot; storm-cracked crown</h3>
+            <p>Hairline cracks in the crown were letting water run behind the brick face every time it rained. We rebuilt the crown, sealed it, and set a new cap with a tight mesh screen so animals stay out.</p>
+            <a class="svc-tag" href="services.html#cap-crown">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+              Cap &amp; crown repair
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-in">
+          <div class="work-card-scene">
+            <svg viewBox="0 0 260 220" role="img" aria-label="Illustration of a round brush on a rod partway down a flue, soot above the brush and swept stone below it">
+              <defs>
+                <linearGradient id="stone3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#100d0b"/>
+                  <stop offset="42%" stop-color="#4a3c30"/>
+                  <stop offset="70%" stop-color="#b9ab94"/>
+                  <stop offset="100%" stop-color="#efe2c8"/>
+                </linearGradient>
+              </defs>
+              <rect x="70" y="14" width="120" height="190" fill="url(#stone3)"/>
+              <rect x="70" y="14" width="120" height="8" fill="#1c1310"/>
+              <g opacity=".55">
+                <circle cx="98" cy="34" r="2" fill="#0a0807"/>
+                <circle cx="120" cy="44" r="1.6" fill="#0a0807"/>
+                <circle cx="150" cy="30" r="1.8" fill="#0a0807"/>
+                <circle cx="165" cy="46" r="1.5" fill="#0a0807"/>
+              </g>
+              <line x1="130" y1="18" x2="130" y2="60" stroke="#cdbfa2" stroke-width="4" stroke-linecap="round"/>
+              <polygon points="130.0,46.0 132.6,60.3 142.0,49.2 137.1,62.9 150.8,58.0 139.7,67.4 154.0,70.0 139.7,72.6 150.8,82.0 137.1,77.1 142.0,90.8 132.6,79.7 130.0,94.0 127.4,79.7 118.0,90.8 122.9,77.1 109.2,82.0 120.3,72.6 106.0,70.0 120.3,67.4 109.2,58.0 122.9,62.9 118.0,49.2 127.4,60.3" fill="#1c1310"/>
+              <line x1="130" y1="90" x2="130" y2="198" stroke="#7c2e1f" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="work-card-body">
+            <span class="sample-tag chamfer-sm">Sample project</span>
+            <h3>Ranch with a wood-burning insert &middot; annual sweep</h3>
+            <p>Heavy glaze from a season of burning whatever wood was on hand. A full brush and rod pass cleared the flue, firebox, and smoke shelf, with drop cloths keeping the room clean the whole time.</p>
+            <a class="svc-tag" href="services.html#sweeping">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+              Chimney sweeping
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-in">
+          <div class="work-card-scene">
+            <svg viewBox="0 0 260 220" role="img" aria-label="Illustration of a brick wall with cracked mortar joints on one side and freshly repointed joints on the other">
+              <rect x="10" y="10" width="240" height="200" fill="#e9dcc0"/>
+              <g>
+                <rect x="20" y="20" width="52" height="26" fill="#9c3c28"/>
+                <rect x="76" y="20" width="52" height="26" fill="#8a3524"/>
+                <rect x="46" y="50" width="52" height="26" fill="#9c3c28"/>
+                <rect x="102" y="50" width="26" height="26" fill="#8a3524"/>
+                <rect x="20" y="50" width="22" height="26" fill="#8a3524"/>
+                <rect x="20" y="80" width="52" height="26" fill="#9c3c28"/>
+                <rect x="76" y="80" width="52" height="26" fill="#8a3524"/>
+                <rect x="46" y="110" width="52" height="26" fill="#9c3c28"/>
+                <rect x="102" y="110" width="26" height="26" fill="#8a3524"/>
+                <rect x="20" y="110" width="22" height="26" fill="#8a3524"/>
+                <g stroke="#8f8267" stroke-width="1.2" opacity=".8">
+                  <line x1="20" y1="47" x2="128" y2="47"/>
+                  <line x1="20" y1="77" x2="128" y2="77"/>
+                  <line x1="20" y1="107" x2="128" y2="107"/>
+                  <line x1="20" y1="137" x2="128" y2="137"/>
+                </g>
+                <path d="M96 20 L98 46 M52 50 L50 76 M96 80 L94 106 M52 110 L54 136" stroke="#6b6055" stroke-width="1.4" opacity=".7"/>
+              </g>
+              <line x1="130" y1="14" x2="130" y2="206" stroke="#9c3c28" stroke-width="5" stroke-linecap="round"/>
+              <g>
+                <rect x="142" y="20" width="52" height="26" fill="#9c3c28"/>
+                <rect x="198" y="20" width="52" height="26" fill="#8a3524"/>
+                <rect x="168" y="50" width="52" height="26" fill="#9c3c28"/>
+                <rect x="224" y="50" width="26" height="26" fill="#8a3524"/>
+                <rect x="142" y="50" width="22" height="26" fill="#8a3524"/>
+                <rect x="142" y="80" width="52" height="26" fill="#9c3c28"/>
+                <rect x="198" y="80" width="52" height="26" fill="#8a3524"/>
+                <rect x="168" y="110" width="52" height="26" fill="#9c3c28"/>
+                <rect x="224" y="110" width="26" height="26" fill="#8a3524"/>
+                <rect x="142" y="110" width="22" height="26" fill="#8a3524"/>
+                <g stroke="#dd9a3f" stroke-width="2.6">
+                  <line x1="142" y1="47" x2="250" y2="47"/>
+                  <line x1="142" y1="77" x2="250" y2="77"/>
+                  <line x1="142" y1="107" x2="250" y2="107"/>
+                  <line x1="142" y1="137" x2="250" y2="137"/>
+                  <line x1="194" y1="20" x2="194" y2="46"/>
+                  <line x1="220" y1="50" x2="220" y2="76"/>
+                  <line x1="194" y1="80" x2="194" y2="106"/>
+                  <line x1="220" y1="110" x2="220" y2="136"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="work-card-body">
+            <span class="sample-tag chamfer-sm">Sample project</span>
+            <h3>Farmhouse rebuild &middot; spalling brick face</h3>
+            <p>Years of freeze-thaw had the face brick popping off in chunks and the joints gone soft. We repointed the stack top to bottom and reset six loose bricks so the wall sheds water again.</p>
+            <a class="svc-tag" href="services.html#masonry">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+              Masonry touch-ups
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card" style="grid-column:1 / -1; max-width:520px; margin:0 auto; width:100%">
+        <div class="work-card-in">
+          <div class="work-card-scene">
+            <svg viewBox="0 0 260 220" role="img" aria-label="Illustration of a camera scope lowered into a flue, with a small screen showing a hairline crack that was found">
+              <defs>
+                <linearGradient id="stone5" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#cdbfa2"/>
+                  <stop offset="100%" stop-color="#e9dcc0"/>
+                </linearGradient>
+              </defs>
+              <rect x="90" y="14" width="70" height="190" fill="url(#stone5)"/>
+              <rect x="90" y="14" width="70" height="8" fill="#1c1310"/>
+              <line x1="125" y1="30" x2="125" y2="150" stroke="#7c2e1f" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round"/>
+              <circle cx="125" cy="158" r="10" fill="#1c1310"/>
+              <circle cx="125" cy="158" r="4" fill="#dd9a3f"/>
+              <path d="M118 190 L132 178 L122 172 L108 180 Z" fill="#3c3128" opacity=".5"/>
+              <rect x="170" y="60" width="72" height="88" fill="#1c1310"/>
+              <rect x="178" y="68" width="56" height="56" fill="#f3e9d7"/>
+              <path d="M186 108 L200 84 L208 96 L222 76" fill="none" stroke="#9c3c28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="206" y="140" text-anchor="middle" font-family="Vollkorn, Georgia, serif" font-weight="700" font-size="11" fill="#dd9a3f">flue scope</text>
+            </svg>
+          </div>
+          <div class="work-card-body">
+            <span class="sample-tag chamfer-sm">Sample project</span>
+            <h3>Split-level &middot; pre-sale inspection</h3>
+            <p>The buyer asked for a full look before closing. A camera pass down the flue found a hairline crack in the tile liner, and it went into the write-up plainly enough to be priced into the deal, not discovered later.</p>
+            <a class="svc-tag" href="services.html#inspections">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+              Inspections
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- closing cta -->
+  <section class="cta-band" style="margin-top:clamp(3.4rem,8vw,5.8rem)">
+    <div class="wrap">
+      <h2>Your chimney's next in the sketchbook.</h2>
+      <p class="measure-center">Tell us what's going on and we'll tell you plainly what a visit looks like before you commit to one.</p>
+      <div class="btn-row">
+        <a class="btn btn-glow" href="tel:+16315550161">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call (631) 555-0161
+        </a>
+        <a class="btn btn-ghost on-dark" href="contact.html">Send details instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+        <circle cx="18" cy="18" r="17" fill="#1c1310"/>
+        <ellipse cx="18" cy="26.5" rx="8" ry="5" fill="#dd9a3f" opacity=".9"/>
+        <rect x="14.5" y="9" width="7" height="15" fill="#9c3c28"/>
+        <rect x="12.5" y="7.4" width="11" height="2.6" fill="#f3e9d7"/>
+      </svg>
+      <span>Soot &amp; Brick Chimney Co.</span>
+    </div>
+    <p class="footer-line">Chimney sweeping &amp; repair &middot; Long Island, NY &middot; <a href="tel:+16315550161">(631) 555-0161</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+16315550161">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call (631) 555-0161
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

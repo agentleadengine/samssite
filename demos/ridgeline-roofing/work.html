@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Work | Ridgeline Roofing</title>
+<meta name="description" content="Six roof problems drawn the way Ridgeline finds them: a traced leak, a full tear-off, chimney flashing, storm damage, a gutter run, and a flat-roof tie-in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.62,10.79 C8.06,13.62 10.38,15.94 13.21,17.38 L15.41,15.18 C15.69,14.9 16.08,14.82 16.43,14.93 C17.55,15.3 18.75,15.5 20,15.5 C20.55,15.5 21,15.95 21,16.5 V20 C21,20.55 20.55,21 20,21 C10.61,21 3,13.39 3,4 C3,3.45 3.45,3 4,3 H7.5 C8.05,3 8.5,3.45 8.5,4 C8.5,5.25 8.7,6.45 9.07,7.57 C9.18,7.92 9.1,8.31 8.82,8.59 Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><polyline points="7,17 7,21 11,17"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9.5,17.5 19,7"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><line x1="12" y1="7" x2="12" y2="12.5"/><line x1="12" y1="12.5" x2="15.5" y2="14.5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12,21 C12,21 5,14.6 5,9.5 A7,7 0 0 1 19,9.5 C19,14.6 12,21 12,21 Z"/><circle cx="12" cy="9.3" r="2.3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13,6 19,12 13,18"/></symbol>
+</defs>
+</svg>
+
+<div class="ribbon">Demo Site</div>
+
+<header class="site-head">
+  <div class="wrap head-bar">
+    <a class="brand" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+        <polygon points="20,5 5,29 20,29" fill="#3E4F63"/>
+        <polygon points="20,5 35,29 20,29" fill="#7C8A9B"/>
+        <rect x="15" y="3.2" width="10" height="4.2" fill="#C1502A"/>
+        <rect x="4" y="29" width="32" height="3" fill="#8FA0B4"/>
+      </svg>
+      <span class="brand-text">Ridgeline Roofing<em>Long Island, NY</em></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <svg class="ic icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+            <span class="sr-only">Show services submenu</span>
+          </button>
+          <ul class="sub-menu" id="sub-services">
+            <li><a href="services.html#leak">Leak Repair</a></li>
+            <li><a href="services.html#replacement">Roof Replacement</a></li>
+            <li><a href="services.html#flashing">Flashing &amp; Chimney</a></li>
+            <li><a href="services.html#storm">Storm Damage</a></li>
+            <li><a href="services.html#gutters">Gutters &amp; Downspouts</a></li>
+            <li><a href="services.html#flat">Flat &amp; Low-Slope</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="head-phone" href="tel:+15165550110">
+      <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+      (516) 555-0110
+    </a>
+  </div>
+</header>
+
+<main>
+
+<section class="dusk band">
+  <div class="wrap">
+    <h1 style="font-size:clamp(2rem,5vw,3rem)">What we find, drawn the way we found it</h1>
+    <p class="lede">Six situations that come up again and again on Long Island roofs, drawn the same way the rest of this site is drawn. Not photos of a real job. The same problems, and the same fix.</p>
+  </div>
+</section>
+
+<div class="rake" style="--rake-a:var(--dusk);--rake-b:var(--shingle)"></div>
+
+<section class="shingle band-tight">
+  <div class="wrap">
+    <div class="gallery">
+
+      <div class="vignette is-wide">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Illustration of a roof deck, attic, and ceiling in cutaway, with a rust dashed line tracing a leak from a cracked pipe boot to a ceiling stain a good distance away, and a faint marker showing where the stain alone would have pointed">
+            <rect width="800" height="320" fill="#E4D8C3"/>
+            <rect x="0" y="0" width="800" height="55" fill="#3E4F63"/>
+            <rect x="558" y="24" width="16" height="30" fill="#161D24"/>
+            <circle cx="566" cy="55" r="6" fill="#C1502A"/>
+            <line x1="40" y1="55" x2="-30" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="170" y1="55" x2="100" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="300" y1="55" x2="230" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="430" y1="55" x2="360" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="560" y1="55" x2="490" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="690" y1="55" x2="620" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <line x1="820" y1="55" x2="750" y2="165" stroke="#C9B48F" stroke-width="6" opacity=".6"/>
+            <rect x="0" y="165" width="800" height="18" fill="#F0E9DC"/>
+            <rect x="0" y="183" width="800" height="137" fill="#F5EFE4"/>
+            <circle cx="330" cy="90" r="11" fill="none" stroke="#8FA0B4" stroke-width="2.5" stroke-dasharray="3 5"/>
+            <path class="trace-path" d="M566,55 L520,95 L455,128 L390,155 L340,178 L330,188" stroke="#C1502A" stroke-width="4" stroke-linecap="round" fill="none" stroke-dasharray="2 10"/>
+            <ellipse cx="330" cy="192" rx="54" ry="16" fill="#B9A98A" opacity=".75"/>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Ceiling stain, cracked pipe boot</h3>
+            <p>A bedroom ceiling stain that pointed straight up at nothing. The actual crack was in a rubber vent boot several feet up-slope, found on the attic-side walk and resealed the same visit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 380 280" role="img" aria-label="Illustration of a roof cross-section in layers: deck, ice and water shield, synthetic underlayment, architectural shingles, and a ridge vent, with an old removed shingle set aside">
+            <rect width="380" height="280" fill="#F0E9DC"/>
+            <polygon points="322,52 366,42 372,58 328,68" fill="#8B7A6C" opacity=".55"/>
+            <rect x="150" y="95" width="80" height="16" rx="1" fill="#C1502A"/>
+            <rect x="40" y="112" width="300" height="46" fill="#3E4F63"/>
+            <g>
+              <line x1="40" y1="124" x2="340" y2="124" stroke="#26313C" stroke-width="2.5"/>
+              <line x1="40" y1="136" x2="340" y2="136" stroke="#26313C" stroke-width="2.5"/>
+              <line x1="40" y1="148" x2="340" y2="148" stroke="#26313C" stroke-width="2.5"/>
+            </g>
+            <rect x="40" y="160" width="300" height="28" fill="#8FA0B4"/>
+            <rect x="40" y="190" width="300" height="28" fill="#171319"/>
+            <rect x="40" y="220" width="300" height="32" fill="#C9B48F"/>
+            <g stroke="#5C4E3E" stroke-width="2">
+              <line x1="26" y1="112" x2="40" y2="112"/>
+              <line x1="26" y1="160" x2="40" y2="160"/>
+              <line x1="26" y1="190" x2="40" y2="190"/>
+              <line x1="26" y1="220" x2="40" y2="220"/>
+              <line x1="26" y1="252" x2="40" y2="252"/>
+            </g>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Full tear-off, architectural shingles</h3>
+            <p>A colonial with the original shingles, curling on every south-facing course. Torn off to the deck, new ice and water shield at the eaves, ridge vent added.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 380 280" role="img" aria-label="Close-up illustration of a brick chimney on a roof plane with a stack of step-flashing tabs along its side and a rust dashed line marking the sealed counter-flashing seam">
+            <rect width="380" height="280" fill="#7C8A9B"/>
+            <g>
+              <line x1="0" y1="24" x2="380" y2="24" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="0" y1="58" x2="380" y2="58" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="0" y1="92" x2="380" y2="92" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="0" y1="230" x2="380" y2="230" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="0" y1="256" x2="380" y2="256" stroke="#94A2B2" stroke-width="3"/>
+            </g>
+            <rect x="130" y="20" width="120" height="245" fill="#4A372C" stroke="#241A13" stroke-width="3"/>
+            <g stroke="#5C4231" stroke-width="1.5" opacity=".55">
+              <line x1="130" y1="42" x2="250" y2="42"/>
+              <line x1="130" y1="64" x2="250" y2="64"/>
+              <line x1="130" y1="86" x2="250" y2="86"/>
+              <line x1="130" y1="108" x2="250" y2="108"/>
+              <line x1="130" y1="130" x2="250" y2="130"/>
+              <line x1="130" y1="152" x2="250" y2="152"/>
+            </g>
+            <g fill="#8FA0B4" stroke="#5B6E85" stroke-width="1.5">
+              <rect x="110" y="58" width="24" height="9"/>
+              <rect x="110" y="92" width="24" height="9"/>
+              <rect x="110" y="126" width="24" height="9"/>
+              <rect x="110" y="160" width="24" height="9"/>
+              <rect x="110" y="194" width="24" height="9"/>
+            </g>
+            <line x1="130" y1="50" x2="130" y2="262" stroke="#C1502A" stroke-width="3.5" stroke-dasharray="1 7"/>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Chimney counter-flashing</h3>
+            <p>Step flashing along a brick chimney had pulled loose after years of freeze and thaw. Reset the flashing and sealed the reglet so the seam holds through winter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 380 280" role="img" aria-label="Illustration of a ridge shingle course lifted by wind, with wind lines, hail bruise marks nearby, and a tarp corner with a grommet along the bottom edge">
+            <rect width="380" height="280" fill="#33414F"/>
+            <g>
+              <line x1="0" y1="90" x2="380" y2="90" stroke="#26313C" stroke-width="3"/>
+              <line x1="0" y1="118" x2="380" y2="118" stroke="#26313C" stroke-width="3"/>
+              <line x1="0" y1="146" x2="380" y2="146" stroke="#26313C" stroke-width="3"/>
+              <line x1="0" y1="174" x2="380" y2="174" stroke="#26313C" stroke-width="3"/>
+            </g>
+            <rect x="0" y="0" width="380" height="26" fill="#C1502A"/>
+            <polygon points="140,26 232,26 246,68 126,68" fill="#5B6E85" stroke="#161D24" stroke-width="2"/>
+            <polygon points="150,30 220,30 232,10 138,8" fill="#8FA0B4" stroke="#161D24" stroke-width="2"/>
+            <g stroke="#C7D1DB" stroke-width="2.5" fill="none" opacity=".55">
+              <polyline points="35,46 66,36 92,52"/>
+              <polyline points="30,72 58,64 82,78"/>
+            </g>
+            <g fill="#161D24" opacity=".5">
+              <circle cx="292" cy="140" r="5"/>
+              <circle cx="308" cy="164" r="4"/>
+              <circle cx="316" cy="118" r="3.5"/>
+              <circle cx="270" cy="156" r="4"/>
+            </g>
+            <polygon points="0,228 132,208 152,280 0,280" fill="#8FA0B4" opacity=".9" stroke="#5B6E85" stroke-width="2"/>
+            <circle cx="40" cy="244" r="5" fill="none" stroke="#3E4F63" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Wind-lifted ridge course</h3>
+            <p>A wind event lifted a run of shingles along the ridge and left two more cracked from a branch strike. Photographed and measured for the claim, tarped that afternoon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 380 280" role="img" aria-label="Illustration of a seamless gutter along a roof eave with hidden hangers, a rust arrow showing water flowing toward a downspout that turns away from the foundation">
+            <rect width="380" height="280" fill="#E4D8C3"/>
+            <rect x="0" y="0" width="380" height="18" fill="#7C8A9B"/>
+            <rect x="0" y="86" width="380" height="26" fill="#8FA0B4" stroke="#5B6E85" stroke-width="2"/>
+            <g fill="#5B6E85">
+              <rect x="34" y="82" width="7" height="9"/>
+              <rect x="94" y="82" width="7" height="9"/>
+              <rect x="154" y="82" width="7" height="9"/>
+              <rect x="214" y="82" width="7" height="9"/>
+              <rect x="274" y="82" width="7" height="9"/>
+              <rect x="334" y="82" width="7" height="9"/>
+            </g>
+            <path d="M50,98 L250,98" stroke="#C1502A" stroke-width="2.5" stroke-dasharray="2 7" opacity=".8"/>
+            <polygon points="260,92 276,98 260,104" fill="#C1502A" opacity=".8"/>
+            <rect x="280" y="110" width="26" height="150" fill="#8FA0B4" stroke="#5B6E85" stroke-width="2"/>
+            <polygon points="280,244 306,244 318,262 268,262" fill="#8FA0B4" stroke="#5B6E85" stroke-width="2"/>
+            <polygon points="268,258 318,258 332,270 254,270" fill="#5B6E85"/>
+            <rect x="0" y="262" width="380" height="18" fill="#3E4F63"/>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Seamless gutter run</h3>
+            <p>Sectional gutters were pulling away from the fascia and overflowing at the corners. Replaced with a seamless run formed on site and re-pitched so it actually drains.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette is-wide">
+        <div class="vignette-scene">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Illustration of a flat porch membrane roof meeting a pitched shingle roof along a diagonal tie-in seam marked in rust, with a scupper drain at the low corner of the membrane">
+            <rect width="800" height="300" fill="#5B6E85"/>
+            <g fill="#33414F" opacity=".4">
+              <circle cx="40" cy="140" r="2"/><circle cx="90" cy="150" r="2"/><circle cx="140" cy="132" r="2"/><circle cx="190" cy="160" r="2"/><circle cx="240" cy="142" r="2"/><circle cx="290" cy="156" r="2"/>
+              <circle cx="60" cy="190" r="2"/><circle cx="110" cy="204" r="2"/><circle cx="160" cy="188" r="2"/><circle cx="210" cy="210" r="2"/><circle cx="260" cy="192" r="2"/>
+              <circle cx="40" cy="240" r="2"/><circle cx="95" cy="250" r="2"/><circle cx="150" cy="236" r="2"/><circle cx="205" cy="252" r="2"/><circle cx="255" cy="238" r="2"/>
+              <circle cx="330" cy="150" r="2"/><circle cx="365" cy="200" r="2"/><circle cx="345" cy="240" r="2"/>
+            </g>
+            <clipPath id="pitchClip"><polygon points="800,0 800,280 430,280 610,40"/></clipPath>
+            <polygon points="800,0 800,280 430,280 610,40" fill="#7C8A9B" stroke="#33414F" stroke-width="2.5"/>
+            <g clip-path="url(#pitchClip)">
+              <line x1="420" y1="80" x2="900" y2="80" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="420" y1="120" x2="900" y2="120" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="420" y1="160" x2="900" y2="160" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="420" y1="200" x2="900" y2="200" stroke="#94A2B2" stroke-width="3"/>
+              <line x1="420" y1="240" x2="900" y2="240" stroke="#94A2B2" stroke-width="3"/>
+            </g>
+            <line x1="430" y1="280" x2="610" y2="40" stroke="#C1502A" stroke-width="5"/>
+            <rect x="10" y="252" width="34" height="20" fill="#33414F"/>
+            <circle cx="27" cy="262" r="7" fill="#1B232B"/>
+          </svg>
+        </div>
+        <div class="vignette-cap">
+          <span class="vignette-tag">Sample project</span>
+          <div>
+            <h3>Porch roof membrane tie-in</h3>
+            <p>A porch addition where old roll roofing had started to pond water at the low corner. Re-decked and covered in membrane, tied into the house roof with new step flashing along the seam.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="rake rev" style="--rake-a:var(--shingle);--rake-b:var(--dusk-2)"></div>
+
+<section class="dusk-2 band-tight close-cta">
+  <div class="wrap close-cta-inner">
+    <div>
+      <h2>Something like this on your roof?</h2>
+      <p class="lede">Call and describe it. We&rsquo;ll tell you honestly what we think it is before anyone climbs a ladder.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary notch" href="tel:+15165550110">
+        <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+        Call (516) 555-0110
+      </a>
+      <a class="btn btn-outline notch" href="services.html">See services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand-text">Ridgeline Roofing<em>Long Island, NY</em></div>
+        <a class="telbig" href="tel:+15165550110">
+          <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+          (516) 555-0110
+        </a>
+        <p style="margin-top:12px;font-size:.95rem">Roof repair, replacement, flashing, and gutters across Long Island, NY. Licensed and insured.</p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="foot-area">
+        <h4>Hours</h4>
+        <p>Mon&ndash;Fri 7:00a&ndash;6:00p<br>Sat 8:00a&ndash;3:00p &middot; Sun emergencies only<br>Storm calls answered after hours</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p><a href="https://samuelochoa.com/websites">Demo website built by Samuel Ochoa &middot; samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15165550110">
+  <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+  Call (516) 555-0110
+</a>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-menu');
+  var header = document.querySelector('.site-head');
+  function closeMenu(){
+    toggle.setAttribute('aria-expanded','false');
+    menu.classList.remove('is-open');
+  }
+  function openMenu(){
+    toggle.setAttribute('aria-expanded','true');
+    menu.classList.add('is-open');
+  }
+  function closeSubmenus(){
+    document.querySelectorAll('.sub-toggle[aria-expanded="true"]').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var sub = document.getElementById(b.getAttribute('aria-controls'));
+      if(sub) sub.classList.remove('is-open');
+    });
+  }
+  toggle.addEventListener('click', function(){
+    (toggle.getAttribute('aria-expanded') === 'true') ? closeMenu() : openMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); closeSubmenus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){ closeMenu(); closeSubmenus(); }
+  });
+  document.querySelectorAll('.sub-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var sub = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      sub.classList.toggle('is-open', !open);
+    });
+  });
+})();
+</script>
+</body>
+</html>

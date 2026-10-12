@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Blue Ladder Home Repair | Demo Site</title>
+<meta name="description" content="Everything Blue Ladder Home Repair fixes: drywall and plaster patches, doors and hardware, faucets and small plumbing, mounting and shelving, gutters and weather-proofing, move-in and move-out lists. Long Island, NY. Demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-ladder" viewBox="0 0 20 26"><path d="M4 2v22M16 2v22M4 8h12M4 14h12M4 20h12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></symbol>
+<symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 3.5V16H4V5Z"/><path d="M8 9h8M8 12h5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M7.5 12.6l3 3 6.2-6.7"/></symbol>
+<symbol id="i-trowel" viewBox="0 0 24 24"><path d="M4 20 14.5 9.5"/><path d="M12.3 7.3l4.4 4.4-2.4 2.4-4.4-4.4Z"/><path d="M16.8 4.8l2.4 2.4-1.6 1.6-2.4-2.4Z"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="5" y="3" width="12" height="18" rx="1.2"/><circle cx="14" cy="12" r="1.1" fill="currentColor" stroke="none"/><path d="M17.5 7.5h2.5M17.5 17h2.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.2c3 4.2 6 7.7 6 11.1a6 6 0 1 1-12 0c0-3.4 3-6.9 6-11.1Z"/></symbol>
+<symbol id="i-mount" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="11" rx="1.2"/><path d="M9 20h6M12 16v4"/><circle cx="12" cy="10.5" r="1.7"/></symbol>
+<symbol id="i-gutter" viewBox="0 0 24 24"><path d="M3 8h18l-2.2 3H5.2L3 8Z"/><path d="M11 11v6.2c0 1.7 1.3 3 3 3"/><path d="M7 6.2c.5-1.9 2.1-2.6 3.1-1.5.9 1-.2 2.6-1.5 3"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8 12 3.5 21 8l-9 4.5L3 8Z"/><path d="M3 8v9l9 4.5V12.5M21 8v9l-9 4.5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo Site</div>
+
+<header class="rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-ladder"></use></svg>
+        <span class="word"><b>Blue Ladder</b><span>Home Repair</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+15165550106">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+      <span style="flex:1">(516) 555-0106</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle current" type="button" aria-expanded="false" aria-controls="services-sub" aria-current="page">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#drywall">Drywall &amp; plaster patches</a></li>
+            <li><a href="services.html#doors">Doors, locks &amp; hardware</a></li>
+            <li><a href="services.html#plumbing">Faucets, toilets &amp; small plumbing</a></li>
+            <li><a href="services.html#mounting">Mounting &amp; shelving</a></li>
+            <li><a href="services.html#gutters">Gutters, caulk &amp; weather-proofing</a></li>
+            <li><a href="services.html#movein">Move-in &amp; move-out lists</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk"><b>Hours</b>Mon&ndash;Fri &nbsp;7:30a&ndash;5:30p<br>Sat &nbsp;8:00a&ndash;1:00p<br>Sun &nbsp;Closed</div>
+      <div class="blk"><b>Service area</b>Long Island, NY<br>Nassau &amp; Suffolk</div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad svc-intro">
+      <div class="head">
+        <h2>The jobs most contractors won&rsquo;t drive out for</h2>
+        <p>If it takes under a day and doesn&rsquo;t need a permit, it&rsquo;s probably on this list. If it needs a licensed trade, we&rsquo;ll say so on the call and point you to one instead of taking the job anyway.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="drywall">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-trowel"></use></svg></span>
+            <h2>Drywall &amp; plaster patches</h2>
+          </div>
+          <div class="svc-body">
+            <p>Doorknob holes, water stains after a roof fix, popped nails and hairline cracks. Patched, sanded, primed and feathered so the wall doesn&rsquo;t show a square where we worked &mdash; you shouldn&rsquo;t be able to find the repair once the paint&rsquo;s dry.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Paint match on request &mdash; bring the can or the color name.</p>
+          <p class="lbl">When you need it</p>
+          <p>You&rsquo;re selling, showing a rental, or just don&rsquo;t want to look at the hole anymore.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="doors">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+            <h2>Doors, locks &amp; hardware</h2>
+          </div>
+          <div class="svc-body">
+            <p>Doors that stick in summer, latches that don&rsquo;t catch, sagging hinges, new deadbolts and handle sets. Interior doors planed and rehung, storm doors adjusted so they close without the shoulder-check.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Most doors done in one visit.</p>
+          <p class="lbl">When you need it</p>
+          <p>A door that won&rsquo;t latch, or a lock you want changed after moving in.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="plumbing">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-drop"></use></svg></span>
+            <h2>Faucets, toilets &amp; small plumbing</h2>
+          </div>
+          <div class="svc-body">
+            <p>Faucet and shower-head swaps, running toilets, wax rings, shut-off valves and garbage disposals. Anything behind the wall &mdash; a real leak, a re-pipe &mdash; we hand off to a licensed plumber and tell you that up front.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Bring us the fixture, or we&rsquo;ll pick it up.</p>
+          <p class="lbl">When you need it</p>
+          <p>The toilet that won&rsquo;t stop running, or a faucet you bought and haven&rsquo;t had time to install.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="mounting">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-mount"></use></svg></span>
+            <h2>Mounting &amp; shelving</h2>
+          </div>
+          <div class="svc-body">
+            <p>TVs on the right anchors, floating shelves, closet systems, curtain rods, mirrors and heavy art. We find the studs and tell you honestly what a wall can and can&rsquo;t hold before we hang anything on it.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Cable tucked and hidden.</p>
+          <p class="lbl">When you need it</p>
+          <p>The TV that&rsquo;s been leaning against the wall since move-in.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="gutters">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-gutter"></use></svg></span>
+            <h2>Gutters, caulk &amp; weather-proofing</h2>
+          </div>
+          <div class="svc-body">
+            <p>Gutter clean-outs, downspout re-aims, window and tub re-caulking, door sweeps and weather stripping before the cold sets in. Cheap fixes now instead of a bigger repair once the weather turns.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Seasonal &mdash; book early in fall.</p>
+          <p class="lbl">When you need it</p>
+          <p>Leaves are already piling up, or you feel a draft standing near the door.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="movein">
+    <div class="pad">
+      <div class="svc-grid">
+        <div>
+          <div class="svc-head">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="#i-box"></use></svg></span>
+            <h2>Move-in &amp; move-out lists</h2>
+          </div>
+          <div class="svc-body">
+            <p>Landlord punch lists, security-deposit repairs, furniture assembly and childproofing. Hand us the list and we&rsquo;ll work down it in one visit instead of chasing five different people.</p>
+          </div>
+        </div>
+        <aside class="svc-side">
+          <p class="lbl">Good to know</p>
+          <p>Photos sent when the list is done.</p>
+          <p class="lbl">When you need it</p>
+          <p>A lease deadline, or a move with forty small tasks and zero free weekends.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Not on the list above?</h2>
+      <p>Call anyway. If it&rsquo;s a small job we probably still do it &mdash; and if it&rsquo;s not, we&rsquo;ll tell you who to call instead.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+15165550106">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (516) 555-0106
+        </a>
+        <a class="btn btn-out" href="work.html">See sample projects</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pad">
+      <div class="foot-top">
+        <a class="foot-brand" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-ladder"></use></svg>
+          <b>Blue Ladder Home Repair</b>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+15165550106">(516) 555-0106</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disc">
+        Blue Ladder Home Repair &middot; Serving Long Island, NY &middot; <a href="tel:+15165550106">(516) 555-0106</a><br>
+        <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+        Fictional business shown for demonstration.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+15165550106">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Blue Ladder<span class="s">(516) 555-0106</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeSub(); }
+  });
+})();
+</script>
+
+</body>
+</html>

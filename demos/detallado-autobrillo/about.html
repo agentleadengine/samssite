@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Detallado AutoBrillo</title>
+<meta name="description" content="Por qué Detallado AutoBrillo revisa la pintura con luz directa antes de dar un precio. Área de servicio y horario en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Big+Shoulders+Display:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .ab-hero{ display:grid; gap:32px; align-items:center }
+  @media (min-width:840px){ .ab-hero{ grid-template-columns:1.2fr .8fr; gap:40px } }
+  .ab-scene{ max-width:260px; margin:0 auto; display:block }
+  .ab-scene .glow{ opacity:1 }
+  @media (prefers-reduced-motion: no-preference){
+    .ab-scene .glow{ animation:glow-in 1.4s var(--ease-out) both }
+    @keyframes glow-in{ from{ opacity:0; transform:scale(.85); transform-origin:120px 60px } to{ opacity:1; transform:scale(1) } }
+  }
+  .story p{ margin:0 0 20px }
+  .story p:last-child{ margin-bottom:0 }
+  .info-grid{ display:grid; gap:32px }
+  @media (min-width:760px){ .info-grid{ grid-template-columns:1.1fr 1fr } }
+  .season-note{ margin-top:16px; font-size:.92rem; color:var(--chrome-faint); max-width:42ch }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon" role="note">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="AutoBrillo — inicio">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+        <defs><linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+        <circle cx="20" cy="20" r="18" fill="url(#markGrad)" stroke="#272b35" stroke-width="1"/>
+        <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">AutoBrillo<small>Detallado automotriz</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="nav-link">Servicios</a>
+          <button type="button" class="sub-caret" aria-expanded="false" aria-controls="sub-servicios">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+          <ul class="submenu" id="sub-servicios">
+            <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+            <li><a href="services.html#interior">Interior completo</a></li>
+            <li><a href="services.html#pulido">Pulido de pintura</a></li>
+            <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+            <li><a href="services.html#faros">Restauración de faros</a></li>
+            <li><a href="services.html#venta">Preparación para venta</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="nav-link">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link is-active" aria-current="page">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+15165550189">(516) 555-0189</a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub-m">
+        <div class="m-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-caret-m" aria-expanded="false" aria-controls="sub-servicios-m">
+            <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+        </div>
+        <ul class="submenu-m" id="sub-servicios-m">
+          <li><a href="services.html#lavado">Lavado de mantenimiento</a></li>
+          <li><a href="services.html#interior">Interior completo</a></li>
+          <li><a href="services.html#pulido">Pulido de pintura</a></li>
+          <li><a href="services.html#ceramico">Recubrimiento cerámico</a></li>
+          <li><a href="services.html#faros">Restauración de faros</a></li>
+          <li><a href="services.html#venta">Preparación para venta</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Trabajos</a></li>
+      <li><a href="about.html" class="is-active" aria-current="page">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="m-phone" href="tel:+15165550189">Llamar (516) 555-0189</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap ab-hero">
+      <h1>UN AUTO NO ESTÁ LISTO<br>HASTA QUE SE VE BIEN<br><span class="accent">BAJO LUZ DIRECTA.</span></h1>
+      <svg class="scene ab-scene" viewBox="0 0 240 220" role="img" aria-label="Una lámpara de trabajo colgando, iluminando hacia abajo">
+        <defs>
+          <radialGradient id="abGlow" cx=".5" cy=".18" r=".7"><stop offset="0" stop-color="#7db4ff" stop-opacity=".35"/><stop offset="1" stop-color="#7db4ff" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse class="glow" cx="120" cy="60" rx="150" ry="140" fill="url(#abGlow)"/>
+        <line x1="120" y1="0" x2="120" y2="46" stroke="#3d4552" stroke-width="2"/>
+        <path d="M96 46 Q120 34 144 46 L152 66 Q120 78 88 66 Z" fill="#1b1e26" stroke="#565c68" stroke-width="1.5"/>
+        <ellipse cx="120" cy="68" rx="14" ry="8" fill="#e9edf3" opacity=".9"/>
+        <path d="M70 78 L46 200 M170 78 L194 200" stroke="#7db4ff" stroke-width="1" opacity=".3"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap story measure">
+      <p>AutoBrillo nació de una idea simple: un auto no está terminado hasta que se ve bien bajo la misma luz con la que se va a revisar, no solo bajo la luz suave de una cochera. Por eso la pintura se revisa primero, con una lámpara directa, antes de decirle qué necesita y cuánto cuesta.</p>
+      <p>Aquí no se apura un pulido para meter otro auto en el día. Si un panel necesita una segunda pasada, la recibe, y usted lo revisa con nosotros antes de que se cobre nada. Preferimos decirle que un rayón no sale con pulido, a dejarlo creer que sí y decepcionarlo después.</p>
+      <p>Trabajamos en Long Island: vamos hasta su casa cuando hay espacio para abrir las puertas y llevar el equipo, y reservamos el taller para los trabajos grandes, como recubrimientos y correcciones de pintura de varias etapas. También atendemos flotillas, camionetas de trabajo, botes y casas rodantes.</p>
+    </div>
+  </section>
+
+  <section class="section band-bay-2">
+    <div class="wrap">
+      <h2>AGENDA Y<br>ÁREA DE SERVICIO</h2>
+      <div class="info-grid" style="margin-top:28px">
+        <div class="info-panel">
+          <h3 style="margin-bottom:12px">Dónde trabajamos</h3>
+          <p class="dim" style="margin:0">A domicilio necesitamos una entrada o un espacio donde podamos abrir las puertas; nosotros llevamos agua y electricidad. Los trabajos grandes se hacen en el taller.</p>
+          <ul class="tags">
+            <li>A domicilio</li><li>En taller</li><li>Flotillas y camionetas</li><li>Botes y casas rodantes</li>
+          </ul>
+        </div>
+        <div class="info-panel">
+          <h3 style="margin-bottom:6px">Horario</h3>
+          <ul class="hours">
+            <li><span>Lunes a viernes</span><strong>8:00 a.m. – 6:00 p.m.</strong></li>
+            <li><span>Sábado</span><strong>8:00 a.m. – 4:00 p.m.</strong></li>
+            <li><span>Domingo</span><strong>Con cita</strong></li>
+            <li><span>Entrega del auto</span><strong>Desde las 7:30 a.m.</strong></li>
+          </ul>
+          <p class="season-note">En primavera y otoño la agenda se llena con una o dos semanas de anticipación. Llame temprano si necesita un día en específico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-beam">
+
+  <section class="cta-band band-reveal">
+    <div class="wrap">
+      <h2>HÁBLENOS<br>DE SU AUTO.</h2>
+      <p>Cuéntenos qué tiene, cómo está y si prefiere que vayamos hasta usted.</p>
+      <div class="btns">
+        <a class="btn btn-on-reveal" href="tel:+15165550189">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Llamar (516) 555-0189
+        </a>
+        <a class="text-cta" href="contact.html">Ver el formulario de contacto
+          <svg viewBox="0 0 16 10" aria-hidden="true" focusable="false"><path d="M1 5h13M9 1l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html" aria-label="AutoBrillo — inicio">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Marca de AutoBrillo">
+          <defs><linearGradient id="markGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2635"/><stop offset="1" stop-color="#08090b"/></linearGradient></defs>
+          <circle cx="20" cy="20" r="18" fill="url(#markGradFoot)" stroke="#272b35" stroke-width="1"/>
+          <path d="M5 25 Q20 8 35 14" stroke="#7db4ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">AutoBrillo</span>
+      </a>
+      <nav class="foot-nav" aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-phone"><a href="tel:+15165550189">(516) 555-0189</a> · Detallado a domicilio y en taller, Long Island, NY. Atendemos en español y en inglés.</p>
+      <p class="foot-credit">Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a>.</p>
+      <p class="foot-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550189">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5c.6 0 1.1.4 1.3 1l1 2.7c.2.5 0 1-.3 1.4L7 10c1 2.4 2.6 4 5 5l1.4-1.5c.4-.4.9-.5 1.4-.3l2.7 1c.6.2 1 .7 1 1.3v2.3c0 1-.8 1.8-1.8 1.7-6-.6-10.9-5.5-11.5-11.5C4.7 4.3 5.5 3.5 6.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  Llamar (516) 555-0189
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    mobileNav.classList.remove('is-open');
+    window.setTimeout(function(){ mobileNav.hidden = true; }, 200);
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ mobileNav.classList.add('is-open'); });
+    });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+
+  var carets = header.querySelectorAll('.sub-caret, .sub-caret-m');
+  carets.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var li = btn.closest('.has-sub, .has-sub-m');
+      if(li){ li.classList.toggle('is-open', !expanded); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(!mobileNav.hidden){ closeMobile(); hamburger.focus(); }
+      carets.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var li = btn.closest('.has-sub, .has-sub-m');
+        if(li) li.classList.remove('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!mobileNav.hidden && !mobileNav.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)){
+      closeMobile();
+    }
+    document.querySelectorAll('.has-sub.is-open, .has-sub-m.is-open').forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove('is-open');
+        var b = li.querySelector('.sub-caret, .sub-caret-m');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMobile(); });
+  });
+})();
+</script>
+
+</body>
+</html>

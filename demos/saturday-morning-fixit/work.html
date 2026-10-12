@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Work — Saturday Morning Fix-It | Demo Site</title>
+<meta name="description" content="Sample Saturday-morning projects from Saturday Morning Fix-It — illustrated scenes, not photos, showing how a morning goes from small repairs to a full punch list.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-brand" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M7.8 12.4l3 3 5.8-6.2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 4h3l1.3 3.7-2.1 1.6a11.4 11.4 0 0 0 5.6 5.6l1.6-2.1 3.7 1.3V17.5c0 1.1-.9 2-2 1.9C10.9 19 5 13.1 4.6 6.1 4.5 5 5.4 4 7 4Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+</defs>
+</svg>
+
+<div class="demo-ribbon">Demo site</div>
+
+<header class="rail" id="site-rail">
+  <div class="rail-in">
+    <div class="rail-top">
+      <a class="brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <span class="word"><b>Saturday Morning Fix-It</b><span>Long Island, NY</span></span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon i-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon i-close" aria-hidden="true"><use href="#i-close"></use></svg>
+        <span class="lbl">Menu</span>
+      </button>
+    </div>
+
+    <a class="rail-tel" href="tel:+16315550105">
+      <span style="display:flex;align-items:center;gap:10px"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>(631) 555-0105</span>
+      <span class="go">Call</span>
+    </a>
+
+    <nav class="rail-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+            Services
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <ul class="sub-nav" id="services-sub">
+            <li><a href="services.html#small-repairs">Small repairs</a></li>
+            <li><a href="services.html#assembly">Furniture assembly</a></li>
+            <li><a href="services.html#mounting">TV &amp; shelf mounting</a></li>
+            <li><a href="services.html#doors-windows">Door &amp; window fixes</a></li>
+            <li><a href="services.html#punch-list">Punch-list projects</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="current" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rail-meta">
+      <div class="blk">
+        <b>Hours</b>
+        Mon&ndash;Fri 7am&ndash;6pm<br>Sat 7am&ndash;2pm &middot; Sun closed
+      </div>
+      <div class="blk">
+        <b>Serving</b>
+        Long Island, NY
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+<main>
+
+  <section class="band" style="padding-bottom:0">
+    <div class="pad svc-intro">
+      <h1>A few Saturday mornings, start to finish</h1>
+      <p style="color:var(--ink-soft);margin-top:14px;max-width:60ch;font-size:16.5px">Every scene below is built to show how a morning goes, not a photo of a real job site &ndash; each one is a sample project. Real mornings vary; the shape stays the same.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="pad">
+      <div class="gallery">
+
+        <div class="vignette feat">
+          <div class="art">
+            <svg viewBox="0 0 640 360" role="img" aria-label="Illustration of a clipboard checklist with six items, every one of them checked off, and a stamped seal in the corner">
+              <rect width="640" height="360" fill="var(--paper-dim)"/>
+              <g transform="translate(210,26)">
+                <rect x="70" y="0" width="80" height="26" rx="9" fill="var(--slate-900)"/>
+                <rect x="0" y="18" width="220" height="306" rx="16" fill="var(--white)" stroke="var(--paper-line-strong)" stroke-width="2.5"/>
+                <line x1="24" y1="62" x2="196" y2="62" stroke="var(--paper-line)" stroke-width="2"/>
+                <g stroke="var(--slate-900)" stroke-width="2" fill="none">
+                  <rect x="24" y="80" width="18" height="18" rx="4"/>
+                  <rect x="24" y="120" width="18" height="18" rx="4"/>
+                  <rect x="24" y="160" width="18" height="18" rx="4"/>
+                  <rect x="24" y="200" width="18" height="18" rx="4"/>
+                  <rect x="24" y="240" width="18" height="18" rx="4"/>
+                  <rect x="24" y="280" width="18" height="18" rx="4"/>
+                </g>
+                <g stroke="var(--sun-dk)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M27 89l4.5 4.5 8-9.5"/>
+                  <path d="M27 129l4.5 4.5 8-9.5"/>
+                  <path d="M27 169l4.5 4.5 8-9.5"/>
+                  <path d="M27 209l4.5 4.5 8-9.5"/>
+                  <path d="M27 249l4.5 4.5 8-9.5"/>
+                  <path d="M27 289l4.5 4.5 8-9.5"/>
+                </g>
+                <g fill="var(--paper-line)">
+                  <rect x="54" y="85" width="140" height="8" rx="4"/>
+                  <rect x="54" y="125" width="110" height="8" rx="4"/>
+                  <rect x="54" y="165" width="150" height="8" rx="4"/>
+                  <rect x="54" y="205" width="95" height="8" rx="4"/>
+                  <rect x="54" y="245" width="130" height="8" rx="4"/>
+                  <rect x="54" y="285" width="105" height="8" rx="4"/>
+                </g>
+              </g>
+              <g transform="translate(495,255) rotate(-16)">
+                <circle r="48" fill="none" stroke="var(--sun-dk)" stroke-width="4"/>
+                <circle r="38" fill="none" stroke="var(--sun-dk)" stroke-width="1.5"/>
+                <path d="M-16 2l11 12 22-26" fill="none" stroke="var(--sun-dk)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <g transform="translate(70,60)" fill="var(--slate-800)" opacity=".9">
+                <rect x="0" y="0" width="46" height="30" rx="3"/>
+                <rect x="4" y="4" width="38" height="22" rx="1" fill="var(--paper-dim)"/>
+              </g>
+              <g transform="translate(60,260)" fill="var(--slate-800)" opacity=".9">
+                <rect x="0" y="0" width="34" height="46" rx="3"/>
+                <rect x="6" y="8" width="22" height="4" rx="2" fill="var(--paper-dim)"/>
+                <rect x="6" y="18" width="22" height="4" rx="2" fill="var(--paper-dim)"/>
+                <rect x="6" y="28" width="22" height="4" rx="2" fill="var(--paper-dim)"/>
+              </g>
+            </svg>
+            <span class="tag">Sample project</span>
+          </div>
+          <div class="cap">
+            <h3>A six-item punch list, one Saturday</h3>
+            <p>Loose stair rail, two sticking doors, a TV mount, a wobbly dresser, and a drawer that hadn&rsquo;t closed right since move-in &ndash; walked, worked in order, and checked off by 11:40.</p>
+            <a class="lk" href="services.html#punch-list">See how punch-list mornings work<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+        <div class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 480 360" role="img" aria-label="Illustration of a dresser with three drawers, standing level, with a hex key resting against it and a small level line above" preserveAspectRatio="xMidYMid meet">
+              <rect width="480" height="360" fill="var(--paper-dim)"/>
+              <line x1="70" y1="290" x2="410" y2="290" stroke="var(--paper-line-strong)" stroke-width="3"/>
+              <rect x="150" y="120" width="180" height="170" rx="5" fill="var(--white)" stroke="var(--slate-900)" stroke-width="3"/>
+              <rect x="164" y="140" width="152" height="34" rx="4" fill="var(--paper-dim)" stroke="var(--slate-700)" stroke-width="2"/>
+              <rect x="164" y="184" width="152" height="34" rx="4" fill="var(--paper-dim)" stroke="var(--slate-700)" stroke-width="2"/>
+              <rect x="164" y="228" width="152" height="34" rx="4" fill="var(--paper-dim)" stroke="var(--slate-700)" stroke-width="2"/>
+              <rect x="228" y="153" width="24" height="7" rx="3.5" fill="var(--slate-700)"/>
+              <rect x="228" y="197" width="24" height="7" rx="3.5" fill="var(--slate-700)"/>
+              <rect x="228" y="241" width="24" height="7" rx="3.5" fill="var(--slate-700)"/>
+              <g transform="translate(150,96)">
+                <rect x="0" y="0" width="180" height="12" rx="6" fill="var(--white)" stroke="var(--sun-dk)" stroke-width="2"/>
+                <circle cx="90" cy="6" r="4.5" fill="none" stroke="var(--sun-dk)" stroke-width="2"/>
+                <circle cx="90" cy="6" r="1.4" fill="var(--sun-dk)"/>
+              </g>
+              <g transform="translate(345,255) rotate(28)">
+                <path d="M0 3.2L20.5 -9L41 3.2L41 27.6L20.5 39.8L0 27.6Z" fill="var(--sun-pale)" stroke="var(--sun-dk)" stroke-width="2.5"/>
+                <circle cx="20.5" cy="15.4" r="9" fill="none" stroke="var(--sun-dk)" stroke-width="2.5"/>
+              </g>
+            </svg>
+            <span class="tag">Sample project</span>
+          </div>
+          <div class="cap">
+            <h3>A bedroom dresser, boxed that morning</h3>
+            <p>Six drawers built, glides checked one at a time, and the whole piece anchored to the wall before the delivery box was even flattened.</p>
+            <a class="lk" href="services.html#assembly">See what&rsquo;s included<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+        <div class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 480 360" role="img" aria-label="Illustration of a television mounted level on a wall, with a level tool nearby and a cord running neatly down into the wall">
+              <rect width="480" height="360" fill="var(--paper-dim)"/>
+              <line x1="30" y1="300" x2="450" y2="300" stroke="var(--paper-line-strong)" stroke-width="3"/>
+              <rect x="130" y="80" width="220" height="128" rx="6" fill="var(--slate-900)"/>
+              <rect x="140" y="90" width="200" height="108" rx="2" fill="var(--slate-700)"/>
+              <rect x="228" y="208" width="24" height="10" fill="var(--slate-800)"/>
+              <path d="M240 218v40" stroke="var(--slate-800)" stroke-width="4" stroke-dasharray="1 7" stroke-linecap="round"/>
+              <g transform="translate(150,56)">
+                <rect x="0" y="0" width="180" height="12" rx="6" fill="var(--white)" stroke="var(--sun-dk)" stroke-width="2"/>
+                <circle cx="90" cy="6" r="4.5" fill="none" stroke="var(--sun-dk)" stroke-width="2"/>
+                <circle cx="90" cy="6" r="1.4" fill="var(--sun-dk)"/>
+              </g>
+              <rect x="150" y="270" width="180" height="16" rx="4" fill="var(--white)" stroke="var(--paper-line-strong)" stroke-width="2"/>
+              <rect x="168" y="255" width="36" height="18" rx="2" fill="var(--sun-pale)" stroke="var(--sun-dk)" stroke-width="1.5"/>
+              <circle cx="292" cy="264" r="9" fill="var(--sun-pale-2)" stroke="var(--sun-dk)" stroke-width="1.5"/>
+            </svg>
+            <span class="tag">Sample project</span>
+          </div>
+          <div class="cap">
+            <h3>Mounted level, cords gone</h3>
+            <p>A 55-inch TV centered over the console, bracket anchored to the studs, cord dropped straight down inside the wall instead of taped along the baseboard.</p>
+            <a class="lk" href="services.html#mounting">See what&rsquo;s included<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+        <div class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 480 360" role="img" aria-label="Illustration of a door swinging open in a smooth arc, no longer catching on the frame">
+              <rect width="480" height="360" fill="var(--paper-dim)"/>
+              <line x1="60" y1="310" x2="420" y2="310" stroke="var(--paper-line-strong)" stroke-width="3"/>
+              <rect x="150" y="60" width="90" height="250" rx="2" fill="none" stroke="var(--slate-700)" stroke-width="3"/>
+              <g transform="translate(150,60) rotate(-34 0 250)">
+                <rect x="0" y="0" width="90" height="250" rx="2" fill="var(--white)" stroke="var(--slate-900)" stroke-width="3"/>
+                <circle cx="78" cy="132" r="4.5" fill="var(--slate-900)"/>
+              </g>
+              <path d="M240 310a190 190 0 0 0 -60 -164" fill="none" stroke="var(--sun-dk)" stroke-width="2.5" stroke-dasharray="3 8" stroke-linecap="round"/>
+              <g transform="translate(300,150)">
+                <circle r="20" fill="var(--sun-pale)" stroke="var(--sun-dk)" stroke-width="2.5"/>
+                <path d="M-7 0l5 6 11 -13" fill="none" stroke="var(--sun-dk)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="tag">Sample project</span>
+          </div>
+          <div class="cap">
+            <h3>A door that finally closes right</h3>
+            <p>Hinge reset, strike plate shifted an eighth of an inch, weatherstripping replaced &ndash; it had been dragging on the frame since sometime last year.</p>
+            <a class="lk" href="services.html#doors-windows">See what&rsquo;s included<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+        <div class="vignette">
+          <div class="art">
+            <svg viewBox="0 0 480 360" role="img" aria-label="Illustration of a wall with a smoothly patched section, a small hinge, and a clean caulk line, standing in for a morning of small repairs">
+              <rect width="480" height="360" fill="var(--paper-dim)"/>
+              <rect x="40" y="40" width="400" height="280" rx="4" fill="var(--white)" stroke="var(--paper-line-strong)" stroke-width="2"/>
+              <circle cx="190" cy="150" r="46" fill="var(--sun-pale)" opacity=".55"/>
+              <circle cx="190" cy="150" r="46" fill="none" stroke="var(--sun-dk)" stroke-width="2" stroke-dasharray="2 6"/>
+              <path d="M172 132l12 12 -8 8 14 14" fill="none" stroke="var(--paper-line-strong)" stroke-width="1.6" opacity=".7"/>
+              <g transform="translate(300,120)">
+                <rect x="0" y="0" width="14" height="46" rx="3" fill="none" stroke="var(--slate-700)" stroke-width="2.5"/>
+                <rect x="26" y="0" width="14" height="46" rx="3" fill="none" stroke="var(--slate-700)" stroke-width="2.5"/>
+                <circle cx="20" cy="10" r="3" fill="var(--sun-dk)"/>
+                <circle cx="20" cy="36" r="3" fill="var(--sun-dk)"/>
+              </g>
+              <line x1="70" y1="270" x2="410" y2="270" stroke="var(--slate-700)" stroke-width="2"/>
+              <line x1="70" y1="270" x2="180" y2="270" stroke="var(--paper-line-strong)" stroke-width="2" stroke-dasharray="2 5"/>
+              <g transform="translate(300,255)">
+                <circle r="18" fill="var(--sun-pale-2)" stroke="var(--sun-dk)" stroke-width="2"/>
+                <path d="M-6 0l4.5 5 9.5 -11" fill="none" stroke="var(--sun-dk)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="tag">Sample project</span>
+          </div>
+          <div class="cap">
+            <h3>Four small fixes, one stop</h3>
+            <p>A cabinet hinge that had dropped, a hairline crack by the window frame, a squeaky closet door, and a caulk line gone gray &ndash; the kind of morning that clears half a list at once.</p>
+            <a class="lk" href="services.html#small-repairs">See what&rsquo;s included<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band close-cta">
+    <div class="pad">
+      <h2>Something like this on your list?</h2>
+      <p>Call it in or send it through the contact page. Most of what&rsquo;s on a normal Saturday list is exactly what&rsquo;s shown here.</p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="tel:+16315550105">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          Call (631) 555-0105
+        </a>
+        <a class="btn btn-text" href="services.html">
+          See what&rsquo;s included
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pad">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html">
+        <svg class="icon" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <b>Saturday Morning Fix-It</b>
+      </a>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="tel:+16315550105">(631) 555-0105</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="disc">
+      Saturday Morning Fix-It &middot; Serving Long Island, NY &middot; <a href="tel:+16315550105">(631) 555-0105</a><br>
+      <strong>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></strong><br>
+      Fictional business shown for demonstration.
+    </p>
+  </div>
+</footer>
+
+</div>
+
+<div class="callbar">
+  <a href="tel:+16315550105">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span>Call Saturday Morning Fix-It<span class="s">(631) 555-0105</span></span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('primary-nav');
+  var subToggle = document.querySelector('.sub-toggle');
+  var subNav = document.getElementById('services-sub');
+  var rail = document.querySelector('.rail');
+
+  function closeSub(){
+    if(subToggle){ subToggle.setAttribute('aria-expanded','false'); }
+    if(subNav){ subNav.classList.remove('is-open'); }
+  }
+  function closeMenu(focusBtn){
+    if(hamburger){ hamburger.setAttribute('aria-expanded','false'); }
+    if(mobileNav){ mobileNav.classList.remove('is-open'); }
+    closeSub();
+    if(focusBtn && hamburger){ hamburger.focus(); }
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      if(open){ closeSub(); }
+    });
+  }
+  if(subToggle && subNav){
+    subToggle.addEventListener('click', function(){
+      var open = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!open));
+      subNav.classList.toggle('is-open', !open);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(true); }
+  });
+  document.addEventListener('click', function(e){
+    if(rail && !rail.contains(e.target)){ closeMenu(false); }
+  });
+})();
+</script>
+
+</body>
+</html>

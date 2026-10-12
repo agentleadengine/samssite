@@ -1,0 +1,370 @@
+<!--
+THESIS: One phone call gets a straight, written answer about the next move on the North Shore — a real price range, a plain walkthrough, one agent on the file from call to closing.
+OWN-WORLD: A harbormaster's chart table — deep-navy chart ground, brass instrument lines, hand-ruled ledger rows; coastline soundings and named-town waypoints stand in for listings and comps.
+STORY: Chart the exact coastline this office works, prove the numbers are written not guessed, walk the five things people call about, and close on one phone call.
+FIRST VIEWPORT: A full drenched-ink hero — headline, lede, and a call button sit beside an authored brass-line chart of the North Shore with waypoints at named towns and depth soundings, so the trade is visible before any scroll.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Point Realty | Buying, Selling &amp; Rentals on Long Island</title>
+<meta name="description" content="Harbor Point Realty helps Long Island families buy, sell, and rent on the North Shore. Walkthroughs, written pricing summaries, listing prep, and showings. Call (516) 555-0158.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;500;700;900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ribbon">Demo site</div>
+
+<header class="hdr">
+  <div class="wrap hdr-row">
+    <a class="brand" href="index.html" aria-current="page">
+      <span class="mark">Harbor Point Realty</span>
+      <span class="sub">Long Island, NY</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-item has-sub">
+        <a href="services.html" class="top-link">Services</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-label="Show services menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="submenu" id="services-submenu" role="menu">
+          <a href="services.html#selling" role="menuitem">Selling your home</a>
+          <a href="services.html#buying" role="menuitem">Buying a home</a>
+          <a href="services.html#rentals" role="menuitem">Rentals &amp; relocation</a>
+          <a href="services.html#listing-prep" role="menuitem">Listing preparation</a>
+          <a href="services.html#pricing-walkthrough" role="menuitem">Pricing walkthrough</a>
+        </div>
+      </div>
+      <a href="work.html" class="top-link">Work</a>
+      <a href="about.html" class="top-link">About</a>
+      <a href="contact.html" class="top-link">Contact</a>
+    </nav>
+
+    <a class="hdr-tel" href="tel:+15165550158">
+      <span class="lbl">Call the office</span>
+      <span class="num">(516) 555-0158</span>
+    </a>
+
+    <button class="hamburger" type="button" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu" id="mobile-menu" hidden aria-label="Mobile">
+    <div class="mm-list">
+      <div class="mm-row">
+        <div class="mm-item-flex">
+          <a href="services.html" class="mm-link">Services</a>
+          <button class="mm-acc-btn" type="button" aria-expanded="false" aria-controls="mm-services" aria-label="Show services menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div class="mm-acc-panel" id="mm-services">
+          <a href="services.html#selling">Selling your home</a>
+          <a href="services.html#buying">Buying a home</a>
+          <a href="services.html#rentals">Rentals &amp; relocation</a>
+          <a href="services.html#listing-prep">Listing preparation</a>
+          <a href="services.html#pricing-walkthrough">Pricing walkthrough</a>
+        </div>
+      </div>
+      <div class="mm-row"><a href="work.html" class="mm-link">Work</a></div>
+      <div class="mm-row"><a href="about.html" class="mm-link">About</a></div>
+      <div class="mm-row"><a href="contact.html" class="mm-link">Contact</a></div>
+    </div>
+    <a class="mm-tel" href="tel:+15165550158">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+      (516) 555-0158
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero sec-ink">
+    <div class="wrap hero-grid">
+      <div class="mo">
+        <h1>A written answer, <span class="accent">not a guess,</span> about your next move on the North Shore.</h1>
+        <p class="lede">Harbor Point Realty works the whole file: the walkthrough, the price range, the listing, the showings, and the paperwork at the end. One agent on your file from the first call to the closing table.</p>
+        <div class="cta-row" style="display:flex;flex-wrap:wrap;gap:12px">
+          <a class="btn btn-brass" href="tel:+15165550158">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+            Call (516) 555-0158
+          </a>
+          <a class="btn btn-line-onink" href="services.html">See what we handle</a>
+        </div>
+        <div class="hero-facts">
+          <span><i class="dot"></i>Evening showings by appointment</span>
+          <span><i class="dot"></i>Written pricing summary</span>
+          <span><i class="dot"></i>No pressure to list</span>
+        </div>
+      </div>
+
+      <div class="mo" style="animation-delay:.12s">
+        <div class="chart-frame">
+          <svg viewBox="0 0 600 560" role="img" aria-label="Chart of the North Shore coastline with waypoints for Port Washington, Manhasset, Roslyn, Glen Cove, Sea Cliff, and Oyster Bay, connected by a dashed route">
+            <path d="M0,190 C45,172 75,208 118,196 C158,184 185,222 228,208 C266,196 298,152 342,168 C384,184 405,228 452,216 C498,204 528,168 575,190 L600,200 L600,0 L0,0 Z" fill="#12293F"/>
+            <path d="M0,190 C45,172 75,208 118,196 C158,184 185,222 228,208 C266,196 298,152 342,168 C384,184 405,228 452,216 C498,204 528,168 575,190 L600,200" fill="none" stroke="#A8823E" stroke-width="1.6"/>
+
+            <g stroke="#D9C393" stroke-width="1" fill="none" opacity=".5">
+              <circle cx="540" cy="64" r="24"/>
+              <line x1="540" y1="40" x2="540" y2="88"/>
+              <line x1="516" y1="64" x2="564" y2="64"/>
+            </g>
+            <path d="M540,40 L544,52 L540,48 L536,52 Z" fill="#D9C393" opacity=".7"/>
+            <text x="540" y="31" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif" font-size="9" font-weight="700" fill="#D9C393" opacity=".7">N</text>
+
+            <g fill="#D9C393" opacity=".38" font-family="'Schibsted Grotesk',sans-serif" font-size="11" style="font-variant-numeric:tabular-nums">
+              <text x="55" y="330">14</text>
+              <text x="150" y="368">22</text>
+              <text x="255" y="336">9</text>
+              <text x="365" y="392">31</text>
+              <text x="465" y="352">17</text>
+              <text x="95" y="430">26</text>
+              <text x="330" y="460">12</text>
+            </g>
+
+            <path d="M95,198 Q160,230 215,206 Q280,175 340,168" fill="none" stroke="#D9C393" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round" opacity=".85"/>
+
+            <g font-family="'Schibsted Grotesk',sans-serif" font-size="12" font-weight="600">
+              <g><circle cx="95" cy="198" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="95" cy="198" r="3.6" fill="#A8823E"/><text x="95" y="224" text-anchor="middle" fill="#F3EFE5">Port Washington</text></g>
+              <g><circle cx="215" cy="206" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="215" cy="206" r="3.6" fill="#A8823E"/><text x="215" y="232" text-anchor="middle" fill="#F3EFE5">Manhasset</text></g>
+              <g><circle cx="340" cy="168" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="340" cy="168" r="3.6" fill="#A8823E"/><text x="340" y="150" text-anchor="middle" fill="#F3EFE5">Roslyn</text></g>
+              <g><circle cx="452" cy="216" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="452" cy="216" r="3.6" fill="#A8823E"/><text x="452" y="242" text-anchor="middle" fill="#F3EFE5">Glen Cove</text></g>
+              <g><circle cx="498" cy="202" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="498" cy="202" r="3.6" fill="#A8823E"/><text x="498" y="184" text-anchor="middle" fill="#F3EFE5">Sea Cliff</text></g>
+              <g><circle cx="575" cy="190" r="8" fill="none" stroke="#D9C393" opacity=".5"/><circle cx="575" cy="190" r="3.6" fill="#A8823E"/><text x="565" y="216" text-anchor="middle" fill="#F3EFE5">Oyster Bay</text></g>
+            </g>
+          </svg>
+        </div>
+        <p class="chart-cap"><b>Long Island, NY</b> <span>Six of the towns this office works, drawn onto the coastline from Port Washington to Oyster Bay.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap proof-grid">
+      <div class="proof-copy">
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem)">What you get after the walkthrough.</h2>
+        <p>A written range with the comparable sales it came from, what's still sitting on the market nearby, and what that means for your timeline. Not a number guessed out loud on the porch.</p>
+      </div>
+      <div class="proof-card">
+        <svg viewBox="0 0 480 232" role="img" aria-label="Bar chart of three recent comparable sales, one active listing, and a highlighted written price range">
+          <line x1="0" y1="204" x2="480" y2="204" stroke="#DED7C7" stroke-width="1"/>
+          <rect x="0" y="84" width="480" height="18" fill="#A8823E" opacity=".16"/>
+          <line x1="0" y1="93" x2="480" y2="93" stroke="#A8823E" stroke-width="1.4" stroke-dasharray="3 5"/>
+          <rect x="36" y="100" width="52" height="104" fill="#0E2438"/>
+          <rect x="118" y="76" width="52" height="128" fill="#0E2438"/>
+          <rect x="200" y="92" width="52" height="112" fill="#0E2438"/>
+          <rect x="282" y="118" width="52" height="86" fill="none" stroke="#0E2438" stroke-width="1.6" stroke-dasharray="3 4"/>
+          <text x="62" y="220" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif" font-size="10.5" fill="#5A6B7B">Sold</text>
+          <text x="144" y="220" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif" font-size="10.5" fill="#5A6B7B">Sold</text>
+          <text x="226" y="220" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif" font-size="10.5" fill="#5A6B7B">Sold</text>
+          <text x="308" y="220" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif" font-size="10.5" fill="#5A6B7B">Active</text>
+          <text x="465" y="90" text-anchor="end" font-family="'Schibsted Grotesk',sans-serif" font-size="10.5" font-weight="700" fill="#7A5D28">Written range</text>
+        </svg>
+        <div class="proof-legend">
+          <span><i style="background:#0E2438"></i>Recently sold nearby</span>
+          <span><i style="background:transparent;border:1.5px dashed #0E2438"></i>Active listing now</span>
+          <span><i style="background:#A8823E"></i>Your written range</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-linen">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Three of the five things people call us about.</h2>
+        <p class="lede">The full list, with what's included and when you'd use it, lives on the services page.</p>
+      </div>
+      <div class="teaser-list">
+        <article class="teaser-item">
+          <h3>Selling your home</h3>
+          <p>A walkthrough, a written price range from recent sales, and a plain-English read on every offer.</p>
+          <a class="text-link go" href="services.html#selling">Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="teaser-item">
+          <h3>Buying a home</h3>
+          <p>Showings around your schedule, a second set of eyes at every walkthrough, and no pressure to make an offer.</p>
+          <a class="text-link go" href="services.html#buying">Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="teaser-item">
+          <h3>Rentals &amp; relocation</h3>
+          <p>Year leases and short-notice moves, with the fine print on pets, parking, and move-in day confirmed upfront.</p>
+          <a class="text-link go" href="services.html#rentals">Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ink">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Why people call this office back.</h2>
+      </div>
+      <div class="why-strip">
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+          <p>Evening showings by appointment, weeknights until 8&nbsp;pm when sellers agree.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
+          <p>A written pricing summary, not a verbal guess on the front steps.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6Z"/><path d="M9 12l2 2 4-4.5"/></svg>
+          <p>No pressure to list. Plenty of calls are just to find out where things stand.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10Z"/><circle cx="12" cy="11" r="2.2"/></svg>
+          <p>One agent on your file, start to finish. Not a rotating desk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band sec-brass">
+    <div class="wrap cta-band-inner">
+      <div>
+        <h2>Start with a phone call.</h2>
+        <p>Fifteen minutes tells us most of what we need to know.</p>
+      </div>
+      <div class="cta-row" style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-ink" href="tel:+15165550158">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+          Call (516) 555-0158
+        </a>
+        <a class="text-link onink" href="contact.html">Or send a message</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-grid">
+    <div class="ftr-brand">
+      <p class="mark">Harbor Point Realty</p>
+      <p>Long Island, NY · buying, selling, and rentals</p>
+    </div>
+    <nav class="ftr-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="ftr-contact">
+      <a href="tel:+15165550158">(516) 555-0158</a>
+      <p>Mon–Thu 9–7 · Fri 9–5:30 · Sat 9–5</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="disclose">
+      <a href="https://samuelochoa.com/websites">Demo website built by Samuel Ochoa — samuelochoa.com/websites</a><br>
+      Fictional business shown for demonstration. Harbor Point Realty, its phone number, and every detail on this site are for demo purposes only.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+15165550158">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+    Call
+  </a>
+  <a class="cb-text" href="sms:+15165550158">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg>
+    Text
+  </a>
+</div>
+
+<script>
+(function(){
+  var hamburger = document.getElementById('hamburger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var header = document.querySelector('.hdr');
+
+  function closeMobileMenu(){
+    if(!mobileMenu) return;
+    mobileMenu.hidden = true;
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobileMenu(){
+    mobileMenu.hidden = false;
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  if(hamburger && mobileMenu){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      if(open){ closeMobileMenu(); } else { openMobileMenu(); }
+    });
+  }
+
+  document.querySelectorAll('.mm-acc-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var row = btn.closest('.mm-row');
+      var open = row.classList.contains('open');
+      row.classList.toggle('open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  document.querySelectorAll('.nav-item.has-sub').forEach(function(item){
+    var toggle = item.querySelector('.sub-toggle');
+    if(!toggle) return;
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.nav-item.open').forEach(function(o){
+        if(o!==item){ o.classList.remove('open'); var t=o.querySelector('.sub-toggle'); if(t) t.setAttribute('aria-expanded','false'); }
+      });
+      item.classList.toggle('open', !open);
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('.nav-item.open').forEach(function(item){
+      if(!item.contains(e.target)){
+        item.classList.remove('open');
+        var t=item.querySelector('.sub-toggle'); if(t) t.setAttribute('aria-expanded','false');
+      }
+    });
+    if(mobileMenu && !mobileMenu.hidden && header && !header.contains(e.target)){
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.nav-item.open').forEach(function(item){
+        item.classList.remove('open');
+        var t=item.querySelector('.sub-toggle'); if(t) t.setAttribute('aria-expanded','false');
+      });
+      if(mobileMenu && !mobileMenu.hidden){ closeMobileMenu(); if(hamburger) hamburger.focus(); }
+    }
+  });
+
+  if(mobileMenu){
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ closeMobileMenu(); });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

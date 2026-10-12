@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos — Taller Mecánico El Motor</title>
+<meta name="description" content="Proyectos de muestra de Taller Mecánico El Motor: frenos, aire acondicionado, sistema eléctrico, suspensión, afinación y diagnóstico, en Long Island, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Chivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  @media (min-width:720px){
+    .gallery-grid .vignette:nth-child(1){ grid-column:span 3 }
+    .gallery-grid .vignette:nth-child(2){ grid-column:span 3 }
+    .gallery-grid .vignette:nth-child(3){ grid-column:span 2 }
+    .gallery-grid .vignette:nth-child(4){ grid-column:span 2 }
+    .gallery-grid .vignette:nth-child(5){ grid-column:span 2 }
+    .gallery-grid .vignette:nth-child(6){ grid-column:span 6 }
+    .gallery-grid .vignette:nth-child(6) .g-wrap{ max-width:220px; margin:0 auto }
+  }
+  .vignette .g-wrap{ padding:26px 26px 4px; background:var(--plate) }
+  .hatch{ stroke:var(--plate-3); stroke-width:1; opacity:.6 }
+  @media (prefers-reduced-motion: no-preference){
+    .vignette:first-child .g-ghost-fade{ opacity:0; animation:ghost-in .6s ease both; animation-delay:.1s }
+    @keyframes ghost-in{ to{ opacity:.8 } }
+    .vignette:first-child .needle-after{ animation:needle-sweep 1s var(--ease) both; animation-delay:.5s }
+  }
+</style>
+</head>
+<body>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M7.8 3.6c.7 0 1.3.4 1.6 1.1l.9 2.3c.3.6.1 1.4-.4 1.9l-1.6 1.5c1.1 2.5 3 4.4 5.5 5.5l1.5-1.6c.5-.5 1.2-.6 1.9-.4l2.3.9c.7.3 1.1.9 1.1 1.6v2.3c0 1.1-.9 1.9-1.9 1.8C10.9 20 4 13.1 3.5 5.5 3.4 4.5 4.3 3.6 5.4 3.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="icon-chevron" viewBox="0 0 12 8"><path d="M1.2 1.4L6 6.2L10.8 1.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="demo-ribbon" role="note">SITIO DE DEMOSTRACIÓN</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="El Motor — inicio">
+      <svg class="brand-mark gauge gauge--mark" viewBox="0 0 40 40" role="img" aria-label="Marca de El Motor: un manómetro con la aguja en la zona naranja">
+        <rect class="g-plate-bg" x="1" y="1" width="38" height="38" rx="6"/>
+        <path class="g-track" d="M 7.9 30.0 A 14 14 0 1 1 32.1 30.0"/>
+        <path class="g-redline" d="M 31.5 15.0 A 14 14 0 0 1 32.1 30.0"/>
+        <line class="g-needle" x1="17.2" y1="23.4" x2="29.9" y2="21.6"/>
+        <circle class="g-hub" cx="20" cy="23" r="2.6"/>
+      </svg>
+      <span class="brand-name">El Motor<small>Taller mecánico</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="has-sub">
+          <a href="services.html" class="nav-link">Servicios</a>
+          <button type="button" class="sub-caret" aria-expanded="false" aria-controls="sub-servicios">
+            <svg class="icon" style="width:10px;height:7px" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+          <ul class="submenu" id="sub-servicios">
+            <li><a href="services.html#escaner">Diagnóstico por escáner</a></li>
+            <li><a href="services.html#frenos">Frenos</a></li>
+            <li><a href="services.html#afinacion">Afinación y aceite</a></li>
+            <li><a href="services.html#suspension">Suspensión y dirección</a></li>
+            <li><a href="services.html#aire">Aire acondicionado</a></li>
+            <li><a href="services.html#electrico">Batería y sistema eléctrico</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html" class="nav-link is-active" aria-current="page">Trabajos</a></li>
+        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+15165550119">
+        <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+        (516) 555-0119
+      </a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-sub-m">
+        <div class="m-row">
+          <a href="services.html">Servicios</a>
+          <button type="button" class="sub-caret-m" aria-expanded="false" aria-controls="sub-servicios-m">
+            <svg class="icon" style="width:13px;height:9px" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            <span class="sr-only">Mostrar lista de servicios</span>
+          </button>
+        </div>
+        <ul class="submenu-m" id="sub-servicios-m">
+          <li><a href="services.html#escaner">Diagnóstico por escáner</a></li>
+          <li><a href="services.html#frenos">Frenos</a></li>
+          <li><a href="services.html#afinacion">Afinación y aceite</a></li>
+          <li><a href="services.html#suspension">Suspensión y dirección</a></li>
+          <li><a href="services.html#aire">Aire acondicionado</a></li>
+          <li><a href="services.html#electrico">Batería y sistema eléctrico</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html" class="is-active" aria-current="page">Trabajos</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <a class="m-phone" href="tel:+15165550119">Llamar (516) 555-0119</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <h1>TRABAJOS</h1>
+      <p class="lede">Seis medidas, el mismo método. Todo lo que ve aquí son proyectos de muestra para enseñar cómo trabajamos: ningún auto ni cliente de esta página es real.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="gallery-grid">
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro mostrando dos lecturas: una punteada al límite del arco, y una firme ya de vuelta al centro">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="20" y1="128" x2="60" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/><line class="hatch" x1="130" y1="118" x2="140" y2="108"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost g-ghost-fade" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle needle-icon needle-after" x1="70.0" y1="75.4" x2="70.0" y2="26.0"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>Sedán con pastillas al límite</h3>
+            <p>Chillido al frenar y el pedal más bajo de lo normal. Medimos 2&nbsp;mm de pastilla delantera: por debajo de lo seguro. Se cambiaron pastillas y discos, y se lo mostramos con el calibrador antes de cerrar el capó.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro con la aguja punteada al límite y la aguja firme inclinada a la derecha, ya en rango">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="20" y1="128" x2="60" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/><line class="hatch" x1="130" y1="118" x2="140" y2="108"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle" x1="62.6" y1="72.8" x2="94.4" y2="34.9"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>Camioneta con el aire tibio</h3>
+            <p>El aire ya no enfriaba en la carretera. La presión marcaba casi la mitad de lo normal: fuga lenta en una manguera. Se selló, se cargó el gas al nivel correcto y la presión se quedó estable.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro con la aguja punteada al límite y la aguja firme inclinada a la izquierda, ya en rango">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle" x1="77.4" y1="72.8" x2="45.6" y2="34.9"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>Arranque irregular en frío</h3>
+            <p>El carro tardaba en prender apenas bajaba la temperatura. El alternador medía menos voltaje del que debía en marcha. Se cambió el alternador, no la batería, que seguía sana.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro con la aguja punteada al límite y la aguja firme bien adentro del arco naranja">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle" x1="59.2" y1="67.9" x2="105.7" y2="51.0"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>Ruido al pasar un bache</h3>
+            <p>Un golpe seco cada vez que la llanta delantera pasaba una junta de la calle. El brazo de control tenía juego medible con la mano. Se reemplazó la pieza floja; el ruido no volvió.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro con la aguja punteada al límite y la aguja firme recta arriba, ya en rango">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle" x1="70.0" y1="75.4" x2="70.0" y2="26.0"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>Tirones en marcha mínima</h3>
+            <p>El carro vibraba parado en el semáforo. Las bujías tenían más millas de las recomendadas y el huelgo estaba fuera de rango. Bujías nuevas, afinación completa, marcha mínima estable otra vez.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+        <article class="vignette">
+          <div class="g-wrap">
+            <svg class="gauge gauge--icon v-scene" viewBox="0 0 140 128" role="img" aria-label="Manómetro con la aguja punteada al límite y la aguja firme profundo en el arco naranja, junto a un conector reparado">
+              <line class="hatch" x1="0" y1="118" x2="30" y2="88"/><line class="hatch" x1="110" y1="128" x2="140" y2="98"/>
+              <path class="g-track" d="M 25.0 90.0 A 52 52 0 1 1 115.0 90.0"/>
+              <path class="g-redline" d="M 112.6 34.2 A 52 52 0 0 1 115.0 90.0"/>
+              <line class="g-needle-ghost" x1="59.4" y1="59.7" x2="105.2" y2="78.2"/>
+              <line class="g-needle" x1="58.6" y1="64.4" x2="108.0" y2="62.7"/>
+              <circle class="g-hub" cx="70" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="v-body">
+            <h3>El mismo código, tres veces</h3>
+            <p>Le habían cambiado una pieza en otro lugar y el código volvió a los pocos días. Escaneamos, probamos el circuito completo y encontramos un conector suelto, no un sensor malo. Se reparó la conexión; el código no ha vuelto.</p>
+            <div class="v-legend"><span class="before"><i></i>Antes</span><span class="after"><i></i>Después</span></div>
+            <span class="v-tag">Proyecto de muestra</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-beam">
+
+  <section class="cta-band band-ticket">
+    <div class="wrap">
+      <h2>SU CARRO PUEDE<br>SER EL SIGUIENTE.</h2>
+      <p>Cuéntenos qué tiene y lo medimos con el mismo método que ve en estos ejemplos.</p>
+      <div class="btns">
+        <a class="btn btn-on-ticket" href="tel:+15165550119">
+          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+          Llamar (516) 555-0119
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="index.html" aria-label="El Motor — inicio">
+        <svg class="brand-mark gauge gauge--mark" viewBox="0 0 40 40" role="img" aria-label="Marca de El Motor">
+          <rect class="g-plate-bg" x="1" y="1" width="38" height="38" rx="6"/>
+          <path class="g-track" d="M 7.9 30.0 A 14 14 0 1 1 32.1 30.0"/>
+          <path class="g-redline" d="M 31.5 15.0 A 14 14 0 0 1 32.1 30.0"/>
+          <line class="g-needle" x1="17.2" y1="23.4" x2="29.9" y2="21.6"/>
+          <circle class="g-hub" cx="20" cy="23" r="2.6"/>
+        </svg>
+        <span class="brand-name">El Motor</span>
+      </a>
+      <nav class="foot-nav" aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="work.html">Trabajos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-phone"><a href="tel:+15165550119">(516) 555-0119</a> · Long Island, NY. Atendemos en español y en inglés.</p>
+      <p class="foot-credit">Sitio de demostración creado por <a href="https://samuelochoa.com/paginas-web">Samuel Ochoa — samuelochoa.com/paginas-web</a>.</p>
+      <p class="foot-disclaimer">Negocio ficticio mostrado como demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550119">
+  <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+  Llamar (516) 555-0119
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = header.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    mobileNav.classList.remove('is-open');
+    window.setTimeout(function(){ mobileNav.hidden = true; }, 200);
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  function openMobile(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ mobileNav.classList.add('is-open'); });
+    });
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeMobile(); } else { openMobile(); }
+  });
+
+  var carets = header.querySelectorAll('.sub-caret, .sub-caret-m');
+  carets.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var li = btn.closest('.has-sub, .has-sub-m');
+      if(li){ li.classList.toggle('is-open', !expanded); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(!mobileNav.hidden){ closeMobile(); hamburger.focus(); }
+      carets.forEach(function(btn){
+        btn.setAttribute('aria-expanded','false');
+        var li = btn.closest('.has-sub, .has-sub-m');
+        if(li) li.classList.remove('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!mobileNav.hidden && !mobileNav.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)){
+      closeMobile();
+    }
+    document.querySelectorAll('.has-sub.is-open, .has-sub-m.is-open').forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove('is-open');
+        var b = li.querySelector('.sub-caret, .sub-caret-m');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMobile(); });
+  });
+})();
+</script>
+
+</body>
+</html>

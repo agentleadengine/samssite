@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | North Wind Heating &amp; Air</title>
+<meta name="description" content="How North Wind Heating &amp; Air works: one shop, Nassau and western Suffolk, flat pricing and the failed part in your hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="demo-ribbon"><span class="dot" aria-hidden="true"></span>Demo Site</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <g stroke="#fdf9f0" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+          <line x1="20" y1="4" x2="20" y2="7.6"/>
+          <line x1="20" y1="32.4" x2="20" y2="36"/>
+          <line x1="4" y1="20" x2="7.6" y2="20"/>
+          <line x1="32.4" y1="20" x2="36" y2="20"/>
+          <line x1="9.3" y1="9.3" x2="11.7" y2="11.7"/>
+          <line x1="28.3" y1="11.7" x2="30.7" y2="9.3"/>
+          <line x1="9.3" y1="30.7" x2="11.7" y2="28.3"/>
+          <line x1="28.3" y1="28.3" x2="30.7" y2="30.7"/>
+        </g>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.4" fill="#fdf9f0"/>
+        <circle cx="20" cy="20" r="1.6" fill="#1c1b18"/>
+      </svg>
+      <span class="brand-name">North Wind<br>Heating &amp; Air</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-d">
+            Services
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-sub" id="services-sub-d">
+            <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+            <li><a href="services.html#installation">System installation</a></li>
+            <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+            <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+            <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+            <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+          </ul>
+        </li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-call" href="tel:+15165550114">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="num">(516) 555-0114</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub-m">
+          Services
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <ul class="nav-sub" id="services-sub-m">
+          <li><a href="services.html#ac-repair">Air conditioning repair</a></li>
+          <li><a href="services.html#installation">System installation</a></li>
+          <li><a href="services.html#furnaces">Furnaces &amp; boilers</a></li>
+          <li><a href="services.html#mini-splits">Ductless mini-splits</a></li>
+          <li><a href="services.html#ductwork">Ductwork &amp; airflow</a></li>
+          <li><a href="services.html#tune-ups">Tune-ups &amp; maintenance</a></li>
+        </ul>
+      </li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary btn-block" href="tel:+15165550114">Call (516) 555-0114</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section style="padding-bottom:1.2rem">
+    <div class="wrap">
+      <div class="section-head left page-intro" style="max-width:640px">
+        <h1 style="font-size:clamp(2.2rem,5.6vw,3.4rem)">Who's actually coming to the door</h1>
+      </div>
+
+      <div class="story">
+        <p>Jenna Cutler ran service calls for two different HVAC outfits on Long Island before starting North Wind. Both had the same problem: the tech doing the work and the number on the invoice never seemed to agree with each other.</p>
+        <p>North Wind runs the other way. The same person who quotes the job does the work and stands behind it. We measure before we price anything, the number you get before we start is the number on the invoice after, and if a part failed, you get to see it in your hand. That isn't a slogan. It's just fewer surprises for everyone, including us.</p>
+        <p>North Wind runs out of one shop covering Nassau and western Suffolk. Keeping the service area tight is deliberate: shorter drives mean tighter arrival windows, and a no-heat call in January doesn't sit on a list for six hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:1.2rem">
+    <div class="wrap">
+      <div class="info-grid">
+        <div class="info-card">
+          <h2>Service area</h2>
+          <p class="big">Long Island, NY</p>
+          <p>Nassau and western Suffolk. Ask about your town and we'll give you a straight answer, no sales pitch attached.</p>
+        </div>
+        <div class="info-card">
+          <h2>Hours</h2>
+          <ul>
+            <li>Monday&ndash;Friday <b>7:30 am&ndash;6:00 pm</b></li>
+            <li>Saturday <b>8:00 am&ndash;2:00 pm</b></li>
+            <li>No-heat / no-cool calls <b>After hours</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready to get on the schedule?</h2>
+      <p class="measure-center">Call the shop or send the details. Either way, the same person picks it up.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+15165550114">Call (516) 555-0114</a>
+        <a class="btn btn-ghost" href="contact.html">Go to contact</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a3a4d"/>
+        <path d="M20 1a19 19 0 0 1 0 38z" fill="#c04f22"/>
+        <line x1="20" y1="20" x2="20" y2="8.5" stroke="#fdf9f0" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3" fill="#fdf9f0"/>
+      </svg>
+      <span>North Wind Heating &amp; Air</span>
+    </div>
+    <p class="footer-line">Heating, cooling and ductwork &middot; Long Island, NY &middot; <a href="tel:+15165550114">(516) 555-0114</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-meta">
+      <p>Demo website built by Samuel Ochoa &mdash; <a href="https://samuelochoa.com/websites">samuelochoa.com/websites</a></p>
+      <p>Fictional business shown for demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+15165550114">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call (516) 555-0114
+</a>
+
+<script>
+(function(){
+  var header = document.querySelector('.site-header');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    if(mobileNav) mobileNav.hidden = true;
+  }
+  function openMobile(){
+    if(hamburger) hamburger.setAttribute('aria-expanded','true');
+    if(mobileNav) mobileNav.hidden = false;
+  }
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      open ? closeMobile() : openMobile();
+    });
+  }
+
+  var subToggles = Array.prototype.slice.call(document.querySelectorAll('.nav-sub-toggle'));
+  subToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(header && !header.contains(e.target)){
+      closeMobile();
+      subToggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  if(mobileNav){
+    Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click', closeMobile);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
