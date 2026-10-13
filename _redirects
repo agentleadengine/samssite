@@ -1,8 +1,3 @@
-# BEGIN TEMPORARY MAINTENANCE: remove this block to restore public routes.
-/maintenance.html  /maintenance.html  200
-/logo.png  /logo.png  200
-/*  /maintenance.html  302!
-# END TEMPORARY MAINTENANCE
 
 # Managed AI: one current offer; contact Sam directly.
 /book /contact 302!
