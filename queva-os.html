@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queva OS: a working paper | Sam Ochoa</title>
+<meta name="description" content="Field notes on building Queva OS with Hermes Agent: owner control, text approvals, memory, connector limits, tests, and what remains unverified.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Queva OS: a working paper | Sam Ochoa">
+<meta property="og:description" content="Field notes on building Queva OS with Hermes Agent: owner control, text approvals, memory, connector limits, tests, and what remains unverified.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260706">
+<style>
+.essay { max-width: 720px; margin: 0 auto; padding: 56px 32px; }
+.essay-meta { font-size: 13px; color: #8e8e93; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.essay h1 { font-size: 42px; line-height: 1.15; margin: 0 0 16px 0; font-weight: 800; }
+.essay .subtitle { font-size: 19px; color: #4a4a52; margin: 0 0 48px 0; line-height: 1.5; }
+.essay h2 { font-size: 24px; margin: 40px 0 14px 0; font-weight: 700; }
+.essay h3 { font-size: 19px; margin: 28px 0 10px 0; font-weight: 600; }
+.essay p { font-size: 18px; line-height: 1.75; margin: 16px 0; color: #1a1a2e; }
+.essay ul, .essay ol { font-size: 18px; line-height: 1.75; padding-left: 28px; }
+.essay li { margin: 4px 0; }
+.essay blockquote { border-left: 4px solid #4a00e0; padding-left: 20px; margin: 24px 0; color: #4a4a52; font-style: italic; }
+.essay-foot { margin-top: 56px; padding-top: 32px; border-top: 1px solid #e5e5ea; font-size: 14px; color: #666; }
+.connector-table-wrap { overflow-x: auto; padding: 20px; }
+.connector-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.connector-table caption { text-align: left; font-weight: 600; padding-bottom: 12px; }
+.connector-table th, .connector-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid var(--gray-100); }
+.connector-table thead th { color: var(--gray-900); }
+.connector-table-wrap:hover { transform: none; }
+.essay .article-meta { font-size: 13px; color: var(--gray-500); margin-bottom: 40px; }
+</style>
+<link rel="icon" type="image/png" href="/logo.png">
+
+<script defer src="/js/sketch.js"></script>
+<script defer src="/js/translate.js"></script>
+
+<link rel="canonical" href="https://samuelochoa.com/queva-os">
+<meta property="og:url" content="https://samuelochoa.com/queva-os">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Queva OS: a working paper | Sam Ochoa">
+<meta name="twitter:description" content="Field notes on building Queva OS with Hermes Agent: owner control, text approvals, memory, connector limits, tests, and what remains unverified.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Queva OS: a working paper | Sam Ochoa","description":"Field notes on building Queva OS with Hermes Agent: owner control, text approvals, memory, connector limits, tests, and what remains unverified.","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/queva-os","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body><nav class="topbar"><div class="topbar-inner">
+<a href="/index.html" class="logo"><img class="brand-logo" src="/logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/ai-consulting.html" class="nav-link">Work with me</a>
+<a href="/case-studies/index.html" class="nav-link">Case Studies</a>
+<div class="nav-group">
+<a href="/framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="/snapshots.html">GHL snapshots</a>
+<a href="/newsletter.html">Daily AI brief</a>
+<a href="/framework/index.html">Framework</a>
+<a href="/expertise/index.html">Expertise</a>
+<a href="/playbooks/index.html">Playbooks</a>
+<a href="/writing.html">Writing</a>
+</div></div>
+<a href="/about.html" class="nav-link">About</a>
+<a href="/contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav><article class="essay">
+<div class="essay-meta">Version 0.1 · October 2026 · Sam Ochoa</div>
+<h1>Queva OS: a working paper</h1>
+<p class="subtitle">This is a living document. I update it as the build changes.</p>
+<p class="article-meta">Working paper · 11 min read</p>
+<h2>Summary</h2>
+<p>I'm building Queva OS as a business assistant on top of the open-source Hermes Agent from Nous Research. The aim is an assistant an owner can talk to, with private project work, memory, and carefully limited connections to business tools. The current code lets routine preparation proceed and asks for a single-use text approval before supported risky actions. Some actions stay owner-only, and others are refused even with approval. There are recorded development tests and browser checks with synthetic data, but live installation and real-account acceptance are still pending. This paper describes that gap as part of the build. <a href="#source-1">[1]</a> <a href="#source-2">[2]</a></p>
+<h2>Why I started</h2>
+<p>I want to build for a small business owner who needs work done and needs to trust how it gets done. Drafting is useful, but the intention here includes taking supported actions in the owner's tools. The lesson I'm taking from the build is that an assistant blocked from everything is "just a chatbot." That is a design problem I still have to solve carefully. <a href="#source-1">[1]</a></p>
+<p>I've had to work between two needs: let the assistant prepare useful work, and keep the owner in control of consequential steps. Connecting an account should not quietly become permission for every action in it. The current approach separates permission to use a connection from approval of a particular change. <a href="#source-1">[1]</a></p>
+<p>I'm treating this as a working paper because those boundaries are still changing. Browser access, in particular, has forced me to be more precise about what an approval actually covers. I can describe the controls in the code. I can't yet claim they have passed live acceptance across a business owner's accounts. <a href="#source-1">[1]</a></p>
+<h2>What Queva OS is</h2>
+<p>Hermes Agent supplies the underlying agent runtime, persistent memory, skills, scheduled work, and messaging gateway. I didn't build those foundations. Queva adds a named business profile, guidance for common work, messaging policies, private project folders and links, saved owner preferences, support controls, and approval rules around supported actions. <a href="#source-1">[1]</a> <a href="#source-2">[2]</a></p>
+<p>The guidance covers inquiry drafts, payment reminder drafts, reviews, paperwork, marketing, and dashboards. Installing that guidance does not connect an app or enable an external action. A pack can describe how to approach a task while the capability needed to finish it is still unavailable. <a href="#source-1">[1]</a></p>
+<p>Hermes also supports MCP, a way to expose tools from another service to the assistant. Queva's reviewed connections narrow which tools may be used and which effects need approval. A tool appearing in a directory is only a setup option. It isn't proof that an account is connected or a task has succeeded. <a href="#source-1">[1]</a> <a href="#source-5">[5]</a></p>
+<h2>The choices I'm making</h2>
+<h3>The owner owns it</h3>
+<p>My intended arrangement is an owner-owned server in Europe and an owner-owned, spending-capped OpenRouter key. The onboarding documents assign billing, data, and credentials to the owner. They also describe removing my setup access at handoff. These are intended arrangements and documented steps, not verified ownership or completed handover for a particular live installation. <a href="#source-1">[1]</a></p>
+<p>Keeping files on that server doesn't mean every piece of data stays there. Model prompts, search queries, selected synced files, forwarded messages, and approved website files can go to their respective providers. Retention and provider permissions still need to be filled in for the actual setup. I need to explain those routes alongside ownership. <a href="#source-1">[1]</a></p>
+<h3>Text it where you already talk</h3>
+<p>I want the owner to learn the assistant through conversation. The kit has setup paths for iMessage through Photon, Telegram, WhatsApp, Slack, and Signal. Those paths require platform setup and an allowed account; they aren't all enabled by default. Readiness includes receiving a real message from that allowed account. iMessage is intended to use the owner's own account. <a href="#source-1">[1]</a></p>
+<h3>Memory should help without hiding its costs</h3>
+<p>I intend Hindsight long-term memory to be on. The sample configuration selects a local embedded store, but the installer still has an off fallback. So "always on" is my intended configuration, not an unconditional property of every installation. <a href="#source-1">[1]</a></p>
+<p>The official Hindsight plugin documents retaining, recalling, and reflecting on information, with automatic capture of conversation turns. Its embedded mode stores memory locally and does embedding and reranking locally. Extraction and synthesis still need a model; the sample uses OpenRouter for that work. Local storage is only one part of the data flow. <a href="#source-1">[1]</a> <a href="#source-3">[3]</a></p>
+<p>Built-in Hermes memory writes are configured for approval, and Hermes documents staged memory review. I haven't established whether that setting also gates Hindsight's separate automatic capture. The reviewed forget command removes built-in memory entries; it doesn't establish deletion across Hindsight, transcripts, and backups. That distinction remains open. <a href="#source-1">[1]</a> <a href="#source-4">[4]</a></p>
+<h3>Prepare freely, ask at the risky step</h3>
+<p>After connection and capability consent, routine reads, drafting, and allowed form filling generally proceed without a fresh approval each time. Supported sending, publication, and certain account changes stop for owner review. "Free to proceed" here is about permission. Model use can still cost money. <a href="#source-1">[1]</a></p>
+<p>There are hard refusals too. Queva refuses money movement, purchases, bank and payment sites, the owner's personal inbox, and bulk lead deletion. Its own AgentMail inbox cannot send, reply, or forward, even after approval. A text code doesn't turn an unsupported tool into an allowed one. <a href="#source-1">[1]</a></p>
+<p>The business profile also instructs the assistant to refuse sensitive material such as patient records, legal case files, card numbers, bank logins, and recovery codes. Those are behavioral instructions. I don't have evidence of universal content filtering. Routine health probes and usage notices are separate from customer messages and don't use the numbered action approval. <a href="#source-1">[1]</a></p>
+<h2>How approval by text works</h2>
+<p>For a supported risky step, Queva stops and sends the owner a preview of the exact action with a random four-digit code. A longer preview can use the private page. The owner approves with YES and the code, or cancels with NO and the code. Only the configured owner's own direct chat and sender identity can approve. <a href="#source-1">[1]</a></p>
+<p>For example, an approval request for an unchanged, reviewed WordPress draft might read:</p>
+<blockquote><p>Publish this reviewed draft to the connected WordPress site? Reply YES 1234 to approve or NO 1234 to cancel. This request expires in 15 minutes.</p></blockquote>
+<p>That is an illustrative request, not a record of a live publication. The owner uses the code actually sent. Approval is single-use and expires after 15 minutes. It covers the exact action, its contents, and the connected account. Changing the connection invalidates pending approvals. Changing a reviewed browser page or form requires fresh approval. <a href="#source-1">[1]</a></p>
+<p>The assistant then retries the identical action. It receives the approval result rather than the code itself. This is implemented for supported actions, not a blanket promise about every possible website effect. Permission for temporary operator access uses a separate process; approving an action is not approving server access. <a href="#source-1">[1]</a></p>
+<h2>What it connects to</h2>
+<p>This table describes the implemented connection paths and their limits. It does not claim live accounts are connected. Owner-only means the owner performs that step in the app; an approval text cannot give Queva that capability. <a href="#source-1">[1]</a></p>
+<div class="card connector-table-wrap" role="region" aria-label="Connector permissions table, scroll horizontally on small screens" tabindex="0">
+<table class="connector-table">
+<caption>Current connection scope <a href="#source-1">[1]</a></caption>
+<thead><tr><th scope="col">Connection</th><th scope="col">What Queva may do</th><th scope="col">Owner-only or refused</th></tr></thead>
+<tbody>
+<tr><th scope="row">Follow Up Boss</th><td>Read resources and performance; prepare individual message drafts and plans; make supported CRM/setup changes after exact approval.</td><td>Owner sends messages. No appointment writes, existing template edits, Zillow-lead changes, exports, deletes, or payments. Indirect outreach is refused when sending effects can't be verified.</td></tr>
+<tr><th scope="row">SuiteDash</th><td>Read contacts, companies, and usage. Create one Lead or update one contact after a code, with an audit note.</td><td>Owner creates Clients/Prospects and changes circles. No invites, messages, deletes, invoice/file/message access, or company writes. Unknown or sensitive custom fields are refused.</td></tr>
+<tr><th scope="row">Instantly</th><td>Read results and account health; prepare inactive drafts and add owner-supplied leads. Activate/resume one fully reviewed campaign or send one reply after approval.</td><td>No buying or deleting. Activation needs complete review of recipients, sending accounts, sequences, and footer, with empty CC/BCC and verified-empty follow-up subsequences.</td></tr>
+<tr><th scope="row">Google Ads</th><td>Read results; prepare paused drafts within the configured total budget; pause a reviewed resource without a code.</td><td>Owner activates ads in Google Ads and changes the permitted limit on the private page. No budget raises, deletion, or billing actions.</td></tr>
+<tr><th scope="row">WordPress</th><td>Read posts/pages; create and change its own drafts; publish one unchanged reviewed draft after approval.</td><td>Owner handles live-page edits, deletion, and media uploads. Unreviewed settings, plugin fields, featured images, custom excerpts, shortcodes, blocks, embeds, or changed rendered copy prevent publication.</td></tr>
+<tr><th scope="row">Calendar</th><td>Read Google, iCloud, or Outlook events through an owner-supplied calendar link.</td><td>Owner supplies the link. No event creation or editing.</td></tr>
+<tr><th scope="row">TickTick</th><td>Setup is listed, but managed access is currently blocked by a missing permitted-tools list.</td><td>Task access is unverified. Supplying a token and consent doesn't resolve the policy gap.</td></tr>
+<tr><th scope="row">OpenRouter</th><td>Use the owner's AI key and replace it through the private connection path.</td><td>Owner creates the key and sets its spending cap. This is model access, not a business-app connector.</td></tr>
+</tbody>
+</table>
+</div>
+<p>GoHighLevel has separate development evidence, but it isn't in this candidate's connection catalog. I'm leaving it out of the integrated list. The wider upstream tool directory is also not a list of tested Queva connections. <a href="#source-1">[1]</a></p>
+<h2>Costs and monitoring</h2>
+<p>The owner is instructed to set the spending cap at OpenRouter. Queva's key connection stores and validates the key; it does not create or verify that provider-side cap. I don't have a measured running-cost or savings claim to put here. Memory extraction and other configured model work can add usage. <a href="#source-1">[1]</a></p>
+<p>An operator-side watcher is configured to run hourly on my Mac. It texts me when a watched client key has spent more than $3.00 that day, when usage reaches at least 75%, 90%, or 100% of its cap, or when total OpenRouter account credit falls below $20.00. It watches selected client keys, not every arbitrary key. <a href="#source-1">[1]</a></p>
+<p>Those are alerts to me, not action approvals or a local spending limit. The client-side bill guard is a separate daily check. The hourly configuration and a no-network self-check were reviewed, but whether the job is currently loaded and has delivered live alerts wasn't checked. Full coverage of memory and helper usage is also unverified. <a href="#source-1">[1]</a></p>
+<h2>What I've learned building it</h2>
+<p>The visible approval review series went through 15 rounds. Follow Up Boss had three separate security-fix rounds. Those counts describe recorded review work. They don't amount to an independent security certification or one combined count for the whole project. <a href="#source-1">[1]</a></p>
+<p>The recurring problem was making sure the approved preview matched the real effect. Reviews found incomplete previews, uncertain records, account changes that left approvals alive, and business-app behavior beyond the visible draft. Campaign review had to include the sending accounts and full sequence. Website publication had to account for rendered content and settings. Contact changes had to account for automatic outreach. <a href="#source-1">[1]</a></p>
+<p>Browser policy also changed. An earlier approach left consequential actions to the owner. The current approach permits reviewable actions on approved sites through the text gate. It still has a documented limit: a website can attach invisible behavior to clicks or typing. The gate covers steps Queva recognizes as risky; complete prevention of unapproved website effects is not established. <a href="#source-1">[1]</a></p>
+<p>That is why I prefer reviewed connectors for consequential work where they exist. Their supported operations can have explicit account, content, and effect checks. They still need review of provider behavior, especially automations. The advantage is a narrower action to examine, not a claim that using a connector makes every change safe. <a href="#source-1">[1]</a></p>
+<p>The candidate's inspected test runner lists 41 shell scripts and 48 explicit Python invocations before ShellCheck. Those are 89 top-level invocations, not 89 individual test cases. That aggregate wasn't rerun in the research pass, so a freshly passing total for this candidate is unknown. <a href="#source-1">[1]</a></p>
+<p>A separate development handoff records a passing suite and actual Chromium desktop and phone checks using synthetic data. A reviewed lease download matched the expected file, left the signature empty, consumed approval once, and rejected replay. That's useful evidence for that flow. It doesn't establish live-provider acceptance for this candidate. Focused research checks also confirmed the usage watcher's self-check and TickTick's blocked access. <a href="#source-1">[1]</a></p>
+<h2>What is still open</h2>
+<p>The next work includes installation, real accounts, and clearer data handling. I want this list beside the implemented behavior so a reader can see where my evidence stops. <a href="#source-1">[1]</a></p>
+<ul>
+<li><strong>Live acceptance.</strong> A clean Ubuntu installation, real CRM connection, owner chat, and live weekly delivery still need verification. Development checks do not close those items.</li>
+<li><strong>TickTick access.</strong> The setup entry and managed permissions disagree. Authentication and successful task changes have not been exercised.</li>
+<li><strong>Browser limits.</strong> Hidden website behavior remains a category of risk. The text gate is not a universal browser guarantee.</li>
+<li><strong>Memory and retention.</strong> Hindsight capture approval and deletion across memory, transcripts, and backups are unverified. Provider retention and scopes still need actual setup decisions.</li>
+<li><strong>Installation and handover.</strong> The exact deployed software pin, remaining provider-configuration inconsistencies, and end-to-end access revocation need proof. General encrypted backups remain listed as unfinished, although a narrower database backup exists.</li>
+<li><strong>Operational checks.</strong> Live alarm delivery and terminal recording acceptance remain unverified. Pause is established for new chat work, not every background timer.</li>
+<li><strong>Further document and reporting work.</strong> E-sign, DOCX, profit-and-loss PDF extraction, scheduled CRM comparisons, and the meaning of Follow Up Boss weekly outcomes remain open in the separate development handoff.</li>
+</ul>
+<p>I haven't verified time saved or live business results. For now, I can show inspected behavior, recorded tests, and the remaining questions. I'll update this paper as those questions get real answers. <a href="#source-1">[1]</a></p>
+<h2>Change log</h2>
+<p>0.1 · October 2026 · first public draft</p>
+<h2>Sources</h2>
+<ol class="paper-sources">
+<li id="source-1">Queva OS build notes, October 2026. Source review and recorded development evidence; live acceptance remains pending.</li>
+<li id="source-2"><a href="https://hermes-agent.nousresearch.com/docs">Hermes Agent: official overview, Nous Research</a>.</li>
+<li id="source-3"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hindsight">Hermes Agent: official Hindsight plugin documentation</a>.</li>
+<li id="source-4"><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/memory">Hermes Agent: persistent memory documentation</a>.</li>
+<li id="source-5"><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp">Hermes Agent: MCP documentation</a>.</li>
+</ol>
+<div class="contact-card">
+<h3>Questions or ideas about this?</h3>
+<a href="/contact" class="btn btn-primary">Tell me.</a>
+</div>
+<div class="essay-foot"><a href="/writing">← All writing</a></div>
+</article><footer><div class="container">
+<p>&copy; 2026 Samuel Ochoa &middot; <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a></p>
+</div></footer><script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script></body></html>
