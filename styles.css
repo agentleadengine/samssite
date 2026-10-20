@@ -1926,6 +1926,14 @@ footer p { margin: 0; letter-spacing: 0.02em; }
   letter-spacing: 0.08em;
   color: #6b21a8;
 }
+/* The call-to-action card sits inside .further-reading on index pages; keep its own heading style (white on purple). */
+.further-reading .contact-card h3 {
+  margin: 0 0 14px;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+@media (max-width: 640px) { .further-reading .contact-card h3 { font-size: 30px; } }
 .further-reading ul {
   margin: 0;
   padding-left: 20px;
