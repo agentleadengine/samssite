@@ -130,12 +130,18 @@ def check():
         assert phrase in spanish, phrase
     assert 'prueba ni un mes gratis' not in spanish
     assert 'Acordamos tu precio antes de empezar.' in spanish
-    # Sam 2026-10-20: no testimonials on the site. The page is gone and old links go home.
-    assert not (ROOT / 'testimonials.html').exists()
-    for name in ('index.html', 'es/index.html', 'about.html', 'ai-consulting.html', 'thanks.html'):
-        page = read(name)
-        assert 'id="testimonials"' not in page and 'href="/testimonials"' not in page and 'testimonials.html' not in page, name
-        assert 'class="lp-quote"' not in page, name
+    # Compare the actual quote and video markup to the approved base, not rewritten fixtures.
+    for name, prefix in [('index.html', 'lp'), ('testimonials.html', 'tst')]:
+        before = subprocess.check_output(['git', 'show', f'{BASE}:{name}'], cwd=ROOT, text=True)
+        after = read(name)
+        for pattern, count in [(rf'<p class="{prefix}-quote".*?</p>', None),
+                               (rf'<p class="{prefix}-[t]*name".*?</p>', 5),
+                               (r'<video\b.*?</video>', 3)]:
+            old = re.findall(pattern, before, re.S)
+            assert old and old == re.findall(pattern, after, re.S), (name, pattern)
+            if count: assert len(old) == count, (name, count)
+        assert 'What clients say about working with Sam.' in after, name
+        assert 'not results from' not in after, name
     routes = [line.split() for line in read('_redirects').splitlines() if line and not line.startswith('#')]
     targets = {line[0]: line[1] for line in routes}
     for route in ('/book', '/book/', '/book.html'):
@@ -163,7 +169,7 @@ def check():
                       'founding_audit_usd', 'Start a free 15-minute leak check',
                       'I now help small offices use ChatGPT or Claude'):
             assert stale not in page, (path, stale)
-    print('PASS: QUEVA for Real Estate identity, three accessible sample embeds, unchanged commercial terms, daily support, metadata, Spanish summary, no testimonials, routes, sitemap, all-HTML stale-offer scan')
+    print('PASS: QUEVA for Real Estate identity, three accessible sample embeds, unchanged commercial terms, daily support, metadata, Spanish summary, five testimonials and three videos per page, routes, sitemap, all-HTML stale-offer scan')
 
 if __name__ == '__main__':
     check()
