@@ -178,12 +178,12 @@
 <h1>Pages without lies: grounding generated web pages in the owner&#x27;s own words</h1>
 <p class="lede"><strong>Abstract.</strong> Generative page builders fail small businesses in a specific way: the output is
 fluent, plausible and wrong. It invents review counts, years in business, partner logos and "trusted by" figures, and it converges
-on the same anonymous layout for every trade. We describe a constrained generation pipeline that treats the owner's own words as the
+on the same anonymous layout for every trade. I describe a constrained generation pipeline that treats the owner's own words as the
 only admissible source of facts. A pre-generation completeness gate converts missing inputs into questions. A declarative rule layer
 forbids unsourced entities, numerals and known layout clichés. A post-render audit diffs every figure and proper noun on the rendered
 page against a verbatim record of what the owner said, and walks the DOM for structural violations. A multimodal critic scores
 full-page desktop and phone captures on ten lines, with the overall score defined as the minimum, inside a repair loop bounded at three
-rounds. We report the design, the measured cost per critique round, the test evidence and the failure modes that remain.</p>
+rounds. I report the design, the measured cost per critique round, the test evidence and the failure modes that remain.</p>
 <div class="meta">Written 2026-10-23 from the build routine, the finishing-check and critic source, release notes and test runs on a
 non-client server. Worked examples use test businesses with made-up details. Model vendors, prompts and infrastructure are described
 by role, not by name.</div>
@@ -212,7 +212,7 @@ of an early insurance agency page found an invented "coverage at a glance" card,
 "call to confirm" hours. The pipeline described here is the response.</p>
 
 <h2 id="s2">2. Threat model for a generated page</h2>
-<p>We treat the builder model as a capable but untrusted author. Its outputs are checked against an explicit model of what may
+<p>I treat the builder model as a capable but untrusted author. Its outputs are checked against an explicit model of what may
 appear on the page and where each claim came from. The failure classes fall into four groups:</p>
 <ul>
 <li><strong>Fabrication.</strong> Numbers, prices, percents, "N+" figures, years in business, customer counts, ratings, reviews,

@@ -172,13 +172,13 @@
 <div class="wp-wrap">
 <p class="kicker">WP-02 · Release engineering</p>
 <h1>Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers</h1>
-<p class="lede"><strong>Abstract.</strong> We describe the control plane that provisions and maintains a fleet of single-tenant
+<p class="lede"><strong>Abstract.</strong> I describe the control plane that provisions and maintains a fleet of single-tenant
 agent servers, one per small-business owner. A tenant is created by a one-command, two-phase installer that pins the upstream agent
 runtime to a fixed commit, injects secrets over standard input, and then converges the host to the head of a declarative release
 manifest. Releases are ordered, numbered and composed of named steps; each step is guarded by a precondition probe so that every step
 is safe to run twice. The updater computes the minimal step set from a version marker written on the tenant, defers restarts behind a
 conversational quiescence gate, and promotes the new version only after a liveness check on the messaging channel. Nightly backups
-are streamed, verified and atomically published under a 14-archive retention window. We report the release history for the first two
+are streamed, verified and atomically published under a 14-archive retention window. I report the release history for the first two
 days of the current design, the concurrency incident that produced the per-tenant lock, and the open problems.</p>
 <div class="meta">Written 2026-10-23 from the fleet tooling, the release manifest and project notes. Hosts, tenants and credentials
 are omitted. Every number below is counted from source, not projected.</div>
