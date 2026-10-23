@@ -12,11 +12,9 @@
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260706">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
 
-<script defer src="js/sketch.js"></script>
 <script defer src="js/translate.js"></script>
 
 <link rel="canonical" href="https://samuelochoa.com/">
@@ -24,14 +22,14 @@
 <link rel="alternate" hreflang="es" href="https://samuelochoa.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://samuelochoa.com/">
 <meta property="og:url" content="https://samuelochoa.com/">
-<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
-<meta property="og:image:width" content="640">
-<meta property="og:image:height" content="640">
-<meta property="og:image:alt" content="Samuel Ochoa">
+<meta property="og:image" content="https://samuelochoa.com/video/explainer-poster.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="Sam Ochoa, independent AI researcher: I set up AI assistants for small businesses, then teach the owners to run them.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sam Ochoa · Independent AI researcher">
 <meta name="twitter:description" content="I’m Sam Ochoa, an independent AI researcher testing tools and agent setups with real small businesses and writing up what I find.">
-<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="twitter:image" content="https://samuelochoa.com/video/explainer-poster.jpg">
 <meta name="theme-color" content="#4a00e0">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Samuel Ochoa", "url": "https://samuelochoa.com/", "image": "https://samuelochoa.com/sam-real.jpg", "jobTitle": "Independent AI researcher", "description": "I’m an independent AI researcher testing tools and agent setups with real small businesses and writing up what I find.", "knowsAbout": ["AI research", "AI tools", "Small business systems"], "sameAs": ["https://www.linkedin.com/in/samuelochoa"]}</script>
@@ -46,112 +44,187 @@
   gtag('config', 'AW-18240559803');
 </script>
 <style>
-/* ===== Homepage conversion redesign (scoped to .lp) - LIGHT ===== */
-.lp{--ink:#1a1726;--ink2:#544e63;--muted:#8b8499;--purple:#5a1fe0;--purple2:#7c3aed;--soft:#f7f4fc;--softer:#fbf9fe;--line:#ebe6f6;color:var(--ink);font-family:'Inter',system-ui,sans-serif;background:#fff;}
-.lp *{box-sizing:border-box;}
-.lp a{text-decoration:none;}
-.lp-wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
-.lp em{font-style:italic;font-family:'Instrument Serif',Georgia,serif;font-weight:400;}
-.lp-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
-.lp-btn-primary{background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;box-shadow:0 10px 26px rgba(90,31,224,.26);}
-.lp-btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(90,31,224,.32);}
-.lp-btn-ghost{background:#fff;color:var(--purple);border:1.5px solid var(--line);}
-.lp-btn-ghost:hover{border-color:var(--purple);background:var(--softer);}
-.lp-kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;}
-.lp-h2{font-size:clamp(28px,3.6vw,42px);line-height:1.06;font-weight:800;letter-spacing:-.02em;margin:0;color:var(--ink);}
-.lp-h2 em{color:var(--purple);}
-.lp-lead{font-size:18px;line-height:1.55;color:var(--ink2);margin:16px 0 0;}
-.lp-center{text-align:center;max-width:720px;margin:0 auto 40px;}
-.lp-sec{padding:60px 0;}
-.lp-sec.alt{background:var(--soft);}
-
-/* HERO - light */
-.lp-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f6f2fe 100%);padding:56px 0 52px;border-bottom:1px solid var(--line);}
-.lp-hero::before{content:"";position:absolute;top:-140px;right:-90px;width:440px;height:440px;background:radial-gradient(circle,rgba(124,58,237,.13),transparent 65%);pointer-events:none;}
-.lp-hgrid{position:relative;display:grid;grid-template-columns:1fr;gap:46px;align-items:center;max-width:760px;}
-.lp-badge{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--purple);background:#fff;border:1px solid var(--line);padding:6px 14px 6px 6px;border-radius:999px;box-shadow:0 4px 14px rgba(20,16,30,.05);}
-.lp-badge img{width:26px;height:26px;border-radius:50%;object-fit:cover;}
-.lp-h1{font-size:clamp(36px,5.2vw,58px);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin:20px 0 0;color:var(--ink);}
-.lp-h1 em{color:var(--purple);}
-.lp-hsub{font-size:18px;line-height:1.5;color:var(--ink2);margin:18px 0 26px;max-width:31em;}
-.lp-ctarow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
-.lp-hmicro{margin-top:18px;font-size:13.5px;color:var(--muted);max-width:34em;}
-.lp-video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 22px 60px rgba(20,16,30,.16),0 0 0 1px var(--line);}
-.lp-video iframe{width:100%;height:100%;border:0;display:block;}
-
-/* TRUST BAR - light */
-.lp-trust{background:#fff;color:var(--ink2);padding:16px 0;border-bottom:1px solid var(--line);}
-.lp-trust .lp-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
-.lp-trust b{color:var(--purple);}
-.lp-trust span{opacity:.85;}
-
-/* TESTIMONIALS - light */
-.lp-tgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;}
-.lp-tcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 34px rgba(20,16,30,.06);}
-.lp-tcard.dark{background:var(--softer);border:1px solid var(--line);border-left:4px solid var(--purple);}
-.lp-tperson{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
-.lp-tperson img{width:54px;height:54px;border-radius:50%;object-fit:cover;}
-.lp-tname{font-weight:700;font-size:15px;margin:0;color:var(--ink);}
-.lp-trole{font-size:12.5px;color:var(--muted);margin:3px 0 0;}
-.lp-trole a{color:inherit;text-decoration:underline;}
-.lp-quote{font-size:17px;line-height:1.52;margin:0;color:var(--ink);}
-.lp-tvideo{aspect-ratio:9/16;max-height:430px;border-radius:16px;overflow:hidden;background:#000;margin:0 auto;box-shadow:0 14px 40px rgba(20,16,30,.16);}
-.lp-tinitials{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#7c3aed,#5a1fe0);color:#fff;font-weight:800;font-size:17px;}
-.lp-tvideo iframe{width:100%;height:100%;border:0;}
-.lp-tvideo-wide{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;margin:6px 0 18px;box-shadow:0 12px 34px rgba(20,16,30,.16);}
-.lp-tvideo-wide iframe{width:100%;height:100%;border:0;display:block;}
-.lp-tvideo video,.lp-tvideo-wide video{width:100%;height:100%;display:block;object-fit:cover;}
-
-/* OWN-IT SPLIT */
-.lp-split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;}
-.lp-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
-.lp-pills span{font-size:13px;font-weight:600;color:var(--purple);background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:999px;}
-.lp-steps{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:0 10px 34px rgba(20,16,30,.06);}
-.lp-steps ol{margin:14px 0 0;padding-left:20px;line-height:1.95;color:var(--ink2);font-size:15.5px;}
-.lp-steps li::marker{color:var(--purple);font-weight:700;}
-
-/* OFFERS */
-.lp-offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.lp-offer{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;}
-.lp-offer:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(90,31,224,.12);border-color:#cdbdf7;}
-.lp-offer .num{font-family:'Instrument Serif',serif;font-size:30px;color:var(--purple);line-height:1;}
-.lp-offer h3{font-size:19px;margin:8px 0 8px;font-weight:800;color:var(--ink);}
-.lp-offer p{font-size:14.5px;line-height:1.5;color:var(--ink2);margin:0;}
-.lp-offer .step{position:absolute;top:24px;right:24px;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#a99cc4;}
-
-/* MORE (framework / ALE) */
-.lp-more{display:grid;grid-template-columns:1fr;gap:18px;max-width:760px;margin:0 auto;}
-.lp-mcard{display:block;color:inherit;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:border-color .15s,transform .15s;}
-a.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
-.lp-mcard h3{margin:0 0 6px;font-size:18px;font-weight:800;color:var(--ink);}
-.lp-mcard p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.5;}
-.lp-mcard .go{color:var(--purple);font-weight:700;font-size:14px;margin-top:12px;display:inline-block;}
-
-/* FINAL CTA - light lilac */
-.lp-final{position:relative;overflow:hidden;background:linear-gradient(160deg,#f3edff,#eadffd);border:1px solid var(--line);border-radius:26px;padding:54px 32px;text-align:center;}
-.lp-final h2{position:relative;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink);}
-.lp-final p{position:relative;color:var(--ink2);font-size:18px;margin:0 auto 26px;max-width:34em;}
-.lp-final .lp-ctarow{position:relative;justify-content:center;}
-
-/* refinements */
-.lp h1,.lp h2,.lp h3{text-transform:none;}
-@keyframes lpUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.lp-hero .lp-badge,.lp-hero .lp-h1,.lp-hero .lp-hsub,.lp-hero .lp-ctarow,.lp-hero .lp-hsocial,.lp-hero .lp-hmicro,.lp-hero .lp-video{animation:lpUp .6s ease both;}
-.lp-hero .lp-h1{animation-delay:.05s}.lp-hero .lp-hsub{animation-delay:.11s}.lp-hero .lp-ctarow{animation-delay:.17s}.lp-hero .lp-hsocial{animation-delay:.22s}.lp-hero .lp-hmicro{animation-delay:.27s}.lp-hero .lp-video{animation-delay:.14s;animation-duration:.7s}
-.lp-hsocial{display:flex;align-items:center;gap:12px;margin-top:20px;font-size:13.5px;color:var(--ink2);}
-.lp-faces{display:flex;}
-.lp-faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-9px;box-shadow:0 2px 8px rgba(20,16,30,.14);}
-.lp-faces img:first-child{margin-left:0;}
-.lp-hsocial a{color:var(--purple);font-weight:600;}
-@media(prefers-reduced-motion:reduce){.lp *{animation:none !important;}}
-
-@media(max-width:900px){
-  .lp-hgrid,.lp-tgrid,.lp-split,.lp-more{grid-template-columns:1fr;}
-  .lp-offers{grid-template-columns:1fr;}
-  .lp-sec{padding:44px 0;}
-  .lp-hero{padding:38px 0 36px;}
-  .lp-tvideo{max-height:480px;}
+:root{--bg:#fafafa;--ink:#0a0a0c;--muted:#4b4b57;--violet:#6f00ff;--lilac:#f0eaff;--line:#e3e1ea;--ease:cubic-bezier(.16,1,.3,1);--navh:64px;--pad:clamp(16px,4vw,56px)}
+@property --load{syntax:'<number>';inherits:true;initial-value:1}
+@property --sc{syntax:'<number>';inherits:true;initial-value:0}
+@property --n{syntax:'<number>';inherits:true;initial-value:1}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:18px;line-height:1.55;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px}
+.skip:focus{left:16px;z-index:100;background:#fff;padding:8px 12px;border:2px solid var(--ink)}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--pad)}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1320px;margin:0 auto;height:var(--navh);padding-inline:var(--pad);display:flex;align-items:center;gap:20px;position:relative}
+.logo{display:block;width:34px;height:44px;overflow:hidden;position:relative;flex:none}
+.logo img{position:absolute;width:88px;height:88px;max-width:none;left:-22px;top:-22px}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin-left:auto}
+.nav-links a{display:block;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;font-variation-settings:"wdth" 90;transition:background-color 160ms}
+.nav-links a:hover{background:var(--lilac)}
+.nav-links a[aria-current]{text-decoration:underline;text-decoration-color:var(--violet);text-decoration-thickness:2px}
+.has-sub{position:relative}
+.submenu{display:none;position:absolute;top:100%;left:0;min-width:210px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:0 24px 48px -24px rgba(40,0,110,.35)}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu{display:block}
+.submenu a{border-radius:10px}
+.lang a{border:1.5px solid var(--ink);margin-left:6px}
+.menu-btn{display:none;margin-left:auto;font:inherit;font-weight:700;font-size:15px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer;color:var(--ink)}
+@media(max-width:900px){.menu-btn{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--line);padding:10px var(--pad) 16px}.nav-links.open{display:flex}.submenu{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 14px}.lang a{margin:6px 0 0;align-self:flex-start}}
+/* hero */
+.k-hero{padding-top:clamp(18px,3vw,36px)}
+.k-hero-in{container-type:inline-size}
+.k-h1{--fit:6.9cqi;font-size:min(var(--fit),150px);line-height:.84;white-space:nowrap;font-weight:400;animation:kLoad 1500ms var(--ease) both}
+.k-in{display:block;padding-bottom:.04em;font-variation-settings:"wdth" calc(62 + 38*var(--load) - 30*var(--sc)),"wght" calc(150 + 650*var(--load) + 100*var(--sc));letter-spacing:calc(-0.04em + 0.05em*(1 - var(--load)) - 0.012em*var(--sc));color:color-mix(in oklab,var(--ink),var(--violet) calc(var(--sc)*100%))}
+@media(min-width:721px){br.bm:not(.bd){display:none}}
+@media(max-width:720px){br.bd:not(.bm){display:none}.k-h1{--fit:14.2cqi}}
+@keyframes kLoad{from{--load:0}to{--load:1}}
+@keyframes kScroll{from{--sc:0}to{--sc:1}}
+.k-row{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(20px,3vw,44px);margin-top:clamp(22px,2.6vw,36px);align-items:end}
+.k-frame{aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#ece8f6;box-shadow:0 1px 0 rgba(10,10,12,.05),0 40px 80px -44px rgba(70,0,160,.55);animation:kRise 1200ms var(--ease) both 180ms}
+.k-frame video{width:100%;height:100%;object-fit:cover}
+@keyframes kRise{from{opacity:0;transform:translateY(48px) scale(.97)}}
+.caption{margin-top:12px;font-size:14px;font-weight:600;color:var(--muted);width:fit-content}
+.k-side{padding-bottom:40px;animation:kRise 1200ms var(--ease) both 320ms}
+.k-sub{font-size:clamp(17px,1.45vw,20px);line-height:1.5;margin-bottom:24px;max-width:36ch}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-size:16px;font-weight:700;text-decoration:none;font-variation-settings:"wdth" 100;transition:transform 220ms var(--ease),font-variation-settings 360ms var(--ease),background-color 200ms}
+.btn:hover{transform:translateY(-2px);font-variation-settings:"wdth" 118}
+.btn-p{background:var(--violet);color:#fff}
+.btn-s{border:1.5px solid var(--ink);background:#fff}
+.btn-w{background:#fff;color:var(--violet)}
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px;font-size:15px}
+.faces{display:flex}
+.faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);margin-left:-9px}
+.faces img:first-child{margin-left:0}
+.social a{font-weight:700;color:var(--violet)}
+@media(max-width:860px){.k-row{grid-template-columns:1fr}.k-side{padding-bottom:0}}
+@media(max-width:600px){.caption{max-width:calc(100% - 112px)}}
+.k-marquee{margin-top:clamp(24px,3vw,40px);background:var(--violet);color:#fff;overflow:hidden;padding:clamp(14px,1.6vw,22px) 0}
+.k-track{display:flex;width:max-content;animation:kMarq 70s linear infinite}
+.k-track span{font-size:clamp(30px,4.4vw,66px);line-height:1.05;white-space:nowrap;padding:0 .28em}
+.k-track .ta{font-variation-settings:"wdth" 70,"wght" 860;letter-spacing:-0.02em}
+.k-track .tb{font-variation-settings:"wdth" 125,"wght" 240}
+.k-track .td{font-variation-settings:"wght" 300;color:#d4c0ff}
+.k-marquee:hover .k-track,.k-marquee.off .k-track{animation-play-state:paused}
+@keyframes kMarq{to{transform:translateX(-50%)}}
+/* sections */
+.k-sec{padding:clamp(72px,9vw,140px) 0}
+.k-head h2{font-size:clamp(44px,7vw,112px);line-height:.88;font-variation-settings:"wdth" 74,"wght" 860;letter-spacing:-0.035em;text-wrap:balance;max-width:15ch}
+.k-head .lead{font-size:clamp(18px,1.6vw,22px);color:var(--muted);margin-top:20px;max-width:46ch}
+.k-head .lead a{color:var(--violet);font-weight:700}
+/* testimonials */
+.k-tgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(48px,5vw,80px) clamp(20px,3vw,44px);margin-top:clamp(44px,5vw,80px)}
+.kt{grid-column:span 12;border-top:2px solid var(--ink);padding-top:22px;display:grid;gap:22px;align-content:start}
+.kt-a{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(20px,3vw,44px)}
+.kt-z{grid-template-columns:minmax(0,8fr) minmax(0,4fr);column-gap:clamp(20px,3vw,44px)}
+.kt-b,.kt-c,.kt-w,.kt-d{grid-column:span 6}
+.kv{border-radius:18px;overflow:hidden;background:#0a0a0c;aspect-ratio:16/9}
+.kv video{width:100%;height:100%;object-fit:cover}
+.kv.portrait{aspect-ratio:9/16;width:min(100%,330px);justify-self:end}
+.who{display:flex;align-items:center;gap:14px}
+.face{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.initials{display:grid;place-items:center;background:var(--lilac);color:var(--violet);font-weight:800;font-size:17px;font-variation-settings:"wdth" 110}
+.nm{font-size:18px;line-height:1.2;font-variation-settings:"wdth" 112,"wght" 750}
+.rl{font-size:15px;color:var(--muted);line-height:1.35}
+.t-site{font-size:15px;color:var(--violet);font-weight:600}
+.q{font-size:clamp(18px,1.4vw,20px);line-height:1.5;font-variation-settings:"wdth" 96,"wght" 480}
+.q + .q{margin-top:14px}
+.q-xl{font-size:clamp(26px,2.9vw,42px);line-height:1.1;font-variation-settings:"wdth" 84,"wght" 640;letter-spacing:-0.02em}
+.q-l{font-size:clamp(20px,1.75vw,25px);line-height:1.38;font-variation-settings:"wdth" 92,"wght" 520}
+.more{margin-top:14px}
+.more a,.k-all a{font-weight:700;color:var(--violet)}
+.k-all{margin-top:56px;font-size:18px}
+.kt-text{display:grid;gap:20px;align-content:start}
+@media(max-width:900px){.kt-a,.kt-z{grid-template-columns:1fr}.kt-b,.kt-c,.kt-w,.kt-d{grid-column:span 12}.kv.portrait{justify-self:start}}
+/* stacked claim cards */
+.k-stack{max-width:1320px;margin:0 auto;padding:clamp(8px,2vw,24px) var(--pad) clamp(56px,7vw,110px)}
+.k-card{position:sticky;top:calc(var(--navh) + 18px + var(--i)*20px);min-height:0;border-radius:32px;padding:clamp(28px,4vw,60px);margin-bottom:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:clamp(28px,3vw,48px);transform-origin:50% 0}
+.tone-w{background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -56px rgba(40,0,110,.4)}
+.tone-l{background:var(--lilac)}
+.tone-v{background:var(--violet);color:#fff}
+.k-ctop{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,3vw,44px);align-items:start}
+.k-num{font-size:clamp(40px,5vw,76px);line-height:.86;font-variation-settings:"wdth" 125,"wght" 200;font-variant-numeric:tabular-nums}
+.k-card h2{font-size:clamp(34px,4.5vw,70px);line-height:.94;font-variation-settings:"wdth" 78,"wght" 840;letter-spacing:-0.03em;text-wrap:balance}
+.k-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
+.k-two h3{font-size:15px;font-variation-settings:"wdth" 112,"wght" 720;margin-bottom:10px;color:var(--muted)}
+.k-two .ins h3{color:var(--violet)}
+.tone-v .k-two h3,.tone-v .k-two .ins h3{color:#e8ddff}
+.k-two p,.k-two li{font-size:clamp(17px,1.35vw,19px);line-height:1.5}
+.k-list{list-style:none;margin-top:12px}
+.k-list li{padding:10px 0;border-top:1px solid rgba(255,255,255,.4)}
+.tone-w .k-list li,.tone-l .k-list li{border-top-color:rgba(10,10,12,.16)}
+.k-proc{border-top:1px solid rgba(10,10,12,.16);padding-top:18px;font-size:clamp(17px,1.4vw,20px);font-variation-settings:"wght" 600;max-width:64ch}
+@keyframes kShrink{to{transform:scale(.93)}}
+@media(max-width:760px),(max-height:720px){.k-card{position:relative;top:auto;min-height:0}.k-two{grid-template-columns:1fr}}
+@media(max-width:600px){.k-ctop{grid-template-columns:1fr;gap:10px}.k-num{font-size:34px}}
+/* built */
+.k-ledger{margin-top:clamp(40px,5vw,64px);border-top:2px solid var(--ink)}
+.k-lrow{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:baseline;gap:clamp(16px,3vw,40px);border-bottom:1px solid var(--line);padding:clamp(6px,1vw,12px) 0}
+.k-big{font-size:clamp(60px,11vw,172px);line-height:.95;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-0.04em;font-variation-settings:"wdth" calc(62 + 38*var(--n)),"wght" calc(220 + 600*var(--n));transform:scale(calc(.62 + .38*var(--n)));transform-origin:100% 85%;color:color-mix(in oklab,var(--violet),var(--ink) calc(var(--n)*100%))}
+.k-lab{font-size:clamp(17px,1.6vw,22px);font-variation-settings:"wdth" 104,"wght" 620}
+@keyframes kNum{from{--n:0}to{--n:1}}
+.k-after{margin-top:18px;font-size:16px;color:var(--muted)}
+.k-things{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px);margin-top:clamp(48px,5vw,72px)}
+.k-things h3{font-size:22px;font-variation-settings:"wdth" 112,"wght" 760;margin-bottom:8px}
+.k-things p{color:var(--muted)}
+.k-paper{margin-top:36px;font-size:19px}
+.k-paper a{font-weight:700;color:var(--violet)}
+@media(max-width:700px){.k-lrow{grid-template-columns:1fr;gap:2px;padding:14px 0}.k-big{text-align:left;transform-origin:0 85%}.k-things{grid-template-columns:1fr}}
+/* who */
+.k-trades{margin-top:clamp(40px,5vw,64px);border-top:2px solid var(--ink)}
+.k-trade{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(12px,3vw,40px);align-items:baseline;padding:clamp(16px,2vw,24px) 0;border-bottom:1px solid var(--line);transition:background-color 200ms}
+.k-trade dt{font-size:clamp(26px,3.2vw,46px);line-height:1;font-variation-settings:"wdth" 125,"wght" 620;letter-spacing:-0.02em;transition:font-variation-settings 500ms var(--ease)}
+.k-trade:hover dt{font-variation-settings:"wdth" 72,"wght" 880}
+.k-trade dd{font-size:clamp(17px,1.4vw,19px)}
+@media(max-width:700px){.k-trade{grid-template-columns:1fr;gap:8px}}
+/* plans */
+.k-pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px);margin-top:clamp(40px,5vw,64px)}
+.k-plan{border-top:2px solid var(--ink);padding-top:20px}
+.k-plan h3{font-size:20px;font-variation-settings:"wdth" 115,"wght" 760}
+.k-price{margin:10px 0 14px;line-height:.9}
+.k-price .amt{font-size:clamp(64px,8vw,124px);font-variation-settings:"wdth" 72,"wght" 860;letter-spacing:-0.04em;color:var(--violet)}
+.k-price .per{font-size:18px;font-variation-settings:"wght" 600}
+.k-plan p{max-width:34ch}
+.k-setup{font-size:clamp(20px,2vw,28px)!important;color:var(--ink)!important;font-variation-settings:"wght" 600}
+.k-note{margin-top:36px;font-size:18px;font-variation-settings:"wght" 600}
+@media(max-width:800px){.k-pgrid{grid-template-columns:1fr}}
+/* questions */
+.k-qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,64px);margin-top:clamp(36px,4vw,56px)}
+.k-qa{border-top:1px solid var(--line);padding:22px 0}
+.k-qa h3{font-size:21px;font-variation-settings:"wdth" 100,"wght" 760;margin-bottom:6px}
+.k-qa p{color:var(--muted)}
+@media(max-width:760px){.k-qgrid{grid-template-columns:1fr}}
+/* writing, work, footer */
+.k-writing h2{font-size:clamp(30px,3.6vw,48px);font-variation-settings:"wdth" 80,"wght" 820;letter-spacing:-0.02em;margin-bottom:14px}
+.k-writing p{font-size:clamp(19px,1.8vw,24px);max-width:52ch}
+.k-writing a{color:var(--violet);font-weight:700}
+.k-work{background:var(--violet);color:#fff;padding:clamp(80px,10vw,160px) 0}
+.k-work h2{font-size:clamp(46px,8vw,128px);line-height:.88;font-variation-settings:"wdth" 74,"wght" 860;letter-spacing:-0.035em;text-wrap:balance;max-width:14ch}
+.k-work .lead{font-size:clamp(18px,1.7vw,22px);margin:24px 0 32px;max-width:44ch}
+.k-contact{margin-top:24px;font-size:18px;font-weight:700;display:flex;flex-wrap:wrap;gap:6px 14px}
+.k-contact a{color:#fff;overflow-wrap:anywhere}
+.foot{max-width:1320px;margin:0 auto;padding:28px var(--pad);font-size:14px;color:var(--muted)}
+.foot a{color:var(--ink)}
+.dot{margin:0 4px}
+@media(max-width:600px){.foot{padding-bottom:84px}}
+/* motion */
+@media(prefers-reduced-motion:no-preference){
+  @supports(animation-timeline:scroll()){
+    .k-in{animation:kScroll linear both;animation-timeline:scroll(root);animation-range:0px 85vh}
+    .k-card[style*="animation-timeline"]{animation:kShrink linear both;animation-range:entry 0% entry 100%}
+    .k-big{animation:kNum linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+  }
+  .io .k-lrow:not(.in) .k-big{--n:0}
+  .io .k-big{transition:--n 1100ms var(--ease)}
 }
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(max-width:760px),(max-height:720px){.k-card{animation:none!important;transform:none!important}}
+/* ship fixes */
+.nw{white-space:nowrap}
+@media(max-width:600px){.k-contact span[aria-hidden]{display:none}}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -162,252 +235,136 @@ a.lp-mcard:hover{border-color:#cdbdf7;transform:translateY(-3px);}
 </script>
 </head>
 <body>
-
-<nav class="topbar"><div class="topbar-inner">
-<a href="index.html" class="logo"><img class="brand-logo" src="logo.png" alt="Samuel Ochoa"></a>
-<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-<div class="nav-links">
-<a href="index.html" class="nav-link">Home</a>
-<a href="ai-consulting.html" class="nav-link">Work with me</a>
-<a href="case-studies/index.html" class="nav-link">Case Studies</a>
-<div class="nav-group">
-<a href="framework/index.html" class="nav-link nav-has-submenu">Resources</a>
-<div class="nav-submenu">
-<a href="snapshots.html">GHL snapshots</a>
-<a href="newsletter.html">Daily AI brief</a>
-<a href="framework/index.html">Framework</a>
-<a href="expertise/index.html">Expertise</a>
-<a href="playbooks/index.html">Playbooks</a>
-<a href="writing.html">Writing</a>
-</div></div>
-<a href="about.html" class="nav-link">About</a>
-<a href="contact.html" class="nav-link">Contact</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="nav-in"><a class="logo" href="index.html"><img src="logo.png" alt="Samuel Ochoa" width="88" height="88"></a><button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button><ul class="nav-links" id="navLinks"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="ai-consulting.html">Work with me</a></li><li><a href="case-studies/index.html">Case Studies</a></li><li class="has-sub"><a href="framework/index.html">Resources</a><ul class="submenu"><li><a href="snapshots.html">GHL snapshots</a></li><li><a href="newsletter.html">Daily AI brief</a></li><li><a href="framework/index.html">Framework</a></li><li><a href="expertise/index.html">Expertise</a></li><li><a href="playbooks/index.html">Playbooks</a></li><li><a href="writing.html">Writing</a></li></ul></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li class="lang"><a href="/es/" hreflang="es" lang="es">Español</a></li></ul></div></header>
+<main id="main">
+<section class="k-hero" aria-labelledby="h1">
+<div class="wrap k-hero-in">
+<h1 id="h1" class="k-h1"><span class="k-in">Do the <br class="bm">money work. <br class="bd bm">Text the rest <br class="bm">to your <br class="bm">assistant.</span></h1>
+<div class="k-row">
+<figure class="k-video"><div class="k-frame"><video controls playsinline preload="metadata" poster="/video/explainer-poster.jpg" title="Sam Ochoa, 90 second explainer"><source src="/video/explainer.mp4" type="video/mp4"><track kind="captions" src="/video/explainer.vtt" srclang="en" label="English" default></video></div><figcaption class="caption">Sam, 90 seconds: what I do and how I help.</figcaption></figure>
+<div class="k-side"><p class="k-sub">I'm Sam. I set up an AI assistant for small businesses. You text it like a coworker, it takes the admin off your plate, and it runs on a server you own.</p><div class="btns"><a class="btn btn-p" href="/book">Book a 15 minute call</a><a class="btn btn-s" href="#c3">See what it does</a></div><p class="social"><span class="faces"><img src="/william-kanas.webp" alt="" width="32" height="32"><img src="/ashel.jpg" alt="" width="32" height="32"></span> <span>People I've worked with.</span> <a href="#testimonials">Hear from them →</a></p></div>
 </div>
-</div></nav>
-
-<div class="lp">
-
-<!-- HERO -->
-<main id="main-content">
-<section class="lp-hero">
-  <div class="lp-wrap lp-hgrid">
-    <div>
-      <span class="lp-badge"><img src="sam-real.jpg" alt="Samuel Ochoa"> Sam Ochoa · Independent AI researcher</span>
-      <h1 class="lp-h1">I test AI tools and agent setups with real small businesses.</h1>
-      <p class="lp-hsub">I write up what I find, including what works, what breaks, and what still needs testing.</p>
-      <div class="lp-ctarow">
-        <a href="#research" class="lp-btn lp-btn-primary">Read my research</a>
-        <a href="#work" class="lp-btn lp-btn-ghost">Work with me</a>
-      </div>
-      <div class="lp-hsocial">
-        <div class="lp-faces"><img src="william-kanas.webp" alt=""><img src="ashel.jpg" alt=""></div>
-        <span>People I've worked with. <a href="#testimonials">Hear from them &rarr;</a></span>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="k-marquee" aria-hidden="true"><div class="k-track"><span class="ta">Real estate</span><span class="td">·</span><span class="tb">Insurance</span><span class="td">·</span><span class="ta">Contractors</span><span class="td">·</span><span class="tb">Nonprofits</span><span class="td">·</span><span class="ta">Restaurants</span><span class="td">·</span><span class="tb">Salons</span><span class="td">·</span><span class="ta">Dental offices</span><span class="td">·</span><span class="ta">Real estate</span><span class="td">·</span><span class="tb">Insurance</span><span class="td">·</span><span class="ta">Contractors</span><span class="td">·</span><span class="tb">Nonprofits</span><span class="td">·</span><span class="ta">Restaurants</span><span class="td">·</span><span class="tb">Salons</span><span class="td">·</span><span class="ta">Dental offices</span><span class="td">·</span></div></div>
 </section>
-
-<section class="lp-sec alt" id="research"><div class="lp-wrap">
-  <div class="lp-center"><span class="lp-kicker">Current research</span><h2 class="lp-h2">What I’m testing <em>and writing about</em></h2></div>
-  <div class="lp-more">
-    <a class="lp-mcard" href="/queva-os"><h3>Queva OS: a working paper</h3><p>Field notes on building an AI business assistant, owner approval, and the work still open.</p><span class="go">Read the working paper &rarr;</span></a>
-  </div>
+<section id="testimonials" class="k-sec">
+<div class="wrap">
+<header class="k-head"><h2>Don't take my word for it.</h2><p class="lead">Six people I've worked with. One line each, in their own words.</p></header>
+<div class="k-tgrid">
+<article class="kt kt-a"><div class="kv"><video controls playsinline preload="none" poster="/video/ashel-ati-insurance.jpg" title="Ashel Troncoso testimonial"><source src="/video/ashel-ati-insurance.mp4" type="video/mp4"><track kind="captions" src="/video/ashel-ati-insurance.vtt" srclang="en" label="English" default></video></div><div class="kt-text"><div class="who"><img class="face" src="/ashel.jpg" alt="Photo of Ashel Troncoso" width="56" height="56" loading="lazy"><div class="who-t"><p class="nm">Ashel Troncoso</p><p class="rl">Owner, ATI Insurance Group</p><a class="t-site" href="https://www.atsigroup.com" target="_blank" rel="noopener">atsigroup.com</a></div></div><p class="q q-l">I was as skeptical as could be... I'm super happy that I did.</p></div></article>
+<article class="kt kt-z"><div class="kt-text"><div class="who"><span class="face initials" aria-hidden="true">ZP</span><div class="who-t"><p class="nm">Zack Petrocca</p><p class="rl">Co-Founder, Curio Studio</p></div></div><p class="q q-xl">He didn't just hand me tools, he built systems I actually understood.</p></div><div class="kv portrait"><video controls playsinline preload="none" poster="/video/zack-petrocca.jpg" title="Zack Petrocca testimonial"><source src="/video/zack-petrocca.mp4" type="video/mp4"><track kind="captions" src="/video/zack-petrocca.vtt" srclang="en" label="English" default></video></div></article>
+<article class="kt kt-b"><div class="kv"><video controls playsinline preload="none" poster="/video/brian-southern-stone-tile.jpg" title="Brian, Southern Stone and Tile, testimonial"><source src="/video/brian-southern-stone-tile.mp4" type="video/mp4"><track kind="captions" src="/video/brian-southern-stone-tile.vtt" srclang="en" label="English" default></video></div><div class="who"><span class="face initials" aria-hidden="true">B</span><div class="who-t"><p class="nm">Brian</p><p class="rl">Owner, Southern Stone and Tile, Georgia</p><a class="t-site" href="https://southernstoneandtile.com" target="_blank" rel="noopener">southernstoneandtile.com</a></div></div><p class="q">He breaks it down in a way that just makes sense.</p></article>
+<article class="kt kt-c"><div class="kv"><video controls playsinline preload="none" poster="/video/cameron-s.jpg" title="Cameron S. testimonial"><source src="/video/cameron-s.mp4" type="video/mp4"><track kind="captions" src="/video/cameron-s.vtt" srclang="en" label="English" default></video></div><div class="who"><span class="face initials" aria-hidden="true">CS</span><div class="who-t"><p class="nm">Cameron S.</p><p class="rl">Full-time YouTuber</p></div></div><p class="q">Now I'm making roughly 20 videos a week.</p></article>
+<article class="kt kt-w"><div class="who"><img class="face" src="/william-kanas.webp" alt="Photo of William S. Kanas, Esq." width="56" height="56" loading="lazy"><div class="who-t"><p class="nm">William S. Kanas, Esq.</p><p class="rl">Sanford L. Pirotin, P.C.</p><a class="t-site" href="https://pirotinlaw.com" target="_blank" rel="noopener">pirotinlaw.com</a></div></div><p class="q q-l">The work still keeps our office running at peak efficiency.</p></article>
+<article class="kt kt-d"><div class="who"><img class="face" src="/david-greaves.jpeg" alt="Photo of David Greaves" width="56" height="56" loading="lazy"><div class="who-t"><p class="nm">David Greaves</p><p class="rl">President, Uniondale Neighborhood Center, Inc.</p><a class="t-site" href="https://byrncenter.org" target="_blank" rel="noopener">byrncenter.org</a></div></div><p class="q q-l">He didn't just set it up and leave.</p></article>
+</div>
+<p class="k-all"><a href="/testimonials">Read all six in full</a></p>
+</div>
+</section>
+<div class="k-stack" style="timeline-scope:--k1,--k2,--k3,--k4,--k5,--k6">
+<section id="c1" class="k-card tone-w" style="--i:0;view-timeline-name:--k1;animation-timeline:--k2">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">02</span><h2>No new app. You just text it.</h2></div>
+<div class="k-two"><div><h3>The usual way</h3><p>Most AI tools are one more app to open, type into and copy out of. They forget your business by tomorrow.</p></div><div class="ins"><h3>My way</h3><p>Your assistant lives in your text messages. Text it like a coworker. It remembers your business, keeps answers short, and puts anything long on a page with a link.</p></div></div>
+</section>
+<section id="c2" class="k-card tone-l" style="--i:1;view-timeline-name:--k2;animation-timeline:--k3">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">03</span><h2>Your assistant. Your server. Your data.</h2></div>
+<div class="k-two"><div><h3>The usual way</h3><p>Most AI tools run on somebody else's platform, on a machine you don't control.</p></div><div class="ins"><h3>My way</h3><p>Yours runs on one small cloud server in your own account, backed up every day. Everything it does goes to an activity log you can read, and you can switch it off.</p></div></div>
+</section>
+<section id="c3" class="k-card tone-v" style="--i:2;view-timeline-name:--k3;animation-timeline:--k4">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">04</span><h2>Do the money work. It does the admin.</h2></div>
+<div class="k-two"><div><h3>What eats your day</h3><p>The same questions, a quote to chase, notes to type into the CRM, a pile of forwarded email. Every hour of it comes out of selling, installing and serving your customers.</p></div><div class="ins"><h3>What it takes off your plate</h3><p>Text it, forward it, ask it:</p><ul class="k-list"><li>Forward it an email and it texts you a short summary with the deadline.</li><li>Checklists and reminders, by text.</li><li>Follow up drafts for you to look over and send.</li><li>Lookups and research with its own web browser.</li></ul></div></div>
+</section>
+<section id="c4" class="k-card tone-w" style="--i:3;view-timeline-name:--k4;animation-timeline:--k5">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">05</span><h2>Need a tracker? Text it. It builds one.</h2></div>
+<div class="k-two"><div><h3>The usual way</h3><p>Small businesses pay every month for software they barely use.</p></div><div class="ins"><h3>My way</h3><p>Ask by text for a tracker, a form, a list or a simple CRM, and it builds it as a private page on your server. It's yours, not another subscription. It doesn't replace your CRM or your accounting software.</p></div></div>
+</section>
+<section id="how" class="k-card tone-l" style="--i:4;view-timeline-name:--k5;animation-timeline:--k6">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">06</span><h2>I set it up. Then I teach you to run it.</h2></div>
+<div class="k-two"><div><h3>The usual way</h3><p>Most setups end the day the installer leaves.</p></div><div class="ins"><h3>My way</h3><p>A 15 minute call, where I tell you straight if it's a fit. A few days testing the tools against your real tasks. Setup in about 48 hours, done for you, on your own server. Then a first month where I teach you in plain words until you can run it and build on it. Support is in every plan.</p></div></div>
+<p class="k-proc">Out of the box it asks before a message, a payment, a post or a delete goes out; you reply yes and it happens. You can loosen that later.</p></section>
+<section id="c6" class="k-card tone-v" style="--i:5;view-timeline-name:--k6">
+<div class="k-ctop"><span class="k-num" aria-hidden="true">07</span><h2>What it won't do.</h2></div>
+<div class="k-two"><div><h3>The usual way</h3><p>Sites that promise everything, and a product that does less.</p></div><div class="ins"><h3>Straight answer</h3><p>It never sends email and only reads what you forward it. It stays off bank and payment sites. It will get things wrong sometimes; tell it by text and it remembers. If something I set up breaks, I fix it.</p></div></div>
+</section>
+</div>
+<section id="built" class="k-sec">
+<div class="wrap">
+<header class="k-head"><h2>Built, tested, shipped.</h2><p class="lead">I run <a href="https://agentleadengine.com" target="_blank" rel="noopener">Agent Lead Engine</a>, where we build Queva, the assistant you text. Counted from the repositories on <span class="nw">2026-10-23</span>:</p></header>
+<div class="k-ledger"><div class="k-lrow" data-reveal><span class="k-big">1,278</span><span class="k-lab">commits across nine repositories</span></div><div class="k-lrow" data-reveal><span class="k-big">4,613</span><span class="k-lab">automated tests</span></div><div class="k-lrow" data-reveal><span class="k-big">17</span><span class="k-lab">fleet releases shipped</span></div><div class="k-lrow" data-reveal><span class="k-big">125</span><span class="k-lab">skills written for agents</span></div><div class="k-lrow" data-reveal><span class="k-big">98,655</span><span class="k-lab">memories kept since May</span></div></div>
+<p class="k-after">Every number is counted from the code, not projected.</p>
+<div class="k-things"><div><h3>Queva and the fleet</h3><p>An assistant an owner texts, on a server the owner owns, installed with one command and updated in numbered releases.</p></div><div><h3>Content OS</h3><p>A production desk for my YouTube channels, idea to upload, in English and Spanish.</p></div><div><h3>Agent Board</h3><p>A live board of every AI worker I have running.</p></div></div>
+</div>
+</section>
+<section id="who" class="k-sec" style="padding-top:0">
+<div class="wrap">
+<header class="k-head"><h2>Built for teams of one to twenty five.</h2><p class="lead">It comes set up for your trade. What it takes off your plate first:</p></header>
+<dl class="k-trades"><div class="k-trade"><dt>Real estate</dt><dd>Listing details from a forwarded email into your CRM, checked against the tax record, and offer paperwork made ready.</dd></div><div class="k-trade"><dt>Insurance</dt><dd>Renewal reminders, prep work for e-signatures and PDFs.</dd></div><div class="k-trade"><dt>Contractors</dt><dd>Quotes to chase and notes into the CRM while you do the physical work.</dd></div><div class="k-trade"><dt>Nonprofits</dt><dd>Grant deadlines and grant drafts for a small team doing big community work.</dd></div><div class="k-trade"><dt>Restaurants</dt><dd>Hours and specials changed on your page by text, and the same questions every day.</dd></div><div class="k-trade"><dt>Salons</dt><dd>Appointment reminders and follow ups from your own calendar.</dd></div><div class="k-trade"><dt>Dental offices</dt><dd>Appointment reminders and follow ups from your own list, never scraped.</dd></div></dl>
+</div>
+</section>
+<section id="plans" class="k-sec" style="padding-top:0">
+<div class="wrap">
+<header class="k-head"><h2>What it costs.</h2><p class="lead k-setup">Setup is free if you start by January 23, 2027. After that it is $400, about two and a half hours, done with your first month.</p></header>
+<div class="k-pgrid"><article class="k-plan"><h3>Care</h3><p class="k-price"><span class="amt">$99</span> <span class="per">a month</span></p><p>AI usage included. Support included too, without a set number of hours each month.</p></article><article class="k-plan"><h3>Managed</h3><p class="k-price"><span class="amt">$199</span> <span class="per">a month</span></p><p>Care plus one hour of human support a month, as four 15 minute sessions.</p></article><article class="k-plan"><h3>Full Service</h3><p class="k-price"><span class="amt">$349</span> <span class="per">a month</span></p><p>Deeper access for my team, a larger AI allowance, two hours of support and security monitoring.</p></article></div>
+<p class="k-note">30 day money back on your first month, and you keep everything.</p>
+</div>
+</section>
+<section id="questions" class="k-sec" style="padding-top:0">
+<div class="wrap"><header class="k-head"><h2>Straight answers.</h2></header><div class="k-qgrid"><div class="k-qa"><h3>Where does my data live?</h3><p>On a small cloud server in your own account, with daily backups. Its memory of your business lives there too, and you can switch it off.</p></div><div class="k-qa"><h3>Do I need to be technical?</h3><p>No. You never touch a server or a command line. You text it like a coworker, and the guide is written for your trade.</p></div><div class="k-qa"><h3>Can I cancel?</h3><p>Yes. Plans are billed by the month. In the first 30 days you get the first month back, and you keep everything that was built.</p></div><div class="k-qa"><h3>Do you work in Spanish?</h3><p>Yes. I speak Spanish, and this site has a Spanish version.</p></div><div class="k-qa"><h3>What can it not do?</h3><p>It never sends email and only reads what you forward to it. It stays away from bank and payment sites. It does not replace your CRM or your accounting software.</p></div><div class="k-qa"><h3>What if it gets something wrong?</h3><p>It will sometimes. Everything it does goes to an activity log you can read. You correct it by text and it remembers. If something I set up breaks, I fix it.</p></div></div></div>
+</section>
+<section id="writing" class="k-sec k-writing" style="padding-top:0"><div class="wrap"><h2>Writing and research.</h2><p>The library here has <a href="framework/index.html">Framework</a>, <a href="expertise/index.html">Expertise</a>, <a href="playbooks/index.html">Playbooks</a> and <a href="writing.html">Writing</a> sections, all from work with real businesses.</p></div></section>
+<section id="work" class="k-work"><div class="wrap">
+<h2>Fifteen minutes. I'll tell you straight if it's a fit.</h2><p class="lead">Tell me what's eating your day and which tools you use. I read every message.</p><a class="btn btn-w" href="/book">Book a 15 minute call</a>
+<p class="k-contact"><a href="mailto:sam@agentleadengine.com">sam@agentleadengine.com</a> <span aria-hidden="true">·</span> <a href="tel:+15167801385">(516) 780-1385</a></p>
 </div></section>
-
-<section class="lp-sec"><div class="lp-wrap">
-  <div class="lp-center"><span class="lp-kicker">What I’m building</span><h2 class="lp-h2">Agent Lead Engine</h2></div>
-  <div class="lp-more"><div class="lp-mcard"><p>I run <a href="https://agentleadengine.com">Agent Lead Engine</a>, where we build Queva OS, an AI assistant for real estate teams.</p></div></div>
-</div></section>
-
-<!-- PROOF / TESTIMONIALS -->
-<section class="lp-sec" id="testimonials"><div class="lp-wrap">
-<div class="lp-center"><span class="lp-kicker">People I’ve worked with</span><h2 class="lp-h2">What people say <em>about working with me.</em></h2><p class="lp-lead">Hear from people I've worked with across different fields.</p></div>
-<div style="margin-top:22px;"><div class="lp-tcard dark">
-<div class="lp-tperson"><img src="/ashel.jpg" alt="Ashel Troncoso"><div><p class="lp-tname">Ashel Troncoso</p><p class="lp-trole">Owner, ATI Insurance Group &middot; <a href="https://www.atsigroup.com" target="_blank" rel="noopener">atsigroup.com</a></p></div></div>
-<div class="lp-tvideo-wide"><video controls playsinline preload="none" poster="/video/ashel-ati-insurance.jpg" title="Ashel Troncoso testimonial"><source src="/video/ashel-ati-insurance.mp4" type="video/mp4"><track kind="captions" src="/video/ashel-ati-insurance.vtt" srclang="en" label="English" default></video></div>
-<p class="lp-quote">&ldquo;I was as skeptical as could be. I really didn't trust AI, and I just didn't think it was going to work. He finally convinced me to give it a try, and I'm super happy that I did. He's helped me create workflows that save me five minutes here, 10 minutes here, whether it's organization, reminders, prep work with e-signs or other things with PDFs. He's very patient and he really loves teaching. If you're looking for someone who is going to teach you AI and really go into detail, he's your guy.&rdquo;</p>
-</div></div>
-<div style="margin-top:22px;"><div class="lp-tcard">
-<div class="lp-tperson"><span class="lp-tinitials" aria-hidden="true">ZP</span><div><p class="lp-tname">Zack Petrocca</p><p class="lp-trole">Co-Founder, Curio Studio</p></div></div>
-<div class="lp-tvideo"><video controls playsinline preload="none" poster="/video/zack-petrocca.jpg" title="Zack Petrocca testimonial"><source src="/video/zack-petrocca.mp4" type="video/mp4"><track kind="captions" src="/video/zack-petrocca.vtt" srclang="en" label="English" default></video></div>
-<p class="lp-quote" style="margin-top:18px;">&ldquo;Working with Sam fundamentally changed how I approach AI in my business. He didn't just hand me tools, he built systems I actually understood and could implement immediately.&rdquo;</p>
-<p class="lp-quote" style="margin-top:12px;">&ldquo;If you're a business owner serious about building with AI, Sam is the person you want in your corner.&rdquo;</p>
-<p style="margin:12px 0 0;font-size:13px;"><a href="/testimonials">Read Zack's full testimonial &rarr;</a></p>
-</div></div>
-<div style="margin-top:22px;"><div class="lp-tcard">
-<div class="lp-tperson"><span class="lp-tinitials" aria-hidden="true">B</span><div><p class="lp-tname">Brian</p><p class="lp-trole">Owner, Southern Stone and Tile, Georgia &middot; <a href="https://southernstoneandtile.com" target="_blank" rel="noopener">southernstoneandtile.com</a></p></div></div>
-<div class="lp-tvideo-wide"><video controls playsinline preload="none" poster="/video/brian-southern-stone-tile.jpg" title="Brian, Southern Stone and Tile, testimonial"><source src="/video/brian-southern-stone-tile.mp4" type="video/mp4"><track kind="captions" src="/video/brian-southern-stone-tile.vtt" srclang="en" label="English" default></video></div>
-<p class="lp-quote">&ldquo;I'm not very up to date with technology, I just like to do the physical work. He sat down with me, explained CRMs and how they could actually help me, and showed me ways to use AI to handle tasks in the background. He breaks it down in a way that just makes sense.&rdquo;</p>
-</div></div>
-<div style="margin-top:22px;"><div class="lp-tcard">
-<div class="lp-tperson"><span class="lp-tinitials" aria-hidden="true">CS</span><div><p class="lp-tname">Cameron S.</p><p class="lp-trole">Full-time YouTuber</p></div></div>
-<div class="lp-tvideo-wide"><video controls playsinline preload="none" poster="/video/cameron-s.jpg" title="Cameron S. testimonial"><source src="/video/cameron-s.mp4" type="video/mp4"><track kind="captions" src="/video/cameron-s.vtt" srclang="en" label="English" default></video></div>
-<p class="lp-quote">&ldquo;At first I was getting ready to block him, because every single cold email I get feels like a scam. But Sam was genuinely helpful, and he was able to scale up my output. Now I'm making roughly 20 videos a week, because all I have to do is drag the file into the folder and it automatically gets done.&rdquo;</p>
-<p class="lp-quote" style="margin-top:12px;">&ldquo;A lot of people are just using ChatGPT, Gemini, Copilot, you name it, but they're not even using them correctly. He has really taught me how to take AI to the next level in my business, and I couldn't be happier.&rdquo;</p>
-</div></div>
-<div style="margin-top:22px;"><div class="lp-tcard">
-<div class="lp-tperson"><img src="/william-kanas.webp" alt="William S. Kanas, Esq."><div><p class="lp-tname">William S. Kanas, Esq.</p><p class="lp-trole">Sanford L. Pirotin, P.C. &middot; <a href="https://pirotinlaw.com" target="_blank" rel="noopener">pirotinlaw.com</a></p></div></div>
-<p class="lp-quote">&ldquo;Sam modernized our IT department a decade ago, and the work still keeps our office running at peak efficiency. He has now embraced AI, and once again our office is the beneficiary of his expertise.&rdquo;</p>
-</div></div>
-<div style="margin-top:22px;"><div class="lp-tcard">
-<div class="lp-tperson"><img src="/david-greaves.jpeg" alt="David Greaves"><div><p class="lp-tname">David Greaves</p><p class="lp-trole">President, Uniondale Neighborhood Center, Inc. &middot; <a href="https://byrncenter.org" target="_blank" rel="noopener">byrncenter.org</a></p></div></div>
-<p class="lp-quote">&ldquo;Sam's approach made it stick because he didn't just set it up and leave. He made sure I understood the system well enough to run it myself, adapt it, and build on it. For a small nonprofit doing big community work, that changes everything.&rdquo;</p>
-</div></div>
-<p class="lp-trole" style="margin-top:18px;text-align:center"><a href="/testimonials">See all testimonials</a></p>
-</div></section>
-
-<section class="lp-sec"><div class="lp-wrap">
-  <div class="lp-center"><span class="lp-kicker">About</span><h2 class="lp-h2">A little <em>about me</em></h2></div>
-  <div class="lp-more"><div class="lp-mcard"><p>I’m self-taught and curious. I helped a law office modernize its IT about a decade ago, and I’ve also worked with people in insurance, nonprofits, and construction.</p><a class="go" href="/about">More about me &rarr;</a></div></div>
-</div></section>
-
-<section class="lp-sec" id="work"><div class="lp-wrap"><div class="lp-final">
-  <h2>Work with me</h2>
-  <p>If you have a real process you want to test with AI, tell me about it and the tools you use.</p>
-  <div class="lp-ctarow">
-    <a href="/contact" class="lp-btn lp-btn-primary">Get in touch</a>
-  </div>
-</div></div></section>
 </main>
-
-</div><!-- /.lp -->
-
-<footer>
-  <div class="container">
-    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="framework/index.html">Framework</a> · <a href="expertise/index.html">Expertise</a> · <a href="compare/index.html">Comparisons</a> · <a href="playbooks/index.html">Playbooks</a> · <a href="es/index.html">Español</a></p>
-  </div>
-</footer>
-
+<footer class="foot"><p>© 2026 Samuel Ochoa <span class="dot" aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> <span class="dot" aria-hidden="true">·</span> <a href="framework/index.html">Framework</a> <span class="dot" aria-hidden="true">·</span> <a href="expertise/index.html">Expertise</a> <span class="dot" aria-hidden="true">·</span> <a href="compare/index.html">Comparisons</a> <span class="dot" aria-hidden="true">·</span> <a href="playbooks/index.html">Playbooks</a> <span class="dot" aria-hidden="true">·</span> <a href="es/index.html">Español</a></p></footer>
 <script>
 (function(){
-  const bar = document.querySelector('nav.topbar');
-  if (!bar || bar.dataset.navInit) return;
-  bar.dataset.navInit = '1';
-
-  const OPEN_DELAY = 120;   // ms - hover intent
-  const CLOSE_DELAY = 450;  // ms - forgiving close
-  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
-
-  const hamb = bar.querySelector('.hamburger');
-  const links = bar.querySelector('.nav-links');
-  const groups = Array.from(bar.querySelectorAll('.nav-group'));
-
-  // --- Mobile hamburger ---------------------------------------------------
-  if (hamb && links) {
-    hamb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const open = bar.classList.toggle('nav-open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+  var root = document.documentElement;
+  var btn = document.querySelector('.menu-btn');
+  var links = document.getElementById('navLinks');
+  if (btn && links) btn.addEventListener('click', function(){
+    var o = links.classList.toggle('open'); btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+  });
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var sd = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+  root.classList.add(sd ? 'sd' : 'nosd');
+  if (reduce.matches) { root.classList.add('rm'); return; }
+  if (!sd && 'IntersectionObserver' in window) {
+    root.classList.add('io');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
   }
-
-  // --- Per-group hover-intent open/close ---------------------------------
-  groups.forEach(function(group) {
-    let openTimer = null;
-    let closeTimer = null;
-
-    const open = () => {
-      clearTimeout(closeTimer); closeTimer = null;
-      if (openTimer) return;
-      openTimer = setTimeout(() => {
-        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
-        group.classList.add('is-open');
-        openTimer = null;
-      }, OPEN_DELAY);
-    };
-    const close = () => {
-      clearTimeout(openTimer); openTimer = null;
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        group.classList.remove('is-open');
-        closeTimer = null;
-      }, CLOSE_DELAY);
-    };
-    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
-
-    // Keyboard focus opens the same desktop menu without requiring hover.
-    group.addEventListener('focusin', () => {
-      if (isMobile()) return;
-      clearTimeout(closeTimer);
-      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
-      group.classList.add('is-open');
-    });
-    group.addEventListener('focusout', (e) => {
-      if (!isMobile() && !group.contains(e.relatedTarget)) {
-        clearTimeout(openTimer); openTimer = null;
-        group.classList.remove('is-open');
-      }
-    });
-
-    // Desktop: hover opens, mouseleave closes after delay
-    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
-    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
-    // If cursor re-enters while closing, cancel the close
-    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
-
-    // Click trigger: mobile toggles accordion; desktop follows the link
-    const trigger = group.querySelector('.nav-has-submenu');
-    if (trigger) {
-      trigger.addEventListener('click', function(e) {
-        if (isMobile()) {
-          e.preventDefault();
-          const wasOpen = group.classList.contains('is-open');
-          groups.forEach(g => g.classList.remove('is-open'));
-          if (!wasOpen) group.classList.add('is-open');
-        }
-      });
-    }
-  });
-
-  // --- Mega menu (legacy): swap right-panel content on category hover -----
-  // No-op now that Resources is a simple dropdown, but harmless if any
-  // mega markup lingers on a not-yet-rebuilt page.
-  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
-  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
-  let catTimer = null;
-  megaCats.forEach(function(cat) {
-    cat.addEventListener('mouseenter', function() {
-      clearTimeout(catTimer);
-      const id = cat.dataset.cat;
-      catTimer = setTimeout(() => {
-        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
-        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
-      }, 80); // snappier than top-level hover intent
-    });
-  });
-
-  // --- Close menu when a leaf link is clicked ----------------------------
-  if (links) {
-    links.querySelectorAll('a').forEach(function(a) {
-      if (a.classList.contains('nav-has-submenu')) return;
-      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
-      a.addEventListener('click', function() {
-        bar.classList.remove('nav-open');
-        if (hamb) hamb.setAttribute('aria-expanded', 'false');
-        groups.forEach(g => g.classList.remove('is-open'));
-      });
-    });
-  }
-
-  // --- Close on outside click ---------------------------------------------
-  document.addEventListener('click', function(e) {
-    if (!bar.contains(e.target)) {
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
-  });
-
-  // --- Escape key closes everything ---------------------------------------
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      const focusedGroup = groups.find(g => g.contains(document.activeElement));
-      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
-      bar.classList.remove('nav-open');
-      if (hamb) hamb.setAttribute('aria-expanded', 'false');
-      groups.forEach(g => g.classList.remove('is-open'));
-    }
-  });
 })();
-</script></body>
+
+(function(){
+  var root = document.documentElement;
+  if (root.classList.contains('rm')) return;
+  var mq = document.querySelector('.k-marquee');
+  if (mq && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(x){ mq.classList.toggle('off', !x.isIntersecting); }); }).observe(mq);
+  if (root.classList.contains('sd')) return;
+  var kin = document.querySelector('.k-in');
+  var cards = [].slice.call(document.querySelectorAll('.k-card'));
+  var deck = window.matchMedia('(min-width: 761px) and (min-height: 721px)');
+  var busy = false;
+  function frame(){
+    busy = false;
+    var vh = window.innerHeight;
+    if (kin) kin.style.setProperty('--sc', Math.min(1, Math.max(0, window.scrollY / (vh * .85))).toFixed(3));
+    cards.forEach(function(c, i){
+      var n = cards[i + 1];
+      if (!n || !deck.matches) { c.style.transform = ''; return; }
+      var r = n.getBoundingClientRect();
+      var p = Math.min(1, Math.max(0, (vh - r.top) / r.height));
+      c.style.transform = 'scale(' + (1 - .07 * p).toFixed(4) + ')';
+    });
+  }
+  window.addEventListener('scroll', function(){ if (!busy) { busy = true; requestAnimationFrame(frame); } }, { passive: true });
+  frame();
+})();
+</script>
+</body>
 </html>
