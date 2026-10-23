@@ -47,7 +47,7 @@
 })(window, document, "clarity", "script", "x9tyuivf47");
 </script>
 <style>
-:root{--bg:#fafafa;--ink:#0a0a0c;--muted:#4b4b57;--violet:#6f00ff;--lilac:#f0eaff;--line:#e3e1ea;--ease:cubic-bezier(.16,1,.3,1);--navh:64px;--pad:clamp(16px,4vw,56px)}
+:root{--bg:#fafafa;--ink:#0a0a0c;--muted:#4b4b57;--violet:#6f00ff;--lilac:#f0eaff;--line:#e3e1ea;--ease:cubic-bezier(.16,1,.3,1);--navh:76px;--pad:clamp(16px,4vw,56px)}
 @property --load{syntax:'<number>';inherits:true;initial-value:1}
 @property --sc{syntax:'<number>';inherits:true;initial-value:0}
 @property --n{syntax:'<number>';inherits:true;initial-value:1}
@@ -61,21 +61,26 @@ a{color:inherit;text-underline-offset:3px}
 .skip:focus{left:16px;z-index:100;background:#fff;padding:8px 12px;border:2px solid var(--ink)}
 .wrap{max-width:1320px;margin:0 auto;padding-inline:var(--pad)}
 /* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1320px;margin:0 auto;height:var(--navh);padding-inline:var(--pad);display:flex;align-items:center;gap:20px;position:relative}
-.logo{display:block;width:34px;height:44px;overflow:hidden;position:relative;flex:none}
-.logo img{position:absolute;width:88px;height:88px;max-width:none;left:-22px;top:-22px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.9);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1320px;margin:0 auto;height:var(--navh);padding-inline:var(--pad);display:flex;align-items:center;gap:12px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none;color:var(--ink)}
+.mark{display:block;width:26px;height:42px;overflow:hidden;position:relative;flex:none}
+.mark img{position:absolute;width:95px;height:95px;max-width:none;left:-35px;top:-28px}
+.wm{font-size:21px;line-height:1;font-variation-settings:"wdth" 112,"wght" 800;letter-spacing:-0.01em;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin-left:auto}
-.nav-links a{display:block;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;font-variation-settings:"wdth" 90;transition:background-color 160ms}
-.nav-links a:hover{background:var(--lilac)}
-.nav-links a[aria-current]{text-decoration:underline;text-decoration-color:var(--violet);text-decoration-thickness:2px}
+.nav-links a{display:block;padding:10px 14px;border-radius:999px;font-size:16px;font-weight:600;text-decoration:none;color:var(--ink);font-variation-settings:"wdth" 100;transition:background-color 160ms,color 160ms}
+.nav-links a:hover{background:var(--lilac);color:var(--violet)}
+.nav-links a[aria-current]{background:var(--lilac);color:var(--violet)}
 .has-sub{position:relative}
-.submenu{display:none;position:absolute;top:100%;left:0;min-width:210px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:0 24px 48px -24px rgba(40,0,110,.35)}
+.has-sub>a::after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+.submenu{display:none;position:absolute;top:100%;left:0;min-width:220px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 24px 48px -24px rgba(40,0,110,.35)}
 .has-sub:hover .submenu,.has-sub:focus-within .submenu{display:block}
-.submenu a{border-radius:10px}
-.lang a{border:1.5px solid var(--ink);margin-left:6px}
-.menu-btn{display:none;margin-left:auto;font:inherit;font-weight:700;font-size:15px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer;color:var(--ink)}
-@media(max-width:900px){.menu-btn{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--line);padding:10px var(--pad) 16px}.nav-links.open{display:flex}.submenu{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 14px}.lang a{margin:6px 0 0;align-self:flex-start}}
+.submenu a{border-radius:12px;font-size:15px}
+.nav .nav-cta{min-height:46px;padding:0 22px;font-size:15px;margin-left:8px;flex:none}
+.nav-cta-m{display:none}
+.menu-btn{display:none;margin-left:auto;font:inherit;font-weight:700;font-size:15px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:10px 18px;cursor:pointer;color:var(--ink)}
+@media(max-width:1100px){.menu-btn{display:block;margin-left:0}.nav .nav-cta{margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--pad) 22px;box-shadow:0 30px 40px -30px rgba(40,0,110,.35)}.nav-links.open{display:flex}.nav-links a{font-size:18px;padding:14px 2px;border-radius:0;border-bottom:1px solid var(--line)}.nav-links a:hover,.nav-links a[aria-current]{background:none}.has-sub>a::after{display:none}.submenu{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0}.submenu a{font-size:16px;border-radius:0}}
+@media(max-width:600px){:root{--navh:64px}.mark{width:22px;height:36px}.mark img{width:81px;height:81px;left:-30px;top:-24px}.wm{font-size:19px}.nav .nav-cta{display:none}.menu-btn{margin-left:auto}.nav-cta-m{display:block;margin-top:16px}.nav-links .nav-cta-m a{background:var(--violet);color:#fff;border:0;border-radius:999px;text-align:center;padding:15px 20px}}
 /* hero */
 .k-hero{padding-top:clamp(18px,3vw,36px)}
 .k-hero-in{container-type:inline-size}
@@ -271,7 +276,7 @@ a{color:inherit;text-underline-offset:3px}
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<header class="nav"><div class="nav-in"><a class="logo" href="/es/"><img src="/logo.png" alt="Samuel Ochoa" width="88" height="88"></a><button class="menu-btn" type="button" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="navLinks">Menú</button><ul class="nav-links" id="navLinks"><li><a href="/es/" aria-current="page">Inicio</a></li><li><a href="/ai-consulting.html">Trabaja conmigo</a></li><li><a href="/case-studies/index.html">Casos de estudio</a></li><li class="has-sub"><a href="/framework/index.html">Recursos</a><ul class="submenu"><li><a href="/snapshots.html">Snapshots de GHL</a></li><li><a href="/newsletter.html">Resumen diario de IA</a></li><li><a href="/framework/index.html">Framework</a></li><li><a href="/expertise/index.html">Expertise</a></li><li><a href="/playbooks/index.html">Playbooks</a></li><li><a href="/writing.html">Writing</a></li></ul></li><li><a href="/about.html">Sobre mí</a></li><li><a href="/contact.html">Contacto</a></li></ul></div></header>
+<header class="nav"><div class="nav-in"><a class="brand" href="/es/" aria-label="Sam Ochoa, inicio"><span class="mark" aria-hidden="true"><img src="/logo.png" alt="" width="99" height="99"></span><span class="wm">Sam Ochoa</span></a><ul class="nav-links" id="navLinks"><li><a href="/es/" aria-current="page">Inicio</a></li><li><a href="/ai-consulting.html">Trabaja conmigo</a></li><li><a href="/case-studies/index.html">Casos de estudio</a></li><li class="has-sub"><a href="/framework/index.html">Recursos</a><ul class="submenu"><li><a href="/snapshots.html">Snapshots de GHL</a></li><li><a href="/newsletter.html">Resumen diario de IA</a></li><li><a href="/framework/index.html">Framework</a></li><li><a href="/expertise/index.html">Expertise</a></li><li><a href="/playbooks/index.html">Playbooks</a></li><li><a href="/writing.html">Writing</a></li></ul></li><li><a href="/about.html">Sobre mí</a></li><li><a href="/contact.html">Contacto</a></li><li class="nav-cta-m"><a href="/book">Agenda una llamada de 15 minutos</a></li></ul><a class="btn btn-p nav-cta" href="/book">Agenda una llamada</a><button class="menu-btn" type="button" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="navLinks">Menú</button></div></header>
 <main id="main">
 <section class="k-hero" aria-labelledby="h1">
 <div class="wrap k-hero-in">
