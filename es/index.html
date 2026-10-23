@@ -279,6 +279,14 @@ a{color:inherit;text-underline-offset:3px}
 .k-lib{margin-top:36px;font-size:clamp(17px,1.5vw,20px)}
 .k-lib a{color:var(--violet);font-weight:700}
 @media(max-width:760px){.k-paper-row{grid-template-columns:1fr;gap:8px}.wp-st{justify-self:start;text-align:left}.wp-id{padding-top:0}}
+.h-b{padding:clamp(48px,7vw,110px) 0 clamp(48px,6vw,90px);text-align:center;background:radial-gradient(60% 50% at 50% 0%,#efe6ff 0,rgba(250,250,250,0) 70%)}
+.h-b .pill{display:inline-block;font-size:14px;font-weight:700;color:var(--violet);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;margin-bottom:22px}
+.h-b h1{font-size:clamp(40px,5.4vw,80px);line-height:1;font-variation-settings:"wdth" 88,"wght" 800;letter-spacing:-0.03em;max-width:16ch;margin:0 auto;text-wrap:balance}
+.h-b h1 em{font-style:normal;color:var(--violet)}
+.h-b .sub{font-size:clamp(17px,1.4vw,20px);color:var(--muted);margin:22px auto 28px;max-width:52ch}
+.h-b .btns,.h-b .social{justify-content:center}
+.h-b .vid{max-width:920px;margin:clamp(36px,5vw,64px) auto 0;border-radius:24px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 50px 90px -50px rgba(70,0,160,.6);border:6px solid #fff}
+.h-b .vid video{width:100%;height:100%;object-fit:cover}
 /* ship fixes */
 .nw{white-space:nowrap}
 @media(max-width:600px){.k-contact span[aria-hidden]{display:none}}
@@ -292,16 +300,9 @@ a{color:inherit;text-underline-offset:3px}
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="nav"><div class="nav-in"><a class="brand" href="/es/" aria-label="Sam Ochoa, inicio"><span class="mark" aria-hidden="true"><img src="/logo.png" alt="" width="99" height="99"></span><span class="wm">Sam Ochoa</span></a><ul class="nav-links" id="navLinks"><li><a href="/es/" aria-current="page">Inicio</a></li><li><a href="/ai-consulting.html">Trabaja conmigo</a></li><li><a href="/case-studies/index.html">Casos de estudio</a></li><li class="has-sub"><a href="/framework/index.html">Recursos</a><ul class="submenu"><li><a href="/snapshots.html">Snapshots de GHL</a></li><li><a href="/newsletter.html">Resumen diario de IA</a></li><li><a href="/framework/index.html">Framework</a></li><li><a href="/expertise/index.html">Expertise</a></li><li><a href="/playbooks/index.html">Playbooks</a></li><li><a href="/writing.html">Writing</a></li></ul></li><li><a href="/about.html">Sobre mí</a></li><li><a href="/contact.html">Contacto</a></li><li class="nav-cta-m"><a href="/book">Agenda una llamada de 15 minutos</a></li></ul><a class="btn btn-p nav-cta" href="/book">Agenda una llamada</a><button class="menu-btn" type="button" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="navLinks">Menú</button></div></header>
 <main id="main">
-<section class="k-hero" aria-labelledby="h1">
-<div class="wrap k-hero-in">
-<h1 id="h1" class="k-h1"><span class="k-in">No abriste <br class="bm">un negocio <br class="bd bm">para hacer <br class="bm">el papeleo.</span></h1>
-<div class="k-row">
-<figure class="k-video"><div class="k-frame"><video controls playsinline preload="metadata" poster="/video/explainer-poster.jpg" title="Sam Ochoa, video de 90 segundos en inglés"><source src="/video/explainer.mp4" type="video/mp4"><track kind="captions" src="/video/explainer.vtt" srclang="en" label="English" default></video></div><figcaption class="caption">Sam, 90 segundos en inglés: qué hago y cómo ayudo.</figcaption></figure>
-<div class="k-side"><p class="k-sub">Soy Sam. Configuro un asistente de IA al que le escribes por mensaje. Lee los correos que le reenvías, prepara tus seguimientos y arma tus listas de pendientes, y te pregunta antes de que algo salga.</p><div class="btns"><a class="btn btn-p" href="/book">Agenda una llamada de 15 minutos</a><a class="btn btn-s" href="#c3">Mira lo que hace</a></div><p class="social"><span class="faces"><img src="/william-kanas.webp" alt="" width="32" height="32"><img src="/ashel.jpg" alt="" width="32" height="32"></span> <span>Personas con quienes he trabajado.</span> <a href="#testimonials">Escúchalos →</a></p></div>
-</div>
-</div>
-<div class="k-marquee" aria-hidden="true"><div class="k-track"><span class="ta">Bienes raíces</span><span class="td">·</span><span class="tb">Seguros</span><span class="td">·</span><span class="ta">Contratistas</span><span class="td">·</span><span class="tb">Organizaciones sin fines de lucro</span><span class="td">·</span><span class="ta">Restaurantes</span><span class="td">·</span><span class="tb">Salones de belleza</span><span class="td">·</span><span class="ta">Consultorios dentales</span><span class="td">·</span><span class="ta">Bienes raíces</span><span class="td">·</span><span class="tb">Seguros</span><span class="td">·</span><span class="ta">Contratistas</span><span class="td">·</span><span class="tb">Organizaciones sin fines de lucro</span><span class="td">·</span><span class="ta">Restaurantes</span><span class="td">·</span><span class="tb">Salones de belleza</span><span class="td">·</span><span class="ta">Consultorios dentales</span><span class="td">·</span></div></div>
-</section>
+<section class="h-b" aria-labelledby="h1"><div class="wrap"><span class="pill">Asistentes de IA para pequeños negocios</span>
+<h1 id="h1">No abriste un negocio para hacer <em>el papeleo.</em></h1>
+<p class="sub">Soy Sam. Configuro un asistente de IA al que le escribes por mensaje. Lee los correos que le reenvías, prepara tus seguimientos y arma tus listas de pendientes, y te pregunta antes de que algo salga.</p><div class="btns"><a class="btn btn-p" href="/book">Agenda una llamada de 15 minutos</a><a class="btn btn-s" href="#c3">Mira lo que hace</a></div><p class="social"><span class="faces"><img src="/william-kanas.webp" alt="" width="32" height="32"><img src="/ashel.jpg" alt="" width="32" height="32"></span> <span>Personas con quienes he trabajado.</span> <a href="#testimonials">Escúchalos →</a></p><div class="vid"><video controls playsinline preload="metadata" poster="/video/explainer-poster.jpg" title="Sam Ochoa, video de 90 segundos en inglés"><source src="/video/explainer.mp4" type="video/mp4"><track kind="captions" src="/video/explainer.vtt" srclang="en" label="English" default></video></div></div></section>
 <section id="testimonials" class="k-sec">
 <div class="wrap">
 <header class="k-head"><h2>No tienes que creerme a mí.</h2><p class="lead">Seis personas con quienes he trabajado, en sus propias palabras. Los testimonios están en inglés.</p></header>
