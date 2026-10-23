@@ -44,17 +44,18 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../../index.html" class="nav-link">Home</a>
-<a href="../../../ai-consulting.html" class="nav-link">Work with me</a>
-<a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../../about.html" class="nav-link">About</a>
+<a href="../../../expertise/index.html" class="nav-link">Expertise</a>
 <div class="nav-group">
 <a href="../../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
+<a href="../../../snapshots.html">GHL snapshots</a>
+<a href="../../../newsletter.html">Daily AI brief</a>
+<a href="../../../index.html#papers">White papers</a>
 <a href="../../../framework/index.html">Framework</a>
-<a href="../../../expertise/index.html">Expertise</a>
 <a href="../../../playbooks/index.html">Playbooks</a>
 <a href="../../../writing.html">Writing</a>
 </div></div>
-<a href="../../../about.html" class="nav-link">About</a>
 <a href="../../../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Cold Email (45 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/what-is-cold-email.html">What is cold email?</a></li><li><a href="../foundations/spam-vs-cold.html" class="active">Cold email vs spam</a></li><li><a href="../foundations/legal.html">Legal landscape</a></li><li><a href="../foundations/when-it-works.html">When cold email works</a></li></ul><h4>Deliverability</h4><ul><li><a href="../deliverability/why-it-matters.html">Why deliverability is everything</a></li><li><a href="../deliverability/dns.html">SPF, DKIM, DMARC</a></li><li><a href="../deliverability/sending-domains.html">Sending domain strategy</a></li><li><a href="../deliverability/warming.html">Inbox warming</a></li><li><a href="../deliverability/ip-reputation.html">IP reputation</a></li><li><a href="../deliverability/spam-triggers.html">Content that triggers spam filters</a></li><li><a href="../deliverability/monitoring.html">Monitoring inbox placement</a></li></ul><h4>Infrastructure</h4><ul><li><a href="../infra/sending-tools.html">Sending tools</a></li><li><a href="../infra/multi-inbox.html">Multi-inbox rotation</a></li><li><a href="../infra/warming-tools.html">Warming tools</a></li><li><a href="../infra/crm-integration.html">CRM and data integration</a></li><li><a href="../infra/reply-management.html">Reply management</a></li></ul><h4>Lists + Targeting</h4><ul><li><a href="../lists/icp.html">Defining the ICP</a></li><li><a href="../lists/databases.html">Lead databases</a></li><li><a href="../lists/clay.html">Clay and enrichment</a></li><li><a href="../lists/verification.html">Verification + hygiene</a></li><li><a href="../lists/intent-signals.html">Intent signals</a></li><li><a href="../lists/segmentation.html">Segmentation strategy</a></li></ul><h4>Copy</h4><ul><li><a href="../copy/anatomy.html">Cold email anatomy</a></li><li><a href="../copy/subject-lines.html">Subject lines</a></li><li><a href="../copy/first-lines.html">First lines</a></li><li><a href="../copy/the-pitch.html">The pitch</a></li><li><a href="../copy/ctas.html">CTAs for cold</a></li><li><a href="../copy/signatures.html">Signatures</a></li><li><a href="../copy/personalization.html">Personalization at scale</a></li></ul><h4>Sequences</h4><ul><li><a href="../sequences/multi-touch.html">Multi-touch sequences</a></li><li><a href="../sequences/cadence.html">Cadence and timing</a></li><li><a href="../sequences/breakup.html">The breakup email</a></li><li><a href="../sequences/multi-channel.html">Multi-channel orchestration</a></li><li><a href="../sequences/length.html">Sequence length</a></li></ul><h4>Testing</h4><ul><li><a href="../testing/methodology.html">Testing methodology</a></li><li><a href="../testing/what-to-test.html">What to test</a></li><li><a href="../testing/reply-metrics.html">Reply rate vs positive reply</a></li><li><a href="../testing/iteration.html">The iteration loop</a></li></ul><h4>Playbooks</h4><ul><li><a href="../plays/b2b-saas.html">B2B SaaS outbound</a></li><li><a href="../plays/agency.html">Agency + services outbound</a></li><li><a href="../plays/founder-led.html">Founder-led outbound</a></li><li><a href="../plays/sdr-led.html">SDR-led outbound</a></li><li><a href="../plays/link-building.html">Cold email for SEO</a></li><li><a href="../plays/recruiting.html">Recruiting outreach</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Cold Email</a><span class="sep">›</span><span>Cold email vs spam</span></div><h1 class="title">Cold email vs spam</h1><div class="article-meta"><span>📖 4 min read</span><span>Updated 2026-04-18</span></div>
@@ -249,6 +250,20 @@
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -311,6 +326,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));

@@ -44,17 +44,18 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../../index.html" class="nav-link">Home</a>
-<a href="../../../ai-consulting.html" class="nav-link">Work with me</a>
-<a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../../about.html" class="nav-link">About</a>
+<a href="../../../expertise/index.html" class="nav-link">Expertise</a>
 <div class="nav-group">
 <a href="../../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
+<a href="../../../snapshots.html">GHL snapshots</a>
+<a href="../../../newsletter.html">Daily AI brief</a>
+<a href="../../../index.html#papers">White papers</a>
 <a href="../../../framework/index.html">Framework</a>
-<a href="../../../expertise/index.html">Expertise</a>
 <a href="../../../playbooks/index.html">Playbooks</a>
 <a href="../../../writing.html">Writing</a>
 </div></div>
-<a href="../../../about.html" class="nav-link">About</a>
 <a href="../../../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Conversion Rate Optimization (34 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/what-is-cro.html">What is CRO?</a></li><li><a href="../foundations/when-to-do-cro.html">When to do CRO</a></li><li><a href="../foundations/scope-and-strategy.html">Scope and strategy</a></li></ul><h4>Research</h4><ul><li><a href="../research/analytics-audit.html">Analytics audit</a></li><li><a href="../research/heatmaps-recordings.html">Heatmaps + recordings</a></li><li><a href="../research/user-interviews.html">User interviews</a></li><li><a href="../research/surveys.html">On-site surveys</a></li><li><a href="../research/usability-testing.html">Usability testing</a></li></ul><h4>Frameworks</h4><ul><li><a href="../frameworks/lift.html">LIFT model</a></li><li><a href="../frameworks/ice.html">ICE scoring</a></li><li><a href="../frameworks/pxl.html">PXL prioritization</a></li><li><a href="../frameworks/fogg-behavior.html">Fogg Behavior Model</a></li></ul><h4>Landing Pages</h4><ul><li><a href="../pages/above-the-fold.html">Above the fold</a></li><li><a href="../pages/headlines-copy.html">Headlines + copy</a></li><li><a href="../pages/social-proof.html">Social proof</a></li><li><a href="../pages/forms.html">Form design</a></li><li><a href="../pages/ctas.html" class="active">CTA design</a></li><li><a href="../pages/page-speed.html">Page speed</a></li></ul><h4>Checkout + Conversion</h4><ul><li><a href="../conversion/checkout-optimization.html">Checkout optimization</a></li><li><a href="../conversion/cart-abandonment.html">Cart abandonment</a></li><li><a href="../conversion/trust-signals.html">Trust signals</a></li><li><a href="../conversion/friction-audit.html">Friction audit</a></li></ul><h4>Testing</h4><ul><li><a href="../testing/ab-testing-setup.html">A/B testing setup</a></li><li><a href="../testing/sample-size.html">Sample size</a></li><li><a href="../testing/significance.html">Significance</a></li><li><a href="../testing/what-to-test.html">What to test</a></li><li><a href="../testing/velocity.html">Testing velocity</a></li></ul><h4>Analytics</h4><ul><li><a href="../analytics/funnels.html">Funnel analysis</a></li><li><a href="../analytics/segments.html">Segment analysis</a></li><li><a href="../analytics/attribution.html">Attribution gotchas</a></li></ul><h4>Tools</h4><ul><li><a href="../tools/google-optimize-alternatives.html">Google Optimize alternatives</a></li><li><a href="../tools/vwo.html">VWO</a></li><li><a href="../tools/optimizely.html">Optimizely</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Conversion Rate Optimization</a><span class="sep">›</span><span>CTA design</span></div><h1 class="title">CTA design</h1><div class="article-meta"><span>📖 3 min read</span><span>Updated 2026-04-19</span></div><p class="lede">CTA = call to action. The button (or link) where users commit. Design, copy, placement all affect click rate.</p><h2>Button design</h2>
@@ -172,6 +173,20 @@
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -234,6 +249,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));

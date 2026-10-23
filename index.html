@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Samuel Ochoa">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
 
 
@@ -43,7 +43,7 @@
   gtag('config', 'AW-18240559803');
 </script>
 <style>
-:root{--bg:#fafafa;--ink:#0a0a0c;--muted:#4b4b57;--violet:#6f00ff;--lilac:#f0eaff;--line:#e3e1ea;--ease:cubic-bezier(.16,1,.3,1);--navh:76px;--pad:clamp(16px,4vw,56px)}
+:root{--bg:#fafafa;--ink:#0a0a0c;--muted:#4b4b57;--violet:#6f00ff;--lilac:#f0eaff;--line:#e3e1ea;--ease:cubic-bezier(.16,1,.3,1);--navh:129px;--pad:clamp(16px,4vw,56px)}
 @property --load{syntax:'<number>';inherits:true;initial-value:1}
 @property --sc{syntax:'<number>';inherits:true;initial-value:0}
 @property --n{syntax:'<number>';inherits:true;initial-value:1}
@@ -56,27 +56,419 @@ a{color:inherit;text-underline-offset:3px}
 .skip{position:absolute;left:-9999px;top:8px}
 .skip:focus{left:16px;z-index:100;background:#fff;padding:8px 12px;border:2px solid var(--ink)}
 .wrap{max-width:1320px;margin:0 auto;padding-inline:var(--pad)}
-/* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.9);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1320px;margin:0 auto;height:var(--navh);padding-inline:var(--pad);display:flex;align-items:center;gap:12px;position:relative}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none;color:var(--ink)}
-.mark{display:block;width:26px;height:42px;overflow:hidden;position:relative;flex:none}
-.mark img{position:absolute;width:95px;height:95px;max-width:none;left:-35px;top:-28px}
-.wm{font-size:21px;line-height:1;font-variation-settings:"wdth" 112,"wght" 800;letter-spacing:-0.01em;white-space:nowrap}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin-left:auto}
-.nav-links a{display:block;padding:10px 14px;border-radius:999px;font-size:16px;font-weight:600;text-decoration:none;color:var(--ink);font-variation-settings:"wdth" 100;transition:background-color 160ms,color 160ms}
-.nav-links a:hover{background:var(--lilac);color:var(--violet)}
-.nav-links a[aria-current]{background:var(--lilac);color:var(--violet)}
-.has-sub{position:relative}
-.has-sub>a::after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
-.submenu{display:none;position:absolute;top:100%;left:0;min-width:220px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 24px 48px -24px rgba(40,0,110,.35)}
-.has-sub:hover .submenu,.has-sub:focus-within .submenu{display:block}
-.submenu a{border-radius:12px;font-size:15px}
-.nav .nav-cta{min-height:46px;padding:0 22px;font-size:15px;margin-left:8px;flex:none}
-.nav-cta-m{display:none}
-.menu-btn{display:none;margin-left:auto;font:inherit;font-weight:700;font-size:15px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:10px 18px;cursor:pointer;color:var(--ink)}
-@media(max-width:1100px){.menu-btn{display:block;margin-left:0}.nav .nav-cta{margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--pad) 22px;box-shadow:0 30px 40px -30px rgba(40,0,110,.35)}.nav-links.open{display:flex}.nav-links a{font-size:18px;padding:14px 2px;border-radius:0;border-bottom:1px solid var(--line)}.nav-links a:hover,.nav-links a[aria-current]{background:none}.has-sub>a::after{display:none}.submenu{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0}.submenu a{font-size:16px;border-radius:0}}
-@media(max-width:600px){:root{--navh:64px}.mark{width:22px;height:36px}.mark img{width:81px;height:81px;left:-30px;top:-24px}.wm{font-size:19px}.nav .nav-cta{display:none}.menu-btn{margin-left:auto}.nav-cta-m{display:block;margin-top:16px}.nav-links .nav-cta-m a{background:var(--violet);color:#fff;border:0;border-radius:999px;text-align:center;padding:15px 20px}}
+/* nav (site top bar) */
+nav.topbar{--white:#ffffff;--gray-100:#f5f5f5;--gray-900:#171717;--primary-purple:#4a00e0;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+nav.topbar{
+    background-color: var(--white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--gray-100);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+nav.topbar .topbar-inner{
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+nav.topbar .logo{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray-900);
+    font-size: 0;
+    flex-shrink: 0;
+}
+nav.topbar .logo img.brand-logo{
+    display: block;
+    height: 88px;
+    width: auto;
+    max-width: 280px;
+    object-fit: contain;
+}
+nav.topbar .logo:hover{ opacity: 0.85; }
+nav.topbar .nav-links{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+nav.topbar .nav-link,
+nav.topbar .nav-links > a{
+    color: var(--gray-900);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 6px 0;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+nav.topbar .nav-link::after,
+nav.topbar .nav-links > a::after{
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background: var(--primary-purple);
+    transition: width 0.25s ease;
+}
+nav.topbar .nav-link:hover,
+nav.topbar .nav-link.active,
+nav.topbar .nav-links > a:hover,
+nav.topbar .nav-links > a.active{ color: var(--primary-purple); }
+nav.topbar .nav-link:hover::after,
+nav.topbar .nav-link.active::after,
+nav.topbar .nav-links > a:hover::after,
+nav.topbar .nav-links > a.active::after{ width: 100%; }
+nav.topbar .nav-has-submenu::before{
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    margin-left: 4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    transform: translateY(1px);
+    order: 2;
+}
+nav.topbar .nav-group{
+    position: relative;
+}
+nav.topbar .nav-submenu{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(14px);
+    min-width: 260px;
+    background: #f4f4f7;
+    border: 1px solid #e5e5ea;
+    border-top: 3px solid var(--primary-purple);
+    border-radius: 16px;
+    box-shadow: 0 28px 64px -12px rgba(17, 17, 17, 0.24), 0 2px 8px rgba(17, 17, 17, 0.06);
+    padding: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1001;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+nav.topbar .nav-submenu::before{
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 0; right: 0;
+    height: 18px;
+}
+nav.topbar .nav-group.is-open > .nav-submenu{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+nav.topbar .nav-submenu:not(.nav-mega) > a{
+    display: block;
+    padding: 11px 16px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--gray-900);
+    background: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    transition: all 0.15s ease;
+}
+nav.topbar .nav-submenu:not(.nav-mega) > a:last-child{ margin-bottom: 0; }
+nav.topbar .nav-submenu > a::after{ display: none; }
+nav.topbar .nav-submenu:not(.nav-mega) > a:hover{
+    background: var(--primary-purple);
+    color: #ffffff;
+    border-color: var(--primary-purple);
+    transform: translateX(2px);
+}
+nav.topbar .nav-group-wide{ position: static; }
+nav.topbar .nav-mega{
+    left: 50%;
+    transform: translateX(-50%) translateY(14px);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 16px;
+    width: min(960px, calc(100vw - 48px));
+    padding: 18px;
+    min-width: 0;
+}
+nav.topbar .nav-group.is-open > .nav-mega{
+    transform: translateX(-50%) translateY(0);
+}
+nav.topbar .nav-mega-cats{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 8px;
+    align-self: start;
+}
+nav.topbar .nav-mega-cats .nav-cat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--gray-900);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+nav.topbar .nav-mega-cats .nav-cat::after{ display: none; }
+nav.topbar .nav-mega-cats .nav-cat .nav-cat-arrow{
+    color: #a1a1aa;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+nav.topbar .nav-mega-cats .nav-cat:hover,
+nav.topbar .nav-mega-cats .nav-cat.is-active{
+    background: var(--primary-purple);
+    color: #ffffff;
+}
+nav.topbar .nav-mega-cats .nav-cat:hover .nav-cat-arrow,
+nav.topbar .nav-mega-cats .nav-cat.is-active .nav-cat-arrow{
+    color: #ffffff;
+    transform: translateX(2px);
+}
+nav.topbar .nav-mega-content{
+    position: relative;
+    min-height: 280px;
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 20px 22px;
+}
+nav.topbar .nav-cat-panel{
+    display: none;
+}
+nav.topbar .nav-cat-panel.is-active{ display: block; }
+nav.topbar .nav-cat-panel-head{
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary-purple);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececef;
+    text-decoration: none;
+}
+nav.topbar .nav-cat-panel-head::after{ display: none; }
+nav.topbar .nav-cat-panel-head:hover{ color: #4a00e0; text-decoration: underline; }
+nav.topbar .nav-cat-panel-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+}
+nav.topbar .nav-cat-panel-list a{
+    display: block;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #3f3f46;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.3;
+}
+nav.topbar .nav-cat-panel-list a::after{ display: none; }
+nav.topbar .nav-cat-panel-list a:hover{
+    background: #f4f4f7;
+    color: var(--primary-purple);
+}
+nav.topbar .hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: auto;
+}
+nav.topbar .hamburger span{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #171717;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+nav.topbar.nav-open .hamburger span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+nav.topbar.nav-open .hamburger span:nth-child(2){ opacity: 0; }
+nav.topbar.nav-open .hamburger span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+@media (max-width: 960px){nav.topbar { padding: 14px 0; }
+nav.topbar .topbar-inner { padding: 0 20px; width: 100%; position: relative; gap: 12px; }
+nav.topbar .logo img.brand-logo { height: 56px; max-width: 200px; }
+/* Show hamburger on mobile */
+    nav.topbar .hamburger { display: flex; }
+/* Mobile: turn nav-links into a full-width panel */
+    nav.topbar .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--white);
+        border-top: 1px solid var(--gray-100);
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        padding: 0;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+nav.topbar.nav-open .nav-links { display: flex; }
+nav.topbar .nav-link,
+    nav.topbar .nav-links > a {
+        padding: 16px 24px;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid var(--gray-100);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+nav.topbar .nav-link::after,
+    nav.topbar .nav-links > a::after { display: none; }
+nav.topbar .nav-has-submenu::before { display: none; }
+/* Mobile accordion groups */
+    nav.topbar .nav-group { width: 100%; position: static; border-bottom: 1px solid var(--gray-100); }
+nav.topbar .nav-group:last-child { border-bottom: none; }
+nav.topbar .nav-group > .nav-link {
+        border-bottom: none;
+    }
+nav.topbar .nav-group .nav-has-submenu::after {
+        content: '+';
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--primary-purple);
+        line-height: 1;
+        transition: transform 0.2s ease;
+    }
+nav.topbar .nav-group.is-open .nav-has-submenu::after {
+        content: '-';
+    }
+/* Mobile dropdown panels: static accordion layout */
+    nav.topbar .nav-submenu {
+        position: static;
+        transform: none !important;
+        display: none;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: none;
+        border: none;
+        border-top: 3px solid var(--primary-purple);
+        border-radius: 0;
+        background: #f4f4f7;
+        padding: 12px 16px 14px;
+        min-width: 0;
+        max-height: none;
+        width: 100%;
+    }
+nav.topbar .nav-submenu::before { display: none; }
+nav.topbar .nav-group.is-open > .nav-submenu { display: block; }
+/* Simple submenu (Framework/Playbooks) links: white tiles */
+    nav.topbar .nav-submenu:not(.nav-mega) > a {
+        padding: 12px 16px;
+        font-size: 13.5px;
+        white-space: normal;
+        border-radius: 10px;
+        background: #ffffff;
+        border: 1px solid #e5e5ea;
+        margin-bottom: 6px;
+        display: block;
+        justify-content: flex-start;
+    }
+nav.topbar .nav-submenu:not(.nav-mega) > a:hover,
+    nav.topbar .nav-submenu:not(.nav-mega) > a:active {
+        transform: none;
+        background: var(--primary-purple);
+        color: #ffffff;
+        border-color: var(--primary-purple);
+    }
+/* Mega on mobile: flat accordion - cats stack, each with its subpages */
+    nav.topbar .nav-mega {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 12px 16px 14px;
+        width: 100%;
+    }
+nav.topbar .nav-group.is-open > .nav-mega {
+        display: block;
+    }
+nav.topbar .nav-mega-cats {
+        background: transparent;
+        border: none;
+        padding: 0;
+        gap: 4px;
+    }
+nav.topbar .nav-mega-cats .nav-cat,
+    nav.topbar .nav-mega-cats .nav-cat.is-active,
+    nav.topbar .nav-mega-cats .nav-cat:hover {
+        background: #ffffff !important;
+        color: var(--gray-900) !important;
+        border: 1px solid #e5e5ea;
+        padding: 14px 16px;
+        font-size: 14px;
+        border-radius: 10px;
+        margin-bottom: 6px;
+    }
+nav.topbar .nav-mega-cats .nav-cat:active {
+        background: var(--primary-purple) !important;
+        color: #ffffff !important;
+    }
+nav.topbar .nav-mega-cats .nav-cat .nav-cat-arrow,
+    nav.topbar .nav-mega-cats .nav-cat.is-active .nav-cat-arrow,
+    nav.topbar .nav-mega-cats .nav-cat:hover .nav-cat-arrow {
+        color: #a1a1aa !important;
+        transform: none !important;
+    }
+/* Hide the big content panel on mobile - keep menu simple */
+    nav.topbar .nav-mega-content { display: none; }}
+@media (max-width: 640px){nav.topbar .nav-links { gap: 16px; }
+nav.topbar .nav-links a { font-size: 12px; letter-spacing: 0.05em; }
+nav.topbar .logo img.brand-logo { height: 60px; max-width: 200px; }}
 /* hero */
 .k-hero{padding-top:clamp(18px,3vw,36px)}
 .k-hero-in{container-type:inline-size}
@@ -297,7 +689,26 @@ a{color:inherit;text-underline-offset:3px}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="nav-in"><a class="brand" href="index.html" aria-label="Sam Ochoa, home"><span class="mark" aria-hidden="true"><img src="logo.png" alt="" width="99" height="99"></span><span class="wm">Sam Ochoa</span></a><ul class="nav-links" id="navLinks"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="ai-consulting.html">Work with me</a></li><li><a href="case-studies/index.html">Case Studies</a></li><li class="has-sub"><a href="framework/index.html">Resources</a><ul class="submenu"><li><a href="snapshots.html">GHL snapshots</a></li><li><a href="newsletter.html">Daily AI brief</a></li><li><a href="framework/index.html">Framework</a></li><li><a href="expertise/index.html">Expertise</a></li><li><a href="playbooks/index.html">Playbooks</a></li><li><a href="writing.html">Writing</a></li></ul></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li class="nav-cta-m"><a href="/book">Book a 15 minute call</a></li></ul><a class="btn btn-p nav-cta" href="/book">Book a call</a><button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button></div></header>
+<nav class="topbar"><div class="topbar-inner">
+<a href="index.html" class="logo"><img class="brand-logo" src="logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="expertise/index.html" class="nav-link">Expertise</a>
+<div class="nav-group">
+<a href="framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="snapshots.html">GHL snapshots</a>
+<a href="newsletter.html">Daily AI brief</a>
+<a href="index.html#papers">White papers</a>
+<a href="framework/index.html">Framework</a>
+<a href="playbooks/index.html">Playbooks</a>
+<a href="writing.html">Writing</a>
+</div></div>
+<a href="contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav>
 <main id="main">
 <section class="h-b" aria-labelledby="h1"><div class="wrap"><span class="pill">AI assistants for small businesses</span>
 <h1 id="h1">You didn't start a business to do <em>the paperwork.</em></h1>
@@ -436,6 +847,138 @@ a{color:inherit;text-underline-offset:3px}
   }
   window.addEventListener('scroll', function(){ if (!busy) { busy = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();
+})();
+</script>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
 })();
 </script>
 </body>

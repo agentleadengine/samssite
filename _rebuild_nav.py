@@ -5,7 +5,7 @@ Replaces whatever <nav class="topbar">...</nav> block currently exists and the
 nav-init <script> block that was previously injected.
 
 Nav layout (consulting-first, one consistent menu on every page):
-    Home   Work with me   Case Studies   Resources v   About   Contact
+    Home   About   Expertise   Resources v   Contact
 where Resources folds the whole knowledge base into one dropdown.
 """
 import re
@@ -20,8 +20,8 @@ ROOT = Path(__file__).resolve().parent
 RESOURCES = [
     ("GHL snapshots", "snapshots.html"),
     ("Daily AI brief", "newsletter.html"),
+    ("White papers", "index.html#papers"),
     ("Framework", "framework/index.html"),
-    ("Expertise", "expertise/index.html"),
     ("Playbooks", "playbooks/index.html"),
     ("Writing", "writing.html"),
 ]
@@ -40,8 +40,8 @@ def build_nav(R: str) -> str:
         '<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>',
         '<div class="nav-links">',
         f'<a href="{R}index.html" class="nav-link">Home</a>',
-        f'<a href="{R}ai-consulting.html" class="nav-link">Work with me</a>',
-        f'<a href="{R}case-studies/index.html" class="nav-link">Case Studies</a>',
+        f'<a href="{R}about.html" class="nav-link">About</a>',
+        f'<a href="{R}expertise/index.html" class="nav-link">Expertise</a>',
         # Resources dropdown - knowledge base folded into one menu
         '<div class="nav-group">',
         f'<a href="{R}framework/index.html" class="nav-link nav-has-submenu">Resources</a>',
@@ -52,7 +52,6 @@ def build_nav(R: str) -> str:
     lines.append('</div></div>')
 
     # Simple links
-    lines.append(f'<a href="{R}about.html" class="nav-link">About</a>')
     lines.append(f'<a href="{R}contact.html" class="nav-link">Contact</a>')
 
     lines.append('</div>')  # nav-links
@@ -208,10 +207,6 @@ scanned = 0
 for html in sorted(ROOT.rglob("*.html")):
     # Keep the YouTube funnel rollout inside its approved file boundary.
     rel = html.relative_to(ROOT)
-    if rel.parts[0] in {"framework", "expertise", "playbooks"} and rel.as_posix() not in {
-        "framework/index.html", "expertise/index.html", "playbooks/index.html"
-    }:
-        continue
     if rel.as_posix() in {"audit.html", "links.html", "thanks-ghl.html", "thanks-ai.html", "thanks-web.html", "gracias.html"}:
         continue
     scanned += 1

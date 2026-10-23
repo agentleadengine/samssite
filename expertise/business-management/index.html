@@ -44,17 +44,18 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../index.html" class="nav-link">Home</a>
-<a href="../../ai-consulting.html" class="nav-link">Work with me</a>
-<a href="../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../about.html" class="nav-link">About</a>
+<a href="../../expertise/index.html" class="nav-link">Expertise</a>
 <div class="nav-group">
 <a href="../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
+<a href="../../snapshots.html">GHL snapshots</a>
+<a href="../../newsletter.html">Daily AI brief</a>
+<a href="../../index.html#papers">White papers</a>
 <a href="../../framework/index.html">Framework</a>
-<a href="../../expertise/index.html">Expertise</a>
 <a href="../../playbooks/index.html">Playbooks</a>
 <a href="../../writing.html">Writing</a>
 </div></div>
-<a href="../../about.html" class="nav-link">About</a>
 <a href="../../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Business Management (38 pages)</h4><h4>Operating Systems</h4><ul><li><a href="index.html" class="active">Overview</a></li><li><a href="operating-systems/designing-the-os.html">Designing the OS</a></li><li><a href="operating-systems/weekly-business-review.html">Weekly business review</a></li><li><a href="operating-systems/meetings.html">Meetings that don't waste time</a></li><li><a href="operating-systems/sops.html">SOPs that get used</a></li><li><a href="operating-systems/decision-logs.html">Decision logs</a></li></ul><h4>People + Hiring</h4><ul><li><a href="people/hiring-signal-vs-noise.html">Hiring, signal vs noise</a></li><li><a href="people/role-scorecard.html">The role scorecard</a></li><li><a href="people/onboarding.html">Onboarding that compounds</a></li><li><a href="people/one-on-ones.html">One-on-ones</a></li><li><a href="people/performance-reviews.html">Performance reviews</a></li><li><a href="people/firing-well.html">Firing well</a></li></ul><h4>Finance + Economics</h4><ul><li><a href="finance/three-numbers.html">The three numbers</a></li><li><a href="finance/pnl-literacy.html">P&L literacy</a></li><li><a href="finance/unit-economics.html">Unit economics</a></li><li><a href="finance/pricing.html">Pricing frameworks</a></li><li><a href="finance/cash-flow.html">Cash flow forecasting</a></li></ul><h4>Strategy + Planning</h4><ul><li><a href="strategy/okrs.html">OKRs without the cult</a></li><li><a href="strategy/planning-cadence.html">Annual + quarterly planning</a></li><li><a href="strategy/what-to-kill.html">What to kill</a></li><li><a href="strategy/pre-mortems.html">Pre-mortems</a></li><li><a href="strategy/decision-frameworks.html">Decision frameworks</a></li></ul><h4>Sales + GTM</h4><ul><li><a href="sales/funnel-math.html">Funnel math that matters</a></li><li><a href="sales/pipeline-design.html">Pipeline design</a></li><li><a href="sales/negotiation.html">Pricing + negotiation</a></li><li><a href="sales/churn-diagnostics.html">Churn diagnostics</a></li><li><a href="sales/customer-success-ops.html">Customer success ops</a></li></ul><h4>Execution + Delivery</h4><ul><li><a href="execution/process-mapping.html">Process mapping</a></li><li><a href="execution/automate-vs-hire.html">Automate vs hire</a></li><li><a href="execution/vendor-management.html">Vendor management</a></li><li><a href="execution/slas-and-slos.html">SLAs + SLOs</a></li></ul><h4>Leadership + Culture</h4><ul><li><a href="leadership/memo-culture.html">Memo culture</a></li><li><a href="leadership/radical-candor.html">Radical candor</a></li><li><a href="leadership/accountability.html">Accountability without micromanagement</a></li><li><a href="leadership/compensation.html">Compensation design</a></li></ul><h4>Risk + Compliance</h4><ul><li><a href="risk/risk-management.html">Risk management basics</a></li><li><a href="risk/data-and-ip.html">Data + IP protection</a></li><li><a href="risk/insurance.html">Business insurance</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><span>Business Management</span></div><h1 class="title">Business Management. 40-Page Operator's Field Guide</h1>
@@ -208,6 +209,20 @@ document.addEventListener('sketch:ready', function() {
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -270,6 +285,8 @@ document.addEventListener('sketch:ready', function() {
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));

@@ -44,17 +44,18 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../../index.html" class="nav-link">Home</a>
-<a href="../../../ai-consulting.html" class="nav-link">Work with me</a>
-<a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../../about.html" class="nav-link">About</a>
+<a href="../../../expertise/index.html" class="nav-link">Expertise</a>
 <div class="nav-group">
 <a href="../../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
+<a href="../../../snapshots.html">GHL snapshots</a>
+<a href="../../../newsletter.html">Daily AI brief</a>
+<a href="../../../index.html#papers">White papers</a>
 <a href="../../../framework/index.html">Framework</a>
-<a href="../../../expertise/index.html">Expertise</a>
 <a href="../../../playbooks/index.html">Playbooks</a>
 <a href="../../../writing.html">Writing</a>
 </div></div>
-<a href="../../../about.html" class="nav-link">About</a>
 <a href="../../../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Paid Advertising (50 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/how-paid-works.html">How paid ads actually work</a></li><li><a href="../foundations/unit-economics.html">Unit economics</a></li><li><a href="../foundations/channel-fit.html">Channel-market fit</a></li><li><a href="../foundations/when-to-run-paid.html">When to run paid</a></li></ul><h4>Meta (Facebook + Instagram)</h4><ul><li><a href="../meta/overview.html">Meta Ads overview</a></li><li><a href="../meta/account-structure.html">Account structure</a></li><li><a href="../meta/campaign-types.html" class="active">Campaign types</a></li><li><a href="../meta/audiences.html">Audiences and targeting</a></li><li><a href="../meta/creative-testing.html">Creative testing</a></li><li><a href="../meta/ios14-reality.html">iOS 14+ reality</a></li><li><a href="../meta/scaling.html">Scaling campaigns</a></li><li><a href="../meta/retargeting.html">Retargeting</a></li></ul><h4>Google Ads</h4><ul><li><a href="../google/overview.html">Google Ads overview</a></li><li><a href="../google/search-vs-display.html">Search vs Display vs Pmax</a></li><li><a href="../google/keyword-research.html">Keyword research</a></li><li><a href="../google/match-types.html">Match types</a></li><li><a href="../google/quality-score.html">Quality Score</a></li><li><a href="../google/rsa-copy.html">Responsive Search Ad copy</a></li><li><a href="../google/bidding.html">Bidding strategies</a></li><li><a href="../google/pmax.html">Performance Max</a></li></ul><h4>TikTok Ads</h4><ul><li><a href="../tiktok/overview.html">TikTok Ads overview</a></li><li><a href="../tiktok/creative-first.html">Creative-first approach</a></li><li><a href="../tiktok/spark-ads.html">Spark Ads</a></li><li><a href="../tiktok/ugc-production.html">UGC production</a></li><li><a href="../tiktok/when-tiktok-works.html">When TikTok works</a></li></ul><h4>LinkedIn Ads</h4><ul><li><a href="../linkedin/overview.html">LinkedIn Ads overview</a></li><li><a href="../linkedin/b2b-targeting.html">B2B targeting</a></li><li><a href="../linkedin/ad-formats.html">Ad formats</a></li><li><a href="../linkedin/cost-reality.html">Cost reality</a></li><li><a href="../linkedin/lead-gen-forms.html">Lead gen forms</a></li></ul><h4>YouTube Ads</h4><ul><li><a href="../youtube/overview.html">YouTube Ads overview</a></li><li><a href="../youtube/formats.html">YouTube ad formats</a></li><li><a href="../youtube/creative-patterns.html">Creative patterns</a></li><li><a href="../youtube/targeting.html">Targeting options</a></li><li><a href="../youtube/vs-meta.html">YouTube vs Meta</a></li></ul><h4>Creative + Copy</h4><ul><li><a href="../creative/hook-patterns.html">Hook patterns</a></li><li><a href="../creative/ugc-vs-produced.html">UGC vs produced</a></li><li><a href="../creative/creative-volume.html">Creative volume</a></li><li><a href="../creative/ad-copy.html">Ad copy</a></li><li><a href="../creative/landing-pages.html">Landing pages</a></li><li><a href="../creative/creative-fatigue.html">Creative fatigue</a></li><li><a href="../creative/hiring-creators.html">Hiring creators</a></li></ul><h4>Attribution + Measurement</h4><ul><li><a href="../measurement/why-attribution-broke.html">Why attribution broke</a></li><li><a href="../measurement/platform-attribution.html">Platform attribution</a></li><li><a href="../measurement/mer-blended.html">MER and blended metrics</a></li><li><a href="../measurement/incrementality.html">Incrementality testing</a></li><li><a href="../measurement/mmm.html">Marketing mix modeling</a></li><li><a href="../measurement/ltv-cac.html">LTV:CAC</a></li><li><a href="../measurement/dashboards.html">Dashboards that matter</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Paid Advertising</a><span class="sep">›</span><span>Meta campaign types</span></div><h1 class="title">Meta campaign types</h1><div class="article-meta"><span>📖 4 min read</span><span>Updated 2026-04-19</span></div>
@@ -200,6 +201,20 @@
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -262,6 +277,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));

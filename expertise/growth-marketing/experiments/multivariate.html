@@ -44,17 +44,18 @@
 <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="nav-links">
 <a href="../../../index.html" class="nav-link">Home</a>
-<a href="../../../ai-consulting.html" class="nav-link">Work with me</a>
-<a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
+<a href="../../../about.html" class="nav-link">About</a>
+<a href="../../../expertise/index.html" class="nav-link">Expertise</a>
 <div class="nav-group">
 <a href="../../../framework/index.html" class="nav-link nav-has-submenu">Resources</a>
 <div class="nav-submenu">
+<a href="../../../snapshots.html">GHL snapshots</a>
+<a href="../../../newsletter.html">Daily AI brief</a>
+<a href="../../../index.html#papers">White papers</a>
 <a href="../../../framework/index.html">Framework</a>
-<a href="../../../expertise/index.html">Expertise</a>
 <a href="../../../playbooks/index.html">Playbooks</a>
 <a href="../../../writing.html">Writing</a>
 </div></div>
-<a href="../../../about.html" class="nav-link">About</a>
 <a href="../../../contact.html" class="nav-link">Contact</a>
 </div>
 </div></nav><div class="framework-layout"><aside class="framework-sidebar"><h4>Growth Marketing (45 pages)</h4><h4>Foundations</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../foundations/what-is-growth.html">What is growth marketing?</a></li><li><a href="../foundations/north-star-metric.html">The North Star Metric</a></li><li><a href="../foundations/growth-loops.html">Growth loops vs funnels</a></li><li><a href="../foundations/retention-first.html">Retention first</a></li></ul><h4>Acquisition</h4><ul><li><a href="../acq/channel-fit.html">Channel-market fit</a></li><li><a href="../acq/paid-vs-organic.html">Paid vs organic</a></li><li><a href="../acq/content-seo.html">Content + SEO</a></li><li><a href="../acq/viral-loops.html">Viral loops</a></li><li><a href="../acq/product-led.html">Product-led acquisition</a></li><li><a href="../acq/partnerships.html">Partnerships</a></li></ul><h4>Activation</h4><ul><li><a href="../activation/aha-moment.html">The aha moment</a></li><li><a href="../activation/onboarding-design.html">Onboarding design</a></li><li><a href="../activation/time-to-value.html">Time to value</a></li><li><a href="../activation/empty-states.html">Empty states</a></li><li><a href="../activation/early-wins.html">Early wins</a></li></ul><h4>Retention</h4><ul><li><a href="../retention/cohort-analysis.html">Cohort analysis</a></li><li><a href="../retention/churn-diagnostics.html">Churn diagnostics</a></li><li><a href="../retention/re-engagement.html">Re-engagement</a></li><li><a href="../retention/habit-formation.html">Habit formation</a></li><li><a href="../retention/feature-adoption.html">Feature adoption</a></li></ul><h4>Revenue</h4><ul><li><a href="../revenue/pricing.html">Pricing</a></li><li><a href="../revenue/upsell-expansion.html">Upsell + expansion</a></li><li><a href="../revenue/conversion-rate.html">Conversion rate</a></li><li><a href="../revenue/referrals.html">Referrals</a></li><li><a href="../revenue/ltv-expansion.html">LTV expansion</a></li></ul><h4>Analytics</h4><ul><li><a href="../analytics/event-tracking.html">Event tracking</a></li><li><a href="../analytics/funnels.html">Funnels</a></li><li><a href="../analytics/cohorts.html">Cohort dashboards</a></li><li><a href="../analytics/attribution.html">Attribution</a></li><li><a href="../analytics/north-star-dashboards.html">North Star dashboards</a></li></ul><h4>Experimentation</h4><ul><li><a href="../experiments/ab-testing.html">A/B testing</a></li><li><a href="../experiments/holdout-tests.html">Holdout tests</a></li><li><a href="../experiments/multivariate.html" class="active">Multivariate</a></li><li><a href="../experiments/statistical-significance.html">Statistical significance</a></li><li><a href="../experiments/velocity.html">Experiment velocity</a></li></ul><h4>Teams + Process</h4><ul><li><a href="../process/growth-team-structure.html">Growth team structure</a></li><li><a href="../process/growth-models.html">Growth models</a></li><li><a href="../process/ice-scoring.html">ICE scoring</a></li><li><a href="../process/sprint-rhythm.html">Sprint rhythm</a></li></ul><h4>Playbooks</h4><ul><li><a href="../plays/saas-growth.html">SaaS growth</a></li><li><a href="../plays/dtc-growth.html">DTC growth</a></li><li><a href="../plays/marketplace.html">Marketplaces</a></li><li><a href="../plays/b2b-plg.html">B2B PLG</a></li><li><a href="../plays/content-flywheel.html">Content flywheel</a></li></ul></aside><div class="framework-content"><div class="breadcrumbs"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../index.html">Expertise</a><span class="sep">›</span><a href="../index.html">Growth Marketing</a><span class="sep">›</span><span>Multivariate testing</span></div><h1 class="title">Multivariate testing</h1><div class="article-meta"><span>📖 3 min read</span><span>Updated 2026-04-19</span></div><p class="lede">Multivariate testing varies multiple elements (headline, image, CTA) at once. Reveals interaction effects but requires significant traffic.</p><h2>When to use</h2>
@@ -172,6 +173,20 @@
     };
     const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
 
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
     // Desktop: hover opens, mouseleave closes after delay
     group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
     group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
@@ -234,6 +249,8 @@
   // --- Escape key closes everything ---------------------------------------
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
       bar.classList.remove('nav-open');
       if (hamb) hamb.setAttribute('aria-expanded', 'false');
       groups.forEach(g => g.classList.remove('is-open'));
