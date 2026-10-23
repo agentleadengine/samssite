@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content OS: a bilingual video pipeline from outlier research to teleprompter | Sam Ochoa</title>
+<meta name="description" content="WP-04: the architecture of Content OS, a review-first production system that ranks video topics by channel-normalized outlier evidence, generates bilingual scripts against a hook formula library, and delivers them to a teleprompter for single-take capture.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Content OS: a bilingual video pipeline from outlier research to teleprompter">
+<meta property="og:description" content="WP-04: the architecture of Content OS, a review-first production system that ranks video topics by channel-normalized outlier evidence, generates bilingual scripts against a hook formula library, and delivers them to a teleprompter for single-take capture.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260706">
+<link rel="icon" type="image/png" href="/logo.png">
+<script defer src="/js/translate.js"></script>
+<link rel="canonical" href="https://samuelochoa.com/papers/content-os/">
+<meta property="og:url" content="https://samuelochoa.com/papers/content-os/">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Content OS: a bilingual video pipeline from outlier research to teleprompter">
+<meta name="twitter:description" content="WP-04: the architecture of Content OS, a review-first production system that ranks video topics by channel-normalized outlier evidence, generates bilingual scripts against a hook formula library, and delivers them to a teleprompter for single-take capture.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Content OS: a bilingual video pipeline from outlier research to teleprompter","description":"WP-04: the architecture of Content OS, a review-first production system that ranks video topics by channel-normalized outlier evidence, generates bilingual scripts against a hook formula library, and delivers them to a teleprompter for single-take capture.","datePublished":"2026-10-23","inLanguage":"en","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/papers/content-os/","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<style>
+.wp {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1d1c1a;
+  --muted: #5c5955;
+  --line: #e4dfd6;
+  --brand: #4a3f8f;
+  --accent: #b2531f;
+  --quote-bg: #f1ede4;
+  --code-bg: #efece6;
+  --font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wp * { box-sizing: border-box; }
+.wp {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.wp .wp-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wp h1,
+.wp h2,
+.wp h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.wp h1 { font-size: clamp(32px, 6vw, 46px); margin: 0 0 12px; }
+.wp h2 { font-size: clamp(24px, 4.2vw, 30px); margin: 56px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+.wp h3 { font-size: 20px; margin: 30px 0 8px; }
+.wp p { margin: 0 0 16px; overflow-wrap: anywhere; }
+.wp .kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.wp .lede { font-size: 19px; color: var(--muted); margin-bottom: 28px; }
+.wp .meta { font-size: 14px; color: var(--muted); border-left: 3px solid var(--brand); padding: 8px 14px; margin: 0 0 32px; background: var(--surface); }
+.wp nav.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; margin-bottom: 40px; }
+.wp nav.toc h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 18px; }
+.wp nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 15px; }
+.wp nav.toc li { break-inside: avoid; margin-bottom: 4px; }
+@media (max-width: 520px) { .wp nav.toc ol { columns: 1; } }
+.wp a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.wp ul,
+.wp ol { padding-left: 24px; margin: 0 0 16px; }
+.wp li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.wp blockquote.pull {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 28px 0;
+  padding: 18px 22px;
+  background: var(--quote-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.wp blockquote.pull cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 13px; color: var(--muted); margin-top: 10px; }
+.wp code,
+.wp .path { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.wp .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.wp table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+.wp th,
+.wp td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.wp th { font-weight: 600; background: var(--quote-bg); white-space: nowrap; }
+.wp tr:last-child td { border-bottom: 0; }
+.wp .note { font-size: 14px; color: var(--muted); }
+.wp .conf-high { color: #2f7a3a; font-weight: 600; }
+.wp .conf-medium { color: #9a6b12; font-weight: 600; }
+.wp .conf-low { color: #a33a2a; font-weight: 600; }
+.wp .sources { font-size: 14px; }
+.wp .sources li { margin-bottom: 4px; }
+.wp hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.wp h1, .wp h2, .wp h3 { text-transform: none; }
+
+.wp figure.fig { margin: 40px 0 44px; width: min(1040px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.wp .fig-card { background: #fff; border: 1px solid #e3e1ea; border-radius: 22px; padding: 22px 22px 20px; box-shadow: 0 34px 70px -52px rgba(70,0,160,.5); }
+.wp .fig-kicker { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6f00ff; margin: 0 0 14px; }
+.wp .fig-svg { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.wp .fig-svg svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.wp figure.fig figcaption { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 760px; padding: 0 4px; }
+.wp .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.wp .shot img, .wp .split img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #e3e1ea; }
+.wp .shot p { font-size: 13.5px; color: var(--muted); margin: 10px 2px 0; line-height: 1.45; }
+.wp .fig-n { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; color: #6f00ff; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-right: 4px; }
+.wp .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 34px; align-items: start; }
+.wp .callouts { list-style: none; padding: 0; margin: 0; }
+.wp .callouts li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid #e3e1ea; margin: 0; }
+.wp .callouts li:first-child { border-top: 2px solid #0a0a0c; }
+.wp .callouts .sn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #6f00ff; padding-top: 3px; }
+.wp .callouts h4 { font-family: "Archivo", system-ui, sans-serif; font-size: 18px; font-weight: 800; margin: 0 0 4px; }
+.wp .callouts p { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 760px) {
+  .wp .shots { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .wp .split { grid-template-columns: 1fr; }
+  .wp .split img { max-width: 360px; margin: 0 auto; }
+}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar"><div class="topbar-inner">
+<a href="/index.html" class="logo"><img class="brand-logo" src="/logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/ai-consulting.html" class="nav-link">Work with me</a>
+<a href="/case-studies/index.html" class="nav-link">Case Studies</a>
+<div class="nav-group">
+<a href="/framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="/snapshots.html">GHL snapshots</a>
+<a href="/newsletter.html">Daily AI brief</a>
+<a href="/framework/index.html">Framework</a>
+<a href="/expertise/index.html">Expertise</a>
+<a href="/playbooks/index.html">Playbooks</a>
+<a href="/writing.html">Writing</a>
+</div></div>
+<a href="/about.html" class="nav-link">About</a>
+<a href="/contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav>
+<main id="main-content" class="wp">
+<div class="wp-wrap">
+<p class="kicker">WP-04 · Production systems</p>
+<h1>Content OS: a bilingual video pipeline from outlier research to teleprompter</h1>
+<p class="lede"><strong>Abstract.</strong> Content OS is a review-first production system for four tutorial lanes (two
+software products, each in English and Spanish). It treats topic selection as a measurement problem: candidate ideas are
+scored from three independent public signals, channel-normalized outlier performance, query-completion demand and
+viewer questions mined from comment threads, under a hard API quota budget, and an idea is only called proven when two
+signals agree. Scripts are synthesized as an ordered interleave of camera and screen segments, generated against a pinned
+library of hook formulas, filtered by a deterministic honesty gate that rejects any number absent from the title or the
+demo steps, rewritten by a constrained humanizer pass, and annotated with language-specific readability scores. Capture
+is reduced to one human act: a single continuous take read from a teleprompter, which the system segments by detecting
+spoken slates. Publishing stays private until a human approves. We describe each stage, its invariants and its known
+failure modes.</p>
+<div class="meta">Written 2026-10-23 from the project's code, design notes and research runs. Internal names, accounts and
+hosts are left out. Stages described as specified are not yet running.</div>
+
+<h2 id="s1">1. Problem and constraints</h2>
+<p>A solo creator running several tutorial channels hits three bottlenecks at once: deciding what to make, writing scripts
+that hold attention without overclaiming, and the cost of recording. The north star, set on 2026-09-09, is a
+self-iterating loop in which "the one human step is Sam on camera"; his only other touches are permissions, payments and
+a yes or no on a finished video.</p>
+<p>Four invariants constrain every design choice below:</p>
+<ol>
+<li><strong>Measured data only.</strong> Every number shown is a stored observation with the date it was read. Blanks stay blank until measured.</li>
+<li><strong>Review-first.</strong> Nothing publishes without an explicit approval, unless an auto-publish window is turned on on purpose.</li>
+<li><strong>Honest scripts.</strong> A camera line may only state numbers, names and claims that appear in the video's title or its demo steps.</li>
+<li><strong>Bilingual parity.</strong> English and Spanish lanes run through the same machinery, with Spanish written in neutral Latin American Spanish, not as a translation pass.</li>
+</ol>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 1 · The production loop</p><div class="fig-svg"><svg viewBox="0 0 1040 420" role="img" aria-labelledby="co1t co1d" xmlns="http://www.w3.org/2000/svg"><title id="co1t">The ten-stage production loop</title><desc id="co1d">Research, plan, write, demo, voice, film, assemble, publish, measure, learn. Filming is the one human step and publishing waits for human approval. Measure and learn are specified but not built.</desc><defs><marker id="co1ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="co1aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="co1av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="co1avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><text x="106" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">01</text><rect x="20" y="60" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="106.0" y="100.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Research</text><text x="106.0" y="119.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">outliers, queries</text><path d="M192 103 H222" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="310" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">02</text><rect x="224" y="60" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="310.0" y="100.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Plan</text><text x="310.0" y="119.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">lane queues</text><path d="M396 103 H426" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="514" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">03</text><rect x="428" y="60" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="514.0" y="100.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Write</text><text x="514.0" y="119.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">segments, hooks</text><path d="M600 103 H630" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="718" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">04</text><rect x="632" y="60" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="718.0" y="100.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Demo</text><text x="718.0" y="119.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">screen recipes</text><path d="M804 103 H834" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="922" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">05</text><rect x="836" y="60" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="922.0" y="100.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Voice</text><text x="922.0" y="119.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">narration</text><text x="106" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">06</text><rect x="20" y="210" width="172" height="86" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="106.0" y="250.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Film</text><text x="106.0" y="269.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">one take</text><path d="M192 253 H222" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="310" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">07</text><rect x="224" y="210" width="172" height="86" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="310.0" y="250.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Assemble</text><text x="310.0" y="269.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">captions, thumbs</text><path d="M396 253 H426" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="514" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">08</text><rect x="428" y="210" width="172" height="86" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="514.0" y="250.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Publish</text><text x="514.0" y="269.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">private first</text><path d="M600 253 H630" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="718" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">09</text><rect x="632" y="210" width="172" height="86" rx="14" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="6 5"/><text x="718.0" y="250.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Measure</text><text x="718.0" y="269.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">retention</text><path d="M804 253 H834" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><text x="922" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">10</text><rect x="836" y="210" width="172" height="86" rx="14" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="6 5"/><text x="922.0" y="250.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Learn</text><text x="922.0" y="269.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">dated rules</text><path d="M922 146 V178 H60 V208" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co1ak)"/><path d="M922 296 V340 H8 V103 H18" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#co1av)"/><text x="522" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6f00ff" text-anchor="middle">measured results feed back into research and writing (specified, not yet built)</text><rect x="150" y="392" width="18" height="14" rx="4" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="176" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="start">built</text><rect x="350" y="392" width="18" height="14" rx="4" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="376" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="start">the one human step</text><rect x="550" y="392" width="18" height="14" rx="4" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="576" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="start">human approval gate</text><rect x="750" y="392" width="18" height="14" rx="4" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="776" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="start">specified only</text></svg></div></div><figcaption>Ten stages from research to learning. Stage 6 is the only human stage; stage 8 is a human gate. Stages 9 and 10 are specified, not built, because they need published videos with enough views to carry signal.</figcaption></figure>
+
+<h2 id="s2">2. Demand sensing</h2>
+<h3>2.1 Channel-normalized outliers</h3>
+<p>Raw view counts confound topic demand with channel size. The idea engine therefore scores a video by its
+<em>outlier multiple</em>: its views divided by the median views of the same channel's last 25 long-form uploads,
+where long-form means over 60 seconds. Medians are cached per channel for seven days. Channels over 500,000 subscribers
+and channels owned by the software vendors are excluded, so the measure rewards topics that outperform on ordinary
+channels rather than brand reach.</p>
+<p>The multiple is mapped to points with deliberately coarse bins: under 2x is noise (0), 2x to 5x is 1, 5x to 20x is 2,
+and over 20x scores 3 only when the channel has under 10,000 subscribers, the case where topic is most likely to explain
+the result. Anything over 500x is flagged as suspect, for example a possibly promoted video, and capped at 1.</p>
+
+<h3>2.2 Query-completion demand</h3>
+<p>Each lane carries a short list of seed terms. A keyless autocomplete request (the YouTube completion source) is issued
+for every seed in two locales, en-US and es-MX, and the suggestions are stored per day. Diffing today's suggestions against
+the last stored set exposes new phrasings as they appear. A phrase matching an idea's keywords adds up to 2 points.</p>
+
+<h3>2.3 Viewer questions</h3>
+<p>For the top videos per lane, up to 100 comments are read in relevance order and reduced to question sentences only,
+recognized by interrogative openings in both languages ("how", "can", "cómo", "se puede" and so on). Questions that match
+an idea add up to 2 points. Comment reads are cached for seven days.</p>
+
+<h3>2.4 Velocity and retention of evidence</h3>
+<p>One dated snapshot is written per night. Velocity is computed only from two snapshots at least half a day apart, never
+inferred from a single read. Snapshots are kept for 90 days.</p>
+
+<h3>2.5 Quota as a first-class constraint</h3>
+<p>The YouTube Data API exposes two budgets: since 2026-06-01, search calls draw from a separate bucket of 100 calls a day,
+while video, channel, playlist and comment reads cost one unit each against a daily cap of 10,000 units. Every sweep
+prints its planned cost before it starts and refuses to run when the plan exceeds 6,000 units. Reservations go to the same
+daily ledger used by the competition connector, so the two tools share one count and cannot jointly exceed the cap.</p>
+
+<h3>2.6 The call</h3>
+<p>Two smaller signals complete the score: sign-up intent in the title (strong words such as "free trial", "pricing" or
+"vs" score 2, softer words such as "tutorial" or "paso a paso" score 1) and freshness (a year or version in the winning
+titles scores 1). The call itself ignores these and looks only at the three measured sources: <strong>proven</strong> when
+two or three agree, <strong>open</strong> with one, <strong>unproven</strong> with none, and <strong>crowded</strong> when
+three or more winners from the past year come from channels with 100,000 or more subscribers.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 2 · Idea scoring</p><div class="fig-svg"><svg viewBox="0 0 1040 480" role="img" aria-labelledby="co2t co2d" xmlns="http://www.w3.org/2000/svg"><title id="co2t">Idea scoring and the call</title><desc id="co2d">Three measured evidence sources (outlier videos normalized by channel median, search suggestions, viewer questions) and title words feed an evidence join. The call is proven when two of three sources agree, open with one, unproven with none, and crowded when three or more recent winners come from channels over 100,000 subscribers.</desc><defs><marker id="co2ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="co2aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="co2av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="co2avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="20" y="40" width="210" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="125.0" y="72.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Outlier videos</text><text x="125.0" y="91.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">views ÷ channel median</text><text x="125.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">of last 25 long-form</text><text x="125.0" y="121.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">0 to 3, over 500x capped</text><path d="M230 90 C280 90 300 210 358 210" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><rect x="20" y="160" width="210" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="125.0" y="192.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Search suggestions</text><text x="125.0" y="211.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">keyless autocomplete</text><text x="125.0" y="226.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">en-US and es-MX</text><text x="125.0" y="241.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">0 to 2 points</text><path d="M230 210 C280 210 300 210 358 210" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><rect x="20" y="280" width="210" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="125.0" y="312.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Viewer questions</text><text x="125.0" y="331.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">question sentences in</text><text x="125.0" y="346.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">top 100 comments</text><text x="125.0" y="361.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">0 to 2 points</text><path d="M230 330 C280 330 300 210 358 210" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><rect x="20" y="400" width="210" height="60" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="125.0" y="427.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Title words</text><text x="125.0" y="446.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">sign-up intent 0 to 2, year 0 to 1</text><path d="M230 430 C290 430 300 240 358 236" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#co2av)"/><rect x="360" y="150" width="220" height="120" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="470.0" y="192.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Evidence join</text><text x="470.0" y="211.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">count sources &gt; 0</text><text x="470.0" y="226.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">sum points</text><text x="470.0" y="241.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">attach measured rows</text><path d="M580 210 H640" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><rect x="660" y="60" width="250" height="72" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="785.0" y="93.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Proven</text><text x="785.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">2 or 3 sources agree</text><rect x="660" y="152" width="250" height="72" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="785.0" y="185.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Open</text><text x="785.0" y="204.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">1 source</text><rect x="660" y="244" width="250" height="72" rx="14" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="6 5"/><text x="785.0" y="277.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Unproven</text><text x="785.0" y="296.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">no measured evidence</text><rect x="660" y="336" width="250" height="72" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="785.0" y="369.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Crowded</text><text x="785.0" y="388.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">3+ recent winners, 100k+ subs</text><path d="M640 96 V372" stroke="#0a0a0c" stroke-width="1.6" fill="none"/><path d="M640 96 H658" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><path d="M640 188 H658" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><path d="M640 280 H658" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/><path d="M640 372 H658" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co2ak)"/></svg></div></div><figcaption>Three measured sources and the title words feed one evidence join. The call depends only on how many measured sources agree; the title words adjust rank, not the call.</figcaption></figure>
+
+<p>The first research run on 2026-10-23 used these rules to rank ideas across the four lanes. Spanish evidence was
+noticeably thinner (23 relevant videos against 88 in English), so Spanish calls carry less certainty by construction; the
+engine reports that instead of filling the gap.</p>
+
+<h3>2.7 Design rationale</h3>
+<p>Three choices are deliberate. First, the bins are coarse because the inputs are noisy: a single viral video on a small
+channel should move an idea, not dominate it, so no single signal can contribute more than 3 of a maximum 10 points.
+Second, agreement is counted across sources rather than summed within one, because two independent observations of the
+same demand (a channel outperforming its own median and viewers asking the same question) are far stronger evidence than
+one very large number. Third, the engine is pure at scoring time: score computation reads only the evidence already
+attached to an idea and makes no network call, so a ranking can be recomputed and audited from stored files alone.</p>
+<p>The static weight table the engine replaced assigned affiliate value by hand. It is now derived from the words of the
+title itself, which keeps the number explainable: the evidence panel lists the exact words that earned the points.</p>
+
+<h2 id="s3">3. Script synthesis</h2>
+<h3>3.1 Segments, not fields</h3>
+<p>An earlier format held three on-camera fields (intro, middle, closing). It was replaced by an ordered list of segments
+that interleaves camera and screen work: camera segments carry a role (hook, promise, lead-in, watch-out, re-hook, recap,
+call to action) and screen segments point at a numbered demo step with its narration line. The structure follows the
+pattern observed on tutorial channels in the 8 to 12 minute range: a hook and a promise on camera, then per chapter a
+short lead-in, the demo and a watch-out beat, one mid-video re-hook, a recap and a single call to action. For a ten
+minute video that is 12 to 18 camera cuts of one or two sentences. The legacy fields are derived from the segments so
+older consumers keep working.</p>
+
+<h3>3.2 Hook formula library</h3>
+<p>Hooks are generated against a pinned third-party library of 21 named formulas, each with its shape and failure modes.
+Only 10 are allowed into rotation; formulas that would require a named outside result, a real experiment, insider access, a
+dated deadline or a statistic with a source are excluded, because a tutorial cannot honestly supply them. Two formulas
+(comparison and stack) are admitted only when the title names two things. The last 12 picks are remembered so a channel does
+not repeat itself.</p>
+
+<h3>3.3 Generation and validation</h3>
+<p>One model call produces the segments and three hooks in the chosen formula. The output must validate or the call is
+repeated with the validation error attached, at most three attempts. Validation includes the <strong>honesty gate</strong>:
+any digit, amount, percentage or large number word in a camera line that does not appear in the title or the demo steps
+fails the script. It also includes deterministic AI-tic patterns in both languages, for example the "not X but Y" reveal
+and its Spanish forms "no solo... sino" and "no X, sino Y".</p>
+
+<h3>3.4 Humanizer pass</h3>
+<p>A second model call applies a condensed set of humanizer rules from a pinned open source rule set. Only camera wording
+may change; the edited script must validate again, otherwise the original is kept and the reason is recorded.</p>
+
+<h3>3.5 Ranking and readability</h3>
+<p>English hooks are ranked by a hook scorer from the same pinned library; Spanish hooks keep the model's order, because
+the scorer is English only. The first option becomes the line read on camera. Every camera line is then annotated with a
+readability score computed in a separate process: Flesch-Kincaid grade for English, warning above grade 7, and Fernández
+Huerta reading ease for Spanish, warning below 70. Readability warns; it never blocks, because short technical lines can
+score badly while reading fine aloud.</p>
+
+<h3>3.6 Why a gate and not a prompt</h3>
+<p>Asking a model not to invent numbers reduces invention; it does not remove it. The honesty gate is therefore code, not
+instruction: it extracts digits, currency, percentages and large number words from each camera line and checks each one
+against the title and the demo steps, which are the only facts the video can show on screen. When a hook formula would
+naturally want a number the demo cannot supply, the prompt tells the model to keep the formula's shape and drop the number,
+and the gate enforces it. The same reasoning applies to AI tics: the worst patterns are matched by regular expressions in
+both languages so they fail deterministically instead of depending on the second pass to notice them.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 3 · Script synthesis and capture</p><div class="fig-svg"><svg viewBox="0 0 1040 362" role="img" aria-labelledby="co3t co3d" xmlns="http://www.w3.org/2000/svg"><title id="co3t">Script synthesis and single-take capture</title><desc id="co3d">A hook formula is picked from ten safe formulas, segments and three hooks are generated and validated against an honesty gate and AI-tic patterns, a humanizer pass edits camera lines only, hooks are ranked, and readability is annotated. The script goes to the To be filmed list, the prompter, one take, slate detection and a split.</desc><defs><marker id="co3ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="co3aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="co3av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="co3avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="10" y="50" width="148" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="84.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Formula pick</text><text x="84.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">10 safe of 21</text><text x="84.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">rotation keep 12</text><path d="M158 98 H180" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="182" y="50" width="148" height="96" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="256.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Generate</text><text x="256.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">segments + 3 hooks</text><text x="256.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">≤ 3 attempts</text><path d="M330 98 H352" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="354" y="50" width="148" height="96" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="428.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Validate</text><text x="428.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">honesty gate</text><text x="428.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">AI-tic patterns</text><path d="M502 98 H524" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="526" y="50" width="148" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="600.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Humanize</text><text x="600.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">second pass,</text><text x="600.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">camera lines only</text><path d="M674 98 H696" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="698" y="50" width="148" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="772.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Rank hooks</text><text x="772.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">EN: hookscore</text><text x="772.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">ES: model order</text><path d="M846 98 H868" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="870" y="50" width="148" height="96" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="944.0" y="87.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Readability</text><text x="944.0" y="106.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">FK grade ≤ 7 EN</text><text x="944.0" y="121.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">ease ≥ 70 ES</text><path d="M430 146 V176 H256 V148" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#co3av)"/><text x="343" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6f00ff" text-anchor="middle">fails → retry with the error</text><rect x="20" y="226" width="1000" height="1" fill="#e3e1ea"/><text x="20" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="1.2">CAPTURE</text><rect x="10" y="266" width="180" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="100.0" y="295.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">To be filmed</text><text x="100.0" y="314.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">ordered, approved</text><text x="100.0" y="329.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">per card</text><path d="M190 306 H214" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="216" y="266" width="180" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="306.0" y="295.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Prompter</text><text x="306.0" y="314.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">slate per video,</text><text x="306.0" y="329.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">chapter per cut</text><path d="M396 306 H420" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="422" y="266" width="180" height="80" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="512.0" y="303.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">One take</text><text x="512.0" y="322.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">Sam on camera</text><path d="M602 306 H626" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="628" y="266" width="180" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="718.0" y="295.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Slate finder</text><text x="718.0" y="314.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">speech-to-text</text><text x="718.0" y="329.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">spots slates</text><path d="M808 306 H832" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/><rect x="834" y="266" width="180" height="80" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="924.0" y="295.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Split</text><text x="924.0" y="314.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">parts per video,</text><text x="924.0" y="329.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">checked by Sam</text><path d="M944 146 V214 H100 V264" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#co3ak)"/></svg></div></div><figcaption>Top: one formula, one generation with retries, deterministic validation, a constrained humanizer pass, ranking and readability. Bottom: the approved script becomes one continuous take that the system splits by its spoken slates.</figcaption></figure>
+
+<h2 id="s4">4. Capture</h2>
+<p>Recording cost is reduced by batching. A <em>To be filmed</em> list holds the ordered, individually approved videos.
+Pressing Film sends one prompter document for the whole list: each video opens with a slate chapter, "Video N of M" plus
+its title, followed by its camera segments, one prompter chapter per cut. Sam reads the entire list in a single take.
+The take is uploaded to the production server, where speech-to-text finds the spoken slates, lines up each part and
+proposes cuts per video. Sam checks the cuts on the board before they are saved. No model is called in this stage, and
+nothing in it uploads or posts.</p>
+
+<h2 id="s5">5. Assembly and distribution</h2>
+<p>Assembly combines the on-camera parts, the narrated screen demo, captions, a description with the affiliate
+disclosure, chapters and three thumbnail options per video. Thumbnail work is grounded in a hand-coded sample of 87
+thumbnails: in these niches the winning and median videos from the same channels looked alike, so topic and title carry
+most of the effect, and 83 to 90 percent of the niche shows the product's logo.</p>
+<p>Uploads are private first. The upload path sends tags, paid product placement details and captions, and only runs on
+an explicit click. Shorts are cut from each long video at 30 to 60 seconds, vertical with face and captions; TikTok
+receives the same cuts as inbox drafts, one account per lane, never cross-posted, with the AI label applied in the app.</p>
+
+<h2 id="s6">6. Verification</h2>
+<p>A shared release gate runs frontend, Python and browser suites before any deploy. On 2026-09-08 it recorded 568
+frontend, 1,004 Python and 125 browser tests passing; two days later a full run passed 143 browser tests. One incident
+shaped the gate: a whole class of media tests failed together while each passed alone. The cause was the machine, not the
+app, so the rule became to reproduce with two local video files in a bare browser before touching application code.</p>
+
+<h2 id="s7">7. Limitations and open problems</h2>
+<ul>
+<li><strong>No closed loop yet.</strong> Measure and learn are specified but not built; they need published videos with roughly 100 views each to carry signal.</li>
+<li><strong>Thin Spanish evidence.</strong> Fewer relevant videos means fewer agreeing sources and more "open" calls.</li>
+<li><strong>English-only hook scoring.</strong> Spanish hooks are ordered by the model, not scored.</li>
+<li><strong>Unverified inputs.</strong> Search trend ratios from the first research run could not be confirmed and are not used in scoring.</li>
+</ul>
+
+<h2 id="s8">8. Claim table</h2>
+<div class="tablewrap"><table><thead><tr><th>Claim</th><th>Source</th><th>Confidence</th></tr></thead><tbody><tr><td>Outlier multiple = views ÷ median views of the channel&#x27;s last 25 long-form uploads (over 60 s)</td><td>Idea engine source</td><td class="conf-high">high</td></tr><tr><td>Channels over 500,000 subscribers and vendor-owned channels are excluded from medians</td><td>Idea engine source</td><td class="conf-high">high</td></tr><tr><td>Over 500x is flagged suspect and capped at 1 point</td><td>Idea engine source</td><td class="conf-high">high</td></tr><tr><td>search.list: separate 100-call bucket since 2026-06-01; daily cap 10,000 units; sweep refuses plans over 6,000</td><td>Idea engine source; research notes</td><td class="conf-high">high</td></tr><tr><td>Autocomplete seeds per lane, en-US and es-MX, diffed day over day; snapshots kept 90 days</td><td>Idea engine source</td><td class="conf-high">high</td></tr><tr><td>Spanish evidence is thinner: 23 relevant videos versus 88 in English in the first run</td><td>Content research notes, 2026-10-23</td><td class="conf-medium">medium</td></tr><tr><td>21 hook formulas pinned; 10 in rotation; last 12 picks remembered</td><td>Script tools source</td><td class="conf-high">high</td></tr><tr><td>Three hooks per script; English ranked by hookscore, Spanish by model order</td><td>Script segments source</td><td class="conf-high">high</td></tr><tr><td>Readability warns above grade 7 (EN) or below ease 70 (ES); never blocks</td><td>Script tools source</td><td class="conf-high">high</td></tr><tr><td>10 minute video: 12 to 18 camera cuts</td><td>Script segments design notes</td><td class="conf-medium">medium</td></tr><tr><td>Release gate on 2026-09-08: 568 frontend, 1,004 Python and 125 browser tests passing</td><td>Project notes</td><td class="conf-medium">medium</td></tr><tr><td>87 thumbnails hand-coded; 83 to 90 percent of the niche shows the tool&#x27;s logo</td><td>Thumbnail research, 2026-10-23</td><td class="conf-medium">medium</td></tr><tr><td>Measure and learn stages are specified, not built</td><td>Project north star</td><td class="conf-high">high</td></tr></tbody></table></div>
+
+<h2 id="s9">9. Sources</h2>
+<ul>
+<li>Content OS source code: the idea engine, script segments, script tools and Film Board modules, read 2026-10-23.</li>
+<li>The project's north star and stage map, 2026-09-09.</li>
+<li>Content research run, 2026-10-23: outlier sweep, autocomplete and comment mining across four lanes.</li>
+<li>Script tools scout, 2026-10-23, and the pinned open source hook formula library and humanizer rule set it selected.</li>
+<li>Thumbnail research, 2026-10-23: 87 hand-coded thumbnails across four niches.</li>
+<li>YouTube Data API quota documentation, as recorded in the research run.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="/framework/index.html">Framework</a> · <a href="/expertise/index.html">Expertise</a> · <a href="/compare/index.html">Comparisons</a> · <a href="/playbooks/index.html">Playbooks</a> · <a href="/es/index.html">Español</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script>
+</body>
+</html>

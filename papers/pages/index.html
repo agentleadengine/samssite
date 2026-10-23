@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pages without lies: grounding generated web pages in the owner&#x27;s own words | Sam Ochoa</title>
+<meta name="description" content="WP-03: a constrained generation pipeline for small-business web pages, with a completeness gate, a rule layer, a post-render audit against the owner's own words and a multimodal critic inside a bounded repair loop.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pages without lies: grounding generated web pages in the owner&#x27;s own words">
+<meta property="og:description" content="WP-03: a constrained generation pipeline for small-business web pages, with a completeness gate, a rule layer, a post-render audit against the owner's own words and a multimodal critic inside a bounded repair loop.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260706">
+<link rel="icon" type="image/png" href="/logo.png">
+<script defer src="/js/translate.js"></script>
+<link rel="canonical" href="https://samuelochoa.com/papers/pages/">
+<meta property="og:url" content="https://samuelochoa.com/papers/pages/">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pages without lies: grounding generated web pages in the owner&#x27;s own words">
+<meta name="twitter:description" content="WP-03: a constrained generation pipeline for small-business web pages, with a completeness gate, a rule layer, a post-render audit against the owner's own words and a multimodal critic inside a bounded repair loop.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pages without lies: grounding generated web pages in the owner's own words","description":"WP-03: a constrained generation pipeline for small-business web pages, with a completeness gate, a rule layer, a post-render audit against the owner's own words and a multimodal critic inside a bounded repair loop.","datePublished":"2026-10-23","inLanguage":"en","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/papers/pages/","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<style>
+.wp {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1d1c1a;
+  --muted: #5c5955;
+  --line: #e4dfd6;
+  --brand: #4a3f8f;
+  --accent: #b2531f;
+  --quote-bg: #f1ede4;
+  --code-bg: #efece6;
+  --font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wp * { box-sizing: border-box; }
+.wp {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.wp .wp-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wp h1,
+.wp h2,
+.wp h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.wp h1 { font-size: clamp(32px, 6vw, 46px); margin: 0 0 12px; }
+.wp h2 { font-size: clamp(24px, 4.2vw, 30px); margin: 56px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+.wp h3 { font-size: 20px; margin: 30px 0 8px; }
+.wp p { margin: 0 0 16px; overflow-wrap: anywhere; }
+.wp .kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.wp .lede { font-size: 19px; color: var(--muted); margin-bottom: 28px; }
+.wp .meta { font-size: 14px; color: var(--muted); border-left: 3px solid var(--brand); padding: 8px 14px; margin: 0 0 32px; background: var(--surface); }
+.wp nav.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; margin-bottom: 40px; }
+.wp nav.toc h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 18px; }
+.wp nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 15px; }
+.wp nav.toc li { break-inside: avoid; margin-bottom: 4px; }
+@media (max-width: 520px) { .wp nav.toc ol { columns: 1; } }
+.wp a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.wp ul,
+.wp ol { padding-left: 24px; margin: 0 0 16px; }
+.wp li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.wp blockquote.pull {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 28px 0;
+  padding: 18px 22px;
+  background: var(--quote-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.wp blockquote.pull cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 13px; color: var(--muted); margin-top: 10px; }
+.wp code,
+.wp .path { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.wp .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.wp table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+.wp th,
+.wp td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.wp th { font-weight: 600; background: var(--quote-bg); white-space: nowrap; }
+.wp tr:last-child td { border-bottom: 0; }
+.wp .note { font-size: 14px; color: var(--muted); }
+.wp .conf-high { color: #2f7a3a; font-weight: 600; }
+.wp .conf-medium { color: #9a6b12; font-weight: 600; }
+.wp .conf-low { color: #a33a2a; font-weight: 600; }
+.wp .sources { font-size: 14px; }
+.wp .sources li { margin-bottom: 4px; }
+.wp hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.wp h1, .wp h2, .wp h3 { text-transform: none; }
+
+.wp figure.fig { margin: 40px 0 44px; width: min(1040px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.wp .fig-card { background: #fff; border: 1px solid #e3e1ea; border-radius: 22px; padding: 22px 22px 20px; box-shadow: 0 34px 70px -52px rgba(70,0,160,.5); }
+.wp .fig-kicker { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6f00ff; margin: 0 0 14px; }
+.wp .fig-svg { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.wp .fig-svg svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.wp figure.fig figcaption { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 760px; padding: 0 4px; }
+.wp .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.wp .shot img, .wp .split img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #e3e1ea; }
+.wp .shot p { font-size: 13.5px; color: var(--muted); margin: 10px 2px 0; line-height: 1.45; }
+.wp .fig-n { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; color: #6f00ff; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-right: 4px; }
+.wp .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 34px; align-items: start; }
+.wp .callouts { list-style: none; padding: 0; margin: 0; }
+.wp .callouts li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid #e3e1ea; margin: 0; }
+.wp .callouts li:first-child { border-top: 2px solid #0a0a0c; }
+.wp .callouts .sn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #6f00ff; padding-top: 3px; }
+.wp .callouts h4 { font-family: "Archivo", system-ui, sans-serif; font-size: 18px; font-weight: 800; margin: 0 0 4px; }
+.wp .callouts p { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 760px) {
+  .wp .shots { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .wp .split { grid-template-columns: 1fr; }
+  .wp .split img { max-width: 360px; margin: 0 auto; }
+}
+
+.wp .split2 { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 26px; align-items: start; }
+@media (max-width: 760px) { .wp .split2 { grid-template-columns: 1fr; } .wp .split2 .shot { max-width: 420px; margin: 0 auto; } }
+.wp .eq { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; background: #fff; border: 1px solid #e3e1ea; border-radius: 12px; padding: 14px 16px; margin: 0 0 18px; overflow-x: auto; white-space: pre; line-height: 1.55; }
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar"><div class="topbar-inner">
+<a href="/index.html" class="logo"><img class="brand-logo" src="/logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/ai-consulting.html" class="nav-link">Work with me</a>
+<a href="/case-studies/index.html" class="nav-link">Case Studies</a>
+<div class="nav-group">
+<a href="/framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="/snapshots.html">GHL snapshots</a>
+<a href="/newsletter.html">Daily AI brief</a>
+<a href="/framework/index.html">Framework</a>
+<a href="/expertise/index.html">Expertise</a>
+<a href="/playbooks/index.html">Playbooks</a>
+<a href="/writing.html">Writing</a>
+</div></div>
+<a href="/about.html" class="nav-link">About</a>
+<a href="/contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav>
+<main id="main-content" class="wp">
+<div class="wp-wrap">
+<p class="kicker">WP-03 · Grounded generation</p>
+<h1>Pages without lies: grounding generated web pages in the owner&#x27;s own words</h1>
+<p class="lede"><strong>Abstract.</strong> Generative page builders fail small businesses in a specific way: the output is
+fluent, plausible and wrong. It invents review counts, years in business, partner logos and "trusted by" figures, and it converges
+on the same anonymous layout for every trade. We describe a constrained generation pipeline that treats the owner's own words as the
+only admissible source of facts. A pre-generation completeness gate converts missing inputs into questions. A declarative rule layer
+forbids unsourced entities, numerals and known layout clichés. A post-render audit diffs every figure and proper noun on the rendered
+page against a verbatim record of what the owner said, and walks the DOM for structural violations. A multimodal critic scores
+full-page desktop and phone captures on ten lines, with the overall score defined as the minimum, inside a repair loop bounded at three
+rounds. We report the design, the measured cost per critique round, the test evidence and the failure modes that remain.</p>
+<div class="meta">Written 2026-10-23 from the build routine, the finishing-check and critic source, release notes and test runs on a
+non-client server. Worked examples use test businesses with made-up details. Model vendors, prompts and infrastructure are described
+by role, not by name.</div>
+
+<nav class="toc"><h2>Contents</h2><ol>
+<li><a href="#s1">The failure mode</a></li><li><a href="#s2">Threat model for a generated page</a></li>
+<li><a href="#s3">Layer 0: the completeness gate</a></li><li><a href="#s4">Layer 1: the rule layer</a></li>
+<li><a href="#s5">Layer 2: the post-render audit</a></li><li><a href="#s6">Layer 3: the multimodal critic</a></li>
+<li><a href="#s7">The bounded repair loop</a></li><li><a href="#s8">Owner-editable regions</a></li>
+<li><a href="#s9">Evidence</a></li><li><a href="#s10">Limitations and open problems</a></li>
+<li><a href="#s11">Claim table</a></li><li><a href="#s12">Sources</a></li></ol></nav>
+
+<h2 id="s1">1. The failure mode</h2>
+<p>A language model asked for "a website for a pizzeria in Mineola" has no access to the facts that make a local business page
+useful: the real hours, the real phone number, the dish people actually drive for, the year the owner opened, if the owner wants to
+say it at all. It does have a strong prior over what such pages usually contain. Left alone, it fills every gap from that prior. The
+result is a page that reads well and asserts things nobody said: "4.9 stars from 187 reviews", "serving the community since 1998",
+three icon cards, a stats row, a testimonial from a customer who does not exist.</p>
+<p>Two properties make this worse for small businesses than for software companies. First, the owner is the only source of truth and
+is usually reached by text, so every invented fact either goes unnoticed or costs a round trip to correct. Second, the cost of a false
+claim on a local business page is real: a wrong price, a phantom discount or an invented review is a consumer protection problem, not
+a styling problem.</p>
+<p>A design report assembled on 2026-10-22 from 61 sources summarized the pages the system was producing at the time as
+"anonymous, not ugly". The layout was competent and indistinguishable from any other trade's page. The same week, an internal review
+of an early insurance agency page found an invented "coverage at a glance" card, pill badges, eyebrow labels, a stat row and
+"call to confirm" hours. The pipeline described here is the response.</p>
+
+<h2 id="s2">2. Threat model for a generated page</h2>
+<p>We treat the builder model as a capable but untrusted author. Its outputs are checked against an explicit model of what may
+appear on the page and where each claim came from. The failure classes fall into four groups:</p>
+<ul>
+<li><strong>Fabrication.</strong> Numbers, prices, percents, "N+" figures, years in business, customer counts, ratings, reviews,
+testimonials, awards, and named carriers, partners, suppliers or logos that the owner never supplied. This includes self-counting
+numbers such as "6 services" or "2 states", which are technically true of the page and meaningless to a customer.</li>
+<li><strong>Genericity.</strong> Headlines a competitor could paste onto their own site unchanged, banned stock phrases
+("peace of mind", "tailored to your needs", "seamless", "solutions"), repeated taglines, and software-marketing structure on a local
+business page.</li>
+<li><strong>Structural clichés.</strong> More than one card grid, three equal icon cards, stats rows, "at a glance" boxes that repeat
+the header, two consecutive sections with the same layout, everything centered, pill badges and eyebrow labels, gradient glows.</li>
+<li><strong>Functional dishonesty.</strong> Buttons that go nowhere, "coming soon" features, edit links or logins that do not exist,
+hours given as "call to confirm", contact details that do not match the owner's number, scripts that throw, and layouts that scroll
+sideways on a phone.</li>
+</ul>
+<p>Each class is assigned to the earliest layer that can see it. Most are covered twice: once by an instruction the builder is told
+to obey, and once by a measurement taken after the page exists. Fig. 1 shows the coverage.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 1 · Defense in depth</p><div class="fig-svg"><svg viewBox="0 0 1040 520" role="img" aria-labelledby="pmt pmd" xmlns="http://www.w3.org/2000/svg"><title id="pmt">Defense in depth: which layer catches which failure</title><desc id="pmd">A matrix of twelve failure classes against four layers: the completeness gate, the rule layer in the build routine, the mechanical post-render audit, and the multimodal critic. Most classes are caught by at least two layers.</desc><defs><marker id="pmak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="pmaks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="pmav" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="pmavs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><text x="20" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="1.2">FAILURE CLASS</text><text x="415.0" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#0a0a0c" text-anchor="middle" letter-spacing="1.4">GATE</text><text x="415.0" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="500" fill="#4b4b57" text-anchor="middle">before generation</text><text x="585.0" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#0a0a0c" text-anchor="middle" letter-spacing="1.4">RULES</text><text x="585.0" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="500" fill="#4b4b57" text-anchor="middle">in the build routine</text><text x="755.0" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#0a0a0c" text-anchor="middle" letter-spacing="1.4">AUDIT</text><text x="755.0" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="500" fill="#4b4b57" text-anchor="middle">mechanical, post-render</text><text x="925.0" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#0a0a0c" text-anchor="middle" letter-spacing="1.4">CRITIC</text><text x="925.0" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="500" fill="#4b4b57" text-anchor="middle">multimodal, scored</text><rect x="10" y="70" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="92" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Missing input</text><circle cx="415.0" cy="87" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="585.0" cy="87" r="2.5" fill="#e3e1ea"/><circle cx="755.0" cy="87" r="2.5" fill="#e3e1ea"/><circle cx="925.0" cy="87" r="2.5" fill="#e3e1ea"/><text x="24" y="126" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Invented number, price, percent</text><circle cx="415.0" cy="121" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="121" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="121" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="121" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><rect x="10" y="138" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="160" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Invented partner, carrier, brand</text><circle cx="415.0" cy="155" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="155" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="155" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="155" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><text x="24" y="194" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Generic headline</text><circle cx="415.0" cy="189" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="189" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="189" r="2.5" fill="#e3e1ea"/><circle cx="925.0" cy="189" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><rect x="10" y="206" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="228" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Card grid or stats row</text><circle cx="415.0" cy="223" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="223" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="223" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="223" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><text x="24" y="262" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Fake button, dead link</text><circle cx="415.0" cy="257" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="257" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="257" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="257" r="2.5" fill="#e3e1ea"/><rect x="10" y="274" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="296" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Banned phrase, long dash</text><circle cx="415.0" cy="291" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="291" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="291" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="291" r="2.5" fill="#e3e1ea"/><text x="24" y="330" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Hours: “call to confirm”</text><circle cx="415.0" cy="325" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="325" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="325" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="325" r="2.5" fill="#e3e1ea"/><rect x="10" y="342" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="364" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">No real photo</text><circle cx="415.0" cy="359" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="359" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="359" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="359" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><text x="24" y="398" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Broken script, sideways scroll</text><circle cx="415.0" cy="393" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="393" r="2.5" fill="#e3e1ea"/><circle cx="755.0" cy="393" r="8" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.6"/><circle cx="925.0" cy="393" r="2.5" fill="#e3e1ea"/><rect x="10" y="410" width="1020" height="34" rx="8" fill="#f0eaff" fill-opacity=".55"/><text x="24" y="432" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Phone first screen</text><circle cx="415.0" cy="427" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="427" r="2.5" fill="#e3e1ea"/><circle cx="755.0" cy="427" r="2.5" fill="#e3e1ea"/><circle cx="925.0" cy="427" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><text x="24" y="466" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="600" fill="#0a0a0c" text-anchor="start">Not the owner&#x27;s voice</text><circle cx="415.0" cy="461" r="2.5" fill="#e3e1ea"/><circle cx="585.0" cy="461" r="8" fill="#ffffff" stroke="#6f00ff" stroke-width="1.6"/><circle cx="755.0" cy="461" r="2.5" fill="#e3e1ea"/><circle cx="925.0" cy="461" r="8" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.6"/><text x="20" y="506" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="0.4">A FAILURE IS CAUGHT AT THE EARLIEST LAYER THAT CAN SEE IT. MOST CLASSES ARE COVERED TWICE: ONCE BY RULE, ONCE BY MEASUREMENT.</text></svg></div></div>
+<figcaption>Twelve failure classes against four layers. Open rings are rules the builder is told to obey; filled marks are checks
+that measure the page: the gate before generation, the audit and the critic after it.</figcaption></figure>
+
+<h2 id="s3">3. Layer 0: the completeness gate</h2>
+<p>Before any design work, the builder checks whether it has five inputs, each in the owner's own words:</p>
+<ol>
+<li>what the business does and for whom, in one or two sentences;</li>
+<li>the services or products the owner wants on the page, as a list;</li>
+<li>one reason a customer picks this business over the one down the street, as a sentence the owner said;</li>
+<li>phone, address and real hours;</li>
+<li>at least one photo, or an explicit "no photo yet".</li>
+</ol>
+<p>The gate has two thresholds. With one input missing, the builder proceeds with what is real, omits the gap from the page and
+lists the missing item as a question in its summary. With two or more missing, it does not build at all: it returns the questions
+only, and the assistant asks the owner. Requests with a higher blast radius, such as a rebuild of an existing site, a custom domain
+or more than six services, trigger a fixed set of five numbered questions before anything is generated.</p>
+<p>The design principle is stated in the routine itself: a page with real content and no design beats a designed page with made-up
+content. The gate makes that trade explicit and moves the cost of missing information to the cheapest point in the pipeline, a
+single text message, instead of a correction after the owner has already seen a wrong page.</p>
+
+<h2 id="s4">4. Layer 1: the rule layer</h2>
+<p>The build routine (version 2.0.0, rewritten on 2026-10-22) opens with hard rules written as short imperatives, placed before any
+procedural step so they dominate the builder's context. They encode the threat model directly:</p>
+<ul>
+<li><strong>Provenance.</strong> No number, price, discount, percent, "N+", year, customer count, carrier, partner, supplier, award,
+rating, review, testimonial or logo unless the owner said it. Missing facts become questions, never filler.</li>
+<li><strong>Structure.</strong> At most six sections, chosen from hero, what we do, proof, about the owner, how to reach us and
+footer, and cut when there is no real content for them. Cards in at most one section and only for truly parallel items such as a
+menu. No stats row, no "at a glance" box, no two consecutive sections with the same layout. Under 3,000 px tall at desktop width
+unless the owner supplied a lot.</li>
+<li><strong>Typography and color.</strong> Two typefaces at most, with common system and default faces banned for headings. A
+five-step type scale with a named ratio, body text at 17 to 19 px, line length under 75 characters, an 8 px spacing scale. One
+accent color, used only for buttons and links. Every color is a role-named CSS variable on the root, so a new look or the owner's
+logo colors can be applied later without touching structure.</li>
+<li><strong>Imagery.</strong> Owner photos first, placed in an image element with real alt text, resized and stripped of location
+data. With no photo, a type-only hero, recorded as an explicit decision so later checks do not penalize it. Licensed local stock only
+when a key for it exists, never a stock stranger standing in for staff, and never generated people, places, products or storefronts.</li>
+<li><strong>Language.</strong> A short banned-phrase list, no long dashes, the tagline said at most twice, real hours or none.
+Every heading is tested against a single question: could a competitor across town paste it onto their site unchanged? If yes, it is
+rewritten with something only this business can say.</li>
+<li><strong>Function.</strong> Every button and link works. No "coming soon", no fake features, no edit links or logins that do not
+exist. Contact details go in exactly as given, and every telephone and text link is checked against the owner's number.</li>
+</ul>
+<p>Before writing markup, the builder produces a design specification next to the page: a section list with one job and one layout
+per section, the two faces, the type scale, the spacing scale, the four color roles, and where each photo goes. Only sections on
+that list may be built. The specification is later handed to the critic, so the plan and the result can be compared.</p>
+<p>Rules alone are not sufficient. A model that has been told not to invent numbers will still, occasionally, invent numbers. The
+remaining layers exist because the rule layer is a prior, not a guarantee.</p>
+
+<h2 id="s5">5. Layer 2: the post-render audit</h2>
+<p>The finishing check runs after the page is written and served. It is deterministic and does not use a language model. It opens
+the page in a headless browser, scrolls to the bottom so that scroll-triggered reveals have completed, and takes full-page captures at
+desktop width and at 390 px. It then runs three families of checks.</p>
+<p><strong>Runtime checks.</strong> Script errors in the console, sideways scroll at phone width, entrance-animation budget (one
+hero entrance plus one staggered list), long-running animations, buttons and links with no real target, and the presence of the
+owner-editable region markers described in section 8.</p>
+<p><strong>Structural checks, by DOM walk.</strong> A single evaluation inside the page returns card grids, stats rows, centered
+headings outside the hero, the typefaces actually in use, the heading face, gradients, box and button corner radii, the image count
+and the page height. These map one to one onto the structural rules, so a violation is a measurement, not an opinion.</p>
+<p><strong>Provenance checks, by diff.</strong> The owner's own messages about the business are copied verbatim into a known-file,
+never augmented with details the builder filled in. The audit extracts every number, price, percent and "N+" figure from the
+rendered text and flags any that does not occur in the known-file. It applies the same test to company names, using a short list of
+insurers and suppliers plus a capitalized-phrase pattern ending in Insurance, Group, Inc, LLC, Mutual or Financial. It also flags
+"call to confirm" hours, middle dots between facts, arrows at the end of links, banned phrases, repeated lines, and any page with no
+image that was not explicitly marked as type-only.</p>
+<pre class="eq">unsourced(page) = { x in numerals(page) ∪ entities(page) : x not in known_file }
+deliver(page)   ⇐  unsourced(page) = ∅  ∧  structural_violations(page) = ∅  ∧  critic(page) ≥ 7</pre>
+<p>Findings are graded. FIX lines block delivery. NOTE lines are reported but do not block: two-digit numbers, a styled word inside
+the headline and a page taller than 3,000 px are NOTEs, because each has legitimate uses. When the DOM walk itself fails, the audit
+says so in a NOTE and those rules are skipped rather than silently passed.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 2 · Grounding data flow</p><div class="fig-svg"><svg viewBox="0 0 1040 370" role="img" aria-labelledby="pgt pgd" xmlns="http://www.w3.org/2000/svg"><title id="pgt">Grounding data flow</title><desc id="pgd">The owner&#x27;s verbatim messages become a known-file. The planned sections become a design spec. The rendered page becomes desktop and phone captures. A numeral and entity diff checks the page against the known-file, and a multimodal critic sees captures, spec and owner&#x27;s words together.</desc><defs><marker id="pgak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="pgaks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="pgav" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="pgavs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="16" y="40" width="200" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="116.0" y="77.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Owner&#x27;s messages</text><text x="116.0" y="96.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">verbatim, by text</text><rect x="16" y="150" width="200" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="116.0" y="179.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Section plan</text><text x="116.0" y="198.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">one job, one layout</text><text x="116.0" y="213.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">per section</text><rect x="16" y="260" width="200" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="116.0" y="289.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Rendered page</text><text x="116.0" y="308.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">desktop + 390 px</text><text x="116.0" y="323.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">full-page captures</text><rect x="276" y="40" width="200" height="80" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="376.0" y="69.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Known-file</text><text x="376.0" y="88.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">owner&#x27;s words only,</text><text x="376.0" y="103.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">never filled in</text><rect x="276" y="150" width="200" height="80" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="376.0" y="179.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Design spec</text><text x="376.0" y="198.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">sections, 2 faces,</text><text x="376.0" y="213.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">5-step type scale</text><rect x="276" y="260" width="200" height="80" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="376.0" y="289.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Screenshots</text><text x="376.0" y="308.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">after a full scroll,</text><text x="376.0" y="323.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">so reveals are done</text><path d="M216 80 H274" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/><path d="M216 190 H274" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/><path d="M216 300 H274" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/><rect x="540" y="30" width="230" height="320" rx="22" fill="#f0eaff"/><text x="655" y="56" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#6f00ff" text-anchor="middle" letter-spacing="1.2">VERIFIERS</text><rect x="560" y="72" width="190" height="110" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="655.0" y="109.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Entity + numeral diff</text><text x="655.0" y="128.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">every figure and proper</text><text x="655.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">noun must appear in</text><text x="655.0" y="158.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">the known-file</text><rect x="560" y="200" width="190" height="130" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="655.0" y="239.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Multimodal critic</text><text x="655.0" y="258.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">sees both captures,</text><text x="655.0" y="273.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">the spec and the</text><text x="655.0" y="288.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">owner&#x27;s words; flags</text><text x="655.0" y="303.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">anything unsourced</text><path d="M476 80 C510 80 520 127 558 127" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/><path d="M476 85 C520 120 520 250 558 250" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#pgav)"/><path d="M476 190 C515 190 520 260 558 262" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#pgav)"/><path d="M476 300 C515 300 520 280 558 280" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#pgav)"/><rect x="830" y="72" width="194" height="110" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="927.0" y="116.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Unsourced claim</text><text x="927.0" y="135.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">blocks delivery</text><text x="927.0" y="150.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">as a FIX line</text><rect x="830" y="220" width="194" height="90" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="927.0" y="254.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Editable regions</text><text x="927.0" y="273.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">marked spans become</text><text x="927.0" y="288.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">the owner&#x27;s edit form</text><path d="M750 127 H828" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/><path d="M750 265 H828" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#pgak)"/></svg></div></div>
+<figcaption>Three artifacts are produced alongside the page: the known-file, the design spec and the captures. The deterministic diff
+and the critic both read them; only marked regions flow into the owner's edit form.</figcaption></figure>
+
+<h2 id="s6">6. Layer 3: the multimodal critic</h2>
+<p>Some failures are not mechanically detectable. Whether a headline is generic, whether the first phone screen shows what the
+business is, whether the page sounds like the person who runs it: these need a reader. The critic is a separate, fast multimodal model
+that receives both full-page captures, the design specification and the known-file, and is instructed to judge the page as the
+owner would on a phone in five seconds: bluntly, specifically, without praise.</p>
+<p>It scores ten lines from 0 to 10:</p>
+<ol>
+<li><strong>Specific.</strong> Could a competitor paste the headline and first section onto their site unchanged?</li>
+<li><strong>Real.</strong> Is there a real person, place or piece of work above the fold?</li>
+<li><strong>Honest.</strong> Any invented numbers, prices, partners, reviews or stats, judged against the owner's words?</li>
+<li><strong>Layout variety.</strong> Repeated consecutive layouts, or more than one card grid?</li>
+<li><strong>Centered and badged.</strong> Everything centered, pill badges, eyebrow labels, icon squares, stat rows, a highlighted headline word?</li>
+<li><strong>Type.</strong> Two faces at most, a clear scale, left-aligned, readable on the phone capture without zoom?</li>
+<li><strong>Color.</strong> One accent, buttons and links only, no gradients or glow?</li>
+<li><strong>Length.</strong> Does every section earn its place?</li>
+<li><strong>Phone.</strong> Is the first 390 px screen the business name, what it does and a call or text button, with nothing cut off?</li>
+<li><strong>Owner voice.</strong> A person who runs this business, or software marketing?</li>
+</ol>
+<p>The overall score is the minimum of the ten, not the mean. This is deliberate: a page that is beautiful and contains one invented
+review is not a 9, it is a page that cannot ship. The critic returns the score, up to five concrete FIX lines naming what to change
+and where, and exactly one KEEP line naming the single best element, so that repair does not destroy what already works. Two context
+rules are appended: a page explicitly marked as type-only scores 7 on the photo line when the hero is clean type, and the yellow
+markers that flag sample content for the owner are not to be judged as design.</p>
+<p>The critic runs on infrastructure configured for zero data retention, with hidden reasoning disabled. That last setting is
+operational, not stylistic: with images attached and reasoning enabled, the critic spent its entire 500-token budget on hidden
+reasoning and returned no text, a failure reproduced twice before the setting was changed.</p>
+
+<h2 id="s7">7. The bounded repair loop</h2>
+<p>The builder runs the finishing check itself, in the same shell, after writing the page. If the check prints FIX or MISSING lines,
+the builder must fix every one and run it again, or explain in one line why the owner's own words require the flagged element. It may
+not argue with the critic. It must preserve whatever the KEEP line names.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 3 · Repair loop</p><div class="fig-svg"><svg viewBox="0 0 1040 330" role="img" aria-labelledby="plt pld" xmlns="http://www.w3.org/2000/svg"><title id="plt">The bounded repair loop</title><desc id="pld">Build, mechanical audit and critic run in sequence. A score of 7 or better delivers the page. Lower scores send up to five fixes and one keep line back to the builder, for at most three rounds. If the critic cannot run, the audit alone decides.</desc><defs><marker id="plak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="plaks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="plav" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="plavs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="16" y="120" width="150" height="90" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="91.0" y="154.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Build</text><text x="91.0" y="173.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">builder model</text><text x="91.0" y="188.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">writes the page</text><rect x="206" y="120" width="150" height="90" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="281.0" y="154.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Audit</text><text x="281.0" y="173.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">DOM walk, regex,</text><text x="281.0" y="188.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">browser checks</text><rect x="396" y="120" width="150" height="90" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="471.0" y="154.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Critic</text><text x="471.0" y="173.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">2 screenshots,</text><text x="471.0" y="188.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">10 scored lines</text><path d="M646 95 L716 165 L646 235 L576 165 Z" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="646" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0a0a0c" text-anchor="middle">score</text><text x="646" y="178" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0a0a0c" text-anchor="middle">≥ 7 ?</text><rect x="780" y="120" width="244" height="90" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="902.0" y="154.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Deliver</text><text x="902.0" y="173.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">edit link, owner form,</text><text x="902.0" y="188.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">one text to the owner</text><path d="M166 165 H204" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#plak)"/><path d="M356 165 H394" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#plak)"/><path d="M546 165 H574" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#plak)"/><path d="M716 165 H778" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#plak)"/><text x="746" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#0a0a0c" text-anchor="middle">yes</text><path d="M646 235 V292 H91 V212" fill="none" stroke="#6f00ff" stroke-width="1.6" marker-end="url(#plav)"/><text x="368" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6f00ff" text-anchor="middle">no → up to 5 FIX lines and 1 KEEP line go back to the builder · round counter + 1</text><rect x="400" y="20" width="370" height="54" rx="14" fill="#f0eaff"/><text x="585" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#6f00ff" text-anchor="middle" letter-spacing="1.2">BOUNDS</text><text x="585" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#0a0a0c" text-anchor="middle">3 rounds max, then ship with open issues listed</text><path d="M585 74 V118" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#plav)"/><rect x="780" y="236" width="244" height="54" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5" stroke-dasharray="6 5"/><text x="902" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#0a0a0c" text-anchor="middle">critic unavailable (exit 3)</text><text x="902" y="276" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">→ continue on the audit alone</text><path d="M471 210 V263 H778" fill="none" stroke="#0a0a0c" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#plak)"/></svg></div></div>
+<figcaption>Generation, measurement and critique in sequence, with a hard round cap and an explicit degraded mode when the critic is
+unavailable.</figcaption></figure>
+
+<p>Three properties keep the loop well behaved:</p>
+<ul>
+<li><strong>Bounded.</strong> At most three critic rounds per page, counted per page in a tries directory shared by the audit and
+the critic. After the third round, the page is delivered with the remaining issues listed for the owner, instead of looping
+indefinitely or failing silently.</li>
+<li><strong>Fail-open on the critic, fail-closed on the audit.</strong> If the critic cannot run (no key, timeout, malformed
+output), it exits with a distinct code and the pipeline continues on the deterministic checks alone. The audit never depends on a
+network call.</li>
+<li><strong>Observable.</strong> Each round writes a JSON record of score, fixes, keep line and cost next to the capture, plus a
+per-round copy. An earlier version overwrote rounds one and two before they could be read; per-round copies were added to fix that.</li>
+</ul>
+<p>Only when the page is clean, or the round cap is reached, does the check create the owner's edit link and form and produce the
+single line the assistant texts to the owner. A no-text marker exists for tests so that test runs never message anyone.</p>
+
+<h2 id="s8">8. Owner-editable regions</h2>
+<p>Grounding is not a one-time property. Hours change, specials change, prices change. Rather than regenerate the page, the builder
+marks the regions the owner will update as typed, editable spans: a single value (for example hours), or a list whose direct children
+are items with named fields (name, description, price, time, day, note). At least three such regions are required, only for content
+the owner will really change, and never for contact details or legal text. Marked text stays plain, with no links or bold inside, so
+edits cannot break markup.</p>
+<p>From those marks the finishing check generates a private edit form. Edits write back into the same spans, so the page's structure,
+typography and contact details are outside the owner's edit surface and outside the model's reach after delivery. Sample content
+that still needs the owner's confirmation stays highlighted in yellow until the owner replaces it.</p>
+
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 4 · Worked example, test business with made-up details</p><div class="split2"><div class="shot"><img src="img/marco-v2-desktop.jpg" alt="A type-only page for a test pizzeria, built from the owner's words" width="1100" height="1026" loading="lazy"><p><span class="fig-n">4a</span> The rebuilt page after the rule rewrite: type-only hero in the owner's words, left-aligned, one accent, a plain list instead of cards, no invented figures.</p></div><div class="shot"><img src="img/marco-edit-form.jpg" alt="The private edit form for the same page, with specials, descriptions and prices" width="640" height="992" loading="lazy"><p><span class="fig-n">4b</span> The edit form generated from the marked regions. The owner changes specials and prices; layout and contact details are not editable here.</p></div></div></div></figure>
+
+<h2 id="s9">9. Evidence</h2>
+<p>All runs below were on a non-client test server, with the no-text marker present so no owner was messaged.</p>
+<p><strong>Before the rewrite.</strong> A third rebuild of an insurance agency page, built from a one-line request with no owner
+facts, failed try one of three. The audit fired on a 25-second animation, numbers absent from the owner's words (two phone numbers, a
+street number and a ZIP code, because the request contained none of them), "call to confirm" hours, an arrow at a link end, two
+banned phrases, eight entrance effects plus two stagger groups, no photo, five pill buttons and corner radii of 999, 22 and 14 px. The
+DOM walk found one six-card grid. The critic scored it 2 and named a fake summary card, no real photo, a generic headline, badges and
+a stat row, and the card grid; it kept the call button under the headline on mobile.</p>
+<p><strong>After the rewrite.</strong> A test pizzeria page built end to end through the assistant, with no owner photo, produced a
+type-only hero in the owner's words, left-aligned, no pill badges or eyebrows, no icon squares, no card grid, no stats row, no
+invented numbers or partners, one accent on the call button only, two faces, a plain list for the menu and an address block with a
+map link, at about 1,900 px tall. On re-run after the type-only and sample-marker fixes, the critic scored it 3 and named exactly the
+three remaining problems a human reviewer had also found: the tagline restated three times in different words, two editable rows
+whose placeholder text read as filler, and a contact block nested inside another box.</p>
+<p><strong>Cost.</strong> Each critique round sends two full-page captures of roughly 450 KB, the specification and the known-file,
+for 5,600 to 7,200 input tokens and 330 to 360 output tokens, and cost $0.0007 to $0.0009 at list price, measured from the response
+usage. Three rounds per page cost under 0.3 cents. Latency was 3 to 8 seconds per round.</p>
+<p>The honest summary of the evidence: the pipeline produces a real improvement in structure and honesty, and it does not yet produce
+pages that pass its own critic. That is the intended direction of failure. A page that ships with its open issues listed is
+recoverable; a page that ships with an invented review is not.</p>
+
+<h2 id="s10">10. Limitations and open problems</h2>
+<ul>
+<li><strong>Minimum scoring is strict.</strong> With the overall score defined as the lowest of ten lines, both test pages scored 2
+to 3 even where most lines would have scored 7 or more. Whether to keep the minimum, use the mean, or lower the pass mark to 6 is an
+open decision.</li>
+<li><strong>Paraphrase evades the diff.</strong> The repeated-tagline check matches identical lines only. Reworded repeats, and
+paraphrased claims that carry no numeral or proper noun, are left to the critic.</li>
+<li><strong>Entity coverage is a list.</strong> Company-name detection uses a short list plus a suffix pattern. A fabricated partner
+named without a corporate suffix can pass the audit and depends on the critic.</li>
+<li><strong>Structural checks need a browser.</strong> When the DOM walk fails, card-grid and stats-row detection are skipped and
+reported, not enforced.</li>
+<li><strong>Competing guidance.</strong> A shared motion skill still recommends entrances on every section; the build routine
+overrides it in words. The cleaner fix is to trim the motion skill itself.</li>
+<li><strong>Grounding is only as good as the known-file.</strong> If the owner's words are thin, the gate asks; if the owner's words
+are wrong, the page is faithfully wrong. The pipeline guarantees provenance, not truth.</li>
+</ul>
+
+<h2 id="s11">11. Claim table</h2>
+<div class="tablewrap"><table><thead><tr><th>Claim</th><th>Evidence</th><th>Confidence</th></tr></thead><tbody><tr><td>The build routine opens with hard rules forbidding invented numbers, prices, partners, ratings, reviews and testimonials.</td><td>Build routine v2.0.0, hard rules section</td><td><span class="conf-high">high</span></td></tr><tr><td>A completeness gate requires five owner-supplied inputs and halts with questions when two or more are missing.</td><td>Build routine, step 0</td><td><span class="conf-high">high</span></td></tr><tr><td>Pages are capped at six sections, two typefaces and one accent color.</td><td>Build routine, hard rules</td><td><span class="conf-high">high</span></td></tr><tr><td>The routine was rewritten on 2026-10-22 after a 61-source design report diagnosed the pages as &quot;anonymous, not ugly&quot;.</td><td>Release notes and Queva working paper</td><td><span class="conf-high">high</span></td></tr><tr><td>The audit diffs numbers, prices, percents and N+ figures against the owner&#x27;s verbatim messages.</td><td>Finishing check release notes</td><td><span class="conf-high">high</span></td></tr><tr><td>The critic scores ten lines and reports the lowest as the overall score; 7 or better passes.</td><td>Critic source and release notes</td><td><span class="conf-high">high</span></td></tr><tr><td>Repair is bounded at three critic rounds per page, after which the page ships with open issues listed.</td><td>Critic source (round cap) and build routine step 4</td><td><span class="conf-high">high</span></td></tr><tr><td>A critic round cost $0.0007 to $0.0009 at list price, with 5,600 to 7,200 input tokens.</td><td>Release notes, measured on two test pages</td><td><span class="conf-high">high</span></td></tr><tr><td>A pre-rewrite insurance page scored 2 with about a dozen mechanical FIX lines; the rebuilt test pizzeria page scored 3.</td><td>Release notes, test evidence</td><td><span class="conf-high">high</span></td></tr><tr><td>Scoring by the minimum of ten lines is harsh; a pass mark of 6 or an average was left as an open decision.</td><td>Release notes, open points</td><td><span class="conf-medium">medium</span></td></tr><tr><td>Reworded tagline repeats are caught only by the critic, not the audit.</td><td>Release notes, open points</td><td><span class="conf-high">high</span></td></tr></tbody></table></div>
+
+<h2 id="s12">12. Sources</h2>
+<ul>
+<li>The page build routine, version 2.0.0, 2026-10-22: hard rules, completeness gate, design specification, photo policy, editable regions and the finishing step.</li>
+<li>The finishing-check and critic source code, and the release notes for the "Better pages" release, 2026-10-22, including test evidence, cost measurements and open points.</li>
+<li>The design report of 2026-10-22, compiled from 61 sources, on why generated small-business pages read as anonymous.</li>
+<li>WP-01, <a href="/papers/queva/">Queva, stealth edition</a>, for the surrounding system.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="/framework/index.html">Framework</a> · <a href="/expertise/index.html">Expertise</a> · <a href="/compare/index.html">Comparisons</a> · <a href="/playbooks/index.html">Playbooks</a> · <a href="/es/index.html">Español</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script>
+</body>
+</html>

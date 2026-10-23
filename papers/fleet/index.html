@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers | Sam Ochoa</title>
+<meta name="description" content="WP-02: how a single-tenant agent fleet is provisioned, converged to a numbered release manifest, and backed up, with the failure modes observed.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers">
+<meta property="og:description" content="WP-02: how a single-tenant agent fleet is provisioned, converged to a numbered release manifest, and backed up, with the failure modes observed.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260706">
+<link rel="icon" type="image/png" href="/logo.png">
+<script defer src="/js/translate.js"></script>
+<link rel="canonical" href="https://samuelochoa.com/papers/fleet/">
+<meta property="og:url" content="https://samuelochoa.com/papers/fleet/">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers">
+<meta name="twitter:description" content="WP-02: how a single-tenant agent fleet is provisioned, converged to a numbered release manifest, and backed up, with the failure modes observed.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers","description":"WP-02: how a single-tenant agent fleet is provisioned, converged to a numbered release manifest, and backed up, with the failure modes observed.","datePublished":"2026-10-23","inLanguage":"en","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/papers/fleet/","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<style>
+.wp {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1d1c1a;
+  --muted: #5c5955;
+  --line: #e4dfd6;
+  --brand: #4a3f8f;
+  --accent: #b2531f;
+  --quote-bg: #f1ede4;
+  --code-bg: #efece6;
+  --font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wp * { box-sizing: border-box; }
+.wp {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.wp .wp-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wp h1,
+.wp h2,
+.wp h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.wp h1 { font-size: clamp(32px, 6vw, 46px); margin: 0 0 12px; }
+.wp h2 { font-size: clamp(24px, 4.2vw, 30px); margin: 56px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+.wp h3 { font-size: 20px; margin: 30px 0 8px; }
+.wp p { margin: 0 0 16px; overflow-wrap: anywhere; }
+.wp .kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.wp .lede { font-size: 19px; color: var(--muted); margin-bottom: 28px; }
+.wp .meta { font-size: 14px; color: var(--muted); border-left: 3px solid var(--brand); padding: 8px 14px; margin: 0 0 32px; background: var(--surface); }
+.wp nav.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; margin-bottom: 40px; }
+.wp nav.toc h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 18px; }
+.wp nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 15px; }
+.wp nav.toc li { break-inside: avoid; margin-bottom: 4px; }
+@media (max-width: 520px) { .wp nav.toc ol { columns: 1; } }
+.wp a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.wp ul,
+.wp ol { padding-left: 24px; margin: 0 0 16px; }
+.wp li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.wp blockquote.pull {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 28px 0;
+  padding: 18px 22px;
+  background: var(--quote-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.wp blockquote.pull cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 13px; color: var(--muted); margin-top: 10px; }
+.wp code,
+.wp .path { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.wp .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.wp table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+.wp th,
+.wp td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.wp th { font-weight: 600; background: var(--quote-bg); white-space: nowrap; }
+.wp tr:last-child td { border-bottom: 0; }
+.wp .note { font-size: 14px; color: var(--muted); }
+.wp .conf-high { color: #2f7a3a; font-weight: 600; }
+.wp .conf-medium { color: #9a6b12; font-weight: 600; }
+.wp .conf-low { color: #a33a2a; font-weight: 600; }
+.wp .sources { font-size: 14px; }
+.wp .sources li { margin-bottom: 4px; }
+.wp hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.wp h1, .wp h2, .wp h3 { text-transform: none; }
+
+.wp figure.fig { margin: 40px 0 44px; width: min(1040px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.wp .fig-card { background: #fff; border: 1px solid #e3e1ea; border-radius: 22px; padding: 22px 22px 20px; box-shadow: 0 34px 70px -52px rgba(70,0,160,.5); }
+.wp .fig-kicker { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6f00ff; margin: 0 0 14px; }
+.wp .fig-svg { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.wp .fig-svg svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.wp figure.fig figcaption { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 760px; padding: 0 4px; }
+.wp .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.wp .shot img, .wp .split img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #e3e1ea; }
+.wp .shot p { font-size: 13.5px; color: var(--muted); margin: 10px 2px 0; line-height: 1.45; }
+.wp .fig-n { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; color: #6f00ff; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-right: 4px; }
+.wp .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 34px; align-items: start; }
+.wp .callouts { list-style: none; padding: 0; margin: 0; }
+.wp .callouts li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid #e3e1ea; margin: 0; }
+.wp .callouts li:first-child { border-top: 2px solid #0a0a0c; }
+.wp .callouts .sn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #6f00ff; padding-top: 3px; }
+.wp .callouts h4 { font-family: "Archivo", system-ui, sans-serif; font-size: 18px; font-weight: 800; margin: 0 0 4px; }
+.wp .callouts p { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 760px) {
+  .wp .shots { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .wp .split { grid-template-columns: 1fr; }
+  .wp .split img { max-width: 360px; margin: 0 auto; }
+}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar"><div class="topbar-inner">
+<a href="/index.html" class="logo"><img class="brand-logo" src="/logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/ai-consulting.html" class="nav-link">Work with me</a>
+<a href="/case-studies/index.html" class="nav-link">Case Studies</a>
+<div class="nav-group">
+<a href="/framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="/snapshots.html">GHL snapshots</a>
+<a href="/newsletter.html">Daily AI brief</a>
+<a href="/framework/index.html">Framework</a>
+<a href="/expertise/index.html">Expertise</a>
+<a href="/playbooks/index.html">Playbooks</a>
+<a href="/writing.html">Writing</a>
+</div></div>
+<a href="/about.html" class="nav-link">About</a>
+<a href="/contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav>
+<main id="main-content" class="wp">
+<div class="wp-wrap">
+<p class="kicker">WP-02 · Release engineering</p>
+<h1>Fleet operations: one-command provisioning, numbered releases on a pinned runtime, and nightly backups across tenant servers</h1>
+<p class="lede"><strong>Abstract.</strong> We describe the control plane that provisions and maintains a fleet of single-tenant
+agent servers, one per small-business owner. A tenant is created by a one-command, two-phase installer that pins the upstream agent
+runtime to a fixed commit, injects secrets over standard input, and then converges the host to the head of a declarative release
+manifest. Releases are ordered, numbered and composed of named steps; each step is guarded by a precondition probe so that every step
+is safe to run twice. The updater computes the minimal step set from a version marker written on the tenant, defers restarts behind a
+conversational quiescence gate, and promotes the new version only after a liveness check on the messaging channel. Nightly backups
+are streamed, verified and atomically published under a 14-archive retention window. We report the release history for the first two
+days of the current design, the concurrency incident that produced the per-tenant lock, and the open problems.</p>
+<div class="meta">Written 2026-10-23 from the fleet tooling, the release manifest and project notes. Hosts, tenants and credentials
+are omitted. Every number below is counted from source, not projected.</div>
+
+<nav class="toc"><h2>Contents</h2><ol>
+<li><a href="#s1">System model</a></li><li><a href="#s2">Provisioning</a></li><li><a href="#s3">The release manifest</a></li>
+<li><a href="#s4">Convergence and the updater</a></li><li><a href="#s5">Concurrency control</a></li><li><a href="#s6">Backups</a></li>
+<li><a href="#s7">Observability</a></li><li><a href="#s8">Failure analysis</a></li><li><a href="#s9">Open problems</a></li>
+<li><a href="#s10">Claim table</a></li><li><a href="#s11">Sources</a></li></ol></nav>
+
+<h2 id="s1">1. System model</h2>
+<p>The fleet is a set of tenants. Each tenant is one small cloud server held in an account the owner controls, running one instance of
+an open source agent runtime plus a thin layer of owner-facing services: a forms store, a reverse proxy for private pages, a settings
+service and a mail intake. Nothing is shared between tenants at runtime. A single operator host holds the control plane: a tenant
+registry, the release manifest, step bundles, the updater, the backup job and a read-only status probe. The operator console, a page
+inside the operator's own CRM, is a thin client over the same scripts.</p>
+<p>The tenant registry is deliberately small. Each record carries a slug, the owner's name and business, a trade, a role
+(test or client), a daily-backup flag and a flag that controls whether the owner is texted about updates. Provider context for
+tenants created by the self-service path lives in the same record. At the time of writing the registry held four tenants.</p>
+<p>Two invariants shape everything below. First, the only state the updater trusts about a tenant is what the tenant itself reports:
+the control plane keeps logs, but the version of record is a marker file on the tenant. Second, every operation that mutates a tenant
+holds that tenant's lock for its full duration.</p>
+
+<h2 id="s2">2. Provisioning</h2>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 1 · Provisioning pipeline</p><div class="fig-svg"><svg viewBox="0 0 1040 280" role="img" aria-labelledby="p1t p1d" xmlns="http://www.w3.org/2000/svg"><title id="p1t">Provisioning pipeline</title><desc id="p1d">Six stages under one per-tenant lock: image rebuild, reachability, phase A (packages, service account, runtime pinned to a commit), phase B (secrets over stdin, configuration, memory, skills, gateway), convergence through every release, and per-tenant personalization.</desc><defs><marker id="p1ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="p1aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="p1av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="p1avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="10" y="40" width="1020" height="26" rx="13" fill="#f0eaff"/><text x="520" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="0.8">ONE EXCLUSIVE PER-TENANT LOCK, HELD FROM THE FIRST LINE TO EXIT</text><text x="82" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">01</text><rect x="10" y="110" width="145" height="116" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="82.5" y="157.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Image rebuild</text><text x="82.5" y="176.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">clean OS image</text><text x="82.5" y="191.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">cloud-init seed</text><path d="M155 168 H180" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p1ak)"/><text x="254" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">02</text><rect x="182" y="110" width="145" height="116" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="254.5" y="157.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Reachability</text><text x="254.5" y="176.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">SSH poll, 60 x 10 s</text><text x="254.5" y="191.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">fresh host key</text><path d="M327 168 H352" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p1ak)"/><text x="426" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">03</text><rect x="354" y="110" width="145" height="116" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="426.5" y="150.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Phase A</text><text x="426.5" y="169.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">OS packages</text><text x="426.5" y="184.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">service account</text><text x="426.5" y="199.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">runtime @ commit</text><path d="M499 168 H524" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p1ak)"/><text x="598" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">04</text><rect x="526" y="110" width="145" height="116" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="598.5" y="150.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Phase B</text><text x="598.5" y="169.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">secrets via stdin</text><text x="598.5" y="184.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">config, memory,</text><text x="598.5" y="199.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">skills, gateway</text><path d="M671 168 H696" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p1ak)"/><text x="770" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">05</text><rect x="698" y="110" width="145" height="116" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="770.5" y="157.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Converge</text><text x="770.5" y="176.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">release v0 to</text><text x="770.5" y="191.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">latest, in order</text><path d="M843 168 H868" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p1ak)"/><text x="942" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#6f00ff" text-anchor="middle" letter-spacing="1">06</text><rect x="870" y="110" width="145" height="116" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="942.5" y="157.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Personalize</text><text x="942.5" y="176.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">template rendered</text><text x="942.5" y="191.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">per tenant</text><text x="10" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="0.6">BEFORE 01: THE PROVIDER&#x27;S RECORD OF THE SERVER MUST MATCH THE TENANT RECORD, OR THE RUN STOPS</text></svg></div></div><figcaption>Six stages under one lock. The installer refuses to start if the provider's record of the server does not match the tenant registry.</figcaption></figure>
+<p>Provisioning is a single command that takes a tenant slug. It is destructive by design: it rebuilds the server from a clean
+operating system image, so it is used both to create a tenant and to return one to a known state.</p>
+<p><strong>Identity check.</strong> Before anything is rebuilt, the installer asks the cloud provider for the server's public
+address and compares it with the tenant registry. A mismatch stops the run. This is the cheapest available guard against rebuilding
+the wrong machine.</p>
+<p><strong>Rebuild and reachability.</strong> The server is rebuilt with a cloud-init seed that creates an operations account. Because every rebuild produces a new host identity, the control plane re-establishes trust with the rebuilt host before continuing. It then polls SSH every 10 seconds, up to 60 times, and blocks until cloud-init reports completion.</p>
+<p><strong>Phase A.</strong> Operating system packages, a dedicated unprivileged service account, and the agent runtime installed
+at a fixed upstream commit. Pinning the commit makes a fresh tenant reproducible: two tenants provisioned a day apart run the same
+runtime until a release explicitly moves them.</p>
+<p><strong>Phase B.</strong> Secrets are written over the SSH pipe into a root-only file through standard input, never through
+command-line arguments, which leak into process tables and audit logs. Configuration, memory, skills, the web layer, the personality
+file and the messaging gateway follow. Per-tenant parameters are passed as environment for that single invocation.</p>
+<p><strong>Convergence.</strong> The installer then releases its own lock and hands off to the updater, which takes the same lock,
+finds no version marker, treats the tenant as version zero and replays the entire release manifest in order. A fresh tenant and a
+long-lived tenant therefore reach the head of the manifest through the same code path. This is the property that makes the manifest
+the specification of a tenant, rather than a changelog.</p>
+<p><strong>Personalization.</strong> Last, a personality template is rendered for the tenant, with the tenant's own forwarding
+address and page host substituted in. It runs after convergence because several release steps patch the stock personality text
+and expect to find it unmodified.</p>
+<p>A second entry point resumes from convergence for a tenant whose phase B already completed, so a failure late in provisioning does
+not require a full rebuild.</p>
+
+<h2 id="s3">3. The release manifest</h2>
+<p>A release is a record with four fields: a version, a title, an ordered list of step names, and two pieces of prose: details for
+the operator and a one-line note written for the owner. Versions are date based with an optional sequence suffix. Comparison extracts
+every digit group and compares the resulting integer tuples, so a sequence suffix orders correctly against the bare date.</p>
+<p>The manifest covers 21 releases published over two days, 18 of them on 2026-10-22. They reference 25 step entries, which resolve to
+22 distinct step handlers; four releases carry two steps and one step is shared by two releases. The titles below are the operator
+titles, lightly generalized.</p>
+<div class="tablewrap"><table><thead><tr><th>Version</th><th>Title</th><th>Steps</th></tr></thead><tbody><tr><td><code>2026.10.22</code></td><td>Owner forms and motion</td><td>1</td></tr><tr><td><code>2026.10.22.2</code></td><td>Edit links and a delegated page builder</td><td>2</td></tr><tr><td><code>2026.10.22.3</code></td><td>Pick your look</td><td>1</td></tr><tr><td><code>2026.10.22.4</code></td><td>Private AI hosts only</td><td>2</td></tr><tr><td><code>2026.10.22.5</code></td><td>Smaller chat model</td><td>1</td></tr><tr><td><code>2026.10.22.6</code></td><td>Runtime upgrade to a newer pinned version</td><td>1</td></tr><tr><td><code>2026.10.22.7</code></td><td>Email is read only</td><td>1</td></tr><tr><td><code>2026.10.22.8</code></td><td>No secrets in chat</td><td>2</td></tr><tr><td><code>2026.10.22.9</code></td><td>Your own forwarding email</td><td>1</td></tr><tr><td><code>2026.10.22.10</code></td><td>First-contact intro and guide</td><td>1</td></tr><tr><td><code>2026.10.22.11</code></td><td>Plain words, no slash commands</td><td>1</td></tr><tr><td><code>2026.10.22.12</code></td><td>No system notices</td><td>1</td></tr><tr><td><code>2026.10.22.13</code></td><td>Hands off after the build</td><td>1</td></tr><tr><td><code>2026.10.22.14</code></td><td>Links always arrive</td><td>1</td></tr><tr><td><code>2026.10.22.15</code></td><td>Your settings page</td><td>1</td></tr><tr><td><code>2026.10.22.16</code></td><td>Better pages</td><td>1</td></tr><tr><td><code>2026.10.22.17</code></td><td>A real guide</td><td>1</td></tr><tr><td><code>2026.10.22.18</code></td><td>Your guide, narrated</td><td>1</td></tr><tr><td><code>2026.10.23</code></td><td>Offers, drafted</td><td>1</td></tr><tr><td><code>2026.10.23.1</code></td><td>Listing sheets</td><td>1</td></tr><tr><td><code>2026.10.23.2</code></td><td>Safer settings links</td><td>2</td></tr></tbody></table></div>
+<p>Three classes of step appear. <strong>Install steps</strong> ship a bundle (a directory of scripts and assets) to a private staging
+directory and run its installer. <strong>Patch steps</strong> make a narrow edit to the personality or configuration, after first copying
+the file to a step-specific backup. <strong>Upgrade steps</strong> move a component to a new version, after first taking a snapshot of
+the agent's state directory. Trade-specific steps are conditional on the tenant's trade in the registry: a real estate step installs its
+skills only on real estate tenants, while refreshing shared guide content everywhere.</p>
+<p>Every step is required to be idempotent, and most enforce it with a precondition probe rather than by convention. A forms step exits
+early if the forms service is already installed; a model step exits early if the configured chat model already matches; a runtime
+upgrade step exits early if the reported runtime version is already at or above the target. The rest are written so that a second run
+produces the same file as the first.</p>
+
+<h2 id="s4">4. Convergence and the updater</h2>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 2 · Updater control flow</p><div class="fig-svg"><svg viewBox="0 0 1040 304" role="img" aria-labelledby="p2t p2d" xmlns="http://www.w3.org/2000/svg"><title id="p2t">Updater control flow</title><desc id="p2d">Probe, diff, apply, quiesce, restart and liveness on the top row, then commit the version marker, notify the owner if opted in, and record history. Any exception moves the run to a stopped state without writing the marker.</desc><defs><marker id="p2ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="p2aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="p2av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="p2avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="10" y="40" width="145" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="82.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Probe</text><text x="82.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">read-only status</text><text x="82.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">over stdin</text><path d="M155 88 H180" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="182" y="40" width="145" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="254.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Diff</text><text x="254.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">releases &gt; marker</text><text x="254.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">steps deduped</text><path d="M327 88 H352" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="354" y="40" width="145" height="96" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="426.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Apply</text><text x="426.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">each step</text><text x="426.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">guarded, rerunnable</text><path d="M499 88 H524" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="526" y="40" width="145" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="598.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Quiesce</text><text x="598.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">last message</text><text x="598.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">&gt; 90 s ago</text><path d="M671 88 H696" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="698" y="40" width="145" height="96" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="770.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Restart</text><text x="770.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">gateway</text><text x="770.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">port up, 120 s max</text><path d="M843 88 H868" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="870" y="40" width="145" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="942.5" y="77.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Liveness</text><text x="942.5" y="96.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">channel connected</text><text x="942.5" y="111.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">120 s max</text><rect x="526" y="196" width="145" height="96" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="598.5" y="233.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Commit</text><text x="598.5" y="252.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">write version</text><text x="598.5" y="267.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">marker</text><path d="M671 244 H696" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="698" y="196" width="145" height="96" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="770.5" y="233.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Notify</text><text x="770.5" y="252.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">owner text,</text><text x="770.5" y="267.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">opt-in, 480 chars</text><path d="M843 244 H868" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><rect x="870" y="196" width="145" height="96" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="942.5" y="233.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Record</text><text x="942.5" y="252.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">history line,</text><text x="942.5" y="267.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">state file</text><path d="M942 136 V166 H598 V194" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p2ak)"/><path d="M560 40 V22 H600 V38" fill="none" stroke="#6f00ff" stroke-width="1.6" marker-end="url(#p2av)"/><text x="580" y="16" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6f00ff" text-anchor="middle">poll 15 s, 40x</text><rect x="10" y="196" width="470" height="96" rx="14" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="6 5"/><text x="245" y="228" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Any exception</text><text x="245" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">state: stopped · history: ok=false</text><text x="245" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">staging dir removed in finally</text><text x="245" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">no marker written, no owner text</text><path d="M426 136 V180 H245 V194" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#p2av)"/></svg></div></div><figcaption>The happy path runs left to right then down. Any exception lands in the dashed lane: the run is marked stopped, history records the failure, and the version marker is not advanced.</figcaption></figure>
+<p><strong>Probe.</strong> The updater begins by sending a read-only status script to the tenant over standard input. The script
+installs nothing and prints one JSON object: the version marker, the runtime version, the configured models and whether the chat
+model is pinned to specific hosts, the routes registered on the gateway, the state of each service and the state of each messaging
+platform. It never prints secrets.</p>
+<p><strong>Diff.</strong> The set of pending releases is every release whose version is greater than the marker. Their steps are
+flattened in release order and deduplicated, so a step that appears in two pending releases runs once, at its first position.</p>
+<p><strong>Apply.</strong> Each step receives a fresh status object before it runs, so preconditions see the effects of earlier
+steps in the same run. Bundles are streamed as a compressed archive into a staging directory created with a random name under a
+private 0700 parent; the path returned by the tenant is validated against an expected pattern before it is used, and the directory is
+removed in a <code>finally</code> clause whether the run succeeds or not.</p>
+<p><strong>Quiesce.</strong> A gateway restart terminates in-flight work, including page builds that take minutes. The updater
+therefore reads the timestamp of the most recent message from the agent's state database, opened read only, and restarts only after 90
+seconds of silence. It polls every 15 seconds, at most 40 times, which bounds the wait at 10 minutes. Restarts were moved to the end of
+the run, once, rather than after each step, for the same reason.</p>
+<p><strong>Restart and liveness.</strong> After the restart the updater waits up to 120 seconds for the gateway's local port to accept
+connections, then up to 120 seconds for the status probe to report both the gateway service active and the messaging channel
+connected. If the channel does not reconnect the run raises, and the version marker is not written. A tenant is never reported as
+updated while its owner cannot reach it.</p>
+<p><strong>Commit, notify, record.</strong> Only then is the marker written. If the tenant's update-text flag is set, the owner
+receives one message that begins "Queva updated to" the new version and joins every pending release's owner note; if that exceeds 480
+characters, only the newest note is kept. The operator can rewrite the text from the console before the run, and the server rejects
+text that does not start with the required prefix. Client tenants currently update silently; only the test tenant texts. Each run
+appends one line to a per-tenant history log, success or failure, with the from and to versions, the releases applied and the log
+file name.</p>
+<p>A plan mode runs the probe and diff and prints the result without taking the lock or touching the tenant, so the console can show
+what an update would do while another job is running.</p>
+
+<h2 id="s5">5. Concurrency control</h2>
+<p>Every job that mutates a tenant takes an exclusive, non-blocking lock on a per-tenant lock file as its first action and holds it
+until exit. A second job on the same tenant exits immediately with status 75 and a message that the tenant is busy. The lock lives on
+a file rather than a process ID, so it survives a restart of the console service, and it is released by the kernel when the process
+dies, so a crashed job cannot wedge a tenant.</p>
+<p>The lock was not always this wide. On 2026-10-22 it lived only inside the updater, the last phase of provisioning. A reinstall
+started by hand therefore held no lock during its first two phases, the console saw the tenant as idle, and a test of the console's
+wipe action started a second reinstall, which issued a second rebuild while the first was mid-way through phase A. Both runs were
+killed and a clean third run completed; about 15 minutes were lost and no data, since the tenant was being wiped anyway. Two rules came
+out of it: the installer takes the lock on its first line, and destructive actions are never tested against a real target, even to
+observe a refusal.</p>
+
+<h2 id="s6">6. Backups</h2>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 3 · Backup pipeline</p><div class="fig-svg"><svg viewBox="0 0 1040 272" role="img" aria-labelledby="p3t p3d" xmlns="http://www.w3.org/2000/svg"><title id="p3t">Backup pipeline</title><desc id="p3d">Tenant paths are streamed over SSH with caches excluded into a private partial file, verified, atomically renamed, and pruned to the newest 14. Restores are manual.</desc><defs><marker id="p3ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="p3aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="p3av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="p3avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="10" y="40" width="145" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="82.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Tenant paths</text><text x="82.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">state, pages, forms</text><text x="82.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">proxy + mail config</text><path d="M155 90 H180" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p3ak)"/><rect x="182" y="40" width="145" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="254.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Stream</text><text x="254.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">tar over SSH</text><text x="254.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">caches excluded</text><path d="M327 90 H352" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p3ak)"/><rect x="354" y="40" width="145" height="100" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="426.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Stage</text><text x="426.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">.part file</text><text x="426.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">mode 0600</text><path d="M499 90 H524" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p3ak)"/><rect x="526" y="40" width="145" height="100" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="598.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Verify</text><text x="598.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">exit 0 or 1</text><text x="598.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">&gt;= 10 KB, lists OK</text><path d="M671 90 H696" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p3ak)"/><rect x="698" y="40" width="145" height="100" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="770.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Publish</text><text x="770.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">atomic rename</text><text x="770.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">dated archive</text><path d="M843 90 H868" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#p3ak)"/><rect x="870" y="40" width="145" height="100" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="942.5" y="79.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Retain</text><text x="942.5" y="98.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">keep newest 14</text><text x="942.5" y="113.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">append log line</text><path d="M598 140 V196 H426" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#p3av)"/><text x="416" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6f00ff" text-anchor="end">verification fails: partial file deleted, run raises</text><rect x="10" y="226" width="1020" height="34" rx="17" fill="#f0eaff"/><text x="520" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" font-weight="500" fill="#0a0a0c" text-anchor="middle">restore path: manual runbook today · archives stored private to the control plane</text></svg></div></div><figcaption>Write to a private partial file, verify, then rename. A reader of the backup directory never sees a half-written archive.</figcaption></figure>
+<p>Each tenant is backed up nightly by streaming a compressed archive over SSH into the control plane. The archive covers the agent's
+state directory (settings, memory and the personality), the owner's pages, the forms database and its hooks, the
+reverse proxy and mail configuration, the gateway's service units, the owner-facing helper programs and their state. Downloaded tools,
+the runtime's own checkout, caches and logs are excluded, which keeps the archive to the state that cannot be regenerated.</p>
+<p>Archives are treated as sensitive and are written with owner-only permissions on the control plane.</p>
+<p>The job writes to a dot-prefixed partial file, accepts a tar exit status of 0 or 1 (1 means a file changed while being read, which
+is expected on a live tenant), rejects anything under 10 KB, lists the archive to prove it is readable, and only then renames it into
+place. Retention keeps the newest 14 archives and deletes the rest; every success appends a line with time, file and size.</p>
+<p>Restores are manual. There is no restore button and no automated restore test yet, which is the largest gap in this design and is
+listed in section 9.</p>
+
+<h2 id="s7">7. Observability</h2>
+<p>Every run writes a timestamped log and a small state file that the console polls. The state file is written to a temporary name and
+moved into place, so the console never reads a partial JSON document. It records the process, start and finish times, the from and to
+versions, the planned steps, the steps completed so far and the result. Together with the per-tenant history log, this lets the console
+show a version, a "what's in this update" view and a timeline per tenant without querying the tenant.</p>
+<p>The status probe doubles as a configuration audit. Because it reports models, host pinning, routes and service states, drift between
+what the manifest says and what a tenant runs is visible from the console.</p>
+
+<h2 id="s8">8. Failure analysis</h2>
+<p><strong>Concurrent mutation.</strong> Described in section 5. Root cause: a lock scoped to one phase instead of the job.</p>
+<p><strong>Personality changes and live sessions.</strong> The runtime's gateway keeps the system prompt a conversation was built with.
+A release that patched the personality file therefore did not change the behavior of a conversation already open on the tenant: the
+owner's next message was answered under the old rules. Archiving the session was not enough, since the gateway resumed it; deleting the
+session and restarting while idle was. Releases that change the personality now carry that step, and the owner is told the
+conversation starts fresh. A gentler mechanism is listed as open.</p>
+<p><strong>Shared state during testing.</strong> Test builds run in the default profile on a live tenant share its conversation
+database with the owner. Tests now run in a scratch profile.</p>
+<p><strong>Generation one.</strong> The first-generation installer, started on 2026-09-28, wrapped the runtime in many services of its
+own and was validated by an acceptance run on a fresh server: installed twice, exit 0, 59 checks passed, 0 failed, 4 expected warnings.
+It was retired on 2026-10-21 in favor of the stock runtime plus this release layer, because most owner-facing problems traced to the
+wrapper rather than the runtime and every change had to be threaded through it.</p>
+
+<h2 id="s9">9. Open problems</h2>
+<ol>
+<li><strong>Restore automation and restore testing.</strong> Backups are verified for readability, not for recoverability.</li>
+<li><strong>Rollback.</strong> Steps are idempotent forward; there is no inverse. Recovery from a bad release is a forward fix or a
+rebuild.</li>
+<li><strong>Staged rollout.</strong> Releases go to the test tenant first and to clients on an operator click. There is no automated
+canary or health-gated promotion across tenants.</li>
+<li><strong>Session-preserving personality updates.</strong> Section 8.</li>
+<li><strong>Drift detection.</strong> The probe exposes configuration, but nothing yet compares it to an expected state per version.</li>
+</ol>
+
+<h2 id="s10">10. Claim table</h2>
+<div class="tablewrap"><table><thead><tr><th>Claim</th><th>Evidence</th><th>Confidence</th></tr></thead><tbody><tr><td>21 numbered releases were published across 2026-10-22 and 2026-10-23, 18 of them on 2026-10-22.</td><td>Release manifest</td><td class="conf-high">high</td></tr><tr><td>The 21 releases reference 25 step entries, which resolve to 22 distinct step handlers.</td><td>Release manifest and updater dispatch table</td><td class="conf-high">high</td></tr><tr><td>Version comparison is a numeric tuple over every digit group in the version string.</td><td>Updater source</td><td class="conf-high">high</td></tr><tr><td>The updater waits for at least 90 seconds without a message, polling every 15 seconds up to 40 times (10 minutes).</td><td>Updater source</td><td class="conf-high">high</td></tr><tr><td>After a restart it waits up to 120 seconds for the gateway port and up to 120 seconds for the messaging channel to report connected.</td><td>Updater source</td><td class="conf-high">high</td></tr><tr><td>Owner update texts are opt-in per tenant and capped at 480 characters.</td><td>Updater source and tenant record</td><td class="conf-high">high</td></tr><tr><td>Backups keep the newest 14 archives and reject archives under 10 KB or that fail to list.</td><td>Backup source</td><td class="conf-high">high</td></tr><tr><td>Restores are performed by hand; no restore automation exists yet.</td><td>Backup source and project notes</td><td class="conf-high">high</td></tr><tr><td>One exclusive per-tenant file lock is shared by provisioning, updates and the operator console.</td><td>Installer and updater source; incident note 2026-10-22</td><td class="conf-high">high</td></tr><tr><td>The runtime is installed at a fixed upstream commit during phase A.</td><td>Installer source</td><td class="conf-high">high</td></tr><tr><td>The first-generation installer recorded 59 pass, 0 fail and 4 expected warnings on a fresh server, run twice.</td><td>Project notes, September 2026</td><td class="conf-medium">medium</td></tr><tr><td>Personality changes do not reach conversations already open on a tenant until the session is reset.</td><td>Incident note 2026-10-22</td><td class="conf-high">high</td></tr></tbody></table></div>
+
+<h2 id="s11">11. Sources</h2>
+<ul>
+<li>Fleet tooling: installer, resume entry point, updater, status probe and backup job, October 2026.</li>
+<li>Release manifest, versions 2026.10.22 to 2026.10.23.2.</li>
+<li>Operator console design notes, 2026-10-22.</li>
+<li>Incident notes on concurrent mutation and personality propagation, 2026-10-22.</li>
+<li>Project notes on the first-generation installer, September and October 2026.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="/framework/index.html">Framework</a> · <a href="/expertise/index.html">Expertise</a> · <a href="/compare/index.html">Comparisons</a> · <a href="/playbooks/index.html">Playbooks</a> · <a href="/es/index.html">Español</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script>
+</body>
+</html>

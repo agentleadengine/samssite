@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Board: coordinating concurrent AI coding agents with a shared task ledger | Sam Ochoa</title>
+<meta name="description" content="WP-05: a local, single-writer-friendly task ledger, liveness reconciler, repo-level admission control and a human-blocked queue for supervising concurrent Claude and Codex agents.">
+<meta name="author" content="Samuel Ochoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agent Board: coordinating concurrent AI coding agents with a shared task ledger | Sam Ochoa">
+<meta property="og:description" content="WP-05: a local, single-writer-friendly task ledger, liveness reconciler, repo-level admission control and a human-blocked queue for supervising concurrent Claude and Codex agents.">
+<meta property="og:site_name" content="Samuel Ochoa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20260706">
+<link rel="icon" type="image/png" href="/logo.png">
+<script defer src="/js/translate.js"></script>
+<link rel="canonical" href="https://samuelochoa.com/papers/agent-board/">
+<meta property="og:url" content="https://samuelochoa.com/papers/agent-board/">
+<meta property="og:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Samuel Ochoa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent Board: coordinating concurrent AI coding agents with a shared task ledger | Sam Ochoa">
+<meta name="twitter:description" content="WP-05: a local, single-writer-friendly task ledger, liveness reconciler, repo-level admission control and a human-blocked queue for supervising concurrent Claude and Codex agents.">
+<meta name="twitter:image" content="https://samuelochoa.com/sam-real.jpg">
+<meta name="theme-color" content="#4a00e0">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Agent Board: coordinating concurrent AI coding agents with a shared task ledger","description":"WP-05: a local, single-writer-friendly task ledger, liveness reconciler, repo-level admission control and a human-blocked queue for supervising concurrent Claude and Codex agents.","datePublished":"2026-10-23","inLanguage":"en","author":{"@type":"Person","name":"Samuel Ochoa","url":"https://samuelochoa.com/about"},"publisher":{"@type":"Person","name":"Samuel Ochoa","logo":{"@type":"ImageObject","url":"https://samuelochoa.com/logo.png"}},"mainEntityOfPage":"https://samuelochoa.com/papers/agent-board/","image":"https://samuelochoa.com/sam-real.jpg"}</script>
+<style>
+.wp {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1d1c1a;
+  --muted: #5c5955;
+  --line: #e4dfd6;
+  --brand: #4a3f8f;
+  --accent: #b2531f;
+  --quote-bg: #f1ede4;
+  --code-bg: #efece6;
+  --font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wp * { box-sizing: border-box; }
+.wp {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.wp .wp-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wp h1,
+.wp h2,
+.wp h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.wp h1 { font-size: clamp(32px, 6vw, 46px); margin: 0 0 12px; }
+.wp h2 { font-size: clamp(24px, 4.2vw, 30px); margin: 56px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+.wp h3 { font-size: 20px; margin: 30px 0 8px; }
+.wp p { margin: 0 0 16px; overflow-wrap: anywhere; }
+.wp .kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.wp .lede { font-size: 19px; color: var(--muted); margin-bottom: 28px; }
+.wp .meta { font-size: 14px; color: var(--muted); border-left: 3px solid var(--brand); padding: 8px 14px; margin: 0 0 32px; background: var(--surface); }
+.wp nav.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; margin-bottom: 40px; }
+.wp nav.toc h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 18px; }
+.wp nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 15px; }
+.wp nav.toc li { break-inside: avoid; margin-bottom: 4px; }
+@media (max-width: 520px) { .wp nav.toc ol { columns: 1; } }
+.wp a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.wp ul,
+.wp ol { padding-left: 24px; margin: 0 0 16px; }
+.wp li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.wp blockquote.pull {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 28px 0;
+  padding: 18px 22px;
+  background: var(--quote-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.wp blockquote.pull cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 13px; color: var(--muted); margin-top: 10px; }
+.wp code,
+.wp .path { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.wp .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.wp table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+.wp th,
+.wp td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.wp th { font-weight: 600; background: var(--quote-bg); white-space: nowrap; }
+.wp tr:last-child td { border-bottom: 0; }
+.wp .note { font-size: 14px; color: var(--muted); }
+.wp .conf-high { color: #2f7a3a; font-weight: 600; }
+.wp .conf-medium { color: #9a6b12; font-weight: 600; }
+.wp .conf-low { color: #a33a2a; font-weight: 600; }
+.wp .sources { font-size: 14px; }
+.wp .sources li { margin-bottom: 4px; }
+.wp hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.wp h1, .wp h2, .wp h3 { text-transform: none; }
+
+.wp figure.fig { margin: 40px 0 44px; width: min(1040px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.wp .fig-card { background: #fff; border: 1px solid #e3e1ea; border-radius: 22px; padding: 22px 22px 20px; box-shadow: 0 34px 70px -52px rgba(70,0,160,.5); }
+.wp .fig-kicker { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6f00ff; margin: 0 0 14px; }
+.wp .fig-svg { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.wp .fig-svg svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.wp figure.fig figcaption { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 760px; padding: 0 4px; }
+.wp .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.wp .shot img, .wp .split img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #e3e1ea; }
+.wp .shot p { font-size: 13.5px; color: var(--muted); margin: 10px 2px 0; line-height: 1.45; }
+.wp .fig-n { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; color: #6f00ff; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-right: 4px; }
+.wp .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 34px; align-items: start; }
+.wp .callouts { list-style: none; padding: 0; margin: 0; }
+.wp .callouts li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid #e3e1ea; margin: 0; }
+.wp .callouts li:first-child { border-top: 2px solid #0a0a0c; }
+.wp .callouts .sn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #6f00ff; padding-top: 3px; }
+.wp .callouts h4 { font-family: "Archivo", system-ui, sans-serif; font-size: 18px; font-weight: 800; margin: 0 0 4px; }
+.wp .callouts p { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 760px) {
+  .wp .shots { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .wp .split { grid-template-columns: 1fr; }
+  .wp .split img { max-width: 360px; margin: 0 auto; }
+}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x9tyuivf47");
+</script>
+</head>
+<body>
+<nav class="topbar"><div class="topbar-inner">
+<a href="/index.html" class="logo"><img class="brand-logo" src="/logo.png" alt="Samuel Ochoa"></a>
+<button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/ai-consulting.html" class="nav-link">Work with me</a>
+<a href="/case-studies/index.html" class="nav-link">Case Studies</a>
+<div class="nav-group">
+<a href="/framework/index.html" class="nav-link nav-has-submenu">Resources</a>
+<div class="nav-submenu">
+<a href="/snapshots.html">GHL snapshots</a>
+<a href="/newsletter.html">Daily AI brief</a>
+<a href="/framework/index.html">Framework</a>
+<a href="/expertise/index.html">Expertise</a>
+<a href="/playbooks/index.html">Playbooks</a>
+<a href="/writing.html">Writing</a>
+</div></div>
+<a href="/about.html" class="nav-link">About</a>
+<a href="/contact.html" class="nav-link">Contact</a>
+</div>
+</div></nav>
+<main id="main-content" class="wp">
+<div class="wp-wrap">
+<p class="kicker">WP-05 · Multi-agent orchestration</p>
+<h1>Agent Board: coordinating concurrent AI coding agents with a shared task ledger</h1>
+<p class="lede"><strong>Abstract.</strong> When several autonomous coding agents run at once, the operator loses the one thing that matters: a true picture of who is doing what. Agent Board is a local supervision layer for concurrent Claude and Codex agents. Every agent writes to one append-only SQLite ledger through one of three producers: a launch wrapper that registers the task before the process exists, Claude lifecycle hooks with a hard latency budget, and a reconciler that diffs the ledger against the process table every five seconds. Health is derived, never stored. Admission is enforced by kernel file locks, one writer and two slots per repository. Work passes a bounded, adversarial review loop, and anything that needs a person lands in a deduplicated, self-expiring human-blocked queue. The invariant throughout: unknown stays unknown.</p>
+<div class="meta">Written 2026-10-23 from the project code, specs, tests, a read-only count of the live ledger and Sam's project notes. Every number has a row in the claim table. Paths, ports and hosts are left out.</div>
+<nav class="toc"><h2>Contents</h2><ol><li><a href="#s1">The problem: invisible concurrency</a></li><li><a href="#s2">Design invariants</a></li><li><a href="#s3">The ledger</a></li><li><a href="#s4">Three producers</a></li><li><a href="#s5">Liveness, health and progress</a></li><li><a href="#s6">Admission control</a></li><li><a href="#s7">The review loop</a></li><li><a href="#s8">The human-blocked queue</a></li><li><a href="#s9">Presentation: one row per project</a></li><li><a href="#s10">Operating record</a></li><li><a href="#s11">Failure analysis</a></li><li><a href="#s12">Limitations</a></li><li><a href="#s13">Claim table</a></li><li><a href="#s14">Sources</a></li></ol></nav>
+<h2 id="s1">1. The problem: invisible concurrency</h2>
+<p>Sam runs long agent jobs in parallel: Codex builds launched as "Astra", Claude Code sessions, and the helper agents those sessions spawn. Without a shared record, three questions have no answer: is it still working, is it stuck, and how much of the subscription is it burning. The original requirement was blunt: one always-on page that is completely accurate. If an agent is working, it is on the page, with its live progress.</p>
+<p>Accuracy here is a distributed systems problem. Agents start and die outside any single process, report asynchronously, and lie by omission when they crash. Agent Board treats the board as a projection of a ledger, and the ledger as the only source of truth.</p>
+<h2 id="s2">2. Design invariants</h2>
+<ol><li><strong>Register before spawn.</strong> A task row exists before its process does, so no agent can run unrecorded through the supported path.</li><li><strong>Unknown stays unknown.</strong> No estimated percentages, no inferred exit codes, no guessed usage. A Claude session without a reliable process ID shows its process status as unknown, and its Stop button is disabled.</li><li><strong>Derive, do not store, health.</strong> Status is a fact recorded by producers; health is computed at read time from status and idle time.</li><li><strong>Never block the agent.</strong> Instrumentation must fail open: a busy ledger drops an event rather than slow an agent down.</li><li><strong>Local and dependency-free.</strong> Python standard library and SQLite only, no package installs, no CDN, and no network calls except the usage reader. The server binds to the local machine only.</li></ol>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 1 · Ingestion topology</p><div class="fig-svg"><svg viewBox="0 0 1040 450" role="img" aria-labelledby="ab1t ab1d" xmlns="http://www.w3.org/2000/svg"><title id="ab1t">Agent Board ingestion topology</title><desc id="ab1d">Four producers write into one SQLite ledger in WAL mode: the launch wrapper, Claude hooks, the reconciler and the usage poller. A local server derives state and streams it to three views: the board, the office and the per-task timeline.</desc><defs><marker id="ab1ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="ab1aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="ab1av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="ab1avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="1.2">PRODUCERS</text><rect x="20" y="48" width="190" height="82" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="115.0" y="78.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Launch wrapper</text><text x="115.0" y="97.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">row before spawn</text><text x="115.0" y="112.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">heartbeat every 15 s</text><path d="M210 89 C250 89 262 236 300 236" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="20" y="146" width="190" height="82" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="115.0" y="176.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Claude hooks</text><text x="115.0" y="195.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">sync start/stop</text><text x="115.0" y="210.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">async tool events</text><path d="M210 187 C250 187 262 236 300 236" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="20" y="244" width="190" height="82" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="115.0" y="274.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Reconciler</text><text x="115.0" y="293.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">every 5 s</text><text x="115.0" y="308.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">process table scan</text><path d="M210 285 C250 285 262 236 300 236" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="20" y="342" width="190" height="82" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="115.0" y="372.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Usage poller</text><text x="115.0" y="391.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">every 60 s</text><text x="115.0" y="406.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">last good kept</text><path d="M210 383 C250 383 262 236 300 236" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="302" y="40" width="300" height="392" rx="26" fill="#f0eaff"/><rect x="322" y="54" width="170" height="24" rx="12" fill="#6f00ff"/><text x="407" y="70" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="0.6">LEDGER · SQLITE WAL</text><rect x="332" y="96" width="240" height="66" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="452.0" y="126.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">tasks</text><text x="452.0" y="145.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">7 statuses, parent edges</text><rect x="332" y="176" width="240" height="66" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="452.0" y="206.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">events</text><text x="452.0" y="225.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">append-only, seq ordered</text><rect x="332" y="256" width="240" height="66" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="452.0" y="286.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">kv</text><text x="452.0" y="305.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">usage, reconcile, needs</text><rect x="332" y="336" width="240" height="66" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="452.0" y="366.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">items</text><text x="452.0" y="385.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">idea, doing, waiting, done</text><path d="M602 236 H648" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="650" y="168" width="170" height="136" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="735.0" y="210.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Server</text><text x="735.0" y="229.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">state API</text><text x="735.0" y="244.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">event stream</text><text x="735.0" y="259.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">stop requests</text><text x="735.0" y="274.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">local only</text><text x="850" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="1.2">VIEWS</text><rect x="850" y="96" width="170" height="80" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="935.0" y="133.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Board</text><text x="935.0" y="152.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">lanes, needs you</text><path d="M820 236 C836 236 834 136 848 136" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="850" y="200" width="170" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="935.0" y="237.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Office</text><text x="935.0" y="256.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">hub, rooms, doors</text><path d="M820 236 C836 236 834 240 848 240" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/><rect x="850" y="304" width="170" height="80" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="935.0" y="341.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Timeline</text><text x="935.0" y="360.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">per task events</text><path d="M820 236 C836 236 834 344 848 344" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab1ak)"/></svg></div></div><figcaption>Four writers, one ledger, one reader. Producers never talk to each other; they only append.</figcaption></figure>
+<h2 id="s3">3. The ledger</h2>
+<p>The ledger is one SQLite database in write-ahead logging mode, so the wrapper, the hooks, the reconciler and the server can write concurrently, with a 30 second busy timeout. It has four tables. <code>tasks</code> holds one row per unit of work: source (astra, claude or claude-subagent), status, process ID, parent edge, thread ID, model, effort, timestamps, exit code, last message, last command, files changed and progress counters. <code>events</code> is append-only and totally ordered by a sequence number, so any timeline can be reconstructed and streamed incrementally. <code>kv</code> holds derived snapshots such as usage readings and the last reconcile pass. <code>items</code> holds human-level work items in four lanes: idea, doing, waiting and done.</p>
+<p>Two details carry weight. First, schema evolution is additive: new columns are added on connect, and old ledgers are backfilled in place. Second, the ledger keeps a byte-level cost proxy per task, maintained by triggers on every event insert and prompt update. It is explicitly a proxy, prompt plus event payload bytes, and is never presented as tokens or dollars. An early bug shaped the payload policy: truncating serialized JSON broke parsing, so oversized payloads are compacted by shrinking string fields instead of cutting the document.</p>
+<h2 id="s4">4. Three producers</h2>
+<h3>4.1 The launch wrapper</h3>
+<p>All Codex work goes through one wrapper. It writes the task row, then spawns the agent in JSON event mode, streams every event into the ledger, heartbeats every 15 seconds while the child lives, and records the exit code. A spawn failure is recorded as failed with exit code 127 instead of disappearing. Signal forwarding is installed before the prompt is sent, so a stop request reaches the child. The test suite proves the ordering: a fake agent waits before its first event while the test polls the ledger and asserts the row already exists.</p>
+<h3>4.2 Claude lifecycle hooks</h3>
+<p>Claude sessions are captured by hooks: session start and end, prompt submit, helper start and stop, and tool events before and after each call. Lifecycle hooks run synchronously; tool hooks run asynchronously so they never add latency to the agent. Each hook has a 25 millisecond lock wait and a 150 millisecond work budget, targeting an exit under 200 milliseconds. On timeout it logs and drops the event. It always exits zero and never writes to standard output, because anything printed would be injected into the agent's context.</p>
+<h3>4.3 The reconciler</h3>
+<p>Every five seconds a reconciler compares the ledger with reality. A running task whose process is gone and has no recorded exit becomes lost. A running task idle for more than 600 seconds becomes stalled, and flips back on its next event. It also scans the process table for Codex processes not launched through the wrapper, walks up to three parent levels to avoid double counting wrapper children, and records each one as untracked, keyed by process ID so it is never duplicated. When that process exits, it becomes lost.</p>
+<h2 id="s5">5. Liveness, health and progress</h2>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 2 · Task state machine</p><div class="fig-svg"><svg viewBox="0 0 1040 420" role="img" aria-labelledby="ab2t ab2d" xmlns="http://www.w3.org/2000/svg"><title id="ab2t">Task state machine</title><desc id="ab2d">Tasks move from queued to running when spawned, then to done on exit 0, failed on a non-zero exit, or lost when the process disappears without an exit. Running flips to stalled after ten idle minutes and back on a new event. Codex processes found outside the wrapper enter as untracked and become lost when they exit.</desc><defs><marker id="ab2ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="ab2aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="ab2av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="ab2avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="40" y="150" width="160" height="64" rx="32" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="120.0" y="186.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">queued</text><rect x="260" y="150" width="160" height="64" rx="32" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="340.0" y="186.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">running</text><rect x="260" y="300" width="160" height="64" rx="32" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="340.0" y="336.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">stalled</text><rect x="560" y="40" width="160" height="64" rx="32" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="640.0" y="76.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">done</text><rect x="560" y="150" width="160" height="64" rx="32" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="640.0" y="186.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">failed</text><rect x="560" y="260" width="160" height="64" rx="32" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="640.0" y="296.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">lost</text><rect x="820" y="260" width="160" height="64" rx="32" fill="#ffffff" stroke="#6f00ff" stroke-width="1.5" stroke-dasharray="6 5"/><text x="900.0" y="296.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">untracked</text><path d="M200 182 H258" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab2ak)"/><text x="229" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="middle">spawn</text><path d="M420 170 C480 170 500 72 558 72" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab2ak)"/><text x="468" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="middle">exit 0</text><path d="M420 182 H558" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab2ak)"/><text x="489" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="middle">exit non-zero</text><path d="M420 196 C480 196 500 292 558 292" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab2ak)"/><text x="566" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="start">pid gone, no exit</text><path d="M300 214 V298" fill="none" stroke="#6f00ff" stroke-width="1.6" marker-end="url(#ab2av)"/><text x="292" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6f00ff" text-anchor="end">idle &gt; 10 min</text><path d="M380 298 V216" fill="none" stroke="#6f00ff" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ab2av)"/><text x="388" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6f00ff" text-anchor="start">new event</text><path d="M820 292 H722" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab2ak)"/><text x="771" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="middle">pid gone</text><text x="900" y="352" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#4b4b57" text-anchor="middle">codex outside the wrapper</text><text x="900" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6f00ff" text-anchor="middle">found by the reconciler</text><text x="20" y="400" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="0.5">HEALTH (DERIVED, NOT STORED): WORKING &lt; 2 MIN IDLE · QUIET 2 TO 10 MIN · STALLED &gt; 10 MIN · HEARTBEATS COUNT AS ACTIVITY</text></svg></div></div><figcaption>Seven recorded statuses. Health is a read-time function of status and idle time, so the board can never drift from the ledger.</figcaption></figure>
+<p>Health is computed per read: working under two minutes idle, quiet from two to ten, stalled beyond ten, plus lost, done, failed, queued and untracked. Heartbeats count as activity, which makes health a liveness signal, not a progress signal. The board says so in plain words.</p>
+<p>Percent complete exists only with a declared denominator. A run launched with a step count asks the agent to emit <code>PROGRESS n/total</code> lines, which the ledger parses from messages. Claude tasks report completed checklist items over total items, cleared at each new turn. Everything else shows "Progress not reported". Even then the count is the agent's own claim; the timeline is the evidence.</p>
+<h2 id="s6">6. Admission control</h2>
+<p>Concurrency on one repository is bounded by a lease built on kernel advisory locks. The lock root is derived from a hash of the resolved checkout path. A writing run first takes an exclusive writer lock, so there is one writer per checkout. Every run then needs one of two slot locks, tried without blocking; if both are held, the run blocks on the first. The effective cap is two wrapper-controlled runs per repository. There are no sentinel files, sleeps or polling loops, and a crashed holder releases its lock when the kernel closes the file.</p>
+<p>The cap came from evidence, not taste. On the first full day, with every task at high effort, the Codex weekly allowance dropped to 11% left, and a third concurrent stream stalled while two ran. Release work (full test suites, browser suites, batched deploys) takes a separate global browser lock and a source-bound receipt, so focused tests stay inside tasks and aggregate verification runs once per release window. Runs also carry a token budget, 40 million by default, counted from the agent's own token events; a run over budget is stopped and exits 125.</p>
+<figure class="fig"><div class="fig-card"><p class="fig-kicker">Fig. 3 · Admission and review</p><div class="fig-svg"><svg viewBox="0 0 1040 384" role="img" aria-labelledby="ab3t ab3d" xmlns="http://www.w3.org/2000/svg"><title id="ab3t">Admission control and the review loop</title><desc id="ab3d">Each wrapper run takes a kernel-backed repo lease: one writer lock and one of two slots, so a third run blocks. The worker&#x27;s task-local diff goes to a bounded review packet; the reviewer returns APPROVE or a numbered fix list. One fix round and a second review follow; an unresolved review exits 2 and surfaces in the Needs you queue.</desc><defs><marker id="ab3ak" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a0a0c"/></marker><marker id="ab3aks" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#0a0a0c"/></marker><marker id="ab3av" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f00ff"/></marker><marker id="ab3avs" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6f00ff"/></marker></defs><rect x="20" y="70" width="170" height="110" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="105.0" y="107.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">astra run</text><text x="105.0" y="126.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">role, model, effort</text><text x="105.0" y="141.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">token budget</text><text x="105.0" y="156.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">brief by path</text><rect x="220" y="40" width="230" height="170" rx="24" fill="#f0eaff"/><text x="234" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="1.1">REPO LEASE · FLOCK</text><rect x="236" y="76" width="198" height="44" rx="22" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="335.0" y="102.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">writer.lock</text><rect x="236" y="130" width="94" height="44" rx="22" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="283.0" y="156.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">slot 0</text><rect x="340" y="130" width="94" height="44" rx="22" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="387.0" y="156.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">slot 1</text><text x="335" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6f00ff" text-anchor="middle">third run blocks on slot 0</text><path d="M190 125 H218" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab3ak)"/><rect x="480" y="76" width="140" height="98" rx="14" fill="#6f00ff" stroke="#6f00ff" stroke-width="1.5"/><text x="550.0" y="114.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Worker</text><text x="550.0" y="133.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">task-local</text><text x="550.0" y="148.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#e8ddff" text-anchor="middle">diff snapshot</text><path d="M450 125 H478" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab3ak)"/><rect x="650" y="76" width="160" height="98" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="730.0" y="107.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Review packet</text><text x="730.0" y="126.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">≤ 256 KB</text><text x="730.0" y="141.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">≤ 200 log lines</text><text x="730.0" y="156.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">report ≤ 600 words</text><path d="M620 125 H648" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab3ak)"/><rect x="840" y="76" width="180" height="98" rx="14" fill="#0a0a0c" stroke="#0a0a0c" stroke-width="1.5"/><text x="930.0" y="114.5" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Reviewer</text><text x="930.0" y="133.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">Astra, Kimi or both</text><text x="930.0" y="148.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#c9c9d1" text-anchor="middle">APPROVE or 1. 2. 3.</text><path d="M810 125 H838" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab3ak)"/><path d="M930 174 V246 H550 V176" fill="none" stroke="#6f00ff" stroke-width="1.6" marker-end="url(#ab3av)"/><text x="740" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6f00ff" text-anchor="middle">FIX → one fix round → second review</text><rect x="840" y="300" width="180" height="64" rx="14" fill="#ffffff" stroke="#0a0a0c" stroke-width="1.5"/><text x="930.0" y="329.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">exit 2</text><text x="930.0" y="348.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">unresolved review</text><path d="M930 174 C980 220 990 260 980 298" fill="none" stroke="#0a0a0c" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ab3ak)"/><rect x="560" y="300" width="220" height="64" rx="14" fill="#f0eaff" stroke="#f0eaff" stroke-width="1.5"/><text x="670.0" y="329.0" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0a0a0c" text-anchor="middle">Needs you</text><text x="670.0" y="348.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b4b57" text-anchor="middle">the human-blocked queue</text><path d="M840 332 H782" fill="none" stroke="#0a0a0c" stroke-width="1.6" marker-end="url(#ab3ak)"/><text x="20" y="330" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#6f00ff" text-anchor="start" letter-spacing="0.6">584 VERDICTS ON RECORD:</text><text x="20" y="350" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" fill="#0a0a0c" text-anchor="start" letter-spacing="0.6">160 APPROVE · 337 FIX · 87 INVALID</text></svg></div></div><figcaption>A bounded pipeline: lease, worker, packet, reviewer, at most one fix round. Anything still unresolved becomes a human decision, not another retry.</figcaption></figure>
+<h2 id="s7">7. The review loop</h2>
+<p>Implementation runs as a role, worker, followed by an isolated review. The reviewer gets a packet, not a conversation: the task-local diff, at most 200 lines of test output, the worker report and the path of the original brief, inside a 256 KB budget. When the budget is tight, unchanged context and non-test file bodies are dropped with recovery paths the reviewer can open. Prompts over 8,000 bytes are stored as files and passed by reference.</p>
+<p>The verdict grammar is strict: exactly <code>APPROVE</code>, or a numbered list of fixes. Anything else is classified INVALID. A FIX verdict returns to the worker once, then a second review runs. If it is still unresolved the run exits 2 and becomes eligible for an architect, but nothing escalates automatically. Reviewers can be Astra, Kimi, or both, where both must approve and disagreements are labeled. The ledger holds 584 verdicts: 160 APPROVE, 337 FIX and 87 INVALID. Fix requests outnumber approvals two to one, which is the point of the loop.</p>
+<h2 id="s8">8. The human-blocked queue</h2>
+<p>"Needs you" is the queue of things only Sam can unblock. It is computed, not curated, from five sources: tasks that failed in the last two hours, reviews still asking for changes, needs raised manually in the last two hours, needs raised by a live Claude session in the last 15 minutes, and work items in the waiting lane assigned to Sam.</p>
+<p>Three rules keep it short and true. A need is suppressed when it was acknowledged after its latest signal. A failure is suppressed when a later run in the same working directory, or with the same title, succeeded after it. And needs are deduplicated per task, keeping the most recent signal. The board shows at most five per lane, with the rest behind an overflow. Sam's rule was explicit: needs you, maximum five, real and current only.</p>
+<h2 id="s9">9. Presentation: one row per project</h2>
+<p>Raw tasks are the wrong unit for a human. A single Claude session can spawn dozens of helpers, and an early office view showed 109 jobs at once, many of them stale helpers that had never closed. Sam's verdict: "There is too many helpers... this isn't supposed to be like a visual stimulus thing, it's supposed to be an actual tool."</p>
+<p>The fix was aggregation. Tasks are routed to a project by an explicit tag, then by a single product name in the brief or branch, then by working-directory rules, falling back to the main room. Each project renders as one row, or one lead worker in its room, with helpers shown as a count. Jobs idle more than 15 minutes leave the office. The office itself is the fun part: a pixel hub where the orchestrators sit in suits, doors with green, yellow or red lights, and one themed room per project, each with a whiteboard. It obeys one hard rule from Sam: the camera never moves by itself.</p>
+<h2 id="s10">10. Operating record</h2>
+<p>A read-only count of the live ledger on 2026-10-23, covering 2026-09-08 to 2026-10-23:</p>
+<div class="tablewrap"><table><thead><tr><th>Measure</th><th>Value</th></tr></thead><tbody><tr><td>Task rows</td><td>28,149</td></tr><tr><td>Events</td><td>540,175</td></tr><tr><td>By source</td><td>8,331 Codex (Astra), 7,267 Claude sessions, 12,373 Claude helpers, 178 other Codex</td></tr><tr><td>Wrapper-launched Codex runs</td><td>1,380 done, 116 failed, 267 lost</td></tr><tr><td>Codex processes found outside the wrapper</td><td>6,568, all ended as lost</td></tr><tr><td>Distinct working directories (Codex)</td><td>533</td></tr><tr><td>Done worker runs, mean wall time</td><td>7.95 minutes over 803 runs</td></tr><tr><td>Review verdicts</td><td>160 APPROVE, 337 FIX, 87 INVALID</td></tr><tr><td>Work items</td><td>95 done, 22 waiting, 15 doing, 19 ideas</td></tr><tr><td>Tests</td><td>188 test methods in 22 Python files, plus 12 browser scripts</td></tr></tbody></table></div>
+<p>The largest number is the most instructive. Most Codex rows were never launched by the wrapper at all: they are processes the reconciler caught running on their own, recorded as untracked, then lost when they ended. That is the untracked detector doing exactly its job, and it is also a measure of how much agent activity would otherwise be invisible.</p>
+<h2 id="s11">11. Failure analysis</h2>
+<ul><li><strong>The kill chain reaction.</strong> Killing a reviewer returned a signal exit, which the verdict parser read as INVALID, which triggered the fix loop, which spawned a new worker and a new review. Each kill produced two or three more tasks. The patch: a reviewer stopped by a signal ends the chain with a STOPPED verdict.</li><li><strong>Budget burn.</strong> The first day ran 36 tasks and about 24 agent hours in 36 hours, all at high effort. A breakdown of where usage went found re-reading context at about 25%, oversized command output at 18%, repeated aggregate verification at 12% and high effort on routine work at 12%. Roles, bounded packets, the release window and the two-run cap came out of that analysis.</li><li><strong>Phantom helpers.</strong> Helper tasks that never closed showed as stalled for hundreds of hours and flooded the view. Aggregation by project and a 15 minute idle cutoff replaced one sprite per helper.</li><li><strong>Lock contention.</strong> Builds in the board's own repository failed with "database is locked" while a separate rendering service held the ledger. The operating rule is to pause that service during builds there.</li><li><strong>Ready before verified.</strong> Interface work was reported ready before anyone opened it in a real browser with real data. The rule now: no UI is ready until a screenshot of it has been looked at.</li></ul>
+<h2 id="s12">12. Limitations</h2>
+<ul><li>Heartbeats prove liveness, not useful progress.</li><li>Claude sessions have no reliable process ID through hooks, so they cannot be stopped from the board.</li><li>The lease only covers wrapper-controlled runs. Direct agent calls do not participate.</li><li>Progress counts are self-reported by the agent.</li><li>The board is local to one machine by design.</li></ul>
+<h2 id="s13">13. Claim table</h2>
+<div class="tablewrap"><table><thead><tr><th>Claim</th><th>Evidence</th><th>Confidence</th></tr></thead><tbody><tr><td>Ledger tables: tasks, events, kv, items; seven task statuses</td><td>Ledger schema in code</td><td class="conf-high">high</td></tr><tr><td>Wrapper creates the task row before spawning and heartbeats every 15 s</td><td>Build spec and wrapper tests</td><td class="conf-high">high</td></tr><tr><td>Reconciler runs every 5 s; dead pid without exit is lost; idle over 600 s is stalled</td><td>Reconciler code and spec</td><td class="conf-high">high</td></tr><tr><td>Hooks: 25 ms lock wait, 150 ms work budget, target exit under 200 ms</td><td>Project README</td><td class="conf-high">high</td></tr><tr><td>Repo lease: one writer lock plus two slots per checkout</td><td>Lease code in the policy module</td><td class="conf-high">high</td></tr><tr><td>Review packet: 256 KB budget, 200 log lines, reports under 600 words</td><td>Policy module constants</td><td class="conf-high">high</td></tr><tr><td>Default per-run token budget 40 million, exit 125 when exceeded</td><td>Wrapper constants</td><td class="conf-high">high</td></tr><tr><td>28,149 task rows and 540,175 events, 2026-09-08 to 2026-10-23</td><td>Read-only ledger count, 2026-10-23</td><td class="conf-high">high</td></tr><tr><td>Wrapper runs: 1,380 done, 116 failed, 267 lost</td><td>Read-only ledger count</td><td class="conf-high">high</td></tr><tr><td>6,568 Codex processes detected outside the wrapper, all now lost</td><td>Read-only ledger count</td><td class="conf-high">high</td></tr><tr><td>584 review verdicts: 160 APPROVE, 337 FIX, 87 INVALID</td><td>Read-only ledger count</td><td class="conf-high">high</td></tr><tr><td>Mean done worker run 7.95 minutes over 803 runs</td><td>Read-only ledger count</td><td class="conf-medium">medium</td></tr><tr><td>188 test methods in 22 Python test files, plus 12 browser scripts</td><td>Test folder count</td><td class="conf-high">high</td></tr><tr><td>First day: 36 tasks and about 24 agent hours in 36 hours; weekly allowance at 11% after one day</td><td>Project notes, 2026-09-09</td><td class="conf-medium">medium</td></tr></tbody></table></div>
+<h2 id="s14">14. Sources</h2>
+<ul><li>Agent Board source code: ledger, wrapper, hooks, reconciler, server and policy modules, October 2026.</li><li>The original build specification, product notes and project-rooms specification.</li><li>The test suite, counted 2026-10-23.</li><li>A read-only count of the live ledger, 2026-10-23.</li><li>Sam's project notes, 2026-09-08 to 2026-10-19.</li></ul>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Samuel Ochoa · <a href="https://www.linkedin.com/in/samuelochoa" target="_blank" rel="noopener">LinkedIn</a> · <a href="/framework/index.html">Framework</a> · <a href="/expertise/index.html">Expertise</a> · <a href="/compare/index.html">Comparisons</a> · <a href="/playbooks/index.html">Playbooks</a> · <a href="/es/index.html">Español</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  const bar = document.querySelector('nav.topbar');
+  if (!bar || bar.dataset.navInit) return;
+  bar.dataset.navInit = '1';
+
+  const OPEN_DELAY = 120;   // ms - hover intent
+  const CLOSE_DELAY = 450;  // ms - forgiving close
+  const isMobile = () => window.matchMedia('(max-width: 960px)').matches;
+
+  const hamb = bar.querySelector('.hamburger');
+  const links = bar.querySelector('.nav-links');
+  const groups = Array.from(bar.querySelectorAll('.nav-group'));
+
+  // --- Mobile hamburger ---------------------------------------------------
+  if (hamb && links) {
+    hamb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = bar.classList.toggle('nav-open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // --- Per-group hover-intent open/close ---------------------------------
+  groups.forEach(function(group) {
+    let openTimer = null;
+    let closeTimer = null;
+
+    const open = () => {
+      clearTimeout(closeTimer); closeTimer = null;
+      if (openTimer) return;
+      openTimer = setTimeout(() => {
+        groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+        group.classList.add('is-open');
+        openTimer = null;
+      }, OPEN_DELAY);
+    };
+    const close = () => {
+      clearTimeout(openTimer); openTimer = null;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        group.classList.remove('is-open');
+        closeTimer = null;
+      }, CLOSE_DELAY);
+    };
+    const cancelClose = () => { clearTimeout(closeTimer); closeTimer = null; };
+
+    // Keyboard focus opens the same desktop menu without requiring hover.
+    group.addEventListener('focusin', () => {
+      if (isMobile()) return;
+      clearTimeout(closeTimer);
+      groups.forEach(g => { if (g !== group) g.classList.remove('is-open'); });
+      group.classList.add('is-open');
+    });
+    group.addEventListener('focusout', (e) => {
+      if (!isMobile() && !group.contains(e.relatedTarget)) {
+        clearTimeout(openTimer); openTimer = null;
+        group.classList.remove('is-open');
+      }
+    });
+
+    // Desktop: hover opens, mouseleave closes after delay
+    group.addEventListener('mouseenter', () => { if (!isMobile()) open(); });
+    group.addEventListener('mouseleave', () => { if (!isMobile()) close(); });
+    // If cursor re-enters while closing, cancel the close
+    group.addEventListener('pointerenter', () => { if (!isMobile()) cancelClose(); });
+
+    // Click trigger: mobile toggles accordion; desktop follows the link
+    const trigger = group.querySelector('.nav-has-submenu');
+    if (trigger) {
+      trigger.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const wasOpen = group.classList.contains('is-open');
+          groups.forEach(g => g.classList.remove('is-open'));
+          if (!wasOpen) group.classList.add('is-open');
+        }
+      });
+    }
+  });
+
+  // --- Mega menu (legacy): swap right-panel content on category hover -----
+  // No-op now that Resources is a simple dropdown, but harmless if any
+  // mega markup lingers on a not-yet-rebuilt page.
+  const megaCats = bar.querySelectorAll('.nav-mega-cats .nav-cat');
+  const megaPanels = bar.querySelectorAll('.nav-mega-content .nav-cat-panel');
+  let catTimer = null;
+  megaCats.forEach(function(cat) {
+    cat.addEventListener('mouseenter', function() {
+      clearTimeout(catTimer);
+      const id = cat.dataset.cat;
+      catTimer = setTimeout(() => {
+        megaCats.forEach(c => c.classList.toggle('is-active', c.dataset.cat === id));
+        megaPanels.forEach(p => p.classList.toggle('is-active', p.dataset.cat === id));
+      }, 80); // snappier than top-level hover intent
+    });
+  });
+
+  // --- Close menu when a leaf link is clicked ----------------------------
+  if (links) {
+    links.querySelectorAll('a').forEach(function(a) {
+      if (a.classList.contains('nav-has-submenu')) return;
+      if (a.classList.contains('nav-cat')) return; // cat label also navigates, but don't auto-close
+      a.addEventListener('click', function() {
+        bar.classList.remove('nav-open');
+        if (hamb) hamb.setAttribute('aria-expanded', 'false');
+        groups.forEach(g => g.classList.remove('is-open'));
+      });
+    });
+  }
+
+  // --- Close on outside click ---------------------------------------------
+  document.addEventListener('click', function(e) {
+    if (!bar.contains(e.target)) {
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+
+  // --- Escape key closes everything ---------------------------------------
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const focusedGroup = groups.find(g => g.contains(document.activeElement));
+      if (focusedGroup) focusedGroup.querySelector('.nav-has-submenu').focus();
+      bar.classList.remove('nav-open');
+      if (hamb) hamb.setAttribute('aria-expanded', 'false');
+      groups.forEach(g => g.classList.remove('is-open'));
+    }
+  });
+})();
+</script>
+</body>
+</html>
