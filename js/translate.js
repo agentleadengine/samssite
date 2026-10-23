@@ -4,10 +4,10 @@
  * Behavior:
  *   - On first visit, if the browser language starts with "es", the page
  *     auto-translates to Spanish via the Google Translate widget.
- *   - A small floating button (bottom-right) lets visitors toggle ES <-> EN.
+ *   - A small link at the end of the footer lets visitors toggle ES <-> EN.
  *   - Their choice persists via the googtrans cookie and localStorage.
  *
- * The widget is hidden visually; we only show our own toggle button.
+ * The widget is hidden visually; we only show our own footer link.
  */
 (function () {
   'use strict';
@@ -104,21 +104,8 @@
       // Google pushes the body down to make room for its banner; cancel it.
       'body { top: 0 !important; position: static !important; }' +
       'html { margin-top: 0 !important; }' +
-      // Our toggle button.
-      '#sam-lang-toggle {' +
-        'position: fixed; bottom: 18px; right: 18px; z-index: 9998;' +
-        'background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.08);' +
-        'border-radius: 999px; padding: 9px 14px;' +
-        'font: 500 13px/1 \'Inter\', system-ui, -apple-system, sans-serif;' +
-        'cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.18);' +
-        'transition: transform .15s ease, opacity .15s ease;' +
-        'display: inline-flex; align-items: center; gap: 6px;' +
-      '}' +
-      '#sam-lang-toggle:hover { transform: translateY(-1px); }' +
-      '#sam-lang-toggle:focus-visible { outline: 2px solid #7a4dff; outline-offset: 2px; }' +
-      '@media (max-width: 600px) {' +
-        '#sam-lang-toggle { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 12px; }' +
-      '}';
+      // Our toggle: a plain link at the end of the footer line.
+      '#sam-lang-toggle { color: inherit; text-decoration: underline; cursor: pointer; }';
     var style = document.createElement('style');
     style.id = 'sam-lang-style';
     style.appendChild(document.createTextNode(css));
@@ -134,21 +121,30 @@
 
   function injectToggle() {
     if (document.getElementById('sam-lang-toggle')) return;
-    var btn = document.createElement('button');
-    btn.id = 'sam-lang-toggle';
-    btn.type = 'button';
+    // Footer only: append to the last line of the page footer. No footer, no toggle.
+    var footers = document.querySelectorAll('footer');
+    if (!footers.length) return;
+    var foot = footers[footers.length - 1];
+    var lines = foot.querySelectorAll('p');
+    var line = lines.length ? lines[lines.length - 1] : foot;
+    if (/Espa\u00f1ol|English/.test(line.textContent)) return;
     var lang = currentLang();
-    btn.textContent = lang === 'es' ? 'English' : 'Español';
-    btn.setAttribute('aria-label', lang === 'es'
+    var link = document.createElement('a');
+    link.id = 'sam-lang-toggle';
+    link.href = '#';
+    link.setAttribute('role', 'button');
+    link.textContent = lang === 'es' ? 'English' : 'Espa\u00f1ol';
+    link.setAttribute('aria-label', lang === 'es'
       ? 'Switch site to English'
-      : 'Traducir el sitio al español');
-    btn.addEventListener('click', function () {
+      : 'Traducir el sitio al espa\u00f1ol');
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
       setLang(currentLang() === 'es' ? 'en' : 'es');
     });
-    document.body.appendChild(btn);
+    line.appendChild(document.createTextNode(' \u00b7 '));
+    line.appendChild(link);
   }
 
-  // ---- first-visit auto-detection -------------------------------------
   function maybeAutoTranslate() {
     var alreadyPrompted = false;
     try { alreadyPrompted = localStorage.getItem(PROMPTED_KEY) === '1'; } catch (e) {}
