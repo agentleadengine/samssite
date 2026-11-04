@@ -60,8 +60,6 @@
 /gracias.html /es/ 301!
 /demos / 301!
 /demos/* / 301!
-/queva / 302!
-/queva/* / 302!
 /agent.html / 302!
 /assistant.html / 302!
 /queva.html / 302!
