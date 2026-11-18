@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="460" viewBox="0 0 300 460">
+  <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".23 .009" numOctaves="3" seed="14" stitchTiles="stitch"/>
+    <feColorMatrix values="0 0 0 0 .15 0 0 0 0 .065 0 0 0 0 .025 1 0 0 0 -.18"/>
+  </filter>
+  <path d="M0 0h300v460H0z" filter="url(#grain)" opacity=".55"/>
+  <path d="M2 0v460M298 0v460M96 0c3 105-2 161-5 230s4 173 1 230m103-460c-4 75 9 126 6 200s-11 159-5 260" fill="none" stroke="#482e18" stroke-opacity=".34" stroke-width="2"/>
+</svg>
