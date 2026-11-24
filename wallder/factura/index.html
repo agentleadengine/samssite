@@ -1,0 +1,166 @@
+<!doctype html><html lang="es" data-lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"></head><body>
+<title>Factura Wallder WC-2026-001</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one invoice sheet, header band, line items with hour detail, totals, upcoming monthly schedule. Wallder's d4 colors. */
+:root {
+  --paper: #F3EEE4;
+  --sheet: #FBF8F2;
+  --ink: #10161D;
+  --muted: #5A5F63;
+  --rule: #D9D0C0;
+  --copper: #9C6431;
+  --copper-soft: #EBDCC8;
+  --band: #10161D;
+  --band-ink: #F3EEE4;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --text: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1117; --sheet: #141B23; --ink: #EDE7DC; --muted: #A9A399; --rule: #2B3440;
+    --copper: #D9A06A; --copper-soft: #2C241B; --band: #1C2530; --band-ink: #F3EEE4; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C1117; --sheet: #141B23; --ink: #EDE7DC; --muted: #A9A399; --rule: #2B3440;
+  --copper: #D9A06A; --copper-soft: #2C241B; --band: #1C2530; --band-ink: #F3EEE4; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.lang { display: flex; justify-content: flex-end; gap: 6px; margin-bottom: 14px; }
+.lang button { font: 600 13px var(--text); padding: 6px 12px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); border-radius: 3px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.lang button:focus-visible { outline: 2px solid var(--copper); outline-offset: 2px; }
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.band { background: var(--band); color: var(--band-ink); padding: 26px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: flex-end; }
+.band h1 { font: 600 2.6rem/1 var(--display); margin: 0; letter-spacing: .01em; }
+.band .num { font-variant-numeric: tabular-nums; font-size: .95rem; opacity: .85; margin-top: 6px; }
+.draft { font: 600 12px var(--text); letter-spacing: .08em; text-transform: uppercase; border: 1px solid #C58A4B; color: #E2B585; padding: 5px 10px; border-radius: 3px; }
+.body { padding: 24px 28px 30px; display: grid; gap: 28px; }
+.parties { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--copper); margin: 0 0 6px; }
+.parties p { margin: 0; }
+.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; border-block: 1px solid var(--rule); padding-block: 14px; }
+.meta div p:last-child { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.meta .label { margin-bottom: 2px; }
+h2 { font: 600 1.6rem/1.2 var(--display); margin: 0 0 10px; text-wrap: balance; }
+.table-box { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 520px; }
+th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 2px solid var(--ink); }
+th.n, td.n { text-align: right; white-space: nowrap; }
+td { padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr.pkg td { font-weight: 600; padding-top: 14px; }
+tr.pkg td:first-child { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+tr.task td strong { color: var(--ink); font-weight: 600; }
+tr.task td { color: var(--muted); font-size: 14px; padding-block: 6px; }
+tr.task td:first-child { padding-left: 26px; }
+tr.sub td { border-bottom: 2px solid var(--rule); font-size: 13px; color: var(--muted); }
+.totals { display: grid; justify-content: end; gap: 6px; font-variant-numeric: tabular-nums; }
+.totals div { display: flex; justify-content: space-between; gap: 40px; min-width: 0; }
+.totals .grand { border-top: 2px solid var(--ink); padding-top: 10px; margin-top: 4px; font: 700 1.6rem var(--display); }
+.note { background: var(--copper-soft); border-left: 3px solid var(--copper); padding: 12px 14px; border-radius: 2px; font-size: 14px; }
+.note p { margin: 0; }
+.small { color: var(--muted); font-size: 13px; margin: 0; }
+.edition { display: none; }
+:root[data-lang="es"] .edition[lang="es"], :root[data-lang="en"] .edition[lang="en"] { display: block; }
+:root:not([data-lang]) .edition[lang="es"] { display: block; }
+@media (max-width: 520px) { .band h1 { font-size: 2.1rem; } .body, .band { padding-left: 18px; padding-right: 18px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.item { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 6px 20px; padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.item:first-of-type { border-top: 2px solid var(--ink); }
+.item h3 { font: 600 1.35rem/1.25 var(--display); margin: 0; }
+.item .amt { font: 700 1.35rem var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item .when { grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--copper); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.item .scope { grid-column: 1 / -1; display: grid; gap: 14px; }
+.scope h4 { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
+.scope ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); font-size: 14px; }
+.scope li::marker { color: var(--copper); }
+.later .item h3, .later .item .amt { font-size: 1.15rem; }
+</style>
+
+<div class="wrap">
+  <div class="lang" role="group" aria-label="Idioma / Language">
+    <button type="button" id="lang-es" data-language="es" aria-pressed="true">Español</button>
+    <button type="button" id="lang-en" data-language="en" aria-pressed="false">English</button>
+  </div>
+  <article class="edition sheet" lang="es">
+    <header class="band"><div><h1>Factura</h1><p class="num">Nº WC-2026-001</p></div><span class="draft">Primer pago: al firmar</span></header>
+    <div class="body">
+      <section class="parties">
+        <div><p class="label">De</p><p><strong>Agent Lead Engine LLC</strong></p><p>Samuel Ochoa, miembro</p></div>
+        <div><p class="label">Para</p><p><strong>Wallder Construction LLC</strong></p><p>141 Grove St, Meriden, CT 06451</p></div>
+      </section>
+      <section class="meta">
+        <div><p class="label">Fecha</p><p>24 de noviembre de 2026</p></div>
+        <div><p class="label">Vence</p><p>$1,150 al firmar el contrato</p></div>
+        <div><p class="label">A pagar ahora</p><p data-half></p></div>
+      </section>
+      <section><h2>Trabajo de esta factura</h2>
+<div class="item"><h3>Puesta en marcha: investigación, revisión y sitio nuevo</h3><span class="amt" data-price="setup"></span><p class="when">Incluido en esta factura</p><div class="scope"><div><h4>1. Investigación de mercado</h4><ul><li>Demanda de juntas de ladrillo, mampostería, siding Hardie y techos planos en Meriden y los pueblos cercanos</li><li>Qué buscan los clientes en español y en inglés, con las palabras que usan de verdad</li><li>Cómo los paneles de fábrica afectan el trabajo de estuco y qué trabajos no reemplazan</li><li>Qué pueblos conviene atacar primero para cada servicio</li></ul></div><div><h4>2. Revisión de la competencia</h4><ul><li>Quién aparece en Google Maps en Meriden para cada servicio, y en qué puesto</li><li>Sus sitios, sus páginas por servicio, sus reseñas y cuántas tienen</li><li>A quién recomienda ChatGPT para cada trabajo y por qué</li></ul></div><div><h4>3. Revisión de todo lo que tienes hoy</h4><ul><li>Tu sitio de estuco y tu sitio de contratista general, página por página</li><li>Tu perfil de Google: categoría, servicios, fotos, reseñas y publicaciones</li><li>Tus directorios: Bing, Apple, Yelp, BBB, Facebook, Houzz, HomeAdvisor y Angi, Yellow Pages, Procore y LinkedIn</li><li>25 problemas encontrados, cada uno con su solución</li></ul></div><div><h4>4. Punto de partida</h4><ul><li>Las mismas búsquedas en Google Maps y las mismas preguntas a ChatGPT, guardadas con fecha, para medir cada mes contra este punto</li></ul></div><div><h4>5. Sitio nuevo en español y en inglés</h4><ul><li>Con el diseño que escojas</li><li>Páginas: inicio, juntas de ladrillo, siding Hardie, estuco y EIFS, comercial, Meriden, proyectos y contacto</li><li>Techos planos listo como borrador, se publica cuando confirmes equipo, seguro y sistemas</li><li>Formulario de estimado en los dos idiomas, botones de llamada probados, una sola dirección y un solo horario</li><li>Hecho para el teléfono, rápido y fácil de leer</li></ul></div><div><h4>6. Retirar los sitios viejos</h4><ul><li>Cada página vieja redirige a su página nueva, para no perder lo que Google ya conoce</li><li>Lanzamiento, pruebas y envío a Google Search Console y Bing Webmaster Tools</li></ul></div><div><h4>7. Perfil de Google y directorios</h4><ul><li>Categorías y servicios correctos, descripción nueva y fotos de tus trabajos con el pueblo</li><li>Primeras publicaciones</li><li>Una sola dirección y el sitio nuevo en todos los directorios</li><li>Enlace y mensaje en español e inglés para pedir reseñas a cada cliente</li></ul></div></div></div>
+<div class="item"><h3>Anuncios en ChatGPT y perfil de negocio en ChatGPT</h3><span class="amt" data-price="adsSetup"></span><p class="when">Incluido en esta factura</p><div class="scope"><div><h4>Investigación</h4><ul><li>Cómo aparecen tus competidores en ChatGPT y qué temas usan los clientes al preguntar</li></ul></div><div><h4>Configuración</h4><ul><li>Reclamar y completar tu perfil de negocio en ChatGPT, si cumples los requisitos de OpenAI</li><li>Cuenta de anuncios, con ubicación por código postal: Meriden y tus pueblos</li><li>Grupos de anuncios por servicio, empezando por juntas de ladrillo, con sus temas</li><li>Anuncios escritos en español y en inglés</li><li>Medición de cada solicitud de estimado que llegue por los anuncios</li></ul></div></div></div>
+      </section>
+      <section class="totals" aria-label="Total"><div><span>Total del trabajo</span><span data-sum="due"></span></div><div><span>Primer pago, al firmar el contrato</span><span data-half></span></div><div><span>Segundo pago, antes de publicar el sitio nuevo</span><span data-half></span></div><div class="grand"><span>A pagar ahora</span><span data-half></span></div></section>
+      <section class="later"><h2>Opcional: trabajo mensual de SEO y anuncios (no se cobra hoy)</h2>
+<div class="item"><h3>SEO mensual: plan Base</h3><span class="amt" data-price="base"></span><p class="when">Opcional, mes a mes, desde el mes 4</p><div class="scope"><div><h4>Cada mes</h4><ul><li>SEO local: tus puestos en Google Maps para juntas de ladrillo, estuco, siding y techos en tus pueblos</li><li>SEO en tus páginas: títulos, descripciones, encabezados y enlaces entre páginas, revisados y ajustados</li><li>SEO técnico: velocidad, errores, enlaces rotos, mapa del sitio y revisión en Search Console y Bing</li><li>Una página nueva con un trabajo real</li><li>Publicaciones semanales en tu perfil de Google</li><li>Seguimiento de reseñas y respuestas</li><li>Directorios al día</li><li>Reporte: tus puestos en Maps, la prueba en ChatGPT, llamadas y estimados</li></ul></div></div></div>
+<div class="item"><h3>o SEO mensual: plan Crecimiento</h3><span class="amt" data-price="growth"></span><p class="when">Opcional, mes a mes, desde el mes 4</p><div class="scope"><div><h4>Cada mes</h4><ul><li>Todo lo del plan Base</li><li>Investigación de palabras clave cada mes, en español y en inglés, para escoger las páginas siguientes</li><li>Menciones y enlaces de sitios locales, proveedores y asociaciones del oficio</li><li>Dos páginas nuevas al mes, en español y en inglés</li><li>Páginas de proyecto para cada servicio</li><li>Fichas con fabricantes, como el programa de contratistas de James Hardie</li></ul></div></div></div>
+<div class="item"><h3>Opcional: manejo de anuncios en ChatGPT</h3><span class="amt" data-price="adsMonthly"></span><p class="when">Cuando la página nueva de juntas esté publicada</p><div class="scope"><div><h4>Cada mes</h4><ul><li>Revisar qué anuncios traen estimados y ajustar temas, pueblos y textos</li><li>Resultados dentro de tu reporte mensual</li></ul></div></div></div>
+      </section>
+      <div class="note"><p>El gasto en anuncios de ChatGPT lo pagas directo a OpenAI, desde <span data-price="adsMinDay"></span> al día. El alojamiento del sitio y el seguimiento opcional se cobran al costo. Mes a mes, sin contrato largo.</p></div>
+      <p class="small">Los sitios viejos se retiran y el sitio nuevo los reemplaza. Samuel te indica cómo hacer el pago. El certificado de seguridad ya quedó arreglado, sin costo.</p>
+    </div>
+  </article>
+  <article class="edition sheet" lang="en">
+    <header class="band"><div><h1>Invoice</h1><p class="num">No. WC-2026-001</p></div><span class="draft">First payment: at signing</span></header>
+    <div class="body">
+      <section class="parties">
+        <div><p class="label">From</p><p><strong>Agent Lead Engine LLC</strong></p><p>Samuel Ochoa, Member</p></div>
+        <div><p class="label">Bill to</p><p><strong>Wallder Construction LLC</strong></p><p>141 Grove St, Meriden, CT 06451</p></div>
+      </section>
+      <section class="meta">
+        <div><p class="label">Date</p><p>November 24, 2026</p></div>
+        <div><p class="label">Due</p><p>$1,150 when the contract is signed</p></div>
+        <div><p class="label">Due now</p><p data-half></p></div>
+      </section>
+      <section><h2>Work on this invoice</h2>
+<div class="item"><h3>Setup: research, review and the new site</h3><span class="amt" data-price="setup"></span><p class="when">Included on this invoice</p><div class="scope"><div><h4>1. Market research</h4><ul><li>Demand for brick repointing, masonry, Hardie siding and flat roofs in Meriden and nearby towns</li><li>What customers search in Spanish and English, in the words they actually use</li><li>How factory panels affect stucco work and which jobs they do not replace</li><li>Which towns to target first for each service</li></ul></div><div><h4>2. Competitor review</h4><ul><li>Who shows on Google Maps in Meriden for each service, and in what position</li><li>Their sites, service pages, reviews and review counts</li><li>Who ChatGPT recommends for each job and why</li></ul></div><div><h4>3. Review of everything you have today</h4><ul><li>Your stucco site and your general contractor site, page by page</li><li>Your Google profile: category, services, photos, reviews and posts</li><li>Your directories: Bing, Apple, Yelp, BBB, Facebook, Houzz, HomeAdvisor and Angi, Yellow Pages, Procore and LinkedIn</li><li>25 problems found, each with its fix</li></ul></div><div><h4>4. Starting point</h4><ul><li>The same Google Maps searches and ChatGPT questions, saved with the date, to measure against every month</li></ul></div><div><h4>5. New Spanish and English website</h4><ul><li>In the design you pick</li><li>Pages: home, brick repointing, Hardie siding, stucco and EIFS, commercial, Meriden, projects and contact</li><li>Flat roofs ready as a draft, published when you confirm crew, insurance and systems</li><li>Estimate form in both languages, tested call buttons, one address and one set of hours</li><li>Built for phones, fast and easy to read</li></ul></div><div><h4>6. Retire the old sites</h4><ul><li>Every old page redirects to its new page, so you keep what Google already knows</li><li>Launch, testing and submission to Google Search Console and Bing Webmaster Tools</li></ul></div><div><h4>7. Google profile and directories</h4><ul><li>Right categories and services, a new description and job photos with the town</li><li>First posts</li><li>One address and the new site on every directory</li><li>A Spanish and English link and message to ask every customer for a review</li></ul></div></div></div>
+<div class="item"><h3>ChatGPT ads and ChatGPT business profile</h3><span class="amt" data-price="adsSetup"></span><p class="when">Included on this invoice</p><div class="scope"><div><h4>Research</h4><ul><li>How your competitors show up in ChatGPT and the topics customers use when they ask</li></ul></div><div><h4>Setup</h4><ul><li>Claim and complete your ChatGPT business profile, if you meet OpenAI's requirements</li><li>Ads account with ZIP code targeting: Meriden and your towns</li><li>Ad groups by service, starting with brick repointing, with their topics</li><li>Ads written in Spanish and English</li><li>Tracking for every estimate request that comes from the ads</li></ul></div></div></div>
+      </section>
+      <section class="totals" aria-label="Total"><div><span>Total for the work</span><span data-sum="due"></span></div><div><span>First payment, at contract signing</span><span data-half></span></div><div><span>Second payment, before the new site goes live</span><span data-half></span></div><div class="grand"><span>Due now</span><span data-half></span></div></section>
+      <section class="later"><h2>Optional: monthly SEO and ads work (not charged today)</h2>
+<div class="item"><h3>Monthly SEO: Base plan</h3><span class="amt" data-price="base"></span><p class="when">Optional, month to month, from month 4</p><div class="scope"><div><h4>Every month</h4><ul><li>Local SEO: your Google Maps positions for brick repointing, stucco, siding and roofs in your towns</li><li>On-page SEO: titles, descriptions, headings and links between pages, reviewed and adjusted</li><li>Technical SEO: speed, errors, broken links, sitemap and checks in Search Console and Bing</li><li>One new page with a real job</li><li>Weekly posts on your Google profile</li><li>Review follow-up and replies</li><li>Directories kept current</li><li>Report: your Maps positions, the ChatGPT check, calls and estimates</li></ul></div></div></div>
+<div class="item"><h3>or Monthly SEO: Growth plan</h3><span class="amt" data-price="growth"></span><p class="when">Optional, month to month, from month 4</p><div class="scope"><div><h4>Every month</h4><ul><li>Everything in Base</li><li>Keyword research every month, in Spanish and English, to choose the next pages</li><li>Mentions and links from local sites, suppliers and trade groups</li><li>Two new pages a month, in Spanish and English</li><li>Project pages for every service</li><li>Manufacturer listings, such as the James Hardie contractor program</li></ul></div></div></div>
+<div class="item"><h3>Optional: ChatGPT ads management</h3><span class="amt" data-price="adsMonthly"></span><p class="when">When the new repointing page is live</p><div class="scope"><div><h4>Every month</h4><ul><li>Review which ads bring estimates and adjust topics, towns and copy</li><li>Results inside your monthly report</li></ul></div></div></div>
+      </section>
+      <div class="note"><p>You pay ChatGPT ad spend directly to OpenAI, from <span data-price="adsMinDay"></span> a day. Hosting and optional tracking are billed at cost. Month to month, no long contract.</p></div>
+      <p class="small">The old sites are retired and the new site replaces them. Samuel will tell you how to pay. The security certificate is already fixed, at no charge.</p>
+    </div>
+  </article>
+</div>
+<script>
+// All prices in one place, matching the proposal page.
+const PRICES = { setup: 2000, adsSetup: 300, base: 500, growth: 750, adsMonthly: 250, adsMinDay: 25 };
+const DUE_NOW = ["setup", "adsSetup"];
+(function () {
+  const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  document.querySelectorAll("[data-price]").forEach(function (el) { el.textContent = usd.format(PRICES[el.dataset.price]); });
+  const due = DUE_NOW.reduce(function (s, k) { return s + PRICES[k]; }, 0);
+  document.querySelectorAll('[data-sum="due"]').forEach(function (el) { el.textContent = usd.format(due); });
+  document.querySelectorAll('[data-half]').forEach(function (el) { el.textContent = usd.format(due / 2); });
+  const root = document.documentElement;
+  function setLang(lang) {
+    root.dataset.lang = lang; root.lang = lang;
+    document.querySelectorAll("[data-language]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.language === lang)); });
+    try { localStorage.setItem("wallder-invoice-lang", lang); } catch (e) {}
+  }
+  let start = "es";
+  try { if (localStorage.getItem("wallder-invoice-lang") === "en") start = "en"; } catch (e) {}
+  setLang(start);
+  document.querySelectorAll("[data-language]").forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.language); }); });
+})();
+</script>
+</body></html>
